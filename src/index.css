@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  cursor: none;
+  background-color: black;
+}
+
+a, button {
+  cursor: none;
+}
+
+::selection {
+  background-color: #E91E63;
+  color: white;
+}
