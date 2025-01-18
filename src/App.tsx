@@ -94,8 +94,8 @@ function App() {
         id='about'
         className='py-20 relative  bg-gradient-to-tr from-black via-gray-900 to-pink-900'
       >
-        <div className='absolute inset-0 pointer-events-none bg-gradient-to-tr from-black via-gray-900 to-pink-900'></div>
-        <div className='container mx-auto px-6'>
+        <div className='absolute inset-0 pointer-events-none bg-gradient-to-tr from-black via-gray-900 to-pink- text-white'></div>
+        <div className='container mx-auto px-6 text-white'>
           <div className='max-w-4xl mx-auto space-y-12'>
             <div className='space-y-6'>
               <h2 className='text-5xl font-bold text-center mb-12'>
