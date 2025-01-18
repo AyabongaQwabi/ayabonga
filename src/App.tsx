@@ -5,6 +5,8 @@ import ProjectCard from './components/ProjectCard';
 import ExpertiseCard from './components/ExpertiseCard';
 import ParallaxSection from './components/ParallaxSection';
 import CursorEffect from './components/CursorEffect';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/next';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -264,6 +266,8 @@ function App() {
           </div>
         </div>
       </section>
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
