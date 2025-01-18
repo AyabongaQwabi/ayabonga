@@ -138,8 +138,8 @@ function App() {
 
       {/* Expertise Section */}
       <section id='expertise' className='py-20 relative'>
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(236,72,153,0.1),transparent)] pointer-events-none'></div>
-        <div className='container mx-auto px-6'>
+        <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(236,72,153,0.1),transparent)] text-white pointer-events-none'></div>
+        <div className='container mx-auto px-6 text-white'>
           <h2 className='text-5xl font-bold mb-16 text-center'>
             Areas of Expertise
           </h2>
