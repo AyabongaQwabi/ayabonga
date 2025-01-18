@@ -266,8 +266,6 @@ function App() {
           </div>
         </div>
       </section>
-      <SpeedInsights />
-      <Analytics />
     </div>
   );
 }
