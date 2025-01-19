@@ -33,7 +33,7 @@ function App() {
           scrolled ? 'bg-black/95 backdrop-blur-sm' : 'bg-transparent'
         }`}
       >
-        <div className='container mx-auto px-6 py-4'>
+        <div className='container text-xs md:text-base mx-auto px-6 py-4'>
           <div className='flex items-center justify-between'>
             <span className='text-2xl font-bold text-pink-600'>AQ</span>
             <div className='space-x-8'>
@@ -103,19 +103,24 @@ function App() {
                 Who is Ayabonga Qwabi?
               </h2>
               <p className='text-xl leading-relaxed text-gray-300'>
-                Ayabonga Qwabi is a talented and passionate software developer
-                from Queenstown, South Africa. With a keen focus on leveraging
-                technology for impactful solutions, Ayabonga's expertise lies in
-                building innovative cloud-based systems designed to solve
-                real-world challenges.
+                My name is Ayabonga Qwabi, and I am a dedicated Cloud Systems
+                Specialist hailing from the beautiful town of Queenstown, South
+                Africa. I am deeply passionate about harnessing the power of
+                cloud-based applications to address pressing challenges and
+                support initiatives that spark positive social change. To learn
+                more about my journey and the values that drive me, feel free to
+                visit www.qwabi.co.za.
               </p>
               <p className='text-xl leading-relaxed text-gray-300'>
-                Often described as a Cloud Software Wrangler, Ayabonga
-                specializes in creating seamless, scalable, and effective
-                software architectures that drive both business growth and
-                social impact. He's deeply committed to using data to fuel
-                results, from building intuitive user interfaces to crafting
-                customized backend solutions.
+                In my role as a Cloud Engineering Specialist, I focus on
+                designing and developing innovative systems that utilize the
+                cloud to amplify meaningful causes and ideas. My work blends
+                technical expertise with creative solutions, aiming to create
+                scalable, efficient, and user-friendly applications that empower
+                individuals and organizations in achieving their goals. I am
+                committed to using cloud-based tools and technologies as a means
+                to bridge the digital divide and address both social and
+                individual needs.
               </p>
             </div>
 
@@ -124,13 +129,18 @@ function App() {
                 Technical Philosophy
               </h3>
               <p className='text-xl leading-relaxed text-gray-300'>
-                A JavaScript & Clojure developer, Ayabonga is also well-versed
-                in mining & transforming data, which enables him to deliver
-                flexible and efficient code for complex systems. His work often
-                focuses on developing platforms that empower individuals and
-                organizations, ranging from non-profits to corporate clients,
-                with a special emphasis on integrating data-driven insights into
-                every project he takes on.
+                I leverage a range of systems engineering technologies,
+                including LLMs, React, NodeJS, Clojure, Firebase, Twilio, and
+                the Google Cloud Platform, to build adaptable systems that
+                respond to users' needs. Every challenge presents a unique
+                opportunity to devise tailored solutions that tackle problems at
+                their core. My expertise in data transformation and analysis
+                allows me to create systems that are not only effective but also
+                insightful. Whether optimizing workflows, constructing robust
+                platforms, or facilitating data-driven decision-making, my goal
+                is to develop tools that create a lasting positive impact. I
+                believe in building to nurture, fostering an expressive,
+                inclusive, and connected world for all.
               </p>
             </div>
           </div>
