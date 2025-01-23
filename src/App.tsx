@@ -271,6 +271,12 @@ function App() {
               url='https://www.simply.co.za'
             />
             <CollaborationCard
+              company='Warner Music Africa - Culture Shifters'
+              description='A student ambassador program offering tertiary arts students the opportunity to gain first-hand experience in the music industry through workshops, creative meetings, and launches with a leading record label.'
+              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Culture-Shifters-Logo-Cream-qxvAqKUvn1urbMckbVhf1OKocc84Lk.png'
+              url='https://wmacultureshifters.com/'
+            />
+            <CollaborationCard
               company='Cloudsure'
               description='Cloudsure started in 2014 as a cloud-based compliance engine for life insurance businesses. They have since expanded to offer a comprehensive, user-friendly life insurance platform.'
               logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cloudsure-HSSd2QMJDWW1U1UA7wG597dC5tTicg.png'
@@ -305,12 +311,6 @@ function App() {
               description='Established in 2007, ClinicPlusWTB specializes in Occupational Health Screening for fitness to work, led by forward-thinking professionals committed to personal responsibility and accountability.'
               logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clinic-Plus-Logos-300x200-1-ck5TT2Ek4Ei5dSBFYT1ra4p0MzdGwZ.png'
               url='https://www.clinicpluswtb.co.za/'
-            />
-            <CollaborationCard
-              company='Warner Music Africa - Culture Shifters'
-              description='A student ambassador program offering tertiary arts students the opportunity to gain first-hand experience in the music industry through workshops, creative meetings, and launches with a leading record label.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Culture-Shifters-Logo-Cream-qxvAqKUvn1urbMckbVhf1OKocc84Lk.png'
-              url='https://wmacultureshifters.com/'
             />
           </div>
         </div>
