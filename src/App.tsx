@@ -11,12 +11,14 @@ import ProjectCard from './components/ProjectCard';
 import ExpertiseCard from './components/ExpertiseCard';
 import ParallaxSection from './components/ParallaxSection';
 import CursorEffect from './components/CursorEffect';
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/next';
 import CollaborationCard from './components/CollaborationCard';
 import { TrustSignals } from './components/TrustSignals';
 import { Button } from './components/ui/button';
-
+import Link from 'next/link';
 import { ConsultationModal } from './components/ConsultationModal';
+import { MobileMenu } from './components/MobileMenu';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +33,13 @@ function App() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -80; // Adjust this value based on your fixed header height
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -47,7 +55,7 @@ function App() {
         <div className='container text-xs md:text-base mx-auto px-6 py-4'>
           <div className='flex items-center justify-between'>
             <span className='text-2xl font-bold text-pink-600'>AQ</span>
-            <div className='space-x-8'>
+            <div className='hidden md:flex space-x-8'>
               <button
                 onClick={() => scrollToSection('about')}
                 className='hover:text-pink-600 transition-colors'
@@ -79,6 +87,7 @@ function App() {
                 Contact
               </button>
             </div>
+            <MobileMenu scrollToSection={scrollToSection} />
           </div>
         </div>
       </nav>
@@ -117,7 +126,7 @@ function App() {
                 onClick={() => scrollToSection('expertise')}
                 variant='outline'
                 size='lg'
-                className='rounded-full  text-white'
+                className='rounded-full'
               >
                 Explore Services
               </Button>
@@ -262,12 +271,6 @@ function App() {
               url='https://www.simply.co.za'
             />
             <CollaborationCard
-              company='Warner Music Africa - Culture Shifters'
-              description='A student ambassador program offering tertiary arts students the opportunity to gain first-hand experience in the music industry through workshops, creative meetings, and launches with a leading record label.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Culture-Shifters-Logo-Cream-qxvAqKUvn1urbMckbVhf1OKocc84Lk.png'
-              url='https://wmacultureshifters.com/'
-            />
-            <CollaborationCard
               company='Cloudsure'
               description='Cloudsure started in 2014 as a cloud-based compliance engine for life insurance businesses. They have since expanded to offer a comprehensive, user-friendly life insurance platform.'
               logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cloudsure-HSSd2QMJDWW1U1UA7wG597dC5tTicg.png'
@@ -302,6 +305,12 @@ function App() {
               description='Established in 2007, ClinicPlusWTB specializes in Occupational Health Screening for fitness to work, led by forward-thinking professionals committed to personal responsibility and accountability.'
               logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clinic-Plus-Logos-300x200-1-ck5TT2Ek4Ei5dSBFYT1ra4p0MzdGwZ.png'
               url='https://www.clinicpluswtb.co.za/'
+            />
+            <CollaborationCard
+              company='Warner Music Africa - Culture Shifters'
+              description='A student ambassador program offering tertiary arts students the opportunity to gain first-hand experience in the music industry through workshops, creative meetings, and launches with a leading record label.'
+              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Culture-Shifters-Logo-Cream-qxvAqKUvn1urbMckbVhf1OKocc84Lk.png'
+              url='https://wmacultureshifters.com/'
             />
           </div>
         </div>
