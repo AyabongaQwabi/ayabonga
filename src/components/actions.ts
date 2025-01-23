@@ -22,7 +22,11 @@ export async function saveConsultation(data: ConsultationData) {
     // revalidatePath("/book-consultation")
     return { success: true, url: blob.url };
   } catch (error) {
-    console.error('Error saving consultation:', error);
+    console.error(
+      'Error saving consultation: token',
+      process.env.NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN,
+      error
+    );
     throw new Error('Failed to save consultation');
   }
 }
