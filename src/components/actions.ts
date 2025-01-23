@@ -15,7 +15,7 @@ export async function saveConsultation(data: ConsultationData) {
     const filename = `consultation-${Date.now()}.json`;
     const blob = await put(filename, JSON.stringify(data), {
       access: 'public',
-      token: process.env.NEX_PUBLIC_BLOB_READ_WRITE_TOKEN,
+      token: process.env.NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN,
     });
 
     console.log(`Consultation saved to ${blob.url}`);
