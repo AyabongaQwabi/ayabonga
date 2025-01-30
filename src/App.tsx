@@ -312,6 +312,18 @@ function App() {
               logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clinic-Plus-Logos-300x200-1-ck5TT2Ek4Ei5dSBFYT1ra4p0MzdGwZ.png'
               url='https://www.clinicpluswtb.co.za/'
             />
+            <CollaborationCard
+              company='SATech Dstv Installers'
+              description='Expert Dstv Technicians in the Queenstown region, offering a range of services including Dstv installations, repairs, and maintenance.'
+              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/satech%20logo-DFSRtWfcXj0ml0AEAU8Z2VqbozkwV5.png'
+              url='https://www.satechdstv.ayabonga.com/'
+            />
+            <CollaborationCard
+              company='Ilithiyana Group'
+              description="Ilithiyana Consulting is a 100% black-owned enterprise committed to contributing to South Africa's economic growth and community development. Founded by Masande Dudula, we specialize in Academics, Vehicle Care, Infrastructure Services, and Community Foundations."
+              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/q0olcnl5-YJlKFxUCPpfToECyNu1zQ1s90wWQRT.png'
+              url='https://www.ilithiyana.co.za/'
+            />
           </div>
         </div>
       </section>
