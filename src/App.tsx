@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2 } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_PAGE_DESCRIPTION,
+  DEFAULT_PAGE_TITLE,
+  TWITTER_HANDLE,
+} from './lib/site-config';
 
 const projects = [
   {
@@ -103,7 +111,26 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <>
+      <Helmet>
+        <title>{DEFAULT_PAGE_TITLE}</title>
+        <meta name="description" content={DEFAULT_PAGE_DESCRIPTION} />
+        <link rel="canonical" href={absoluteUrl('/')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={absoluteUrl('/')} />
+        <meta property="og:title" content={DEFAULT_PAGE_TITLE} />
+        <meta property="og:description" content={DEFAULT_PAGE_DESCRIPTION} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta property="og:locale" content="en_ZA" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={DEFAULT_PAGE_TITLE} />
+        <meta name="twitter:description" content={DEFAULT_PAGE_DESCRIPTION} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:creator" content={TWITTER_HANDLE} />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+      <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Navigation */}
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
@@ -515,6 +542,7 @@ function App() {
       <SpeedInsights />
       <Analytics />
     </div>
+    </>
   );
 }
 
