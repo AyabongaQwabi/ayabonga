@@ -1,28 +1,81 @@
-import React, { useEffect, useState } from 'react';
-import {
-  MailIcon,
-  Code2Icon,
-  CloudIcon,
-  DatabaseIcon,
-  ArrowRight,
-} from 'lucide-react';
-import MovingText from './components/MovingText';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2 } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
-import ExpertiseCard from './components/ExpertiseCard';
-import ParallaxSection from './components/ParallaxSection';
-import CursorEffect from './components/CursorEffect';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { Analytics } from '@vercel/analytics/next';
-import CollaborationCard from './components/CollaborationCard';
-import { TrustSignals } from './components/TrustSignals';
-import { Button } from './components/ui/button';
-import Link from 'next/link';
-import { ConsultationModal } from './components/ConsultationModal';
-import { MobileMenu } from './components/MobileMenu';
+import { Analytics } from '@vercel/analytics/react';
+
+const projects = [
+  {
+    title: 'Laundry Marketplace',
+    description: 'A turnkey laundry marketplace connecting customers with local laundry service providers.',
+    url: 'https://laundry.qwabi.co.za',
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+  },
+  {
+    title: 'ClinicPlus',
+    description: 'A clinic appointments booking platform for mining companies in Witbank, streamlining occupational healthcare access.',
+    url: 'https://clinicplusbookings.co.za',
+    tech: ['React', 'Node.js', 'MongoDB'],
+  },
+  {
+    title: 'Queens Connect',
+    description: 'A friendly AI companion for the Queenstown community, providing local information and assistance.',
+    url: 'https://queensconnect.qwabi.co.za',
+    tech: ['AI', 'Next.js', 'OpenAI'],
+  },
+  {
+    title: 'Kingly',
+    description: 'An AI tool for creating vibe coding documents and prompts, enhancing developer productivity.',
+    url: 'https://kingly.qwabi.co.za',
+    tech: ['AI', 'React', 'TypeScript'],
+  },
+  {
+    title: 'UTap',
+    description: 'A university NFC access card mobile wallet for seamless campus access and payments.',
+    url: 'https://utaptech.co.za',
+    tech: ['React Native', 'NFC', 'Firebase'],
+  },
+  {
+    title: 'eSpazza',
+    description: 'A Xhosa hip hop music streaming and blogging website celebrating Eastern Cape hip hop culture.',
+    url: 'https://xhosahiphop.co.za',
+    tech: ['React', 'Express', 'MongoDB'],
+  },
+];
+
+const collaborations = [
+  { name: 'Project Codex', url: 'https://www.projectcodex.co' },
+  { name: 'Western Cape Labs', url: 'https://www.westerncapelabs.com' },
+  { name: 'Picsa', url: 'https://www.picsa.com' },
+  { name: 'Simply Financial', url: 'https://www.simply.co.za' },
+  { name: 'Warner Music Africa', url: 'https://wmacultureshifters.com/' },
+  { name: 'Cloudsure', url: 'https://www.cloudsure.mu' },
+];
+
+const profileImages = [
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/502571183_4100934353486953_3497090813393292917_n-JZeh0AXL3p9vhL4YFUIQOVEnlzSXI5.jpg',
+    alt: 'Ayabonga Qwabi working at his desk with code on screen',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg',
+    alt: 'Ayabonga Qwabi professional headshot',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/489134843_4041244449455944_7049585150293422937_n-vFbZulwyco6e3O9hATq8IfT32IZDGT.jpg',
+    alt: 'Ayabonga Qwabi casual portrait with African print shirt',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/503308818_4100825546831167_2412953019296727296_n-5z82XXW0FGvqtIZQZ4MUsrqAHvstlo.jpg',
+    alt: 'Ayabonga Qwabi portrait with traditional headband',
+  },
+];
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,409 +85,435 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % profileImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; // Adjust this value based on your fixed header height
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
+    setMobileMenuOpen(false);
   };
 
   return (
-    <div className='min-h-screen bg-black text-white'>
-      <CursorEffect />
-
+    <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Navigation */}
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-black/95 backdrop-blur-sm' : 'bg-transparent'
+          scrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
         }`}
       >
-        <div className='container text-xs md:text-base mx-auto px-6 py-4'>
-          <div className='flex items-center justify-between'>
-            <span className='text-2xl font-bold text-pink-600'>AQ</span>
-            <div className='hidden md:flex space-x-8'>
-              <button
-                onClick={() => scrollToSection('about')}
-                className='hover:text-pink-600 transition-colors'
-              >
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <span className="text-lg font-semibold text-primary">AQ</span>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('expertise')}
-                className='hover:text-pink-600 transition-colors'
-              >
+              <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Expertise
               </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className='hover:text-pink-600 transition-colors'
-              >
+              <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Projects
               </button>
-              <button
-                onClick={() => scrollToSection('collaborations')}
-                className='hover:text-pink-600 transition-colors'
-              >
-                Collaborations
+              <button onClick={() => scrollToSection('collaborations')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Work
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className='hover:text-pink-600 transition-colors'
-              >
-                Contact
-              </button>
+              <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Writing
+              </Link>
             </div>
-            <MobileMenu scrollToSection={scrollToSection} />
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden pt-4 pb-2 border-t border-border mt-4">
+              <div className="flex flex-col gap-4">
+                <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  About
+                </button>
+                <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  Expertise
+                </button>
+                <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  Projects
+                </button>
+                <button onClick={() => scrollToSection('collaborations')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  Work
+                </button>
+                <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Writing
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <ParallaxSection>
-        <div className='relative min-h-screen flex items-center justify-center overflow-hidden'>
-          <div className='absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-pink-900'></div>
-          <div className='relative z-10 text-center space-y-8 max-w-5xl mx-auto px-4 sm:px-6'>
-            <MovingText
-              texts={[
-                'Transforming Ideas',
-                'Building Solutions',
-                'Engineering Excellence',
-              ]}
-            />
-            <h2 className='text-xl sm:text-2xl md:text-3xl font-light tracking-wide text-gray-300'>
-              Empowering businesses through innovative cloud solutions and
-              impactful software development
-            </h2>
-            <p className='text-lg text-gray-400 max-w-2xl mx-auto'>
-              Specialized in helping organizations overcome technical challenges
-              and achieve digital transformation through custom cloud
-              architecture and software solutions.
-            </p>
-            <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
-              <Button
-                onClick={() => scrollToSection('contact')}
-                size='lg'
-                className='bg-pink-600 hover:bg-pink-700 text-white px-8 rounded-full group'
-              >
-                Start Your Project
-                <ArrowRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-2' />
-              </Button>
-              <Button
-                onClick={() => scrollToSection('expertise')}
-                variant='outline'
-                size='lg'
-                className='rounded-full'
-              >
-                Explore Services
-              </Button>
-            </div>
-          </div>
-        </div>
-      </ParallaxSection>
+      <main className="max-w-5xl mx-auto px-6">
+        {/* Hero / About Section */}
+        <section id="about" className="pt-32 pb-20 md:pt-40 md:pb-32">
+          <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-12">
+            {/* Left Column - Photo & Info */}
+            <div className="space-y-6">
+              {/* Profile Image with rotating gallery */}
+              <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto md:mx-0">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 transform rotate-6"></div>
+                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border shadow-xl">
+                  {profileImages.map((img, index) => (
+                    <img
+                      key={index}
+                      src={img.src}
+                      alt={img.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                        index === activeImage ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))}
+                </div>
+                {/* Image indicators */}
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+                  {profileImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImage(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === activeImage ? 'bg-primary w-4' : 'bg-muted-foreground/30'
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
 
-      {/* About Section */}
-      <section
-        id='about'
-        className='py-20 relative bg-gradient-to-tr from-black via-gray-900 to-pink-900'
-      >
-        <div className='container mx-auto px-6 text-white'>
-          <div className='max-w-4xl mx-auto space-y-12'>
-            <div className='space-y-6'>
-              <h2 className='text-5xl font-bold text-center mb-12'>
-                Who is Ayabonga Qwabi?
-              </h2>
-              <p className='text-xl leading-relaxed text-gray-300'>
-                As a dedicated Cloud Systems Specialist based in the beautiful
-                town of Queenstown, South Africa, I am deeply passionate about
-                harnessing the power of cloud-based applications to address
-                pressing challenges and support initiatives that spark positive
-                social change. To learn more about my journey and the values
-                that drive me, feel free to visit www.qwabi.co.za.
-              </p>
-              <p className='text-xl leading-relaxed text-gray-300'>
-                In my role as a Cloud Engineering Specialist, I focus on
-                designing and developing innovative systems that utilize the
-                cloud to amplify meaningful causes and ideas. I blend technical
-                expertise with creative solutions, aiming to create scalable,
-                efficient, and user-friendly applications that empower
-                individuals and organizations in achieving their goals. I am
-                committed to using cloud-based tools and technologies as a means
-                to bridge the digital divide and address both social and
-                individual needs.
-              </p>
-            </div>
+              <div className="text-center md:text-left pt-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
+                  Ayabonga Qwabi
+                </h1>
+                <p className="text-primary font-semibold text-lg">
+                  AI Specialist & Cloud Architect
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Queenstown, Eastern Cape, South Africa
+                </p>
+              </div>
 
-            <div className='space-y-6'>
-              <h3 className='text-3xl font-bold text-pink-600'>
-                Technical Philosophy
-              </h3>
-              <p className='text-xl leading-relaxed text-gray-300'>
-                I specialize in modern engineering technologies, including LLMs,
-                React, NodeJS, Clojure, Firebase, Twilio, and the Google Cloud
-                Platform, to build adaptable systems that respond to users'
-                needs. Every challenge presents a unique opportunity to devise
-                tailored solutions that tackle problems at their core. My
-                expertise in data transformation and analysis allows me to
-                create systems that are not only effective but also insightful.
-                Whether optimizing workflows, constructing robust platforms, or
-                facilitating data-driven decision-making, my goal is to develop
-                tools that create a lasting positive impact. I believe in
-                building to nurture, fostering an expressive, inclusive, and
-                connected world for all.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise Section */}
-      <section id='expertise' className='py-20 relative'>
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(236,72,153,0.1),transparent)] text-white pointer-events-none'></div>
-        <div className='container mx-auto px-6 text-white'>
-          <h2 className='text-5xl font-bold mb-16 text-center'>
-            Areas of Expertise
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            <ExpertiseCard
-              title='Full-Stack Development'
-              description='Building enterprise-grade solutions using cutting-edge technologies'
-              icon={<Code2Icon className='w-8 h-8' />}
-              details={[
-                'React & Next.js',
-                'Node.js & Express',
-                'TypeScript',
-                'Clojure & ClojureScript',
-              ]}
-            />
-            <ExpertiseCard
-              title='Cloud Architecture'
-              description='Designing reliable and performant cloud-native solutions'
-              icon={<CloudIcon className='w-8 h-8' />}
-              details={[
-                'GCP & AWS',
-                'Serverless Architecture',
-                'Microservices',
-                'DevOps & CI/CD',
-              ]}
-            />
-            <ExpertiseCard
-              title='Data Solutions'
-              description='Transforming raw data into actionable insights'
-              icon={<DatabaseIcon className='w-8 h-8' />}
-              details={[
-                'Data Analysis',
-                'Web Scraping',
-                'API Development',
-                'Database Design',
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Signals Section */}
-      <TrustSignals />
-
-      {/* Collaborations Section */}
-      <section id='collaborations' className='py-20 relative'>
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(236,72,153,0.1),transparent)] pointer-events-none'></div>
-        <div className='container mx-auto px-6'>
-          <h2 className='text-5xl font-bold mb-16 text-center'>
-            Companies I Have Collaborated With
-          </h2>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-            <CollaborationCard
-              company='Project Codex'
-              description="Project Codex, also known as codeX, is dedicated to unlocking South Africa's digital talent. They offer coding programs and support young people in navigating the pathway to a career in software development."
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/codeX-logo-uJsdV8NTdzwFxSuAiSbL9Fj6QVqNfF.svg'
-              url='https://www.projectcodex.co'
-            />
-            <CollaborationCard
-              company='Western Cape Labs'
-              description='Western Cape Labs is an eCommerce company based in Cape Town. They focus on creating solutions that power eCommerce platforms and have been active since 1938.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/western%20cape%20labs-xmaFXzqUjUX6sye8Mn4vSycyHfKqlL.png'
-              url='https://www.westerncapelabs.com'
-            />
-            <CollaborationCard
-              company='Picsa'
-              description='Picsa provides financial services aimed at improving the financial health of employees. They offer products like short- and long-term investments, affordable funeral plans, and responsible loans.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picsa+Logo-IjyNZErNOy7eejVKEunMyZwlNNglTZ.png'
-              url='https://www.picsa.com'
-            />
-            <CollaborationCard
-              company='Simply Financial Services'
-              description='Simply Financial Services offers life insurance products that are easy to sign up for, with no medical tests or paperwork required. They are based in Cape Town and provide services both online and through brokers.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/simply-cMoo869b5a5U9BYSMthaI8lE9dVZ2K.svg'
-              url='https://www.simply.co.za'
-            />
-            <CollaborationCard
-              company='Warner Music Africa - Culture Shifters'
-              description='A student ambassador program offering tertiary arts students the opportunity to gain first-hand experience in the music industry through workshops, creative meetings, and launches with a leading record label.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Culture-Shifters-Logo-Cream-qxvAqKUvn1urbMckbVhf1OKocc84Lk.png'
-              url='https://wmacultureshifters.com/'
-            />
-            <CollaborationCard
-              company='Cloudsure'
-              description='Cloudsure started in 2014 as a cloud-based compliance engine for life insurance businesses. They have since expanded to offer a comprehensive, user-friendly life insurance platform.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cloudsure-HSSd2QMJDWW1U1UA7wG597dC5tTicg.png'
-              url='https://www.cloudsure.mu'
-            />
-            <CollaborationCard
-              company='AN Consulting'
-              description='AN Consulting provides expert tax, audit and advisory services for small and medium enterprises in South Africa.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/anconsulting-TV4QRUT7YvgAHc7YMdRmIOd7uPqWpT.png'
-              url='https://www.anconsulting.co.za'
-            />
-            <CollaborationCard
-              company='Bakeni'
-              description='An independent consultancy offering a range of professional services within the fields of Water, Environmental and Earth Sciences, providing quality environmental consulting services across South Africa.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bakeni.jpg-XTPrzUugbDoa85muNpoRd8oI6dlIHS.jpeg'
-              url='https://bakeni.netlify.app/'
-            />
-            <CollaborationCard
-              company='Tecla Digital'
-              description='A results-oriented agency creating custom and unique digital products that showcase brand identity and values. Experts in Start-up Services Solutions helping attract new customers through exceptional tech innovations.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tecla.jpg-UspgtfLgl0ZEWyMQWMlaMrQHrrZxEl.jpeg'
-              url='https://www.tecla.co.za'
-            />
-            <CollaborationCard
-              company='Siavista Electrical'
-              description='An aspirational entity with a broader vision to utilize and employ more diversified, innovative, and integrated thinking and applications within electrical services industry.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siavista-I5PvbBUADV4dz6tX0ue1EIfhJ9XQzz.png'
-              url='https://siavistaelectrical.com/'
-            />
-            <CollaborationCard
-              company='ClinicPlusWTB'
-              description='Established in 2007, ClinicPlusWTB specializes in Occupational Health Screening for fitness to work, led by forward-thinking professionals committed to personal responsibility and accountability.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clinic-Plus-Logos-300x200-1-ck5TT2Ek4Ei5dSBFYT1ra4p0MzdGwZ.png'
-              url='https://www.clinicpluswtb.co.za/'
-            />
-            <CollaborationCard
-              company='SATech Dstv Installers'
-              description='Expert Dstv Technicians in the Queenstown region, offering a range of services including Dstv installations, repairs, and maintenance.'
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/satech%20logo-DFSRtWfcXj0ml0AEAU8Z2VqbozkwV5.png'
-              url='https://www.satechdstv.ayabonga.com/'
-            />
-            <CollaborationCard
-              company='Ilithiyana Group'
-              description="Ilithiyana Consulting is a 100% black-owned enterprise committed to contributing to South Africa's economic growth and community development. Founded by Masande Dudula, we specialize in Academics, Vehicle Care, Infrastructure Services, and Community Foundations."
-              logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/q0olcnl5-YJlKFxUCPpfToECyNu1zQ1s90wWQRT.png'
-              url='https://www.ilithiyana.co.za/'
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id='projects' className='py-20 relative'>
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_rgba(236,72,153,0.1),transparent)] pointer-events-none'></div>
-        <div className='container mx-auto px-6'>
-          <h2 className='text-5xl font-bold mb-16 text-center'>
-            Featured Projects
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
-            <ProjectCard
-              title='Inaethe'
-              description='NPO donation platform with affiliate marketing rewards'
-              url='https://inaethe.netlify.app'
-              image='https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800'
-              tech={['NextJS', 'Node.js', 'Netlify', 'Firebase']}
-              tagline='Ubuntu Rewards'
-            />
-            <ProjectCard
-              title='Xhosa Hip Hop'
-              description='Xhosa Hip Hop music platform promoting Xhosa Hip Hop talent from the Eastern and Western Cape.'
-              url='https://xhosahiphop.co.za'
-              image='https://dusk2dawn2020.wordpress.com/wp-content/uploads/2020/10/img_20201029_121210_428.jpg'
-              tech={['React', 'Express', 'Mongo DB']}
-              tagline='Xhosa Hip Hop music platform'
-            />
-            <ProjectCard
-              title='NMT Play'
-              description='File sharing and downloads website in the Xhosa vernacular language to promote and spread awareness of the use of technology in the Eastern Cape.'
-              url='https://nmtplay.co.za'
-              image='https://nmtplay.co.za/og.png'
-              tech={['Vite', 'React', 'NextJS', 'Firebase']}
-              tagline='Xhosa Vernac File Sharing Platform'
-            />
-            <ProjectCard
-              title='ClinicPlus Bookings'
-              description='Medical booking platform enhancing occupational healthcare access across mining and construction sectors'
-              url='https://clinicplusbookings.co.za'
-              image='https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800'
-              tech={['React', 'Express', 'Mongo DB']}
-              tagline='Healthcare Access Simplified'
-            />
-            <ProjectCard
-              title='Nomava'
-              description='Indigenous African Knowledge Repository'
-              url='https://www.youtube.com/@NomavaTV'
-              image='https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=800'
-              tech={['YouTube', 'Content Creation']}
-              tagline='Preserving African Wisdom'
-            />
-            <ProjectCard
-              title='Ayabonga'
-              description='Ayabongas developer profile website'
-              url='https://www.ayabonga.com'
-              image='https://ayabonga.com/og.png'
-              tech={['React', 'Supabase']}
-              tagline='Showcasing my profile to the world'
-            />
-            <ProjectCard
-              title='Qwabi'
-              description='Qwabi Private Cloud'
-              url='https://www.ayabonga.com'
-              image='https://ayabonga.com/og.png'
-              tech={['React', 'Supabase']}
-              tagline='Manage the private cloud at qwabi.co.za'
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id='contact' className='py-20 relative overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-br from-pink-900/20 to-transparent pointer-events-none'></div>
-        <div className='container mx-auto px-6'>
-          <div className='max-w-3xl mx-auto text-center space-y-8'>
-            <h2 className='text-5xl font-bold mb-4'>
-              Let's Build Something Amazing
-            </h2>
-            <p className='text-xl text-gray-300'>
-              Ready to transform your digital presence? Let's discuss how we can
-              help you achieve your goals.
-            </p>
-            <div className='flex flex-col items-center space-y-6'>
-              <Button
-                size='lg'
-                className='bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full group'
-                onClick={() => setIsModalOpen(true)}
-              >
-                <MailIcon className='mr-2 h-5 w-5' />
-                Schedule a Consultation
-                <ArrowRight className='ml-2 h-5 w-5 transition-transform group-hover:translate-x-2' />
-              </Button>
-              <p className='text-gray-400'>
-                or email directly at{' '}
-                <a
-                  href='mailto:aya@qwabi.co.za'
-                  className='text-pink-600 hover:text-pink-500 underline underline-offset-4'
+              {/* Social Links */}
+              <div className="flex items-center justify-center md:justify-start gap-4">
+                <a 
+                  href="https://github.com/ayabongaqwabi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="GitHub Profile"
                 >
-                  aya@qwabi.co.za
+                  <Github className="w-5 h-5" />
                 </a>
+                <a 
+                  href="https://linkedin.com/in/ayabongaqwabi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://twitter.com/ayabongaqwabi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Twitter Profile"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a 
+                  href="mailto:aya@qwabi.co.za"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Email Ayabonga"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column - Bio */}
+            <div className="space-y-6">
+              <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
+                With 10 years of software engineering experience, I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
               </p>
+              
+              <p className="leading-relaxed text-muted-foreground">
+                As an <span className="text-foreground font-medium">AI Specialist</span> and <span className="text-foreground font-medium">Cloud Architect</span>, I combine cutting-edge artificial intelligence with robust cloud infrastructure to solve complex challenges. My expertise spans designing scalable systems on <span className="text-foreground font-medium">Google Cloud Platform</span>, <span className="text-foreground font-medium">AWS</span>, and <span className="text-foreground font-medium">Azure</span>, while leveraging AI and machine learning to create intelligent, automated solutions.
+              </p>
+
+              <p className="leading-relaxed text-muted-foreground">
+                With deep proficiency in <span className="text-foreground font-medium">React</span>, <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">TypeScript</span>, <span className="text-foreground font-medium">Python</span>, and <span className="text-foreground font-medium">Clojure</span>, I build full-stack applications that harness the power of large language models, computer vision, and predictive analytics. I leverage <span className="text-foreground font-medium">Supabase</span> and <span className="text-foreground font-medium">Firebase</span> for rapid development of real-time, scalable backends. My work focuses on bridging the digital divide and empowering communities through technology.
+              </p>
+
+              <p className="leading-relaxed text-muted-foreground">
+                I believe in building to nurture, fostering an expressive, inclusive, and connected world where technology serves humanity.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <a 
+                  href="https://wa.me/27603116777"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+                <button 
+                  onClick={() => scrollToSection('projects')}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <span>View Projects</span>
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
+        </section>
+
+        {/* Expertise Section */}
+        <section id="expertise" className="py-20 border-t border-border">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Expertise
+            </h2>
+            <p className="text-foreground max-w-xl text-balance">
+              Core competencies spanning AI, cloud architecture, and full-stack development.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* AI & Machine Learning */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Brain className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. Specializing in OpenAI, TensorFlow, and custom ML pipelines.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">OpenAI</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">LangChain</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Python</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TensorFlow</span>
+              </div>
+            </article>
+
+            {/* Cloud Architecture */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Cloud className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Cloud Architecture</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures, Kubernetes, and infrastructure as code.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">GCP</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">AWS</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Azure</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Kubernetes</span>
+              </div>
+            </article>
+
+            {/* Full-Stack Development */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Code2 className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Development</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript for end-to-end solutions.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">React</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Clojure</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Supabase</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Firebase</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-20 border-t border-border">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Projects
+            </h2>
+            <p className="text-foreground max-w-xl text-balance">
+              A selection of AI-powered and cloud-native projects I have built to solve real problems and create meaningful impact.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                url={project.url}
+                tech={project.tech}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Collaborations Section */}
+        <section id="collaborations" className="py-20 border-t border-border">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Work
+            </h2>
+            <p className="text-foreground max-w-xl text-balance">
+              Companies and organizations I have had the privilege of collaborating with on cloud and AI initiatives.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {collaborations.map((collab, index) => (
+              <a
+                key={index}
+                href={collab.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all"
+              >
+                <span className="text-foreground group-hover:text-primary transition-colors">
+                  {collab.name}
+                </span>
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Writing Section */}
+        <section id="writing" className="py-20 border-t border-border">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Writing
+            </h2>
+            <p className="text-foreground max-w-xl text-balance">
+              Thoughts on AI, cloud architecture, development, and building technology for impact.
+            </p>
+          </div>
+
+          <Link
+            to="/blog"
+            className="group inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+          >
+            <FileText className="w-4 h-4" />
+            <span>View all posts</span>
+            <ExternalLink className="w-3 h-3" />
+          </Link>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 border-t border-border">
+          <div className="max-w-xl">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Contact
+            </h2>
+            <p className="text-foreground mb-6 text-balance">
+              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect.
+            </p>
+            
+            <div className="space-y-3">
+              <a 
+                href="mailto:aya@qwabi.co.za"
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                <span>aya@qwabi.co.za</span>
+              </a>
+              <a 
+                href="https://www.qwabi.co.za"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>qwabi.co.za</span>
+              </a>
+              <a 
+                href="https://wa.me/27603116777"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-8">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            {new Date().getFullYear()} Ayabonga Qwabi. AI Specialist & Cloud Architect.
+          </p>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://github.com/ayabongaqwabi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://linkedin.com/in/ayabongaqwabi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="https://twitter.com/ayabongaqwabi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Twitter
+            </a>
+          </div>
         </div>
-      </section>
-      <ConsultationModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      </footer>
+
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
