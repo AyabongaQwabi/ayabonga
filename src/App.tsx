@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/next';
@@ -308,6 +308,15 @@ function App() {
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>qwabi.co.za</span>
+              </a>
+              <a 
+                href="https://wa.me/27603116777"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
