@@ -259,7 +259,7 @@ function App() {
             {/* Right Column - Bio */}
             <div className="space-y-6">
               <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
-                I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
+                With 10 years of software engineering experience, I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
               </p>
               
               <p className="leading-relaxed text-muted-foreground">
@@ -267,7 +267,7 @@ function App() {
               </p>
 
               <p className="leading-relaxed text-muted-foreground">
-                With deep proficiency in <span className="text-foreground font-medium">React</span>, <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">TypeScript</span>, and <span className="text-foreground font-medium">Python</span>, I build full-stack applications that harness the power of large language models, computer vision, and predictive analytics. My work focuses on bridging the digital divide and empowering communities through technology.
+                With deep proficiency in <span className="text-foreground font-medium">React</span>, <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">TypeScript</span>, <span className="text-foreground font-medium">Python</span>, and <span className="text-foreground font-medium">Clojure</span>, I build full-stack applications that harness the power of large language models, computer vision, and predictive analytics. I leverage <span className="text-foreground font-medium">Supabase</span> and <span className="text-foreground font-medium">Firebase</span> for rapid development of real-time, scalable backends. My work focuses on bridging the digital divide and empowering communities through technology.
               </p>
 
               <p className="leading-relaxed text-muted-foreground">
@@ -354,9 +354,9 @@ function App() {
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">React</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Next.js</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Node.js</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TypeScript</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Clojure</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Supabase</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Firebase</span>
               </div>
             </article>
           </div>
