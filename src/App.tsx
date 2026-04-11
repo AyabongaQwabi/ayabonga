@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2 } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const projects = [
   {
