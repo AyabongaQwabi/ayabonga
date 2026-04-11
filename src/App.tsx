@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2 } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/next';
@@ -53,9 +53,29 @@ const collaborations = [
   { name: 'Cloudsure', url: 'https://www.cloudsure.mu' },
 ];
 
+const profileImages = [
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/502571183_4100934353486953_3497090813393292917_n-JZeh0AXL3p9vhL4YFUIQOVEnlzSXI5.jpg',
+    alt: 'Ayabonga Qwabi working at his desk with code on screen',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg',
+    alt: 'Ayabonga Qwabi professional headshot',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/489134843_4041244449455944_7049585150293422937_n-vFbZulwyco6e3O9hATq8IfT32IZDGT.jpg',
+    alt: 'Ayabonga Qwabi casual portrait with African print shirt',
+  },
+  {
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/503308818_4100825546831167_2412953019296727296_n-5z82XXW0FGvqtIZQZ4MUsrqAHvstlo.jpg',
+    alt: 'Ayabonga Qwabi portrait with traditional headband',
+  },
+];
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +83,13 @@ function App() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % profileImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -92,6 +119,9 @@ function App() {
               <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 About
               </button>
+              <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Expertise
+              </button>
               <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Projects
               </button>
@@ -107,6 +137,7 @@ function App() {
             <button 
               className="md:hidden p-2 text-muted-foreground hover:text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -118,6 +149,9 @@ function App() {
               <div className="flex flex-col gap-4">
                 <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                   About
+                </button>
+                <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  Expertise
                 </button>
                 <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                   Projects
@@ -137,29 +171,60 @@ function App() {
       <main className="max-w-5xl mx-auto px-6">
         {/* Hero / About Section */}
         <section id="about" className="pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
-            {/* Left Column - Name & Navigation */}
-            <div className="space-y-8">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+          <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-12">
+            {/* Left Column - Photo & Info */}
+            <div className="space-y-6">
+              {/* Profile Image with rotating gallery */}
+              <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto md:mx-0">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 transform rotate-6"></div>
+                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border shadow-xl">
+                  {profileImages.map((img, index) => (
+                    <img
+                      key={index}
+                      src={img.src}
+                      alt={img.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                        index === activeImage ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))}
+                </div>
+                {/* Image indicators */}
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+                  {profileImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImage(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === activeImage ? 'bg-primary w-4' : 'bg-muted-foreground/30'
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-center md:text-left pt-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
                   Ayabonga Qwabi
                 </h1>
-                <p className="text-primary font-medium">
-                  Cloud Engineer
+                <p className="text-primary font-semibold text-lg">
+                  AI Specialist & Cloud Architect
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Queenstown, South Africa
+                  Queenstown, Eastern Cape, South Africa
                 </p>
               </div>
 
               {/* Social Links */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <a 
                   href="https://github.com/ayabongaqwabi" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="GitHub"
+                  aria-label="GitHub Profile"
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -168,7 +233,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="LinkedIn"
+                  aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
@@ -177,14 +242,14 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Twitter"
+                  aria-label="Twitter Profile"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a 
                   href="mailto:aya@qwabi.co.za"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Email"
+                  aria-label="Email Ayabonga"
                 >
                   <Mail className="w-5 h-5" />
                 </a>
@@ -193,18 +258,107 @@ function App() {
 
             {/* Right Column - Bio */}
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                I build cloud-based applications that address real challenges and support initiatives that spark positive social change. My work lies at the intersection of technology and community impact.
+              <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
+                I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
               </p>
               
               <p className="leading-relaxed text-muted-foreground">
-                As a Cloud Engineering Specialist, I focus on designing systems that utilize modern cloud infrastructure to amplify meaningful causes. I specialize in <span className="text-foreground font-medium">React</span>, <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">TypeScript</span>, and <span className="text-foreground font-medium">Google Cloud Platform</span> to build scalable, user-friendly applications.
+                As an <span className="text-foreground font-medium">AI Specialist</span> and <span className="text-foreground font-medium">Cloud Architect</span>, I combine cutting-edge artificial intelligence with robust cloud infrastructure to solve complex challenges. My expertise spans designing scalable systems on <span className="text-foreground font-medium">Google Cloud Platform</span>, <span className="text-foreground font-medium">AWS</span>, and <span className="text-foreground font-medium">Azure</span>, while leveraging AI and machine learning to create intelligent, automated solutions.
               </p>
 
               <p className="leading-relaxed text-muted-foreground">
-                Currently focused on building tools that bridge the digital divide and empower individuals and organizations in achieving their goals. I believe in building to nurture, fostering an expressive, inclusive, and connected world.
+                With deep proficiency in <span className="text-foreground font-medium">React</span>, <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">TypeScript</span>, and <span className="text-foreground font-medium">Python</span>, I build full-stack applications that harness the power of large language models, computer vision, and predictive analytics. My work focuses on bridging the digital divide and empowering communities through technology.
               </p>
+
+              <p className="leading-relaxed text-muted-foreground">
+                I believe in building to nurture, fostering an expressive, inclusive, and connected world where technology serves humanity.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <a 
+                  href="https://wa.me/27603116777"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+                <button 
+                  onClick={() => scrollToSection('projects')}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <span>View Projects</span>
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Expertise Section */}
+        <section id="expertise" className="py-20 border-t border-border">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+              Expertise
+            </h2>
+            <p className="text-foreground max-w-xl text-balance">
+              Core competencies spanning AI, cloud architecture, and full-stack development.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* AI & Machine Learning */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Brain className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. Specializing in OpenAI, TensorFlow, and custom ML pipelines.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">OpenAI</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">LangChain</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Python</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TensorFlow</span>
+              </div>
+            </article>
+
+            {/* Cloud Architecture */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Cloud className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Cloud Architecture</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures, Kubernetes, and infrastructure as code.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">GCP</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">AWS</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Azure</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Kubernetes</span>
+              </div>
+            </article>
+
+            {/* Full-Stack Development */}
+            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Code2 className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Development</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript for end-to-end solutions.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">React</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Next.js</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Node.js</span>
+                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TypeScript</span>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -214,8 +368,8 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Projects
             </h2>
-            <p className="text-foreground max-w-xl">
-              A selection of projects I have built to solve real problems and create meaningful impact.
+            <p className="text-foreground max-w-xl text-balance">
+              A selection of AI-powered and cloud-native projects I have built to solve real problems and create meaningful impact.
             </p>
           </div>
 
@@ -238,8 +392,8 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Work
             </h2>
-            <p className="text-foreground max-w-xl">
-              Companies and organizations I have had the privilege of collaborating with.
+            <p className="text-foreground max-w-xl text-balance">
+              Companies and organizations I have had the privilege of collaborating with on cloud and AI initiatives.
             </p>
           </div>
 
@@ -267,8 +421,8 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Writing
             </h2>
-            <p className="text-foreground max-w-xl">
-              Thoughts on technology, development, and building for impact.
+            <p className="text-foreground max-w-xl text-balance">
+              Thoughts on AI, cloud architecture, development, and building technology for impact.
             </p>
           </div>
 
@@ -288,8 +442,8 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Contact
             </h2>
-            <p className="text-foreground mb-6">
-              Interested in working together or just want to say hello? Feel free to reach out.
+            <p className="text-foreground mb-6 text-balance">
+              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect.
             </p>
             
             <div className="space-y-3">
@@ -327,7 +481,7 @@ function App() {
       <footer className="border-t border-border py-8">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            {new Date().getFullYear()} Ayabonga Qwabi
+            {new Date().getFullYear()} Ayabonga Qwabi. AI Specialist & Cloud Architect.
           </p>
           <div className="flex items-center gap-6">
             <a 
