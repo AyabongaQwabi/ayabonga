@@ -130,8 +130,8 @@ Below is the complete documented descendant tree from Sonyethe, drawn directly f
  └── **Oliphant / Molose Qwabi**  
  ├── Varhile Qwabi  
  ├── Amoria Qwabi (m. Mpitimpiti Bles)  
- ├── Bennet Qwabi  
- ├── Caroline Qwabi (Lesseyton)  
+ ├── Bennet Qwabi (Gcinikhaya's father)
+├── Caroline Qwabi (Lesseyton)  
  ├── Dumile Qwabi  
  │ ├── Malungelo Qwabi  
  │ ├── Poto Qwabi  
