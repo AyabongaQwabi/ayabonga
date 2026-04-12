@@ -65,7 +65,7 @@ Molose earned the nickname **“Oliphant”** (elephant) from the Boer family hi
 During one of Qwabi’s periods away at war (likely the Anglo-Boer War era), he sent word that his son should be named **Morrison** after his English army commander. Xhosa speakers found “Morrison” difficult to pronounce, and the name evolved into **Molose**. Family researchers believe this refers to Sir Edward Whipple Bancroft Morrison (1867–1925), a senior military figure whose name would have been known in South African campaigns.
 
 **Molose’s known children (full GEDCOM + family elder corrections):**  
-According to family elder Monwabisi Qwabi, Molose’s children in approximate birth order were: **Dumile**, **Kholiwe**, **Ntlanganiso (Yankee)**, **Nobhayisekile**, **Roro (William)**, and **Nomabali**, together with **Varhile**, **Amoria**, **Bennet**, **Caroline**, **George**, and **Yanki**.
+According to family elder Monwabisi Qwabi, Molose’s children in approximate birth order were: **Dumile**, **Kholiwe**, **Nobhayisekile**, **Roro (William)**, and **Nomabali**, together with **Varhile**, **Amoria**, **Bennet**, **Caroline**, **George**, and **Yanki**.
 
 - **Varhile Qwabi** (eldest son — believed to have been left behind in Rustenburg / Steynsburg when the family returned to Lady Frere; he later changed his name in some records. He is historically significant as the eldest descendant in the direct male line from Qwabi. According to family tradition, **the head of the Qwabi family is the eldest living descendant of Varhile**.)
 - **Amoria Qwabi** (married Mpitimpiti Bles, 12 May 1942, Queenstown)
