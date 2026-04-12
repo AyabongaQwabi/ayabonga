@@ -1,4 +1,3 @@
-```markdown
 ---
 title: 'Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape'
 excerpt: 'Documented oral history and GEDCOM-verified lineage from Sonyethe to Hala 2 — AmaQithi, Bhangile, Dumile, Molose, and preserving the full Qwabi story for descendants.'
@@ -162,4 +161,7 @@ This oral history, combined with GEDCOM records and recent archival research, re
 If you are a member of the Qwabi family or have additional information, stories, photos, or corrections, please feel free to reach out. The goal is to document and strengthen the record for our children and grandchildren.
 
 **Key search terms for future generations:** Qwabi family history Eastern Cape · AmaQithi clan · Hala 2 Lady Frere · Bulhoek Qwabi · Dumile Qwabi · Ndlovukazi Lesseyton Qwabi · Sirayeli Bhangile · Halile Jonas Qwabi Bulhoek Massacre · AbaThembu Qwabi · Glen Grey Qwabi
+
+```
+
 ```
