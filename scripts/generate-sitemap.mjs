@@ -15,10 +15,11 @@ const root = path.join(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const blogDir = path.join(root, 'src/content/blog');
 
-const SITE_URL = (process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://www.ayabonga.com').replace(
-  /\/$/,
-  '',
-);
+const SITE_URL = (
+  process.env.SITE_URL ||
+  process.env.VITE_SITE_URL ||
+  'https://www.qwabi.co.za'
+).replace(/\/$/, '');
 
 function parseFrontmatterDate(raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -26,7 +27,10 @@ function parseFrontmatterDate(raw) {
   const dateLine = m[1].split(/\r?\n/).find((line) => /^date:\s*/i.test(line));
   if (!dateLine) return undefined;
   let v = dateLine.replace(/^date:\s*/i, '').trim();
-  if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
     v = v.slice(1, -1);
   }
   const t = Date.parse(v);
@@ -72,7 +76,9 @@ async function main() {
 
   await pipeline(Readable.from(links), sm, write);
 
-  console.log(`generate-sitemap: wrote ${links.length} URLs to ${outPath} (${SITE_URL})`);
+  console.log(
+    `generate-sitemap: wrote ${links.length} URLs to ${outPath} (${SITE_URL})`,
+  );
 }
 
 main().catch((err) => {

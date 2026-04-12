@@ -4,7 +4,7 @@ const envSite =
     : '';
 
 /** Canonical site URL (no trailing slash). Set `VITE_SITE_URL` for previews/staging. */
-export const SITE_ORIGIN = envSite || 'https://www.ayabonga.com';
+export const SITE_ORIGIN = envSite || 'https://www.qwabi.co.za';
 
 export const SITE_NAME = 'Ayabonga Qwabi';
 

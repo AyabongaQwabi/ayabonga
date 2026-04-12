@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ayabonga.com/sitemap.xml
+Sitemap: https://www.qwabi.co.za/sitemap.xml
