@@ -44,13 +44,19 @@ In 1919, when Mashiya passed away, the family (including Molose and Boesman with
 
 ## The story of Bhangile and the move to Hala 2
 
-**Bhangile Qwabi** (born July 1913 in Glen Grey; died 2003 in Lady Frere, Chris Hani; buried 2003 in Lady Frere) arrived in Skhwanqeni around 1958. Upon Boesman’s death, he inherited the homestead.
+## The story of Bhangile and the move to Hala 2
+
+**Bhangile Qwabi**
+
+(born July 1913 in Glen Grey; died 2003 in Lady Frere, Chris Hani; buried 2003 in Lady Frere) arrived in Skhwanqeni around 1958. Upon Bushman’s death, he inherited the homestead.
 
 Life in the area was extremely difficult. Bhangile and his wife, **Christina Nozolile Qwabi** (died 2004 in Komani), lost at least four children in infancy or early childhood to pneumonia and bronchitis — tragedies that were all too common in those years. Heartbroken and exhausted by the hardships, his wife insisted they leave. They eventually relocated to **Hala 2** (near Lady Frere).
 
-Bhangile later became famously known in Hala 2 as **“Sirayeli”** (Israelite). This name came from his father Halile’s affiliation with the **Church of God and Saints of Christ** (AmaSirayeli).
+Bhangile later became famously known in Hala 2 as **“Sirayeli”** (Israelite). This name came from his father Halile’s deep affiliation with the **Church of God and Saints of Christ** (AmaSirayeli).
 
-**I also found out that Halile really did die in the Bulhoek Massacre and is one of the men that were mercilessly buried on a mass grave (the pain the apartheid government has done on us is unbearable). They even went so far as to not even create a civil registration of his death for him and others — it was like he just didn’t matter. RIP Halile Jonas Qwabi.**
+It was while researching the roots of that very name that the full weight of our family’s pain came into focus. Halile Jonas Qwabi was not simply a devout member of the church — he was one of the many innocent men who died in the **Bulhoek Massacre** of 1921. He lies among those mercilessly buried in a mass grave, denied even the dignity of an individual burial. The apartheid government went so far as to erase any civil registration of his death, along with the others, as if they simply did not matter. The pain this system inflicted on our family — and on so many Black families across South Africa — remains unbearable to this day.
+
+**RIP Halile Jonas Qwabi.** Your name and your story will not be forgotten.
 
 ## The legacy of Molose (Oliphant)
 
