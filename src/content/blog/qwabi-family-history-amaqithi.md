@@ -112,7 +112,7 @@ You can view the location here: [Qwabi Village, Bulhoek on Google Maps](https://
 
 ## Full descendants of Sonyethe (GEDCOM-verified lineage + elder corrections)
 
-Below is the complete documented descendant tree from Sonyethe, drawn directly from the family GEDCOM and updated with corrections from Monwabisi Qwabi. For privacy and per family request, **offspring of the current young-adult generation (Ayabonga’s generation and younger) are not documented here**.
+Below is the complete documented descendant tree from Sonyethe, drawn directly from the family GEDCOM. (current generation not shown)
 
 **Sonyethe**  
 └── **Nqumama**  
