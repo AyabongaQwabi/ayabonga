@@ -63,7 +63,7 @@ According to family elder Monwabisi Qwabi, Molose’s children in approximate bi
 
 - **Varhile Qwabi** (eldest son — believed to have been left behind in Rustenburg / Steynsburg when the family returned to Lady Frere; he later changed his name in some records. He is historically significant as the eldest descendant in the direct male line from Qwabi. According to family tradition, **the head of the Qwabi family is the eldest living descendant of Varhile**.)
 - **Amoria Qwabi** (married Mpitimpiti Bles, 12 May 1942, Queenstown)
-- **Bennet Qwabi** (father of Cimikhaya; died in a mine accident in Gauteng)
+- **Bennet Qwabi** (father of Gcinikhaya; died in a mine accident in Gauteng)
 - **Caroline Qwabi** (born and died in Lesseyton, Cape Province)
 - **Dumile Qwabi** (see below)
 - **George Qwabi** (married Jessie Jikumlambo, 15 May 1939, Queenstown)
