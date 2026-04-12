@@ -84,7 +84,7 @@ My aunt Zingisa once met a girl in school named **Ngcwele Qwabi** from Graaf Rei
 
 Dumile helped relatives by allocating land in the Lady Frere area. It was through his influence that Bhangile’s family eventually settled in Hala 2.
 
-**Dumile’s known children (per family elder Monwabisi Qwabi):** Malungelo, Poto, Mziwamadoda, Queen, Malungisa and Yamkela.
+**Dumile’s known children :** Malungelo, Poto, Mziwamadoda, Queen, Malungisa and Yamkela.
 
 ## Military tradition in the Qwabi family
 
