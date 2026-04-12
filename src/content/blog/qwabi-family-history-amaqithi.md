@@ -110,7 +110,7 @@ There is a village named **Qwabi** in the Bulhoek area (near Queenstown in the C
 
 You can view the location here: [Qwabi Village, Bulhoek on Google Maps](https://maps.app.goo.gl/JKn9TpVhJvgNUGcM6).
 
-## Full descendants of Sonyethe (GEDCOM-verified lineage + elder corrections)
+## Full descendants of Sonyethe (GEDCOM-verified lineage)
 
 Below is the complete documented descendant tree from Sonyethe, drawn directly from the family GEDCOM. (current generation not shown)
 
@@ -170,7 +170,7 @@ Below is the complete documented descendant tree from Sonyethe, drawn directly f
  ├── Boniswa Qwabi  
  ├── Mzukisi Qwabi  
  ├── Ntobeko Qwabi  
- └── Nomaphelo (Amos) Qwabi (last born)
+ └── Nomaphelo Qwabi & Amos Qwabi (last born)
 
 ## Preserving the story
 
