@@ -49,7 +49,7 @@ Some were in their late teens. Some were in their twenties. Even those in their 
 - Barnabas Poswa (33)
 - Alfred Poswa (36)
 - Edward Luso (36)
-- Wilson Mgijima (son of Enoch) (19)
+- Wilson Mgijima (son of Enoch Mgijima) (19)
 - Edwin Mgijima (22)
 - Felix Mgijima (30)
 - Alfred Sobantu Mgijima (14)
@@ -88,7 +88,7 @@ Sometimes it leads you to grief that still echoes across generations.
 
 And sometimes, the best thing you can do is write the names down and make sure they are seen.
 
-— *Ayabonga Qwabi*
+— _Ayabonga Qwabi_
 
 ## Source
 
