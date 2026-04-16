@@ -61,6 +61,7 @@ async function main() {
 
   const links = [
     { url: '/', changefreq: 'weekly', priority: 1 },
+    { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },
     ...blogEntries.map(({ slug, lastmod }) => ({
       url: `/blog/${slug}`,

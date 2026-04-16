@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2 } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2, Calculator } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -158,6 +158,13 @@ function App() {
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Writing
               </Link>
+              <Link
+                to="/get-a-quote"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+              >
+                <Calculator className="w-3.5 h-3.5" aria-hidden />
+                Quote
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -188,6 +195,13 @@ function App() {
                 </button>
                 <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Writing
+                </Link>
+                <Link
+                  to="/get-a-quote"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                >
+                  <Calculator className="w-4 h-4" aria-hidden />
+                  Quote
                 </Link>
               </div>
             </div>
@@ -470,7 +484,12 @@ function App() {
               Contact
             </h2>
             <p className="text-foreground mb-6 text-balance">
-              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect.
+              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect. For a
+              ballpark scope and budget, try the{' '}
+              <Link to="/get-a-quote" className="text-primary hover:text-primary/80 underline-offset-4 hover:underline">
+                interactive project quote tool
+              </Link>
+              .
             </p>
             
             <div className="space-y-3">
