@@ -6,6 +6,7 @@ import { blogPosts } from '../data/blog-posts';
 import type { BlogPost } from '../data/blog-posts';
 import { BlogTaxonomy } from '../components/BlogTaxonomy';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import {
   absoluteUrl,
   absoluteMediaUrl,
@@ -150,6 +151,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
 
           <div className="prose prose-invert prose-lg max-w-none">
             <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
               components={{
                 h1: ({ children }) => (
                   <h1 className="text-2xl font-bold text-foreground mt-12 mb-4">{children}</h1>
@@ -170,16 +172,28 @@ function BlogPostView({ post }: { post: BlogPost }) {
                   <ol className="list-decimal list-inside space-y-2 text-muted-foreground mb-6">{children}</ol>
                 ),
                 li: ({ children }) => <li className="text-muted-foreground">{children}</li>,
-                a: ({ href, children }) => (
-                  <a
-                    href={href}
-                    className="text-primary hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {children}
-                  </a>
-                ),
+                a: ({ href, children, ...props }) => {
+                  const isHash = typeof href === 'string' && href.startsWith('#');
+                  const isExternal =
+                    typeof href === 'string' &&
+                    (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:'));
+                  return (
+                    <a
+                      href={href}
+                      className={
+                        isHash
+                          ? 'text-primary font-medium tabular-nums underline-offset-2 hover:underline'
+                          : 'text-primary hover:underline'
+                      }
+                      {...(isExternal
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                      {...props}
+                    >
+                      {children}
+                    </a>
+                  );
+                },
                 code: ({ className, children }) => {
                   const isBlock = className?.includes('language-');
                   if (isBlock) {
