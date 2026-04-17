@@ -7,6 +7,10 @@ export interface BlogPost {
   content: string;
   tags: string[];
   categories: string[];
+  /** Site-root path (`/images/...`) or absolute `https://` URL for og:image / Twitter card / JSON-LD. */
+  ogImage?: string;
+  /** Optional hero image in the article; if omitted but `ogImage` is set, the OG image is shown in the header. */
+  headerImage?: string;
 }
 
 const rawModules = import.meta.glob<string>('../content/blog/*.md', {
@@ -66,6 +70,8 @@ interface PostFrontmatter {
   slug?: string;
   tags?: string;
   categories?: string;
+  ogImage?: string;
+  headerImage?: string;
 }
 
 function loadBlogPosts(): BlogPost[] {
@@ -78,6 +84,13 @@ function loadBlogPosts(): BlogPost[] {
     const slug =
       typeof fm.slug === 'string' && fm.slug.trim().length > 0 ? fm.slug.trim() : fileSlug;
 
+    const ogImage =
+      typeof fm.ogImage === 'string' && fm.ogImage.trim().length > 0 ? fm.ogImage.trim() : undefined;
+    const headerImage =
+      typeof fm.headerImage === 'string' && fm.headerImage.trim().length > 0
+        ? fm.headerImage.trim()
+        : undefined;
+
     posts.push({
       slug,
       title: typeof fm.title === 'string' ? fm.title : fileSlug,
@@ -87,6 +100,8 @@ function loadBlogPosts(): BlogPost[] {
       content,
       tags: parseCommaList(fm.tags),
       categories: parseCommaList(fm.categories),
+      ...(ogImage ? { ogImage } : {}),
+      ...(headerImage ? { headerImage } : {}),
     });
   }
 

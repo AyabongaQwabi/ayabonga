@@ -8,6 +8,7 @@ import { BlogTaxonomy } from '../components/BlogTaxonomy';
 import ReactMarkdown from 'react-markdown';
 import {
   absoluteUrl,
+  absoluteMediaUrl,
   DEFAULT_OG_IMAGE,
   SITE_NAME,
   TWITTER_HANDLE,
@@ -30,6 +31,9 @@ function BlogPostView({ post }: { post: BlogPost }) {
   const pageTitle = `${post.title} | Writing | ${SITE_NAME}`;
   const datePublished = parsePostDateForSchema(post.date);
   const keywords = [...post.categories, ...post.tags].filter(Boolean).join(', ');
+  const shareImagePath = post.ogImage || post.headerImage;
+  const shareImageUrl = shareImagePath ? absoluteMediaUrl(shareImagePath) : DEFAULT_OG_IMAGE;
+  const heroImagePath = post.headerImage || post.ogImage;
 
   const articleJsonLd = useMemo(() => {
     const doc: Record<string, unknown> = {
@@ -48,7 +52,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
         name: SITE_NAME,
         url: absoluteUrl('/'),
       },
-      image: DEFAULT_OG_IMAGE,
+      image: shareImageUrl,
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': canonical,
@@ -59,8 +63,12 @@ function BlogPostView({ post }: { post: BlogPost }) {
       doc.datePublished = `${datePublished}T12:00:00+02:00`;
       doc.dateModified = `${datePublished}T12:00:00+02:00`;
     }
+    const primarySection = post.categories[0];
+    if (primarySection) {
+      doc.articleSection = primarySection;
+    }
     return JSON.stringify(doc);
-  }, [post.title, post.excerpt, canonical, datePublished]);
+  }, [post.title, post.excerpt, post.categories, canonical, datePublished, shareImageUrl]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -73,7 +81,8 @@ function BlogPostView({ post }: { post: BlogPost }) {
         <meta property="og:url" content={canonical} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta property="og:image" content={shareImageUrl} />
+        <meta property="og:image:alt" content={post.title} />
         <meta property="og:locale" content="en_ZA" />
         <meta property="article:author" content={SITE_NAME} />
         {datePublished ? (
@@ -82,7 +91,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:image" content={shareImageUrl} />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -118,6 +127,23 @@ function BlogPostView({ post }: { post: BlogPost }) {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{post.title}</h1>
 
             <p className="text-lg text-muted-foreground mb-6">{post.excerpt}</p>
+
+            {heroImagePath ? (
+              <figure className="mb-8 rounded-lg overflow-hidden border border-border bg-card">
+                <img
+                  src={heroImagePath}
+                  alt="Historical illustration titled Ntsikana Ongcwele — Ntsikana kaGaba with raised hand and cross, used to frame a decolonial critique of missionary hagiography."
+                  className="w-full h-auto object-cover max-h-[min(70vh,520px)] object-top"
+                  width={920}
+                  height={1200}
+                  loading="eager"
+                  decoding="async"
+                />
+                <figcaption className="px-4 py-3 text-xs text-muted-foreground border-t border-border">
+                  Archival-style portrait labelled “Ntsikana Ongcwele” — the visual language of sainthood that colonial and mission presses popularised.
+                </figcaption>
+              </figure>
+            ) : null}
 
             <BlogTaxonomy categories={post.categories} tags={post.tags} size="md" />
           </header>

@@ -24,6 +24,14 @@ export function absoluteUrl(path: string): string {
   return `${SITE_ORIGIN}${p}`;
 }
 
+/** Absolute URL for Open Graph / Twitter when frontmatter is a path (`/images/...`) or already `https://`. */
+export function absoluteMediaUrl(pathOrUrl: string): string {
+  const s = pathOrUrl.trim();
+  if (!s) return DEFAULT_OG_IMAGE;
+  if (/^https?:\/\//i.test(s)) return s;
+  return absoluteUrl(s.startsWith('/') ? s : `/${s}`);
+}
+
 /** Best-effort ISO date for JSON-LD from frontmatter display strings like "April 15, 2026". */
 export function parsePostDateForSchema(dateStr: string): string | undefined {
   const t = Date.parse(dateStr);
