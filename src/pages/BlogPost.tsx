@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
@@ -15,6 +15,45 @@ import {
   TWITTER_HANDLE,
   parsePostDateForSchema,
 } from '../lib/site-config';
+
+const CITE_HREF = /^#cite-(\d+)$/;
+
+/** In-article citation: small superscript-style [n] linking to Works cited. */
+function CitationRef({ href }: { href: string }) {
+  const m = href.match(CITE_HREF);
+  const n = m?.[1] ?? '';
+  return (
+    <a
+      href={href}
+      title={`Source [${n}] in Works cited`}
+      className="not-prose ms-0.5 inline-block align-super text-[0.68em] font-semibold leading-none text-primary no-underline hover:underline decoration-primary/70 underline-offset-2"
+    >
+      [{n}]
+    </a>
+  );
+}
+
+function MarkdownAnchor({
+  href,
+  children,
+}: {
+  href?: string;
+  children?: ReactNode;
+}) {
+  if (href && CITE_HREF.test(href)) {
+    return <CitationRef href={href} />;
+  }
+  return (
+    <a
+      href={href}
+      className="text-primary hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -172,28 +211,9 @@ function BlogPostView({ post }: { post: BlogPost }) {
                   <ol className="list-decimal list-inside space-y-2 text-muted-foreground mb-6">{children}</ol>
                 ),
                 li: ({ children }) => <li className="text-muted-foreground">{children}</li>,
-                a: ({ href, children, ...props }) => {
-                  const isHash = typeof href === 'string' && href.startsWith('#');
-                  const isExternal =
-                    typeof href === 'string' &&
-                    (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:'));
-                  return (
-                    <a
-                      href={href}
-                      className={
-                        isHash
-                          ? 'text-primary font-medium tabular-nums underline-offset-2 hover:underline'
-                          : 'text-primary hover:underline'
-                      }
-                      {...(isExternal
-                        ? { target: '_blank', rel: 'noopener noreferrer' }
-                        : {})}
-                      {...props}
-                    >
-                      {children}
-                    </a>
-                  );
-                },
+                a: ({ href, children }) => (
+                  <MarkdownAnchor href={href}>{children}</MarkdownAnchor>
+                ),
                 code: ({ className, children }) => {
                   const isBlock = className?.includes('language-');
                   if (isBlock) {
