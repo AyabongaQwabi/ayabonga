@@ -1,6 +1,6 @@
 ---
-title: "Ntsikana was a sellout"
-excerpt: "A critical reading of Ntsikana in the colonial frontier moment: pacification, psychological disarmament, and why impact matters more than intention."
+title: 'Ntsikana was a sellout'
+excerpt: 'A critical reading of Ntsikana in the colonial frontier moment: pacification, psychological disarmament, and why impact matters more than intention.'
 date: April 18, 2026
 readTime: 12 min read
 tags: Ntsikana, Xhosa history, Colonialism, Christianity, Nxele, Lovedale, South Africa, Philosophy
@@ -87,7 +87,7 @@ Ntsikana attacked that foundation [6](#cite-6)[14](#cite-14).
 
 He warned against money, calling it:
 
-> *"iqhosha elingenamngxuma"*, a button without a hole [14](#cite-14)[16](#cite-16)
+> _"iqhosha elingenamngxuma"_, a button without a hole [14](#cite-14)[16](#cite-16)
 
 He discouraged:
 
