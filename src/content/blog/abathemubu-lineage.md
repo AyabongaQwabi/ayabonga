@@ -1,13 +1,13 @@
 ---
-title: "AbaThembu Lineage"
-excerpt: "From Zwide and Njanya to Buyelekhaya Dalindyebo — Thembu genealogy, kingship, and history, written for NomavaTV."
+title: 'AbaThembu Lineage'
+excerpt: 'From Zwide and Njanya to Buyelekhaya Dalindyebo — Thembu genealogy, kingship, and history, written for NomavaTV.'
 date: April 11, 2026
 readTime: 18 min read
-tags: Thembu, Genealogy, South Africa, NomavaTV, isiXhosa history
+tags: Thembu, Genealogy, South Africa, NomavaTV, Xhosa history
 categories: Culture, History
 ---
 
-> **Written by Ayabonga** · *Ifafa elide lakwa Qithi* · *“Umthi omde wokuvelela izinto”*  
+> **Written by Ayabonga** · _Ifafa elide lakwa Qithi_ · _“Umthi omde wokuvelela izinto”_  
 > **For [NomavaTV](https://www.youtube.com/@NomavaTV)**
 
 ---
@@ -90,7 +90,7 @@ From Ntongakazi came **Bhomoyi**, whose leadership was crucial during a time of 
 
 From Bhomoyi came **Cedume**, who exemplified resilience and adaptability within Thembu society.
 
-From Cedume came **Zima and Ntande**. The period under Zima and Ntande reflects significant transformation within the lineage. Zima was regent for Ntande; when the time came for Ntande to rule, Zima did not want to leave the throne. Ntande faked illness to lure Zima into *ebuhlathi* and slew him and his men with spears.
+From Cedume came **Zima and Ntande**. The period under Zima and Ntande reflects significant transformation within the lineage. Zima was regent for Ntande; when the time came for Ntande to rule, Zima did not want to leave the throne. Ntande faked illness to lure Zima into _ebuhlathi_ and slew him and his men with spears.
 
 Under Ntande’s time is the first recorded iron made by Thembu people.
 
@@ -98,7 +98,7 @@ From Ntande came **Mqithi, Mnguthi, Maya, and Mcube**.
 
 **Mnguthi** led modern-day Thembu people from Herschel, near Lesotho, to modern-day Ngcobo. He assimilated AmaBomvana and AmaQwathi into the Thembu nation.
 
-It is said Mnguthi never died: at old age he entered the Mbashe river and never returned, creating what is known spiritually today as *isiziba sama Dlomo* — a powerful spiritual connection for the Dlomo clan. Even in death he served his people.
+It is said Mnguthi never died: at old age he entered the Mbashe river and never returned, creating what is known spiritually today as _isiziba sama Dlomo_ — a powerful spiritual connection for the Dlomo clan. Even in death he served his people.
 
 **Mnguthi's sons**
 
@@ -123,7 +123,7 @@ Nxeko’s sons — **Ndungwana**, **Hlanga**, and **Dlomo** — navigated a comp
 
 Dlomo's reign marked consolidation and expansion within Thembu territories.
 
-Dlomo is believed to have introduced fabricated ancestor names into Thembu genealogy (*umnombo*) — figures some say never existed, such as Yem Yem, Sopitsho and Ngqolomsila. Other sources hold these names may be of Khwena origin, with Yem Yem as **Xam Xam** in Khwena.
+Dlomo is believed to have introduced fabricated ancestor names into Thembu genealogy (_umnombo_) — figures some say never existed, such as Yem Yem, Sopitsho and Ngqolomsila. Other sources hold these names may be of Khwena origin, with Yem Yem as **Xam Xam** in Khwena.
 
 Dlomo is also believed to have slain his father during the war of 1680 with Nxeko.
 
@@ -219,5 +219,5 @@ King **Buyelekhaya Dalindyebo** continues to lead the amaThembu, navigating trad
 7. [Wikipedia — Thembuland](https://en.wikipedia.org/wiki/Thembuland)
 8. [Simple Wikipedia — Thembu people](https://simple.wikipedia.org/wiki/Thembu_people)
 9. [SA History — Thembuland](https://www.sahistory.org.za/place/thembuland)
-10. J. H. Soga — *The South Eastern Bantu*
-11. Mlungisi Ndima — *A History of the Qwathi People from Earliest Times to 1910* (MA thesis, Rhodes University, December 1988)
+10. J. H. Soga — _The South Eastern Bantu_
+11. Mlungisi Ndima — _A History of the Qwathi People from Earliest Times to 1910_ (MA thesis, Rhodes University, December 1988)
