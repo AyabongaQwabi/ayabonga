@@ -118,7 +118,7 @@ _(He forbade the people of his household from using imbola, from going to dances
 
 He washed the red clay off his own family and declared ancestral ways evil. In one stroke he cut the spiritual cord that connected the living to the dead, the foundation of **Xhosa identity and power**.
 
-### 2. Spiritualising poverty: the “button without a hole” prophecy
+### 2. Spiritualising poverty: the “button without a mouth” prophecy
 
 Ntsikana warned his people about the coming white nation:
 
@@ -126,24 +126,26 @@ Ntsikana warned his people about the coming white nation:
 
 _(The white nation will come … it will have a button without a mouth; do not accept the button, it will sweep away the majority … the second thing they will speak about is the Word of God; accept that.)_
 
-While this passage is often presented as prophetic genius, it reads very differently when placed inside the documented reality of the time.
+Here **iqhosha elingenamlomo** is not a fashion metaphor about coats. In this saying the **button** images **money**: small round metal **coins**, the white nation’s tokens of **wealth**, useless in the old moral sense (a “button” that has no “mouth”, no living tie to how amaXhosa stored value in cattle, land, and kin). The warning is about **accepting their coin and their economy**, not about misty prophecy.
+
+While this passage is often presented as prophetic genius, it reads very differently when you keep the referent on **wealth**.
 
 Missionaries and colonial agents were already discussing:
 
-- trade goods
-- European clothing
-- expanding influence
-- British political control
+- **coin, currency, and debt** as the new face of wealth
+- **tax, trade, and wages** that broke the cattle economy
+- **land and labour** as things to be priced and seized
+- **British political control** over who would count as rich or ruined
 
 So the “button without a mouth” is not mystical knowledge.
 
-It is **observation filtered through a religious framework**.
+It is **hard talk about money**, dressed in a line everyone could repeat.
 
 More importantly, his instruction is revealing:
 
-> Reject the material object, but accept the Word.
+> Reject that **coin** (their wealth system), but accept the **Word**.
 
-At the exact moment when colonial power was restructuring land, labour, and wealth, Ntsikana redirects attention away from material survival toward spiritual compliance.
+At the exact moment when colonial power was restructuring land, labour, and **wealth**, Ntsikana still splits the listener: turn your desire away from **material survival and accumulation**, turn it toward **spiritual compliance**.
 
 That is not neutral theology.
 
