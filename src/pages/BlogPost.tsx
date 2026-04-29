@@ -7,6 +7,7 @@ import type { BlogPost } from '../data/blog-posts';
 import { BlogTaxonomy } from '../components/BlogTaxonomy';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 import {
   absoluteUrl,
   absoluteMediaUrl,
@@ -190,6 +191,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
 
           <div className="prose prose-invert prose-lg max-w-none">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
               components={{
                 h1: ({ children }) => (
@@ -240,6 +242,28 @@ function BlogPostView({ post }: { post: BlogPost }) {
                   <strong className="text-foreground font-semibold">{children}</strong>
                 ),
                 em: ({ children }) => <em className="italic">{children}</em>,
+                table: ({ children }) => (
+                  <div className="not-prose my-6 overflow-x-auto rounded-lg border border-border">
+                    <table className="w-full min-w-[min(100%,20rem)] border-collapse text-sm">
+                      {children}
+                    </table>
+                  </div>
+                ),
+                thead: ({ children }) => (
+                  <thead className="border-b border-border bg-card/50">{children}</thead>
+                ),
+                tbody: ({ children }) => <tbody>{children}</tbody>,
+                tr: ({ children }) => <tr className="border-b border-border/50 last:border-0">{children}</tr>,
+                th: ({ children }) => (
+                  <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-foreground">
+                    {children}
+                  </th>
+                ),
+                td: ({ children }) => (
+                  <td className="px-3 py-2.5 align-top text-muted-foreground first:text-foreground/90">
+                    {children}
+                  </td>
+                ),
               }}
             >
               {post.content}

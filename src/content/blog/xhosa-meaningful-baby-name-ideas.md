@@ -86,5 +86,3 @@ Use the list as **inspiration**, not a rulebook. Spelling, **(u) / (i)** class p
 ## A last word
 
 The best isiXhosa names **carry a sentence a person can grow into** from cradle to old age: gratitude, a promise, a warning, a blessing. If one line on this page makes you pause, **say it at night**, then **in daylight**, then **with your people**. If it still sounds like _yours_, you are already naming well.
-
-_If you want a follow-up, we can group these by **sounds** (siblings) or by **sibongo** and **izithakazelo** so a name does not sit awkwardly on the surname line._
