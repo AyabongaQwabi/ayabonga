@@ -19,6 +19,9 @@ export const DEFAULT_OG_IMAGE =
 
 export const TWITTER_HANDLE = '@ayabongaqwabi';
 
+/** Disqus site shortname (https://disqus.com/admin/settings/general/) */
+export const DISQUS_SHORTNAME = 'qwabi';
+
 export function absoluteUrl(path: string): string {
   const p = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_ORIGIN}${p}`;
