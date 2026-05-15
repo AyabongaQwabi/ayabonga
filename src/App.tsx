@@ -129,6 +129,47 @@ function App() {
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ayabonga Qwabi",
+            "jobTitle": "Senior Product Engineer",
+            "url": "https://qwabi.co.za",
+            "sameAs": [
+              "https://github.com/ayabongaqwabi",
+              "https://linkedin.com/in/ayabongaqwabi",
+              "https://twitter.com/ayabongaqwabi"
+            ],
+            "description": "Technical Co-founder as a Service. Building full-stack digital products and AI solutions for founders and agencies in South Africa.",
+            "image": profileImages[1].src,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Queenstown",
+              "addressRegion": "Eastern Cape",
+              "addressCountry": "ZA"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Technical Co-founder as a Service",
+            "provider": {
+              "@type": "Person",
+              "name": "Ayabonga Qwabi"
+            },
+            "description": "End-to-end product engineering, AI integration, and cloud architecture for non-technical founders.",
+            "areaServed": "South Africa",
+            "offers": {
+              "@type": "Offer",
+              "description": "Fixed-price Phase 1 builds starting from R50,000"
+            }
+          })}
+        </script>
       </Helmet>
       <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Navigation */}
@@ -139,7 +180,10 @@ function App() {
       >
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold text-primary">AQ</span>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <span className="text-xl font-bold tracking-tight text-foreground">Ayabonga</span>
+            </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
@@ -157,6 +201,9 @@ function App() {
               </button>
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Writing
+              </Link>
+              <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Services
               </Link>
               <Link
                 to="/get-a-quote"
@@ -195,6 +242,9 @@ function App() {
                 </button>
                 <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Writing
+                </Link>
+                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Services
                 </Link>
                 <Link
                   to="/get-a-quote"
@@ -251,7 +301,7 @@ function App() {
                   Ayabonga Qwabi
                 </h1>
                 <p className="text-primary font-semibold text-lg">
-                  AI Specialist & Cloud Architect
+                  Technical Co-founder as a Service
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   Queenstown, Eastern Cape, South Africa
@@ -300,7 +350,7 @@ function App() {
             {/* Right Column - Bio */}
             <div className="space-y-6">
               <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
-                With 10 years of software engineering experience, I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
+                I turn your business idea into a working digital product — apps, platforms, AI tools — without the agency overhead or the junior dev lottery.
               </p>
               
               <p className="leading-relaxed text-muted-foreground">
@@ -344,9 +394,14 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Expertise
             </h2>
-            <p className="text-foreground max-w-xl text-balance">
-              Core competencies spanning AI, cloud architecture, and full-stack development.
-            </p>
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <p className="text-foreground max-w-xl text-balance">
+                Senior engineering spanning AI, cloud architecture, and technical product leadership.
+              </p>
+              <Link to="/services" className="text-sm text-primary hover:underline font-medium shrink-0">
+                View all services →
+              </Link>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -357,7 +412,7 @@ function App() {
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. Specializing in OpenAI, TensorFlow, and custom ML pipelines.
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <Link to="/get-a-quote" className="text-primary underline">Contact me here</Link> for a full walkthrough, custom quote, or partnership discussion.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">OpenAI</span>
@@ -509,15 +564,13 @@ function App() {
                 <ExternalLink className="w-4 h-4" />
                 <span>qwabi.co.za</span>
               </a>
-              <a 
-                href="https://wa.me/27603116777"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+              <Link 
+                to="/get-a-quote"
+                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Chat on WhatsApp</span>
-              </a>
+                <span>Book a Discovery Call</span>
+              </Link>
             </div>
           </div>
         </section>
@@ -529,7 +582,21 @@ function App() {
           <p className="text-sm text-muted-foreground">
             {new Date().getFullYear()} Ayabonga Qwabi. AI Specialist & Cloud Architect.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Services
+            </Link>
+            <Link to="/technical-cofounder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              TaaS
+            </Link>
+            <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+              <Brain className="w-3 h-3" />
+              llms.txt
+            </a>
+            <a href="/pricing.md" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+              <Calculator className="w-3 h-3" />
+              Pricing
+            </a>
             <a 
               href="https://github.com/ayabongaqwabi" 
               target="_blank" 
@@ -545,14 +612,6 @@ function App() {
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               LinkedIn
-            </a>
-            <a 
-              href="https://twitter.com/ayabongaqwabi" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Twitter
             </a>
           </div>
         </div>

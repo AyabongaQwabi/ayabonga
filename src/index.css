@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 217 31% 8%;
+    --foreground: 210 33% 98%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 217 31% 10%;
+    --card-foreground: 210 33% 98%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 217 31% 10%;
+    --popover-foreground: 210 33% 98%;
 
-    --primary: 173 80% 40%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 28 80% 52%;
+    --primary-foreground: 217 31% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 31% 15%;
+    --secondary-foreground: 210 33% 98%;
 
-    --muted: 217 33% 17%;
+    --muted: 217 31% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 173 80% 40%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 28 80% 52%;
+    --accent-foreground: 217 31% 8%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 77% 57%;
+    --destructive-foreground: 210 33% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 173 80% 40%;
+    --border: 217 31% 15%;
+    --input: 217 31% 15%;
+    --ring: 28 80% 52%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -48,8 +48,8 @@
 }
 
 ::selection {
-  background-color: hsl(173 80% 40%);
-  color: hsl(222 47% 6%);
+  background-color: hsl(28 80% 52%);
+  color: hsl(217 31% 8%);
 }
 
 /* Smooth scrolling */
@@ -72,5 +72,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(173 80% 40%);
+  background: hsl(28 80% 52%);
 }

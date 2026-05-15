@@ -52,9 +52,9 @@ Android APKs downloadable directly from demo site. Check screenshots, flows & da
 
 https://lnkd.in/dB4uM3K2
 
-Serious buyers only — starting at R250,000 (one-time license fee, negotiable based on scope/support).
+Interested in launching your own? Check out my [Technical Partnership for Marketplaces](/solutions/marketplace-founders-south-africa).
 
-DM me or WhatsApp +27 60 311 6777 with "LAUNDRY DEMO" or "PRICING" for full walkthrough, custom quote, or partnership discussion.
+[Book a discovery call](/get-a-quote) to discuss the full walkthrough, custom quote, or partnership discussion.
 
 Who's positioning to dominate on-demand home services in SA next? Drop 🔥 if you're in — or tag an entrepreneur who needs this.
 

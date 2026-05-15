@@ -6,6 +6,9 @@ import App from './App.tsx';
 import Blog from './pages/Blog.tsx';
 import BlogPost from './pages/BlogPost.tsx';
 import GetAQuotePage from './pages/GetAQuotePage.tsx';
+import ServicesPage from './pages/Services.tsx';
+import TechnicalCofounderPage from './pages/TechnicalCofounder.tsx';
+import DynamicServicePage from './pages/DynamicServicePage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -14,6 +17,9 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/technical-cofounder" element={<TechnicalCofounderPage />} />
+          <Route path="/solutions/:slug" element={<DynamicServicePage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/get-a-quote" element={<GetAQuotePage />} />
