@@ -393,17 +393,24 @@ export default function GetAQuote({ trustStats = null }) {
     setSubmitError(null);
     setSubmitLoading(true);
     try {
-      // Open-source: no backend by default; use mailto. Replace with your API if needed.
-      const subject = encodeURIComponent('Quote / Build request');
-      const body = encodeURIComponent(
-        [
-          buildRequestForm.projectDetails?.trim() || '(No additional details provided)',
-          '',
-          '--- Quote summary ---',
-          getQuoteSummaryText(),
-        ].join('\n')
-      );
-      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: buildRequestForm.name,
+          email: buildRequestForm.email,
+          projectDetails: buildRequestForm.projectDetails || '(No additional details provided)',
+          quoteSummary: getQuoteSummaryText(),
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send request');
+      }
+
       setProjectDetailsSent(true);
       try {
         localStorage.removeItem(STORAGE_KEY);

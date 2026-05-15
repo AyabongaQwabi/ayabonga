@@ -94,5 +94,53 @@
     "benefit": "Launch a production-grade digital business without giving away equity or managing a rotating door of freelancers.",
     "keywords": ["Technical co-founder South Africa", "TaaS South Africa", "Hire a technical partner", "Senior product engineer SA"],
     "icon": "Zap"
+  },
+  {
+    "slug": "proptech-solutions-south-africa",
+    "title": "Technical Co-founder for PropTech & Real Estate Innovators",
+    "industry": "Real Estate",
+    "location": "South Africa",
+    "audience": "Property Developers & PropTech Founders",
+    "pain_point": "The challenge of building property management portals that sync with MLS systems and handle high-volume visual assets.",
+    "solution": "High-performance property platforms with interactive mapping, secure tenant portals, and automated rental management flows.",
+    "benefit": "Scale your property portfolio with custom technology that automates your heaviest administrative tasks.",
+    "keywords": ["PropTech developer SA", "Real estate software South Africa", "Property portal development"],
+    "icon": "Home"
+  },
+  {
+    "slug": "ecommerce-scale-south-africa",
+    "title": "Custom E-commerce Engineering for High-Volume SA Brands",
+    "industry": "E-commerce",
+    "location": "South Africa",
+    "audience": "D2C Brand Owners & Retailers",
+    "pain_point": "Generic Shopify sites that can't handle complex SA shipping rules, loyalty programs, or deep inventory sync.",
+    "solution": "Headless E-commerce builds using MedusaJS or Shopify Oxygen, integrated with local courier APIs and custom loyalty engines.",
+    "benefit": "Own your customer data and provide a lightning-fast shopping experience that generic templates can't match.",
+    "keywords": ["E-commerce developer SA", "Headless commerce South Africa", "Custom Shopify expert"],
+    "icon": "ShoppingBag"
+  },
+  {
+    "slug": "saas-product-engineering-south-africa",
+    "title": "Senior Technical Partner for B2B SaaS Startups",
+    "industry": "SaaS",
+    "location": "South Africa",
+    "audience": "SaaS Founders & Corporate Spin-offs",
+    "pain_point": "Scaling from a successful pilot to a multi-tenant enterprise platform without introducing technical debt.",
+    "solution": "Multi-tenant architecture design, robust API-first engineering, and automated CI/CD pipelines for rapid deployment.",
+    "benefit": "Build a world-class software product that investors value, founded on senior-level architectural decisions.",
+    "keywords": ["SaaS developer SA", "B2B software engineering", "Product engineering partner"],
+    "icon": "Zap"
+  },
+  {
+    "slug": "solar-energy-platforms-south-africa",
+    "title": "Strategic Tech for Solar & Renewable Energy Providers",
+    "industry": "Clean Energy",
+    "location": "South Africa",
+    "audience": "Solar Installers & Energy Fund Managers",
+    "pain_point": "Managing thousands of solar leads, installation schedules, and financing agreements with spreadsheets.",
+    "solution": "Custom CRM and energy monitoring dashboards for solar operations, including automated financing and compliance workflows.",
+    "benefit": "Dominate the SA solar boom with a professional platform that automates your installation pipeline and customer reporting.",
+    "keywords": ["Solar software developer SA", "Energy platform engineering", "Solar CRM South Africa"],
+    "icon": "Sun"
   }
 ]

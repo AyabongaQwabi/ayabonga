@@ -7,12 +7,18 @@ import {
   Stethoscope, 
   GraduationCap, 
   ShoppingBag, 
+  Brain as BrainIcon,
   ArrowRight, 
   CheckCircle2, 
   Clock, 
   ShieldCheck,
   Zap,
-  ChevronRight
+  ChevronRight,
+  Home,
+  Sun,
+  Globe,
+  Shield,
+  Activity
 } from 'lucide-react';
 import pseoData from '../data/pseo-pages.json';
 
@@ -22,8 +28,13 @@ const iconMap = {
   Stethoscope,
   GraduationCap,
   ShoppingBag,
-  Brain,
-  Zap
+  Brain: BrainIcon,
+  Zap,
+  Home,
+  Sun,
+  Globe,
+  Shield,
+  Activity
 };
 
 const DynamicServicePage = () => {

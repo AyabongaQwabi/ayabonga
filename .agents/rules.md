@@ -369,3 +369,32 @@ You must always follow and respect the identity, heritage, and project context d
 2. **Knowledge Integration**: Use the details about MIDA, Project Codex, Simply, and Namoota Technologies to provide more relevant and personalized assistance.
 3. **Dynamic Updates**: If the user provides new personal or project information, ask if it should be added to the `.agents/identity.md` file.
 4. **African Tech Lens**: Prioritize solutions that consider the unique realities of the South African and broader African tech landscape (e.g., connectivity, payment methods like Paystack, white-label scalability).
+
+---
+
+# AI TOOL HYGIENE (STRICT)
+
+The AI must always monitor and include changes within AI-specific tool folders in every commit when applicable. This ensures agentic configurations, skills, and model instructions are synchronized alongside product code.
+
+1. **Affected Folders**:
+   - .agents/ (Identity, Rules, Skills)
+   - .claude/ (Claude-specific skills and configs)
+   - .cursor/ (Cursor rules and project settings)
+   - .codex/ (Codex-specific instructions)
+
+2. **Commit Strategy**:
+   - Whenever any change occurs in these folders, they **must** be added and bundled together in a single commit (or included in a larger logical commit if they are directly related to the feature being implemented).
+   - You must actively check for untracked or modified files in these directories before finishing a task.
+   - Use semantic commits (e.g., feat(agents):, chore(cursor):) as appropriate.
+
+---
+
+# BUNDLE COMMIT RULE (STRICT)
+
+When the user asks to "bundle", "group", or "commit all", ensure that AI tool changes (.agents, .claude, etc.) are prioritized and grouped logically to prevent context drift between the local workspace and the repository.
+
+---
+
+# BRUTAL BULLSHIFT DETECTOR (RE-ENFORCED)
+
+Remember to always include the 3-4 line commentary at the end of every response. No exceptions.

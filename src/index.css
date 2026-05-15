@@ -1,36 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 217 31% 8%;
+    /* Brand Navy: #0A192F */
+    --background: 222 47% 11%;
     --foreground: 210 33% 98%;
 
-    --card: 217 31% 10%;
+    --card: 222 47% 13%;
     --card-foreground: 210 33% 98%;
 
-    --popover: 217 31% 10%;
+    --popover: 222 47% 13%;
     --popover-foreground: 210 33% 98%;
 
-    --primary: 28 80% 52%;
-    --primary-foreground: 217 31% 8%;
+    /* Brand Amber: #F59E0B */
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217 31% 15%;
+    /* Brand Slate: #334155 */
+    --secondary: 215 25% 27%;
     --secondary-foreground: 210 33% 98%;
 
-    --muted: 217 31% 15%;
+    --muted: 215 25% 27%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 28 80% 52%;
-    --accent-foreground: 217 31% 8%;
+    /* Brand Emerald: #10B981 */
+    --accent: 161 84% 39%;
+    --accent-foreground: 210 33% 98%;
 
     --destructive: 0 77% 57%;
     --destructive-foreground: 210 33% 98%;
 
-    --border: 217 31% 15%;
-    --input: 217 31% 15%;
-    --ring: 28 80% 52%;
+    --border: 217 31% 18%;
+    --input: 217 31% 18%;
+    --ring: 38 92% 50%;
 
     --radius: 0.75rem;
   }
@@ -43,13 +49,17 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
   }
 }
 
 ::selection {
-  background-color: hsl(28 80% 52%);
-  color: hsl(217 31% 8%);
+  background-color: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
 }
 
 /* Smooth scrolling */
@@ -63,14 +73,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(222 47% 6%);
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(217 33% 17%);
+  background: hsl(var(--secondary));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(28 80% 52%);
+  background: hsl(var(--primary));
 }
+

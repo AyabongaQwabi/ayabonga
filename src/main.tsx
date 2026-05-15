@@ -9,6 +9,7 @@ import GetAQuotePage from './pages/GetAQuotePage.tsx';
 import ServicesPage from './pages/Services.tsx';
 import TechnicalCofounderPage from './pages/TechnicalCofounder.tsx';
 import DynamicServicePage from './pages/DynamicServicePage.tsx';
+import DynamicComparisonPage from './pages/DynamicComparisonPage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/technical-cofounder" element={<TechnicalCofounderPage />} />
           <Route path="/solutions/:slug" element={<DynamicServicePage />} />
+          <Route path="/vs/:slug" element={<DynamicComparisonPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/get-a-quote" element={<GetAQuotePage />} />

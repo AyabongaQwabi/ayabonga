@@ -40,17 +40,27 @@ export default function TechnicalCofounderPage() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-16 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-            <GraduationCap className="w-3.5 h-3.5" />
-            <span>The TaaS Model</span>
+        <header className="mb-16 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+              <GraduationCap className="w-3.5 h-3.5" />
+              <span>The TaaS Model</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Your Technical Partner, <span className="text-primary">Without the Equity Split.</span>
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Finding a technical co-founder is hard. Managing a junior developer is risky. Hiring an agency is slow. My "Technical Co-founder as a Service" model gives you a senior partner to own your vision from day one.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Your Technical Partner, <span className="text-primary">Without the Equity Split.</span>
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Finding a technical co-founder is hard. Managing a junior developer is risky. Hiring an agency is slow. My "Technical Co-founder as a Service" model gives you a senior partner to own your vision from day one.
-          </p>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-emerald-500/50 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <img 
+              src="/hero-taas.png" 
+              alt="Strategic Technical Leadership" 
+              className="relative rounded-2xl shadow-2xl border border-white/10"
+            />
+          </div>
         </header>
 
         {/* The Problem */}
@@ -75,6 +85,14 @@ export default function TechnicalCofounderPage() {
                   <p className="text-sm text-muted-foreground">Hiring a slow agency where you pay for account managers, sales reps, and office space—all while waiting weeks for simple product decisions.</p>
                 </div>
               </div>
+            </div>
+            <div className="mt-10">
+              <Link 
+                to="/vs/taas-vs-agency" 
+                className="text-primary font-bold hover:underline inline-flex items-center gap-2"
+              >
+                Read: Why TaaS beats traditional agencies <ArrowLeft className="w-4 h-4 rotate-180" />
+              </Link>
             </div>
           </div>
           <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
