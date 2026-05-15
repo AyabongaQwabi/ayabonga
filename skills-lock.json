@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-readability-audit": {
+      "source": "yangliu2060/smith--skills",
+      "sourceType": "github",
+      "skillPath": "ai-readability-audit/SKILL.md",
+      "computedHash": "ea513e361fb6e716a7ad4cb143438ce2741135cf546eb246bd4abbd49ba26c93"
+    },
+    "bootstrap": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/bootstrap/SKILL.md",
+      "computedHash": "46f18cd32f0f2f0007f79d70e2d708e0383801baee127ff1a3bd747ce4888360"
+    },
+    "chart-visualization": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/chart-visualization/SKILL.md",
+      "computedHash": "5abff376b10bd146ddd102aeafde601e4e86b35557c33fb8b8f9a6b64c4a902d"
+    },
+    "code-documentation": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/code-documentation/SKILL.md",
+      "computedHash": "ec9a1d364fa9e90e425c7c3e8cff85a0cb21ca1b7321b6e4964ece5b693227b1"
+    },
+    "data-analysis": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/data-analysis/SKILL.md",
+      "computedHash": "211ddc0f87fc304e2430200ba973dc7fa02fbe5ec7eb249bfe76050fd1e17cc9"
+    },
+    "find-skill": {
+      "source": "dtyq/magic",
+      "ref": "master",
+      "sourceType": "github",
+      "skillPath": "backend/super-magic/agents/skills/find-skill/SKILL.md",
+      "computedHash": "2d7a56bfbd4ebe85f8f751b4e6440228d26b55567cc1813734e59162c05b86de"
+    },
+    "find-skills": {
+      "source": "bytedance/deer-flow",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "skills/public/find-skills/SKILL.md",
+      "computedHash": "202da6ad9e3c65949fa70371e89b1f55a1f5bd6d11b20b4491af17de495a0caf"
+    },
+    "frontend-design": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/frontend-design/SKILL.md",
+      "computedHash": "8925cd22a5b6dba32095df9dee7b69fe2797bd0e0ba89d3fd8bdaee5543deffc"
+    },
+    "image-generation": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/image-generation/SKILL.md",
+      "computedHash": "dd2d450cdb2fcd39c5f07b8033208bd3676a62f8db3770df01f7ce04dbb61550"
+    },
+    "skill-creator": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/skill-creator/SKILL.md",
+      "computedHash": "de576b55c802a7393d607f899db45959c23878289104a114b090027ab230a264"
+    },
+    "surprise-me": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/surprise-me/SKILL.md",
+      "computedHash": "5f1e90e27bbf451bb0c1878ff4621b39a8f2c47f56e9a9b98426e736fbd1d37a"
+    },
+    "web-design-guidelines": {
+      "source": "bytedance/deer-flow",
+      "sourceType": "github",
+      "skillPath": "skills/public/web-design-guidelines/SKILL.md",
+      "computedHash": "a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a"
+    }
+  }
+}

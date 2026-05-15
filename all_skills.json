@@ -1,0 +1,2786 @@
+[
+  {
+    "name": "ab-test-setup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ab-test-setup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "academic-researcher",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/academic-researcher",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ad-creative",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ad-creative",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "address-github-comments",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/address-github-comments",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "advanced-evaluation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/advanced-evaluation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "article-writing",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/affaan-m-everything-claude-code-article-writing",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-design",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/affaan-m-everything-claude-code-frontend-design",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "agent-reach",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/agent-reach",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ai-seo",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ai-seo",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "analytics-tracking",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/analytics-tracking",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "brand-voice",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/anthropics-knowledge-work-plugins-brand-voice",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "competitive-analysis",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/anthropics-knowledge-work-plugins-competitive-analysis",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd-execute",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd-execute",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd-market",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd-market",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd-market-execute",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd-market-execute",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd-resume",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd-resume",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "apd-state-engine",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/apd-state-engine",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "api-design",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/api-design",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "architecture-decision-records",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/architecture-decision-records",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "aso-audit",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/aso-audit",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "audit-skills",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/audit-skills",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "avoid-ai-writing",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/avoid-ai-writing",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "backend-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/backend-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "git-workflow",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/basher83-lunar-claude-git-workflow",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "brand-guidelines",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/brand-guidelines",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "brand-writer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/brand-writer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "vercel-react-best-practices",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/calcom-cal.com-vercel-react-best-practices",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cc-skill-backend-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cc-skill-backend-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cc-skill-continuous-learning",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cc-skill-continuous-learning",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cc-skill-project-guidelines-example",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cc-skill-project-guidelines-example",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cc-skill-security-review",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cc-skill-security-review",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "churn-prevention",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/churn-prevention",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "co-marketing",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/co-marketing",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "code-reviewer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/code-reviewer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "codebase-onboarding",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/codebase-onboarding",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "coding-standards",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/coding-standards",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cold-email",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cold-email",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "community-marketing",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/community-marketing",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "competitor-alternatives",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/competitor-alternatives",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "competitor-profiling",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/competitor-profiling",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "compose-multiplatform-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/compose-multiplatform-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-creator",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-creator",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-engine",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-engine",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-hash-cache-pattern",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-hash-cache-pattern",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-marketer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-marketer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-strategy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-strategy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-writer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/content-writer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "context-budget",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/context-budget",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "continuous-learning-v2",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/continuous-learning-v2",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "copy-editing",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/copy-editing",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "copywriting",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/copywriting",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "directory-submissions",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/coreyhaines31-marketingskills-directory-submissions",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "social-content",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/coreyhaines31-marketingskills-social-content",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "cursor-skill-stack-router",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/cursor-skill-stack-router",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "customer-research",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/customer-research",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "data-analyst",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/data-analyst",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "data-quality-frameworks",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/data-quality-frameworks",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "data-scientist",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/data-scientist",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "database-admin",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/database-admin",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "database-architect",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/database-architect",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "database-migrations",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/database-migrations",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "app-store-optimization",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-app-store-optimization",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "commit-work",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-commit-work",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "executing-marketing-campaigns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-executing-marketing-campaigns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "netlify-deploy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-netlify-deploy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nextjs-supabase-auth",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-nextjs-supabase-auth",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "page-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-page-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "senior-frontend",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-senior-frontend",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "SEO Optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-seo-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "supabase-postgres-best-practices",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/davila7-claude-code-templates-supabase-postgres-best-practices",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "debugger",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/debugger",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "debugging-strategies",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/debugging-strategies",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "debugging-toolkit-smart-debug",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/debugging-toolkit-smart-debug",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "decision-helper",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/decision-helper",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "deep-research",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/deep-research",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "deployment-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/deployment-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "design-system",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/design-system",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "documentation-lookup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/documentation-lookup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "dogfood",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/dogfood",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "editor",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/editor",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "email-sequence",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/email-sequence",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "enhance-prompt",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/enhance-prompt",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "error-debugging-error-analysis",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/error-debugging-error-analysis",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "error-debugging-error-trace",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/error-debugging-error-trace",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "error-debugging-multi-agent-review",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/error-debugging-multi-agent-review",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-api-routes",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-api-routes",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-cicd-workflows",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-cicd-workflows",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-deployment",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-deployment",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-dev-client",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-dev-client",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-tailwind-setup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-tailwind-setup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-ui-jetpack-compose",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-ui-jetpack-compose",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "expo-ui-swift-ui",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/expo-ui-swift-ui",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "find-skill",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/find-skill",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "find-skills",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/find-skills",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "form-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/form-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "free-tool-strategy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/free-tool-strategy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-api-integration-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/frontend-api-integration-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-mobile-development-component-scaffold",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/frontend-mobile-development-component-scaffold",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/frontend-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-slides",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/frontend-slides",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "frontend-ui-dark-ts",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/frontend-ui-dark-ts",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "full-stack-orchestration-full-stack-feature",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/full-stack-orchestration-full-stack-feature",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "fullstack-developer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/fullstack-developer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "git-push-open-pr",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/git-push-open-pr",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "github-actions-templates",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/github-actions-templates",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "github-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/github-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "github-ops",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/github-ops",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "github-workflow-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/github-workflow-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "gitlab-ci-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/gitlab-ci-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "google-analytics-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/google-analytics-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "google-calendar-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/google-calendar-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "google-docs-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/google-docs-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "humanizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/humanizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "image",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/image",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "investor-materials",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/investor-materials",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "investor-outreach",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/investor-outreach",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "brand-strategy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/jeremylongshore-claude-code-plugins-plus-skills-brand-strategy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "knowledge-ops",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/knowledge-ops",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "blog-post",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/langchain-ai-deepagents-blog-post",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "launch-strategy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/launch-strategy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "lead-intelligence",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/lead-intelligence",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "lead-magnets",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/lead-magnets",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "linkedin-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/linkedin-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "linkedin-cli",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/linkedin-cli",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "linkedin-profile-optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/linkedin-profile-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "linkerd-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/linkerd-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "llm-prompt-optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/llm-prompt-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "llm-structured-output",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/llm-structured-output",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "marketing-ideas",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/marketing-ideas",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "marketing-psychology",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/marketing-psychology",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "paystack",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/membranedev-application-skills-paystack",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "mysql-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/mysql-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nextjs-app-router-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nextjs-app-router-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nextjs-best-practices",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nextjs-best-practices",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nextjs-turbopack",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nextjs-turbopack",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ui-ux-pro-max",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nextlevelbuilder-ui-ux-pro-max-skill-ui-ux-pro-max",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nodejs-backend-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nodejs-backend-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "nodejs-best-practices",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/nodejs-best-practices",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "onboarding-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/onboarding-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-content-brief",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openakita-openakita-seo-content-brief",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "blog-master",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openclaw-skills-blog-master",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "brand-identity",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openclaw-skills-brand-identity",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-draft-generator",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openclaw-skills-content-draft-generator",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "content-recycler",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openclaw-skills-content-recycler",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "write-my-blog",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/openclaw-skills-write-my-blog",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "paid-ads",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/paid-ads",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "paywall-upgrade-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/paywall-upgrade-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "popup-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/popup-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "pricing-strategy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/pricing-strategy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "product-marketing-context",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/product-marketing-context",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "programmatic-seo",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/programmatic-seo",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "project-planner",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/project-planner",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-engineer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-engineer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-engineering",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-engineering",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-engineering-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-engineering-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-library",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-library",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-lookup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-lookup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "prompt-optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/prompt-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "python-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/python-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "react-native-best-practices",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/react-native-best-practices",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "referral-program",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/referral-program",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "revops",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/revops",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "roadmap-planning",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/roadmap-planning",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "sales-enablement",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sales-enablement",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "schema-markup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/schema-markup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "search-first",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/search-first",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "secrets-management",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/secrets-management",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-audit",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-audit",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-authority-builder",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-authority-builder",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-cannibalization-detector",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-cannibalization-detector",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-competitor-pages",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-competitor-pages",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-content",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-content",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-image-gen",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-image-gen",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-images",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-images",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-keyword-strategist",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-keyword-strategist",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-meta-optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-meta-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-page",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-page",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-plan",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-plan",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-programmatic",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-programmatic",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-schema",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-schema",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-snippet-hunter",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-snippet-hunter",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-structure-architect",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-structure-architect",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "seo-technical",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/seo-technical",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "upgrade-react-native",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/shopify-flash-list-upgrade-react-native",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "mobile-developer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sickn33-antigravity-awesome-skills-mobile-developer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "multi-platform-apps-multi-platform",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sickn33-antigravity-awesome-skills-multi-platform-apps-multi-platform",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "react-native-architecture",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sickn33-antigravity-awesome-skills-react-native-architecture",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "supabase-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sickn33-antigravity-awesome-skills-supabase-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "signup-flow-cro",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/signup-flow-cro",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "site-architecture",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/site-architecture",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-audit",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-audit",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-check",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-check",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-comply",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-comply",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-creator",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-creator",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-creator-ms",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-creator-ms",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-developer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-developer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-improver",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-improver",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-installer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-installer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-lookup",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-lookup",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-optimizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-optimizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-router",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-router",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-scanner",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-scanner",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-seekers",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-seekers",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "skill-sentinel",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/skill-sentinel",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "sleep-analyzer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/sleep-analyzer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "supabase",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/supabase",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "technical-writer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/technical-writer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "theme-factory",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/theme-factory",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ui-skills",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ui-skills",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ui-ux-designer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ui-ux-designer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-audit",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-audit",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-copy",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-copy",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-designer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-designer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-feedback",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-feedback",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-flow",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-flow",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "ux-persuasion-engineer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/ux-persuasion-engineer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "vercel-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/vercel-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "vercel-deployment",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/vercel-deployment",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "vercel-react-native-skills",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/vercel-labs-agent-skills-react-native-skills",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "video",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/video",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "vite-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/vite-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "web-artifacts-builder",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/web-artifacts-builder",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "widget-generator",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/widget-generator",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "workflow-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/workflow-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "writing-plans",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/writing-plans",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "writing-skills",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/writing-skills",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "design-system-patterns",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/wshobson-agents-design-system-patterns",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "react-native-design",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/wshobson-agents-react-native-design",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "youtube-automation",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/youtube-automation",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "youtube-summarizer",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/youtube-summarizer",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  },
+  {
+    "name": "zod-validation-expert",
+    "path": "/Users/nonwork/dev/ayabonga/.agents/skills/zod-validation-expert",
+    "scope": "project",
+    "agents": [
+      "Antigravity",
+      "Codex",
+      "Cursor",
+      "Gemini CLI",
+      "Warp"
+    ]
+  }
+]
