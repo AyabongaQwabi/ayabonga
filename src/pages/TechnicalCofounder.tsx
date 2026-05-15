@@ -6,6 +6,7 @@ import {
   DEFAULT_OG_IMAGE,
   SITE_NAME,
   TWITTER_HANDLE,
+  WHATSAPP_URL,
 } from '../lib/site-config';
 
 const PAGE_TITLE = 'Technical Co-founder as a Service';
@@ -152,19 +153,23 @@ export default function TechnicalCofounderPage() {
           <p className="text-background/80 mb-10 max-w-2xl mx-auto">
             I only take on a limited number of "Phase 1" builds at a time to ensure senior-level attention for every project.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/27603116777"
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold hover:bg-primary/90 transition-all"
-            >
-              Secure a Build Slot
-            </a>
-            <Link
-              to="/get-a-quote"
-              className="px-8 py-4 bg-transparent border border-background/20 rounded-xl font-bold hover:bg-background/10 transition-all"
-            >
-              Estimate Your Project
-            </Link>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold hover:bg-primary/90 transition-all"
+              >
+                Secure a Build Slot
+              </a>
+            </div>
+            <p className="text-sm text-background/60">
+              Want a cost estimate first?{' '}
+              <Link to="/get-a-quote" className="text-background/80 hover:text-background underline underline-offset-4">
+                See how I scope and price work
+              </Link>.
+            </p>
           </div>
         </section>
       </main>

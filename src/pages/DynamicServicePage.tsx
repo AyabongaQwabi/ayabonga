@@ -18,8 +18,10 @@ import {
   Sun,
   Globe,
   Shield,
-  Activity
+  Activity,
+  MessageCircle
 } from 'lucide-react';
+import { WHATSAPP_URL } from '../lib/site-config';
 import pseoData from '../data/pseo-pages.json';
 
 const iconMap = {
@@ -90,12 +92,15 @@ const DynamicServicePage = () => {
             For {page.audience} in {page.location} who are tired of the junior dev lottery and want a partner who builds for business ROI.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/get-a-quote"
-              className="px-10 py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl transition-all duration-300 shadow-xl shadow-primary/20 flex items-center gap-2 group w-full sm:w-auto justify-center glow-primary"
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all duration-300 shadow-xl w-full sm:w-auto justify-center"
             >
-              Get a Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <MessageCircle className="w-5 h-5" />
+              Message Me on WhatsApp
+            </a>
             <Link
               to="/technical-cofounder"
               className="px-10 py-5 glass-dark hover:bg-white/5 text-slate-300 font-bold rounded-xl transition-all duration-300 w-full sm:w-auto text-center border-white/5"
@@ -193,19 +198,28 @@ const DynamicServicePage = () => {
           <p className="text-xl text-slate-400 mb-12">
             Stop waiting for an agency. Start building with a partner who owns the outcome.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link
-              to="/get-a-quote"
-              className="px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all shadow-xl shadow-emerald-500/20"
-            >
-              Request an Estimate
-            </Link>
-            <Link
-              to="/"
-              className="text-slate-400 hover:text-white flex items-center gap-2 group font-medium"
-            >
-              Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all shadow-xl"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Message Me on WhatsApp
+              </a>
+              <Link
+                to="/"
+                className="text-slate-400 hover:text-white flex items-center gap-2 group font-medium"
+              >
+                Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <p className="text-sm text-slate-500">
+              Want a cost estimate first?{' '}
+              <Link to="/get-a-quote" className="text-slate-400 hover:text-white underline underline-offset-4">See how I scope and price work</Link>.
+            </p>
           </div>
         </div>
       </section>

@@ -19,6 +19,13 @@ export const DEFAULT_OG_IMAGE =
 
 export const TWITTER_HANDLE = '@ayabongaqwabi';
 
+/** Primary contact: WhatsApp direct link with a pre-filled opening message. */
+export const WHATSAPP_NUMBER = '27603116777';
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Ayabonga, I found your site and I'd like to chat.")}`;
+
+/** The /get-a-quote page — only link here when the user explicitly wants pricing detail. */
+export const QUOTE_PAGE = '/get-a-quote';
+
 /** Disqus site shortname (https://disqus.com/admin/settings/general/) */
 export const DISQUS_SHORTNAME = 'qwabi';
 

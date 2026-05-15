@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ArrowRight, Rocket, Users, BarChart, Zap, ShieldCheck, Cpu } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Rocket, Users, BarChart, Zap, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
   SITE_NAME,
   TWITTER_HANDLE,
+  WHATSAPP_URL,
 } from '../lib/site-config';
 
 const PAGE_TITLE = 'Engineering Services';
@@ -180,12 +181,15 @@ export default function ServicesPage() {
         <footer className="text-center">
           <h2 className="text-3xl font-bold mb-8">Ready to ship something real?</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/get-a-quote"
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg"
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-xl font-bold hover:bg-[#128C7E] transition-all shadow-lg"
             >
-              Get a Project Quote
-            </Link>
+              <MessageCircle className="w-5 h-5" />
+              Message Me on WhatsApp
+            </a>
             <Link
               to="/technical-cofounder"
               className="px-8 py-4 bg-card border border-border rounded-xl font-bold hover:border-primary transition-all"
@@ -193,6 +197,10 @@ export default function ServicesPage() {
               Learn about TaaS
             </Link>
           </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Want a ballpark first?{' '}
+            <Link to="/get-a-quote" className="text-primary hover:underline underline-offset-4">See how I scope and price work</Link>.
+          </p>
         </footer>
       </main>
     </div>

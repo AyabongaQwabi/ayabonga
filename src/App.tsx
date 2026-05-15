@@ -11,6 +11,7 @@ import {
   DEFAULT_PAGE_DESCRIPTION,
   DEFAULT_PAGE_TITLE,
   TWITTER_HANDLE,
+  WHATSAPP_URL,
 } from './lib/site-config';
 
 const projects = [
@@ -424,7 +425,7 @@ function App() {
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">AI & Machine Learning</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <Link to="/get-a-quote" className="text-amber-500 hover:underline">Contact me here</Link> for a full walkthrough.
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:underline">Message me</a> for a full walkthrough.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">OpenAI</span>
@@ -548,38 +549,32 @@ function App() {
               Contact
             </h2>
             <p className="text-foreground mb-6 text-balance">
-              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect. For a
-              ballpark scope and budget, try the{' '}
-              <Link to="/get-a-quote" className="text-primary hover:text-primary/80 underline-offset-4 hover:underline">
-                interactive project quote tool
-              </Link>
-              .
+              Building something and need a senior technical mind in your corner? Message me directly on WhatsApp and we'll figure out if I can help.
             </p>
             
             <div className="space-y-3">
               <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Message me on WhatsApp</span>
+              </a>
+              <a 
                 href="mailto:aya@qwabi.co.za"
-                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors mt-4"
               >
                 <Mail className="w-4 h-4" />
                 <span>aya@qwabi.co.za</span>
               </a>
-              <a 
-                href="https://www.qwabi.co.za"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>qwabi.co.za</span>
-              </a>
-              <Link 
-                to="/get-a-quote"
-                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Book a Discovery Call</span>
-              </Link>
+              <p className="text-xs text-muted-foreground pt-2">
+                Want a ballpark before you reach out?{' '}
+                <Link to="/get-a-quote" className="text-primary hover:underline underline-offset-4">
+                  See how I scope and price work
+                </Link>.
+              </p>
             </div>
           </div>
         </section>

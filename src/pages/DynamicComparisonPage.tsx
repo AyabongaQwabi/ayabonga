@@ -10,8 +10,10 @@ import {
   Scale,
   ChevronRight,
   TrendingUp,
-  AlertCircle
+  AlertCircle,
+  MessageCircle
 } from 'lucide-react';
+import { WHATSAPP_URL } from '../lib/site-config';
 import comparisonData from '../data/comparisons.json';
 
 const DynamicComparisonPage = () => {
@@ -62,12 +64,15 @@ const DynamicComparisonPage = () => {
             Why founders who care about <span className="text-foreground font-semibold">Business ROI</span> choose senior product engineering over {page.target.toLowerCase()}.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/get-a-quote"
-              className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg transition-all duration-300 shadow-lg shadow-primary/20 flex items-center gap-2 group w-full sm:w-auto justify-center"
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-lg transition-all duration-300 shadow-lg w-full sm:w-auto justify-center"
             >
-              Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <MessageCircle className="w-4 h-4" />
+              Message Me on WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -146,19 +151,28 @@ const DynamicComparisonPage = () => {
           <p className="text-xl text-muted-foreground mb-12">
             Stop gambling with your technical foundation. Hire a senior product engineer who owns the result.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link
-              to="/get-a-quote"
-              className="px-10 py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl transition-all shadow-xl shadow-primary/20"
-            >
-              Request an Estimate
-            </Link>
-            <Link
-              to="/"
-              className="text-muted-foreground hover:text-foreground flex items-center gap-2 group font-medium"
-            >
-              Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all shadow-xl"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Message Me on WhatsApp
+              </a>
+              <Link
+                to="/"
+                className="text-muted-foreground hover:text-foreground flex items-center gap-2 group font-medium"
+              >
+                Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Want a cost estimate first?{' '}
+              <Link to="/get-a-quote" className="text-primary hover:underline underline-offset-4">See how I scope and price work</Link>.
+            </p>
           </div>
         </div>
       </section>
