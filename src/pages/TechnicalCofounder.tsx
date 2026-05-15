@@ -82,7 +82,7 @@ export default function TechnicalCofounderPage() {
                 <AlertCircle className="w-6 h-6 text-destructive shrink-0" />
                 <div>
                   <h3 className="font-bold text-lg">The Overhead Trap</h3>
-                  <p className="text-sm text-muted-foreground">Hiring a slow agency where you pay for account managers, sales reps, and office space—all while waiting weeks for simple product decisions.</p>
+                  <p className="text-sm text-muted-foreground">Hiring a slow agency where you pay for account managers, sales reps, and office space, all while waiting weeks for simple product decisions.</p>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function TechnicalCofounderPage() {
                 <TrendingUp className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold mb-3 text-lg">1. Product Strategy</h3>
-              <p className="text-sm text-muted-foreground">We define the core loop that makes your business work. I help you decide what to build and—more importantly—what NOT to build.</p>
+              <p className="text-sm text-muted-foreground">We define the core loop that makes your business work. I help you decide what to build and, more importantly, what NOT to build.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">

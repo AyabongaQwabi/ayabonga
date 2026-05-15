@@ -14,16 +14,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, url, tech
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block p-6 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300"
+      className="group block p-6 rounded-xl glass-dark hover:glass-gold hover:glow-primary transition-all duration-500 border border-white/5 hover:border-primary/50"
     >
       <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-all duration-300">
           {title}
         </h3>
-        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all duration-300 flex-shrink-0 mt-1" />
       </div>
       
-      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+      <p className="text-muted-foreground text-sm leading-relaxed mb-4 group-hover:text-foreground/90 transition-colors">
         {description}
       </p>
 

@@ -12,7 +12,7 @@ export const DEFAULT_PAGE_TITLE =
   'Ayabonga Qwabi | Technical Co-founder as a Service | Senior Product Engineer';
 
 export const DEFAULT_PAGE_DESCRIPTION =
-  'I turn business ideas into working digital products—apps, platforms, AI tools—without the agency overhead or the junior dev lottery. Senior engineering and TaaS for founders.';
+  'I turn business ideas into working digital products (apps, platforms, AI tools) without the agency overhead or the junior dev lottery. Senior engineering and TaaS for founders.';
 
 export const DEFAULT_OG_IMAGE =
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg';

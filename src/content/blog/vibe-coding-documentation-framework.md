@@ -1,6 +1,6 @@
 ---
-title: 'Vibe Coding Workflow: Documentation-First AI Builds with Cursor, Grok & PRDs'
-excerpt: 'Stop burning AI credits on guesswork. A documentation-first vibe coding workflow—PRD, business logic, constraints, tech stack, Grok master prompts, and Cursor /docs planning—for fewer iterations and cleaner architecture.'
+title: 'Documentation-First AI Builds with Cursor, Grok and PRDs'
+excerpt: 'Stop burning AI credits on guesswork. A documentation-first vibe coding workflow (PRD, business logic, constraints, tech stack, Grok master prompts, and Cursor /docs planning) for fewer iterations and cleaner architecture.'
 date: April 15, 2026
 readTime: 12 min read
 tags: Vibe coding, Cursor, Grok, Documentation, PRD, AI agents, Workflow, Kingly
@@ -35,7 +35,7 @@ I’ve been there too many times. That’s why I stopped treating documentation 
 
 I now treat documentation as the foundation of every AI-powered build. Here’s the exact stack I use before writing a single line of real code.
 
-### 1. PRD — define the “what”
+### 1. PRD: define the “what”
 
 **Purpose:** Clearly spell out what the product actually is and what success looks like.
 
@@ -51,7 +51,7 @@ I now treat documentation as the foundation of every AI-powered build. Here’s 
 
 **Mini example:** When building a habit tracker, the PRD made it crystal clear that “social sharing” was out of scope. The AI stopped trying to add Twitter integration every few prompts.
 
-### 2. Business logic — define the “how”
+### 2. Business logic: define the “how”
 
 **Purpose:** Map out exactly how the system should behave.
 
@@ -64,7 +64,7 @@ I now treat documentation as the foundation of every AI-powered build. Here’s 
 
 **Why it improves AI output:** This document forces precision. Instead of the AI guessing how users move between screens or what happens on validation failure, it follows your explicit rules.
 
-### 3. Constraints — define the system rules
+### 3. Constraints: define the system rules
 
 **Purpose:** Set hard boundaries so the AI doesn’t go rogue.
 
@@ -78,7 +78,7 @@ I now treat documentation as the foundation of every AI-powered build. Here’s 
 
 **Why it improves AI output:** Constraints prevent over-engineering and keep the build realistic and focused.
 
-### 4. Tech stack — define implementation boundaries
+### 4. Tech stack: define implementation boundaries
 
 **Purpose:** Lock in the tools and architecture decisions upfront.
 
@@ -133,7 +133,7 @@ Projects that used to take 15–20 painful iterations now finish in 3–5 clean 
 
 After repeating this workflow across multiple apps, one thing became obvious: creating all these documents manually was still the biggest bottleneck.
 
-So I built a tool that automates the entire documentation stack — generating high-quality PRDs, business logic, constraints, tech stack docs, and master prompts with minimal input.
+So I built a tool that automates the entire documentation stack, generating high-quality PRDs, business logic, constraints, tech stack docs, and master prompts with minimal input.
 
 If you want to steal this system and remove the documentation friction entirely, you can check it out here: [Kingly](https://kingly.qwabi.co.za).
 

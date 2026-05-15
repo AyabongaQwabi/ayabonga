@@ -1,5 +1,5 @@
 ---
-title: "The Philosophy of Localhost — A Manifesto of the Internal Developer"
+title: "The Philosophy of Localhost"
 excerpt: "127.0.0.1 as metaphor: safe space, sandbox, version control, firewall, and the private work that makes a stable public self."
 date: April 11, 2026
 readTime: 7 min read
@@ -9,7 +9,7 @@ categories: Philosophy
 
 ## A teaching of self
 
-As humans, we often focus on our **public API** — the version of ourselves the world consumes.
+As humans, we often focus on our **public API**, the version of ourselves the world consumes.
 
 But the real architecture happens behind the scenes.
 
@@ -73,7 +73,7 @@ Behind every strong localhost stands a quiet firewall.
 
 Not one built to reject the world entirely, but one wise enough to filter the noise.
 
-External opinions, inherited scripts, passing trends — these are packets constantly attempting to enter your system.
+External opinions, inherited scripts, passing trends: these are packets constantly attempting to enter your system.
 
 Without discernment, they can overwhelm your processes and rewrite your configuration.
 
@@ -127,7 +127,7 @@ A well-tended localhost eventually grows strong enough to scale.
 
 Not into isolation, but into connection.
 
-Your ideas become APIs shared with trusted nodes — friends, collaborators, fellow builders.
+Your ideas become APIs shared with trusted nodes: friends, collaborators, fellow builders.
 
 Together, small systems form resilient clusters.
 
@@ -155,7 +155,7 @@ Listen to the quiet processes running beneath the noise.
 
 Debug what needs fixing. Commit what you have learned. Clear what no longer serves you.
 
-And when the time comes to deploy yourself again into the world — do so with intention. Do so with integrity.
+And when the time comes to deploy yourself again into the world, do so with intention. Do so with integrity.
 
 Because the strongest systems are not the loudest ones online.
 

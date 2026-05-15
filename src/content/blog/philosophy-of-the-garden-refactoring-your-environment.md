@@ -1,5 +1,5 @@
 ---
-title: "The Philosophy of the Garden: Refactoring Your Environment"
+title: "The Philosophy of the Garden"
 excerpt: "A software metaphor for pruning habits, paying down life’s technical debt, and designing a more sustainable environment to grow in."
 date: April 16, 2026
 readTime: 5 min read

@@ -1,5 +1,5 @@
 ---
-title: 'A List I Was Never Supposed to Find: Names from the Bulhoek Massacre'
+title: 'Names from the Bulhoek Massacre: A Hospital List I Was Never Supposed to Find'
 excerpt: 'Researching family history led to a hospital register of those who died after the Bulhoek Massacre of 1921 — including young men whose names deserve to be read and remembered.'
 date: April 17, 2026
 readTime: 8 min read

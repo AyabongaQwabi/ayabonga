@@ -1,5 +1,5 @@
 ---
-title: "Foundations of Faith: My Journey through MIDA and Kholo Kingdom"
+title: "What MIDA and Kholo Kingdom Taught Me About Faith"
 excerpt: "Reflecting on the Christian values, sensory memories, and the 'Mission Center' legacy of my early school years in Idutywa."
 date: May 15, 2026
 readTime: 8 min read

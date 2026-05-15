@@ -1,6 +1,6 @@
 ---
-title: "Why Most SA Bootcamp Grads Still Struggle in 2026 — and 3 Skills That Get You Hired"
-excerpt: "AI-augmented development, system thinking beyond CRUD, and proof you can ship — tailored to the Mzansi market."
+title: "Why Most SA Bootcamp Grads Still Struggle in 2026 (and 3 Skills That Get You Hired)"
+excerpt: "AI-augmented development, system thinking beyond CRUD, and proof you can ship. Tailored to the Mzansi market."
 date: March 28, 2026
 readTime: 10 min read
 tags: South Africa, Bootcamp, Hiring, AI coding, Next.js
@@ -24,7 +24,7 @@ It’s not. 2026 hiring is skills-first, not certificate-first. Here’s the bru
 - AI tools (Cursor, v0, Claude) are writing the boilerplate now → juniors who only do what AI can do are getting filtered out.
 - Entry-level roles still exist, but they go to people who solve real problems, not just pass LeetCode easy.
 
-Result? Thousands of grads competing for the same junior spots while mid-level/AI-literate roles sit open for months.
+This leaves thousands of grads competing for the same junior spots while mid-level and AI-literate roles sit open for months.
 
 3/ Skill #1 – AI-Augmented Development (The New Table Stakes)
 
@@ -39,7 +39,7 @@ What gets you hired:
 
 Proof: I’ve seen juniors land roles at Simply-level companies because they shipped a full MVP using Cursor Composer + v0 in their take-home.
 
-Hot take: If you’re not using AI daily in 2026, you’re already behind.
+If you’re not using AI tools daily in 2026, you’re already behind the candidates who are.
 
 4/ Skill #2 – Real-World System Thinking (Beyond CRUD)
 

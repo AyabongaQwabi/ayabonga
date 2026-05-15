@@ -1,5 +1,5 @@
 ---
-title: "You Are Not Restarting — You Are Updating"
+title: "You Are Not Restarting. You Are Updating"
 excerpt: "Growth does not require self-destruction. Keep continuity, make smaller changes, and let new versions replace old ones without erasing your history."
 date: April 16, 2026
 readTime: 6 min read
@@ -13,7 +13,7 @@ That is the first misunderstanding.
 
 Many people treat growth like a reset button: new year, new version, new identity, new discipline.
 
-But in real systems — and in real people — nothing truly valuable works that way.
+But in real systems, and in real people, nothing truly valuable works that way.
 
 In Clojure, values do not get overwritten. They get replaced by new versions that carry forward what still works.
 
@@ -105,7 +105,7 @@ You stop restarting your life.
 
 You start extending it.
 
-So if you are in a phase where things feel unstable, inconsistent, or like you are starting over again —
+So if you are in a phase where things feel unstable, inconsistent, or like you are starting over again:
 
 that is not failure.
 

@@ -1,5 +1,5 @@
 ---
-title: "Five Years at Simply — and a Dedication to My Late Mother"
+title: "Five Years at Simply"
 excerpt: "A certificate, gratitude, isiXhosa, and the journey from Mida School and UWC to senior developer."
 date: March 20, 2026
 readTime: 4 min read

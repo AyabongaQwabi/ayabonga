@@ -362,7 +362,7 @@ function App() {
             {/* Right Column - Bio */}
             <div className="space-y-6">
               <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
-                I turn your business idea into a working digital product — apps, platforms, AI tools — without the agency overhead or the junior dev lottery.
+                I turn your business idea into a working digital product (apps, platforms, AI tools) without the agency overhead or the junior dev lottery.
               </p>
               
               <p className="leading-relaxed text-muted-foreground">
