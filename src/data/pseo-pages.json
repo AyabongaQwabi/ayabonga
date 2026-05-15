@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "fintech-founders-south-africa",
+    "title": "Technical Co-founder for Fintech Startups in South Africa",
+    "industry": "Fintech",
+    "location": "South Africa",
+    "audience": "Early-stage Fintech Founders",
+    "pain_point": "Navigating complex payment regulations and building secure, scalable transaction engines without a technical co-founder.",
+    "solution": "Senior-level integration with local gateways like Paystack and Stitch, building SOC2-compliant architectures from day one.",
+    "benefit": "Go from idea to first transaction in 8 weeks with a production-ready MVP.",
+    "keywords": ["Fintech developer SA", "Paystack integration expert", "Technical partner for fintech"],
+    "icon": "Wallet"
+  },
+  {
+    "slug": "logistics-apps-cape-town",
+    "title": "Custom Logistics & Ride-Hailing App Development in Cape Town",
+    "industry": "Logistics & Mobility",
+    "location": "Cape Town",
+    "audience": "Mobility Operators & Logistics Agencies",
+    "pain_point": "Managing the 'Broken Relay Race' of multiple developers failing to sync real-time driver tracking and fleet management.",
+    "solution": "High-velocity build of custom dispatch systems, real-time tracking, and ad-powered media integrations based on the 'Trip' architecture.",
+    "benefit": "Eliminate the agency slowdown and own a custom-built fleet platform that scales with your growth.",
+    "keywords": ["Logistics app developer Cape Town", "Ride-hailing software South Africa", "Fleet management systems"],
+    "icon": "Truck"
+  },
+  {
+    "slug": "healthcare-startups-johannesburg",
+    "title": "Senior Product Engineering for Healthcare Startups in Johannesburg",
+    "industry": "Healthcare",
+    "location": "Johannesburg",
+    "audience": "HealthTech Founders",
+    "pain_point": "The 'Junior Dev Lottery'—hiring developers who build fragile systems that can't handle patient privacy or complex appointment scheduling.",
+    "solution": "Scalable Healthcare infrastructure based on the 'ClinicPlus' model, focusing on data privacy, secure bookings, and medical history management.",
+    "benefit": "A secure, HIPAA-aligned platform built by a senior engineer who understands the nuances of SA healthcare operations.",
+    "keywords": ["HealthTech developer Johannesburg", "Medical app development SA", "Clinic management systems"],
+    "icon": "Stethoscope"
+  },
+  {
+    "slug": "edutech-platforms-south-africa",
+    "title": "Technical Partner for EduTech Platforms in South Africa",
+    "industry": "Education",
+    "location": "South Africa",
+    "audience": "Education Consultants & School Administrators",
+    "pain_point": "Off-the-shelf software doesn't fit the reality of African classrooms or student financial access.",
+    "solution": "Custom student management and cashless campus systems (NFC/Digital Wallets) inspired by the 'uTap' and 'MIDA' experience.",
+    "benefit": "Digitize your institution with systems designed for the local student experience, including offline-first capabilities.",
+    "keywords": ["EduTech developer SA", "School management software South Africa", "Cashless campus systems"],
+    "icon": "GraduationCap"
+  },
+  {
+    "slug": "marketplace-founders-south-africa",
+    "title": "Technical Co-founder for On-Demand Marketplace Founders",
+    "industry": "Marketplaces",
+    "location": "South Africa",
+    "audience": "On-Demand Service Founders",
+    "pain_point": "The overhead of managing separate apps for customers, drivers, and partners with inconsistent data flow.",
+    "solution": "A turnkey white-label ecosystem (Customer, Driver, Partner, Admin) refined through the 'Laundry Marketplace' builds.",
+    "benefit": "Launch a multi-sided marketplace with senior-level orchestration of all four platform pillars.",
+    "keywords": ["Marketplace developer SA", "On-demand app development", "Uber-for-X software"],
+    "icon": "ShoppingBag"
+  },
+  {
+    "slug": "digital-transformation-experts-south-africa",
+    "title": "Digital Transformation for Established Businesses in South Africa",
+    "industry": "Business Transformation",
+    "location": "South Africa",
+    "audience": "Established Business Operators & Content Creators",
+    "pain_point": "Having a successful business or following but being stuck with manual processes, broken websites, or no proper online presence.",
+    "solution": "End-to-end digitization of workflows, professional web presence, and automated customer acquisition funnels tailored for established brands like 'Lungi'.",
+    "benefit": "Transition from manual chaos to a professional, automated digital platform that reflects the true value of your brand.",
+    "keywords": ["Digital transformation South Africa", "Business automation expert", "Online presence strategy"],
+    "icon": "Zap"
+  },
+  {
+    "slug": "ai-integration-specialist-south-africa",
+    "title": "Strategic AI Integration & Automation for High-Growth Startups",
+    "industry": "Artificial Intelligence",
+    "location": "South Africa",
+    "audience": "Tech-Forward Founders & SaaS Teams",
+    "pain_point": "Knowing that AI could multiply your team's output but not knowing how to integrate it securely without breaking existing workflows.",
+    "solution": "Custom AI agent development, LLM integration (OpenAI/Claude/Grok), and automated prompt engineering systems like 'Kingly'.",
+    "benefit": "Deploy production-ready AI features that actually improve your product, not just hype-driven wrappers.",
+    "keywords": ["AI developer South Africa", "LLM integration specialist", "Business AI automation"],
+    "icon": "Brain"
+  },
+  {
+    "slug": "technical-cofounder-as-a-service-south-africa",
+    "title": "Technical Co-founder as a Service in South Africa",
+    "industry": "TaaS",
+    "location": "South Africa",
+    "audience": "Non-technical Founders & Business Visionaries",
+    "pain_point": "The 'Agency Overhead' and 'Junior Dev Lottery'—paying for project managers and account executives instead of senior-level engineering that owns the product outcome.",
+    "solution": "A strategic technical partnership where a senior engineer owns your product end-to-end, from architecture and security to mobile apps and payment integration.",
+    "benefit": "Launch a production-grade digital business without giving away equity or managing a rotating door of freelancers.",
+    "keywords": ["Technical co-founder South Africa", "TaaS South Africa", "Hire a technical partner", "Senior product engineer SA"],
+    "icon": "Zap"
+  }
+]
