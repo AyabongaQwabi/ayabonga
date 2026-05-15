@@ -1,0 +1,80 @@
+name: Social Media Scheduler
+
+on:
+  schedule:
+    # Monday 9am SAST (7am UTC)
+    - cron: '0 7 * * 1'
+    # Wednesday 12pm SAST (10am UTC)
+    - cron: '0 10 * * 3'
+    # Friday 5pm SAST (15pm UTC)
+    - cron: '0 15 * * 5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no actual posts)'
+        required: false
+        default: 'false'
+        type: boolean
+      platform:
+        description: 'Platform to post to'
+        required: false
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - facebook-only
+          - instagram-only
+      post_date:
+        description: 'Override date (YYYY-MM-DD) for testing a specific slot'
+        required: false
+        type: string
+
+jobs:
+  post:
+    name: Post to Social Media
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine platform flag
+        id: flags
+        run: |
+          PLATFORM="${{ github.event.inputs.platform || 'both' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+          FLAGS=""
+          if [ "$PLATFORM" = "facebook-only" ]; then FLAGS="--facebook-only"; fi
+          if [ "$PLATFORM" = "instagram-only" ]; then FLAGS="--instagram-only"; fi
+          if [ "$DRY_RUN" = "true" ]; then FLAGS="$FLAGS --dry-run"; fi
+          echo "flags=$FLAGS" >> $GITHUB_OUTPUT
+
+      - name: Run social media poster
+        env:
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_DEVELOPER_APP_ID: ${{ secrets.FACEBOOK_DEVELOPER_APP_ID }}
+          FACEBOOK_DEVELOPER_APP_SECRET: ${{ secrets.FACEBOOK_DEVELOPER_APP_SECRET }}
+          FACEBOOK_DEVELOPER_APP_TOKEN: ${{ secrets.FACEBOOK_DEVELOPER_APP_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_APP_ID: ${{ secrets.INSTAGRAM_APP_ID }}
+          INSTAGRAM_APP_SECRET: ${{ secrets.INSTAGRAM_APP_SECRET }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          SOCIAL_POST_DATE: ${{ github.event.inputs.post_date }}
+        run: node scripts/social/post.js ${{ steps.flags.outputs.flags }}
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Social media post failed. Check the logs above for details."
+          echo "Common causes:"
+          echo "  - Access token expired (Facebook tokens expire every 60 days)"
+          echo "  - Missing FACEBOOK_PAGE_ID secret"
+          echo "  - Missing UNSPLASH_ACCESS_KEY or PEXELS_API_KEY for Instagram"

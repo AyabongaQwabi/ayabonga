@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "social:dry-run": "node scripts/social/post.js --dry-run",
+    "social:schedule": "node scripts/social/list-schedule.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
