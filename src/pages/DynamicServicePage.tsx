@@ -7,7 +7,7 @@ import {
   Stethoscope, 
   GraduationCap, 
   ShoppingBag, 
-  Brain as BrainIcon,
+  Brain,
   ArrowRight, 
   CheckCircle2, 
   Clock, 
@@ -28,7 +28,7 @@ const iconMap = {
   Stethoscope,
   GraduationCap,
   ShoppingBag,
-  Brain: BrainIcon,
+  Brain,
   Zap,
   Home,
   Sun,
@@ -76,28 +76,29 @@ const DynamicServicePage = () => {
 
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,215,0,0.05),transparent_50%)]" />
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-8">
-            <Icon className="w-4 h-4" />
-            <span>{page.industry} Solutions</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-primary text-sm font-medium mb-8 glow-primary">
+            <Icon className="w-4 h-4 animate-pulse" />
+            <span className="tracking-wider uppercase">{page.industry} Solutions</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-            The Technical Co-founder your <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">{page.industry} Business</span> Actually Needs.
+          <h1 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter leading-tight">
+            The Technical Co-founder your <br />
+            <span className="text-gradient">{page.industry} Business</span> Actually Needs.
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
             For {page.audience} in {page.location} who are tired of the junior dev lottery and want a partner who builds for business ROI.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               to="/get-a-quote"
-              className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-emerald-500/20 flex items-center gap-2 group w-full sm:w-auto justify-center"
+              className="px-10 py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl transition-all duration-300 shadow-xl shadow-primary/20 flex items-center gap-2 group w-full sm:w-auto justify-center glow-primary"
             >
-              Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Get a Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/technical-cofounder"
-              className="px-8 py-4 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 font-semibold rounded-lg transition-all duration-300 w-full sm:w-auto text-center"
+              className="px-10 py-5 glass-dark hover:bg-white/5 text-slate-300 font-bold rounded-xl transition-all duration-300 w-full sm:w-auto text-center border-white/5"
             >
               How TaaS Works
             </Link>
@@ -128,17 +129,18 @@ const DynamicServicePage = () => {
                 ))}
               </ul>
             </div>
-            <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 backdrop-blur-sm shadow-2xl">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+            <div className="glass-dark p-10 rounded-2xl border-white/5 shadow-2xl relative group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-colors" />
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-primary" />
                 The Senior Engineering Solution
               </h3>
-              <p className="text-slate-400 mb-6 italic">
+              <p className="text-slate-300 mb-8 leading-relaxed italic text-lg border-l-2 border-primary/30 pl-6">
                 "{page.solution}"
               </p>
-              <div className="p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-xl">
-                <p className="text-sm font-medium text-emerald-400 uppercase tracking-wider mb-2">Primary Objective</p>
-                <p className="text-white font-medium">{page.benefit}</p>
+              <div className="p-6 bg-primary/5 border border-primary/10 rounded-xl glow-primary">
+                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Primary Objective</p>
+                <p className="text-white font-semibold text-lg">{page.benefit}</p>
               </div>
             </div>
           </div>
@@ -156,23 +158,28 @@ const DynamicServicePage = () => {
             {
               title: "Product Design",
               desc: "From user journeys to conversion-optimized UIs built with modern React frameworks.",
-              icon: Zap
+              icon: Zap,
+              color: "text-primary"
             },
             {
               title: "Scalable Backend",
               desc: "Real-time infrastructure using Node.js, Go, or Clojure that scales as you grow.",
-              icon: Clock
+              icon: Clock,
+              color: "text-accent"
             },
             {
               title: "Secure Payments",
               desc: "Deep integration with Paystack, Stitch, and custom ledger systems.",
-              icon: ShieldCheck
+              icon: ShieldCheck,
+              color: "text-primary"
             }
           ].map((feature, i) => (
-            <div key={i} className="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
-              <feature.icon className="w-10 h-10 text-emerald-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
+            <div key={i} className="group p-8 rounded-2xl glass-dark border-white/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+              <div className={`w-14 h-14 rounded-xl glass mb-6 flex items-center justify-center ${feature.color} group-hover:scale-110 transition-transform duration-500`}>
+                <feature.icon className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+              <p className="text-slate-400 leading-relaxed text-lg">{feature.desc}</p>
             </div>
           ))}
         </div>

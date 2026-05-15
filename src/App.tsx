@@ -268,13 +268,25 @@ function App() {
               {/* Profile Image with rotating gallery */}
               <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto md:mx-0">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 transform rotate-6"></div>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border shadow-xl">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border/50 shadow-2xl group cursor-pointer">
+                  {/* Glassmorphism Overlay */}
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                  
+                  {/* Hero Background Image */}
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src="/images/hero-taas-premium.png" 
+                      alt="Premium Technical Leadership" 
+                      className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40"
+                    />
+                  </div>
+
                   {profileImages.map((img, index) => (
                     <img
                       key={index}
                       src={img.src}
                       alt={img.alt}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-5 ${
                         index === activeImage ? 'opacity-100' : 'opacity-0'
                       }`}
                       loading={index === 0 ? 'eager' : 'lazy'}
@@ -406,53 +418,50 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* AI & Machine Learning */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Brain className="w-6 h-6 text-primary" />
+            <article className="group p-6 rounded-xl glass-gold border-white/5 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Brain className="w-6 h-6 text-amber-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <Link to="/get-a-quote" className="text-primary underline">Contact me here</Link> for a full walkthrough, custom quote, or partnership discussion.
+              <h3 className="text-lg font-semibold text-white mb-2">AI & Machine Learning</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <Link to="/get-a-quote" className="text-amber-500 hover:underline">Contact me here</Link> for a full walkthrough.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">OpenAI</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">LangChain</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Python</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TensorFlow</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">OpenAI</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">LangChain</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">Python</span>
               </div>
             </article>
 
             {/* Cloud Architecture */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+            <article className="group p-6 rounded-xl glass-dark border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Cloud className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Cloud Architecture</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures, Kubernetes, and infrastructure as code.
+              <h3 className="text-lg font-semibold text-white mb-2">Cloud Architecture</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures and Kubernetes.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">GCP</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">AWS</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Azure</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Kubernetes</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">GCP</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">AWS</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">Azure</span>
               </div>
             </article>
 
             {/* Full-Stack Development */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Code2 className="w-6 h-6 text-primary" />
+            <article className="group p-6 rounded-xl glass-emerald border-white/5 hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Code2 className="w-6 h-6 text-emerald-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Development</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript for end-to-end solutions.
+              <h3 className="text-lg font-semibold text-white mb-2">Full-Stack Development</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">React</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Clojure</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Supabase</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Firebase</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">React</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">Node.js</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">Clojure</span>
               </div>
             </article>
           </div>
@@ -500,12 +509,12 @@ function App() {
                 href={collab.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all"
+                className="group flex items-center justify-between p-4 rounded-lg glass-dark border-white/5 hover:border-primary/50 transition-all duration-300"
               >
-                <span className="text-foreground group-hover:text-primary transition-colors">
+                <span className="text-slate-300 group-hover:text-primary transition-colors font-medium">
                   {collab.name}
                 </span>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ))}
           </div>

@@ -200,18 +200,13 @@ function BlogPostView({ post }: { post: BlogPost }) {
               <figure className='mb-8 rounded-lg overflow-hidden border border-border bg-card'>
                 <img
                   src={heroImagePath}
-                  alt='Historical illustration titled Ntsikana Ongcwele — Ntsikana kaGaba with raised hand and cross, used to frame a decolonial critique of missionary hagiography.'
+                  alt={`Header image for: ${post.title}`}
                   className='w-full h-auto object-cover max-h-[min(70vh,520px)] object-top'
                   width={920}
-                  height={1200}
+                  height={520}
                   loading='eager'
                   decoding='async'
                 />
-                <figcaption className='px-4 py-3 text-xs text-muted-foreground border-t border-border'>
-                  Archival-style portrait labelled “Ntsikana Ongcwele” — the
-                  visual language of sainthood that colonial and mission presses
-                  popularised.
-                </figcaption>
               </figure>
             ) : null}
 

@@ -37,5 +37,31 @@
       { "feature": "Custom Logic", "me": "Unlimited", "them": "Plugin-dependent" }
     ],
     "verdict": "No-code is great for validation. Senior engineering is required for a business that scales."
+  },
+  {
+    "slug": "taas-vs-fractional-cto",
+    "title": "Technical Co-founder (TaaS) vs. Fractional CTO: Strategy + Execution",
+    "target": "Fractional CTOs",
+    "pain_point": "Fractional CTOs often provide strategy but leave the actual building to you, creating a gap between vision and code.",
+    "comparison_table": [
+      { "feature": "Hands-on Code", "me": "Yes (I build it myself)", "them": "Rarely (Mostly advice)" },
+      { "feature": "Delivery Speed", "me": "High (Direct output)", "them": "Variable (Dependent on your team)" },
+      { "feature": "Accountability", "me": "Single point of failure", "them": "Consultative" },
+      { "feature": "Best For", "me": "Founders who need to SHIP", "them": "Founders who have a team but need a plan" }
+    ],
+    "verdict": "A Fractional CTO is great for scale. A Technical Co-founder (TaaS) is essential for launch."
+  },
+  {
+    "slug": "ayabonga-vs-dev-shops",
+    "title": "Senior Product Engineering vs. 'Black Box' Dev Shops",
+    "target": "Offshore Dev Shops",
+    "pain_point": "Dev shops often use junior developers managed by account executives, leading to 'Black Box' builds where you don't own the technical truth.",
+    "comparison_table": [
+      { "feature": "Ownership", "me": "You own every line (Clean handoff)", "them": "Proprietary stacks / Lock-in" },
+      { "feature": "Communication", "me": "Direct (Senior dev)", "them": "Layered (PM -> Lead -> Dev)" },
+      { "feature": "Agility", "me": "Pivot-friendly", "them": "Change request paperwork" },
+      { "feature": "Value", "me": "Equity-grade code", "them": "Billable milestone code" }
+    ],
+    "verdict": "Stop being a 'client' and start having a 'partner'. Real startups aren't built in black boxes."
   }
 ]
