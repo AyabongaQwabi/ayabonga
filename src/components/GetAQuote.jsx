@@ -4,7 +4,7 @@
  * use price_zar in calculations, only days_to_complete and config.
  */
 
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -62,7 +62,16 @@ import {
   MAX_DESIRED_TIME_MULTIPLIER,
 } from '@/config/quoteToolConfig';
 import { getTotals, getFeatureBreakdown } from '@/lib/quoteToolPricing';
+import { buildQuoteExportPayload } from '@/lib/buildQuoteExportPayload';
+import { parseApiJsonResponse } from '@/lib/parseApiJsonResponse';
 import { cn } from '@/lib/utils';
+
+const FOUNDER_STAGE_OPTIONS = [
+  { value: 'idea', label: 'Idea / pre-build' },
+  { value: 'mvp', label: 'Building MVP' },
+  { value: 'live', label: 'Live product' },
+  { value: 'rebuild', label: 'Rebuild or rescue' },
+];
 
 const STORAGE_KEY = 'quote-tool-draft';
 
@@ -306,10 +315,10 @@ export default function GetAQuote({ trustStats = null }) {
   const [buildTime, setBuildTime] = useState('');
   const [showEnquiryForm, setShowEnquiryForm] = useState(null);
   const [projectDetailsSent, setProjectDetailsSent] = useState(false);
+  const [founderStage, setFounderStage] = useState('mvp');
   const [buildRequestForm, setBuildRequestForm] = useState({
     name: '',
     email: '',
-    cellphone: '',
     projectDetails: '',
   });
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -350,7 +359,7 @@ export default function GetAQuote({ trustStats = null }) {
 
   // Dynamic pricing: getTotals uses hourly rate, experience, hours/day, desired days; no price_zar in math
   const totals = useMemo(() => {
-    const rate = Math.max(1, parseInt(hourlyRate, 10) || DEFAULT_HOURLY_RATE_ZAR);
+    const rate = Math.max(1, parseInt(hourlyRate, 10) || CLIENT_QUOTE_HOURLY_RATE_ZAR);
     const years = Math.max(0, parseInt(yearsExperience, 10) || 0);
     const hoursDay = Math.max(1, parseInt(hoursPerDay, 10) || HOURS_PER_DAY);
     const desiredDays = buildTime.trim() ? parseInt(buildTime, 10) : null;
@@ -374,44 +383,73 @@ export default function GetAQuote({ trustStats = null }) {
     bufferPercent,
   ]);
 
-  const getQuoteSummaryText = useCallback(() => {
-    const featureNames = selectedFeatures
-      .map((id) => allFeatures.find((f) => f.id === id)?.name)
-      .filter(Boolean)
-      .join(', ');
-    return [
-      `Selected features: ${featureNames || 'None'}`,
-      `Hourly rate: R${hourlyRate} | Years experience: ${yearsExperience}`,
-      `Estimated (our time): R${Math.round(totals.base_price).toLocaleString()} over ${Math.round(totals.estimated_days)} days`,
-      `Adjusted (desired time): R${Math.round(totals.adjusted_price).toLocaleString()} over ${totals.effective_desired_days} days`,
-    ].join('\n');
-  }, [selectedFeatures, hourlyRate, yearsExperience, totals]);
-
   const handleBuildRequestSubmit = async (e) => {
     e.preventDefault();
     if (!buildRequestForm.name?.trim() || !buildRequestForm.email?.trim()) {
       setSubmitError('Please enter your name and email.');
       return;
     }
+    if (!totals.hasFeatures) {
+      setSubmitError('Select at least one feature before emailing your quote.');
+      return;
+    }
+    const notes = buildRequestForm.projectDetails?.trim() ?? '';
+    if (notes.length < 30) {
+      setSubmitError(
+        'Add a short project brief (30+ characters): who it is for, what success looks like in 90 days.',
+      );
+      return;
+    }
     setSubmitError(null);
     setSubmitLoading(true);
     try {
+      const rate = Math.max(1, parseInt(hourlyRate, 10) || CLIENT_QUOTE_HOURLY_RATE_ZAR);
+      const years = Math.max(0, parseInt(yearsExperience, 10) || 0);
+      const hoursDay = Math.max(1, parseInt(hoursPerDay, 10) || HOURS_PER_DAY);
+      const breakdown = getFeatureBreakdown(
+        selectedFeatures,
+        allFeatures,
+        {
+          hourlyRate: rate,
+          yearsExperience: years,
+          hoursPerDay: hoursDay,
+          desiredDays: buildTime.trim() ? parseInt(buildTime, 10) : undefined,
+        },
+        bufferPercent,
+      );
+      const quote = buildQuoteExportPayload({
+        selectedProjectTypes,
+        selectedFeatures,
+        allFeatures,
+        totals,
+        breakdown,
+        currency,
+        hourlyRate,
+        yearsExperience,
+        hoursPerDay,
+        bufferPercent,
+        buildTime,
+      });
+
       const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: buildRequestForm.name,
-          email: buildRequestForm.email,
-          projectDetails: buildRequestForm.projectDetails || '(No additional details provided)',
-          quoteSummary: getQuoteSummaryText(),
+          name: buildRequestForm.name.trim(),
+          email: buildRequestForm.email.trim(),
+          founderStage,
+          projectDetails: notes,
+          quote,
         }),
       });
 
+      const data = await parseApiJsonResponse(response);
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send request');
+        throw new Error(
+          typeof data.error === 'string' ? data.error : 'Failed to send request',
+        );
       }
 
       setProjectDetailsSent(true);
@@ -722,7 +760,7 @@ export default function GetAQuote({ trustStats = null }) {
   }
 
   function renderStage5Quote() {
-    const rate = Math.max(1, parseInt(hourlyRate, 10) || DEFAULT_HOURLY_RATE_ZAR);
+    const rate = Math.max(1, parseInt(hourlyRate, 10) || CLIENT_QUOTE_HOURLY_RATE_ZAR);
     const years = Math.max(0, parseInt(yearsExperience, 10) || 0);
     const hoursDay = Math.max(1, parseInt(hoursPerDay, 10) || HOURS_PER_DAY);
     const breakdown = getFeatureBreakdown(
@@ -883,15 +921,21 @@ export default function GetAQuote({ trustStats = null }) {
             <CardHeader>
               <CardTitle className="text-lg text-cyan-800 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5" aria-hidden />
-                Export or send this quote?
+                Email this scope summary?
               </CardTitle>
+              <CardDescription>
+                Get a copy in your inbox, plus a short founder series on scoping and rebuild
+                traps. For quick chats, WhatsApp is on the main site. Serious builds start
+                with context here.
+              </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-3">
               <Button
                 onClick={() => setShowEnquiryForm(true)}
+                disabled={!totals.hasFeatures}
                 className="bg-emerald-600 hover:bg-emerald-700 min-h-[44px]"
               >
-                Send / export quote
+                Email me this quote
               </Button>
               <Button
                 variant="outline"
@@ -920,11 +964,11 @@ export default function GetAQuote({ trustStats = null }) {
             <CardHeader>
               <CardTitle className="text-lg text-cyan-800 flex items-center gap-2">
                 <Send className="h-5 w-5" aria-hidden />
-                Export quote (mailto)
+                Save quote to your inbox
               </CardTitle>
               <CardDescription>
-                Opens your email client with the quote summary. You can also copy
-                the numbers from the table.
+                Your feature breakdown, totals, and assumptions. Plus four short emails on
+                scoping and rebuild traps (unsubscribe anytime).
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -943,6 +987,22 @@ export default function GetAQuote({ trustStats = null }) {
                   />
                 </div>
                 <div>
+                  <Label htmlFor="build-stage">Where is the product today? *</Label>
+                  <select
+                    id="build-stage"
+                    value={founderStage}
+                    onChange={(e) => setFounderStage(e.target.value)}
+                    className="mt-1 w-full min-h-[44px] rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    required
+                  >
+                    {FOUNDER_STAGE_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
                   <Label htmlFor="build-email">Email *</Label>
                   <Input
                     id="build-email"
@@ -957,7 +1017,7 @@ export default function GetAQuote({ trustStats = null }) {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="build-details">Notes (included in email body)</Label>
+                  <Label htmlFor="build-details">Project brief *</Label>
                   <textarea
                     id="build-details"
                     value={buildRequestForm.projectDetails}
@@ -967,8 +1027,10 @@ export default function GetAQuote({ trustStats = null }) {
                         projectDetails: e.target.value,
                       }))
                     }
-                    placeholder="Optional notes..."
+                    placeholder="Who is it for, what must work in the next 90 days, and what have you already tried? (30+ characters)"
                     rows={4}
+                    required
+                    minLength={30}
                     className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
                 </div>
@@ -982,7 +1044,7 @@ export default function GetAQuote({ trustStats = null }) {
                   disabled={submitLoading}
                   className="bg-cyan-600 hover:bg-cyan-700 min-h-[44px]"
                 >
-                  {submitLoading ? 'Opening...' : 'Open email with quote'}
+                  {submitLoading ? 'Sending...' : 'Send quote to my inbox'}
                 </Button>
               </form>
             </CardContent>
@@ -994,7 +1056,9 @@ export default function GetAQuote({ trustStats = null }) {
             <CardContent className="pt-6">
               <p className="text-emerald-600 font-medium flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 shrink-0" aria-hidden />
-                Email client opened. Send the message to save or share your quote.
+                Check your inbox for your scope summary. Over the next two weeks you will get
+                a few short notes on scoping and rebuild prevention. Reply to any email when
+                you are ready to talk through the build.
               </p>
             </CardContent>
           </Card>
