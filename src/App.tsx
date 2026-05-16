@@ -593,6 +593,9 @@ function App() {
             <Link to="/technical-cofounder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               TaaS
             </Link>
+            <Link to="/developers/eastern-cape" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              EC developers
+            </Link>
             <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
               <Brain className="w-3 h-3" />
               llms.txt

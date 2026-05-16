@@ -16,6 +16,7 @@ const distDir = path.join(root, 'dist');
 const blogDir = path.join(root, 'src/content/blog');
 const pseoDataPath = path.join(root, 'src/data/pseo-pages.json');
 const comparisonsDataPath = path.join(root, 'src/data/comparisons.json');
+const localDevelopersPath = path.join(root, 'src/data/local-developers.json');
 
 
 const SITE_URL = (
@@ -76,11 +77,30 @@ async function main() {
     console.warn('generate-sitemap: could not read comparisons.json');
   }
 
+  let localDev = { cities: [], roles: {} };
+  try {
+    localDev = JSON.parse(fs.readFileSync(localDevelopersPath, 'utf8'));
+  } catch (e) {
+    console.warn('generate-sitemap: could not read local-developers.json');
+  }
+
+  const ecCities = (localDev.cities || []).filter((c) => c.region === 'eastern-cape');
+  const roleSlugs = Object.keys(localDev.roles || {});
+  const localPageLinks = ecCities.flatMap((city) =>
+    roleSlugs.map((role) => ({
+      url: `/developers/eastern-cape/${city.slug}/${role}`,
+      changefreq: 'monthly',
+      priority: 0.8,
+    })),
+  );
 
   const links = [
     { url: '/', changefreq: 'weekly', priority: 1 },
     { url: '/services', changefreq: 'monthly', priority: 0.9 },
     { url: '/technical-cofounder', changefreq: 'monthly', priority: 0.95 },
+    { url: '/developers/eastern-cape', changefreq: 'weekly', priority: 0.92 },
+    { url: '/developers/south-africa', changefreq: 'weekly', priority: 0.9 },
+    ...localPageLinks,
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },
     ...blogEntries.map(({ slug, lastmod }) => ({
