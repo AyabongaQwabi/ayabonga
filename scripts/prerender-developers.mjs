@@ -17,6 +17,10 @@ const PREVIEW_HOST = '127.0.0.1';
 
 const STATIC_PRERENDER_ROUTES = [
   '/',
+  '/about',
+  '/privacy',
+  '/editorial',
+  '/corrections',
   '/services',
   '/technical-cofounder',
   '/get-a-quote',
