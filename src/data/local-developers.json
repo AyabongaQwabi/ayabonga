@@ -1,0 +1,131 @@
+{
+  "regions": {
+    "eastern-cape": {
+      "slug": "eastern-cape",
+      "name": "Eastern Cape",
+      "title": "Software Developers & Engineers in the Eastern Cape",
+      "description": "Hire a senior software developer, web developer, or cloud architect based in Queenstown, serving the full Eastern Cape and South Africa remotely.",
+      "hubKeywords": [
+        "software engineers eastern cape",
+        "software developers eastern cape",
+        "web developer eastern cape",
+        "IT consultant eastern cape"
+      ]
+    },
+    "south-africa": {
+      "slug": "south-africa",
+      "name": "South Africa",
+      "title": "Software Developers & Engineers in South Africa",
+      "description": "Senior product engineer and cloud architect for startups and SMMEs across South Africa. Based in the Eastern Cape, delivery nationwide.",
+      "hubKeywords": [
+        "software developers south africa",
+        "software engineers south africa",
+        "cloud architect south africa",
+        "senior web developer south africa"
+      ]
+    }
+  },
+  "roles": {
+    "software-developer": {
+      "slug": "software-developer",
+      "label": "Software Developer",
+      "labelPlural": "Software Developers",
+      "shortFocus": "full-stack applications, APIs, and production MVPs",
+      "keywords": ["software developer", "app developer", "custom software"]
+    },
+    "software-engineer": {
+      "slug": "software-engineer",
+      "label": "Software Engineer",
+      "labelPlural": "Software Engineers",
+      "shortFocus": "scalable architecture, testing, and maintainable systems",
+      "keywords": ["software engineer", "senior engineer", "product engineering"]
+    },
+    "web-developer": {
+      "slug": "web-developer",
+      "label": "Web Developer",
+      "labelPlural": "Web Developers",
+      "shortFocus": "fast, mobile-first websites and web apps",
+      "keywords": ["web developer", "website developer", "React developer"]
+    },
+    "web-designer": {
+      "slug": "web-designer",
+      "label": "Web Designer",
+      "labelPlural": "Web Designers",
+      "shortFocus": "conversion-focused UI, design systems, and front-end polish",
+      "keywords": ["web designer", "UI designer", "website design"]
+    },
+    "cloud-architect": {
+      "slug": "cloud-architect",
+      "label": "Cloud Architect",
+      "labelPlural": "Cloud Architects",
+      "shortFocus": "GCP, AWS, Azure, serverless, and secure cloud infrastructure",
+      "keywords": ["cloud architect", "cloud consultant", "cloud engineering"]
+    }
+  },
+  "cities": [
+    {
+      "slug": "queenstown",
+      "name": "Queenstown",
+      "alternateName": "Komani",
+      "region": "eastern-cape",
+      "localIntro": "I am based in Queenstown (Komani). I built Queens Connect for the local community and eSpazza for Eastern Cape hip hop culture. If you need a senior builder who already lives and works in the Karoo Heartland, you get on-site availability without flying someone in from Johannesburg.",
+      "nearbyProof": "Queens Connect, eSpazza"
+    },
+    {
+      "slug": "east-london",
+      "name": "East London",
+      "alternateName": "Buffalo City",
+      "region": "eastern-cape",
+      "localIntro": "East London and Buffalo City businesses often outgrow template websites and WhatsApp-only sales. I work remote-first with EC founders, with on-site meetings in East London when the project needs it.",
+      "nearbyProof": "ClinicPlus (Witbank healthcare booking model, scalable to Buffalo City clinics)"
+    },
+    {
+      "slug": "gqeberha",
+      "name": "Gqeberha",
+      "alternateName": "Port Elizabeth",
+      "region": "eastern-cape",
+      "localIntro": "Gqeberha (Port Elizabeth) has a strong port, logistics, and retail base. I help Nelson Mandela Bay operators ship web apps, marketplaces, and cloud-backed systems without agency overhead.",
+      "nearbyProof": "Laundry Marketplace, Trip dispatch architecture"
+    },
+    {
+      "slug": "mthatha",
+      "name": "Mthatha",
+      "alternateName": null,
+      "region": "eastern-cape",
+      "localIntro": "Mthatha and the OR Tambo district need software that works on slower mobile networks and respects local payment habits. I build offline-aware, Paystack-ready products for SMMEs that cannot afford a broken MVP.",
+      "nearbyProof": "uTap campus wallet patterns, mobile-first EC builds"
+    },
+    {
+      "slug": "makhanda",
+      "name": "Makhanda",
+      "alternateName": "Grahamstown",
+      "region": "eastern-cape",
+      "localIntro": "Makhanda (Grahamstown) combines education, culture, and small business energy. I support founders who need a professional web presence or a custom platform beyond WordPress templates.",
+      "nearbyProof": "MIDA school digitisation experience, edu-ready platforms"
+    },
+    {
+      "slug": "butterworth",
+      "name": "Butterworth",
+      "alternateName": "Gcuwa",
+      "region": "eastern-cape",
+      "localIntro": "Butterworth sits on the Wild Coast corridor. Local businesses deserve the same quality stack as Cape Town startups. I deliver remotely from the Eastern Cape with clear milestones and testable builds.",
+      "nearbyProof": "SMME digitisation, Eastern Cape remote delivery"
+    },
+    {
+      "slug": "qonce",
+      "name": "Qonce",
+      "alternateName": "King William's Town",
+      "region": "eastern-cape",
+      "localIntro": "Qonce (King William's Town) and the Amathole region need reliable developers who answer WhatsApp and ship increments. I am not a call-centre agency. You work directly with the engineer building your product.",
+      "nearbyProof": "Queenstown base, Amathole remote support"
+    },
+    {
+      "slug": "port-alfred",
+      "name": "Port Alfred",
+      "alternateName": null,
+      "region": "eastern-cape",
+      "localIntro": "Port Alfred and Ndlambe tourism, property, and retail businesses often need booking flows, payments, and modern sites. I build lean systems that match seasonal traffic without bloated agency fees.",
+      "nearbyProof": "Booking and marketplace patterns from ClinicPlus and Laundry Marketplace"
+    }
+  ]
+}

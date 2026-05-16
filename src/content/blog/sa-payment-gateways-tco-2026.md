@@ -1,6 +1,6 @@
 ---
-title: "The Cheapest SA Payment Gateways for React/Next.js in 2026 — Real TCO"
-excerpt: "Total cost of ownership beyond percentage fees: payout fees, load shedding, orchestrator patterns, and practical picks."
+title: "SA payment gateway TCO for React and Next.js (2026)"
+excerpt: "Paystack, Yoco, and Ozow fees plus payout and ops cost. Real total cost of ownership for SA startups, not sticker percentages."
 date: April 4, 2026
 readTime: 12 min read
 tags: Payments, Fintech, South Africa, TCO, Next.js, Ozow, Yoco

@@ -5,7 +5,14 @@
 
 export const HOURS_PER_DAY = 8;
 
+/** Default for developer-oriented tooling (e.g. DevQuote). */
 export const DEFAULT_HOURLY_RATE_ZAR = 1000;
+
+/** Founder-facing estimator on /get-a-quote (fixed assumptions in page copy). */
+export const CLIENT_QUOTE_HOURLY_RATE_ZAR = 300;
+export const CLIENT_QUOTE_HOURS_PER_DAY = 4;
+export const CLIENT_QUOTE_YEARS_EXPERIENCE = 10;
+export const CLIENT_QUOTE_BUFFER_PERCENT = 10;
 
 export const MIN_PRICE_MULTIPLIER = 0.4;
 
@@ -32,6 +39,10 @@ export const CURRENCY_OPTIONS = [
 export const pricingConfig = {
   HOURS_PER_DAY,
   DEFAULT_HOURLY_RATE_ZAR,
+  CLIENT_QUOTE_HOURLY_RATE_ZAR,
+  CLIENT_QUOTE_HOURS_PER_DAY,
+  CLIENT_QUOTE_YEARS_EXPERIENCE,
+  CLIENT_QUOTE_BUFFER_PERCENT,
   MIN_PRICE_MULTIPLIER,
   MAX_DESIRED_TIME_MULTIPLIER,
   EXPERIENCE_BASELINE_YEARS,

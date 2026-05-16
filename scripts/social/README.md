@@ -37,120 +37,192 @@ npm run social:schedule
 
 Go to **Settings > Secrets and variables > Actions** in your repo and add:
 
-### You already have these — add them exactly as named:
+### Meta (Facebook + Instagram)
+
 | Secret | Description |
 |--------|-------------|
-| `FACEBOOK_PAGE_ID` | **NEW — add this.** Your Facebook Page ID (not business ID). Find it at facebook.com/your-page > About > Page transparency |
-| `FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN` | Page Access Token from your Facebook app |
+| `FACEBOOK_PAGE_ID` | Facebook Page ID (Page → About → Page transparency) |
+| `FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN` | Page access token |
 | `FACEBOOK_DEVELOPER_APP_ID` | Facebook App ID |
 | `FACEBOOK_DEVELOPER_APP_SECRET` | Facebook App Secret |
 | `FACEBOOK_DEVELOPER_APP_TOKEN` | App-level token |
-| `INSTAGRAM_ACCOUNT_ID` | Instagram Business Account ID |
+| `INSTAGRAM_ACCOUNT_ID` | Instagram Business account ID |
 | `INSTAGRAM_ACCESS_TOKEN` | Instagram Graph API token |
 | `INSTAGRAM_APP_ID` | Instagram App ID |
 | `INSTAGRAM_APP_SECRET` | Instagram App Secret |
-| `UNSPLASH_ACCESS_KEY` | **NEW — add this.** Free at unsplash.com/developers |
-| `PEXELS_API_KEY` | Optional fallback. Free at pexels.com/api |
 
-### Getting FACEBOOK_PAGE_ID
+### Stock assets (Instagram images)
 
-Your Business Manager asset URL may show `asset_id=1166787009841265`. Verify that number is your **Page ID** (not only a business asset ID):
+| Secret | Used for |
+|--------|----------|
+| `PEXELS_API_KEY` | `media: "photo"` posts — stock photography ([pexels.com/api](https://www.pexels.com/api/)) |
+| `VECTEEZY_ACCOUNT_ID` | `media: "vector"` posts — vectors / illustrations |
+| `VECTEEZY_SECRET_KEY` | Vecteezy API key (`Authorization` header value, not `Bearer`) |
 
-1. Go to your Facebook Page
-2. Click **About** in the left sidebar
-3. Scroll to **Page transparency** for the Page ID
-4. Or run: `curl "https://graph.facebook.com/v20.0/me?fields=id,name&access_token=YOUR_PAGE_TOKEN"`
+Request Vecteezy API access at [vecteezy.com/developers](https://www.vecteezy.com/developers).
+
+### Facebook tokens and Page ID
+
+| Env var | Role |
+|---------|------|
+| `GRAPH_API_VERSION` | e.g. `25.0` (default) |
+| `FACEBOOK_PAGE_ID` | Your Page id, e.g. `1166787009841265` |
+| `FACEBOOK_PAGE_ACCESS_TOKEN` | Long-lived **page** token for `POST /{page-id}/feed` |
+| `APP_SCOPED_USER_ID` | App-scoped user id (for `/accounts` lookup) |
+| `FACEBOOK_USER_TOKEN` | Long-lived **user** token |
+| `FACEBOOK_USER_TOKEN_EXPIRES_IN_DAYS` | Optional reminder only (logged, not used by API) |
+
+**Posting** follows [Pages API — Posts](https://developers.facebook.com/docs/pages-api/posts):
+
+| Content | Endpoint | Our scheduler |
+|---------|----------|---------------|
+| Text only | `POST /{page-id}/feed` | `--facebook-only` or slots without Instagram |
+| Photo + caption | `POST /{page-id}/photos` with `url` + `message` | Default when posting **both** FB + IG (same stock image URL) |
+| Video | Video API | Not implemented |
+
+Required permissions include `pages_manage_posts`. Page tasks: `CREATE_CONTENT`, `MANAGE`, `MODERATE`.
+
+```http
+POST https://graph.facebook.com/v25.0/{FACEBOOK_PAGE_ID}/feed
+message=...&access_token={FACEBOOK_PAGE_ACCESS_TOKEN}
+
+POST https://graph.facebook.com/v25.0/{FACEBOOK_PAGE_ID}/photos
+url={public_image_url}&message=...&access_token={FACEBOOK_PAGE_ACCESS_TOKEN}
+```
+
+Photo response includes `post_id` for permalink `https://www.facebook.com/{post_id}`.
+
+**Option A (simplest):** Put the long-lived page token in `FACEBOOK_PAGE_ACCESS_TOKEN`.
+
+**Option B (derive page token from user token):**
+
+1. Short-lived user token → long-lived user token ([Meta docs](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens/get-long-lived)):
+
+```bash
+npm run social:exchange-user-token
+```
+
+2. Long-lived user token → page token via `GET /{APP_SCOPED_USER_ID}/accounts`:
+
+```bash
+npm run social:fetch-page-token
+```
+
+Copy the printed token into `FACEBOOK_PAGE_ACCESS_TOKEN` in `.env.local`.
+
+Legacy name `FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN` still works as an alias.
 
 ### Token note (Instagram)
 
-`INSTAGRAM_ACCESS_TOKEN` is often the **same** as `FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN` when your Instagram Business account is linked to the Page. Both need `instagram_content_publish` and `pages_manage_posts` permissions.
+`INSTAGRAM_ACCESS_TOKEN` is often the **same** as `FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN` when Instagram is linked to the Page. Permissions needed: `pages_manage_posts`, `instagram_content_publish`.
 
-### Getting an Unsplash Key
+### Image providers (Instagram)
 
-1. Go to [unsplash.com/developers](https://unsplash.com/developers)
-2. Create a free app
-3. Copy the **Access Key** (not Secret Key)
-4. Free tier: 50 requests/hour — more than enough for 3 posts/week
+Each calendar slot picks **one** provider by `instagram.media`:
 
-### Token Expiry Warning
+| `media` | Provider | Content |
+|---------|----------|---------|
+| `photo` (default) | **Pexels** | Stock photos |
+| `vector` | **Vecteezy** | Vectors and flat illustrations |
 
-Facebook Page Access Tokens expire every 60 days. You need to refresh them manually in Meta for Developers > your app > Access Token Debugger, then update the GitHub secret.
+There is no fallback chain. Photo posts fail without `PEXELS_API_KEY`. Vector posts fail without Vecteezy credentials.
 
-To get a long-lived token:
-```
-GET https://graph.facebook.com/v20.0/oauth/access_token
-  ?grant_type=fb_exchange_token
-  &client_id=YOUR_APP_ID
-  &client_secret=YOUR_APP_SECRET
-  &fb_exchange_token=YOUR_SHORT_TOKEN
-```
+The calendar uses **20 photo** and **10 vector** slots across the 10 weeks.
 
-## Manual Trigger
+### Token expiry
 
-You can trigger a post manually from GitHub:
+Facebook Page tokens expire about every **60 days**. Refresh in Meta for Developers → Access Token Debugger, then update the GitHub secret.
 
-1. Go to **Actions** tab in your repo
-2. Click **Social Media Scheduler**
-3. Click **Run workflow**
-4. Choose platform (both / facebook-only / instagram-only)
-5. Optionally enable **dry run** to test without posting
-6. Optionally set **post_date** to `2026-05-18` (or any Mon/Wed/Fri in the campaign) to test a specific slot
+## Manual trigger
 
-### GitHub vs Meta Business Suite scheduling
+1. **Actions** → **Social Media Scheduler** → **Run workflow**
+2. **platform:** `both` / `facebook-only` / `instagram-only`
+3. **dry_run:** `true` to preview, `false` to publish
+4. **post_date:** e.g. `2026-05-18` (Mon/Wed/Fri in the campaign)
 
-This repo uses **GitHub Actions + Graph API** (pull calendar, post at cron time). You do **not** need to duplicate entries in Meta Business Suite unless you want a backup. Meta's native scheduler cannot read `calendar.json`; pick one system to avoid double posts.
+Do not duplicate the same posts in Meta Business Suite unless you want double posts.
 
-## Local Testing
+## Local environment
+
+Copy the template and add your keys at the **repo root** (the agent shell does not see keys that only exist in your IDE):
 
 ```bash
-# Dry run — shows what would be posted today
-npm run social:dry-run
-
-# Dry run a specific campaign day (must be Mon, Wed, or Fri)
-node scripts/social/post.js --dry-run --date 2026-05-18
-
-# Facebook only
-FACEBOOK_PAGE_ID=xxx FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN=xxx \
-  node scripts/social/post.js --facebook-only
-
-# Instagram only
-INSTAGRAM_ACCOUNT_ID=xxx INSTAGRAM_ACCESS_TOKEN=xxx UNSPLASH_ACCESS_KEY=xxx \
-  node scripts/social/post.js --instagram-only
+cp scripts/social/env.example .env.local
+# edit .env.local — at minimum:
+#   FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN
+#   PEXELS_API_KEY  (photo posts)
+#   VECTEEZY_*      (vector posts only)
 ```
 
-## File Structure
+`FACEBOOK_PAGE_ID` and `INSTAGRAM_ACCOUNT_ID` are optional if the page token can resolve them via Graph API `/me` and `instagram_business_account`.
+
+Logs print **image URL** and **permalink** links after each run. Dry run fetches the image URL without posting.
+
+## Local testing
+
+```bash
+# Preview today's slot (includes image URL when PEXELS_API_KEY is set)
+npm run social:dry-run
+
+# Preview week 1 Monday (Pexels photo)
+node scripts/social/post.js --dry-run --date 2026-05-18
+
+# Preview week 1 Wednesday (Vecteezy vector)
+node scripts/social/post.js --dry-run --date 2026-05-20
+
+# Live post (both platforms) when ready
+export FACEBOOK_PAGE_ID=...
+export FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN=...
+export INSTAGRAM_ACCOUNT_ID=...
+export INSTAGRAM_ACCESS_TOKEN=...
+export PEXELS_API_KEY=...
+export VECTEEZY_ACCOUNT_ID=...
+export VECTEEZY_SECRET_KEY=...
+
+node scripts/social/post.js --date 2026-05-18
+```
+
+## File structure
 
 ```
 scripts/social/
-  post.js          # Entry point — determines which post to send today
-  facebook.js      # Facebook Graph API posting
-  instagram.js     # Instagram Graph API posting (2-step: container + publish)
-  image.js         # Unsplash/Pexels image fetcher
-  calendar.json    # 10-week content calendar (30 posts)
+  post.js          # Entry point
+  facebook.js      # Facebook Graph API
+  instagram.js     # Instagram Graph API
+  image.js         # Pexels (photos) + Vecteezy (vectors)
+  calendar.json    # 10-week calendar
+  list-schedule.js # Print dated schedule
 
 .github/workflows/
-  social-scheduler.yml   # Cron-based GitHub Actions workflow
+  social-scheduler.yml
 ```
 
-## Editing the Calendar
-
-Open `scripts/social/calendar.json`. Each post has:
+## Editing the calendar
 
 ```json
 {
   "week": 1,
   "day": "monday",
-  "facebook": "Full text post for Facebook...",
+  "facebook": "Full text for Facebook...",
   "instagram": {
-    "caption": "Shorter caption with hashtags #Tag",
-    "query": "unsplash search query for image"
+    "caption": "Caption with #hashtags",
+    "query": "developer laptop startup workspace",
+    "media": "photo"
   }
 }
 ```
 
-To skip Instagram for a specific post, remove the `instagram` field entirely.
+Vector example:
 
-Use a fixed brand image instead of Unsplash:
+```json
+"instagram": {
+  "caption": "Documentation first. Code second.",
+  "query": "project planning workflow flat illustration",
+  "media": "vector"
+}
+```
+
+Fixed brand image (skips stock APIs):
 
 ```json
 "instagram": {
@@ -159,7 +231,7 @@ Use a fixed brand image instead of Unsplash:
 }
 ```
 
-Or a public URL:
+Direct public URL:
 
 ```json
 "instagram": {
@@ -167,3 +239,5 @@ Or a public URL:
   "imageUrl": "https://www.qwabi.co.za/..."
 }
 ```
+
+Omit `media` to default to `photo` (Pexels).

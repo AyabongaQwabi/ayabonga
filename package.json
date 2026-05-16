@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sitemap.mjs",
+    "dev:vercel": "vercel dev",
+    "build": "vite build && node scripts/prerender-developers.mjs && node scripts/generate-sitemap.mjs",
+    "prerender:developers": "node scripts/prerender-developers.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "social:dry-run": "node scripts/social/post.js --dry-run",
-    "social:schedule": "node scripts/social/list-schedule.js"
+    "social:schedule": "node scripts/social/list-schedule.js",
+    "social:fetch-page-token": "node scripts/social/fetch-page-token.js",
+    "social:exchange-user-token": "node scripts/social/exchange-user-token.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -51,6 +55,7 @@
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
+    "puppeteer": "^24.43.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",

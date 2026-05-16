@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ArrowRight, Rocket, Users, BarChart, Zap, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MapPin, Rocket, Users, BarChart, Zap, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
+import { easternCapeHubPath } from '../lib/local-developers';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -29,7 +30,7 @@ export default function ServicesPage() {
       </Helmet>
 
       <nav className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-4">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -37,6 +38,27 @@ export default function ServicesPage() {
             <ArrowLeft className="w-4 h-4" />
             <span>Back to home</span>
           </Link>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <Link
+              to={easternCapeHubPath()}
+              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <MapPin className="w-3.5 h-3.5 text-primary" aria-hidden />
+              <span>Eastern Cape developers</span>
+            </Link>
+            <Link
+              to="/technical-cofounder"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              TaaS
+            </Link>
+            <Link
+              to="/get-a-quote"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Get a quote
+            </Link>
+          </div>
         </div>
       </nav>
 

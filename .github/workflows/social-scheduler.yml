@@ -18,11 +18,11 @@ on:
       platform:
         description: 'Platform to post to'
         required: false
-        default: 'both'
+        default: 'facebook-only'
         type: choice
         options:
-          - both
           - facebook-only
+          - both
           - instagram-only
       post_date:
         description: 'Override date (YYYY-MM-DD) for testing a specific slot'
@@ -46,7 +46,7 @@ jobs:
       - name: Determine platform flag
         id: flags
         run: |
-          PLATFORM="${{ github.event.inputs.platform || 'both' }}"
+          PLATFORM="${{ github.event.inputs.platform || 'facebook-only' }}"
           DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
           FLAGS=""
           if [ "$PLATFORM" = "facebook-only" ]; then FLAGS="--facebook-only"; fi
@@ -56,8 +56,12 @@ jobs:
 
       - name: Run social media poster
         env:
+          GRAPH_API_VERSION: ${{ secrets.GRAPH_API_VERSION }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_DEVELOPER_APP_PAGE_ACCESS_TOKEN }}
+          APP_SCOPED_USER_ID: ${{ secrets.APP_SCOPED_USER_ID }}
+          FACEBOOK_USER_TOKEN: ${{ secrets.FACEBOOK_USER_TOKEN }}
           FACEBOOK_DEVELOPER_APP_ID: ${{ secrets.FACEBOOK_DEVELOPER_APP_ID }}
           FACEBOOK_DEVELOPER_APP_SECRET: ${{ secrets.FACEBOOK_DEVELOPER_APP_SECRET }}
           FACEBOOK_DEVELOPER_APP_TOKEN: ${{ secrets.FACEBOOK_DEVELOPER_APP_TOKEN }}
@@ -65,9 +69,11 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_APP_ID: ${{ secrets.INSTAGRAM_APP_ID }}
           INSTAGRAM_APP_SECRET: ${{ secrets.INSTAGRAM_APP_SECRET }}
-          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          VECTEEZY_ACCOUNT_ID: ${{ secrets.VECTEEZY_ACCOUNT_ID }}
+          VECTEEZY_SECRET_KEY: ${{ secrets.VECTEEZY_SECRET_KEY }}
           SOCIAL_POST_DATE: ${{ github.event.inputs.post_date }}
+          SOCIAL_INSTAGRAM_ENABLED: ${{ secrets.SOCIAL_INSTAGRAM_ENABLED || 'false' }}
         run: node scripts/social/post.js ${{ steps.flags.outputs.flags }}
 
       - name: Notify on failure
@@ -77,4 +83,4 @@ jobs:
           echo "Common causes:"
           echo "  - Access token expired (Facebook tokens expire every 60 days)"
           echo "  - Missing FACEBOOK_PAGE_ID secret"
-          echo "  - Missing UNSPLASH_ACCESS_KEY or PEXELS_API_KEY for Instagram"
+          echo "  - Missing PEXELS_API_KEY (photo posts) or Vecteezy credentials (vector posts)"

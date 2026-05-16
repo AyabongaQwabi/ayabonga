@@ -1,6 +1,6 @@
 ---
-title: "Best Tools & Libraries to Actually Build Your Own AI Agents (2026)"
-excerpt: "A battle-tested guide to libraries and platforms for building AI agents — grouped by vibe so you can match stack, control, and budget."
+title: "Best libraries and platforms to build AI agents (2026)"
+excerpt: "LangGraph, CrewAI, Mastra, n8n, and more. Pick by stack, control, and budget for production agents in South Africa."
 date: April 11, 2026
 readTime: 9 min read
 tags: Agents, LangGraph, Mastra, CrewAI, n8n, South Africa, ADK

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Faceted blog filters (duplicate URLs in Search Console)
+Disallow: /blog?
+
 Sitemap: https://www.qwabi.co.za/sitemap.xml

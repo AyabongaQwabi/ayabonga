@@ -1,10 +1,13 @@
 import { useMemo, type ReactNode } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { blogPosts } from '../data/blog-posts';
 import type { BlogPost } from '../data/blog-posts';
 import { BlogTaxonomy } from '../components/BlogTaxonomy';
+import BlogCommercialCta from '../components/BlogCommercialCta';
+import EspazzaStatusBanner, { postMentionsEspazza } from '../components/EspazzaStatusBanner';
+import NotFound from './NotFound';
 import { DiscussionEmbed } from 'disqus-react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -18,6 +21,13 @@ import {
   parsePostDateForSchema,
   DISQUS_SHORTNAME,
 } from '../lib/site-config';
+import { AuthorBio } from '../components/AuthorBio';
+import { PageBreadcrumbs } from '../components/PageBreadcrumbs';
+import { SiteFooter } from '../components/SiteFooter';
+import {
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
+} from '../lib/entity-schema';
 
 const CITE_HREF = /^#cite-(\d+)$/;
 
@@ -63,7 +73,7 @@ export default function BlogPost() {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return <Navigate to='/blog' replace />;
+    return <NotFound />;
   }
 
   return <BlogPostView post={post} />;
@@ -91,50 +101,35 @@ function BlogPostView({ post }: { post: BlogPost }) {
     [canonical, post.slug, post.title],
   );
 
-  const articleJsonLd = useMemo(() => {
-    const doc: Record<string, unknown> = {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.excerpt,
-      url: canonical,
-      author: {
-        '@type': 'Person',
-        name: SITE_NAME,
-        url: absoluteUrl('/'),
-      },
-      publisher: {
-        '@type': 'Person',
-        name: SITE_NAME,
-        url: absoluteUrl('/'),
-      },
-      image: shareImageUrl,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonical,
-      },
-      inLanguage: 'en-ZA',
-    };
-    if (datePublished) {
-      doc.datePublished = `${datePublished}T12:00:00+02:00`;
-      doc.dateModified = `${datePublished}T12:00:00+02:00`;
-    }
-    const primarySection = post.categories[0];
-    if (primarySection) {
-      doc.articleSection = primarySection;
-    }
-    return JSON.stringify(doc);
-  }, [
-    post.title,
-    post.excerpt,
-    post.categories,
-    canonical,
-    datePublished,
-    shareImageUrl,
-  ]);
+  const dateModifiedIso = parsePostDateForSchema(post.dateModified ?? '');
+
+  const articleJsonLd = useMemo(
+    () =>
+      JSON.stringify(
+        buildBlogPostingSchema({
+          post,
+          canonical,
+          shareImageUrl,
+          dateModified: dateModifiedIso,
+        }),
+      ),
+    [post, canonical, shareImageUrl, dateModifiedIso],
+  );
+
+  const breadcrumbJsonLd = useMemo(
+    () =>
+      JSON.stringify(
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Writing', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]),
+      ),
+    [post.slug, post.title],
+  );
 
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans'>
+    <div className='min-h-screen bg-background text-foreground font-sans flex flex-col'>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name='description' content={post.excerpt} />
@@ -162,6 +157,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
         <meta name='twitter:creator' content={TWITTER_HANDLE} />
         <meta name='robots' content='index, follow, max-image-preview:large' />
         <script type='application/ld+json'>{articleJsonLd}</script>
+        <script type='application/ld+json'>{breadcrumbJsonLd}</script>
       </Helmet>
 
       <nav className='border-b border-border'>
@@ -176,7 +172,14 @@ function BlogPostView({ post }: { post: BlogPost }) {
         </div>
       </nav>
 
-      <main className='max-w-3xl mx-auto px-6 py-16'>
+      <main className='flex-1 max-w-3xl mx-auto px-6 py-16'>
+        <PageBreadcrumbs
+          items={[
+            { label: 'Home', to: '/' },
+            { label: 'Writing', to: '/blog' },
+            { label: post.title },
+          ]}
+        />
         <article>
           <header className='mb-12'>
             <div className='flex items-center gap-4 text-sm text-muted-foreground mb-4'>
@@ -215,6 +218,8 @@ function BlogPostView({ post }: { post: BlogPost }) {
               tags={post.tags}
               size='md'
             />
+
+            {postMentionsEspazza(post.tags) ? <EspazzaStatusBanner /> : null}
           </header>
 
           <div className='prose prose-invert prose-lg max-w-none'>
@@ -322,6 +327,18 @@ function BlogPostView({ post }: { post: BlogPost }) {
             </ReactMarkdown>
           </div>
 
+          <BlogCommercialCta
+            variant={
+              post.categories.some((c) =>
+                ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(c),
+              )
+                ? 'engineering'
+                : 'default'
+            }
+          />
+
+          <AuthorBio />
+
           <section
             className='not-prose mt-16 border-t border-border pt-10'
             aria-labelledby='blog-comments-heading'
@@ -339,6 +356,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
           </section>
         </article>
       </main>
+      <SiteFooter />
     </div>
   );
 }

@@ -124,3 +124,17 @@
 ## Goals
 **Business goal:** Sell engineering services to founders and agencies.
 **Conversion action:** Get a project quote / Hire for Phase 1.
+
+## SEO & Local Discovery (priority)
+**Primary intent:** Be found when people search for developers, engineers, and cloud help in South Africa, with **dominance in the Eastern Cape** first, then national head terms.
+
+**Target query clusters:**
+- National: `software developers south africa`, `software engineers south africa`, `cloud architect south africa`
+- Local hire: `software engineers eastern cape`, `web developer east london`, `web designer gqeberha`, `web developer queenstown`, `software developer mthatha`
+- Near-me (Maps): `software agencies near me`, `cloud agencies near me`, `web developer near me` (requires Google Business Profile + reviews, not pages alone)
+
+**Positioning in search:** Rank as a **senior product engineer / technical partner** (truthful). Do not brand as a multi-person "agency" unless the business model changes.
+
+**Proof for local pages:** Queenstown base; Queens Connect, eSpazza, remote work for Simply (Cape Town). Mention service to entire EC and national remote delivery.
+
+**Anti-SEO:** Thin duplicate city pages, fake office addresses, or keyword-stuffed titles that do not match page H1.

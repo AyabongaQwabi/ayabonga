@@ -8,10 +8,15 @@ import {
   SITE_NAME,
   TWITTER_HANDLE,
 } from '../lib/site-config';
+import {
+  CLIENT_QUOTE_BUFFER_PERCENT,
+  CLIENT_QUOTE_HOURLY_RATE_ZAR,
+  CLIENT_QUOTE_HOURS_PER_DAY,
+  CLIENT_QUOTE_YEARS_EXPERIENCE,
+} from '../config/quoteToolConfig';
 
 const PAGE_TITLE = 'Project quote estimator';
-const PAGE_DESCRIPTION =
-  'Interactive estimator for app and website builds: feature selection and timeline-adjusted pricing. Assumptions are fixed at R300/hr, 10 years experience, 4 billable hours per day, 10% buffer, ZAR display.';
+const PAGE_DESCRIPTION = `Interactive estimator for app and website builds: feature selection and timeline-adjusted pricing. Assumptions are fixed at R${CLIENT_QUOTE_HOURLY_RATE_ZAR}/hr, ${CLIENT_QUOTE_YEARS_EXPERIENCE} years experience, ${CLIENT_QUOTE_HOURS_PER_DAY} billable hours per day, ${CLIENT_QUOTE_BUFFER_PERCENT}% buffer, ZAR display.`;
 
 export default function GetAQuotePage() {
   return (

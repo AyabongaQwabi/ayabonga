@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { 
   CheckCircle2, 
@@ -13,23 +13,43 @@ import {
   AlertCircle,
   MessageCircle
 } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/site-config';
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  TWITTER_HANDLE,
+  WHATSAPP_URL,
+} from '../lib/site-config';
 import comparisonData from '../data/comparisons.json';
+import NotFound from './NotFound';
 
 const DynamicComparisonPage = () => {
   const { slug } = useParams();
   const page = comparisonData.find((p) => p.slug === slug);
 
   if (!page) {
-    return <Navigate to="/404" replace />;
+    return <NotFound />;
   }
+
+  const canonicalPath = `/vs/${page.slug}`;
+  const canonical = absoluteUrl(canonicalPath);
+  const metaDescription = `Comparing ${page.target} with senior technical co-founder services. ${page.verdict}`;
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30">
       <Helmet>
-        <title>{page.title} | Ayabonga Qwabi</title>
-        <meta name="description" content={`Comparing ${page.target} with senior-level Technical Co-founder services. Resolve the ${page.pain_point} and build a real business asset.`} />
-        
+        <title>{`${page.title} | ${SITE_NAME}`}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={`${page.title} | ${SITE_NAME}`} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="robots" content="index, follow" />
+
         {/* Schema.org for Comparison */}
         <script type="application/ld+json">
           {JSON.stringify({

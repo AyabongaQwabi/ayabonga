@@ -2,154 +2,304 @@
   "startDate": "2026-05-18",
   "posts": [
     {
-      "week": 1, "day": "monday",
+      "week": 1,
+      "day": "monday",
       "facebook": "Most founders I talk to are stuck between two bad options: a slow agency burning R400k+ or a junior dev who delivers something that breaks in production.\n\nThere is a third option. Senior engineering, project-based, no equity split.\n\nI work with 2-3 founders at a time. From idea to live product, without the overhead.\n\nqwabi.co.za",
-      "instagram": { "caption": "Senior engineering for founders who can't afford to get it wrong. qwabi.co.za #TaaS #StartupSA #SoftwareEngineering #FounderLife", "query": "developer laptop startup workspace" }
+      "instagram": {
+        "caption": "Senior engineering for founders who can't afford to get it wrong. qwabi.co.za #TaaS #StartupSA #SoftwareEngineering #FounderLife",
+        "query": "developer laptop startup workspace",
+        "media": "photo"
+      }
     },
     {
-      "week": 1, "day": "wednesday",
+      "week": 1,
+      "day": "wednesday",
       "facebook": "My first step on every project is not code. It's a PRD.\n\nWriting forces the clarity that conversation never does. Before I touch a database schema or a UI, we have a document that answers: What are we building? Who for? What is the smallest version that proves the idea?\n\nMost junior devs skip this. That's why you end up 3 months in with something that solves the wrong problem.",
-      "instagram": { "caption": "Documentation first. Code second. Always. #ProductEngineering #MVP #TechFounder #BuildInPublic", "query": "planning whiteboard notes strategy" }
+      "instagram": {
+        "caption": "Documentation first. Code second. Always. #ProductEngineering #MVP #TechFounder #BuildInPublic",
+        "query": "project planning workflow flat illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 1, "day": "friday",
+      "week": 1,
+      "day": "friday",
       "facebook": "What I actually do as a Technical Co-founder as a Service:\n\n- Own the full architecture decision\n- Write and review production code\n- Integrate payments, auth, notifications\n- Set up cloud infra and CI/CD\n- Ship something testable in weeks, not months\n\nIf you are pre-seed or bootstrapped with a real product to build, message me.\n\nqwabi.co.za",
-      "instagram": { "caption": "From idea to live product. That's the job. qwabi.co.za #SeniorDev #StartupLife #AfricanTech #CodeAfrica", "query": "software development code screen" }
+      "instagram": {
+        "caption": "From idea to live product. That's the job. qwabi.co.za #SeniorDev #StartupLife #AfricanTech #CodeAfrica",
+        "query": "software development code screen",
+        "media": "photo"
+      }
     },
     {
-      "week": 2, "day": "monday",
+      "week": 2,
+      "day": "monday",
       "facebook": "The Junior Dev Lottery is real.\n\nYou hire cheap, you get: no tests, no documentation, broken payment flows on launch day, and a codebase no one else can maintain.\n\nThe hidden cost is not the rate. It is the rebuild 6 months later when the product fails under real users.\n\nSenior engineering is not a luxury. It is insurance.",
-      "instagram": { "caption": "Cheap code is the most expensive mistake a founder makes. #JuniorDevLottery #StartupMistakes #TechFounder", "query": "frustrated person computer problem" }
+      "instagram": {
+        "caption": "Cheap code is the most expensive mistake a founder makes. #JuniorDevLottery #StartupMistakes #TechFounder",
+        "query": "frustrated person computer problem",
+        "media": "photo"
+      }
     },
     {
-      "week": 2, "day": "wednesday",
+      "week": 2,
+      "day": "wednesday",
       "facebook": "I built a multi-app ride-hailing ecosystem (Rider, Driver, Admin, Media platform) in a single week.\n\nNot a prototype. A working, testable product with auth, real-time location, and payment integration.\n\nThis is what AI force multiplication looks like in practice. One senior engineer directing parallel agents. Zero meeting overhead. Full stack output.\n\ntrip.qwabi.co.za",
-      "instagram": { "caption": "Rider app. Driver app. Admin. Media platform. One week. This is what AI force multiplication looks like. #BuildInPublic #AfricanTech #AI", "query": "mobile app development phone screen" }
+      "instagram": {
+        "caption": "Rider app. Driver app. Admin. Media platform. One week. This is what AI force multiplication looks like. #BuildInPublic #AfricanTech #AI",
+        "query": "mobile app development phone screen",
+        "media": "photo"
+      }
     },
     {
-      "week": 2, "day": "friday",
+      "week": 2,
+      "day": "friday",
       "facebook": "If your current build situation is one of these, we should talk:\n\n- Agency is slow and you are paying for people who manage people\n- Junior dev went quiet or delivered something that does not work\n- You have a working idea but no technical co-founder\n- Your business runs on WhatsApp and you need a real platform\n\nOne slot open this quarter. qwabi.co.za",
-      "instagram": { "caption": "Still running your business on WhatsApp? There's a better way. qwabi.co.za #SmallBusiness #Digitize #StartupSA", "query": "entrepreneur phone business coffee" }
+      "instagram": {
+        "caption": "Still running your business on WhatsApp? There's a better way. qwabi.co.za #SmallBusiness #Digitize #StartupSA",
+        "query": "entrepreneur phone business coffee",
+        "media": "photo"
+      }
     },
     {
-      "week": 3, "day": "monday",
+      "week": 3,
+      "day": "monday",
       "facebook": "My stack for most South African products:\n\nFrontend: React Native (Expo) for mobile, Next.js or Vite/React for web\nBackend: Node.js, Supabase, or Clojure for complex domains\nPayments: Paystack (SA-native, not Stripe)\nInfra: Vercel, Railway, or GCP depending on the scale\nAI: OpenAI or local models where data privacy matters\n\nEvery choice is Business-Right, not just technically interesting.",
-      "instagram": { "caption": "Stack choices that work in the SA context. Paystack, Supabase, Expo. Built for Africa. #AfricanTech #TechStack #ReactNative", "query": "technology stack coding modern" }
+      "instagram": {
+        "caption": "Stack choices that work in the SA context. Paystack, Supabase, Expo. Built for Africa. #AfricanTech #TechStack #ReactNative",
+        "query": "technology stack icons flat vector",
+        "media": "vector"
+      }
     },
     {
-      "week": 3, "day": "wednesday",
+      "week": 3,
+      "day": "wednesday",
       "facebook": "A founder came to me with a clinic management system that an agency built for R280k.\n\nIt could not generate a patient report without crashing.\n\nWe rebuilt the core in 3 weeks, added the features they actually needed, and launched. The business has been running it in production for 8 months.\n\nThat is what Business-Right engineering looks like.",
-      "instagram": { "caption": "R280k agency build. Crashed on patient reports. Rebuilt in 3 weeks. Running in production 8 months later. #ProductEngineering #AfricanTech", "query": "healthcare technology clinic digital" }
+      "instagram": {
+        "caption": "R280k agency build. Crashed on patient reports. Rebuilt in 3 weeks. Running in production 8 months later. #ProductEngineering #AfricanTech",
+        "query": "healthcare technology clinic digital",
+        "media": "photo"
+      }
     },
     {
-      "week": 3, "day": "friday",
+      "week": 3,
+      "day": "friday",
       "facebook": "What founders actually need from a technical partner:\n\n1. Someone who understands the business goal, not just the feature request\n2. Visible progress early and often, not a big reveal\n3. A product they can sell, not a liability they have to fix\n4. Direct communication, no account managers\n\nThat is the pitch. If it fits your situation, qwabi.co.za",
-      "instagram": { "caption": "You need a builder who understands the business, not just the tech. qwabi.co.za #TaaS #FounderLife #Startup", "query": "business meeting collaboration handshake" }
+      "instagram": {
+        "caption": "You need a builder who understands the business, not just the tech. qwabi.co.za #TaaS #FounderLife #Startup",
+        "query": "business meeting collaboration handshake",
+        "media": "photo"
+      }
     },
     {
-      "week": 4, "day": "monday",
+      "week": 4,
+      "day": "monday",
       "facebook": "Most MVPs fail before they meet a real user.\n\nNot because of bad design. Because of bad assumptions baked into the data model on week one.\n\nIf your schema is wrong, your product is wrong. Everything built on top of it is borrowed time.\n\nThis is why the PRD and data model come before any UI work in my process.",
-      "instagram": { "caption": "Wrong data model = wrong product. The foundation matters more than the design. #MVP #DataModel #Engineering", "query": "database schema diagram technical" }
+      "instagram": {
+        "caption": "Wrong data model = wrong product. The foundation matters more than the design. #MVP #DataModel #Engineering",
+        "query": "database schema diagram vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 4, "day": "wednesday",
+      "week": 4,
+      "day": "wednesday",
       "facebook": "I built a full laundry marketplace: Customer app, Driver app, Partner dashboard for laundromats, Admin dashboard.\n\nReact Native. Supabase. Paystack. Real-time order tracking. Scheduled pickups.\n\nOne person. One stack. Live in South Africa.\n\nlaundry.qwabi.co.za",
-      "instagram": { "caption": "Customer app. Driver app. Laundromat dashboard. Admin panel. One stack, live in SA. laundry.qwabi.co.za #BuildInPublic #ReactNative #AfricanStartup", "query": "laundry service delivery app mobile" }
+      "instagram": {
+        "caption": "Customer app. Driver app. Laundromat dashboard. Admin panel. One stack, live in SA. laundry.qwabi.co.za #BuildInPublic #ReactNative #AfricanStartup",
+        "query": "laundry service delivery app mobile",
+        "media": "photo"
+      }
     },
     {
-      "week": 4, "day": "friday",
+      "week": 4,
+      "day": "friday",
       "facebook": "The question I ask every founder on our first call:\n\n\"What happens to your business if this product does not exist in 12 months?\"\n\nIf the answer is nothing, we are building a nice-to-have. If the answer is real pain, we are building something worth investing in.\n\nClarity on this question changes everything about how we scope, prioritize, and build.",
-      "instagram": { "caption": "The one question that clarifies every product decision. What happens if this doesn't get built? #ProductThinking #Startup #FounderMindset", "query": "founder thinking strategy whiteboard" }
+      "instagram": {
+        "caption": "The one question that clarifies every product decision. What happens if this doesn't get built? #ProductThinking #Startup #FounderMindset",
+        "query": "founder thinking strategy whiteboard",
+        "media": "photo"
+      }
     },
     {
-      "week": 5, "day": "monday",
+      "week": 5,
+      "day": "monday",
       "facebook": "Hiring a CTO vs working with me:\n\nCTO: 12+ months to hire, equity, R1M+ comp, may not fit early-stage culture\nMe: Direct start, project-based, senior architecture and code, no equity\n\nI am not a replacement for a CTO long-term. But for the first 12-18 months while you are validating product-market fit, the math is straightforward.",
-      "instagram": { "caption": "TaaS vs hiring a CTO. The math is different at the early stage. #TechFounder #StartupAdvice #CTO #AfricanStartup", "query": "business comparison decision choice" }
+      "instagram": {
+        "caption": "TaaS vs hiring a CTO. The math is different at the early stage. #TechFounder #StartupAdvice #CTO #AfricanStartup",
+        "query": "business comparison decision choice",
+        "media": "photo"
+      }
     },
     {
-      "week": 5, "day": "wednesday",
+      "week": 5,
+      "day": "wednesday",
       "facebook": "I work in Clojure for backend systems that need to last.\n\nNot a popular choice. But functional programming, immutable data, and a REPL-driven workflow produces code that is genuinely easier to maintain 3 years later.\n\nMost client projects use Node.js or Python for speed. Clojure is what I reach for when correctness and longevity matter more than hiring a big team.",
-      "instagram": { "caption": "Functional programming isn't trendy. It's just more correct. #Clojure #FunctionalProgramming #BackendDev #Engineering", "query": "programming code terminal dark screen" }
+      "instagram": {
+        "caption": "Functional programming isn't trendy. It's just more correct. #Clojure #FunctionalProgramming #BackendDev #Engineering",
+        "query": "software developer coding vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 5, "day": "friday",
+      "week": 5,
+      "day": "friday",
       "facebook": "Three signals that a founder is ready to work with me:\n\n1. They can explain the business problem clearly, not just the features\n2. They understand that quality takes some real investment\n3. They want progress they can see, not a big reveal after months\n\nIf that is you, the next step is a scoping call. qwabi.co.za",
-      "instagram": { "caption": "Ready to build? Three things tell me we're a good fit. qwabi.co.za #TaaS #Founder #TechPartner", "query": "business call meeting professional" }
+      "instagram": {
+        "caption": "Ready to build? Three things tell me we're a good fit. qwabi.co.za #TaaS #Founder #TechPartner",
+        "query": "business call meeting professional",
+        "media": "photo"
+      }
     },
     {
-      "week": 6, "day": "monday",
+      "week": 6,
+      "day": "monday",
       "facebook": "AI is not replacing senior engineers. It is replacing the time senior engineers spend on scaffolding.\n\nI use Cursor, custom agents, and prompt chains to handle boilerplate, file generation, and routine code. That frees me to focus on architecture, business logic, and quality.\n\nThe output: a small team's velocity with one engineer's communication overhead.",
-      "instagram": { "caption": "AI removes the scaffolding. Senior engineers handle the architecture. That's the combination. #AIEngineering #CursorAI #BuildFaster", "query": "artificial intelligence technology future" }
+      "instagram": {
+        "caption": "AI removes the scaffolding. Senior engineers handle the architecture. That's the combination. #AIEngineering #CursorAI #BuildFaster",
+        "query": "artificial intelligence technology vector",
+        "media": "vector"
+      }
     },
     {
-      "week": 6, "day": "wednesday",
+      "week": 6,
+      "day": "wednesday",
       "facebook": "The most underrated thing about working with a senior engineer:\n\nThey push back.\n\nA junior will build exactly what you asked for. A senior will tell you when what you asked for is the wrong thing to build.\n\nThat conversation, before the code is written, is worth more than any feature.",
-      "instagram": { "caption": "The best engineers don't just build what you ask for. They tell you when you're asking for the wrong thing. #SeniorDev #ProductThinking", "query": "mentor conversation advice coaching" }
+      "instagram": {
+        "caption": "The best engineers don't just build what you ask for. They tell you when you're asking for the wrong thing. #SeniorDev #ProductThinking",
+        "query": "mentor conversation advice coaching",
+        "media": "photo"
+      }
     },
     {
-      "week": 6, "day": "friday",
+      "week": 6,
+      "day": "friday",
       "facebook": "Agencies are not bad. They are optimized for different problems.\n\nAn agency makes sense when: you have a large team, a long-term retainer, and a complex marketing operation.\n\nI make sense when: you need a production-ready product built fast, with someone who owns the architecture and can make technical decisions without a committee.\n\nKnow which problem you actually have.",
-      "instagram": { "caption": "Agency vs TaaS. Different tools for different problems. Know which one you need. #Freelance #Agency #StartupAdvice", "query": "choice decision crossroads path" }
+      "instagram": {
+        "caption": "Agency vs TaaS. Different tools for different problems. Know which one you need. #Freelance #Agency #StartupAdvice",
+        "query": "business decision crossroads vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 7, "day": "monday",
+      "week": 7,
+      "day": "monday",
       "facebook": "10 years of building in South Africa has taught me:\n\n- Mobile-first is not optional. SA users live on phones.\n- Paystack beats Stripe for local payment success rates.\n- Load shedding means offline-capable features are a real product requirement.\n- Data costs matter. Your app cannot assume fast, cheap bandwidth.\n\nBuilding for Africa means building for African realities.",
-      "instagram": { "caption": "Building for Africa means building for African realities. Mobile-first. Paystack. Load-shedding resilient. #AfricanTech #BuildForAfrica #TechSA", "query": "africa mobile phone technology city" }
+      "instagram": {
+        "caption": "Building for Africa means building for African realities. Mobile-first. Paystack. Load-shedding resilient. #AfricanTech #BuildForAfrica #TechSA",
+        "query": "africa mobile phone technology city",
+        "media": "photo"
+      }
     },
     {
-      "week": 7, "day": "wednesday",
+      "week": 7,
+      "day": "wednesday",
       "facebook": "What a 30% deposit actually signals:\n\nNot just payment. It is a mutual commitment that we are both serious.\n\nClients who pay a deposit show up to calls. They provide feedback. They make decisions. They treat the project like the business investment it is.\n\nClients who want to start without one almost always want to stop without warning too.",
-      "instagram": { "caption": "Commitment signals matter before the first line of code. #FreelanceLife #ClientManagement #Contracts #StartupAdvice", "query": "contract agreement business handshake" }
+      "instagram": {
+        "caption": "Commitment signals matter before the first line of code. #FreelanceLife #ClientManagement #Contracts #StartupAdvice",
+        "query": "contract agreement business handshake",
+        "media": "photo"
+      }
     },
     {
-      "week": 7, "day": "friday",
+      "week": 7,
+      "day": "friday",
       "facebook": "I am currently open for one new project this quarter.\n\nGood fits: non-technical founders who have validated a real problem, agencies needing a reliable white-label technical partner, SMEs ready to move off manual workflows.\n\nNot a fit: clients who want hourly billing, spec changes after sign-off, or to start without a deposit.\n\nqwabi.co.za to start the conversation.",
-      "instagram": { "caption": "One slot open this quarter. Is your project a good fit? qwabi.co.za #TaaS #HireaDev #AfricanStartup #SoftwareEngineering", "query": "open door opportunity new beginning" }
+      "instagram": {
+        "caption": "One slot open this quarter. Is your project a good fit? qwabi.co.za #TaaS #HireaDev #AfricanStartup #SoftwareEngineering",
+        "query": "open door opportunity new beginning",
+        "media": "photo"
+      }
     },
     {
-      "week": 8, "day": "monday",
+      "week": 8,
+      "day": "monday",
       "facebook": "Shipping is not the end of the product. It is the beginning of the real work.\n\nPost-launch: monitoring, user feedback loops, performance optimization, feature iterations based on real data.\n\nMost junior devs disappear after launch. Most agencies start the next project.\n\nI offer iteration retainers precisely because a product is never done.",
-      "instagram": { "caption": "Launch is not the finish line. It's where the real product work begins. #ProductEngineering #PostLaunch #Iteration", "query": "launch rocket success achievement" }
+      "instagram": {
+        "caption": "Launch is not the finish line. It's where the real product work begins. #ProductEngineering #PostLaunch #Iteration",
+        "query": "product launch rocket vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 8, "day": "wednesday",
+      "week": 8,
+      "day": "wednesday",
       "facebook": "I use TypeScript for everything now. Not optional.\n\nStrict types eliminate an entire category of runtime bugs before they reach production. For a small team or a solo engineer, type safety is not pedantry. It is your test suite when you do not have five QA engineers.\n\nIf your current codebase is untyped JS, that is a liability you are carrying every day.",
-      "instagram": { "caption": "TypeScript is not optional. Strict types are your first line of defense in a small team. #TypeScript #WebDev #EngineeringBestPractices", "query": "code typescript javascript programming" }
+      "instagram": {
+        "caption": "TypeScript is not optional. Strict types are your first line of defense in a small team. #TypeScript #WebDev #EngineeringBestPractices",
+        "query": "code typescript javascript programming",
+        "media": "photo"
+      }
     },
     {
-      "week": 8, "day": "friday",
+      "week": 8,
+      "day": "friday",
       "facebook": "What I look for in a project before I take it:\n\n- A real business problem, not a feature list\n- A founder who can make decisions quickly\n- A budget that signals they are serious\n- A timeline that is ambitious but not delusional\n\nIf your project fits, I will give it everything. If it does not, I will tell you clearly and point you somewhere better.",
-      "instagram": { "caption": "I only take projects I can win. Here's what I look for before I say yes. #Consulting #TaaS #ClientSelection", "query": "quality selection filter choice professional" }
+      "instagram": {
+        "caption": "I only take projects I can win. Here's what I look for before I say yes. #Consulting #TaaS #ClientSelection",
+        "query": "quality selection filter choice professional",
+        "media": "photo"
+      }
     },
     {
-      "week": 9, "day": "monday",
+      "week": 9,
+      "day": "monday",
       "facebook": "The real cost of staying on WhatsApp:\n\n- Orders lost because someone did not see a message\n- No transaction history, no analytics, no audit trail\n- Customer expectations you cannot meet at scale\n- Zero credibility with investors or enterprise clients\n\nYour business is bigger than an Instagram link. Time to build the platform.",
-      "instagram": { "caption": "Your business is bigger than your Instagram link. Time to build the platform. #Digitize #SmallBusiness #DigitalTransformation #AfricanBusiness", "query": "digital business platform online store" }
+      "instagram": {
+        "caption": "Your business is bigger than your Instagram link. Time to build the platform. #Digitize #SmallBusiness #DigitalTransformation #AfricanBusiness",
+        "query": "digital business platform vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 9, "day": "wednesday",
+      "week": 9,
+      "day": "wednesday",
       "facebook": "I worked remotely from Queenstown for a Cape Town company for over a year.\n\nWhat I learned: over-communication is not optional. You have to write things down. You have to take notes that save the next person 2 hours. You have to show progress before anyone asks.\n\nThese habits make me a better builder for remote-first founders everywhere.",
-      "instagram": { "caption": "Remote work taught me that written communication is a technical skill. Notes save lives. #RemoteWork #Engineering #Productivity", "query": "remote work home office laptop coffee" }
+      "instagram": {
+        "caption": "Remote work taught me that written communication is a technical skill. Notes save lives. #RemoteWork #Engineering #Productivity",
+        "query": "remote work home office laptop coffee",
+        "media": "photo"
+      }
     },
     {
-      "week": 9, "day": "friday",
+      "week": 9,
+      "day": "friday",
       "facebook": "My pricing is not hourly.\n\nHourly billing creates the wrong incentives: slow = more money. That is backwards.\n\nI scope projects at a fixed Phase 1 price based on scope, complexity, and timeline. You know what you are getting and what it costs before we start.\n\nFor ongoing work, there are monthly retainers. No surprises.\n\nqwabi.co.za",
-      "instagram": { "caption": "Fixed price. Clear scope. No hourly billing surprises. That's how I work. qwabi.co.za #Pricing #Freelance #TaaS", "query": "transparent pricing business invoice" }
+      "instagram": {
+        "caption": "Fixed price. Clear scope. No hourly billing surprises. That's how I work. qwabi.co.za #Pricing #Freelance #TaaS",
+        "query": "transparent pricing business invoice",
+        "media": "photo"
+      }
     },
     {
-      "week": 10, "day": "monday",
+      "week": 10,
+      "day": "monday",
       "facebook": "Ten weeks ago I started this content series to explain what Technical Co-founder as a Service actually means.\n\nThe short version: you get a senior engineer who thinks about your business, not just your tickets.\n\nIf anything in these posts described a problem you have, let's talk.\n\nqwabi.co.za or message me directly on WhatsApp.",
-      "instagram": { "caption": "10 weeks. One message: build with someone who thinks about your business, not just your code. qwabi.co.za #TaaS #FounderLife", "query": "milestone achievement success journey" }
+      "instagram": {
+        "caption": "10 weeks. One message: build with someone who thinks about your business, not just your code. qwabi.co.za #TaaS #FounderLife",
+        "query": "success milestone journey vector illustration",
+        "media": "vector"
+      }
     },
     {
-      "week": 10, "day": "wednesday",
+      "week": 10,
+      "day": "wednesday",
       "facebook": "I am Ayabonga Qwabi. Senior Product Engineer at Simply Financial Services. Co-founder of Namoota Technologies.\n\n10 years building apps, platforms, and AI tools in South Africa.\n\nI take on 2-3 client projects per quarter outside of my day role. Project-based, senior engineering, no equity.\n\nIf your build needs a senior technical mind, that is what I offer.\n\nqwabi.co.za",
-      "instagram": { "caption": "10 years. Two roles. One offer: senior engineering for founders who can't afford to get it wrong. qwabi.co.za", "query": "professional engineer portrait confident" }
+      "instagram": {
+        "caption": "10 years. Two roles. One offer: senior engineering for founders who can't afford to get it wrong. qwabi.co.za",
+        "query": "professional software engineer vector portrait",
+        "media": "vector"
+      }
     },
     {
-      "week": 10, "day": "friday",
+      "week": 10,
+      "day": "friday",
       "facebook": "Open for new projects.\n\nIf you are a founder with a real product to build, an agency that needs a reliable technical partner, or an SME ready to digitize, let's have a conversation.\n\nNo forms. No waiting rooms. Message me directly.\n\nWhatsApp: wa.me/27603116777\nWebsite: qwabi.co.za",
-      "instagram": { "caption": "Open for new projects. Real founders, real problems, real builds. wa.me/27603116777 #Available #TaaS #HireADev #AfricanTech", "query": "new project start fresh beginning work" }
+      "instagram": {
+        "caption": "Open for new projects. Real founders, real problems, real builds. wa.me/27603116777 #Available #TaaS #HireADev #AfricanTech",
+        "query": "new project start fresh beginning work",
+        "media": "photo"
+      }
     }
   ]
 }
