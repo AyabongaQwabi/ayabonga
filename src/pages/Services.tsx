@@ -174,6 +174,49 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Founder guides (buyer-intent SEO) */}
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-4 text-center">Founder guides</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+            Practical answers on cost, hiring, and builds in South Africa. No listicle fluff.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {[
+              {
+                title: 'App development cost (2026)',
+                path: '/app-development-cost-south-africa',
+                desc: 'MVP vs production, hidden costs, and rewrite risk.',
+              },
+              {
+                title: 'MVP developer South Africa',
+                path: '/mvp-developer-south-africa',
+                desc: 'Scoped MVPs without agency overhead.',
+              },
+              {
+                title: 'WhatsApp AI chatbot',
+                path: '/whatsapp-ai-chatbot-south-africa',
+                desc: 'Automation where your customers already message.',
+              },
+              {
+                title: 'How to choose an app developer',
+                path: '/best-app-developers-south-africa',
+                desc: 'Compare freelancers, agencies, and senior partners.',
+              },
+            ].map((guide) => (
+              <Link
+                key={guide.path}
+                to={guide.path}
+                className="group p-5 rounded-xl bg-card border border-border hover:border-primary/50 transition-all"
+              >
+                <h3 className="font-bold mb-1 group-hover:text-primary transition-colors">
+                  {guide.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{guide.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Industry Focus - pSEO Links */}
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-12 text-center">Strategic Industry Focus</h2>

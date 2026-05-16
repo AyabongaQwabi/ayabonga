@@ -1,18 +1,21 @@
+import { BUSINESS_SITE_ORIGIN, isBusinessSite } from './site-variant';
+
 const envSite =
   typeof import.meta !== 'undefined' && import.meta.env?.VITE_SITE_URL
     ? String(import.meta.env.VITE_SITE_URL).replace(/\/$/, '')
     : '';
 
 /** Canonical site URL (no trailing slash). Set `VITE_SITE_URL` for previews/staging. */
-export const SITE_ORIGIN = envSite || 'https://www.qwabi.co.za';
+export const SITE_ORIGIN =
+  envSite || (isBusinessSite ? BUSINESS_SITE_ORIGIN : 'https://www.qwabi.co.za');
 
 export const SITE_NAME = 'Ayabonga Qwabi';
 
 export const DEFAULT_PAGE_TITLE =
-  'Ayabonga Qwabi | Technical Co-founder as a Service | Senior Product Engineer';
+  'Custom App Developer South Africa | Ayabonga Qwabi';
 
 export const DEFAULT_PAGE_DESCRIPTION =
-  'I turn business ideas into working digital products (apps, platforms, AI tools) without the agency overhead or the junior dev lottery. Senior engineering and TaaS for founders.';
+  'Senior app and software developer in South Africa. Ecommerce, marketplaces, fintech, health apps, WhatsApp bots, and MVPs. WhatsApp or scoped quote.';
 
 export const DEFAULT_OG_IMAGE =
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg';

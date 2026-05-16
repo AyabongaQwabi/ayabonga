@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:business": "VITE_SITE_VARIANT=business VITE_SITE_URL=https://business.qwabi.co.za vite",
     "dev:vercel": "vercel dev",
     "build": "vite build && node scripts/prerender-developers.mjs && node scripts/generate-sitemap.mjs",
+    "build:business": "VITE_SITE_VARIANT=business VITE_SITE_URL=https://business.qwabi.co.za npm run build",
     "prerender:developers": "node scripts/prerender-developers.mjs",
     "lint": "eslint .",
     "preview": "vite preview",

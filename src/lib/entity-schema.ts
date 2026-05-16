@@ -104,6 +104,21 @@ export function buildBreadcrumbSchema(
   };
 }
 
+export function buildFaqPageSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export function buildBlogPostingSchema(options: {
   post: BlogPost;
   canonical: string;

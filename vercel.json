@@ -6,6 +6,18 @@
       "has": [{ "type": "host", "value": "qwabi.co.za" }],
       "destination": "https://www.qwabi.co.za/:path*",
       "permanent": true
+    },
+    {
+      "source": "/blog",
+      "has": [{ "type": "host", "value": "business.qwabi.co.za" }],
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/:path*",
+      "has": [{ "type": "host", "value": "business.qwabi.co.za" }],
+      "destination": "/",
+      "permanent": false
     }
   ],
   "rewrites": [

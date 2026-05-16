@@ -18,6 +18,9 @@ import About from './pages/About.tsx';
 import Privacy from './pages/Privacy.tsx';
 import Editorial from './pages/Editorial.tsx';
 import Corrections from './pages/Corrections.tsx';
+import BuyerIntentPage from './pages/BuyerIntentPage.tsx';
+import { buyerIntentPaths } from './data/buyer-intent-pages.ts';
+import { isBusinessSite } from './lib/site-variant.ts';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -46,9 +49,16 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/editorial" element={<Editorial />} />
           <Route path="/corrections" element={<Corrections />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+          {!isBusinessSite ? (
+            <>
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+            </>
+          ) : null}
           <Route path="/get-a-quote" element={<GetAQuotePage />} />
+          {buyerIntentPaths.map((path) => (
+            <Route key={path} path={path} element={<BuyerIntentPage />} />
+          ))}
           <Route path="/projects/espazza" element={<EspazzaProject />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

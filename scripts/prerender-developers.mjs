@@ -15,6 +15,8 @@ const localDataPath = path.join(root, 'src/data/local-developers.json');
 const PREVIEW_PORT = Number(process.env.PRERENDER_PORT || 4173);
 const PREVIEW_HOST = '127.0.0.1';
 
+const isBusinessSite = process.env.VITE_SITE_VARIANT === 'business';
+
 const STATIC_PRERENDER_ROUTES = [
   '/',
   '/about',
@@ -29,7 +31,11 @@ const STATIC_PRERENDER_ROUTES = [
   '/blog/sa-payment-gateways-tco-2026',
   '/blog/build-ai-agents-libraries-2026',
   '/blog/xhosa-meaningful-baby-name-ideas',
-];
+  '/app-development-cost-south-africa',
+  '/mvp-developer-south-africa',
+  '/whatsapp-ai-chatbot-south-africa',
+  '/best-app-developers-south-africa',
+].filter((route) => !isBusinessSite || !route.startsWith('/blog'));
 
 function collectDeveloperRoutes() {
   const data = JSON.parse(fs.readFileSync(localDataPath, 'utf8'));
