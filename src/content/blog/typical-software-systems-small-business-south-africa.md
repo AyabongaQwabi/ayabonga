@@ -3,9 +3,11 @@ title: "Typical Software Systems Small Businesses in South Africa Need"
 excerpt: "From CRM and payroll to POS, fleet, SARS-ready accounting, and loadshedding ops. What SA SMBs actually run, when off-the-shelf breaks, and how custom software development closes the gap."
 date: May 16, 2026
 readTime: 14 min read
+slug: typical-software-systems-small-business-south-africa
 tags: South Africa, SMB, Custom software, Operations, Paystack, SARS
 categories: Product, Engineering
-ogImage: /images/blog/typical-software-systems-small-business-south-africa.png
+ogImage: /images/blog/typical-software-systems-small-business-south-africa.webp
+headerImage: /images/blog/typical-software-systems-small-business-south-africa.webp
 ---
 
 If you run a small business in South Africa, you already live inside a stack of systems you did not choose on day one. The accountant insists on one ledger. Your sales team lives in WhatsApp. Stock lives in a spreadsheet until it does not. Payments go through Paystack or Yoco, and SARS deadlines do not care that Eskom dropped the grid again.
@@ -13,6 +15,8 @@ If you run a small business in South Africa, you already live inside a stack of 
 This guide names the **typical software systems** small and medium businesses here actually need, what each one is for, and **how custom software development** helps when generic tools stop matching how you work. I build these systems as a [technical co-founder](/technical-cofounder) and senior [custom software development](https://www.qwabi.co.za/) partner (one owner, shipped product, not slide decks). If you want a scoped ballpark for your stack, use the [project quote estimator](/get-a-quote) or [message me on WhatsApp](https://wa.me/27603116777?text=Hi%20Ayabonga%2C%20I%20read%20your%20post%20on%20software%20systems%20for%20small%20businesses%20and%20I%20want%20to%20discuss%20what%20we%20need.).
 
 ## Why “just use SaaS” stops working for SA small businesses
+
+![Small business owner juggling CRM, payroll, and POS software in South Africa](/images/blog/typical-software-systems-small-business-south-africa-inline.webp)
 
 Software as a Service (SaaS) products are built for average customers in large markets. South African small businesses are not average. You have **ZAR (South African Rand) pricing**, local payroll rules, **Paystack** and card rails that differ from US defaults, **SARS (South African Revenue Service)** reporting expectations, unreliable power, and teams that sell on WhatsApp before they open a laptop.
 

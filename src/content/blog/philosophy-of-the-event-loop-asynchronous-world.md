@@ -5,6 +5,8 @@ date: April 16, 2026
 readTime: 6 min read
 tags: Philosophy, Growth, Self-Worth, Asynchronous, JavaScript, Developers, Presence
 categories: Philosophy
+headerImage: /images/blog/philosophy-of-the-event-loop-asynchronous-world.webp
+ogImage: /images/blog/philosophy-of-the-event-loop-asynchronous-world.webp
 ---
 
 In JavaScript, the event loop is the quiet orchestrator that makes a single-threaded runtime feel alive with possibility.
@@ -18,6 +20,8 @@ You are single-threaded by nature, only one moment of full attention exists at a
 ---
 
 ### The cost of a blocked stack
+![Code on a laptop in a dim workspace](/images/blog/philosophy-of-the-event-loop-asynchronous-world-inline.webp)
+
 
 Most of us were trained in blocking languages of the mind.
 

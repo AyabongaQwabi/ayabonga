@@ -5,9 +5,13 @@ date: April 11, 2026
 readTime: 7 min read
 tags: Developers, Metaphor, Mental health, Growth, 127.0.0.1
 categories: Philosophy
+headerImage: /images/blog/philosophy-of-localhost-manifesto.webp
+ogImage: /images/blog/philosophy-of-localhost-manifesto.webp
 ---
 
 ## A teaching of self
+![Developer workspace with code on screen](/images/blog/philosophy-of-localhost-manifesto-inline.webp)
+
 
 As humans, we often focus on our **public API**, the version of ourselves the world consumes.
 

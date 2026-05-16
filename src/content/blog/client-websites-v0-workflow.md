@@ -5,6 +5,7 @@ date: April 6, 2026
 readTime: 6 min read
 tags: v0, Vercel, Agent.ai, Web design, Client work
 categories: Engineering, Product
+ogImage: https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 # How I Build Great-Looking, Fully Functional Client Websites in 10–20 Minutes

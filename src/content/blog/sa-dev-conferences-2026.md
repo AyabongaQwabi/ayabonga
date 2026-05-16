@@ -1,4 +1,6 @@
 ---
+ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+headerImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
 title: "South African Dev Conferences Worth Your Time in 2026"
 excerpt: "An honest review of DevConf, Africa Tech Festival, DataConf, TECHSPO, and more. Plus networking tips for Mzansi devs."
 date: April 8, 2026

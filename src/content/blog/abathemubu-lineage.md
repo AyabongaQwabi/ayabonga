@@ -5,6 +5,8 @@ date: April 11, 2026
 readTime: 18 min read
 tags: Thembu, Genealogy, South Africa, NomavaTV, Xhosa history
 categories: Culture, History
+headerImage: /images/blog/abathemubu-lineage.webp
+ogImage: /images/blog/abathemubu-lineage.webp
 ---
 
 > **Written by Ayabonga** · _Ifafa elide lakwa Qithi_ · _“Umthi omde wokuvelela izinto”_  
@@ -13,6 +15,8 @@ categories: Culture, History
 ---
 
 ## Thembu lineage and history
+![South African landscape evoking Thembu heritage and lineage](/images/blog/abathemubu-lineage-inline.webp)
+
 
 The Thembu people, known as **AbaThembu** or **|Xam bu !e** people, possess a rich and complex history that traces back to a lineage of influential leaders. This lineage not only shaped their cultural identity but also their territorial claims in what is now South Africa.
 

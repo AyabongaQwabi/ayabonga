@@ -6,7 +6,8 @@ readTime: 12 min read
 slug: what-is-a-landing-page
 tags: Landing Page, Marketing, Conversion, South Africa, Web Development, SEO
 categories: Product, Engineering
-headerImage: /images/blog/what-is-a-landing-page.jpg
+headerImage: /images/blog/what-is-a-landing-page.webp
+ogImage: /images/blog/what-is-a-landing-page.webp
 seoTitle: What Is a Landing Page? Definition & Importance
 metaDescription: What a landing page is, how it differs from your homepage, and why landing page development matters for leads and app launches in South Africa.
 ---
@@ -20,6 +21,8 @@ That click wanted a **landing page**: one focused screen that matches the promis
 This post defines landing pages, how they differ from the rest of your site, why they matter for South African businesses, and when **landing page development** is worth paying for as part of **custom software development**.
 
 ## What is a landing page?
+
+![Single-purpose landing page with headline and one primary button](/images/blog/what-is-a-landing-page-inline.webp)
 
 A **landing page** is a standalone web page built for one campaign or one offer. It has a single primary goal, usually:
 

@@ -5,6 +5,7 @@ date: August 15, 2020
 readTime: 10 min read
 tags: React, Gatsby, Performance, Webpack, Ramda
 categories: Engineering
+ogImage: https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 How I dramatically improved the speed of my website.

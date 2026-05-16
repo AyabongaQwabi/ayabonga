@@ -5,6 +5,8 @@ date: April 16, 2026
 readTime: 5 min read
 tags: Philosophy, Productivity, Growth, Refactoring, Developers, Habits
 categories: Philosophy
+headerImage: /images/blog/philosophy-of-the-garden-refactoring-your-environment.webp
+ogImage: /images/blog/philosophy-of-the-garden-refactoring-your-environment.webp
 ---
 
 In software, we obsess over **clean code**. We talk about SOLID principles, DRY (Don't Repeat Yourself), and the elimination of technical debt. We know that a messy codebase eventually becomes unworkable, collapsing under the weight of its own complexity.
@@ -16,6 +18,8 @@ If you do not periodically refactor your environment, your habits, and your "dep
 ---
 
 ### The dependency audit
+![Green plants in soft light, suggesting growth](/images/blog/philosophy-of-the-garden-refactoring-your-environment-inline.webp)
+
 
 Every library you import into a project carries a cost. It is a bit of code you did not write, but now you have to maintain.
 

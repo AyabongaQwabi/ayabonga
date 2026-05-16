@@ -1,11 +1,15 @@
 import { useMemo, type ReactNode } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
-import { blogPosts } from '../data/blog-posts';
+import { ArrowLeft } from 'lucide-react';
+import { blogPosts, getPostThumbnailSources } from '../data/blog-posts';
 import type { BlogPost } from '../data/blog-posts';
 import { BlogTaxonomy } from '../components/BlogTaxonomy';
 import BlogCommercialCta from '../components/BlogCommercialCta';
+import { BlogPostHero } from '../components/BlogPostHero';
+import { BlogToc } from '../components/BlogToc';
+import { BlogShare } from '../components/BlogShare';
+import { BlogRelatedPosts } from '../components/BlogRelatedPosts';
 import EspazzaStatusBanner, { postMentionsEspazza } from '../components/EspazzaStatusBanner';
 import NotFound from './NotFound';
 import { DiscussionEmbed } from 'disqus-react';
@@ -21,7 +25,12 @@ import {
   parsePostDateForSchema,
   DISQUS_SHORTNAME,
 } from '../lib/site-config';
-import { AuthorBio } from '../components/AuthorBio';
+import {
+  extractHeadingsFromMarkdown,
+  headingToId,
+  type TocEntry,
+} from '../lib/blog-headings';
+import { AuthorBio, AuthorByline } from '../components/AuthorBio';
 import { PageBreadcrumbs } from '../components/PageBreadcrumbs';
 import { SiteFooter } from '../components/SiteFooter';
 import {
@@ -68,6 +77,62 @@ function MarkdownAnchor({
   );
 }
 
+function getHeadingText(children: ReactNode): string {
+  if (children == null) return '';
+  if (typeof children === 'string') return children;
+  if (typeof children === 'number') return String(children);
+  if (Array.isArray(children)) return children.map(getHeadingText).join('');
+  if (typeof children === 'object' && 'props' in children) {
+    const props = (children as { props?: { children?: ReactNode } }).props;
+    return getHeadingText(props?.children);
+  }
+  return '';
+}
+
+function makeHeadingRenderer(level: 2 | 3, entries: TocEntry[]) {
+  let cursor = 0;
+  const Tag = level === 2 ? 'h2' : 'h3';
+  const className =
+    level === 2
+      ? 'scroll-mt-28 text-xl font-semibold text-foreground mt-10 mb-4'
+      : 'scroll-mt-28 text-lg font-semibold text-foreground mt-8 mb-3';
+
+  return function MarkdownHeading({ children }: { children?: ReactNode }) {
+    let id = headingToId(getHeadingText(children));
+    while (cursor < entries.length && entries[cursor].level !== level) {
+      cursor += 1;
+    }
+    if (cursor < entries.length && entries[cursor].level === level) {
+      id = entries[cursor].id;
+      cursor += 1;
+    }
+    return (
+      <Tag id={id} className={className}>
+        {children}
+      </Tag>
+    );
+  };
+}
+
+function MarkdownImage({
+  src,
+  alt,
+}: {
+  src?: string;
+  alt?: string;
+}) {
+  if (!src) return null;
+  return (
+    <img
+      src={src}
+      alt={alt ?? ''}
+      loading='lazy'
+      decoding='async'
+      className='my-8 w-full max-w-full rounded-lg border border-border object-cover'
+    />
+  );
+}
+
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
@@ -91,6 +156,111 @@ function BlogPostView({ post }: { post: BlogPost }) {
     ? absoluteMediaUrl(shareImagePath)
     : DEFAULT_OG_IMAGE;
   const heroImagePath = post.headerImage || post.ogImage;
+  const heroSources = heroImagePath
+    ? getPostThumbnailSources({
+        ...post,
+        headerImage: heroImagePath,
+        ogImage: heroImagePath,
+      })
+    : undefined;
+
+  const tocEntries = useMemo(
+    () => extractHeadingsFromMarkdown(post.content),
+    [post.content],
+  );
+
+  const markdownComponents = useMemo(
+    () => ({
+      h1: ({ children }: { children?: ReactNode }) => (
+        <h1 className='scroll-mt-28 text-2xl font-bold text-foreground mt-12 mb-4'>
+          {children}
+        </h1>
+      ),
+      h2: makeHeadingRenderer(2, tocEntries),
+      h3: makeHeadingRenderer(3, tocEntries),
+      p: ({ children }: { children?: ReactNode }) => (
+        <p className='text-muted-foreground leading-relaxed mb-6'>{children}</p>
+      ),
+      ul: ({ children }: { children?: ReactNode }) => (
+        <ul className='list-disc list-inside space-y-2 text-muted-foreground mb-6'>
+          {children}
+        </ul>
+      ),
+      ol: ({ children }: { children?: ReactNode }) => (
+        <ol className='list-decimal list-inside space-y-2 text-muted-foreground mb-6'>
+          {children}
+        </ol>
+      ),
+      li: ({ children }: { children?: ReactNode }) => (
+        <li className='text-muted-foreground'>{children}</li>
+      ),
+      a: ({ href, children }: { href?: string; children?: ReactNode }) => (
+        <MarkdownAnchor href={href}>{children}</MarkdownAnchor>
+      ),
+      img: MarkdownImage,
+      code: ({
+        className,
+        children,
+      }: {
+        className?: string;
+        children?: ReactNode;
+      }) => {
+        const isBlock = className?.includes('language-');
+        if (isBlock) {
+          return (
+            <pre className='bg-card border border-border rounded-lg p-4 overflow-x-auto mb-6'>
+              <code className='text-sm font-mono text-foreground'>
+                {children}
+              </code>
+            </pre>
+          );
+        }
+        return (
+          <code className='bg-card px-1.5 py-0.5 rounded text-sm font-mono text-primary'>
+            {children}
+          </code>
+        );
+      },
+      pre: ({ children }: { children?: ReactNode }) => <>{children}</>,
+      blockquote: ({ children }: { children?: ReactNode }) => (
+        <blockquote className='border-l-2 border-primary pl-4 italic text-muted-foreground mb-6'>
+          {children}
+        </blockquote>
+      ),
+      hr: () => <hr className='border-border my-8' />,
+      strong: ({ children }: { children?: ReactNode }) => (
+        <strong className='text-foreground font-semibold'>{children}</strong>
+      ),
+      em: ({ children }: { children?: ReactNode }) => (
+        <em className='italic'>{children}</em>
+      ),
+      table: ({ children }: { children?: ReactNode }) => (
+        <div className='not-prose my-6 overflow-x-auto rounded-lg border border-border'>
+          <table className='w-full min-w-[min(100%,20rem)] border-collapse text-sm'>
+            {children}
+          </table>
+        </div>
+      ),
+      thead: ({ children }: { children?: ReactNode }) => (
+        <thead className='border-b border-border bg-card/50'>{children}</thead>
+      ),
+      tbody: ({ children }: { children?: ReactNode }) => <tbody>{children}</tbody>,
+      tr: ({ children }: { children?: ReactNode }) => (
+        <tr className='border-b border-border/50 last:border-0'>{children}</tr>
+      ),
+      th: ({ children }: { children?: ReactNode }) => (
+        <th className='px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-foreground'>
+          {children}
+        </th>
+      ),
+      td: ({ children }: { children?: ReactNode }) => (
+        <td className='px-3 py-2.5 align-top text-muted-foreground first:text-foreground/90'>
+          {children}
+        </td>
+      ),
+    }),
+    [tocEntries],
+  );
 
   const disqusConfig = useMemo(
     () => ({
@@ -161,7 +331,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
       </Helmet>
 
       <nav className='border-b border-border'>
-        <div className='max-w-3xl mx-auto px-6 py-4'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 py-4'>
           <Link
             to='/blog'
             className='inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors'
@@ -172,7 +342,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
         </div>
       </nav>
 
-      <main className='flex-1 max-w-3xl mx-auto px-6 py-16'>
+      <main className='flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12'>
         <PageBreadcrumbs
           items={[
             { label: 'Home', to: '/' },
@@ -180,38 +350,29 @@ function BlogPostView({ post }: { post: BlogPost }) {
             { label: post.title },
           ]}
         />
-        <article>
-          <header className='mb-12'>
-            <div className='flex items-center gap-4 text-sm text-muted-foreground mb-4'>
-              <span className='flex items-center gap-1.5'>
-                <Calendar className='w-3.5 h-3.5' />
-                {post.date}
-              </span>
-              <span className='flex items-center gap-1.5'>
-                <Clock className='w-3.5 h-3.5' />
-                {post.readTime}
-              </span>
-            </div>
+        <article className='mt-6 md:mt-8'>
+          {heroSources ? (
+            <BlogPostHero
+              src={heroSources.primary}
+              alt={`Featured image for ${post.title}`}
+              fallbackSrc={heroSources.fallback}
+            />
+          ) : null}
 
-            <h1 className='text-3xl md:text-4xl font-bold text-foreground mb-4'>
+          <header className='mb-10 mt-8 md:mt-10'>
+            <AuthorByline
+              date={post.date}
+              readTime={post.readTime}
+              className='mb-6'
+            />
+
+            <h1 className='text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-4 text-balance leading-tight'>
               {post.title}
             </h1>
 
-            <p className='text-lg text-muted-foreground mb-6'>{post.excerpt}</p>
-
-            {heroImagePath ? (
-              <figure className='mb-8 rounded-lg overflow-hidden border border-border bg-card'>
-                <img
-                  src={heroImagePath}
-                  alt={`Header image for: ${post.title}`}
-                  className='w-full h-auto object-cover max-h-[min(70vh,520px)] object-top'
-                  width={920}
-                  height={520}
-                  loading='eager'
-                  decoding='async'
-                />
-              </figure>
-            ) : null}
+            <p className='text-lg text-muted-foreground mb-6 max-w-3xl leading-relaxed'>
+              {post.excerpt}
+            </p>
 
             <BlogTaxonomy
               categories={post.categories}
@@ -219,141 +380,66 @@ function BlogPostView({ post }: { post: BlogPost }) {
               size='md'
             />
 
-            {postMentionsEspazza(post.tags) ? <EspazzaStatusBanner /> : null}
+            {postMentionsEspazza(post.tags) ? (
+              <div className='mt-6'>
+                <EspazzaStatusBanner />
+              </div>
+            ) : null}
           </header>
 
-          <div className='prose prose-invert prose-lg max-w-none'>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
-              components={{
-                h1: ({ children }) => (
-                  <h1 className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                    {children}
-                  </h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className='text-xl font-semibold text-foreground mt-10 mb-4'>
-                    {children}
-                  </h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className='text-lg font-semibold text-foreground mt-8 mb-3'>
-                    {children}
-                  </h3>
-                ),
-                p: ({ children }) => (
-                  <p className='text-muted-foreground leading-relaxed mb-6'>
-                    {children}
-                  </p>
-                ),
-                ul: ({ children }) => (
-                  <ul className='list-disc list-inside space-y-2 text-muted-foreground mb-6'>
-                    {children}
-                  </ul>
-                ),
-                ol: ({ children }) => (
-                  <ol className='list-decimal list-inside space-y-2 text-muted-foreground mb-6'>
-                    {children}
-                  </ol>
-                ),
-                li: ({ children }) => (
-                  <li className='text-muted-foreground'>{children}</li>
-                ),
-                a: ({ href, children }) => (
-                  <MarkdownAnchor href={href}>{children}</MarkdownAnchor>
-                ),
-                code: ({ className, children }) => {
-                  const isBlock = className?.includes('language-');
-                  if (isBlock) {
-                    return (
-                      <pre className='bg-card border border-border rounded-lg p-4 overflow-x-auto mb-6'>
-                        <code className='text-sm font-mono text-foreground'>
-                          {children}
-                        </code>
-                      </pre>
-                    );
-                  }
-                  return (
-                    <code className='bg-card px-1.5 py-0.5 rounded text-sm font-mono text-primary'>
-                      {children}
-                    </code>
-                  );
-                },
-                pre: ({ children }) => <>{children}</>,
-                blockquote: ({ children }) => (
-                  <blockquote className='border-l-2 border-primary pl-4 italic text-muted-foreground mb-6'>
-                    {children}
-                  </blockquote>
-                ),
-                hr: () => <hr className='border-border my-8' />,
-                strong: ({ children }) => (
-                  <strong className='text-foreground font-semibold'>
-                    {children}
-                  </strong>
-                ),
-                em: ({ children }) => <em className='italic'>{children}</em>,
-                table: ({ children }) => (
-                  <div className='not-prose my-6 overflow-x-auto rounded-lg border border-border'>
-                    <table className='w-full min-w-[min(100%,20rem)] border-collapse text-sm'>
-                      {children}
-                    </table>
-                  </div>
-                ),
-                thead: ({ children }) => (
-                  <thead className='border-b border-border bg-card/50'>
-                    {children}
-                  </thead>
-                ),
-                tbody: ({ children }) => <tbody>{children}</tbody>,
-                tr: ({ children }) => (
-                  <tr className='border-b border-border/50 last:border-0'>
-                    {children}
-                  </tr>
-                ),
-                th: ({ children }) => (
-                  <th className='px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-foreground'>
-                    {children}
-                  </th>
-                ),
-                td: ({ children }) => (
-                  <td className='px-3 py-2.5 align-top text-muted-foreground first:text-foreground/90'>
-                    {children}
-                  </td>
-                ),
-              }}
-            >
-              {post.content}
-            </ReactMarkdown>
+          <div className='lg:grid lg:grid-cols-[minmax(0,13.5rem)_minmax(0,1fr)] lg:gap-x-10 xl:gap-x-12'>
+            <BlogToc markdown={post.content} className='mb-8 lg:mb-0' />
+
+            <div className='min-w-0'>
+              <div className='prose prose-invert prose-lg max-w-none'>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]}
+                  components={markdownComponents}
+                >
+                  {post.content}
+                </ReactMarkdown>
+              </div>
+
+              <BlogCommercialCta
+                variant={
+                  post.categories.some((c) =>
+                    ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(
+                      c,
+                    ),
+                  )
+                    ? 'engineering'
+                    : 'default'
+                }
+              />
+
+              <AuthorBio />
+
+              <BlogShare
+                url={`/blog/${post.slug}`}
+                title={post.title}
+                className='mt-10'
+              />
+
+              <section
+                className='not-prose mt-16 border-t border-border pt-10'
+                aria-labelledby='blog-comments-heading'
+              >
+                <h2
+                  id='blog-comments-heading'
+                  className='text-xl font-semibold text-foreground mb-6'
+                >
+                  Comments
+                </h2>
+                <DiscussionEmbed
+                  shortname={DISQUS_SHORTNAME}
+                  config={disqusConfig}
+                />
+              </section>
+            </div>
           </div>
 
-          <BlogCommercialCta
-            variant={
-              post.categories.some((c) =>
-                ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(c),
-              )
-                ? 'engineering'
-                : 'default'
-            }
-          />
-
-          <AuthorBio />
-
-          <section
-            className='not-prose mt-16 border-t border-border pt-10'
-            aria-labelledby='blog-comments-heading'
-          >
-            <h2
-              id='blog-comments-heading'
-              className='text-xl font-semibold text-foreground mb-6'
-            >
-              Comments
-            </h2>
-            <DiscussionEmbed
-              shortname={DISQUS_SHORTNAME}
-              config={disqusConfig}
-            />
-          </section>
+          <BlogRelatedPosts post={post} className='mt-16 md:mt-20' />
         </article>
       </main>
       <SiteFooter />

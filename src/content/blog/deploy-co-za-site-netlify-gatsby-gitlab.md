@@ -5,6 +5,7 @@ date: October 13, 2019
 readTime: 12 min read
 tags: Netlify, Gatsby, GitLab, co.za, South Africa, DNS
 categories: Engineering
+ogImage: https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 How to deploy a .co.za website to Netlify with GatsbyJS, Gitlab and RegisterDomainSA

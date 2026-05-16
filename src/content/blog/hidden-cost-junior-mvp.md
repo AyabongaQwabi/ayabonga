@@ -18,6 +18,8 @@ I'm Ayabonga Qwabi. As a [technical co-founder as a Service](/technical-cofounde
 
 Here is what that cheap build actually costs, before you spend twice to rebuild it.
 
+![Startup team discovering hidden costs in a junior-built MVP](/images/blog/hidden-cost-junior-mvp.png)
+
 ### The 5-to-50 scalability ceiling
 
 A junior-built MVP often works for your first five users (you, your co-founder, your moms). Run a LinkedIn ad and fifty concurrent sessions hit the site, and the stack shows its cracks.

@@ -13,6 +13,10 @@ You are not really asking “what does a developer cost?” You are asking “wh
 That is a different question. This guide answers it for South Africa in 2026: the main ways founders pay for technical leadership, realistic **Phase 1** budget bands, and how to use the [project quote estimator](/get-a-quote) without fooling yourself.
 
 ## What people mean by “technical co-founder” in South Africa
+![Supporting visual for this section](/images/blog/technical-cofounder-cost-south-africa-2026-inline.jpg)
+
+
+![Founder reviewing technical co-founder cost options in South Africa](/images/blog/technical-cofounder-cost-south-africa-2026.png)
 
 The phrase gets used for four different relationships:
 

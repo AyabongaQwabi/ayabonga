@@ -5,7 +5,8 @@ date: April 17, 2026
 readTime: 14 min read
 tags: Ntsikana kaGaba, Nxele, Makhanda, Xhosa history, Fourth Frontier War, Lovedale, Grahamstown, Ngqika, decolonisation, isiXhosa, mission Christianity, Chumie mission, D D T Jabavu, J K Bokwe, van der Kemp, London Missionary Society
 categories: History, Culture
-ogImage: /images/blog/ntsikana-ngcwele-prophet.png
+ogImage: /images/blog/ntsikana-prophet-pacification-xhosa.webp
+headerImage: /images/blog/ntsikana-prophet-pacification-xhosa.webp
 ---
 
 When the British came with their guns and their God, two Xhosa prophets rose to meet them. One said fight. The other said bow. One is remembered as a trouble-maker. The other is celebrated as a saint.
@@ -19,6 +20,8 @@ He did not pick up a spear. He did not organise resistance. Instead, he picked u
 This piece is a **decolonial reckoning** with the man they called **uNgcwele**, the first great **sell-out** who traded ancestral power for a Bible and helped open the gates to colonisation. It reads the mission archive honestly: what it preserved, what it printed, and what that did to memory.
 
 ## The historical wound that created him
+![Historic stone church building in muted light](/images/blog/ntsikana-prophet-pacification-xhosa-inline.webp)
+
 
 By the time Ntsikana “emerges” as a prophet around **1814 to 1815**, Christianity was **not new** among amaXhosa.
 

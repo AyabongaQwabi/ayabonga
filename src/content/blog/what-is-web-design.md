@@ -6,7 +6,8 @@ readTime: 9 min read
 slug: what-is-web-design
 tags: Web Design, UX, UI, South Africa, Services
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200
+headerImage: /images/blog/what-is-web-design.webp
+ogImage: /images/blog/what-is-web-design.webp
 ---
 
 <!--
@@ -19,6 +20,8 @@ Meta description (≤155): Web design covers layout, typography, colour, and use
 Development writes the logic. **Design chooses the experience.** Both need each other.
 
 ## The core parts of web design
+
+![Web designer arranging layout, typography, and colour on a screen](/images/blog/what-is-web-design-inline.webp)
 
 ### 1. Layout and structure
 

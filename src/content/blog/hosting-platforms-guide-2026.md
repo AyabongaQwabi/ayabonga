@@ -5,6 +5,7 @@ date: April 3, 2026
 readTime: 11 min read
 tags: Vercel, Netlify, Supabase, Firebase, AWS, Deployment
 categories: Engineering, Cloud
+ogImage: https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 The 2026 Hosting Platforms Guide for JavaScript Devs (From Side Projects to Serious Apps)

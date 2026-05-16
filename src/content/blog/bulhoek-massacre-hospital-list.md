@@ -5,6 +5,8 @@ date: April 17, 2026
 readTime: 8 min read
 tags: Bulhoek Massacre, South Africa, Eastern Cape, Genealogy, Family history, Qwabi, Oral history, Queenstown, Colonial history, 1921
 categories: History, Culture
+headerImage: /images/blog/bulhoek-massacre-hospital-list.webp
+ogImage: /images/blog/bulhoek-massacre-hospital-list.webp
 ---
 
 While researching my family history, I came across something I did not expect to find.
@@ -20,6 +22,8 @@ As I read through the list, one thing stood out immediately: **so many of them w
 Some were in their late teens. Some were in their twenties. Even those in their thirties and forties still feel painfully young when placed in the context of lives cut short by state violence. The list reads like an interrupted generation.
 
 ## The recorded names
+![Archival documents suggesting historical research](/images/blog/bulhoek-massacre-hospital-list-inline.webp)
+
 
 - Halile Jonas Qwabi (approx. 35)
 - Samuel Pakade (36)

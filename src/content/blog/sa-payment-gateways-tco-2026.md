@@ -5,6 +5,7 @@ date: April 4, 2026
 readTime: 12 min read
 tags: Payments, Fintech, South Africa, TCO, Next.js, Ozow, Yoco
 categories: Engineering, Product
+ogImage: https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 ## The Cheapest Payment Gateways for South African React/Next.js E-commerce in 2026 – Real TCO Breakdown (Not Just the % Fee)

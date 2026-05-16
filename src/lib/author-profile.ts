@@ -1,9 +1,4 @@
-import {
-  absoluteUrl,
-  DEFAULT_OG_IMAGE,
-  SITE_NAME,
-  WHATSAPP_URL,
-} from './site-config';
+import { absoluteUrl, SITE_NAME, WHATSAPP_URL } from './site-config';
 
 export const AUTHOR_JOB_TITLE = 'Senior Product Engineer & Cloud Architect';
 
@@ -32,7 +27,9 @@ export const AUTHOR_BIO_LINKS = {
   email: `mailto:${AUTHOR_EMAIL}`,
 } as const;
 
-export const AUTHOR_PROFILE_IMAGE = DEFAULT_OG_IMAGE;
+/** Professional headshot (same asset as homepage carousel). */
+export const AUTHOR_PROFILE_IMAGE =
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg';
 
 export function authorPersonSchema(overrides?: { url?: string }) {
   return {

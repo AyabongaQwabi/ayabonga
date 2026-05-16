@@ -5,6 +5,8 @@ date: April 14, 2026
 readTime: 8 min read
 tags: LLMs, Prompt engineering, isiXhosa, South Africa, Tone, Agents
 categories: AI, Culture
+headerImage: /images/blog/llm-tone-local-accents.webp
+ogImage: /images/blog/llm-tone-local-accents.webp
 ---
 
 You can fine-tune, RAG, and chain-of-thought all you want, and the model will still answer a township user like it is writing a board memo with a side of **thought leadership** and a fear of commas.
@@ -14,6 +16,8 @@ Technically correct. Culturally hollow.
 I have watched this up close on agent work: the tool calls are clean, the JSON validates, and the reply reads like **internal documentation wearing a smile emoji**. Users do not trust that voice. They tolerate it, or they bounce.
 
 ## Fluency is not only vocabulary
+![Person listening on headphones, suggesting voice and accent](/images/blog/llm-tone-local-accents-inline.webp)
+
 
 Speaking *about* South Africa is easy. Speaking *to* someone here, in a way that respects their intelligence and their context, is harder.
 

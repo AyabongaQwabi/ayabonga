@@ -6,7 +6,8 @@ readTime: 10 min read
 slug: what-is-web-development
 tags: Web Development, React, Node, TypeScript, South Africa
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200
+headerImage: /images/blog/what-is-web-development.webp
+ogImage: /images/blog/what-is-web-development.webp
 ---
 
 <!--
@@ -19,6 +20,8 @@ Meta description (≤155): Web development builds fast, secure sites and apps wi
 In 2026, "web development" usually means far more than editing HTML in Notepad. It is APIs, auth, databases, deployment pipelines, and monitoring.
 
 ## Front-end vs back-end vs full-stack
+
+![Full-stack web development workflow on laptop and server diagram](/images/blog/what-is-web-development-inline.webp)
 
 ### Front-end development
 
@@ -55,6 +58,8 @@ For apps that span phone, web, and admin, see **[What is application development
 
 ## Modern practices in 2026
 
+![Modern web stack with TypeScript, React components, and cloud deployment pipeline](/images/blog/what-is-web-development.jpg)
+
 ### TypeScript by default
 
 Typed JavaScript catches an entire class of bugs before deploy. For client work I default to **TypeScript** on React and Node.
@@ -84,6 +89,8 @@ Environment variables, least-privilege database roles, Row Level Security (RLS) 
 Structured logs, error tracking (Sentry and peers), uptime checks. When Paystack webhooks fail at 2 a.m., you need a trace.
 
 ## Typical project phases
+
+![Web project timeline from discovery through launch and iteration on a whiteboard](/images/blog/what-is-web-development-inline.webp)
 
 1. **Discovery:** Goals, users, constraints, compliance.
 2. **Architecture:** Stack, data model, integrations, hosting region.
@@ -115,6 +122,8 @@ Skipping discovery shows up as "we need to rebuild auth in month four."
 Public examples from my portfolio include [Queens Connect](https://queensconnect.qwabi.co.za/) (AI-assisted community product) and [Kingly](https://kingly.qwabi.co.za/) (developer tooling). Each needed web development discipline, not only a landing page.
 
 ## Choosing a software development company in South Africa
+
+![Team reviewing a software vendor shortlist and production app references](/images/blog/what-is-web-development.jpg)
 
 Look for:
 

@@ -8,11 +8,29 @@ date: May 16, 2026
 readTime: 16 min read
 tags: South Africa, Web design, UX, UI, Agencies
 categories: Design, Business
-headerImage: /images/blog/web-design-companies-south-africa.png
+logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
+headerImage: /images/blog/web-design-companies-south-africa.webp
+ogImage: /images/blog/web-design-companies-south-africa.webp
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
 
+
+## Featured firms (logos)
+![Supporting visual for this section](/images/blog/web-design-companies-south-africa-inline.webp)
+
+
+Wikimedia and directory-hosted logo URLs for the firms below were checked in May 2026. None were stable enough to hotlink here, so this table is **names only**. Use each company's official site for brand assets.
+
+| Company | Typical focus | SA hubs (public) |
+|---------|---------------|------------------|
+| **DVT** | Enterprise software, mobile, Microsoft, AI | Johannesburg (national delivery) |
+| **Netgen Custom Software** | Custom web, mobile, digital strategy | Randburg, Cape Town |
+| **Synthesis** | Cloud, data, enterprise engineering | Johannesburg |
+| **SovTech** | Custom apps, high-volume product delivery | Randburg, Johannesburg |
+| **Warp Development** | Custom web, ecommerce, mobile | Cape Town |
+| **Specno** | Product studio, mobile and web MVPs | Cape Town |
+| **Bluegrass Digital** | Web, mobile, UX, staff augmentation | Cape Town, Johannesburg |
 
 **Web design companies in South Africa** sell visual language, layout, and often marketing execution. Some ship production code. Others hand Figma files to your nephew. This guide separates **design-led agencies** from **development-first shops** so you hire the right discipline.
 

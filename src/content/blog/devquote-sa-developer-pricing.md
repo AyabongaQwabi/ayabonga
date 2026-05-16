@@ -5,6 +5,7 @@ date: March 29, 2026
 readTime: 6 min read
 tags: Freelancing, Pricing, Open source, South Africa, Next.js
 categories: Engineering, Product
+ogImage: https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 One of the things side gig devs struggle with is pricing their new projects.

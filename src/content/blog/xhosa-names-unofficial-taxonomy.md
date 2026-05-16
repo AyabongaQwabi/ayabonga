@@ -5,6 +5,8 @@ date: April 11, 2026
 readTime: 4 min read
 tags: isiXhosa, Humor, Names, South Africa, Culture
 categories: Culture, Personal
+headerImage: /images/blog/xhosa-names-unofficial-taxonomy.webp
+ogImage: /images/blog/xhosa-names-unofficial-taxonomy.webp
 ---
 
 This is **a joke**. No linguists were consulted. If your name is missing, it’s not shade — **tell me if *elakho alikho apha*** and we’ll start a Part 2. 😉
@@ -12,6 +14,8 @@ This is **a joke**. No linguists were consulted. If your name is missing, it’s
 ---
 
 ## 🙏 The apologies
+![Notebook and pen for naming and language notes](/images/blog/xhosa-names-unofficial-taxonomy-inline.webp)
+
 
 *We’re sorry. We’re so sorry. We’re sorry again.*
 

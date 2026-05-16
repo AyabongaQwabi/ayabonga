@@ -6,7 +6,9 @@ readTime: 18 min read
 slug: ai-tools-building-apps-2026
 tags: AI, Cursor, Claude, Codex, v0, Bolt, Tooling, South Africa
 categories: Engineering, AI
-ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+featured: true
+headerImage: /images/blog/ai-tools-building-apps-2026.webp
+ogImage: /images/blog/ai-tools-building-apps-2026.webp
 ---
 
 <!--
@@ -19,6 +21,8 @@ If you are building software in 2026, you are not choosing between "AI or no AI.
 This guide compares the tools I actually reach for on client work and my own products: **Cursor**, **Claude / Claude Code**, **OpenAI Codex**, **Google Antigravity**, **Vercel v0**, **Bolt**, **Base44**, plus a short list of honourable mentions. Pricing shifts often. Treat the numbers as direction, then verify on each vendor's site before you budget.
 
 ## Who this is for
+
+![Developer using AI coding tools on a laptop](/images/blog/ai-tools-building-apps-2026-inline.webp)
 
 **Developers** care about context windows, diff quality, test runs, and whether the agent respects `AGENTS.md` / project rules. **Founders** care about time to demo, cost predictability, and how much technical debt they inherit on day thirty.
 
@@ -33,6 +37,8 @@ Neither group wins by picking the flashiest launch tweet. You win by matching th
 | Browser app generator | v0, Bolt, Base44, Lovable | You need a clickable demo this week |
 
 Most serious products end up on **layer one** for maintenance, even if they started on layer three.
+
+![Three-layer model comparing IDE agents, terminal agents, and browser app generators](/images/blog/ai-tools-building-apps-2026.jpg)
 
 ---
 
@@ -235,6 +241,8 @@ Most serious products end up on **layer one** for maintenance, even if they star
 
 ## Founders vs developers: pick one primary tool
 
+![Founder and developer choosing different AI coding tools for their stage](/images/blog/ai-tools-building-apps-2026-inline.webp)
+
 | If you are… | Start here | Add within 30 days |
 | --- | --- | --- |
 | Non-technical founder | Bolt or Base44 for demo | Hire or contract for repo + payments |
@@ -274,6 +282,8 @@ If you are hiring a **custom software development** partner, ask which tools the
 ---
 
 ## Security and compliance (do not skip)
+
+![Secure development workflow with branch protection and secrets outside prompts](/images/blog/ai-tools-building-apps-2026.jpg)
 
 Any tool that uploads your repo or runs terminal commands needs:
 

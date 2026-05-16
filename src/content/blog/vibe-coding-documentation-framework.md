@@ -5,6 +5,7 @@ date: April 15, 2026
 readTime: 12 min read
 tags: Vibe coding, Cursor, Grok, Documentation, PRD, AI agents, Workflow, Kingly
 categories: AI, Engineering
+ogImage: https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 AI coding agents are only as good as the context they receive.

@@ -5,11 +5,15 @@ date: March 10, 2026
 readTime: 4 min read
 tags: isiXhosa, Music, eSpazza, Heritage, Streaming
 categories: Culture, Product
+headerImage: /images/blog/xhosa-hip-hop-digital.webp
+ogImage: /images/blog/xhosa-hip-hop-digital.webp
 ---
 
 Music is cultural memory. For the Xhosa community, hip hop has become a powerful medium for storytelling, preserving language, and expressing contemporary experiences. Building eSpazza, a platform for Xhosa hip hop, taught me that code can be a tool for cultural preservation.
 
 ## Why Language Matters
+![Music production setup with headphones and microphone](/images/blog/xhosa-hip-hop-digital-inline.webp)
+
 
 Every language that fades takes with it a unique way of seeing the world. Xhosa, with its rich click consonants and proverbs, carries centuries of wisdom and experience.
 

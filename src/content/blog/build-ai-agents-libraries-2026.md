@@ -5,6 +5,7 @@ date: April 11, 2026
 readTime: 9 min read
 tags: Agents, LangGraph, Mastra, CrewAI, n8n, South Africa, ADK
 categories: AI, Engineering
+ogImage: https://images.pexels.com/photos/3861973/pexels-photo-3861973.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 My battle-tested 2026 guide to the best **libraries and platforms for building AI agents** (not just using them). I’ve grouped them by vibe so you can pick what fits your stack and budget.

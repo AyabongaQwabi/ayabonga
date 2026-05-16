@@ -5,9 +5,13 @@ date: April 16, 2026
 readTime: 6 min read
 tags: Growth, Identity, Discipline, Clojure, Resilience, Motivation
 categories: Philosophy, Developers
+headerImage: /images/blog/you-are-not-restarting-you-are-updating.webp
+ogImage: /images/blog/you-are-not-restarting-you-are-updating.webp
 ---
 
 You do not need to restart your life every time something goes wrong.
+![Laptop with code in a focused work setting](/images/blog/you-are-not-restarting-you-are-updating-inline.webp)
+
 
 That is the first misunderstanding.
 

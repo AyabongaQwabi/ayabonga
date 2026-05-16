@@ -5,6 +5,7 @@ date: April 7, 2026
 readTime: 9 min read
 tags: South Africa, Agents, LangGraph, n8n, ADK, Vercel AI SDK
 categories: AI, Engineering
+ogImage: https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 **🧵 Thread: The 2026 Mzansi Dev Toolkit – Best Tools & Libraries to BUILD Your Own AI Agents (Not Just Use Them)**

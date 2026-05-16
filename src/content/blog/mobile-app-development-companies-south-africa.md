@@ -8,15 +8,33 @@ date: May 16, 2026
 readTime: 18 min read
 tags: South Africa, Mobile apps, React Native, Flutter, iOS, Android
 categories: Engineering, Business
-headerImage: /images/blog/mobile-app-development-companies-south-africa.png
+logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
+headerImage: /images/blog/mobile-app-development-companies-south-africa.webp
+ogImage: /images/blog/mobile-app-development-companies-south-africa.webp
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
 
 
+## Featured firms (logos)
+
+Wikimedia and directory-hosted logo URLs for the firms below were checked in May 2026. None were stable enough to hotlink here, so this table is **names only**. Use each company's official site for brand assets.
+
+| Company | Typical focus | SA hubs (public) |
+|---------|---------------|------------------|
+| **DVT** | Enterprise software, mobile, Microsoft, AI | Johannesburg (national delivery) |
+| **Netgen Custom Software** | Custom web, mobile, digital strategy | Randburg, Cape Town |
+| **Synthesis** | Cloud, data, enterprise engineering | Johannesburg |
+| **SovTech** | Custom apps, high-volume product delivery | Randburg, Johannesburg |
+| **Warp Development** | Custom web, ecommerce, mobile | Cape Town |
+| **Specno** | Product studio, mobile and web MVPs | Cape Town |
+| **Bluegrass Digital** | Web, mobile, UX, staff augmentation | Cape Town, Johannesburg |
+
 Hiring a **mobile app development company in South Africa** is high stakes. Store fees, device fragmentation, offline behaviour, and payment integrations (Paystack, Ozow, in-app rules) punish shortcuts. This is a **buyer guide to app making companies**, not a ranking. Names change; verify everything before you sign.
 
 ## Native vs cross-platform (what to ask every app company)
+
+![Mobile app development on iOS and Android devices in South Africa](/images/blog/mobile-app-development-companies-south-africa-inline.webp)
 
 | Approach | Pros | Cons |
 |----------|------|------|
@@ -87,6 +105,8 @@ Founders with **R300k–R600k** Phase 1 budgets often get better ROI from a **st
 
 ## What an app making company should cover in discovery
 
+![Discovery workshop covering offline mode, Paystack payments, and app store submission](/images/blog/mobile-app-development-companies-south-africa.jpg)
+
 | Topic | Why |
 |-------|-----|
 | **Offline / loadshedding** | Cache, queue actions, honest error states |
@@ -101,6 +121,8 @@ See [SA payment gateways for React/Next](/blog/sa-payment-gateways-react-next-20
 
 ## Cost context (indicative)
 
+![Mobile app budget planning with ZAR cost bands and timeline estimates](/images/blog/mobile-app-development-companies-south-africa-inline.webp)
+
 Mobile projects are rarely "cheap" if done properly.
 
 | Scope | Indicative Phase 1 (ZAR) | Timeline |
@@ -112,6 +134,8 @@ Mobile projects are rarely "cheap" if done properly.
 For methodology behind the numbers, see [app development cost South Africa](/app-development-cost-south-africa) and the [quote tool](/get-a-quote).
 
 ## How to choose (app-specific checklist)
+
+![TestFlight and Google Play internal testing builds on iOS and Android devices](/images/blog/mobile-app-development-companies-south-africa.jpg)
 
 1. **Ask for TestFlight / Play Internal Testing builds**, not demo videos.
 2. **Check who owns Apple Developer and Google Play accounts** (must be you).

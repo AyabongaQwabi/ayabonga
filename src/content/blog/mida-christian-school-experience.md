@@ -5,6 +5,8 @@ date: May 15, 2026
 readTime: 8 min read
 tags: MIDA, Mida School, Idutywa, Christian Education, Kholo Kingdom, South Africa, Faith, Eastern Cape
 categories: Personal
+headerImage: /images/blog/mida-christian-school-experience.webp
+ogImage: /images/blog/mida-christian-school-experience.webp
 ---
 
 Education is often measured in admissions and distinctions, but the most enduring lessons are those that shape the soul before the first school bell even rings. For me, those lessons were forged in the Eastern Cape, specifically at **Mida English Medium Christian School** (commonly known as **Mida School**, or MIDA) in Idutywa (Dutywa).
@@ -12,6 +14,8 @@ Education is often measured in admissions and distinctions, but the most endurin
 Looking back at my time there from 2008 (Grade 9) to 2011 (Grade 12), I realize that MIDA wasn't just a school; it was a comprehensive environment designed to implement Christian values throughout every waking hour.
 
 ### More Than Just an Abbreviation
+![Classroom or learning space with natural light](/images/blog/mida-christian-school-experience-inline.webp)
+
 To many, MIDA is just a name. But the word itself is an abbreviation: **Mission Center Development Initiatives**. The "Mission Center" refers to the **Kholo Kingdom Mission Center**, a missionary church founded by **David and Iris Mniki**. 
 
 In many ways, Kholo Kingdom is the "Mother" of the school—the spiritual engine that drives the entire development initiative. It’s like how ABC birthed Google; the mission center birthed the educational vision.

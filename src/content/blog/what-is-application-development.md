@@ -6,7 +6,8 @@ readTime: 11 min read
 slug: what-is-application-development
 tags: Application Development, Mobile Apps, Custom Software, South Africa
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200
+headerImage: /images/blog/what-is-application-development.webp
+ogImage: /images/blog/what-is-application-development.webp
 ---
 
 <!--
@@ -19,6 +20,8 @@ Meta description (≤155): Application development means custom mobile, web, and
 When founders search for an **app development company** or **custom software development** partner, they are usually asking for application development, even if they say "I need an app."
 
 ## Types of application development
+
+![Product team planning web, mobile, and API application development](/images/blog/what-is-application-development-inline.webp)
 
 ### Web applications
 

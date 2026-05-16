@@ -8,15 +8,33 @@ date: May 16, 2026
 readTime: 17 min read
 tags: South Africa, Web development, React, WordPress, Agencies
 categories: Engineering, Business
-headerImage: /images/blog/web-development-companies-south-africa.png
+logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
+headerImage: /images/blog/web-development-companies-south-africa.webp
+ogImage: /images/blog/web-development-companies-south-africa.webp
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
 
 
+## Featured firms (logos)
+
+Wikimedia and directory-hosted logo URLs for the firms below were checked in May 2026. None were stable enough to hotlink here, so this table is **names only**. Use each company's official site for brand assets.
+
+| Company | Typical focus | SA hubs (public) |
+|---------|---------------|------------------|
+| **DVT** | Enterprise software, mobile, Microsoft, AI | Johannesburg (national delivery) |
+| **Netgen Custom Software** | Custom web, mobile, digital strategy | Randburg, Cape Town |
+| **Synthesis** | Cloud, data, enterprise engineering | Johannesburg |
+| **SovTech** | Custom apps, high-volume product delivery | Randburg, Johannesburg |
+| **Warp Development** | Custom web, ecommerce, mobile | Cape Town |
+| **Specno** | Product studio, mobile and web MVPs | Cape Town |
+| **Bluegrass Digital** | Web, mobile, UX, staff augmentation | Cape Town, Johannesburg |
+
 A **web development company in South Africa** is not the same as a software house, and neither is the same as a design-only studio. Web firms usually lead with **sites, ecommerce, and marketing technology**. Software firms lead with **products, APIs, and long-lived platforms**. This article lists both flavours where their primary offer is **building for the browser**.
 
 ## What "web development company" means in 2026
+
+![Web development team building a responsive site in South Africa](/images/blog/web-development-companies-south-africa-inline.webp)
 
 | Type | Typical deliverable | Stack signals |
 |------|---------------------|---------------|

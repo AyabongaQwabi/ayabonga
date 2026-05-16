@@ -5,6 +5,7 @@ date: April 1, 2026
 readTime: 7 min read
 tags: React, Cursor, Bootcamp, Education, Fundamentals
 categories: Career, AI
+ogImage: https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 # Why Every Bootcamp Grad Should Learn React Before Using Cursor (And How to Use Both)

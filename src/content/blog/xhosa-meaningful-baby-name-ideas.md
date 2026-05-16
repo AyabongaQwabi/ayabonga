@@ -5,6 +5,8 @@ date: April 30, 2026
 readTime: 9 min read
 tags: isiXhosa, Xhosa names, Baby names, People names, Xhosa culture, Family, Language, South Africa, Meaning
 categories: Culture, Language
+headerImage: /images/blog/xhosa-meaningful-baby-name-ideas.webp
+ogImage: /images/blog/xhosa-meaningful-baby-name-ideas.webp
 ---
 
 Names are not only what you call a child. In isiXhosa, a sentence can sit in a name: **what happened**, what you **hope**, who **walks with** the person, and who you **thank**. Below is an expanded set of **meaningful people-name ideas** (and common spellings) you can use for a baby, a taken name, a praise line, or a family blessing, with elders and speakers you trust.
@@ -14,6 +16,8 @@ Use the list as **inspiration**, not a rulebook. Spelling, **(u) / (i)** class p
 ---
 
 ## Names of presence: with you, we, and the Creator
+![Warm family moment with a newborn](/images/blog/xhosa-meaningful-baby-name-ideas-inline.webp)
+
 
 | Name                                          | Notes                                                                                           |
 | --------------------------------------------- | ----------------------------------------------------------------------------------------------- |

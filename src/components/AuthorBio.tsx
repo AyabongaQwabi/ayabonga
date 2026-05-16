@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle } from 'lucide-react';
+import { Calendar, Clock, MessageCircle } from 'lucide-react';
+import { cn } from '../lib/utils';
 import {
   AUTHOR_BIO_LINKS,
   AUTHOR_JOB_TITLE,
@@ -8,6 +9,61 @@ import {
   AUTHOR_PROFILE_IMAGE,
 } from '../lib/author-profile';
 import { SITE_NAME } from '../lib/site-config';
+
+export type AuthorBylineProps = {
+  date: string;
+  readTime?: string;
+  className?: string;
+};
+
+/** Compact author row for article headers (photo, name, date). */
+export function AuthorByline({ date, readTime, className }: AuthorBylineProps) {
+  return (
+    <div
+      className={cn(
+        'not-prose flex flex-wrap items-center gap-3 sm:gap-4',
+        className,
+      )}
+    >
+      <Link
+        to={AUTHOR_BIO_LINKS.about}
+        className="group flex min-w-0 flex-1 items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:flex-initial"
+      >
+        <img
+          src={AUTHOR_PROFILE_IMAGE}
+          alt={`Portrait of ${SITE_NAME}`}
+          width={44}
+          height={44}
+          className="h-11 w-11 shrink-0 rounded-full border border-border object-cover motion-safe:transition-[box-shadow,border-color] motion-reduce:transition-none group-hover:border-primary/40"
+          loading="eager"
+          decoding="async"
+        />
+        <span className="min-w-0 text-left">
+          <span className="block text-sm font-semibold text-foreground group-hover:text-primary motion-safe:transition-colors motion-reduce:transition-none">
+            {SITE_NAME}
+          </span>
+          <span className="block text-xs text-primary font-medium">
+            {AUTHOR_JOB_TITLE}
+          </span>
+        </span>
+      </Link>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+        {date ? (
+          <span className="inline-flex items-center gap-1.5">
+            <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden />
+            <time dateTime={date}>{date}</time>
+          </span>
+        ) : null}
+        {readTime ? (
+          <span className="inline-flex items-center gap-1.5">
+            <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden />
+            {readTime}
+          </span>
+        ) : null}
+      </div>
+    </div>
+  );
+}
 
 export function AuthorBio() {
   return (

@@ -5,6 +5,7 @@ date: March 30, 2026
 readTime: 15 min read
 tags: Payments, South Africa, Next.js, React, Yoco, Paystack
 categories: Engineering, Product
+ogImage: https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 The Easiest Payment Gateway Integrations for Your Next React/Next.js E-commerce Project in South Africa (2026 Edition)
@@ -16,6 +17,10 @@ As a full-stack JS dev who's shipped multiple React/Next.js shops here in Joburg
 No fluff. Just what saves you time when you're grinding solo or with a small team.
 
 ## Quick Ranking (Easiest First)
+![Supporting visual for this section](/images/blog/sa-payment-gateways-react-next-2026-inline.jpg)
+
+
+![South African payment checkout on a React e-commerce screen](https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200)
 
 1. **Yoco Online Checkout**: Hands-down winner for speed
 2. **iKhokha (iK Pay API)**: Great if you like signed payloads

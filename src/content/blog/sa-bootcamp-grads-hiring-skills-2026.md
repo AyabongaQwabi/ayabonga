@@ -5,6 +5,7 @@ date: March 28, 2026
 readTime: 10 min read
 tags: South Africa, Bootcamp, Hiring, AI coding, Next.js
 categories: Career, AI
+ogImage: https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 **Thread: Why Most South African Bootcamp Grads Still Struggle in 2026 – And the 3 Skills That Actually Get You Hired**

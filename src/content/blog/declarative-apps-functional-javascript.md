@@ -5,6 +5,7 @@ date: April 11, 2026
 readTime: 28 min read
 tags: JavaScript, Functional programming, Ramda, Redux, Composition
 categories: Engineering
+ogImage: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200
 ---
 
 *Compiled by **Ayabonga Qwabi**, Namoota Technologies — [namootatech.com](https://www.namootatech.com)*
