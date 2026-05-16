@@ -48,7 +48,14 @@ export default {
       },
       fontFamily: {
         sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        technical: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      fontSize: {
+        mega: ['clamp(3.25rem,11vw,7.5rem)', { lineHeight: '0.92', letterSpacing: '-0.04em' }],
+        'mega-sm': ['clamp(2.5rem,8vw,5rem)', { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        manifesto: ['clamp(1.75rem,4.5vw,3.25rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
       },
       keyframes: {
         'accordion-down': {
