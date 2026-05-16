@@ -39,6 +39,12 @@
     --ring: 45 100% 50%;
 
     --radius: 1rem;
+
+    --motion-duration-fast: 150ms;
+    --motion-duration-normal: 300ms;
+    --motion-duration-slow: 500ms;
+    --motion-ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --motion-stagger-step: 80ms;
   }
 }
 
@@ -87,6 +93,29 @@
   .text-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent;
   }
+
+  .interactive-button {
+    @apply transition-[transform,opacity,background-color,color,border-color,box-shadow] duration-200 ease-out;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply motion-reduce:transition-none;
+  }
+
+  .interactive-card {
+    @apply transition-[transform,opacity,border-color,box-shadow] duration-300 ease-out;
+    @apply hover:-translate-y-0.5 motion-reduce:hover:translate-y-0;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply motion-reduce:transition-none motion-reduce:hover:scale-100;
+  }
+
+  .interactive-link {
+    @apply transition-[opacity,color,transform] duration-200 ease-out;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm;
+    @apply motion-reduce:transition-none;
+  }
+
+  .mobile-menu-enter {
+    animation: mobile-menu-in var(--motion-duration-normal) var(--motion-ease-out) forwards;
+  }
 }
 
 ::selection {
@@ -94,9 +123,16 @@
   color: hsl(var(--foreground));
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Custom scrollbar */
@@ -128,4 +164,99 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease-out),
+    transform var(--motion-duration-slow) var(--motion-ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease-out),
+    transform var(--motion-duration-slow) var(--motion-ease-out);
+  transition-delay: calc(var(--reveal-index, 0) * var(--motion-stagger-step));
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .mobile-menu-enter {
+    animation: none;
+  }
+}
+
+/* View Transitions API */
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out var(--motion-duration-normal) var(--motion-ease-out) both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in var(--motion-duration-normal) var(--motion-ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
 

@@ -19,11 +19,15 @@ import Privacy from './pages/Privacy.tsx';
 import Editorial from './pages/Editorial.tsx';
 import Corrections from './pages/Corrections.tsx';
 import './index.css';
+import { ScrollToTop } from './components/ScrollToTop';
+import { ViewTransitionHandler } from './components/ViewTransitionHandler';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
+        <ViewTransitionHandler />
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/services" element={<ServicesPage />} />
