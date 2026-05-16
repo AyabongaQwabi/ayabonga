@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "technical-cofounder-vs-agency",
+    "title": "Technical Co-founder vs. Software Agency: The Hidden Cost of Overhead",
+    "target": "Traditional Software Agencies",
+    "pain_point": "Paying for account managers, project managers, and 'sales calls' instead of actual senior engineering hours.",
+    "comparison_table": [
+      { "feature": "Execution Speed", "me": "10x (AI-powered, zero overhead)", "them": "1x (Meeting-heavy, sequential)" },
+      { "feature": "Direct Access", "me": "Yes (Talk to the builder)", "them": "No (Account managers)" },
+      { "feature": "Code Quality", "me": "Senior + TDD", "them": "Mixed (Junior/Mid pool)" },
+      { "feature": "Focus", "me": "Business ROI", "them": "Billable Hours" }
+    ],
+    "verdict": "If you need a team to manage your project because you don't have time, hire an agency. If you need a working product that makes money, hire a technical co-founder."
+  },
+  {
+    "slug": "ayabonga-vs-junior-dev-lottery",
+    "title": "Senior Product Engineering vs. The 'Junior Dev Lottery'",
+    "target": "Low-Cost Freelance Developers",
+    "pain_point": "The 'Relay Race' of hiring cheap developers who deliver technical liabilities that break under real customer load.",
+    "comparison_table": [
+      { "feature": "Infrastructure", "me": "Production-ready (Scalable)", "them": "Fragile (Works on my machine)" },
+      { "feature": "Payment Integration", "me": "Secure & Tested (Stitch/Paystack)", "them": "Basic/Risky" },
+      { "feature": "Documentation", "me": "Full architecture & handoff", "them": "Non-existent" },
+      { "feature": "Long-term Value", "me": "Asset", "them": "Liability" }
+    ],
+    "verdict": "Cheap code is the most expensive thing a startup can buy. Don't win the lottery; invest in an asset."
+  },
+  {
+    "slug": "senior-engineering-vs-no-code",
+    "title": "Custom Engineering vs. No-Code Platforms",
+    "target": "Bubble / FlutterFlow / No-Code",
+    "pain_point": "Starting fast but hitting a 'performance wall' or 'vendor lock-in' just as your business starts to scale.",
+    "comparison_table": [
+      { "feature": "Scalability", "me": "Infinite (Custom code)", "them": "Limited (Platform caps)" },
+      { "feature": "Ownership", "me": "Full (Your source code)", "them": "Rented (Vendor lock-in)" },
+      { "feature": "Performance", "me": "Optimized & Fast", "them": "Bloated / Higher latency" },
+      { "feature": "Custom Logic", "me": "Unlimited", "them": "Plugin-dependent" }
+    ],
+    "verdict": "No-code is great for validation. Senior engineering is required for a business that scales."
+  },
+  {
+    "slug": "taas-vs-fractional-cto",
+    "title": "Technical Co-founder (TaaS) vs. Fractional CTO: Strategy + Execution",
+    "target": "Fractional CTOs",
+    "pain_point": "Fractional CTOs often provide strategy but leave the actual building to you, creating a gap between vision and code.",
+    "comparison_table": [
+      { "feature": "Hands-on Code", "me": "Yes (I build it myself)", "them": "Rarely (Mostly advice)" },
+      { "feature": "Delivery Speed", "me": "High (Direct output)", "them": "Variable (Dependent on your team)" },
+      { "feature": "Accountability", "me": "Single point of failure", "them": "Consultative" },
+      { "feature": "Best For", "me": "Founders who need to SHIP", "them": "Founders who have a team but need a plan" }
+    ],
+    "verdict": "A Fractional CTO is great for scale. A Technical Co-founder (TaaS) is essential for launch."
+  },
+  {
+    "slug": "ayabonga-vs-dev-shops",
+    "title": "Senior Product Engineering vs. 'Black Box' Dev Shops",
+    "target": "Offshore Dev Shops",
+    "pain_point": "Dev shops often use junior developers managed by account executives, leading to 'Black Box' builds where you don't own the technical truth.",
+    "comparison_table": [
+      { "feature": "Ownership", "me": "You own every line (Clean handoff)", "them": "Proprietary stacks / Lock-in" },
+      { "feature": "Communication", "me": "Direct (Senior dev)", "them": "Layered (PM -> Lead -> Dev)" },
+      { "feature": "Agility", "me": "Pivot-friendly", "them": "Change request paperwork" },
+      { "feature": "Value", "me": "Equity-grade code", "them": "Billable milestone code" }
+    ],
+    "verdict": "Stop being a 'client' and start having a 'partner'. Real startups aren't built in black boxes."
+  }
+]

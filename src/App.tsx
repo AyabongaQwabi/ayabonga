@@ -11,6 +11,7 @@ import {
   DEFAULT_PAGE_DESCRIPTION,
   DEFAULT_PAGE_TITLE,
   TWITTER_HANDLE,
+  WHATSAPP_URL,
 } from './lib/site-config';
 
 const projects = [
@@ -129,6 +130,47 @@ function App() {
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ayabonga Qwabi",
+            "jobTitle": "Senior Product Engineer",
+            "url": "https://qwabi.co.za",
+            "sameAs": [
+              "https://github.com/ayabongaqwabi",
+              "https://linkedin.com/in/ayabongaqwabi",
+              "https://twitter.com/ayabongaqwabi"
+            ],
+            "description": "Technical Co-founder as a Service. Building full-stack digital products and AI solutions for founders and agencies in South Africa.",
+            "image": profileImages[1].src,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Queenstown",
+              "addressRegion": "Eastern Cape",
+              "addressCountry": "ZA"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Technical Co-founder as a Service",
+            "provider": {
+              "@type": "Person",
+              "name": "Ayabonga Qwabi"
+            },
+            "description": "End-to-end product engineering, AI integration, and cloud architecture for non-technical founders.",
+            "areaServed": "South Africa",
+            "offers": {
+              "@type": "Offer",
+              "description": "Fixed-price Phase 1 builds starting from R50,000"
+            }
+          })}
+        </script>
       </Helmet>
       <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Navigation */}
@@ -139,7 +181,10 @@ function App() {
       >
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold text-primary">AQ</span>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <span className="text-xl font-bold tracking-tight text-foreground">Ayabonga</span>
+            </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
@@ -157,6 +202,9 @@ function App() {
               </button>
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Writing
+              </Link>
+              <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Services
               </Link>
               <Link
                 to="/get-a-quote"
@@ -196,6 +244,9 @@ function App() {
                 <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Writing
                 </Link>
+                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Services
+                </Link>
                 <Link
                   to="/get-a-quote"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
@@ -218,13 +269,25 @@ function App() {
               {/* Profile Image with rotating gallery */}
               <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto md:mx-0">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 transform rotate-6"></div>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border shadow-xl">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-border/50 shadow-2xl group cursor-pointer">
+                  {/* Glassmorphism Overlay */}
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                  
+                  {/* Hero Background Image */}
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src="/images/hero-taas-premium.png" 
+                      alt="Premium Technical Leadership" 
+                      className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40"
+                    />
+                  </div>
+
                   {profileImages.map((img, index) => (
                     <img
                       key={index}
                       src={img.src}
                       alt={img.alt}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-5 ${
                         index === activeImage ? 'opacity-100' : 'opacity-0'
                       }`}
                       loading={index === 0 ? 'eager' : 'lazy'}
@@ -251,7 +314,7 @@ function App() {
                   Ayabonga Qwabi
                 </h1>
                 <p className="text-primary font-semibold text-lg">
-                  AI Specialist & Cloud Architect
+                  Technical Co-founder as a Service
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   Queenstown, Eastern Cape, South Africa
@@ -300,7 +363,7 @@ function App() {
             {/* Right Column - Bio */}
             <div className="space-y-6">
               <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium text-balance">
-                With 10 years of software engineering experience, I architect intelligent cloud solutions and build AI-powered applications that drive meaningful change across Africa and beyond.
+                I turn your business idea into a working digital product (apps, platforms, AI tools) without the agency overhead or the junior dev lottery.
               </p>
               
               <p className="leading-relaxed text-muted-foreground">
@@ -344,60 +407,62 @@ function App() {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Expertise
             </h2>
-            <p className="text-foreground max-w-xl text-balance">
-              Core competencies spanning AI, cloud architecture, and full-stack development.
-            </p>
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <p className="text-foreground max-w-xl text-balance">
+                Senior engineering spanning AI, cloud architecture, and technical product leadership.
+              </p>
+              <Link to="/services" className="text-sm text-primary hover:underline font-medium shrink-0">
+                View all services →
+              </Link>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* AI & Machine Learning */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Brain className="w-6 h-6 text-primary" />
+            <article className="group p-6 rounded-xl glass-gold border-white/5 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Brain className="w-6 h-6 text-amber-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. Specializing in OpenAI, TensorFlow, and custom ML pipelines.
+              <h3 className="text-lg font-semibold text-white mb-2">AI & Machine Learning</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Building intelligent applications with LLMs, natural language processing, computer vision, and predictive analytics. <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:underline">Message me</a> for a full walkthrough.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">OpenAI</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">LangChain</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Python</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">TensorFlow</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">OpenAI</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">LangChain</span>
+                <span className="text-xs px-2 py-1 rounded bg-amber-500/10 text-amber-200 border border-amber-500/20">Python</span>
               </div>
             </article>
 
             {/* Cloud Architecture */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+            <article className="group p-6 rounded-xl glass-dark border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Cloud className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Cloud Architecture</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures, Kubernetes, and infrastructure as code.
+              <h3 className="text-lg font-semibold text-white mb-2">Cloud Architecture</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Designing and implementing scalable, secure cloud infrastructure on GCP, AWS, and Azure. Expert in serverless architectures and Kubernetes.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">GCP</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">AWS</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Azure</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Kubernetes</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">GCP</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">AWS</span>
+                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary-foreground/70 border border-primary/20">Azure</span>
               </div>
             </article>
 
             {/* Full-Stack Development */}
-            <article className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Code2 className="w-6 h-6 text-primary" />
+            <article className="group p-6 rounded-xl glass-emerald border-white/5 hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Code2 className="w-6 h-6 text-emerald-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Development</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript for end-to-end solutions.
+              <h3 className="text-lg font-semibold text-white mb-2">Full-Stack Development</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Crafting performant web and mobile applications with modern frameworks. Expertise in React, Next.js, Node.js, and TypeScript.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">React</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Clojure</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Supabase</span>
-                <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">Firebase</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">React</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">Node.js</span>
+                <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-200 border border-emerald-500/20">Clojure</span>
               </div>
             </article>
           </div>
@@ -445,12 +510,12 @@ function App() {
                 href={collab.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all"
+                className="group flex items-center justify-between p-4 rounded-lg glass-dark border-white/5 hover:border-primary/50 transition-all duration-300"
               >
-                <span className="text-foreground group-hover:text-primary transition-colors">
+                <span className="text-slate-300 group-hover:text-primary transition-colors font-medium">
                   {collab.name}
                 </span>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ))}
           </div>
@@ -484,40 +549,32 @@ function App() {
               Contact
             </h2>
             <p className="text-foreground mb-6 text-balance">
-              Looking to build AI-powered solutions or architect your cloud infrastructure? Let&apos;s connect. For a
-              ballpark scope and budget, try the{' '}
-              <Link to="/get-a-quote" className="text-primary hover:text-primary/80 underline-offset-4 hover:underline">
-                interactive project quote tool
-              </Link>
-              .
+              Building something and need a senior technical mind in your corner? Message me directly on WhatsApp and we'll figure out if I can help.
             </p>
             
             <div className="space-y-3">
               <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Message me on WhatsApp</span>
+              </a>
+              <a 
                 href="mailto:aya@qwabi.co.za"
-                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors mt-4"
               >
                 <Mail className="w-4 h-4" />
                 <span>aya@qwabi.co.za</span>
               </a>
-              <a 
-                href="https://www.qwabi.co.za"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>qwabi.co.za</span>
-              </a>
-              <a 
-                href="https://wa.me/27603116777"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-4 py-2 mt-4 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Chat on WhatsApp</span>
-              </a>
+              <p className="text-xs text-muted-foreground pt-2">
+                Want a ballpark before you reach out?{' '}
+                <Link to="/get-a-quote" className="text-primary hover:underline underline-offset-4">
+                  See how I scope and price work
+                </Link>.
+              </p>
             </div>
           </div>
         </section>
@@ -529,7 +586,21 @@ function App() {
           <p className="text-sm text-muted-foreground">
             {new Date().getFullYear()} Ayabonga Qwabi. AI Specialist & Cloud Architect.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Services
+            </Link>
+            <Link to="/technical-cofounder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              TaaS
+            </Link>
+            <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+              <Brain className="w-3 h-3" />
+              llms.txt
+            </a>
+            <a href="/pricing.md" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+              <Calculator className="w-3 h-3" />
+              Pricing
+            </a>
             <a 
               href="https://github.com/ayabongaqwabi" 
               target="_blank" 
@@ -545,14 +616,6 @@ function App() {
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               LinkedIn
-            </a>
-            <a 
-              href="https://twitter.com/ayabongaqwabi" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Twitter
             </a>
           </div>
         </div>

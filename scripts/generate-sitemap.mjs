@@ -14,6 +14,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const blogDir = path.join(root, 'src/content/blog');
+const pseoDataPath = path.join(root, 'src/data/pseo-pages.json');
+const comparisonsDataPath = path.join(root, 'src/data/comparisons.json');
+
 
 const SITE_URL = (
   process.env.SITE_URL ||
@@ -58,9 +61,26 @@ async function main() {
   }
 
   const blogEntries = collectBlogEntries();
+  
+  let pseoEntries = [];
+  try {
+    pseoEntries = JSON.parse(fs.readFileSync(pseoDataPath, 'utf8'));
+  } catch (e) {
+    console.warn('generate-sitemap: could not read pseo-pages.json');
+  }
+
+  let comparisonEntries = [];
+  try {
+    comparisonEntries = JSON.parse(fs.readFileSync(comparisonsDataPath, 'utf8'));
+  } catch (e) {
+    console.warn('generate-sitemap: could not read comparisons.json');
+  }
+
 
   const links = [
     { url: '/', changefreq: 'weekly', priority: 1 },
+    { url: '/services', changefreq: 'monthly', priority: 0.9 },
+    { url: '/technical-cofounder', changefreq: 'monthly', priority: 0.95 },
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },
     ...blogEntries.map(({ slug, lastmod }) => ({
@@ -68,6 +88,16 @@ async function main() {
       changefreq: 'monthly',
       priority: 0.8,
       lastmod,
+    })),
+    ...pseoEntries.map((p) => ({
+      url: `/solutions/${p.slug}`,
+      changefreq: 'monthly',
+      priority: 0.85,
+    })),
+    ...comparisonEntries.map((c) => ({
+      url: `/vs/${c.slug}`,
+      changefreq: 'monthly',
+      priority: 0.7,
     })),
   ];
 

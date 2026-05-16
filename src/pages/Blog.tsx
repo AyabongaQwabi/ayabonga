@@ -16,7 +16,7 @@ import {
   TWITTER_HANDLE,
 } from '../lib/site-config';
 
-const BLOG_INDEX_TITLE = 'Writing — AI, cloud, culture & code';
+const BLOG_INDEX_TITLE = 'Writing: AI, cloud, culture & code';
 const BLOG_INDEX_DESCRIPTION =
   'Articles on AI agents, cloud architecture, South African tech, isiXhosa heritage, vibe coding, payments, and building software that matters.';
 
@@ -50,7 +50,7 @@ export default function Blog() {
       JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Blog',
-        name: `Writing — ${SITE_NAME}`,
+        name: `Writing: ${SITE_NAME}`,
         description: BLOG_INDEX_DESCRIPTION,
         url: absoluteUrl('/blog'),
         author: {

@@ -1,13 +1,13 @@
 ---
-title: "Foundations of Faith: My Journey through MIDA and Kholo Kingdom"
-excerpt: "Reflecting on the Christian values, sensory memories, and the 'Mission Center' legacy of my early school years in Idutywa."
+title: "What MIDA and Kholo Kingdom Taught Me About Faith"
+excerpt: "Reflecting on the Christian values, sensory memories, and the Mission Center legacy of my years at Mida School (Mida English Medium Christian School) in Idutywa, Eastern Cape."
 date: May 15, 2026
 readTime: 8 min read
-tags: MIDA, Idutywa, Christian Education, Kholo Kingdom, South Africa, Faith
+tags: MIDA, Mida School, Idutywa, Christian Education, Kholo Kingdom, South Africa, Faith, Eastern Cape
 categories: Personal
 ---
 
-Education is often measured in admissions and distinctions, but the most enduring lessons are often those that shape the soul before the first school bell even rings. For me, those lessons were forged in the Eastern Cape, specifically at **Mida English Medium Christian School** (MIDA) in Idutywa (Dutywa).
+Education is often measured in admissions and distinctions, but the most enduring lessons are those that shape the soul before the first school bell even rings. For me, those lessons were forged in the Eastern Cape, specifically at **Mida English Medium Christian School** (commonly known as **Mida School**, or MIDA) in Idutywa (Dutywa).
 
 Looking back at my time there from 2008 (Grade 9) to 2011 (Grade 12), I realize that MIDA wasn't just a school; it was a comprehensive environment designed to implement Christian values throughout every waking hour.
 

@@ -1,6 +1,6 @@
 ---
 title: "My Experiences as a Remote Junior Developer"
-excerpt: "Over-communication, notes, initiative, and responsibility — lessons from working remotely from Queenstown."
+excerpt: "Over-communication, notes, initiative, and responsibility: lessons from working remotely from Queenstown."
 date: April 20, 2018
 readTime: 6 min read
 tags: Remote work, Junior developer, Communication, Teamwork

@@ -1,0 +1,43 @@
+# Ayabonga Qwabi - Technical Co-founder as a Service
+
+Senior Product Engineer specializing in building full-stack digital products for founders and agencies.
+
+## Core Value Proposition
+I turn business ideas into working digital products (apps, platforms, AI tools) without agency overhead or the junior dev lottery. I act as a technical co-founder, owning the full stack—mobile, backend, payments, AI, and cloud infrastructure.
+
+## Services
+- **Full-Stack Product Engineering**: End-to-end product builds (MVP to Scale).
+- **AI Solutions**: Integration of LLMs, computer vision, and predictive analytics.
+- **Cloud Architecture**: Scalable infrastructure design on GCP, AWS, and Azure.
+- **Technical Co-founder as a Service**: Strategic technical partnership for non-technical founders.
+
+## Strategic Solutions
+- **Fintech Founders**: Custom payment engines and regulatory-ready architectures.
+- **Logistics & Mobility**: Real-time tracking, dispatching, and fleet platforms.
+- **HealthTech**: Secure patient records and clinical booking systems.
+- **EduTech**: Cashless campus ecosystems and student management.
+- **Marketplaces**: Multi-sided on-demand service platforms.
+- **Established Brands**: Digital transformation and automated scale for offline-first businesses.
+- **AI & Automation**: Strategic LLM integration and custom AI agent systems.
+
+## Key Projects
+- **Laundry Marketplace**: Turnkey service provider platform.
+- **ClinicPlus**: Occupational healthcare booking platform.
+- **UTap**: University NFC wallet and access system.
+- **Queens Connect**: Community AI assistant.
+
+## Tech Stack
+- **Frontend**: React, Next.js, React Native, Tailwind CSS.
+- **Backend**: Node.js, TypeScript, Python, Clojure.
+- **Cloud/Data**: Supabase, Firebase, GCP, AWS, Azure.
+- **AI**: OpenAI, LangChain, TensorFlow.
+
+## Engagement Model
+- **Phase 1**: Fixed-price product build/MVP.
+- **Iteration**: Retainer or milestone-based scaling.
+- **Expertise**: Deep understanding of South African payment gateways (Paystack) and SMME operations.
+
+## Contact
+- **Email**: aya@qwabi.co.za
+- **Web**: https://qwabi.co.za
+- **Quote**: https://qwabi.co.za/get-a-quote
