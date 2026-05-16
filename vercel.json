@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "qwabi.co.za" }],
+      "destination": "https://www.qwabi.co.za/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "handle": "filesystem" },
     { "source": "/(.*)", "destination": "/index.html" }

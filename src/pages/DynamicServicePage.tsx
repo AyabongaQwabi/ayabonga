@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { 
   Wallet, 
@@ -21,8 +21,9 @@ import {
   Activity,
   MessageCircle
 } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/site-config';
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, TWITTER_HANDLE, WHATSAPP_URL } from '../lib/site-config';
 import pseoData from '../data/pseo-pages.json';
+import NotFound from './NotFound';
 
 const iconMap = {
   Wallet,
@@ -44,18 +45,30 @@ const DynamicServicePage = () => {
   const page = pseoData.find((p) => p.slug === slug);
 
   if (!page) {
-    return <Navigate to="/404" replace />;
+    return <NotFound />;
   }
 
   const Icon = iconMap[page.icon as keyof typeof iconMap] || Zap;
+  const canonicalPath = `/solutions/${page.slug}`;
+  const canonical = absoluteUrl(canonicalPath);
+  const metaDescription = `Are you an ${page.audience} in ${page.location}? ${page.solution}. Senior technical leadership for your ${page.industry} startup.`;
 
   return (
     <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-emerald-500/30">
       <Helmet>
-        <title>{page.title} | Ayabonga Qwabi</title>
-        <meta name="description" content={`Are you an ${page.audience} in ${page.location}? ${page.solution}. Get senior-level technical leadership for your ${page.industry} startup.`} />
+        <title>{`${page.title} | ${SITE_NAME}`}</title>
+        <meta name="description" content={metaDescription} />
         <meta name="keywords" content={page.keywords.join(', ')} />
-        
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={`${page.title} | ${SITE_NAME}`} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="robots" content="index, follow" />
+
         {/* Schema.org for Service */}
         <script type="application/ld+json">
           {JSON.stringify({

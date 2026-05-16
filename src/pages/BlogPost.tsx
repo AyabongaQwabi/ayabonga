@@ -1,10 +1,13 @@
 import { useMemo, type ReactNode } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { blogPosts } from '../data/blog-posts';
 import type { BlogPost } from '../data/blog-posts';
 import { BlogTaxonomy } from '../components/BlogTaxonomy';
+import BlogCommercialCta from '../components/BlogCommercialCta';
+import EspazzaStatusBanner, { postMentionsEspazza } from '../components/EspazzaStatusBanner';
+import NotFound from './NotFound';
 import { DiscussionEmbed } from 'disqus-react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -63,7 +66,7 @@ export default function BlogPost() {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return <Navigate to='/blog' replace />;
+    return <NotFound />;
   }
 
   return <BlogPostView post={post} />;
@@ -215,6 +218,8 @@ function BlogPostView({ post }: { post: BlogPost }) {
               tags={post.tags}
               size='md'
             />
+
+            {postMentionsEspazza(post.tags) ? <EspazzaStatusBanner /> : null}
           </header>
 
           <div className='prose prose-invert prose-lg max-w-none'>
@@ -321,6 +326,16 @@ function BlogPostView({ post }: { post: BlogPost }) {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          <BlogCommercialCta
+            variant={
+              post.categories.some((c) =>
+                ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(c),
+              )
+                ? 'engineering'
+                : 'default'
+            }
+          />
 
           <section
             className='not-prose mt-16 border-t border-border pt-10'

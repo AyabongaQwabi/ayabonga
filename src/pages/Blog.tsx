@@ -16,9 +16,9 @@ import {
   TWITTER_HANDLE,
 } from '../lib/site-config';
 
-const BLOG_INDEX_TITLE = 'Writing: AI, cloud, culture & code';
+const BLOG_INDEX_TITLE = 'AI, cloud and product engineering for SA startups';
 const BLOG_INDEX_DESCRIPTION =
-  'Articles on AI agents, cloud architecture, South African tech, isiXhosa heritage, vibe coding, payments, and building software that matters.';
+  'Guides on Paystack and SA payments, AI agents, cloud architecture, and shipping MVPs. Plus Eastern Cape culture and heritage writing.';
 
 function buildListUrl(category: string | null, tag: string | null): string {
   const p = new URLSearchParams();
@@ -42,31 +42,31 @@ export default function Blog() {
   );
 
   const hasFilters = Boolean(categoryFilter || tagFilter);
+  const robotsContent = hasFilters ? 'noindex, follow' : 'index, follow';
 
   const keywordStr = useMemo(() => tags.slice(0, 24).join(', '), [tags]);
 
-  const blogListingJsonLd = useMemo(
-    () =>
-      JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Blog',
-        name: `Writing: ${SITE_NAME}`,
-        description: BLOG_INDEX_DESCRIPTION,
-        url: absoluteUrl('/blog'),
-        author: {
-          '@type': 'Person',
-          name: SITE_NAME,
-          url: absoluteUrl('/'),
-        },
-        blogPost: blogPosts.map((p) => ({
-          '@type': 'BlogPosting',
-          headline: p.title,
-          url: absoluteUrl(`/blog/${p.slug}`),
-          description: p.excerpt,
-        })),
-      }),
-    [blogPosts],
-  );
+  const blogListingJsonLd = useMemo(() => {
+    if (hasFilters) return null;
+    return JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: `Writing: ${SITE_NAME}`,
+      description: BLOG_INDEX_DESCRIPTION,
+      url: absoluteUrl('/blog'),
+      author: {
+        '@type': 'Person',
+        name: SITE_NAME,
+        url: absoluteUrl('/'),
+      },
+      blogPost: blogPosts.map((p) => ({
+        '@type': 'BlogPosting',
+        headline: p.title,
+        url: absoluteUrl(`/blog/${p.slug}`),
+        description: p.excerpt,
+      })),
+    });
+  }, [hasFilters]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -86,8 +86,10 @@ export default function Blog() {
         <meta name="twitter:description" content={BLOG_INDEX_DESCRIPTION} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
-        <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{blogListingJsonLd}</script>
+        <meta name="robots" content={robotsContent} />
+        {blogListingJsonLd ? (
+          <script type="application/ld+json">{blogListingJsonLd}</script>
+        ) : null}
       </Helmet>
       <nav className="border-b border-border">
         <div className="max-w-3xl mx-auto px-6 py-4">

@@ -48,7 +48,7 @@ const projects = [
   {
     title: 'eSpazza',
     description: 'A Xhosa hip hop music streaming and blogging website celebrating Eastern Cape hip hop culture.',
-    url: 'https://xhosahiphop.co.za',
+    url: '/projects/espazza',
     tech: ['React', 'Express', 'MongoDB'],
   },
 ];
@@ -138,7 +138,7 @@ function App() {
             "@type": "Person",
             "name": "Ayabonga Qwabi",
             "jobTitle": "Senior Product Engineer",
-            "url": "https://qwabi.co.za",
+            "url": "https://www.qwabi.co.za",
             "sameAs": [
               "https://github.com/ayabongaqwabi",
               "https://linkedin.com/in/ayabongaqwabi",

@@ -102,6 +102,7 @@ async function main() {
     { url: '/developers/south-africa', changefreq: 'weekly', priority: 0.9 },
     ...localPageLinks,
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
+    { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },
     ...blogEntries.map(({ slug, lastmod }) => ({
       url: `/blog/${slug}`,

@@ -12,6 +12,8 @@ import DynamicServicePage from './pages/DynamicServicePage.tsx';
 import DynamicComparisonPage from './pages/DynamicComparisonPage.tsx';
 import DevelopersRegionHub from './pages/DevelopersRegionHub.tsx';
 import LocalDeveloperPage from './pages/LocalDeveloperPage.tsx';
+import EspazzaProject from './pages/EspazzaProject.tsx';
+import NotFound from './pages/NotFound.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -39,6 +41,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/get-a-quote" element={<GetAQuotePage />} />
+          <Route path="/projects/espazza" element={<EspazzaProject />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
