@@ -10,6 +10,7 @@ import { BlogPostHero } from '../components/BlogPostHero';
 import { BlogToc } from '../components/BlogToc';
 import { BlogShare } from '../components/BlogShare';
 import { BlogRelatedPosts } from '../components/BlogRelatedPosts';
+import { BlogImageDisclaimer } from '../components/BlogImageDisclaimer';
 import EspazzaStatusBanner, { postMentionsEspazza } from '../components/EspazzaStatusBanner';
 import NotFound from './NotFound';
 import { DiscussionEmbed } from 'disqus-react';
@@ -392,6 +393,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
             <BlogToc markdown={post.content} className='mb-8 lg:mb-0' />
 
             <div className='min-w-0'>
+              <BlogImageDisclaimer />
               <div className='prose prose-invert prose-lg max-w-none'>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
