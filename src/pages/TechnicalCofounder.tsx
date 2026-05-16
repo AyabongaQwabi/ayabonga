@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, CheckCircle2, AlertCircle, TrendingUp, Code, GraduationCap } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, AlertCircle, TrendingUp, Code, GraduationCap, Rocket } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '../components/ui/accordion';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -10,22 +16,65 @@ import {
 } from '../lib/site-config';
 
 const PAGE_TITLE = 'Technical Co-founder as a Service';
-const PAGE_DESCRIPTION = 'Hire a senior product engineer as your technical partner without giving away equity. I bridge the gap between vision and execution for founders in South Africa.';
+const PAGE_DESCRIPTION =
+  'Technical co-founder as a Service for founders in South Africa. Senior product engineer on your MVP without equity. Strategy, build, and launch from one partner.';
+const PAGE_OG_TITLE = `${PAGE_TITLE} | ${SITE_NAME}`;
+
+const TAAS_FAQ = [
+  {
+    id: 'what-is-taas',
+    question: 'What is technical co-founder as a Service?',
+    answer:
+      'Technical co-founder as a Service (TaaS) is a senior product engineering partnership for non-technical founders. You get architecture, full-stack build, payments, cloud, and launch ownership without giving away equity or managing a junior dev bench. It is built for founders in South Africa who need to ship a production-ready MVP, not a prototype that needs a rewrite.',
+  },
+  {
+    id: 'equity',
+    question: 'Do I need to give up equity?',
+    answer:
+      'No. TaaS is a paid engagement, typically scoped as a fixed-price Phase 1 build. You keep full ownership of your company and your codebase. Equity is for long-term co-founders; this model is for founders who need a senior technical partner now and want a clean handoff when the product is live.',
+  },
+  {
+    id: 'vs-agency',
+    question: 'How is TaaS different from a software agency in South Africa?',
+    answer:
+      'Agencies bill for layers of overhead (account managers, sales, juniors) and often slow decisions. TaaS is one senior engineer who builds directly with you, with testable progress every few days and deep familiarity with local payments (Paystack, Stitch, Ozow) and POPIA-aware patterns. You talk to the person writing the code, not a relay team.',
+  },
+] as const;
 
 export default function TechnicalCofounderPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Helmet>
-        <title>{`${PAGE_TITLE} | ${SITE_NAME}`}</title>
+        <title>{PAGE_OG_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
         <link rel="canonical" href={absoluteUrl('/technical-cofounder')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={absoluteUrl('/technical-cofounder')} />
-        <meta property="og:title" content={`${PAGE_TITLE} | ${SITE_NAME}`} />
+        <meta property="og:title" content={PAGE_OG_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
         <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta property="og:locale" content="en_ZA" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={PAGE_OG_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: TAAS_FAQ.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer,
+              },
+            })),
+          })}
+        </script>
       </Helmet>
 
       <nav className="border-b border-border">
@@ -45,20 +94,24 @@ export default function TechnicalCofounderPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
               <GraduationCap className="w-3.5 h-3.5" />
-              <span>The TaaS Model</span>
+              <span>Technical Co-founder as a Service (TaaS)</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Your Technical Partner, <span className="text-primary">Without the Equity Split.</span>
+              Technical Co-founder in South Africa,{' '}
+              <span className="text-primary">without the equity split.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Finding a technical co-founder is hard. Managing a junior developer is risky. Hiring an agency is slow. My "Technical Co-founder as a Service" model gives you a senior partner to own your vision from day one.
+              Finding a technical co-founder in South Africa is hard. Managing a junior developer is risky.
+              Hiring an agency is slow. With Technical Co-founder as a Service, you get a senior product
+              engineer who owns architecture, delivery, and launch from day one, not a rotating bench of
+              juniors or account managers.
             </p>
           </div>
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-emerald-500/50 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <img 
               src="/hero-taas.png" 
-              alt="Strategic Technical Leadership" 
+              alt="Technical co-founder as a Service for South African founders"
               className="relative rounded-2xl shadow-2xl border border-white/10"
             />
           </div>
@@ -67,9 +120,9 @@ export default function TechnicalCofounderPage() {
         {/* The Problem */}
         <section className="mb-24 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">The "Junior Dev Lottery" vs. The Agency Slowdown</h2>
+            <h2 className="text-3xl font-bold mb-6">The Junior Dev Lottery vs. agency slowdown</h2>
             <p className="text-muted-foreground mb-8">
-              Most non-technical founders end up in one of two traps:
+              Most non-technical founders in South Africa end up in one of two traps:
             </p>
             <div className="space-y-6">
               <div className="flex gap-4">
@@ -87,13 +140,21 @@ export default function TechnicalCofounderPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10">
-              <Link 
-                to="/vs/technical-cofounder-vs-agency" 
+            <div className="mt-10 space-y-3">
+              <Link
+                to="/vs/technical-cofounder-vs-agency"
                 className="text-primary font-bold hover:underline inline-flex items-center gap-2"
               >
-                Read: Why TaaS beats traditional agencies <ArrowLeft className="w-4 h-4 rotate-180" />
+                Why TaaS beats traditional agencies <ArrowLeft className="w-4 h-4 rotate-180" />
               </Link>
+              <p className="text-sm text-muted-foreground">
+                <Link
+                  to="/blog/hidden-cost-junior-mvp"
+                  className="hover:text-foreground underline underline-offset-4"
+                >
+                  What the Junior Dev Lottery costs your runway
+                </Link>
+              </p>
             </div>
           </div>
           <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
@@ -145,6 +206,28 @@ export default function TechnicalCofounderPage() {
               <p className="text-sm text-muted-foreground">We go from zero to live in weeks. I handle the cloud, the payments, and the scaling so you can focus on winning customers.</p>
             </div>
           </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="mb-24" aria-labelledby="taas-faq-heading">
+          <div className="mb-10 max-w-2xl">
+            <h2 id="taas-faq-heading" className="text-3xl font-bold mb-4">
+              Frequently asked questions
+            </h2>
+            <p className="text-muted-foreground">
+              Straight answers on technical co-founder as a Service for founders in South Africa.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full rounded-2xl border border-border bg-card px-6">
+            {TAAS_FAQ.map((item) => (
+              <AccordionItem key={item.id} value={item.id}>
+                <AccordionTrigger className="text-left text-base">{item.question}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </section>
 
         {/* CTA */}
