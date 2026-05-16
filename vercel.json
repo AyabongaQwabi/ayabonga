@@ -9,6 +9,26 @@
     }
   ],
   "rewrites": [
+    { "handle": "filesystem" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/social-post",
+      "schedule": "0 7 * * 1"
+    },
+    {
+      "path": "/api/cron/social-post",
+      "schedule": "0 10 * * 3"
+    },
+    {
+      "path": "/api/cron/social-post",
+      "schedule": "0 15 * * 5"
+    }
+  ],
+  "functions": {
+    "api/cron/social-post.ts": {
+      "maxDuration": 60
+    }
+  }
 }

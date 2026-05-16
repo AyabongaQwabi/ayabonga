@@ -1,12 +1,12 @@
 # Social Media Scheduler
 
-Automated posting to Facebook Page and Instagram Business Account via GitHub Actions.
+Automated posting to Facebook Page and Instagram Business Account via Vercel Cron (`/api/cron/social-post`).
 
 ## Schedule
 
 **30 posts** over **10 weeks**, starting **Monday 18 May 2026**.
 
-| Day | Time (SAST) | UTC (GitHub cron) | Platforms |
+| Day | Time (SAST) | UTC (Vercel cron) | Platforms |
 |-----|-------------|-------------------|-----------|
 | Monday | 9:00 AM | 07:00 | Facebook text + Instagram image |
 | Wednesday | 12:00 PM | 10:00 | Facebook text + Instagram image |
@@ -131,14 +131,18 @@ The calendar uses **20 photo** and **10 vector** slots across the 10 weeks.
 
 ### Token expiry
 
-Facebook Page tokens expire about every **60 days**. Refresh in Meta for Developers → Access Token Debugger, then update the GitHub secret.
+Facebook Page tokens expire about every **60 days**. Refresh in Meta for Developers → Access Token Debugger, then update the matching Vercel environment variables.
 
-## Manual trigger
+## Manual trigger (production)
 
-1. **Actions** → **Social Media Scheduler** → **Run workflow**
-2. **platform:** `both` / `facebook-only` / `instagram-only`
-3. **dry_run:** `true` to preview, `false` to publish
-4. **post_date:** e.g. `2026-05-18` (Mon/Wed/Fri in the campaign)
+Vercel Cron sends `Authorization: Bearer <CRON_SECRET>` automatically. To test manually:
+
+```bash
+curl -sS -H "Authorization: Bearer $CRON_SECRET" \
+  "https://www.qwabi.co.za/api/cron/social-post?dry_run=true&platform=facebook-only&date=2026-05-18"
+```
+
+Query params: `platform` (`facebook-only` | `instagram-only` | omit for both), `dry_run=true`, `date=YYYY-MM-DD` (Mon/Wed/Fri in the campaign).
 
 Do not duplicate the same posts in Meta Business Suite unless you want double posts.
 
@@ -193,8 +197,9 @@ scripts/social/
   calendar.json    # 10-week calendar
   list-schedule.js # Print dated schedule
 
-.github/workflows/
-  social-scheduler.yml
+vercel.json
+  crons → /api/cron/social-post   # Mon 7 UTC, Wed 10 UTC, Fri 15 UTC (SAST slots)
+api/cron/social-post.ts          # Invokes scripts/social/post.js (CRON_SECRET)
 ```
 
 ## Editing the calendar
