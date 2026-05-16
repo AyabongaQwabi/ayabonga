@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "social:dry-run": "node scripts/social/post.js --dry-run",
-    "social:schedule": "node scripts/social/list-schedule.js"
+    "social:schedule": "node scripts/social/list-schedule.js",
+    "social:fetch-page-token": "node scripts/social/fetch-page-token.js",
+    "social:exchange-user-token": "node scripts/social/exchange-user-token.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
