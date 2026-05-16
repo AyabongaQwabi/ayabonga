@@ -23,16 +23,14 @@ function postDate(startDate, week, day) {
 }
 
 console.log(`\n10-week schedule (starts ${calendar.startDate})\n`);
-console.log('| Date | Week | Day | Facebook (preview) | Instagram query |');
-console.log('|------|------|-----|----------------------|-----------------|');
+console.log('| Date | Week | Day | IG media | Instagram query |');
+console.log('|------|------|-----|----------|-----------------|');
 
 for (const post of calendar.posts) {
   const date = postDate(calendar.startDate, post.week, post.day);
-  const fbPreview = post.facebook.replace(/\n/g, ' ').slice(0, 60) + '…';
-  const igQuery = post.instagram?.query ?? '(text only)';
-  console.log(
-    `| ${date} | ${post.week} | ${post.day} | ${fbPreview} | ${igQuery} |`
-  );
+  const igMedia = post.instagram?.media ?? '—';
+  const igQuery = post.instagram?.query ?? '(no Instagram)';
+  console.log(`| ${date} | ${post.week} | ${post.day} | ${igMedia} | ${igQuery} |`);
 }
 
 console.log(`\nTotal posts: ${calendar.posts.length}\n`);
