@@ -13,6 +13,12 @@ import {
   TWITTER_HANDLE,
   WHATSAPP_URL,
 } from './lib/site-config';
+import { SiteFooter } from './components/SiteFooter';
+import { authorPersonSchema } from './lib/author-profile';
+import {
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from './lib/entity-schema';
 
 const projects = [
   {
@@ -131,44 +137,30 @@ function App() {
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
         
-        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Ayabonga Qwabi",
-            "jobTitle": "Senior Product Engineer",
-            "url": "https://www.qwabi.co.za",
-            "sameAs": [
-              "https://github.com/ayabongaqwabi",
-              "https://linkedin.com/in/ayabongaqwabi",
-              "https://twitter.com/ayabongaqwabi"
+            '@context': 'https://schema.org',
+            '@graph': [
+              buildOrganizationSchema(),
+              {
+                ...authorPersonSchema({ url: absoluteUrl('/about') }),
+                '@id': `${absoluteUrl('/')}#person`,
+                image: profileImages[1].src,
+              },
+              buildWebSiteSchema(),
+              {
+                '@type': 'Service',
+                serviceType: 'Technical Co-founder as a Service',
+                provider: { '@id': `${absoluteUrl('/')}#person` },
+                description:
+                  'End-to-end product engineering, AI integration, and cloud architecture for non-technical founders.',
+                areaServed: 'South Africa',
+                offers: {
+                  '@type': 'Offer',
+                  description: 'Fixed-price Phase 1 builds starting from R50,000',
+                },
+              },
             ],
-            "description": "Technical Co-founder as a Service. Building full-stack digital products and AI solutions for founders and agencies in South Africa.",
-            "image": profileImages[1].src,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Queenstown",
-              "addressRegion": "Eastern Cape",
-              "addressCountry": "ZA"
-            }
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Technical Co-founder as a Service",
-            "provider": {
-              "@type": "Person",
-              "name": "Ayabonga Qwabi"
-            },
-            "description": "End-to-end product engineering, AI integration, and cloud architecture for non-technical founders.",
-            "areaServed": "South Africa",
-            "offers": {
-              "@type": "Offer",
-              "description": "Fixed-price Phase 1 builds starting from R50,000"
-            }
           })}
         </script>
       </Helmet>
@@ -200,6 +192,9 @@ function App() {
               <button onClick={() => scrollToSection('collaborations')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Work
               </button>
+              <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                About
+              </Link>
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Writing
               </Link>
@@ -580,49 +575,7 @@ function App() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            {new Date().getFullYear()} Ayabonga Qwabi. AI Specialist & Cloud Architect.
-          </p>
-          <div className="flex flex-wrap items-center gap-6">
-            <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Services
-            </Link>
-            <Link to="/technical-cofounder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              TaaS
-            </Link>
-            <Link to="/developers/eastern-cape" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              EC developers
-            </Link>
-            <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
-              <Brain className="w-3 h-3" />
-              llms.txt
-            </a>
-            <a href="/pricing.md" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
-              <Calculator className="w-3 h-3" />
-              Pricing
-            </a>
-            <a 
-              href="https://github.com/ayabongaqwabi" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              GitHub
-            </a>
-            <a 
-              href="https://linkedin.com/in/ayabongaqwabi" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <SpeedInsights />
       <Analytics />
