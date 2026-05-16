@@ -89,7 +89,7 @@ export default function TechnicalCofounderPage() {
             </div>
             <div className="mt-10">
               <Link 
-                to="/vs/taas-vs-agency" 
+                to="/vs/technical-cofounder-vs-agency" 
                 className="text-primary font-bold hover:underline inline-flex items-center gap-2"
               >
                 Read: Why TaaS beats traditional agencies <ArrowLeft className="w-4 h-4 rotate-180" />

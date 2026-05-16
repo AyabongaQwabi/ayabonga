@@ -53,7 +53,10 @@ import {
 import appData from '@/config/pricing/app.json';
 import websiteData from '@/config/pricing/website.json';
 import {
-  DEFAULT_HOURLY_RATE_ZAR,
+  CLIENT_QUOTE_BUFFER_PERCENT,
+  CLIENT_QUOTE_HOURLY_RATE_ZAR,
+  CLIENT_QUOTE_HOURS_PER_DAY,
+  CLIENT_QUOTE_YEARS_EXPERIENCE,
   HOURS_PER_DAY,
   CURRENCY_OPTIONS,
   MAX_DESIRED_TIME_MULTIPLIER,
@@ -293,10 +296,10 @@ function formatMoney(amountZar, currencyCode) {
 
 export default function GetAQuote({ trustStats = null }) {
   const [wizardStep, setWizardStep] = useState(1);
-  const [hourlyRate, setHourlyRate] = useState('300');
-  const [yearsExperience, setYearsExperience] = useState('10');
-  const [hoursPerDay, setHoursPerDay] = useState('4');
-  const [bufferPercent, setBufferPercent] = useState(10);
+  const [hourlyRate, setHourlyRate] = useState(String(CLIENT_QUOTE_HOURLY_RATE_ZAR));
+  const [yearsExperience, setYearsExperience] = useState(String(CLIENT_QUOTE_YEARS_EXPERIENCE));
+  const [hoursPerDay, setHoursPerDay] = useState(String(CLIENT_QUOTE_HOURS_PER_DAY));
+  const [bufferPercent, setBufferPercent] = useState(CLIENT_QUOTE_BUFFER_PERCENT);
   const [currency, setCurrency] = useState('ZAR');
   const [selectedProjectTypes, setSelectedProjectTypes] = useState([]);
   const [selectedFeatures, setSelectedFeatures] = useState([]);
