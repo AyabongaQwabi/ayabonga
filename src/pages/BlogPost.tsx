@@ -31,6 +31,7 @@ import {
   headingToId,
   type TocEntry,
 } from '../lib/blog-headings';
+import { normalizeBlogImageSrc } from '../lib/blog-image-path';
 import { AuthorBio, AuthorByline } from '../components/AuthorBio';
 import { PageBreadcrumbs } from '../components/PageBreadcrumbs';
 import { SiteFooter } from '../components/SiteFooter';
@@ -123,10 +124,11 @@ function MarkdownImage({
   src?: string;
   alt?: string;
 }) {
-  if (!src) return null;
+  const normalized = normalizeBlogImageSrc(src);
+  if (!normalized) return null;
   return (
     <img
-      src={src}
+      src={normalized}
       alt={alt ?? ''}
       loading='lazy'
       decoding='async'
@@ -355,9 +357,14 @@ function BlogPostView({ post }: { post: BlogPost }) {
         <article className='mt-6 md:mt-8'>
           {heroSources ? (
             <BlogPostHero
-              src={heroSources.primary}
+              src={normalizeBlogImageSrc(heroSources.primary) ?? heroSources.primary}
               alt={`Featured image for ${post.title}`}
-              fallbackSrc={heroSources.fallback}
+              fallbackSrc={
+                heroSources.fallback
+                  ? normalizeBlogImageSrc(heroSources.fallback) ??
+                    heroSources.fallback
+                  : undefined
+              }
             />
           ) : null}
 

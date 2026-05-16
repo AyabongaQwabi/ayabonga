@@ -5,6 +5,8 @@ date: April 16, 2026
 readTime: 15 min read
 tags: Qwabi, AmaQithi, Eastern Cape, Family history, Lady Frere, Oral history, Chris Hani, Ndlovukazi, Hala 2, Bulhoek Massacre, AbaThembu
 categories: Culture, History
+headerImage: /images/blog/African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa.jpg
+ogImage: /images/blog/African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa.jpg
 ---
 
 The Qwabi family traces its origins deep into the heart of the Eastern Cape, South Africa. Descended from the **AmaQithi** clan, the family has strong historical ties to villages such as Lesseyton (Ndlovukazi), Eskwanqeni (near emaqithini — the village of the AmaQithi), and later Hala 2 in the Lady Frere area. Archival research confirms the family originated in the Lady Frere / Glen Grey district, a historic stronghold of the **AbaThembu** people in the 1800s. Today, the Qwabi surname is most commonly found in the **Chris Hani District**, with branches in Queenstown, Ndlovukazi, and Hala 2.

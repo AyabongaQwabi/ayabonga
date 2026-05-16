@@ -175,7 +175,9 @@ function getImageVariantPair(path: string): { primary: string; fallback?: string
 
   if (/\.jpe?g$/i.test(path)) {
     const webp = path.replace(/\.jpe?g$/i, '.webp');
-    return webp !== path ? { primary: webp, fallback: path } : { primary: path };
+    return webp !== path
+      ? { primary: path, fallback: webp }
+      : { primary: path };
   }
 
   return { primary: path };

@@ -29,6 +29,7 @@ import {
 import { SiteFooter } from '../components/SiteFooter';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { authorPersonSchema } from '../lib/author-profile';
+import { normalizeBlogImageSrc } from '../lib/blog-image-path';
 
 const BLOG_INDEX_TITLE = 'AI, cloud and product engineering for SA startups';
 const BLOG_INDEX_DESCRIPTION =
@@ -286,9 +287,10 @@ export default function Blog() {
 
   const heroImageSrc = useMemo(() => {
     const fromFeatured = featuredPost ? getPostThumbnail(featuredPost) : undefined;
-    if (fromFeatured) return fromFeatured;
+    if (fromFeatured) return normalizeBlogImageSrc(fromFeatured);
     const fallback = blogPosts.find((p) => p.slug === FEATURED_FALLBACK_SLUG);
-    return fallback ? getPostThumbnail(fallback) : undefined;
+    const fromFallback = fallback ? getPostThumbnail(fallback) : undefined;
+    return fromFallback ? normalizeBlogImageSrc(fromFallback) : undefined;
   }, [featuredPost]);
 
   const hasFilters = Boolean(categoryFilter || tagFilter);
@@ -475,16 +477,25 @@ export default function Blog() {
         ) : null}
 
         {gridPosts.length > 0 ? (
-          <ScrollReveal aria-label="All posts" className="block">
-            <h2 className="sr-only">All posts</h2>
-            <ScrollReveal stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
+          <section aria-label="All posts" className="mt-12 md:mt-14">
+            <h2 className="mb-6 font-display text-xl font-semibold text-foreground md:text-2xl">
+              All posts
+              <span className="ml-2 font-technical text-sm font-normal text-muted-foreground">
+                ({gridPosts.length}
+                {featuredPost ? ` plus editor's pick` : ''})
+              </span>
+            </h2>
+            <ScrollReveal
+              stagger
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8"
+            >
               {gridPosts.map((post) => (
                 <div key={post.slug} className="min-h-0">
                   <BlogPostCard post={post} />
                 </div>
               ))}
             </ScrollReveal>
-          </ScrollReveal>
+          </section>
         ) : null}
 
         {(emptyFilterResult || emptySearchResult) && blogPosts.length > 0 ? (

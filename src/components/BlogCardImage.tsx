@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { getPostThumbnailSources, type BlogPost } from '../data/blog-posts';
+import { normalizeBlogImageSrc } from '../lib/blog-image-path';
 
 type BlogCardImageProps = {
   post: BlogPost;
@@ -70,15 +71,25 @@ function BlogCardPhoto({
   fallback,
   className = '',
 }: BlogCardImageProps & { primary: string; fallback?: string }) {
-  const [src, setSrc] = useState(primary);
-  const useWebpSource = Boolean(fallback && /\.webp$/i.test(primary));
+  const normalizedPrimary = normalizeBlogImageSrc(primary) ?? primary;
+  const normalizedFallback = fallback
+    ? normalizeBlogImageSrc(fallback) ?? fallback
+    : undefined;
+  const [src, setSrc] = useState(normalizedPrimary);
+  const useWebpSource = Boolean(
+    normalizedFallback && /\.webp$/i.test(normalizedPrimary),
+  );
 
   return (
     <CardFrame className={className}>
       <CardMedia className="bg-muted">
         <picture>
           {useWebpSource ? (
-            <source srcSet={primary} type="image/webp" sizes={CARD_SIZES} />
+            <source
+              srcSet={normalizedPrimary}
+              type="image/webp"
+              sizes={CARD_SIZES}
+            />
           ) : null}
           <img
             src={src}
@@ -90,8 +101,8 @@ function BlogCardPhoto({
             decoding="async"
             sizes={CARD_SIZES}
             onError={() => {
-              if (fallback && src !== fallback) {
-                setSrc(fallback);
+              if (normalizedFallback && src !== normalizedFallback) {
+                setSrc(normalizedFallback);
               }
             }}
           />
