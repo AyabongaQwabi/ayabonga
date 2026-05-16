@@ -14,6 +14,10 @@ import DevelopersRegionHub from './pages/DevelopersRegionHub.tsx';
 import LocalDeveloperPage from './pages/LocalDeveloperPage.tsx';
 import EspazzaProject from './pages/EspazzaProject.tsx';
 import NotFound from './pages/NotFound.tsx';
+import About from './pages/About.tsx';
+import Privacy from './pages/Privacy.tsx';
+import Editorial from './pages/Editorial.tsx';
+import Corrections from './pages/Corrections.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -38,6 +42,10 @@ createRoot(document.getElementById('root')!).render(
             path="/developers/eastern-cape/:city/:role"
             element={<LocalDeveloperPage />}
           />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/editorial" element={<Editorial />} />
+          <Route path="/corrections" element={<Corrections />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/get-a-quote" element={<GetAQuotePage />} />
