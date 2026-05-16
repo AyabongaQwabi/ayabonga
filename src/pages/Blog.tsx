@@ -15,10 +15,12 @@ import {
   SITE_NAME,
   TWITTER_HANDLE,
 } from '../lib/site-config';
+import { SiteFooter } from '../components/SiteFooter';
+import { authorPersonSchema } from '../lib/author-profile';
 
 const BLOG_INDEX_TITLE = 'AI, cloud and product engineering for SA startups';
 const BLOG_INDEX_DESCRIPTION =
-  'Guides on Paystack and SA payments, AI agents, cloud architecture, and shipping MVPs. Plus Eastern Cape culture and heritage writing.';
+  'Writing on product engineering, AI, cloud architecture, and shipping software in South Africa. Plus Eastern Cape culture and heritage.';
 
 function buildListUrl(category: string | null, tag: string | null): string {
   const p = new URLSearchParams();
@@ -42,7 +44,9 @@ export default function Blog() {
   );
 
   const hasFilters = Boolean(categoryFilter || tagFilter);
-  const robotsContent = hasFilters ? 'noindex, follow' : 'index, follow';
+  const emptyFilterResult = hasFilters && filteredPosts.length === 0;
+  const robotsContent =
+    hasFilters || emptyFilterResult ? 'noindex, follow' : 'index, follow';
 
   const keywordStr = useMemo(() => tags.slice(0, 24).join(', '), [tags]);
 
@@ -54,11 +58,7 @@ export default function Blog() {
       name: `Writing: ${SITE_NAME}`,
       description: BLOG_INDEX_DESCRIPTION,
       url: absoluteUrl('/blog'),
-      author: {
-        '@type': 'Person',
-        name: SITE_NAME,
-        url: absoluteUrl('/'),
-      },
+      author: authorPersonSchema(),
       blogPost: blogPosts.map((p) => ({
         '@type': 'BlogPosting',
         headline: p.title,
@@ -69,7 +69,7 @@ export default function Blog() {
   }, [hasFilters]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
       <Helmet>
         <title>{`${BLOG_INDEX_TITLE} | ${SITE_NAME}`}</title>
         <meta name="description" content={BLOG_INDEX_DESCRIPTION} />
@@ -103,7 +103,7 @@ export default function Blog() {
         </div>
       </nav>
 
-      <main className="max-w-3xl mx-auto px-6 py-16">
+      <main className="flex-1 max-w-3xl mx-auto px-6 py-16">
         <header className="mb-12">
           <h1 className="text-3xl font-bold text-foreground mb-4">Writing</h1>
           <p className="text-muted-foreground leading-relaxed mb-8">
@@ -224,6 +224,7 @@ export default function Blog() {
           </div>
         )}
       </main>
+      <SiteFooter />
     </div>
   );
 }

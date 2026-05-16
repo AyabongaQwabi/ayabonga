@@ -11,6 +11,8 @@ export interface BlogPost {
   ogImage?: string;
   /** Optional hero image in the article; if omitted but `ogImage` is set, the OG image is shown in the header. */
   headerImage?: string;
+  /** Optional ISO or display date for `dateModified` in JSON-LD when a post is revised. */
+  dateModified?: string;
 }
 
 const rawModules = import.meta.glob<string>('../content/blog/*.md', {
@@ -72,6 +74,7 @@ interface PostFrontmatter {
   categories?: string;
   ogImage?: string;
   headerImage?: string;
+  dateModified?: string;
 }
 
 function loadBlogPosts(): BlogPost[] {
@@ -91,6 +94,11 @@ function loadBlogPosts(): BlogPost[] {
         ? fm.headerImage.trim()
         : undefined;
 
+    const dateModified =
+      typeof fm.dateModified === 'string' && fm.dateModified.trim().length > 0
+        ? fm.dateModified.trim()
+        : undefined;
+
     posts.push({
       slug,
       title: typeof fm.title === 'string' ? fm.title : fileSlug,
@@ -102,6 +110,7 @@ function loadBlogPosts(): BlogPost[] {
       categories: parseCommaList(fm.categories),
       ...(ogImage ? { ogImage } : {}),
       ...(headerImage ? { headerImage } : {}),
+      ...(dateModified ? { dateModified } : {}),
     });
   }
 
