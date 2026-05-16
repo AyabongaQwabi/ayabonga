@@ -9,15 +9,15 @@ readTime: 16 min read
 tags: South Africa, Web design, UX, UI, Agencies
 categories: Design, Business
 logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
-headerImage: /images/blog/web-design-companies-south-africa.webp
-ogImage: /images/blog/web-design-companies-south-africa.webp
+headerImage: /images/blog/landing%20page.jpeg
+ogImage: /images/blog/landing%20page.jpeg
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
 
 
 ## Featured firms (logos)
-![Supporting visual for this section](/images/blog/web-design-companies-south-africa-inline.webp)
+![Supporting visual for this section](/images/blog/landing%20page%20types.avif)
 
 
 Wikimedia and directory-hosted logo URLs for the firms below were checked in May 2026. None were stable enough to hotlink here, so this table is **names only**. Use each company's official site for brand assets.

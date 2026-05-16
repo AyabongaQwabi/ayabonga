@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/south%20africa%20flag%20with%20people.jpg
 title: "Why Most SA Bootcamp Grads Still Struggle in 2026 (and 3 Skills That Get You Hired)"
 excerpt: "AI-augmented development, system thinking beyond CRUD, and proof you can ship. Tailored to the Mzansi market."
 date: March 28, 2026
 readTime: 10 min read
 tags: South Africa, Bootcamp, Hiring, AI coding, Next.js
 categories: Career, AI
-ogImage: https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/south%20africa%20flag%20with%20people.jpg
 ---
 
 **Thread: Why Most South African Bootcamp Grads Still Struggle in 2026 – And the 3 Skills That Actually Get You Hired**

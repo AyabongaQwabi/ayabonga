@@ -1,6 +1,6 @@
 ---
-ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
-headerImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/wifi.webp
+headerImage: /images/blog/wifi.webp
 title: "The Senior Title and the Township Wi‑Fi Test"
 excerpt: "Titles open doors. Shipping under real constraints is what keeps them open. A note on growth, optics, and what ‘senior’ ought to mean in Mzansi tech."
 date: April 13, 2026

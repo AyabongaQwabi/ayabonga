@@ -5,8 +5,8 @@ date: April 17, 2026
 readTime: 8 min read
 tags: Bulhoek Massacre, South Africa, Eastern Cape, Genealogy, Family history, Qwabi, Oral history, Queenstown, Colonial history, 1921
 categories: History, Culture
-headerImage: /images/blog/bulhoek-massacre-hospital-list.webp
-ogImage: /images/blog/bulhoek-massacre-hospital-list.webp
+headerImage: /images/blog/Bulhoek%20massacre%20South%20Africa%201921%20history.webp
+ogImage: /images/blog/Bulhoek%20massacre%20South%20Africa%201921%20history.webp
 ---
 
 While researching my family history, I came across something I did not expect to find.
@@ -22,7 +22,7 @@ As I read through the list, one thing stood out immediately: **so many of them w
 Some were in their late teens. Some were in their twenties. Even those in their thirties and forties still feel painfully young when placed in the context of lives cut short by state violence. The list reads like an interrupted generation.
 
 ## The recorded names
-![Archival documents suggesting historical research](/images/blog/bulhoek-massacre-hospital-list-inline.webp)
+![Archival documents suggesting historical research](/images/blog/3.%20Names%20from%20the%20Bulhoek%20Massacre-%20A%20Hospital%20List%20I%20Was%20Never%20Supposed%20to%20Find%20South%20Africa%20Africa%20.jpg)
 
 
 - Halile Jonas Qwabi (approx. 35)

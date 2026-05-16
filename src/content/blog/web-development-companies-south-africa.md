@@ -9,8 +9,8 @@ readTime: 17 min read
 tags: South Africa, Web development, React, WordPress, Agencies
 categories: Engineering, Business
 logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
-headerImage: /images/blog/web-development-companies-south-africa.webp
-ogImage: /images/blog/web-development-companies-south-africa.webp
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
@@ -34,7 +34,7 @@ A **web development company in South Africa** is not the same as a software hous
 
 ## What "web development company" means in 2026
 
-![Web development team building a responsive site in South Africa](/images/blog/web-development-companies-south-africa-inline.webp)
+![Web development team building a responsive site in South Africa](/images/blog/how-to-use-wordpress.jpg)
 
 | Type | Typical deliverable | Stack signals |
 |------|---------------------|---------------|

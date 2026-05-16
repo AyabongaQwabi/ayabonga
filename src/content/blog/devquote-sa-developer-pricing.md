@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 title: "DevQuote — A Pricing Tool for South African Developers"
 excerpt: "Quote client projects from your real hourly rate, experience, features, and timeline — open source on Vercel."
 date: March 29, 2026
 readTime: 6 min read
 tags: Freelancing, Pricing, Open source, South Africa, Next.js
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 One of the things side gig devs struggle with is pricing their new projects.

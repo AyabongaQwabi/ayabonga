@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/agent.ai%20v0%20prompt%20generated.png
 title: "How I Build Client Websites in 10–20 Minutes"
 excerpt: "Agent.ai v0 prompt generator, v0.dev, and Vercel — from business name to live site without gatekeeping."
 date: April 6, 2026
 readTime: 6 min read
 tags: v0, Vercel, Agent.ai, Web design, Client work
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/agent.ai%20v0%20prompt%20generated.png
 ---
 
 # How I Build Great-Looking, Fully Functional Client Websites in 10–20 Minutes

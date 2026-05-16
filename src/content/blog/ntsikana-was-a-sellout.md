@@ -5,14 +5,14 @@ date: April 18, 2026
 readTime: 12 min read
 tags: Ntsikana, Xhosa history, Colonialism, Christianity, Nxele, Lovedale, South Africa, Philosophy
 categories: Philosophy, History
-headerImage: /images/blog/ntsikana-was-a-sellout.webp
-ogImage: /images/blog/ntsikana-was-a-sellout.webp
+headerImage: /images/blog/kholo%20kingdom%20church%20service.jpg
+ogImage: /images/blog/kholo%20kingdom%20church%20service.jpg
 ---
 
 # Ntsikana was a sellout
 
 ## Was Ntsikana a Prophet, or the First Colonial Collaborator?
-![Weathered historic building in South Africa](/images/blog/ntsikana-was-a-sellout-inline.webp)
+![Weathered historic building in South Africa](/images/blog/pastor%20david%20mniki%20kholo%20kingdom.jpg)
 
 
 Ntsikana is widely celebrated as the father of Xhosa Christianity: a visionary, a reformer, a spiritual pioneer [5](#cite-5)[13](#cite-13)[15](#cite-15).

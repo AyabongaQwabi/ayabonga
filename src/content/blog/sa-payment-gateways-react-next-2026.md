@@ -5,7 +5,8 @@ date: March 30, 2026
 readTime: 15 min read
 tags: Payments, South Africa, Next.js, React, Yoco, Paystack
 categories: Engineering, Product
-ogImage: https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200
+headerImage: /images/blog/images%20showing%20payments%20.webp
+ogImage: /images/blog/images%20showing%20payments%20.webp
 ---
 
 The Easiest Payment Gateway Integrations for Your Next React/Next.js E-commerce Project in South Africa (2026 Edition)
@@ -17,21 +18,19 @@ As a full-stack JS dev who's shipped multiple React/Next.js shops here in Joburg
 No fluff. Just what saves you time when you're grinding solo or with a small team.
 
 ## Quick Ranking (Easiest First)
-![Supporting visual for this section](/images/blog/sa-payment-gateways-react-next-2026-inline.jpg)
+![Supporting visual for this section](/images/blog/payment%20gateway%20online.webp)
 
-
-![South African payment checkout on a React e-commerce screen](https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200)
 
 1. **Yoco Online Checkout**: Hands-down winner for speed
 2. **iKhokha (iK Pay API)**: Great if you like signed payloads
-3. **PayFast by Network**: OG form-post method (zero backend secrets)
-4. **Ozow**: Instant EFT king (pair it with something for cards)
-5. **Peach Payments**: Scaling vibes with embeds
-6. **Bonus: Paystack**: If you want modern popup polish
+3. <img src="/images/blog/icons/payfast.svg" alt="PayFast" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **PayFast by Network**: OG form-post method (zero backend secrets)
+4. <img src="/images/blog/icons/ozow.png" alt="Ozow" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **Ozow**: Instant EFT king (pair it with something for cards)
+5. <img src="/images/blog/icons/peach-payments.png" alt="Peach Payments" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **Peach Payments**: Scaling vibes with embeds
+6. **Bonus:** <img src="/images/blog/icons/paystack.png" alt="Paystack" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **Paystack**: If you want modern popup polish
 
 Let's break them down.
 
-### 1. Yoco Online Checkout (Easiest Hands-Down)
+### 1. <img src="/images/blog/icons/yoco.png" alt="Yoco" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Yoco Online Checkout (Easiest Hands-Down)
 
 **Signup:** Minutes. No heavy business verification, just grab your API keys from the portal.  
 **Integration:** Clean REST API. Create a checkout session from a Next.js API route (or Server Action), get a `redirectUrl`, send the user there (or embed if supported).  

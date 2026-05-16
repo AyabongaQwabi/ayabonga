@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/sources%20(for%20your%20own%20verification)%20ai%20vibe%20coding%20agents%202026.jpg
 title: "The 2026 Mzansi Dev Toolkit — Build Your Own AI Agents"
 excerpt: "ADK, n8n, agent.ai, LangGraph, CrewAI, Vercel AI SDK, Dify, Mastra, and what SA devs actually use in production."
 date: April 7, 2026
 readTime: 9 min read
 tags: South Africa, Agents, LangGraph, n8n, ADK, Vercel AI SDK
 categories: AI, Engineering
-ogImage: https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/sources%20(for%20your%20own%20verification)%20ai%20vibe%20coding%20agents%202026.jpg
 ---
 
 **🧵 Thread: The 2026 Mzansi Dev Toolkit – Best Tools & Libraries to BUILD Your Own AI Agents (Not Just Use Them)**

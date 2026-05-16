@@ -9,8 +9,8 @@ readTime: 18 min read
 tags: South Africa, Mobile apps, React Native, Flutter, iOS, Android
 categories: Engineering, Business
 logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
-headerImage: /images/blog/mobile-app-development-companies-south-africa.webp
-ogImage: /images/blog/mobile-app-development-companies-south-africa.webp
+headerImage: /images/blog/mobile-apps-1-scaled.jpg
+ogImage: /images/blog/mobile-apps-1-scaled.jpg
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
@@ -34,7 +34,7 @@ Hiring a **mobile app development company in South Africa** is high stakes. Stor
 
 ## Native vs cross-platform (what to ask every app company)
 
-![Mobile app development on iOS and Android devices in South Africa](/images/blog/mobile-app-development-companies-south-africa-inline.webp)
+![Mobile app development on iOS and Android devices in South Africa](/images/blog/iphone_apps.jpg)
 
 | Approach | Pros | Cons |
 |----------|------|------|
@@ -105,7 +105,7 @@ Founders with **R300k–R600k** Phase 1 budgets often get better ROI from a **st
 
 ## What an app making company should cover in discovery
 
-![Discovery workshop covering offline mode, Paystack payments, and app store submission](/images/blog/mobile-app-development-companies-south-africa.jpg)
+![Discovery workshop covering offline mode, Paystack payments, and app store submission](/images/blog/phone%20showing%20home%20screen%20with%20apps.jpg)
 
 | Topic | Why |
 |-------|-----|
@@ -121,7 +121,7 @@ See [SA payment gateways for React/Next](/blog/sa-payment-gateways-react-next-20
 
 ## Cost context (indicative)
 
-![Mobile app budget planning with ZAR cost bands and timeline estimates](/images/blog/mobile-app-development-companies-south-africa-inline.webp)
+![Mobile app budget planning with ZAR cost bands and timeline estimates](/images/blog/iphone_apps.jpg)
 
 Mobile projects are rarely "cheap" if done properly.
 
@@ -135,7 +135,7 @@ For methodology behind the numbers, see [app development cost South Africa](/app
 
 ## How to choose (app-specific checklist)
 
-![TestFlight and Google Play internal testing builds on iOS and Android devices](/images/blog/mobile-app-development-companies-south-africa.jpg)
+![TestFlight and Google Play internal testing builds on iOS and Android devices](/images/blog/phone%20showing%20home%20screen%20with%20apps.jpg)
 
 1. **Ask for TestFlight / Play Internal Testing builds**, not demo videos.
 2. **Check who owns Apple Developer and Google Play accounts** (must be you).

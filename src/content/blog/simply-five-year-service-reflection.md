@@ -1,6 +1,6 @@
 ---
-ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
-headerImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/simply%20logo%20transparent.png
+headerImage: /images/blog/simply%20logo%20transparent.png
 title: "Five Years at Simply"
 excerpt: "A certificate, gratitude, isiXhosa, and the journey from Mida School and UWC to senior developer."
 date: March 20, 2026

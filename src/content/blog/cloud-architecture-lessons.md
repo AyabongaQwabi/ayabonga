@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/serverless%20is%20not%20always%20the%20answer%20cloud%20architecture%20lessons.png
 title: Lessons from Cloud Architecture
 excerpt: Key insights from years of designing and building cloud-native applications at scale.
 date: March 25, 2026
 readTime: 7 min read
 tags: AWS, GCP, Azure, Serverless, Architecture, DevOps
 categories: Engineering, Cloud
-ogImage: https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/serverless%20is%20not%20always%20the%20answer%20cloud%20architecture%20lessons.png
 ---
 
 After years of building cloud-native applications, I have learned that the best architecture is often the simplest one that solves the problem at hand. Here are some lessons that have shaped my approach to cloud engineering.

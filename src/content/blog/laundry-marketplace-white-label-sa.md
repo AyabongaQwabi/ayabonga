@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/mobile%20apps.jpeg
 title: "White-Label On-Demand Laundry Marketplace for South Africa"
 excerpt: "Production-ready customer, driver, partner, and admin apps. Stack, demo credentials, and who it is for."
 date: March 22, 2026
 readTime: 7 min read
 tags: Marketplace, South Africa, White-label, React Native, Supabase
 categories: Product
-ogImage: https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/mobile%20apps.jpeg
 ---
 
 🚀 Ready to own South Africa's next big on-demand laundry platform without building from scratch?

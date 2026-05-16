@@ -5,8 +5,8 @@ date: April 29, 2026
 readTime: 5 min read
 tags: Memory, Cognition, Neuroscience, Perception, Dreams, Philosophy of mind, Philosophy, Opinion
 categories: Philosophy, Science
-headerImage: /images/blog/memory-sensory-replay-and-thought.webp
-ogImage: /images/blog/memory-sensory-replay-and-thought.webp
+headerImage: /images/blog/Human-Brain-Function-Map-scaled.jpg
+ogImage: /images/blog/Human-Brain-Function-Map-scaled.jpg
 ---
 
 The brain’s replay works like a peculiar kind of data retrieval. Unlike machines that stash bits in fixed addresses, the brain encodes much of what we know through **sensory experience**. When a memory returns, it often comes back as something **sounded** or **looked**. Touch and taste are another story: without something happening on the skin or the tongue right now, it is much harder to conjure the **raw sensation**.
@@ -16,7 +16,7 @@ Try to remember an old pain. You can recall that it hurt, even how bad it was, b
 By contrast, many people can **hear** words or music inwardly, and can **see** scenes, faces, or diagrams in the mind’s eye. In ordinary waking life, **sound** and **sight** are the senses we most often **fully replay** in the inner landscape.
 
 ## What we can reconstruct depends on what we have
-![Abstract neural network visualization on dark background](/images/blog/memory-sensory-replay-and-thought-inline.webp)
+![Abstract neural network visualization on dark background](/images/blog/how-brain-works-2.webp)
 
 
 Our ability to mentally simulate a sense is tied to the **hardware** we still run on. People who lose vision sometimes report that, over time, **visual dreams fade or vanish**. The brain seems to stop rebuilding a channel it no longer feeds. That links **memory** tightly to **ongoing capacity for that kind of perception**, not only to old files on a disk.

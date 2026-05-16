@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/large%20language%20model%20apps.jpeg
 title: "Best libraries and platforms to build AI agents (2026)"
 excerpt: "LangGraph, CrewAI, Mastra, n8n, and more. Pick by stack, control, and budget for production agents in South Africa."
 date: April 11, 2026
 readTime: 9 min read
 tags: Agents, LangGraph, Mastra, CrewAI, n8n, South Africa, ADK
 categories: AI, Engineering
-ogImage: https://images.pexels.com/photos/3861973/pexels-photo-3861973.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/large%20language%20model%20apps.jpeg
 ---
 
 My battle-tested 2026 guide to the best **libraries and platforms for building AI agents** (not just using them). I’ve grouped them by vibe so you can pick what fits your stack and budget.

@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/cursor%20coding.jpg
 title: "Why Bootcamp Grads Should Learn React Before Leaning on Cursor"
 excerpt: "Foundation first, then tutor mode, then multiplier — how to use AI without turning it into a crutch."
 date: April 1, 2026
 readTime: 7 min read
 tags: React, Cursor, Bootcamp, Education, Fundamentals
 categories: Career, AI
-ogImage: https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/cursor%20coding.jpg
 ---
 
 # Why Every Bootcamp Grad Should Learn React Before Using Cursor (And How to Use Both)

@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/thread%20ai%20vibe%20coding%20agents%202026.jpg
 title: "The Best AI Vibe Coding Agents of 2026 (and What They Cost)"
 excerpt: "Claude, Cursor, v0, Bolt, Base44, Windsurf, Replit, Copilot, Cody, Codeium, Cline — pricing and when to use each."
 date: April 2, 2026
 readTime: 14 min read
 tags: Claude, Cursor, v0, Bolt, Copilot, Pricing, Tooling
 categories: AI, Engineering
-ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/thread%20ai%20vibe%20coding%20agents%202026.jpg
 ---
 
 # Post 14: The Best AI Vibe Coding Agents of 2026 (Thread + Pricing)

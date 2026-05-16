@@ -7,8 +7,8 @@ slug: ai-tools-building-apps-2026
 tags: AI, Cursor, Claude, Codex, v0, Bolt, Tooling, South Africa
 categories: Engineering, AI
 featured: true
-headerImage: /images/blog/ai-tools-building-apps-2026.webp
-ogImage: /images/blog/ai-tools-building-apps-2026.webp
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 <!--
@@ -22,7 +22,7 @@ This guide compares the tools I actually reach for on client work and my own pro
 
 ## Who this is for
 
-![Developer using AI coding tools on a laptop](/images/blog/ai-tools-building-apps-2026-inline.webp)
+![Developer using AI coding tools on a laptop](/images/blog/Who%20this%20is%20for%20AI%20Tools%20for%20Building%20Apps%20in%202026.jpg)
 
 **Developers** care about context windows, diff quality, test runs, and whether the agent respects `AGENTS.md` / project rules. **Founders** care about time to demo, cost predictability, and how much technical debt they inherit on day thirty.
 
@@ -38,11 +38,11 @@ Neither group wins by picking the flashiest launch tweet. You win by matching th
 
 Most serious products end up on **layer one** for maintenance, even if they started on layer three.
 
-![Three-layer model comparing IDE agents, terminal agents, and browser app generators](/images/blog/ai-tools-building-apps-2026.jpg)
+![Three-layer model comparing IDE agents, terminal agents, and browser app generators](/images/blog/antigravity%20vs%20cursor%20vs%20vscode.png)
 
 ---
 
-## Cursor
+## <img src="/images/blog/icons/cursor.svg" alt="Cursor" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Cursor
 
 **What it is:** A VS Code fork built around inline chat, Tab completion, and **Composer** (multi-file edits). It indexes your repo and treats the codebase as the source of truth.
 
@@ -70,7 +70,7 @@ Most serious products end up on **layer one** for maintenance, even if they star
 
 ---
 
-## Claude and Claude Code
+## <img src="/images/blog/icons/claude.svg" alt="Claude" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Claude and Claude Code
 
 **What it is:** **Claude** (chat + projects) for reasoning, specs, and reviews. **Claude Code** is Anthropic's terminal agent: read repo, run commands, open PRs, follow `CLAUDE.md`.
 
@@ -97,7 +97,7 @@ Most serious products end up on **layer one** for maintenance, even if they star
 
 ---
 
-## OpenAI Codex
+## <img src="/images/blog/icons/openai.svg" alt="OpenAI" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> OpenAI Codex
 
 **What it is:** OpenAI's coding agent line (cloud and CLI flavours have evolved quickly). Think **task-oriented agent**: implement ticket, fix test, propose patch, often tied to ChatGPT Plus/Pro or API billing.
 
@@ -241,7 +241,7 @@ Most serious products end up on **layer one** for maintenance, even if they star
 
 ## Founders vs developers: pick one primary tool
 
-![Founder and developer choosing different AI coding tools for their stage](/images/blog/ai-tools-building-apps-2026-inline.webp)
+![Founder and developer choosing different AI coding tools for their stage](/images/blog/Who%20this%20is%20for%20AI%20Tools%20for%20Building%20Apps%20in%202026.jpg)
 
 | If you are… | Start here | Add within 30 days |
 | --- | --- | --- |
@@ -283,7 +283,7 @@ If you are hiring a **custom software development** partner, ask which tools the
 
 ## Security and compliance (do not skip)
 
-![Secure development workflow with branch protection and secrets outside prompts](/images/blog/ai-tools-building-apps-2026.jpg)
+![Secure development workflow with branch protection and secrets outside prompts](/images/blog/antigravity%20vs%20cursor%20vs%20vscode.png)
 
 Any tool that uploads your repo or runs terminal commands needs:
 

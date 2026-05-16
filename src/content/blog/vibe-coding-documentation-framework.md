@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/cursor%20example.webp
 title: 'Documentation-First AI Builds with Cursor, Grok and PRDs'
 excerpt: 'Stop burning AI credits on guesswork. A documentation-first vibe coding workflow (PRD, business logic, constraints, tech stack, Grok master prompts, and Cursor /docs planning) for fewer iterations and cleaner architecture.'
 date: April 15, 2026
 readTime: 12 min read
 tags: Vibe coding, Cursor, Grok, Documentation, PRD, AI agents, Workflow, Kingly
 categories: AI, Engineering
-ogImage: https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/cursor%20example.webp
 ---
 
 AI coding agents are only as good as the context they receive.

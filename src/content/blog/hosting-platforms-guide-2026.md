@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/bonus%20idea-%20cloudflare%20(next%20post)%20hosting%20platforms%20guide%202026.webp
 title: "The 2026 Hosting Platforms Guide for JavaScript Devs"
 excerpt: "Vercel, Netlify, Supabase, Firebase, and when you meet AWS, Azure, and GCP — from side projects to serious apps."
 date: April 3, 2026
 readTime: 11 min read
 tags: Vercel, Netlify, Supabase, Firebase, AWS, Deployment
 categories: Engineering, Cloud
-ogImage: https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/bonus%20idea-%20cloudflare%20(next%20post)%20hosting%20platforms%20guide%202026.webp
 ---
 
 The 2026 Hosting Platforms Guide for JavaScript Devs (From Side Projects to Serious Apps)

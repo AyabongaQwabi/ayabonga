@@ -6,8 +6,8 @@ readTime: 18 min read
 slug: how-to-build-high-converting-landing-page
 tags: Landing Page, CRO, Conversion, Web Development, South Africa, UX, Marketing
 categories: Product, Engineering
-headerImage: /images/blog/how-to-build-high-converting-landing-page.webp
-ogImage: /images/blog/how-to-build-high-converting-landing-page.webp
+headerImage: /images/blog/elements-of-a-landing-page-hero.jpeg
+ogImage: /images/blog/elements-of-a-landing-page-hero.jpeg
 seoTitle: Build a High-Converting Landing Page | Step-by-Step
 metaDescription: Step-by-step guide to landing page development: research, layout, copy, speed, and tests. For SA founders and custom software / app projects.
 ---
@@ -22,7 +22,7 @@ If you need the definition first, read [what is a landing page](/blog/what-is-a-
 
 ## Step 1: Define one conversion goal
 
-![High-converting landing page hero with a single call to action](/images/blog/how-to-build-high-converting-landing-page-inline.webp)
+![High-converting landing page hero with a single call to action](/images/blog/landing%20page.jpeg)
 
 Pick **one primary action** per page:
 
@@ -93,7 +93,7 @@ For long-scroll pages, repeat the CTA after proof blocks. Sticky mobile CTA bars
 
 Do not add a blog sidebar. Do not add unrelated product grids.
 
-![Landing page wireframe with hero, proof strip, and repeated call to action blocks](/images/blog/how-to-build-high-converting-landing-page.jpg)
+![Landing page wireframe with hero, proof strip, and repeated call to action blocks](/images/blog/landing-pages-vs-homepages_d55bc63a-fc7e-48ec-a217-7772ef2ab6e1_1024x1024.webp)
 
 ## Copy formulas that work on SA B2B pages
 
@@ -153,7 +153,7 @@ Subtle entrance animations are fine. Respect `prefers-reduced-motion`. Never blo
 
 ## Step 7: Choose the tech stack for landing page development
 
-![Developer choosing between no-code landing tools and a custom React codebase](/images/blog/how-to-build-high-converting-landing-page-inline.webp)
+![Developer choosing between no-code landing tools and a custom React codebase](/images/blog/landing%20page.jpeg)
 
 ### When static or no-code is enough
 
@@ -177,7 +177,7 @@ An **app development company in South Africa** should tell you which path avoids
 
 ## Step 8: Build for performance (non-negotiable in SA)
 
-![Compressed WebP images and fast mobile page load metrics on an Android phone](/images/blog/how-to-build-high-converting-landing-page.jpg)
+![Compressed WebP images and fast mobile page load metrics on an Android phone](/images/blog/landing-pages-vs-homepages_d55bc63a-fc7e-48ec-a217-7772ef2ab6e1_1024x1024.webp)
 
 Slow pages tax conversion and ad spend.
 

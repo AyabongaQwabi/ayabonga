@@ -5,12 +5,12 @@ date: March 25, 2026
 readTime: 8 min read
 tags: Machine learning, isiXhosa, Thembu, Ollama, Hugging Face, Open source
 categories: AI, Culture
-headerImage: /images/blog/historybook-to-dataset-xhosa-thembu.webp
-ogImage: /images/blog/historybook-to-dataset-xhosa-thembu.webp
+headerImage: /images/blog/Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape.jpg
+ogImage: /images/blog/Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape.jpg
 ---
 
 I built a small, focused open-source utility called historybook-to-dataset specifically to turn historical books (PDFs) into high-quality machine-learning datasets for fine-tuning LLMs:
-![Open books and notes for turning history into structured data](/images/blog/historybook-to-dataset-xhosa-thembu-inline.webp)
+![Open books and notes for turning history into structured data](/images/blog/What-is-a-Database-Schema-Understanding-Its-Role-in-Database-Design.png)
 
 
 🔗 https://github.com/AyabongaQwabi/historybook_to_dataset

@@ -1,11 +1,12 @@
 ---
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 title: "Junior-Built MVPs are Quietly Killing Startups"
 excerpt: "The Junior Dev Lottery is the biggest runway risk for SA founders. Rebuilding a junior MVP often costs 3× the first build. Here's the math."
 date: May 15, 2026
 readTime: 10 min read
 tags: TaaS, Engineering, Startups, South Africa, Architecture, MVP
 categories: Engineering, Product
-headerImage: /images/blog/hidden-cost-junior-mvp.png
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 You've got the idea. You've got the pitch deck. Now you need the code.
@@ -18,7 +19,7 @@ I'm Ayabonga Qwabi. As a [technical co-founder as a Service](/technical-cofounde
 
 Here is what that cheap build actually costs, before you spend twice to rebuild it.
 
-![Startup team discovering hidden costs in a junior-built MVP](/images/blog/hidden-cost-junior-mvp.png)
+![Startup team discovering hidden costs in a junior-built MVP](/images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg)
 
 ### The 5-to-50 scalability ceiling
 

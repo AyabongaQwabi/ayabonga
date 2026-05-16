@@ -5,12 +5,12 @@ date: April 11, 2026
 readTime: 5 min read
 tags: Ubuntu, Thembu, Nguni, Leadership, Heritage
 categories: Culture, Philosophy
-headerImage: /images/blog/ubuntu-thembu-philosophy.webp
-ogImage: /images/blog/ubuntu-thembu-philosophy.webp
+headerImage: /images/blog/XHOSA%20PEOPLE.jpg
+ogImage: /images/blog/XHOSA%20PEOPLE.jpg
 ---
 
 ## Beyond Surface-Level Understanding
-![Hands joined in community, suggesting ubuntu](/images/blog/ubuntu-thembu-philosophy-inline.webp)
+![Hands joined in community, suggesting ubuntu](/images/blog/African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa.jpg)
 
 
 Ubuntu is not a trendy concept for social media posts or inspirational speeches. For the Thembu and other Nguni peoples, it represents a fundamental way of life that permeates every aspect of existence, governing daily interactions, community structures, and spiritual practices.

@@ -1,6 +1,6 @@
 ---
-ogImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
-headerImage: https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 title: "My Experiences as a Remote Junior Developer"
 excerpt: "Over-communication, notes, initiative, and responsibility: lessons from working remotely from Queenstown."
 date: April 20, 2018

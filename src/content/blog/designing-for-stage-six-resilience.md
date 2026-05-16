@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/wifi.webp
 title: "Designing for Stage Six — What Resilient SA Web Apps Actually Do"
 excerpt: "Loadshedding is not an edge case here. It is the baseline. A short checklist for builders who ship to real South African pockets and power cuts."
 date: April 12, 2026
 readTime: 7 min read
 tags: South Africa, Resilience, DevOps, UX, Offline, Mobile
 categories: Engineering, Cloud
-ogImage: https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/wifi.webp
 ---
 
 If your uptime story only makes sense in a datacenter in Virginia, you have already lost half your users before they finish loading the hero section.

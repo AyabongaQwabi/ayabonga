@@ -6,8 +6,8 @@ readTime: 13 min read
 slug: what-is-a-software-developer
 tags: Software Developer, Careers, South Africa, Engineering, Hiring, Skills
 categories: Engineering, Product
-headerImage: /images/blog/what-is-a-software-developer.webp
-ogImage: /images/blog/what-is-a-software-developer.webp
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 seoTitle: What Is a Software Developer? Roles & Skills | SA Guide
 metaDescription: What software developers do, skills they need, and day-to-day work. For founders hiring custom software development or an app company in South Africa.
 ---
@@ -20,7 +20,7 @@ This guide defines the role, the skills, the day-to-day, and how to hire without
 
 ## What a software developer actually does
 
-![Software developer writing and reviewing code on a laptop](/images/blog/what-is-a-software-developer-inline.webp)
+![Software developer writing and reviewing code on a laptop](/images/blog/copilot-chat-ee053e45453d.png)
 
 A **software developer** (also called software engineer or programmer) designs, builds, tests, and maintains software. That software might be:
 

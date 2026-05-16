@@ -6,8 +6,8 @@ readTime: 14 min read
 slug: microservices-architecture-explained
 tags: Microservices, Architecture, Software Engineering, South Africa, Startups, System Design
 categories: Engineering, Product
-headerImage: /images/blog/microservices-architecture-explained.webp
-ogImage: /images/blog/microservices-architecture-explained.webp
+headerImage: /images/blog/Microservice_Architecture.png
+ogImage: /images/blog/Microservice_Architecture.png
 seoTitle: Microservices Architecture Explained | Ayabonga Qwabi
 metaDescription: Beginner-friendly guide to microservices: pros, cons, and when SA startups should use them vs a monolith. Custom software development context.
 ---
@@ -18,7 +18,7 @@ This post explains microservices in plain language: what they are, why teams ado
 
 ## What is microservices architecture?
 
-![Diagram of microservices connected by APIs instead of one monolith](/images/blog/microservices-architecture-explained-inline.webp)
+![Diagram of microservices connected by APIs instead of one monolith](/images/blog/monolithic-vs-microservices.png)
 
 **Microservices architecture** splits one product into many small services. Each service owns a narrow job, runs in its own process (often its own repository or deploy unit), and talks to the others over the network, usually via HTTP APIs (Application Programming Interfaces) or message queues.
 
@@ -41,7 +41,7 @@ Neither model is "more professional." They are trade-offs.
 
 For an MVP (minimum viable product), a well-structured monolith wins most of the time. You ship one loop, learn from users, then split what actually hurts.
 
-![Monolith versus microservices comparison diagram on a whiteboard](/images/blog/microservices-architecture-explained.jpg)
+![Monolith versus microservices comparison diagram on a whiteboard](/images/blog/m%20icroservices.png)
 
 ## Why companies adopt microservices
 
@@ -63,7 +63,7 @@ A bug in the newsletter service should not take down login. In practice, cascadi
 
 ## The downsides beginners underestimate
 
-![Distributed system tracing across multiple services in a monitoring dashboard](/images/blog/microservices-architecture-explained-inline.webp)
+![Distributed system tracing across multiple services in a monitoring dashboard](/images/blog/monolithic-vs-microservices.png)
 
 ### Distributed complexity
 
@@ -110,7 +110,7 @@ I have rebuilt products where a junior team microsplit a five-user MVP into eigh
 
 ## Modular monolith: the middle path
 
-![Modular monolith codebase folders separated before any service extraction](/images/blog/microservices-architecture-explained.jpg)
+![Modular monolith codebase folders separated before any service extraction](/images/blog/m%20icroservices.png)
 
 A **modular monolith** keeps one deploy but enforces boundaries inside the codebase:
 

@@ -9,8 +9,8 @@ readTime: 18 min read
 tags: South Africa, Software development, Agencies, Startups, Hiring
 categories: Engineering, Business
 logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
-headerImage: /images/blog/software-development-companies-south-africa-2026.webp
-ogImage: /images/blog/software-development-companies-south-africa-2026.webp
+headerImage: /images/blog/cape%20town.webp
+ogImage: /images/blog/cape%20town.webp
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.
@@ -36,7 +36,7 @@ Lists on the internet mix Cape Town product studios with Polish offshore firms t
 
 ## Categories that actually matter
 
-![Map of software development company categories in South Africa](/images/blog/software-development-companies-south-africa-2026-inline.webp)
+![Map of software development company categories in South Africa](/images/blog/johanesburg.avif)
 
 | Category | Typical buyer | What you are buying | Watch out for |
 |----------|---------------|---------------------|---------------|
@@ -145,7 +145,7 @@ That brings the **named shortlist to 45+** distinct firms across categories. If 
 
 ## How to choose a software development company in South Africa
 
-![Buyer checklist for vetting a South African software development partner](/images/blog/software-development-companies-south-africa-2026.jpg)
+![Buyer checklist for vetting a South African software development partner](/images/blog/south%20african%20township.avif)
 
 Use the same checklist whether you are hiring Warp-scale delivery or a five-person studio.
 
@@ -164,7 +164,7 @@ Use the same checklist whether you are hiring Warp-scale delivery or a five-pers
 
 ## When a custom build (or senior partner) beats a traditional agency
 
-![Startup founder comparing agency overhead with a senior-led custom build](/images/blog/software-development-companies-south-africa-2026-inline.webp)
+![Startup founder comparing agency overhead with a senior-led custom build](/images/blog/johanesburg.avif)
 
 | Your situation | Agency / large shop | Senior custom partner or small specialist team |
 |----------------|---------------------|-----------------------------------------------|
@@ -179,7 +179,7 @@ Agencies earn their fees when coordination is the product. When **speed to valid
 
 ## Johannesburg vs Cape Town vs "rest of SA"
 
-![Map highlighting Johannesburg, Cape Town, and distributed teams across South Africa](/images/blog/software-development-companies-south-africa-2026.jpg)
+![Map highlighting Johannesburg, Cape Town, and distributed teams across South Africa](/images/blog/south%20african%20township.avif)
 
 | Hub | Strength | Trade-off |
 |-----|----------|-----------|

@@ -6,8 +6,8 @@ readTime: 10 min read
 slug: what-is-web-development
 tags: Web Development, React, Node, TypeScript, South Africa
 categories: Engineering, Product
-headerImage: /images/blog/what-is-web-development.webp
-ogImage: /images/blog/what-is-web-development.webp
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 <!--
@@ -21,7 +21,7 @@ In 2026, "web development" usually means far more than editing HTML in Notepad. 
 
 ## Front-end vs back-end vs full-stack
 
-![Full-stack web development workflow on laptop and server diagram](/images/blog/what-is-web-development-inline.webp)
+![Full-stack web development workflow on laptop and server diagram](/images/blog/how-to-use-wordpress.jpg)
 
 ### Front-end development
 
@@ -58,7 +58,7 @@ For apps that span phone, web, and admin, see **[What is application development
 
 ## Modern practices in 2026
 
-![Modern web stack with TypeScript, React components, and cloud deployment pipeline](/images/blog/what-is-web-development.jpg)
+![Modern web stack with TypeScript, React components, and cloud deployment pipeline](/images/blog/codex%20openai.jpeg)
 
 ### TypeScript by default
 
@@ -90,7 +90,7 @@ Structured logs, error tracking (Sentry and peers), uptime checks. When Paystack
 
 ## Typical project phases
 
-![Web project timeline from discovery through launch and iteration on a whiteboard](/images/blog/what-is-web-development-inline.webp)
+![Web project timeline from discovery through launch and iteration on a whiteboard](/images/blog/how-to-use-wordpress.jpg)
 
 1. **Discovery:** Goals, users, constraints, compliance.
 2. **Architecture:** Stack, data model, integrations, hosting region.
@@ -123,7 +123,7 @@ Public examples from my portfolio include [Queens Connect](https://queensconnect
 
 ## Choosing a software development company in South Africa
 
-![Team reviewing a software vendor shortlist and production app references](/images/blog/what-is-web-development.jpg)
+![Team reviewing a software vendor shortlist and production app references](/images/blog/codex%20openai.jpeg)
 
 Look for:
 

@@ -5,14 +5,14 @@ date: April 10, 2026
 readTime: 5 min read
 tags: Social impact, South Africa, Digital divide, Community tech
 categories: Engineering, Culture
-headerImage: /images/blog/building-for-impact.webp
-ogImage: /images/blog/building-for-impact.webp
+headerImage: /images/blog/Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa.jpg
+ogImage: /images/blog/Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa.jpg
 ---
 
 Technology has always been more than just code to me. It is a tool for connection, empowerment, and change. Growing up in Queenstown, Eastern Cape, I witnessed firsthand the gaps that exist in access to digital resources and opportunities.
 
 ## The Digital Divide is Real
-![Team collaborating on technology for community impact](/images/blog/building-for-impact-inline.webp)
+![Team collaborating on technology for community impact](/images/blog/Technology%20as%20a%20Bridge%20South%20Africa%20African%20heritage.jpg)
 
 
 In South Africa, the digital divide is not just a statistic. It is the difference between a student who can access online learning resources and one who cannot. It is the small business owner who struggles to reach customers without an online presence.

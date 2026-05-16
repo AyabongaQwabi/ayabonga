@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/declrative%20javascript.jpg
 title: "One-man jive 2026 — An AI-powered tool guide for solo JavaScript devs"
 excerpt: "Next.js, v0, Cursor, Vercel, Supabase, testing, and how one person can ship like a small team in 2026."
 date: March 8, 2026
 readTime: 12 min read
 tags: JavaScript, Next.js, Vercel, Cursor, v0, shadcn, 2026
 categories: Engineering
-ogImage: https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/declrative%20javascript.jpg
 ---
 
 One-man jive 2026 – AI-powered tool guide to building & shipping faster in the JavaScript universe

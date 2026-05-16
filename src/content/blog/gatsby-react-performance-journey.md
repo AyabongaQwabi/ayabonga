@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 title: "How I Dramatically Improved the Speed of My Gatsby Website"
 excerpt: "Tree shaking Ramda, Gatsby Image, code splitting social plugins, and value analysis — PageSpeed before and after."
 date: August 15, 2020
 readTime: 10 min read
 tags: React, Gatsby, Performance, Webpack, Ramda
 categories: Engineering
-ogImage: https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
 ---
 
 How I dramatically improved the speed of my website.

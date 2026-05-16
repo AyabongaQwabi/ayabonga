@@ -1,11 +1,12 @@
 ---
+headerImage: /images/blog/modi-openai-anthropic-2261854815.webp
 title: "Lessons from Google ADK in Production — and a Queens Connect Loans Demo"
 excerpt: "Orchestrators vs monolithic prompts, granular tools, session pre-loading, Gemini coupling, and what ships on Render."
 date: March 15, 2026
 readTime: 9 min read
 tags: Google ADK, Gemini, Agents, Multi-agent, Queens Connect
 categories: AI, Engineering
-ogImage: https://images.pexels.com/photos/3862139/pexels-photo-3862139.jpeg?auto=compress&cs=tinysrgb&w=1200
+ogImage: /images/blog/modi-openai-anthropic-2261854815.webp
 ---
 
 Over the past few weeks I’ve been deep in Google’s Agent Development Kit (ADK), wiring up multi-agent flows, testing handoffs, debugging tool calls, the full works.

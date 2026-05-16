@@ -1,11 +1,12 @@
 ---
+ogImage: /images/blog/cape%20town%20townships.jpg
 title: "What a Technical Co-founder Costs in South Africa (2026)"
 excerpt: "What founders pay for TaaS, agencies, juniors, and equity partners in SA. Scope bands, deposits, and how to ballpark Phase 1 without the Junior Dev Lottery."
 date: May 16, 2026
 readTime: 13 min read
 tags: TaaS, South Africa, Startups, MVP, Pricing, Technical co-founder
 categories: Product, Engineering
-headerImage: /images/blog/technical-cofounder-cost-south-africa-2026.png
+headerImage: /images/blog/cape%20town%20townships.jpg
 ---
 
 You are not really asking “what does a developer cost?” You are asking “what will it cost me to get something I can sell?”
@@ -13,10 +14,10 @@ You are not really asking “what does a developer cost?” You are asking “wh
 That is a different question. This guide answers it for South Africa in 2026: the main ways founders pay for technical leadership, realistic **Phase 1** budget bands, and how to use the [project quote estimator](/get-a-quote) without fooling yourself.
 
 ## What people mean by “technical co-founder” in South Africa
-![Supporting visual for this section](/images/blog/technical-cofounder-cost-south-africa-2026-inline.jpg)
+![Supporting visual for this section](/images/blog/south%20african%20people.webp)
 
 
-![Founder reviewing technical co-founder cost options in South Africa](/images/blog/technical-cofounder-cost-south-africa-2026.png)
+![Founder reviewing technical co-founder cost options in South Africa](/images/blog/cape%20town%20townships.jpg)
 
 The phrase gets used for four different relationships:
 
