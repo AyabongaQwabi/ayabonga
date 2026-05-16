@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, TWITTER_HANDLE, WHATSAPP_URL } from '../lib/site-config';
 import pseoData from '../data/pseo-pages.json';
+import { ScrollReveal } from '../components/ScrollReveal';
 import NotFound from './NotFound';
 
 const iconMap = {
@@ -125,7 +126,7 @@ const DynamicServicePage = () => {
       </div>
 
       {/* Pain Point Section */}
-      <section className="py-24 border-t border-slate-900 relative">
+      <ScrollReveal className="py-24 border-t border-slate-900 relative block">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -147,7 +148,7 @@ const DynamicServicePage = () => {
                 ))}
               </ul>
             </div>
-            <div className="glass-dark p-10 rounded-2xl border-white/5 shadow-2xl relative group overflow-hidden">
+            <div className="interactive-card glass-dark p-10 rounded-2xl border-white/5 shadow-2xl relative group overflow-hidden motion-reduce:hover:translate-y-0">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-colors" />
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <ShieldCheck className="w-6 h-6 text-primary" />
@@ -163,10 +164,10 @@ const DynamicServicePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* Feature Grid */}
-      <section className="py-24 bg-slate-900/30">
+      <ScrollReveal className="py-24 bg-slate-900/30 block">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 uppercase tracking-widest text-emerald-500 text-sm">Full-Stack Capability</h2>
           <p className="text-4xl font-bold">End-to-End Ownership of your {page.industry} Platform.</p>
@@ -192,8 +193,8 @@ const DynamicServicePage = () => {
               color: "text-primary"
             }
           ].map((feature, i) => (
-            <div key={i} className="group p-8 rounded-2xl glass-dark border-white/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
-              <div className={`w-14 h-14 rounded-xl glass mb-6 flex items-center justify-center ${feature.color} group-hover:scale-110 transition-transform duration-500`}>
+            <div key={i} className="interactive-card group p-8 rounded-2xl glass-dark border-white/5 hover:border-primary/50 motion-reduce:hover:translate-y-0">
+              <div className={`w-14 h-14 rounded-xl glass mb-6 flex items-center justify-center ${feature.color} group-hover:scale-110 transition-transform duration-500 motion-reduce:group-hover:scale-100`}>
                 <feature.icon className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
@@ -201,10 +202,10 @@ const DynamicServicePage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* CTA Footer */}
-      <section className="py-24 relative overflow-hidden">
+      <ScrollReveal className="py-24 relative overflow-hidden block">
         <div className="absolute inset-0 bg-emerald-600/5" />
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-8">Ready to build your {page.industry} MVP?</h2>
@@ -217,7 +218,7 @@ const DynamicServicePage = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all shadow-xl"
+                className="interactive-button inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl shadow-xl"
               >
                 <MessageCircle className="w-5 h-5" />
                 Message Me on WhatsApp
@@ -235,7 +236,7 @@ const DynamicServicePage = () => {
             </p>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* Breadcrumbs for SEO */}
       <div className="py-8 border-t border-slate-900">

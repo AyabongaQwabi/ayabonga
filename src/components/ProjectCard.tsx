@@ -10,7 +10,7 @@ interface ProjectCardProps {
 }
 
 const cardClassName =
-  'group block p-6 rounded-xl glass-dark hover:glass-gold hover:glow-primary transition-all duration-500 border border-white/5 hover:border-primary/50';
+  'interactive-card group block p-6 rounded-xl glass-dark hover:glass-gold hover:glow-primary border border-white/5 hover:border-primary/50 motion-reduce:hover:translate-y-0';
 
 function ProjectCardContent({
   title,

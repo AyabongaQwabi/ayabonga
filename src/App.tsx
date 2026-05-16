@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Github, Linkedin, Twitter, Mail, ExternalLink, Menu, X, FileText, MessageCircle, Cloud, Brain, Code2, Calculator } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
+import { ScrollReveal } from './components/ScrollReveal';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import {
@@ -101,10 +102,22 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduceMotion.matches) return;
+
     const interval = setInterval(() => {
       setActiveImage((prev) => (prev + 1) % profileImages.length);
     }, 4000);
-    return () => clearInterval(interval);
+
+    const onMotionChange = () => {
+      if (reduceMotion.matches) clearInterval(interval);
+    };
+    reduceMotion.addEventListener('change', onMotionChange);
+
+    return () => {
+      clearInterval(interval);
+      reduceMotion.removeEventListener('change', onMotionChange);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -112,7 +125,8 @@ function App() {
     if (element) {
       const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
     setMobileMenuOpen(false);
   };
@@ -180,30 +194,30 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <button onClick={() => scrollToSection('about')} className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 About
               </button>
-              <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <button onClick={() => scrollToSection('expertise')} className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 Expertise
               </button>
-              <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <button onClick={() => scrollToSection('projects')} className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 Projects
               </button>
-              <button onClick={() => scrollToSection('collaborations')} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <button onClick={() => scrollToSection('collaborations')} className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 Work
               </button>
-              <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/about" className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 About
               </Link>
-              <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/blog" className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 Writing
               </Link>
-              <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/services" className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                 Services
               </Link>
               <Link
                 to="/get-a-quote"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                className="interactive-link text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5"
               >
                 <Calculator className="w-3.5 h-3.5" aria-hidden />
                 Quote
@@ -211,8 +225,8 @@ function App() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            <button
+              className="interactive-button md:hidden p-2 text-muted-foreground hover:text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -222,29 +236,29 @@ function App() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden pt-4 pb-2 border-t border-border mt-4">
+            <div className="mobile-menu-enter md:hidden pt-4 pb-2 border-t border-border mt-4">
               <div className="flex flex-col gap-4">
-                <button onClick={() => scrollToSection('about')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('about')} className="interactive-link text-sm text-muted-foreground hover:text-foreground text-left">
                   About
                 </button>
-                <button onClick={() => scrollToSection('expertise')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('expertise')} className="interactive-link text-sm text-muted-foreground hover:text-foreground text-left">
                   Expertise
                 </button>
-                <button onClick={() => scrollToSection('projects')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('projects')} className="interactive-link text-sm text-muted-foreground hover:text-foreground text-left">
                   Projects
                 </button>
-                <button onClick={() => scrollToSection('collaborations')} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('collaborations')} className="interactive-link text-sm text-muted-foreground hover:text-foreground text-left">
                   Work
                 </button>
-                <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/blog" className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                   Writing
                 </Link>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services" className="interactive-link text-sm text-muted-foreground hover:text-foreground">
                   Services
                 </Link>
                 <Link
                   to="/get-a-quote"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                  className="interactive-link text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-2"
                 >
                   <Calculator className="w-4 h-4" aria-hidden />
                   Quote
@@ -322,7 +336,7 @@ function App() {
                   href="https://github.com/ayabongaqwabi" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="interactive-link text-muted-foreground hover:text-foreground"
                   aria-label="GitHub Profile"
                 >
                   <Github className="w-5 h-5" />
@@ -331,7 +345,7 @@ function App() {
                   href="https://linkedin.com/in/ayabongaqwabi" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="interactive-link text-muted-foreground hover:text-foreground"
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -340,14 +354,14 @@ function App() {
                   href="https://twitter.com/ayabongaqwabi" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="interactive-link text-muted-foreground hover:text-foreground"
                   aria-label="Twitter Profile"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a 
                   href="mailto:aya@qwabi.co.za"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="interactive-link text-muted-foreground hover:text-foreground"
                   aria-label="Email Ayabonga"
                 >
                   <Mail className="w-5 h-5" />
@@ -379,14 +393,14 @@ function App() {
                   href="https://wa.me/27603116777"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+                  className="interactive-button inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] font-medium"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>
                 </a>
                 <button 
                   onClick={() => scrollToSection('projects')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                  className="interactive-button inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 font-medium"
                 >
                   <span>View Projects</span>
                   <ExternalLink className="w-4 h-4" />
@@ -397,7 +411,7 @@ function App() {
         </section>
 
         {/* Expertise Section */}
-        <section id="expertise" className="py-20 border-t border-border">
+        <ScrollReveal id="expertise" className="py-20 border-t border-border">
           <div className="mb-12">
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Expertise
@@ -406,7 +420,7 @@ function App() {
               <p className="text-foreground max-w-xl text-balance">
                 Senior engineering spanning AI, cloud architecture, and technical product leadership.
               </p>
-              <Link to="/services" className="text-sm text-primary hover:underline font-medium shrink-0">
+              <Link to="/services" className="interactive-link text-sm text-primary hover:underline font-medium shrink-0">
                 View all services →
               </Link>
             </div>
@@ -414,7 +428,7 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* AI & Machine Learning */}
-            <article className="group p-6 rounded-xl glass-gold border-white/5 hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-1">
+            <article className="interactive-card group p-6 rounded-xl glass-gold border-white/5 hover:border-amber-500/30 motion-reduce:hover:translate-y-0">
               <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Brain className="w-6 h-6 text-amber-500" />
               </div>
@@ -430,7 +444,7 @@ function App() {
             </article>
 
             {/* Cloud Architecture */}
-            <article className="group p-6 rounded-xl glass-dark border-white/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1">
+            <article className="interactive-card group p-6 rounded-xl glass-dark border-white/5 hover:border-primary/30 motion-reduce:hover:translate-y-0">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Cloud className="w-6 h-6 text-primary" />
               </div>
@@ -446,7 +460,7 @@ function App() {
             </article>
 
             {/* Full-Stack Development */}
-            <article className="group p-6 rounded-xl glass-emerald border-white/5 hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1">
+            <article className="interactive-card group p-6 rounded-xl glass-emerald border-white/5 hover:border-emerald-500/30 motion-reduce:hover:translate-y-0">
               <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Code2 className="w-6 h-6 text-emerald-500" />
               </div>
@@ -461,10 +475,10 @@ function App() {
               </div>
             </article>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 border-t border-border">
+        <ScrollReveal id="projects" className="py-20 border-t border-border">
           <div className="mb-12">
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Projects
@@ -485,10 +499,10 @@ function App() {
               />
             ))}
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* Collaborations Section */}
-        <section id="collaborations" className="py-20 border-t border-border">
+        <ScrollReveal id="collaborations" className="py-20 border-t border-border">
           <div className="mb-12">
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Work
@@ -498,26 +512,26 @@ function App() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <ScrollReveal stagger className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {collaborations.map((collab, index) => (
               <a
                 key={index}
                 href={collab.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-4 rounded-lg glass-dark border-white/5 hover:border-primary/50 transition-all duration-300"
+                className="interactive-card group flex items-center justify-between p-4 rounded-lg glass-dark border-white/5 hover:border-primary/50 motion-reduce:hover:translate-y-0"
               >
                 <span className="text-slate-300 group-hover:text-primary transition-colors font-medium">
                   {collab.name}
                 </span>
-                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-primary transition-[color,transform] motion-reduce:transition-none group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" />
               </a>
             ))}
-          </div>
-        </section>
+          </ScrollReveal>
+        </ScrollReveal>
 
         {/* Writing Section */}
-        <section id="writing" className="py-20 border-t border-border">
+        <ScrollReveal id="writing" className="py-20 border-t border-border">
           <div className="mb-12">
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Writing
@@ -529,16 +543,16 @@ function App() {
 
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+            className="interactive-link group inline-flex items-center gap-2 text-primary hover:text-primary/80"
           >
             <FileText className="w-4 h-4" />
             <span>View all posts</span>
             <ExternalLink className="w-3 h-3" />
           </Link>
-        </section>
+        </ScrollReveal>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 border-t border-border">
+        <ScrollReveal id="contact" className="py-20 border-t border-border">
           <div className="max-w-xl">
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Contact
@@ -552,14 +566,14 @@ function App() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] transition-colors font-medium"
+                className="interactive-button group inline-flex items-center gap-3 px-5 py-2.5 bg-[#25D366] text-white rounded-lg hover:bg-[#128C7E] font-medium"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span>Message me on WhatsApp</span>
               </a>
               <a 
                 href="mailto:aya@qwabi.co.za"
-                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors mt-4"
+                className="interactive-link group flex items-center gap-3 text-muted-foreground hover:text-foreground mt-4"
               >
                 <Mail className="w-4 h-4" />
                 <span>aya@qwabi.co.za</span>
@@ -572,7 +586,7 @@ function App() {
               </p>
             </div>
           </div>
-        </section>
+        </ScrollReveal>
       </main>
 
       <SiteFooter />

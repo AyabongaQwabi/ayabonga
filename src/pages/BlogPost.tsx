@@ -33,6 +33,7 @@ import {
 import { AuthorBio, AuthorByline } from '../components/AuthorBio';
 import { PageBreadcrumbs } from '../components/PageBreadcrumbs';
 import { SiteFooter } from '../components/SiteFooter';
+import { ScrollReveal } from '../components/ScrollReveal';
 import {
   buildBlogPostingSchema,
   buildBreadcrumbSchema,
@@ -359,7 +360,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
             />
           ) : null}
 
-          <header className='mb-10 mt-8 md:mt-10'>
+          <ScrollReveal className='mb-10 mt-8 md:mt-10 block'>
             <AuthorByline
               date={post.date}
               readTime={post.readTime}
@@ -385,7 +386,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
                 <EspazzaStatusBanner />
               </div>
             ) : null}
-          </header>
+          </ScrollReveal>
 
           <div className='lg:grid lg:grid-cols-[minmax(0,13.5rem)_minmax(0,1fr)] lg:gap-x-10 xl:gap-x-12'>
             <BlogToc markdown={post.content} className='mb-8 lg:mb-0' />
@@ -401,17 +402,19 @@ function BlogPostView({ post }: { post: BlogPost }) {
                 </ReactMarkdown>
               </div>
 
-              <BlogCommercialCta
-                variant={
-                  post.categories.some((c) =>
-                    ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(
-                      c,
-                    ),
-                  )
-                    ? 'engineering'
-                    : 'default'
-                }
-              />
+              <ScrollReveal className='block'>
+                <BlogCommercialCta
+                  variant={
+                    post.categories.some((c) =>
+                      ['Engineering', 'AI', 'Product', 'Career', 'Cloud'].includes(
+                        c,
+                      ),
+                    )
+                      ? 'engineering'
+                      : 'default'
+                  }
+                />
+              </ScrollReveal>
 
               <AuthorBio />
 
@@ -439,7 +442,9 @@ function BlogPostView({ post }: { post: BlogPost }) {
             </div>
           </div>
 
-          <BlogRelatedPosts post={post} className='mt-16 md:mt-20' />
+          <ScrollReveal className='mt-16 md:mt-20 block'>
+            <BlogRelatedPosts post={post} />
+          </ScrollReveal>
         </article>
       </main>
       <SiteFooter />

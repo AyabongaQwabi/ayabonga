@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import GetAQuote from '../components/GetAQuote.jsx';
+import { ScrollReveal } from '../components/ScrollReveal';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -43,7 +44,7 @@ export default function GetAQuotePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="interactive-link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to home</span>
@@ -52,10 +53,10 @@ export default function GetAQuotePage() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-        <header className="mb-10 max-w-3xl">
+        <ScrollReveal className="mb-10 max-w-3xl block">
           <h1 className="text-3xl font-bold text-foreground mb-3">{PAGE_TITLE}</h1>
           <p className="text-muted-foreground leading-relaxed">{PAGE_DESCRIPTION}</p>
-        </header>
+        </ScrollReveal>
 
         <GetAQuote />
       </main>

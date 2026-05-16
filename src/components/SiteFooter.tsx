@@ -14,19 +14,19 @@ export function SiteFooter() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <Link
               to="/about"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="interactive-link text-muted-foreground hover:text-foreground"
             >
               About
             </Link>
             <Link
               to="/services"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="interactive-link text-muted-foreground hover:text-foreground"
             >
               Services
             </Link>
             <Link
               to="/blog"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="interactive-link text-muted-foreground hover:text-foreground"
             >
               Writing
             </Link>
@@ -47,20 +47,20 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground border-t border-border pt-4">
-          <Link to="/privacy" className="hover:text-foreground transition-colors">
+          <Link to="/privacy" className="interactive-link hover:text-foreground">
             Privacy
           </Link>
-          <Link to="/editorial" className="hover:text-foreground transition-colors">
+          <Link to="/editorial" className="interactive-link hover:text-foreground">
             Editorial standards
           </Link>
-          <Link to="/corrections" className="hover:text-foreground transition-colors">
+          <Link to="/corrections" className="interactive-link hover:text-foreground">
             Corrections
           </Link>
           <a
             href="https://github.com/ayabongaqwabi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="interactive-link hover:text-foreground"
           >
             GitHub
           </a>
@@ -68,7 +68,7 @@ export function SiteFooter() {
             href="https://www.linkedin.com/in/ayabongaqwabi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="interactive-link hover:text-foreground"
           >
             LinkedIn
           </a>

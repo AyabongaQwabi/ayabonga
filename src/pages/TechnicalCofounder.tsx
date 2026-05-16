@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../components/ui/accordion';
+import { ScrollReveal } from '../components/ScrollReveal';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -81,7 +82,7 @@ export default function TechnicalCofounderPage() {
         <div className="max-w-5xl mx-auto px-6 py-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="interactive-link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to home</span>
@@ -90,7 +91,7 @@ export default function TechnicalCofounderPage() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-16 grid md:grid-cols-2 gap-12 items-center">
+        <ScrollReveal className="mb-16 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
               <GraduationCap className="w-3.5 h-3.5" />
@@ -115,10 +116,10 @@ export default function TechnicalCofounderPage() {
               className="relative rounded-2xl shadow-2xl border border-white/10"
             />
           </div>
-        </header>
+        </ScrollReveal>
 
         {/* The Problem */}
-        <section className="mb-24 grid md:grid-cols-2 gap-12 items-center">
+        <ScrollReveal className="mb-24 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-6">The Junior Dev Lottery vs. agency slowdown</h2>
             <p className="text-muted-foreground mb-8">
@@ -157,7 +158,7 @@ export default function TechnicalCofounderPage() {
               </p>
             </div>
           </div>
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
+          <div className="interactive-card bg-card border border-border rounded-2xl p-8 shadow-xl">
             <h3 className="text-xl font-bold mb-6">How TaaS Solves This</h3>
             <ul className="space-y-4">
               {[
@@ -175,10 +176,10 @@ export default function TechnicalCofounderPage() {
               ))}
             </ul>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* The Methodology */}
-        <section className="mb-24">
+        <ScrollReveal className="mb-24 block">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">How I Build for Founders</h2>
             <p className="text-muted-foreground">A disciplined, "Business-Right" engineering approach.</p>
@@ -206,10 +207,10 @@ export default function TechnicalCofounderPage() {
               <p className="text-sm text-muted-foreground">We go from zero to live in weeks. I handle the cloud, the payments, and the scaling so you can focus on winning customers.</p>
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* FAQ */}
-        <section className="mb-24" aria-labelledby="taas-faq-heading">
+        <ScrollReveal className="mb-24 block" aria-labelledby="taas-faq-heading">
           <div className="mb-10 max-w-2xl">
             <h2 id="taas-faq-heading" className="text-3xl font-bold mb-4">
               Frequently asked questions
@@ -228,10 +229,10 @@ export default function TechnicalCofounderPage() {
               </AccordionItem>
             ))}
           </Accordion>
-        </section>
+        </ScrollReveal>
 
         {/* CTA */}
-        <section className="bg-foreground text-background rounded-3xl p-8 md:p-16 text-center">
+        <ScrollReveal className="bg-foreground text-background rounded-3xl p-8 md:p-16 text-center block">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Stop searching for a co-founder. Start building.</h2>
           <p className="text-background/80 mb-10 max-w-2xl mx-auto">
             I only take on a limited number of "Phase 1" builds at a time to ensure senior-level attention for every project.
@@ -242,7 +243,7 @@ export default function TechnicalCofounderPage() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold hover:bg-primary/90 transition-all"
+                className="interactive-button px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold hover:bg-primary/90"
               >
                 Secure a Build Slot
               </a>
@@ -254,7 +255,7 @@ export default function TechnicalCofounderPage() {
               </Link>.
             </p>
           </div>
-        </section>
+        </ScrollReveal>
       </main>
     </div>
   );

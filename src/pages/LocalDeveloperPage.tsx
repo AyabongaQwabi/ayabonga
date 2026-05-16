@@ -23,6 +23,7 @@ import {
   TWITTER_HANDLE,
   WHATSAPP_URL,
 } from '../lib/site-config';
+import { ScrollReveal } from '../components/ScrollReveal';
 import {
   buildLocalFaqs,
   buildLocalPageDescription,
@@ -102,7 +103,7 @@ export default function LocalDeveloperPage() {
         <div className="max-w-5xl mx-auto px-6 py-4">
           <Link
             to={easternCapeHubPath()}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="interactive-link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Eastern Cape developers</span>
@@ -111,7 +112,7 @@ export default function LocalDeveloperPage() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-12 max-w-3xl">
+        <ScrollReveal className="mb-12 max-w-3xl block">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
             <RoleIcon className="w-3.5 h-3.5" aria-hidden />
             <span>{cityDisplayName(city)} · Eastern Cape</span>
@@ -120,9 +121,9 @@ export default function LocalDeveloperPage() {
             {pageTitle}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">{pageDescription}</p>
-        </header>
+        </ScrollReveal>
 
-        <section className="mb-14 max-w-none">
+        <ScrollReveal className="mb-14 max-w-none block">
           <p className="text-foreground leading-relaxed text-lg">{city.localIntro}</p>
           <p className="text-muted-foreground leading-relaxed mt-4">
             As a senior {role.label.toLowerCase()}, I focus on {role.shortFocus}. You work directly with
@@ -132,9 +133,9 @@ export default function LocalDeveloperPage() {
           <p className="text-muted-foreground leading-relaxed mt-4">
             <span className="text-foreground font-medium">Relevant work:</span> {city.nearbyProof}.
           </p>
-        </section>
+        </ScrollReveal>
 
-        <section className="mb-14 grid sm:grid-cols-2 gap-4">
+        <ScrollReveal stagger className="mb-14 grid sm:grid-cols-2 gap-4">
           {[
             'Mobile-first for SA networks and load shedding realities',
             'Visible progress every few days, not months of silence',
@@ -143,33 +144,33 @@ export default function LocalDeveloperPage() {
           ].map((item) => (
             <div
               key={item}
-              className="flex items-start gap-3 p-4 rounded-lg border border-border bg-card/50"
+              className="interactive-card flex items-start gap-3 p-4 rounded-lg border border-border bg-card/50 motion-reduce:hover:translate-y-0"
             >
               <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden />
               <span className="text-sm text-foreground">{item}</span>
             </div>
           ))}
-        </section>
+        </ScrollReveal>
 
-        <section className="mb-14 flex flex-col sm:flex-row gap-4">
+        <ScrollReveal className="mb-14 flex flex-col sm:flex-row gap-4">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-lg transition-colors"
+            className="interactive-button inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-lg"
           >
             <MessageCircle className="w-5 h-5" aria-hidden />
             WhatsApp from {city.name}
           </a>
           <Link
             to="/get-a-quote"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border hover:border-primary/50 text-foreground font-semibold rounded-lg transition-colors"
+            className="interactive-button inline-flex items-center justify-center gap-2 px-6 py-3 border border-border hover:border-primary/50 text-foreground font-semibold rounded-lg"
           >
             Get a project quote
           </Link>
-        </section>
+        </ScrollReveal>
 
-        <section className="mb-14">
+        <ScrollReveal className="mb-14 block">
           <h2 className="text-2xl font-bold mb-6">Common questions</h2>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq) => (
@@ -179,9 +180,9 @@ export default function LocalDeveloperPage() {
               </AccordionItem>
             ))}
           </Accordion>
-        </section>
+        </ScrollReveal>
 
-        <section className="mb-14">
+        <ScrollReveal className="mb-14 block">
           <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
             Other roles in {city.name}
           </h2>
@@ -190,16 +191,16 @@ export default function LocalDeveloperPage() {
               <li key={r.slug}>
                 <Link
                   to={localPagePath(city.slug, r.slug)}
-                  className="inline-block text-sm px-3 py-1.5 rounded-md border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground transition-colors"
+                  className="interactive-link inline-block text-sm px-3 py-1.5 rounded-md border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
                 >
                   {r.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </section>
+        </ScrollReveal>
 
-        <section className="border-t border-border pt-10">
+        <ScrollReveal className="border-t border-border pt-10 block">
           <Link
             to="/technical-cofounder"
             className="inline-flex items-center gap-1 text-sm text-primary hover:underline underline-offset-4"
@@ -207,7 +208,7 @@ export default function LocalDeveloperPage() {
             Technical co-founder as a Service
             <ChevronRight className="w-4 h-4" />
           </Link>
-        </section>
+        </ScrollReveal>
       </main>
 
       <footer className="border-t border-border py-6">

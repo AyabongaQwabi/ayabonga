@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, MapPin, Rocket, Users, BarChart, Zap, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
 import { easternCapeHubPath } from '../lib/local-developers';
+import { ScrollReveal } from '../components/ScrollReveal';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -33,7 +34,7 @@ export default function ServicesPage() {
         <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="interactive-link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to home</span>
@@ -63,18 +64,18 @@ export default function ServicesPage() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-16 max-w-3xl">
+        <ScrollReveal className="mb-16 max-w-3xl block">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             Senior Product Engineering <span className="text-primary">at 5x Speed.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             I don't just build apps. I build businesses. By leveraging AI force multipliers and a "Team of One" workflow, I deliver production-ready software without the agency overhead.
           </p>
-        </header>
+        </ScrollReveal>
 
         {/* Persona Sections */}
-        <section className="grid md:grid-cols-3 gap-8 mb-24">
-          <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all">
+        <ScrollReveal stagger className="grid md:grid-cols-3 gap-8 mb-24">
+          <div className="interactive-card p-8 rounded-2xl bg-card border border-border hover:border-primary/50">
             <Rocket className="w-10 h-10 text-primary mb-6" />
             <h2 className="text-2xl font-bold mb-4">The Visionary Founder</h2>
             <p className="text-muted-foreground mb-6">
@@ -99,7 +100,7 @@ export default function ServicesPage() {
             </Link>
           </div>
 
-          <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all">
+          <div className="interactive-card p-8 rounded-2xl bg-card border border-border hover:border-primary/50">
             <Users className="w-10 h-10 text-primary mb-6" />
             <h2 className="text-2xl font-bold mb-4">The Orchestrator</h2>
             <p className="text-muted-foreground mb-6">
@@ -121,7 +122,7 @@ export default function ServicesPage() {
             </ul>
           </div>
 
-          <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all">
+          <div className="interactive-card p-8 rounded-2xl bg-card border border-border hover:border-primary/50">
             <BarChart className="w-10 h-10 text-primary mb-6" />
             <h2 className="text-2xl font-bold mb-4">The Scaler</h2>
             <p className="text-muted-foreground mb-6">
@@ -145,10 +146,10 @@ export default function ServicesPage() {
               Digital Transformation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* Why One Person? */}
-        <section className="mb-24 bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
+        <ScrollReveal className="mb-24 block bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Why the "Team of One" is Your Secret Advantage</h2>
             <div className="grid sm:grid-cols-2 gap-8 text-left mt-12">
@@ -172,10 +173,10 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* Industry Focus - pSEO Links */}
-        <section className="mb-24">
+        <ScrollReveal className="mb-24 block">
           <h2 className="text-3xl font-bold mb-12 text-center">Strategic Industry Focus</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -190,31 +191,31 @@ export default function ServicesPage() {
               <Link 
                 key={industry.slug}
                 to={`/solutions/${industry.slug}`}
-                className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5"
+                className="interactive-card group p-6 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 motion-reduce:hover:translate-y-0"
               >
                 <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{industry.name} →</h3>
                 <p className="text-sm text-muted-foreground">{industry.desc}</p>
               </Link>
             ))}
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* CTA */}
-        <footer className="text-center">
+        <ScrollReveal className="text-center block">
           <h2 className="text-3xl font-bold mb-8">Ready to ship something real?</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-xl font-bold hover:bg-[#128C7E] transition-all shadow-lg"
+              className="interactive-button inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white rounded-xl font-bold hover:bg-[#128C7E] shadow-lg"
             >
               <MessageCircle className="w-5 h-5" />
               Message Me on WhatsApp
             </a>
             <Link
               to="/technical-cofounder"
-              className="px-8 py-4 bg-card border border-border rounded-xl font-bold hover:border-primary transition-all"
+              className="interactive-button px-8 py-4 bg-card border border-border rounded-xl font-bold hover:border-primary"
             >
               Learn about TaaS
             </Link>
@@ -223,7 +224,7 @@ export default function ServicesPage() {
             Want a ballpark first?{' '}
             <Link to="/get-a-quote" className="text-primary hover:underline underline-offset-4">See how I scope and price work</Link>.
           </p>
-        </footer>
+        </ScrollReveal>
       </main>
     </div>
   );

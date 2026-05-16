@@ -27,6 +27,7 @@ import {
   TWITTER_HANDLE,
 } from '../lib/site-config';
 import { SiteFooter } from '../components/SiteFooter';
+import { ScrollReveal } from '../components/ScrollReveal';
 import { authorPersonSchema } from '../lib/author-profile';
 
 const BLOG_INDEX_TITLE = 'AI, cloud and product engineering for SA startups';
@@ -359,9 +360,9 @@ export default function Blog() {
           heroImageAlt={featuredPost?.title ?? 'Featured article'}
         />
 
-        <section
+        <ScrollReveal
           aria-label="Filter and search posts"
-          className="mt-10 rounded-xl border border-border bg-card/50 p-4 md:p-6"
+          className="mt-10 rounded-xl border border-border bg-card/50 p-4 md:p-6 block"
         >
           <label htmlFor={searchInputId} className="sr-only">
             Search posts by title, excerpt, or tag
@@ -465,21 +466,25 @@ export default function Blog() {
               </p>
             )}
           </div>
-        </section>
+        </ScrollReveal>
 
-        {featuredPost ? <FeaturedPick post={featuredPost} /> : null}
+        {featuredPost ? (
+          <ScrollReveal className="block">
+            <FeaturedPick post={featuredPost} />
+          </ScrollReveal>
+        ) : null}
 
         {gridPosts.length > 0 ? (
-          <section aria-label="All posts">
+          <ScrollReveal aria-label="All posts" className="block">
             <h2 className="sr-only">All posts</h2>
-            <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
+            <ScrollReveal stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
               {gridPosts.map((post) => (
-                <li key={post.slug} className="min-h-0">
+                <div key={post.slug} className="min-h-0">
                   <BlogPostCard post={post} />
-                </li>
+                </div>
               ))}
-            </ul>
-          </section>
+            </ScrollReveal>
+          </ScrollReveal>
         ) : null}
 
         {(emptyFilterResult || emptySearchResult) && blogPosts.length > 0 ? (
