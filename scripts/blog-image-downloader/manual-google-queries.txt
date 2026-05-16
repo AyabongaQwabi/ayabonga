@@ -1,0 +1,1628 @@
+# Blog section images — Google queries (165 files)
+# From blog-image-manifest.json + build_google_queries()
+# Save each image as the filename under public/images/blog/
+
+## abathemubu-lineage-thembu-lineage-and-history.webp
+Post: abathemubu-lineage
+Section: Thembu lineage and history
+Save to: public/images/blog/abathemubu-lineage-thembu-lineage-and-history.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Thembu lineage and history South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Thembu%20lineage%20and%20history%20South%20Africa%20African%20heritage
+5. AbaThembu Lineage South Africa Africa
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Lineage%20South%20Africa%20Africa
+
+## abathemubu-lineage-early-ancestry.webp
+Post: abathemubu-lineage
+Section: Early ancestry
+Save to: public/images/blog/abathemubu-lineage-early-ancestry.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Early ancestry South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Early%20ancestry%20South%20Africa%20African%20heritage
+5. AbaThembu Lineage South Africa Africa
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Lineage%20South%20Africa%20Africa
+
+## abathemubu-lineage-generational-continuity.webp
+Post: abathemubu-lineage
+Section: Generational continuity
+Save to: public/images/blog/abathemubu-lineage-generational-continuity.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Generational continuity South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Generational%20continuity%20South%20Africa%20African%20heritage
+5. AbaThembu Lineage South Africa Africa
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Lineage%20South%20Africa%20Africa
+
+## abathemubu-lineage-summary-the-struggle-for.webp
+Post: abathemubu-lineage
+Section: Summary: the struggle for succession
+Save to: public/images/blog/abathemubu-lineage-summary-the-struggle-for.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. the struggle for succession South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=the%20struggle%20for%20succession%20South%20Africa%20African%20heritage
+5. AbaThembu Lineage South Africa Africa
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Lineage%20South%20Africa%20Africa
+
+## abathemubu-lineage-the-rise-of-madiba.webp
+Post: abathemubu-lineage
+Section: The rise of Madiba and the house of Thembu
+Save to: public/images/blog/abathemubu-lineage-the-rise-of-madiba.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. The rise of Madiba and the house of Thembu South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20rise%20of%20Madiba%20and%20the%20house%20of%20Thembu%20South%20Africa%20African%20heritage
+5. AbaThembu Lineage South Africa Africa
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Lineage%20South%20Africa%20Africa
+
+## ai-tools-building-apps-2026-intro.webp
+Post: ai-tools-building-apps-2026
+Section: Who this is for
+Save to: public/images/blog/ai-tools-building-apps-2026-intro.webp
+
+1. developer laptop workspace ai coding tools
+   https://www.google.com/search?tbm=isch&q=developer%20laptop%20workspace%20ai%20coding%20tools
+2. Who this is for AI Tools for Building Apps in 2026
+   https://www.google.com/search?tbm=isch&q=Who%20this%20is%20for%20AI%20Tools%20for%20Building%20Apps%20in%202026
+
+## ai-tools-building-apps-2026-layers.webp
+Post: ai-tools-building-apps-2026
+Section: The three layers (quick mental model)
+Save to: public/images/blog/ai-tools-building-apps-2026-layers.webp
+
+1. software architecture diagram workflow layers
+   https://www.google.com/search?tbm=isch&q=software%20architecture%20diagram%20workflow%20layers
+2. The three layers (quick mental model) AI Tools for Building Apps in 2026
+   https://www.google.com/search?tbm=isch&q=The%20three%20layers%20%28quick%20mental%20model%29%20AI%20Tools%20for%20Building%20Apps%20in%202026
+
+## ai-tools-building-apps-2026-founders.webp
+Post: ai-tools-building-apps-2026
+Section: Cursor
+Save to: public/images/blog/ai-tools-building-apps-2026-founders.webp
+
+1. startup founder developer choosing tools
+   https://www.google.com/search?tbm=isch&q=startup%20founder%20developer%20choosing%20tools
+2. Cursor AI Tools for Building Apps in 2026
+   https://www.google.com/search?tbm=isch&q=Cursor%20AI%20Tools%20for%20Building%20Apps%20in%202026
+
+## ai-tools-building-apps-2026-security.webp
+Post: ai-tools-building-apps-2026
+Section: Security and IP
+Save to: public/images/blog/ai-tools-building-apps-2026-security.webp
+
+1. secure coding branch protection developer security
+   https://www.google.com/search?tbm=isch&q=secure%20coding%20branch%20protection%20developer%20security
+2. Security and IP AI Tools for Building Apps in 2026
+   https://www.google.com/search?tbm=isch&q=Security%20and%20IP%20AI%20Tools%20for%20Building%20Apps%20in%202026
+
+## ai-vibe-coding-agents-2026-thread.webp
+Post: ai-vibe-coding-agents-2026
+Section: Thread
+Save to: public/images/blog/ai-vibe-coding-agents-2026-thread.webp
+
+1. thread ai vibe coding agents 2026
+   https://www.google.com/search?tbm=isch&q=thread%20ai%20vibe%20coding%20agents%202026
+
+## ai-vibe-coding-agents-2026-sources-for-your-own.webp
+Post: ai-vibe-coding-agents-2026
+Section: Sources (for your own verification)
+Save to: public/images/blog/ai-vibe-coding-agents-2026-sources-for-your-own.webp
+
+1. sources (for your own verification) ai vibe coding agents 2026
+   https://www.google.com/search?tbm=isch&q=sources%20%28for%20your%20own%20verification%29%20ai%20vibe%20coding%20agents%202026
+
+## ai-vibe-coding-agents-2026-optional-short-prd-first.webp
+Post: ai-vibe-coding-agents-2026
+Section: Optional: Short “PRD first” tweet you can pin or add
+Save to: public/images/blog/ai-vibe-coding-agents-2026-optional-short-prd-first.webp
+
+1. optional: short “prd first” tweet you can pin or add ai vibe coding agents 2026
+   https://www.google.com/search?tbm=isch&q=optional%3A%20short%20%E2%80%9Cprd%20first%E2%80%9D%20tweet%20you%20can%20pin%20or%20add%20ai%20vibe%20coding%20agents%202026
+
+## build-ai-agents-libraries-2026-1-codefirst-powerhouses-full.webp
+Post: build-ai-agents-libraries-2026
+Section: 1. Code-first powerhouses (full control and production)
+Save to: public/images/blog/build-ai-agents-libraries-2026-1-codefirst-powerhouses-full.webp
+
+1. 1. code-first powerhouses (full control and production) build ai agents libraries 2026
+   https://www.google.com/search?tbm=isch&q=1.%20code-first%20powerhouses%20%28full%20control%20and%20production%29%20build%20ai%20agents%20libraries%202026
+
+## build-ai-agents-libraries-2026-2-visual-lowcode-builders.webp
+Post: build-ai-agents-libraries-2026
+Section: 2. Visual / low-code builders (MVPs and hybrid teams)
+Save to: public/images/blog/build-ai-agents-libraries-2026-2-visual-lowcode-builders.webp
+
+1. 2. visual / low-code builders (mvps and hybrid teams) build ai agents libraries 2026
+   https://www.google.com/search?tbm=isch&q=2.%20visual%20/%20low-code%20builders%20%28mvps%20and%20hybrid%20teams%29%20build%20ai%20agents%20libraries%202026
+
+## build-ai-agents-libraries-2026-3-quick-2026-action.webp
+Post: build-ai-agents-libraries-2026
+Section: 3. Quick 2026 action plan for SA devs
+Save to: public/images/blog/build-ai-agents-libraries-2026-3-quick-2026-action.webp
+
+1. 3. quick 2026 action plan for sa devs build ai agents libraries 2026
+   https://www.google.com/search?tbm=isch&q=3.%20quick%202026%20action%20plan%20for%20sa%20devs%20build%20ai%20agents%20libraries%202026
+
+## building-for-impact-the-digital-divide-is.webp
+Post: building-for-impact
+Section: The Digital Divide is Real
+Save to: public/images/blog/building-for-impact-the-digital-divide-is.webp
+
+1. The Digital Divide is Real South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20Digital%20Divide%20is%20Real%20South%20Africa%20African%20heritage
+2. Building Software for Social Impact South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa
+
+## building-for-impact-technology-as-a-bridge.webp
+Post: building-for-impact
+Section: Technology as a Bridge
+Save to: public/images/blog/building-for-impact-technology-as-a-bridge.webp
+
+1. Technology as a Bridge South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Technology%20as%20a%20Bridge%20South%20Africa%20African%20heritage
+2. Building Software for Social Impact South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa
+
+## building-for-impact-building-with-purpose.webp
+Post: building-for-impact
+Section: Building with Purpose
+Save to: public/images/blog/building-for-impact-building-with-purpose.webp
+
+1. Building with Purpose South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Building%20with%20Purpose%20South%20Africa%20African%20heritage
+2. Building Software for Social Impact South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa
+
+## building-for-impact-looking-forward.webp
+Post: building-for-impact
+Section: Looking Forward
+Save to: public/images/blog/building-for-impact-looking-forward.webp
+
+1. Looking Forward South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Looking%20Forward%20South%20Africa%20African%20heritage
+2. Building Software for Social Impact South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Building%20Software%20for%20Social%20Impact%20South%20Africa%20Africa
+
+## bulhoek-massacre-hospital-list-the-recorded-names.webp
+Post: bulhoek-massacre-hospital-list
+Section: The recorded names
+Save to: public/images/blog/bulhoek-massacre-hospital-list-the-recorded-names.webp
+
+1. Bulhoek massacre South Africa 1921 history
+   https://www.google.com/search?tbm=isch&q=Bulhoek%20massacre%20South%20Africa%201921%20history
+2. The recorded names South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20recorded%20names%20South%20Africa%20African%20heritage
+3. Names from the Bulhoek Massacre: A Hospital List I Was Never Supposed to Find South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Names%20from%20the%20Bulhoek%20Massacre%3A%20A%20Hospital%20List%20I%20Was%20Never%20Supposed%20to%20Find%20South%20Africa%20Africa
+
+## bulhoek-massacre-hospital-list-source.webp
+Post: bulhoek-massacre-hospital-list
+Section: Source
+Save to: public/images/blog/bulhoek-massacre-hospital-list-source.webp
+
+1. Bulhoek massacre South Africa 1921 history
+   https://www.google.com/search?tbm=isch&q=Bulhoek%20massacre%20South%20Africa%201921%20history
+2. Source South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Source%20South%20Africa%20African%20heritage
+3. Names from the Bulhoek Massacre: A Hospital List I Was Never Supposed to Find South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Names%20from%20the%20Bulhoek%20Massacre%3A%20A%20Hospital%20List%20I%20Was%20Never%20Supposed%20to%20Find%20South%20Africa%20Africa
+
+## client-websites-v0-workflow-what-you-need-from.webp
+Post: client-websites-v0-workflow
+Section: What you need from the client (and what to do if you don’t have it)
+Save to: public/images/blog/client-websites-v0-workflow-what-you-need-from.webp
+
+1. what you need from the client (and what to do if you don’t have it) client websites v0 workflow
+   https://www.google.com/search?tbm=isch&q=what%20you%20need%20from%20the%20client%20%28and%20what%20to%20do%20if%20you%20don%E2%80%99t%20have%20it%29%20client%20websites%20v0%20workflow
+
+## client-websites-v0-workflow-step-1-generate-the.webp
+Post: client-websites-v0-workflow
+Section: Step 1: Generate the v0 prompt with the Agent.ai agent
+Save to: public/images/blog/client-websites-v0-workflow-step-1-generate-the.webp
+
+1. step 1: generate the v0 prompt with the agent.ai agent client websites v0 workflow
+   https://www.google.com/search?tbm=isch&q=step%201%3A%20generate%20the%20v0%20prompt%20with%20the%20agent.ai%20agent%20client%20websites%20v0%20workflow
+
+## client-websites-v0-workflow-step-2-paste-into.webp
+Post: client-websites-v0-workflow
+Section: Step 2: Paste into v0.dev and generate
+Save to: public/images/blog/client-websites-v0-workflow-step-2-paste-into.webp
+
+1. step 2: paste into v0.dev and generate client websites v0 workflow
+   https://www.google.com/search?tbm=isch&q=step%202%3A%20paste%20into%20v0.dev%20and%20generate%20client%20websites%20v0%20workflow
+
+## client-websites-v0-workflow-step-3-custom-domain.webp
+Post: client-websites-v0-workflow
+Section: Step 3: Custom domain and deploy
+Save to: public/images/blog/client-websites-v0-workflow-step-3-custom-domain.webp
+
+1. step 3: custom domain and deploy client websites v0 workflow
+   https://www.google.com/search?tbm=isch&q=step%203%3A%20custom%20domain%20and%20deploy%20client%20websites%20v0%20workflow
+
+## client-websites-v0-workflow-why-this-works.webp
+Post: client-websites-v0-workflow
+Section: Why this works
+Save to: public/images/blog/client-websites-v0-workflow-why-this-works.webp
+
+1. why this works client websites v0 workflow
+   https://www.google.com/search?tbm=isch&q=why%20this%20works%20client%20websites%20v0%20workflow
+
+## cloud-architecture-lessons-start-simple-scale-intentionally.webp
+Post: cloud-architecture-lessons
+Section: Start Simple, Scale Intentionally
+Save to: public/images/blog/cloud-architecture-lessons-start-simple-scale-intentionally.webp
+
+1. start simple, scale intentionally cloud architecture lessons
+   https://www.google.com/search?tbm=isch&q=start%20simple%2C%20scale%20intentionally%20cloud%20architecture%20lessons
+
+## cloud-architecture-lessons-the-cost-of-complexity.webp
+Post: cloud-architecture-lessons
+Section: The Cost of Complexity
+Save to: public/images/blog/cloud-architecture-lessons-the-cost-of-complexity.webp
+
+1. the cost of complexity cloud architecture lessons
+   https://www.google.com/search?tbm=isch&q=the%20cost%20of%20complexity%20cloud%20architecture%20lessons
+
+## cloud-architecture-lessons-serverless-is-not-always.webp
+Post: cloud-architecture-lessons
+Section: Serverless is Not Always the Answer
+Save to: public/images/blog/cloud-architecture-lessons-serverless-is-not-always.webp
+
+1. serverless is not always the answer cloud architecture lessons
+   https://www.google.com/search?tbm=isch&q=serverless%20is%20not%20always%20the%20answer%20cloud%20architecture%20lessons
+
+## cloud-architecture-lessons-database-design-matters-more.webp
+Post: cloud-architecture-lessons
+Section: Database Design Matters More Than You Think
+Save to: public/images/blog/cloud-architecture-lessons-database-design-matters-more.webp
+
+1. database design matters more than you think cloud architecture lessons
+   https://www.google.com/search?tbm=isch&q=database%20design%20matters%20more%20than%20you%20think%20cloud%20architecture%20lessons
+
+## cloud-architecture-lessons-observability-from-day-one.webp
+Post: cloud-architecture-lessons
+Section: Observability from Day One
+Save to: public/images/blog/cloud-architecture-lessons-observability-from-day-one.webp
+
+1. observability from day one cloud architecture lessons
+   https://www.google.com/search?tbm=isch&q=observability%20from%20day%20one%20cloud%20architecture%20lessons
+
+## declarative-apps-functional-javascript-what-is-declarative-programming.webp
+Post: declarative-apps-functional-javascript
+Section: What is declarative programming?
+Save to: public/images/blog/declarative-apps-functional-javascript-what-is-declarative-programming.webp
+
+1. what is declarative programming? declarative apps functional javascript
+   https://www.google.com/search?tbm=isch&q=what%20is%20declarative%20programming%3F%20declarative%20apps%20functional%20javascript
+
+## declarative-apps-functional-javascript-lets-simplify-it-further.webp
+Post: declarative-apps-functional-javascript
+Section: Let’s simplify it further
+Save to: public/images/blog/declarative-apps-functional-javascript-lets-simplify-it-further.webp
+
+1. let’s simplify it further declarative apps functional javascript
+   https://www.google.com/search?tbm=isch&q=let%E2%80%99s%20simplify%20it%20further%20declarative%20apps%20functional%20javascript
+
+## declarative-apps-functional-javascript-if-we-only-declare.webp
+Post: declarative-apps-functional-javascript
+Section: If we only declare the output, how does the machine know the steps?
+Save to: public/images/blog/declarative-apps-functional-javascript-if-we-only-declare.webp
+
+1. if we only declare the output, how does the machine know the steps? declarative apps functional javascript
+   https://www.google.com/search?tbm=isch&q=if%20we%20only%20declare%20the%20output%2C%20how%20does%20the%20machine%20know%20the%20steps%3F%20declarative%20apps%20functional%20javascript
+
+## declarative-apps-functional-javascript-examples-html-css-sql.webp
+Post: declarative-apps-functional-javascript
+Section: Examples: HTML, CSS, SQL
+Save to: public/images/blog/declarative-apps-functional-javascript-examples-html-css-sql.webp
+
+1. examples: html, css, sql declarative apps functional javascript
+   https://www.google.com/search?tbm=isch&q=examples%3A%20html%2C%20css%2C%20sql%20declarative%20apps%20functional%20javascript
+
+## declarative-apps-functional-javascript-declarative-programming-and-abstraction.webp
+Post: declarative-apps-functional-javascript
+Section: Declarative programming and abstraction
+Save to: public/images/blog/declarative-apps-functional-javascript-declarative-programming-and-abstraction.webp
+
+1. declarative programming and abstraction declarative apps functional javascript
+   https://www.google.com/search?tbm=isch&q=declarative%20programming%20and%20abstraction%20declarative%20apps%20functional%20javascript
+
+## designing-for-stage-six-resilience-assume-the-network-is.webp
+Post: designing-for-stage-six-resilience
+Section: Assume the network is hostile
+Save to: public/images/blog/designing-for-stage-six-resilience-assume-the-network-is.webp
+
+1. assume the network is hostile designing for stage six resilience
+   https://www.google.com/search?tbm=isch&q=assume%20the%20network%20is%20hostile%20designing%20for%20stage%20six%20resilience
+
+## designing-for-stage-six-resilience-cache-what-keeps-people.webp
+Post: designing-for-stage-six-resilience
+Section: Cache what keeps people moving
+Save to: public/images/blog/designing-for-stage-six-resilience-cache-what-keeps-people.webp
+
+1. cache what keeps people moving designing for stage six resilience
+   https://www.google.com/search?tbm=isch&q=cache%20what%20keeps%20people%20moving%20designing%20for%20stage%20six%20resilience
+
+## designing-for-stage-six-resilience-webhooks-and-background-jobs.webp
+Post: designing-for-stage-six-resilience
+Section: Webhooks and background jobs: plan for the gap
+Save to: public/images/blog/designing-for-stage-six-resilience-webhooks-and-background-jobs.webp
+
+1. webhooks and background jobs: plan for the gap designing for stage six resilience
+   https://www.google.com/search?tbm=isch&q=webhooks%20and%20background%20jobs%3A%20plan%20for%20the%20gap%20designing%20for%20stage%20six%20resilience
+
+## designing-for-stage-six-resilience-test-like-you-live.webp
+Post: designing-for-stage-six-resilience
+Section: Test like you live here
+Save to: public/images/blog/designing-for-stage-six-resilience-test-like-you-live.webp
+
+1. test like you live here designing for stage six resilience
+   https://www.google.com/search?tbm=isch&q=test%20like%20you%20live%20here%20designing%20for%20stage%20six%20resilience
+
+## designing-for-stage-six-resilience-the-point.webp
+Post: designing-for-stage-six-resilience
+Section: The point
+Save to: public/images/blog/designing-for-stage-six-resilience-the-point.webp
+
+1. the point designing for stage six resilience
+   https://www.google.com/search?tbm=isch&q=the%20point%20designing%20for%20stage%20six%20resilience
+
+## gatsby-react-performance-journey-tree-shaking.webp
+Post: gatsby-react-performance-journey
+Section: Tree shaking
+Save to: public/images/blog/gatsby-react-performance-journey-tree-shaking.webp
+
+1. tree shaking gatsby react performance journey
+   https://www.google.com/search?tbm=isch&q=tree%20shaking%20gatsby%20react%20performance%20journey
+
+## hosting-platforms-guide-2026-layer-1-devfriendly-hosting.webp
+Post: hosting-platforms-guide-2026
+Section: Layer 1: Dev-Friendly Hosting Platforms
+Save to: public/images/blog/hosting-platforms-guide-2026-layer-1-devfriendly-hosting.webp
+
+1. layer 1: dev-friendly hosting platforms hosting platforms guide 2026
+   https://www.google.com/search?tbm=isch&q=layer%201%3A%20dev-friendly%20hosting%20platforms%20hosting%20platforms%20guide%202026
+
+## hosting-platforms-guide-2026-layer-2-the-big.webp
+Post: hosting-platforms-guide-2026
+Section: Layer 2: The Big Clouds (Enterprise Platforms)
+Save to: public/images/blog/hosting-platforms-guide-2026-layer-2-the-big.webp
+
+1. layer 2: the big clouds (enterprise platforms) hosting platforms guide 2026
+   https://www.google.com/search?tbm=isch&q=layer%202%3A%20the%20big%20clouds%20%28enterprise%20platforms%29%20hosting%20platforms%20guide%202026
+
+## hosting-platforms-guide-2026-so-which-one-should.webp
+Post: hosting-platforms-guide-2026
+Section: So… Which One Should You Pick?
+Save to: public/images/blog/hosting-platforms-guide-2026-so-which-one-should.webp
+
+1. so… which one should you pick? hosting platforms guide 2026
+   https://www.google.com/search?tbm=isch&q=so%E2%80%A6%20which%20one%20should%20you%20pick%3F%20hosting%20platforms%20guide%202026
+
+## hosting-platforms-guide-2026-bonus-idea-cloudflare-next.webp
+Post: hosting-platforms-guide-2026
+Section: Bonus Idea: Cloudflare (Next Post)
+Save to: public/images/blog/hosting-platforms-guide-2026-bonus-idea-cloudflare-next.webp
+
+1. bonus idea: cloudflare (next post) hosting platforms guide 2026
+   https://www.google.com/search?tbm=isch&q=bonus%20idea%3A%20cloudflare%20%28next%20post%29%20hosting%20platforms%20guide%202026
+
+## how-to-build-high-converting-landing-page-goal.webp
+Post: how-to-build-high-converting-landing-page
+Section: Start with one goal
+Save to: public/images/blog/how-to-build-high-converting-landing-page-goal.webp
+
+1. landing page hero cta conversion focused
+   https://www.google.com/search?tbm=isch&q=landing%20page%20hero%20cta%20conversion%20focused
+2. Start with one goal How to Build a High-Converting Landing Page
+   https://www.google.com/search?tbm=isch&q=Start%20with%20one%20goal%20How%20to%20Build%20a%20High-Converting%20Landing%20Page
+
+## how-to-build-high-converting-landing-page-structure.webp
+Post: how-to-build-high-converting-landing-page
+Section: Page structure
+Save to: public/images/blog/how-to-build-high-converting-landing-page-structure.webp
+
+1. landing page wireframe ux structure
+   https://www.google.com/search?tbm=isch&q=landing%20page%20wireframe%20ux%20structure
+2. Page structure How to Build a High-Converting Landing Page
+   https://www.google.com/search?tbm=isch&q=Page%20structure%20How%20to%20Build%20a%20High-Converting%20Landing%20Page
+
+## how-to-build-high-converting-landing-page-stack.webp
+Post: how-to-build-high-converting-landing-page
+Section: Stack choice
+Save to: public/images/blog/how-to-build-high-converting-landing-page-stack.webp
+
+1. full stack web development laptop server
+   https://www.google.com/search?tbm=isch&q=full%20stack%20web%20development%20laptop%20server
+2. Stack choice How to Build a High-Converting Landing Page
+   https://www.google.com/search?tbm=isch&q=Stack%20choice%20How%20to%20Build%20a%20High-Converting%20Landing%20Page
+
+## how-to-build-high-converting-landing-page-performance.webp
+Post: how-to-build-high-converting-landing-page
+Section: Performance and images
+Save to: public/images/blog/how-to-build-high-converting-landing-page-performance.webp
+
+1. mobile page speed webp optimization
+   https://www.google.com/search?tbm=isch&q=mobile%20page%20speed%20webp%20optimization
+2. Performance and images How to Build a High-Converting Landing Page
+   https://www.google.com/search?tbm=isch&q=Performance%20and%20images%20How%20to%20Build%20a%20High-Converting%20Landing%20Page
+
+## learn-react-before-cursor-1-the-react-baseline.webp
+Post: learn-react-before-cursor
+Section: 1. The React Baseline: Why Fundamentals Still Matter
+Save to: public/images/blog/learn-react-before-cursor-1-the-react-baseline.webp
+
+1. 1. the react baseline: why fundamentals still matter learn react before cursor
+   https://www.google.com/search?tbm=isch&q=1.%20the%20react%20baseline%3A%20why%20fundamentals%20still%20matter%20learn%20react%20before%20cursor
+
+## learn-react-before-cursor-2-when-to-add.webp
+Post: learn-react-before-cursor
+Section: 2. When to Add Cursor to Your Workflow
+Save to: public/images/blog/learn-react-before-cursor-2-when-to-add.webp
+
+1. 2. when to add cursor to your workflow learn react before cursor
+   https://www.google.com/search?tbm=isch&q=2.%20when%20to%20add%20cursor%20to%20your%20workflow%20learn%20react%20before%20cursor
+
+## learn-react-before-cursor-3-the-tutor-strategy.webp
+Post: learn-react-before-cursor
+Section: 3. The "Tutor" Strategy (Introducing AI Earlier)
+Save to: public/images/blog/learn-react-before-cursor-3-the-tutor-strategy.webp
+
+1. 3. the "tutor" strategy (introducing ai earlier) learn react before cursor
+   https://www.google.com/search?tbm=isch&q=3.%20the%20%22tutor%22%20strategy%20%28introducing%20ai%20earlier%29%20learn%20react%20before%20cursor
+
+## learn-react-before-cursor-the-verdict-accelerator-vs.webp
+Post: learn-react-before-cursor
+Section: The Verdict: Accelerator vs. Driver
+Save to: public/images/blog/learn-react-before-cursor-the-verdict-accelerator-vs.webp
+
+1. the verdict: accelerator vs. driver learn react before cursor
+   https://www.google.com/search?tbm=isch&q=the%20verdict%3A%20accelerator%20vs.%20driver%20learn%20react%20before%20cursor
+
+## llm-tone-local-accents-fluency-is-not-only.webp
+Post: llm-tone-local-accents
+Section: Fluency is not only vocabulary
+Save to: public/images/blog/llm-tone-local-accents-fluency-is-not-only.webp
+
+1. Fluency is not only vocabulary South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Fluency%20is%20not%20only%20vocabulary%20South%20Africa%20African%20heritage
+2. Why Your LLM Still Sounds Like a Sandton Consultant South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Why%20Your%20LLM%20Still%20Sounds%20Like%20a%20Sandton%20Consultant%20South%20Africa%20Africa
+
+## llm-tone-local-accents-the-professional-trap.webp
+Post: llm-tone-local-accents
+Section: The “professional” trap
+Save to: public/images/blog/llm-tone-local-accents-the-professional-trap.webp
+
+1. The “professional” trap South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20%E2%80%9Cprofessional%E2%80%9D%20trap%20South%20Africa%20African%20heritage
+2. Why Your LLM Still Sounds Like a Sandton Consultant South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Why%20Your%20LLM%20Still%20Sounds%20Like%20a%20Sandton%20Consultant%20South%20Africa%20Africa
+
+## llm-tone-local-accents-what-actually-moves-the.webp
+Post: llm-tone-local-accents
+Section: What actually moves the needle
+Save to: public/images/blog/llm-tone-local-accents-what-actually-moves-the.webp
+
+1. What actually moves the needle South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=What%20actually%20moves%20the%20needle%20South%20Africa%20African%20heritage
+2. Why Your LLM Still Sounds Like a Sandton Consultant South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Why%20Your%20LLM%20Still%20Sounds%20Like%20a%20Sandton%20Consultant%20South%20Africa%20Africa
+
+## llm-tone-local-accents-why-this-matters-for.webp
+Post: llm-tone-local-accents
+Section: Why this matters for builders here
+Save to: public/images/blog/llm-tone-local-accents-why-this-matters-for.webp
+
+1. Why this matters for builders here South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Why%20this%20matters%20for%20builders%20here%20South%20Africa%20African%20heritage
+2. Why Your LLM Still Sounds Like a Sandton Consultant South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Why%20Your%20LLM%20Still%20Sounds%20Like%20a%20Sandton%20Consultant%20South%20Africa%20Africa
+
+## memory-sensory-replay-and-thought-what-we-can-reconstruct.webp
+Post: memory-sensory-replay-and-thought
+Section: What we can reconstruct depends on what we have
+Save to: public/images/blog/memory-sensory-replay-and-thought-what-we-can-reconstruct.webp
+
+1. what we can reconstruct depends on what we have memory sensory replay and thought
+   https://www.google.com/search?tbm=isch&q=what%20we%20can%20reconstruct%20depends%20on%20what%20we%20have%20memory%20sensory%20replay%20and%20thought
+
+## memory-sensory-replay-and-thought-dreams-widen-the-band.webp
+Post: memory-sensory-replay-and-thought
+Section: Dreams widen the band for a while
+Save to: public/images/blog/memory-sensory-replay-and-thought-dreams-widen-the-band.webp
+
+1. dreams widen the band for a while memory sensory replay and thought
+   https://www.google.com/search?tbm=isch&q=dreams%20widen%20the%20band%20for%20a%20while%20memory%20sensory%20replay%20and%20thought
+
+## memory-sensory-replay-and-thought-thought-as-movement-through.webp
+Post: memory-sensory-replay-and-thought
+Section: Thought as movement through stored sensation
+Save to: public/images/blog/memory-sensory-replay-and-thought-thought-as-movement-through.webp
+
+1. thought as movement through stored sensation memory sensory replay and thought
+   https://www.google.com/search?tbm=isch&q=thought%20as%20movement%20through%20stored%20sensation%20memory%20sensory%20replay%20and%20thought
+
+## microservices-architecture-explained-diagram.webp
+Post: microservices-architecture-explained
+Section: What are microservices
+Save to: public/images/blog/microservices-architecture-explained-diagram.webp
+
+1. microservices api diagram distributed system
+   https://www.google.com/search?tbm=isch&q=microservices%20api%20diagram%20distributed%20system
+2. What are microservices Microservices Architecture Explained for Beginners
+   https://www.google.com/search?tbm=isch&q=What%20are%20microservices%20Microservices%20Architecture%20Explained%20for%20Beginners
+
+## microservices-architecture-explained-monolith.webp
+Post: microservices-architecture-explained
+Section: Monolith vs microservices
+Save to: public/images/blog/microservices-architecture-explained-monolith.webp
+
+1. monolith microservices comparison whiteboard
+   https://www.google.com/search?tbm=isch&q=monolith%20microservices%20comparison%20whiteboard
+2. Monolith vs microservices Microservices Architecture Explained for Beginners
+   https://www.google.com/search?tbm=isch&q=Monolith%20vs%20microservices%20Microservices%20Architecture%20Explained%20for%20Beginners
+
+## microservices-architecture-explained-tracing.webp
+Post: microservices-architecture-explained
+Section: Observability and tracing
+Save to: public/images/blog/microservices-architecture-explained-tracing.webp
+
+1. distributed tracing dashboard observability
+   https://www.google.com/search?tbm=isch&q=distributed%20tracing%20dashboard%20observability
+2. Observability and tracing Microservices Architecture Explained for Beginners
+   https://www.google.com/search?tbm=isch&q=Observability%20and%20tracing%20Microservices%20Architecture%20Explained%20for%20Beginners
+
+## microservices-architecture-explained-modular.webp
+Post: microservices-architecture-explained
+Section: Modular monolith first
+Save to: public/images/blog/microservices-architecture-explained-modular.webp
+
+1. modular monolith codebase folder structure
+   https://www.google.com/search?tbm=isch&q=modular%20monolith%20codebase%20folder%20structure
+2. Modular monolith first Microservices Architecture Explained for Beginners
+   https://www.google.com/search?tbm=isch&q=Modular%20monolith%20first%20Microservices%20Architecture%20Explained%20for%20Beginners
+
+## mobile-app-development-companies-south-africa-devices.webp
+Post: mobile-app-development-companies-south-africa
+Section: What buyers need
+Save to: public/images/blog/mobile-app-development-companies-south-africa-devices.webp
+
+1. What buyers need South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=What%20buyers%20need%20South%20Africa%20African%20heritage
+2. Mobile App Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Mobile%20App%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## mobile-app-development-companies-south-africa-discovery.webp
+Post: mobile-app-development-companies-south-africa
+Section: Discovery and scope
+Save to: public/images/blog/mobile-app-development-companies-south-africa-discovery.webp
+
+1. Discovery and scope South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Discovery%20and%20scope%20South%20Africa%20African%20heritage
+2. Mobile App Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Mobile%20App%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## mobile-app-development-companies-south-africa-budget.webp
+Post: mobile-app-development-companies-south-africa
+Section: Budget bands in ZAR
+Save to: public/images/blog/mobile-app-development-companies-south-africa-budget.webp
+
+1. Budget bands in ZAR South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Budget%20bands%20in%20ZAR%20South%20Africa%20African%20heritage
+2. Mobile App Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Mobile%20App%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## mobile-app-development-companies-south-africa-testing.webp
+Post: mobile-app-development-companies-south-africa
+Section: TestFlight and Play internal testing
+Save to: public/images/blog/mobile-app-development-companies-south-africa-testing.webp
+
+1. TestFlight and Play internal testing South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=TestFlight%20and%20Play%20internal%20testing%20South%20Africa%20African%20heritage
+2. Mobile App Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Mobile%20App%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## ntsikana-prophet-pacification-xhosa-the-historical-wound-that.webp
+Post: ntsikana-prophet-pacification-xhosa
+Section: The historical wound that created him
+Save to: public/images/blog/ntsikana-prophet-pacification-xhosa-the-historical-wound-that.webp
+
+1. Xhosa culture South Africa The historical wound that created him
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20The%20historical%20wound%20that%20created%20him
+2. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+3. The historical wound that created him South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20historical%20wound%20that%20created%20him%20South%20Africa%20African%20heritage
+4. The Prophet of Pacification Ntsikana and how he Sold Out the Xhosa People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=The%20Prophet%20of%20Pacification%20Ntsikana%20and%20how%20he%20Sold%20Out%20the%20Xhosa%20People%20South%20Africa%20Africa
+
+## ntsikana-prophet-pacification-xhosa-the-van-der-kemp.webp
+Post: ntsikana-prophet-pacification-xhosa
+Section: The van der Kemp connection: where the story really begins
+Save to: public/images/blog/ntsikana-prophet-pacification-xhosa-the-van-der-kemp.webp
+
+1. Xhosa culture South Africa The van der Kemp connection: where the story really begins
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20The%20van%20der%20Kemp%20connection%3A%20where%20the%20story%20really%20begins
+2. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+3. The van der Kemp connection: where the story really begins South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20van%20der%20Kemp%20connection%3A%20where%20the%20story%20really%20begins%20South%20Africa%20African%20heritage
+4. The Prophet of Pacification Ntsikana and how he Sold Out the Xhosa People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=The%20Prophet%20of%20Pacification%20Ntsikana%20and%20how%20he%20Sold%20Out%20the%20Xhosa%20People%20South%20Africa%20Africa
+
+## ntsikana-prophet-pacification-xhosa-ntsikanas-teachings-a-masterclass.webp
+Post: ntsikana-prophet-pacification-xhosa
+Section: Ntsikana’s teachings: a masterclass in disinformation
+Save to: public/images/blog/ntsikana-prophet-pacification-xhosa-ntsikanas-teachings-a-masterclass.webp
+
+1. Xhosa culture South Africa Ntsikana’s teachings: a masterclass in disinformation
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Ntsikana%E2%80%99s%20teachings%3A%20a%20masterclass%20in%20disinformation
+2. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+3. Ntsikana’s teachings: a masterclass in disinformation South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Ntsikana%E2%80%99s%20teachings%3A%20a%20masterclass%20in%20disinformation%20South%20Africa%20African%20heritage
+4. The Prophet of Pacification Ntsikana and how he Sold Out the Xhosa People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=The%20Prophet%20of%20Pacification%20Ntsikana%20and%20how%20he%20Sold%20Out%20the%20Xhosa%20People%20South%20Africa%20Africa
+
+## ntsikana-prophet-pacification-xhosa-nxele-vs-ntsikana-the.webp
+Post: ntsikana-prophet-pacification-xhosa
+Section: Nxele vs Ntsikana: the real battle for the Xhosa mind
+Save to: public/images/blog/ntsikana-prophet-pacification-xhosa-nxele-vs-ntsikana-the.webp
+
+1. Xhosa culture South Africa Nxele vs Ntsikana: the real battle for the Xhosa mind
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Nxele%20vs%20Ntsikana%3A%20the%20real%20battle%20for%20the%20Xhosa%20mind
+2. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+3. Nxele vs Ntsikana: the real battle for the Xhosa mind South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Nxele%20vs%20Ntsikana%3A%20the%20real%20battle%20for%20the%20Xhosa%20mind%20South%20Africa%20African%20heritage
+4. The Prophet of Pacification Ntsikana and how he Sold Out the Xhosa People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=The%20Prophet%20of%20Pacification%20Ntsikana%20and%20how%20he%20Sold%20Out%20the%20Xhosa%20People%20South%20Africa%20Africa
+
+## ntsikana-prophet-pacification-xhosa-the-lovedale-disinformation-machine.webp
+Post: ntsikana-prophet-pacification-xhosa
+Section: The Lovedale disinformation machine
+Save to: public/images/blog/ntsikana-prophet-pacification-xhosa-the-lovedale-disinformation-machine.webp
+
+1. Xhosa culture South Africa The Lovedale disinformation machine
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20The%20Lovedale%20disinformation%20machine
+2. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+3. The Lovedale disinformation machine South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20Lovedale%20disinformation%20machine%20South%20Africa%20African%20heritage
+4. The Prophet of Pacification Ntsikana and how he Sold Out the Xhosa People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=The%20Prophet%20of%20Pacification%20Ntsikana%20and%20how%20he%20Sold%20Out%20the%20Xhosa%20People%20South%20Africa%20Africa
+
+## ntsikana-was-a-sellout-was-ntsikana-a-prophet.webp
+Post: ntsikana-was-a-sellout
+Section: Was Ntsikana a Prophet, or the First Colonial Collaborator?
+Save to: public/images/blog/ntsikana-was-a-sellout-was-ntsikana-a-prophet.webp
+
+1. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+2. Was Ntsikana a Prophet, or the First Colonial Collaborator? South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Was%20Ntsikana%20a%20Prophet%2C%20or%20the%20First%20Colonial%20Collaborator%3F%20South%20Africa%20African%20heritage
+3. Ntsikana was a sellout South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20was%20a%20sellout%20South%20Africa%20Africa
+
+## ntsikana-was-a-sellout-the-historical-moment-a.webp
+Post: ntsikana-was-a-sellout
+Section: The historical moment: a nation under attack
+Save to: public/images/blog/ntsikana-was-a-sellout-the-historical-moment-a.webp
+
+1. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+2. The historical moment: a nation under attack South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20historical%20moment%3A%20a%20nation%20under%20attack%20South%20Africa%20African%20heritage
+3. Ntsikana was a sellout South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20was%20a%20sellout%20South%20Africa%20Africa
+
+## ntsikana-was-a-sellout-the-core-argument-psychological.webp
+Post: ntsikana-was-a-sellout
+Section: The core argument: psychological disarmament
+Save to: public/images/blog/ntsikana-was-a-sellout-the-core-argument-psychological.webp
+
+1. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+2. The core argument: psychological disarmament South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20core%20argument%3A%20psychological%20disarmament%20South%20Africa%20African%20heritage
+3. Ntsikana was a sellout South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20was%20a%20sellout%20South%20Africa%20Africa
+
+## ntsikana-was-a-sellout-do-not-value-wealth.webp
+Post: ntsikana-was-a-sellout
+Section: "Do not value wealth": the theology that neutralised resistance
+Save to: public/images/blog/ntsikana-was-a-sellout-do-not-value-wealth.webp
+
+1. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+2. "Do not value wealth": the theology that neutralised resistance South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%22Do%20not%20value%20wealth%22%3A%20the%20theology%20that%20neutralised%20resistance%20South%20Africa%20African%20heritage
+3. Ntsikana was a sellout South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20was%20a%20sellout%20South%20Africa%20Africa
+
+## ntsikana-was-a-sellout-cultural-breakdown-the-attack.webp
+Post: ntsikana-was-a-sellout
+Section: Cultural breakdown: the attack on imbola and ancestral identity
+Save to: public/images/blog/ntsikana-was-a-sellout-cultural-breakdown-the-attack.webp
+
+1. Ntsikana Xhosa prophet South Africa history
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20Xhosa%20prophet%20South%20Africa%20history
+2. Cultural breakdown: the attack on imbola and ancestral identity South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Cultural%20breakdown%3A%20the%20attack%20on%20imbola%20and%20ancestral%20identity%20South%20Africa%20African%20heritage
+3. Ntsikana was a sellout South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ntsikana%20was%20a%20sellout%20South%20Africa%20Africa
+
+## philosophy-of-localhost-manifesto-a-teaching-of-self.webp
+Post: philosophy-of-localhost-manifesto
+Section: A teaching of self
+Save to: public/images/blog/philosophy-of-localhost-manifesto-a-teaching-of-self.webp
+
+1. a teaching of self philosophy of localhost manifesto
+   https://www.google.com/search?tbm=isch&q=a%20teaching%20of%20self%20philosophy%20of%20localhost%20manifesto
+
+## philosophy-of-localhost-manifesto-the-philosophy-of-localhost.webp
+Post: philosophy-of-localhost-manifesto
+Section: The philosophy of localhost
+Save to: public/images/blog/philosophy-of-localhost-manifesto-the-philosophy-of-localhost.webp
+
+1. the philosophy of localhost philosophy of localhost manifesto
+   https://www.google.com/search?tbm=isch&q=the%20philosophy%20of%20localhost%20philosophy%20of%20localhost%20manifesto
+
+## philosophy-of-localhost-manifesto-the-localhost.webp
+Post: philosophy-of-localhost-manifesto
+Section: The localhost
+Save to: public/images/blog/philosophy-of-localhost-manifesto-the-localhost.webp
+
+1. the localhost philosophy of localhost manifesto
+   https://www.google.com/search?tbm=isch&q=the%20localhost%20philosophy%20of%20localhost%20manifesto
+
+## philosophy-of-localhost-manifesto-the-firewall-of-self.webp
+Post: philosophy-of-localhost-manifesto
+Section: The firewall of self
+Save to: public/images/blog/philosophy-of-localhost-manifesto-the-firewall-of-self.webp
+
+1. the firewall of self philosophy of localhost manifesto
+   https://www.google.com/search?tbm=isch&q=the%20firewall%20of%20self%20philosophy%20of%20localhost%20manifesto
+
+## philosophy-of-localhost-manifesto-forking-your-path.webp
+Post: philosophy-of-localhost-manifesto
+Section: Forking your path
+Save to: public/images/blog/philosophy-of-localhost-manifesto-forking-your-path.webp
+
+1. forking your path philosophy of localhost manifesto
+   https://www.google.com/search?tbm=isch&q=forking%20your%20path%20philosophy%20of%20localhost%20manifesto
+
+## qwabi-family-history-amaqithi-earliest-known-ancestors.webp
+Post: qwabi-family-history-amaqithi
+Section: Earliest known ancestors
+Save to: public/images/blog/qwabi-family-history-amaqithi-earliest-known-ancestors.webp
+
+1. Earliest known ancestors South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Earliest%20known%20ancestors%20South%20Africa%20African%20heritage
+2. Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Qwabi%20Family%20History%20%E2%80%94%20Tracing%20the%20Roots%20of%20the%20AmaQithi%20Clan%20from%20the%20Eastern%20Cape%20South%20Africa%20Africa
+
+## qwabi-family-history-amaqithi-the-children-of-qwabi.webp
+Post: qwabi-family-history-amaqithi
+Section: The children of Qwabi (full GEDCOM-verified list)
+Save to: public/images/blog/qwabi-family-history-amaqithi-the-children-of-qwabi.webp
+
+1. The children of Qwabi (full GEDCOM-verified list) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20children%20of%20Qwabi%20%28full%20GEDCOM-verified%20list%29%20South%20Africa%20African%20heritage
+2. Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Qwabi%20Family%20History%20%E2%80%94%20Tracing%20the%20Roots%20of%20the%20AmaQithi%20Clan%20from%20the%20Eastern%20Cape%20South%20Africa%20Africa
+
+## qwabi-family-history-amaqithi-the-story-of-bhangile.webp
+Post: qwabi-family-history-amaqithi
+Section: The story of Bhangile and the move to Hala 2
+Save to: public/images/blog/qwabi-family-history-amaqithi-the-story-of-bhangile.webp
+
+1. The story of Bhangile and the move to Hala 2 South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20story%20of%20Bhangile%20and%20the%20move%20to%20Hala%202%20South%20Africa%20African%20heritage
+2. Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Qwabi%20Family%20History%20%E2%80%94%20Tracing%20the%20Roots%20of%20the%20AmaQithi%20Clan%20from%20the%20Eastern%20Cape%20South%20Africa%20Africa
+
+## qwabi-family-history-amaqithi-the-story-of-bhangile.webp
+Post: qwabi-family-history-amaqithi
+Section: The story of Bhangile and the move to Hala 2
+Save to: public/images/blog/qwabi-family-history-amaqithi-the-story-of-bhangile.webp
+
+1. The story of Bhangile and the move to Hala 2 South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20story%20of%20Bhangile%20and%20the%20move%20to%20Hala%202%20South%20Africa%20African%20heritage
+2. Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Qwabi%20Family%20History%20%E2%80%94%20Tracing%20the%20Roots%20of%20the%20AmaQithi%20Clan%20from%20the%20Eastern%20Cape%20South%20Africa%20Africa
+
+## qwabi-family-history-amaqithi-the-legacy-of-molose.webp
+Post: qwabi-family-history-amaqithi
+Section: The legacy of Molose (Oliphant)
+Save to: public/images/blog/qwabi-family-history-amaqithi-the-legacy-of-molose.webp
+
+1. The legacy of Molose (Oliphant) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20legacy%20of%20Molose%20%28Oliphant%29%20South%20Africa%20African%20heritage
+2. Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Qwabi%20Family%20History%20%E2%80%94%20Tracing%20the%20Roots%20of%20the%20AmaQithi%20Clan%20from%20the%20Eastern%20Cape%20South%20Africa%20Africa
+
+## sa-payment-gateways-tco-2026-the-cheapest-payment-gateways.webp
+Post: sa-payment-gateways-tco-2026
+Section: The Cheapest Payment Gateways for South African React/Next.js E-commerce in 2026 – Real TCO Breakdown (Not Just the % Fee)
+Save to: public/images/blog/sa-payment-gateways-tco-2026-the-cheapest-payment-gateways.webp
+
+1. the cheapest payment gateways for south african react/next.js e-commerce in 2026 – real tco breakdown (not just the % fee) sa payment gateways tco 2026
+   https://www.google.com/search?tbm=isch&q=the%20cheapest%20payment%20gateways%20for%20south%20african%20react/next.js%20e-commerce%20in%202026%20%E2%80%93%20real%20tco%20breakdown%20%28not%20just%20the%20%25%20fee%29%20sa%20payment%20gateways%20tco%202026
+
+## senior-title-township-wifi-test-what-the-title-sometimes.webp
+Post: senior-title-township-wifi-test
+Section: What the title sometimes hides
+Save to: public/images/blog/senior-title-township-wifi-test-what-the-title-sometimes.webp
+
+1. what the title sometimes hides senior title township wifi test
+   https://www.google.com/search?tbm=isch&q=what%20the%20title%20sometimes%20hides%20senior%20title%20township%20wifi%20test
+
+## senior-title-township-wifi-test-the-township-wifi-test.webp
+Post: senior-title-township-wifi-test
+Section: The township Wi‑Fi test (metaphorical but real)
+Save to: public/images/blog/senior-title-township-wifi-test-the-township-wifi-test.webp
+
+1. the township wi‑fi test (metaphorical but real) senior title township wifi test
+   https://www.google.com/search?tbm=isch&q=the%20township%20wi%E2%80%91fi%20test%20%28metaphorical%20but%20real%29%20senior%20title%20township%20wifi%20test
+
+## senior-title-township-wifi-test-what-i-try-to.webp
+Post: senior-title-township-wifi-test
+Section: What I try to practice
+Save to: public/images/blog/senior-title-township-wifi-test-what-i-try-to.webp
+
+1. what i try to practice senior title township wifi test
+   https://www.google.com/search?tbm=isch&q=what%20i%20try%20to%20practice%20senior%20title%20township%20wifi%20test
+
+## senior-title-township-wifi-test-the-uncomfortable-bit.webp
+Post: senior-title-township-wifi-test
+Section: The uncomfortable bit
+Save to: public/images/blog/senior-title-township-wifi-test-the-uncomfortable-bit.webp
+
+1. the uncomfortable bit senior title township wifi test
+   https://www.google.com/search?tbm=isch&q=the%20uncomfortable%20bit%20senior%20title%20township%20wifi%20test
+
+## software-development-companies-south-africa-2026-categories.webp
+Post: software-development-companies-south-africa-2026
+Section: Categories that actually matter
+Save to: public/images/blog/software-development-companies-south-africa-2026-categories.webp
+
+1. Categories that actually matter South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Categories%20that%20actually%20matter%20South%20Africa%20African%20heritage
+2. Software Development Companies in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Software%20Development%20Companies%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## software-development-companies-south-africa-2026-checklist.webp
+Post: software-development-companies-south-africa-2026
+Section: Buyer checklist
+Save to: public/images/blog/software-development-companies-south-africa-2026-checklist.webp
+
+1. Buyer checklist South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Buyer%20checklist%20South%20Africa%20African%20heritage
+2. Software Development Companies in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Software%20Development%20Companies%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## software-development-companies-south-africa-2026-custom-build.webp
+Post: software-development-companies-south-africa-2026
+Section: When a senior custom build wins
+Save to: public/images/blog/software-development-companies-south-africa-2026-custom-build.webp
+
+1. When a senior custom build wins South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=When%20a%20senior%20custom%20build%20wins%20South%20Africa%20African%20heritage
+2. Software Development Companies in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Software%20Development%20Companies%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## software-development-companies-south-africa-2026-hubs.webp
+Post: software-development-companies-south-africa-2026
+Section: Hubs and distributed teams
+Save to: public/images/blog/software-development-companies-south-africa-2026-hubs.webp
+
+1. Hubs and distributed teams South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Hubs%20and%20distributed%20teams%20South%20Africa%20African%20heritage
+2. Software Development Companies in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Software%20Development%20Companies%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## technical-cofounder-cost-south-africa-2026-what-people-mean-by.webp
+Post: technical-cofounder-cost-south-africa-2026
+Section: What people mean by “technical co-founder” in South Africa
+Save to: public/images/blog/technical-cofounder-cost-south-africa-2026-what-people-mean-by.webp
+
+1. What people mean by “technical co-founder” in South Africa South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=What%20people%20mean%20by%20%E2%80%9Ctechnical%20co-founder%E2%80%9D%20in%20South%20Africa%20South%20Africa%20African%20heritage
+2. What a Technical Co founder Costs in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=What%20a%20Technical%20Co%20founder%20Costs%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## technical-cofounder-cost-south-africa-2026-the-four-ways-founders.webp
+Post: technical-cofounder-cost-south-africa-2026
+Section: The four ways founders pay for technical leadership
+Save to: public/images/blog/technical-cofounder-cost-south-africa-2026-the-four-ways-founders.webp
+
+1. The four ways founders pay for technical leadership South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20four%20ways%20founders%20pay%20for%20technical%20leadership%20South%20Africa%20African%20heritage
+2. What a Technical Co founder Costs in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=What%20a%20Technical%20Co%20founder%20Costs%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## technical-cofounder-cost-south-africa-2026-south-africa-mvp-and.webp
+Post: technical-cofounder-cost-south-africa-2026
+Section: South Africa MVP and Phase 1 cost bands (2026)
+Save to: public/images/blog/technical-cofounder-cost-south-africa-2026-south-africa-mvp-and.webp
+
+1. South Africa MVP and Phase 1 cost bands (2026) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=South%20Africa%20MVP%20and%20Phase%201%20cost%20bands%20%282026%29%20South%20Africa%20African%20heritage
+2. What a Technical Co founder Costs in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=What%20a%20Technical%20Co%20founder%20Costs%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## technical-cofounder-cost-south-africa-2026-day-rates-monthly-retainers.webp
+Post: technical-cofounder-cost-south-africa-2026
+Section: Day rates, monthly retainers, and fixed Phase 1 projects
+Save to: public/images/blog/technical-cofounder-cost-south-africa-2026-day-rates-monthly-retainers.webp
+
+1. Day rates, monthly retainers, and fixed Phase 1 projects South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Day%20rates%2C%20monthly%20retainers%2C%20and%20fixed%20Phase%201%20projects%20South%20Africa%20African%20heritage
+2. What a Technical Co founder Costs in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=What%20a%20Technical%20Co%20founder%20Costs%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## technical-cofounder-cost-south-africa-2026-true-cost-comparison-not.webp
+Post: technical-cofounder-cost-south-africa-2026
+Section: True cost comparison (not just the invoice)
+Save to: public/images/blog/technical-cofounder-cost-south-africa-2026-true-cost-comparison-not.webp
+
+1. True cost comparison (not just the invoice) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=True%20cost%20comparison%20%28not%20just%20the%20invoice%29%20South%20Africa%20African%20heritage
+2. What a Technical Co founder Costs in South Africa (2026) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=What%20a%20Technical%20Co%20founder%20Costs%20in%20South%20Africa%20%282026%29%20South%20Africa%20Africa
+
+## typical-software-systems-small-business-south-africa-why-just-use-saas.webp
+Post: typical-software-systems-small-business-south-africa
+Section: Why “just use SaaS” stops working for SA small businesses
+Save to: public/images/blog/typical-software-systems-small-business-south-africa-why-just-use-saas.webp
+
+1. Why “just use SaaS” stops working for SA small businesses South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Why%20%E2%80%9Cjust%20use%20SaaS%E2%80%9D%20stops%20working%20for%20SA%20small%20businesses%20South%20Africa%20African%20heritage
+2. Typical Software Systems Small Businesses in South Africa Need South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Typical%20Software%20Systems%20Small%20Businesses%20in%20South%20Africa%20Need%20South%20Africa%20Africa
+
+## typical-software-systems-small-business-south-africa-how-to-read-this.webp
+Post: typical-software-systems-small-business-south-africa
+Section: How to read this list
+Save to: public/images/blog/typical-software-systems-small-business-south-africa-how-to-read-this.webp
+
+1. How to read this list South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=How%20to%20read%20this%20list%20South%20Africa%20African%20heritage
+2. Typical Software Systems Small Businesses in South Africa Need South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Typical%20Software%20Systems%20Small%20Businesses%20in%20South%20Africa%20Need%20South%20Africa%20Africa
+
+## typical-software-systems-small-business-south-africa-project-management-and-delivery.webp
+Post: typical-software-systems-small-business-south-africa
+Section: Project management and delivery tracking
+Save to: public/images/blog/typical-software-systems-small-business-south-africa-project-management-and-delivery.webp
+
+1. Project management and delivery tracking South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Project%20management%20and%20delivery%20tracking%20South%20Africa%20African%20heritage
+2. Typical Software Systems Small Businesses in South Africa Need South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Typical%20Software%20Systems%20Small%20Businesses%20in%20South%20Africa%20Need%20South%20Africa%20Africa
+
+## typical-software-systems-small-business-south-africa-customer-relationship-management-crm.webp
+Post: typical-software-systems-small-business-south-africa
+Section: Customer relationship management (CRM)
+Save to: public/images/blog/typical-software-systems-small-business-south-africa-customer-relationship-management-crm.webp
+
+1. Customer relationship management (CRM) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Customer%20relationship%20management%20%28CRM%29%20South%20Africa%20African%20heritage
+2. Typical Software Systems Small Businesses in South Africa Need South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Typical%20Software%20Systems%20Small%20Businesses%20in%20South%20Africa%20Need%20South%20Africa%20Africa
+
+## typical-software-systems-small-business-south-africa-payroll-and-statutory-compliance.webp
+Post: typical-software-systems-small-business-south-africa
+Section: Payroll and statutory compliance
+Save to: public/images/blog/typical-software-systems-small-business-south-africa-payroll-and-statutory-compliance.webp
+
+1. Payroll and statutory compliance South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Payroll%20and%20statutory%20compliance%20South%20Africa%20African%20heritage
+2. Typical Software Systems Small Businesses in South Africa Need South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Typical%20Software%20Systems%20Small%20Businesses%20in%20South%20Africa%20Need%20South%20Africa%20Africa
+
+## ubuntu-thembu-philosophy-beyond-surfacelevel-understanding.webp
+Post: ubuntu-thembu-philosophy
+Section: Beyond Surface-Level Understanding
+Save to: public/images/blog/ubuntu-thembu-philosophy-beyond-surfacelevel-understanding.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Beyond Surface-Level Understanding South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Beyond%20Surface-Level%20Understanding%20South%20Africa%20African%20heritage
+5. Ubuntu: The Living Philosophy of the Thembu People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ubuntu%3A%20The%20Living%20Philosophy%20of%20the%20Thembu%20People%20South%20Africa%20Africa
+
+## ubuntu-thembu-philosophy-leadership-structure-and-democratic.webp
+Post: ubuntu-thembu-philosophy
+Section: Leadership Structure and Democratic Values
+Save to: public/images/blog/ubuntu-thembu-philosophy-leadership-structure-and-democratic.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Leadership Structure and Democratic Values South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Leadership%20Structure%20and%20Democratic%20Values%20South%20Africa%20African%20heritage
+5. Ubuntu: The Living Philosophy of the Thembu People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ubuntu%3A%20The%20Living%20Philosophy%20of%20the%20Thembu%20People%20South%20Africa%20Africa
+
+## ubuntu-thembu-philosophy-a-natural-way-of.webp
+Post: ubuntu-thembu-philosophy
+Section: A Natural Way of Being
+Save to: public/images/blog/ubuntu-thembu-philosophy-a-natural-way-of.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. A Natural Way of Being South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=A%20Natural%20Way%20of%20Being%20South%20Africa%20African%20heritage
+5. Ubuntu: The Living Philosophy of the Thembu People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ubuntu%3A%20The%20Living%20Philosophy%20of%20the%20Thembu%20People%20South%20Africa%20Africa
+
+## ubuntu-thembu-philosophy-practical-application-and-reality.webp
+Post: ubuntu-thembu-philosophy
+Section: Practical Application and Reality
+Save to: public/images/blog/ubuntu-thembu-philosophy-practical-application-and-reality.webp
+
+1. AbaThembu Thembu people South Africa Eastern Cape
+   https://www.google.com/search?tbm=isch&q=AbaThembu%20Thembu%20people%20South%20Africa%20Eastern%20Cape
+2. Thembu kingdom Xhosa South Africa landscape
+   https://www.google.com/search?tbm=isch&q=Thembu%20kingdom%20Xhosa%20South%20Africa%20landscape
+3. African tribal heritage Eastern Cape South Africa
+   https://www.google.com/search?tbm=isch&q=African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa
+4. Practical Application and Reality South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Practical%20Application%20and%20Reality%20South%20Africa%20African%20heritage
+5. Ubuntu: The Living Philosophy of the Thembu People South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Ubuntu%3A%20The%20Living%20Philosophy%20of%20the%20Thembu%20People%20South%20Africa%20Africa
+
+## vibe-coding-documentation-framework-the-problem-with-raw.webp
+Post: vibe-coding-documentation-framework
+Section: The problem with raw vibe coding
+Save to: public/images/blog/vibe-coding-documentation-framework-the-problem-with-raw.webp
+
+1. the problem with raw vibe coding vibe coding documentation framework
+   https://www.google.com/search?tbm=isch&q=the%20problem%20with%20raw%20vibe%20coding%20vibe%20coding%20documentation%20framework
+
+## vibe-coding-documentation-framework-my-documentationfirst-workflow.webp
+Post: vibe-coding-documentation-framework
+Section: My documentation-first workflow
+Save to: public/images/blog/vibe-coding-documentation-framework-my-documentationfirst-workflow.webp
+
+1. my documentation-first workflow vibe coding documentation framework
+   https://www.google.com/search?tbm=isch&q=my%20documentation-first%20workflow%20vibe%20coding%20documentation%20framework
+
+## vibe-coding-documentation-framework-why-i-use-grok.webp
+Post: vibe-coding-documentation-framework
+Section: Why I use Grok for long docs
+Save to: public/images/blog/vibe-coding-documentation-framework-why-i-use-grok.webp
+
+1. why i use grok for long docs vibe coding documentation framework
+   https://www.google.com/search?tbm=isch&q=why%20i%20use%20grok%20for%20long%20docs%20vibe%20coding%20documentation%20framework
+
+## vibe-coding-documentation-framework-how-i-prepare-cursor.webp
+Post: vibe-coding-documentation-framework
+Section: How I prepare Cursor before coding (the secret sauce)
+Save to: public/images/blog/vibe-coding-documentation-framework-how-i-prepare-cursor.webp
+
+1. how i prepare cursor before coding (the secret sauce) vibe coding documentation framework
+   https://www.google.com/search?tbm=isch&q=how%20i%20prepare%20cursor%20before%20coding%20%28the%20secret%20sauce%29%20vibe%20coding%20documentation%20framework
+
+## vibe-coding-documentation-framework-the-compounding-effect-fewer.webp
+Post: vibe-coding-documentation-framework
+Section: The compounding effect: fewer iterations
+Save to: public/images/blog/vibe-coding-documentation-framework-the-compounding-effect-fewer.webp
+
+1. the compounding effect: fewer iterations vibe coding documentation framework
+   https://www.google.com/search?tbm=isch&q=the%20compounding%20effect%3A%20fewer%20iterations%20vibe%20coding%20documentation%20framework
+
+## web-design-companies-south-africa-featured-firms-logos.webp
+Post: web-design-companies-south-africa
+Section: Featured firms (logos)
+Save to: public/images/blog/web-design-companies-south-africa-featured-firms-logos.webp
+
+1. Featured firms (logos) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Featured%20firms%20%28logos%29%20South%20Africa%20African%20heritage
+2. Web Design Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Design%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-design-companies-south-africa-designonly-vs-designandbuild.webp
+Post: web-design-companies-south-africa
+Section: Design-only vs design-and-build
+Save to: public/images/blog/web-design-companies-south-africa-designonly-vs-designandbuild.webp
+
+1. Design-only vs design-and-build South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Design-only%20vs%20design-and-build%20South%20Africa%20African%20heritage
+2. Web Design Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Design%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-design-companies-south-africa-web-design-companies-and.webp
+Post: web-design-companies-south-africa
+Section: Web design companies and studios (South Africa)
+Save to: public/images/blog/web-design-companies-south-africa-web-design-companies-and.webp
+
+1. Web design companies and studios (South Africa) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Web%20design%20companies%20and%20studios%20%28South%20Africa%29%20South%20Africa%20African%20heritage
+2. Web Design Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Design%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-design-companies-south-africa-what-to-ask-before.webp
+Post: web-design-companies-south-africa
+Section: What to ask before you sign a web design contract
+Save to: public/images/blog/web-design-companies-south-africa-what-to-ask-before.webp
+
+1. What to ask before you sign a web design contract South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=What%20to%20ask%20before%20you%20sign%20a%20web%20design%20contract%20South%20Africa%20African%20heritage
+2. Web Design Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Design%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-design-companies-south-africa-pricing-signals-indicative-not.webp
+Post: web-design-companies-south-africa
+Section: Pricing signals (indicative, not quotes)
+Save to: public/images/blog/web-design-companies-south-africa-pricing-signals-indicative-not.webp
+
+1. Pricing signals (indicative, not quotes) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Pricing%20signals%20%28indicative%2C%20not%20quotes%29%20South%20Africa%20African%20heritage
+2. Web Design Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Design%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-development-companies-south-africa-featured-firms-logos.webp
+Post: web-development-companies-south-africa
+Section: Featured firms (logos)
+Save to: public/images/blog/web-development-companies-south-africa-featured-firms-logos.webp
+
+1. Featured firms (logos) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Featured%20firms%20%28logos%29%20South%20Africa%20African%20heritage
+2. Web Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-development-companies-south-africa-what-web-development-company.webp
+Post: web-development-companies-south-africa
+Section: What "web development company" means in 2026
+Save to: public/images/blog/web-development-companies-south-africa-what-web-development-company.webp
+
+1. What "web development company" means in 2026 South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=What%20%22web%20development%20company%22%20means%20in%202026%20South%20Africa%20African%20heritage
+2. Web Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-development-companies-south-africa-large-list-web-development.webp
+Post: web-development-companies-south-africa
+Section: Large list: web development companies by region
+Save to: public/images/blog/web-development-companies-south-africa-large-list-web-development.webp
+
+1. Large list: web development companies by region South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Large%20list%3A%20web%20development%20companies%20by%20region%20South%20Africa%20African%20heritage
+2. Web Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-development-companies-south-africa-wordpress-vs-custom-react.webp
+Post: web-development-companies-south-africa
+Section: WordPress vs custom React (how to pick a web dev company)
+Save to: public/images/blog/web-development-companies-south-africa-wordpress-vs-custom-react.webp
+
+1. WordPress vs custom React (how to pick a web dev company) South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=WordPress%20vs%20custom%20React%20%28how%20to%20pick%20a%20web%20dev%20company%29%20South%20Africa%20African%20heritage
+2. Web Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## web-development-companies-south-africa-how-to-evaluate-a.webp
+Post: web-development-companies-south-africa
+Section: How to evaluate a web development company
+Save to: public/images/blog/web-development-companies-south-africa-how-to-evaluate-a.webp
+
+1. How to evaluate a web development company South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=How%20to%20evaluate%20a%20web%20development%20company%20South%20Africa%20African%20heritage
+2. Web Development Companies in South Africa South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Web%20Development%20Companies%20in%20South%20Africa%20South%20Africa%20Africa
+
+## what-is-a-landing-page-landing-page-vs-homepage.webp
+Post: what-is-a-landing-page
+Section: Landing page vs homepage vs website
+Save to: public/images/blog/what-is-a-landing-page-landing-page-vs-homepage.webp
+
+1. landing page vs homepage vs website what is a landing page
+   https://www.google.com/search?tbm=isch&q=landing%20page%20vs%20homepage%20vs%20website%20what%20is%20a%20landing%20page
+
+## what-is-a-landing-page-core-elements-of-a.webp
+Post: what-is-a-landing-page
+Section: Core elements of a landing page
+Save to: public/images/blog/what-is-a-landing-page-core-elements-of-a.webp
+
+1. core elements of a landing page what is a landing page
+   https://www.google.com/search?tbm=isch&q=core%20elements%20of%20a%20landing%20page%20what%20is%20a%20landing%20page
+
+## what-is-a-landing-page-why-landing-pages-matter.webp
+Post: what-is-a-landing-page
+Section: Why landing pages matter
+Save to: public/images/blog/what-is-a-landing-page-why-landing-pages-matter.webp
+
+1. why landing pages matter what is a landing page
+   https://www.google.com/search?tbm=isch&q=why%20landing%20pages%20matter%20what%20is%20a%20landing%20page
+
+## what-is-a-landing-page-types-of-landing-pages.webp
+Post: what-is-a-landing-page
+Section: Types of landing pages
+Save to: public/images/blog/what-is-a-landing-page-types-of-landing-pages.webp
+
+1. types of landing pages what is a landing page
+   https://www.google.com/search?tbm=isch&q=types%20of%20landing%20pages%20what%20is%20a%20landing%20page
+
+## what-is-a-software-developer-what-a-software-developer.webp
+Post: what-is-a-software-developer
+Section: What a software developer actually does
+Save to: public/images/blog/what-is-a-software-developer-what-a-software-developer.webp
+
+1. what a software developer actually does what is a software developer
+   https://www.google.com/search?tbm=isch&q=what%20a%20software%20developer%20actually%20does%20what%20is%20a%20software%20developer
+
+## what-is-a-software-developer-developer-vs-related-roles.webp
+Post: what-is-a-software-developer
+Section: Developer vs related roles
+Save to: public/images/blog/what-is-a-software-developer-developer-vs-related-roles.webp
+
+1. developer vs related roles what is a software developer
+   https://www.google.com/search?tbm=isch&q=developer%20vs%20related%20roles%20what%20is%20a%20software%20developer
+
+## what-is-a-software-developer-core-skills-software-developers.webp
+Post: what-is-a-software-developer
+Section: Core skills software developers need
+Save to: public/images/blog/what-is-a-software-developer-core-skills-software-developers.webp
+
+1. core skills software developers need what is a software developer
+   https://www.google.com/search?tbm=isch&q=core%20skills%20software%20developers%20need%20what%20is%20a%20software%20developer
+
+## what-is-a-software-developer-a-typical-day-for.webp
+Post: what-is-a-software-developer
+Section: A typical day for a software developer
+Save to: public/images/blog/what-is-a-software-developer-a-typical-day-for.webp
+
+1. a typical day for a software developer what is a software developer
+   https://www.google.com/search?tbm=isch&q=a%20typical%20day%20for%20a%20software%20developer%20what%20is%20a%20software%20developer
+
+## what-is-a-software-developer-junior-mid-and-senior.webp
+Post: what-is-a-software-developer
+Section: Junior, mid, and senior: what changes
+Save to: public/images/blog/what-is-a-software-developer-junior-mid-and-senior.webp
+
+1. junior, mid, and senior: what changes what is a software developer
+   https://www.google.com/search?tbm=isch&q=junior%2C%20mid%2C%20and%20senior%3A%20what%20changes%20what%20is%20a%20software%20developer
+
+## what-is-application-development-types-of-application-development.webp
+Post: what-is-application-development
+Section: Types of application development
+Save to: public/images/blog/what-is-application-development-types-of-application-development.webp
+
+1. types of application development what is application development
+   https://www.google.com/search?tbm=isch&q=types%20of%20application%20development%20what%20is%20application%20development
+
+## what-is-application-development-custom-software-vs-offtheshelf.webp
+Post: what-is-application-development
+Section: Custom software vs off-the-shelf
+Save to: public/images/blog/what-is-application-development-custom-software-vs-offtheshelf.webp
+
+1. custom software vs off-the-shelf what is application development
+   https://www.google.com/search?tbm=isch&q=custom%20software%20vs%20off-the-shelf%20what%20is%20application%20development
+
+## what-is-application-development-what-an-application-includes.webp
+Post: what-is-application-development
+Section: What an application includes (beyond screens)
+Save to: public/images/blog/what-is-application-development-what-an-application-includes.webp
+
+1. what an application includes (beyond screens) what is application development
+   https://www.google.com/search?tbm=isch&q=what%20an%20application%20includes%20%28beyond%20screens%29%20what%20is%20application%20development
+
+## what-is-application-development-the-application-development-lifecycle.webp
+Post: what-is-application-development
+Section: The application development lifecycle
+Save to: public/images/blog/what-is-application-development-the-application-development-lifecycle.webp
+
+1. the application development lifecycle what is application development
+   https://www.google.com/search?tbm=isch&q=the%20application%20development%20lifecycle%20what%20is%20application%20development
+
+## what-is-application-development-technology-choices-in-2026.webp
+Post: what-is-application-development
+Section: Technology choices in 2026 (pragmatic)
+Save to: public/images/blog/what-is-application-development-technology-choices-in-2026.webp
+
+1. technology choices in 2026 (pragmatic) what is application development
+   https://www.google.com/search?tbm=isch&q=technology%20choices%20in%202026%20%28pragmatic%29%20what%20is%20application%20development
+
+## what-is-web-design-the-core-parts-of.webp
+Post: what-is-web-design
+Section: The core parts of web design
+Save to: public/images/blog/what-is-web-design-the-core-parts-of.webp
+
+1. the core parts of web design what is web design
+   https://www.google.com/search?tbm=isch&q=the%20core%20parts%20of%20web%20design%20what%20is%20web%20design
+
+## what-is-web-design-web-design-deliverables-what.webp
+Post: what-is-web-design
+Section: Web design deliverables (what you actually get)
+Save to: public/images/blog/what-is-web-design-web-design-deliverables-what.webp
+
+1. web design deliverables (what you actually get) what is web design
+   https://www.google.com/search?tbm=isch&q=web%20design%20deliverables%20%28what%20you%20actually%20get%29%20what%20is%20web%20design
+
+## what-is-web-design-examples-in-the-wild.webp
+Post: what-is-web-design
+Section: Examples in the wild
+Save to: public/images/blog/what-is-web-design-examples-in-the-wild.webp
+
+1. examples in the wild what is web design
+   https://www.google.com/search?tbm=isch&q=examples%20in%20the%20wild%20what%20is%20web%20design
+
+## what-is-web-design-web-design-vs-web.webp
+Post: what-is-web-design
+Section: Web design vs web development
+Save to: public/images/blog/what-is-web-design-web-design-vs-web.webp
+
+1. web design vs web development what is web design
+   https://www.google.com/search?tbm=isch&q=web%20design%20vs%20web%20development%20what%20is%20web%20design
+
+## what-is-web-design-web-design-vs-just.webp
+Post: what-is-web-design
+Section: Web design vs "just use a template"
+Save to: public/images/blog/what-is-web-design-web-design-vs-just.webp
+
+1. web design vs "just use a template" what is web design
+   https://www.google.com/search?tbm=isch&q=web%20design%20vs%20%22just%20use%20a%20template%22%20what%20is%20web%20design
+
+## what-is-web-development-stack.webp
+Post: what-is-web-development
+Section: What web development includes
+Save to: public/images/blog/what-is-web-development-stack.webp
+
+1. full stack web development laptop server
+   https://www.google.com/search?tbm=isch&q=full%20stack%20web%20development%20laptop%20server
+2. What web development includes What Is Web Development?
+   https://www.google.com/search?tbm=isch&q=What%20web%20development%20includes%20What%20Is%20Web%20Development%3F
+
+## what-is-web-development-modern.webp
+Post: what-is-web-development
+Section: Modern web stack
+Save to: public/images/blog/what-is-web-development-modern.webp
+
+1. react typescript cloud modern web development
+   https://www.google.com/search?tbm=isch&q=react%20typescript%20cloud%20modern%20web%20development
+2. Modern web stack What Is Web Development?
+   https://www.google.com/search?tbm=isch&q=Modern%20web%20stack%20What%20Is%20Web%20Development%3F
+
+## what-is-web-development-timeline.webp
+Post: what-is-web-development
+Section: Typical project timeline
+Save to: public/images/blog/what-is-web-development-timeline.webp
+
+1. project timeline whiteboard agile planning
+   https://www.google.com/search?tbm=isch&q=project%20timeline%20whiteboard%20agile%20planning
+2. Typical project timeline What Is Web Development?
+   https://www.google.com/search?tbm=isch&q=Typical%20project%20timeline%20What%20Is%20Web%20Development%3F
+
+## what-is-web-development-vendor.webp
+Post: what-is-web-development
+Section: Choosing a vendor
+Save to: public/images/blog/what-is-web-development-vendor.webp
+
+1. software vendor meeting team review
+   https://www.google.com/search?tbm=isch&q=software%20vendor%20meeting%20team%20review
+2. Choosing a vendor What Is Web Development?
+   https://www.google.com/search?tbm=isch&q=Choosing%20a%20vendor%20What%20Is%20Web%20Development%3F
+
+## xhosa-hip-hop-digital-why-language-matters.webp
+Post: xhosa-hip-hop-digital
+Section: Why Language Matters
+Save to: public/images/blog/xhosa-hip-hop-digital-why-language-matters.webp
+
+1. Xhosa culture South Africa Why Language Matters
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Why%20Language%20Matters
+2. Why Language Matters South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Why%20Language%20Matters%20South%20Africa%20African%20heritage
+3. Preserving Culture Through Code South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Preserving%20Culture%20Through%20Code%20South%20Africa%20Africa
+
+## xhosa-hip-hop-digital-building-for-culture.webp
+Post: xhosa-hip-hop-digital
+Section: Building for Culture
+Save to: public/images/blog/xhosa-hip-hop-digital-building-for-culture.webp
+
+1. Xhosa culture South Africa Building for Culture
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Building%20for%20Culture
+2. Building for Culture South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Building%20for%20Culture%20South%20Africa%20African%20heritage
+3. Preserving Culture Through Code South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Preserving%20Culture%20Through%20Code%20South%20Africa%20Africa
+
+## xhosa-hip-hop-digital-the-role-of-technology.webp
+Post: xhosa-hip-hop-digital
+Section: The Role of Technology
+Save to: public/images/blog/xhosa-hip-hop-digital-the-role-of-technology.webp
+
+1. Xhosa culture South Africa The Role of Technology
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20The%20Role%20of%20Technology
+2. The Role of Technology South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20Role%20of%20Technology%20South%20Africa%20African%20heritage
+3. Preserving Culture Through Code South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Preserving%20Culture%20Through%20Code%20South%20Africa%20Africa
+
+## xhosa-hip-hop-digital-lessons-learned.webp
+Post: xhosa-hip-hop-digital
+Section: Lessons Learned
+Save to: public/images/blog/xhosa-hip-hop-digital-lessons-learned.webp
+
+1. Xhosa culture South Africa Lessons Learned
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Lessons%20Learned
+2. Lessons Learned South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Lessons%20Learned%20South%20Africa%20African%20heritage
+3. Preserving Culture Through Code South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Preserving%20Culture%20Through%20Code%20South%20Africa%20Africa
+
+## xhosa-hip-hop-digital-looking-forward.webp
+Post: xhosa-hip-hop-digital
+Section: Looking Forward
+Save to: public/images/blog/xhosa-hip-hop-digital-looking-forward.webp
+
+1. Xhosa culture South Africa Looking Forward
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Looking%20Forward
+2. Looking Forward South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Looking%20Forward%20South%20Africa%20African%20heritage
+3. Preserving Culture Through Code South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Preserving%20Culture%20Through%20Code%20South%20Africa%20Africa
+
+## xhosa-meaningful-baby-name-ideas-names-of-presence-with.webp
+Post: xhosa-meaningful-baby-name-ideas
+Section: Names of presence: with you, we, and the Creator
+Save to: public/images/blog/xhosa-meaningful-baby-name-ideas-names-of-presence-with.webp
+
+1. Xhosa culture South Africa Names of presence: with you, we, and the Creator
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Names%20of%20presence%3A%20with%20you%2C%20we%2C%20and%20the%20Creator
+2. Names of presence: with you, we, and the Creator South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Names%20of%20presence%3A%20with%20you%2C%20we%2C%20and%20the%20Creator%20South%20Africa%20African%20heritage
+3. Xhosa meaningful people name ideas South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20meaningful%20people%20name%20ideas%20South%20Africa%20Africa
+
+## xhosa-meaningful-baby-name-ideas-kept-new-and-it.webp
+Post: xhosa-meaningful-baby-name-ideas
+Section: Kept, new, and “it had to be so”
+Save to: public/images/blog/xhosa-meaningful-baby-name-ideas-kept-new-and-it.webp
+
+1. Xhosa culture South Africa Kept, new, and “it had to be so”
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Kept%2C%20new%2C%20and%20%E2%80%9Cit%20had%20to%20be%20so%E2%80%9D
+2. Kept, new, and “it had to be so” South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Kept%2C%20new%2C%20and%20%E2%80%9Cit%20had%20to%20be%20so%E2%80%9D%20South%20Africa%20African%20heritage
+3. Xhosa meaningful people name ideas South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20meaningful%20people%20name%20ideas%20South%20Africa%20Africa
+
+## xhosa-meaningful-baby-name-ideas-the-way-being-found.webp
+Post: xhosa-meaningful-baby-name-ideas
+Section: The way, being found, what is right, and home
+Save to: public/images/blog/xhosa-meaningful-baby-name-ideas-the-way-being-found.webp
+
+1. Xhosa culture South Africa The way, being found, what is right, and home
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20The%20way%2C%20being%20found%2C%20what%20is%20right%2C%20and%20home
+2. The way, being found, what is right, and home South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=The%20way%2C%20being%20found%2C%20what%20is%20right%2C%20and%20home%20South%20Africa%20African%20heritage
+3. Xhosa meaningful people name ideas South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20meaningful%20people%20name%20ideas%20South%20Africa%20Africa
+
+## xhosa-meaningful-baby-name-ideas-of-the-king-the.webp
+Post: xhosa-meaningful-baby-name-ideas
+Section: Of the King, the holy, and the national line
+Save to: public/images/blog/xhosa-meaningful-baby-name-ideas-of-the-king-the.webp
+
+1. Xhosa culture South Africa Of the King, the holy, and the national line
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20Of%20the%20King%2C%20the%20holy%2C%20and%20the%20national%20line
+2. Of the King, the holy, and the national line South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=Of%20the%20King%2C%20the%20holy%2C%20and%20the%20national%20line%20South%20Africa%20African%20heritage
+3. Xhosa meaningful people name ideas South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20meaningful%20people%20name%20ideas%20South%20Africa%20Africa
+
+## xhosa-meaningful-baby-name-ideas-they-have-and-the.webp
+Post: xhosa-meaningful-baby-name-ideas
+Section: “They have” and the only one, every day, difference
+Save to: public/images/blog/xhosa-meaningful-baby-name-ideas-they-have-and-the.webp
+
+1. Xhosa culture South Africa “They have” and the only one, every day, difference
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%E2%80%9CThey%20have%E2%80%9D%20and%20the%20only%20one%2C%20every%20day%2C%20difference
+2. “They have” and the only one, every day, difference South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%E2%80%9CThey%20have%E2%80%9D%20and%20the%20only%20one%2C%20every%20day%2C%20difference%20South%20Africa%20African%20heritage
+3. Xhosa meaningful people name ideas South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20meaningful%20people%20name%20ideas%20South%20Africa%20Africa
+
+## xhosa-names-unofficial-taxonomy-the-apologies.webp
+Post: xhosa-names-unofficial-taxonomy
+Section: 🙏 The apologies
+Save to: public/images/blog/xhosa-names-unofficial-taxonomy-the-apologies.webp
+
+1. Xhosa culture South Africa 🙏 The apologies
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%F0%9F%99%8F%20The%20apologies
+2. 🙏 The apologies South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%F0%9F%99%8F%20The%20apologies%20South%20Africa%20African%20heritage
+3. Xhosa Names — A Very Serious Taxonomy (Not Really) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20Names%20%E2%80%94%20A%20Very%20Serious%20Taxonomy%20%28Not%20Really%29%20South%20Africa%20Africa
+
+## xhosa-names-unofficial-taxonomy-the-enoughs.webp
+Post: xhosa-names-unofficial-taxonomy
+Section: ✅ The enoughs
+Save to: public/images/blog/xhosa-names-unofficial-taxonomy-the-enoughs.webp
+
+1. Xhosa culture South Africa ✅ The enoughs
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%E2%9C%85%20The%20enoughs
+2. ✅ The enoughs South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%E2%9C%85%20The%20enoughs%20South%20Africa%20African%20heritage
+3. Xhosa Names — A Very Serious Taxonomy (Not Really) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20Names%20%E2%80%94%20A%20Very%20Serious%20Taxonomy%20%28Not%20Really%29%20South%20Africa%20Africa
+
+## xhosa-names-unofficial-taxonomy-the-future.webp
+Post: xhosa-names-unofficial-taxonomy
+Section: 🔮 The future
+Save to: public/images/blog/xhosa-names-unofficial-taxonomy-the-future.webp
+
+1. Xhosa culture South Africa 🔮 The future
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%F0%9F%94%AE%20The%20future
+2. 🔮 The future South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%F0%9F%94%AE%20The%20future%20South%20Africa%20African%20heritage
+3. Xhosa Names — A Very Serious Taxonomy (Not Really) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20Names%20%E2%80%94%20A%20Very%20Serious%20Taxonomy%20%28Not%20Really%29%20South%20Africa%20Africa
+
+## xhosa-names-unofficial-taxonomy-the-welcomes.webp
+Post: xhosa-names-unofficial-taxonomy
+Section: 👋 The welcomes
+Save to: public/images/blog/xhosa-names-unofficial-taxonomy-the-welcomes.webp
+
+1. Xhosa culture South Africa 👋 The welcomes
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%F0%9F%91%8B%20The%20welcomes
+2. 👋 The welcomes South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%F0%9F%91%8B%20The%20welcomes%20South%20Africa%20African%20heritage
+3. Xhosa Names — A Very Serious Taxonomy (Not Really) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20Names%20%E2%80%94%20A%20Very%20Serious%20Taxonomy%20%28Not%20Really%29%20South%20Africa%20Africa
+
+## xhosa-names-unofficial-taxonomy-the-hospitals.webp
+Post: xhosa-names-unofficial-taxonomy
+Section: 🏥 The hospitals
+Save to: public/images/blog/xhosa-names-unofficial-taxonomy-the-hospitals.webp
+
+1. Xhosa culture South Africa 🏥 The hospitals
+   https://www.google.com/search?tbm=isch&q=Xhosa%20culture%20South%20Africa%20%F0%9F%8F%A5%20The%20hospitals
+2. 🏥 The hospitals South Africa African heritage
+   https://www.google.com/search?tbm=isch&q=%F0%9F%8F%A5%20The%20hospitals%20South%20Africa%20African%20heritage
+3. Xhosa Names — A Very Serious Taxonomy (Not Really) South Africa Africa
+   https://www.google.com/search?tbm=isch&q=Xhosa%20Names%20%E2%80%94%20A%20Very%20Serious%20Taxonomy%20%28Not%20Really%29%20South%20Africa%20Africa
+
