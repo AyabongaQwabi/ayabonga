@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:vercel": "vercel dev",
     "build": "vite build && node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
