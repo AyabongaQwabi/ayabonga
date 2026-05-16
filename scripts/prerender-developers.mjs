@@ -49,6 +49,34 @@ function routeToHtmlPath(route) {
   return path.join(distDir, ...segments, 'index.html');
 }
 
+/** Vercel/CI Linux images lack system libs for Puppeteer's downloaded Chrome. */
+function useBundledChromium() {
+  return (
+    process.env.VERCEL === '1' ||
+    (process.env.CI === 'true' && process.platform === 'linux')
+  );
+}
+
+async function launchBrowser() {
+  if (useBundledChromium()) {
+    const puppeteer = await import('puppeteer-core');
+    const chromium = await import('@sparticuz/chromium');
+    chromium.default.setGraphicsMode = false;
+    return puppeteer.default.launch({
+      args: [...chromium.default.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      defaultViewport: { width: 1280, height: 800 },
+      executablePath: await chromium.default.executablePath(),
+      headless: chromium.default.headless,
+    });
+  }
+
+  const puppeteer = await import('puppeteer');
+  return puppeteer.default.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+}
+
 function waitForServer(url, maxAttempts = 60) {
   return new Promise((resolve, reject) => {
     let attempts = 0;
@@ -125,12 +153,8 @@ async function main() {
   let preview;
 
   try {
-    const puppeteer = await import('puppeteer');
     preview = await startPreview();
-    const browser = await puppeteer.default.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
+    const browser = await launchBrowser();
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
 
