@@ -1,0 +1,196 @@
+{
+  "slug": "different-ways-to-build-a-website-in-2026",
+  "generatedAt": "2026-05-17T05:09:39.094Z",
+  "assets": [
+    {
+      "index": 0,
+      "kind": "IMAGE",
+      "description": "Editorial hero illustration of a developer workspace with multiple screens showing no-code builders, code editors, and deployment dashboards in a dark modern SaaS aesthetic",
+      "path": "./images/00-editorial-hero-illustration-of-a-developer-works.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/00-editorial-hero-illustration-of-a-developer-works.webp"
+    },
+    {
+      "index": 1,
+      "kind": "DIAGRAM",
+      "description": "Decision flowchart from business goal to no-code vs low-code vs coded vs AI-assisted path",
+      "path": "./images/01-decision-flowchart-from-business-goal-to-no-code.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/01-decision-flowchart-from-business-goal-to-no-code.webp"
+    },
+    {
+      "index": 2,
+      "kind": "IMAGE",
+      "description": "Wide screenshot of a visual website builder canvas with layout panels and responsive breakpoint controls",
+      "path": "./images/02-wide-screenshot-of-a-visual-website-builder-canv.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/02-wide-screenshot-of-a-visual-website-builder-canv.webp"
+    },
+    {
+      "index": 3,
+      "kind": "IMAGE",
+      "description": "Screenshot of Webflow designer interface showing box model, classes panel, and breakpoint toolbar",
+      "path": "./screenshots/webflow.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/screenshots/webflow.webp"
+    },
+    {
+      "index": 4,
+      "kind": "DIAGRAM",
+      "description": "Side-by-side comparison of no-code builder layers: visual editor, hosted runtime, optional CMS, third-party apps",
+      "path": "./images/04-side-by-side-comparison-of-no-code-builder-layer.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/04-side-by-side-comparison-of-no-code-builder-layer.webp"
+    },
+    {
+      "index": 5,
+      "kind": "IMAGE",
+      "description": "Low-code platform dashboard showing database schema builder and workflow automation nodes",
+      "path": "./images/05-low-code-platform-dashboard-showing-database-sch.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/05-low-code-platform-dashboard-showing-database-sch.webp"
+    },
+    {
+      "index": 6,
+      "kind": "DIAGRAM",
+      "description": "WordPress architecture with theme layer, plugin hooks, database, and optional headless front end",
+      "path": "./images/06-wordpress-architecture-with-theme-layer-plugin-h.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/06-wordpress-architecture-with-theme-layer-plugin-h.webp"
+    },
+    {
+      "index": 7,
+      "kind": "IMAGE",
+      "description": "AI coding tool split view with natural language prompt panel and generated React component preview",
+      "path": "./screenshots/bolt.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/screenshots/bolt.webp"
+    },
+    {
+      "index": 8,
+      "kind": "DIAGRAM",
+      "description": "AI website generation flow from prompt to generated UI to human review to Git deploy pipeline",
+      "path": "./images/08-ai-website-generation-flow-from-prompt-to-genera.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/08-ai-website-generation-flow-from-prompt-to-genera.webp"
+    },
+    {
+      "index": 9,
+      "kind": "IMAGE",
+      "description": "Marketplace grid of website template previews with category filters for SaaS, agency, and ecommerce",
+      "path": "./images/09-marketplace-grid-of-website-template-previews-wi.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/09-marketplace-grid-of-website-template-previews-wi.webp"
+    },
+    {
+      "index": 10,
+      "kind": "IMAGE",
+      "description": "Developer customizing a Tailwind template in VS Code with live preview browser",
+      "path": "./images/10-developer-customizing-a-tailwind-template-in-vs-.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/10-developer-customizing-a-tailwind-template-in-vs-.webp"
+    },
+    {
+      "index": 11,
+      "kind": "IMAGE",
+      "description": "Component documentation page showing button variants, card layouts, and data table states in dark theme",
+      "path": "./images/11-component-documentation-page-showing-button-vari.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/11-component-documentation-page-showing-button-vari.webp"
+    },
+    {
+      "index": 12,
+      "kind": "DIAGRAM",
+      "description": "Component tree from design tokens to primitives to page sections to routed layouts",
+      "path": "./images/12-component-tree-from-design-tokens-to-primitives-.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/12-component-tree-from-design-tokens-to-primitives-.webp"
+    },
+    {
+      "index": 13,
+      "kind": "IMAGE",
+      "description": "Framework logos arranged on a dark grid with labels for SSR, SSG, and islands",
+      "path": "./images/13-framework-logos-arranged-on-a-dark-grid-with-lab.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/13-framework-logos-arranged-on-a-dark-grid-with-lab.webp"
+    },
+    {
+      "index": 14,
+      "kind": "DIAGRAM",
+      "description": "Rendering model comparison across CSR, SSR, SSG, and islands architecture",
+      "path": "./images/14-rendering-model-comparison-across-csr-ssr-ssg-an.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/14-rendering-model-comparison-across-csr-ssr-ssg-an.webp"
+    },
+    {
+      "index": 15,
+      "kind": "IMAGE",
+      "description": "Split editor view with HTML structure, CSS layout panel, and JavaScript module for a simple interactive widget",
+      "path": "./images/15-split-editor-view-with-html-structure-css-layout.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/15-split-editor-view-with-html-structure-css-layout.webp"
+    },
+    {
+      "index": 16,
+      "kind": "DIAGRAM",
+      "description": "Browser parsing pipeline from HTML document to CSSOM to render tree to painted pixels",
+      "path": "./images/16-browser-parsing-pipeline-from-html-document-to-c.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/16-browser-parsing-pipeline-from-html-document-to-c.webp"
+    },
+    {
+      "index": 17,
+      "kind": "IMAGE",
+      "description": "Architecture whiteboard style diagram with browser, API layer, database, and auth service boxes",
+      "path": "./images/17-architecture-whiteboard-style-diagram-with-brows.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/17-architecture-whiteboard-style-diagram-with-brows.webp"
+    },
+    {
+      "index": 18,
+      "kind": "DIAGRAM",
+      "description": "Jamstack and full-stack hybrid with CDN-hosted front end, serverless API routes, and managed database",
+      "path": "./images/18-jamstack-and-full-stack-hybrid-with-cdn-hosted-f.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/18-jamstack-and-full-stack-hybrid-with-cdn-hosted-f.webp"
+    },
+    {
+      "index": 19,
+      "kind": "IMAGE",
+      "description": "Headless CMS studio with content model editor and live preview pane",
+      "path": "./images/19-headless-cms-studio-with-content-model-editor-an.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/19-headless-cms-studio-with-content-model-editor-an.webp"
+    },
+    {
+      "index": 20,
+      "kind": "DIAGRAM",
+      "description": "Content flow from CMS API to static build to CDN edge to browser",
+      "path": "./images/20-content-flow-from-cms-api-to-static-build-to-cdn.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/20-content-flow-from-cms-api-to-static-build-to-cdn.webp"
+    },
+    {
+      "index": 21,
+      "kind": "IMAGE",
+      "description": "Ecommerce admin dashboard with orders list, product variants, and payment status indicators",
+      "path": "./images/21-ecommerce-admin-dashboard-with-orders-list-produ.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/21-ecommerce-admin-dashboard-with-orders-list-produ.webp"
+    },
+    {
+      "index": 22,
+      "kind": "DIAGRAM",
+      "description": "Checkout flow from product page to cart to payment provider to order webhook",
+      "path": "./images/22-checkout-flow-from-product-page-to-cart-to-payme.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/22-checkout-flow-from-product-page-to-cart-to-payme.webp"
+    },
+    {
+      "index": 23,
+      "kind": "IMAGE",
+      "description": "Comparison infographic matrix of no-code, low-code, AI-assisted, and custom code on speed flexibility and cost axes",
+      "path": "./images/23-comparison-infographic-matrix-of-no-code-low-cod.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/23-comparison-infographic-matrix-of-no-code-low-cod.webp"
+    },
+    {
+      "index": 24,
+      "kind": "DIAGRAM",
+      "description": "No-code vs low-code vs full-code spectrum with example tools mapped on each band",
+      "path": "./images/24-no-code-vs-low-code-vs-full-code-spectrum-with-e.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/24-no-code-vs-low-code-vs-full-code-spectrum-with-e.webp"
+    },
+    {
+      "index": 25,
+      "kind": "IMAGE",
+      "description": "CI/CD pipeline visualization from Git push to preview deploy to production promotion",
+      "path": "./images/25-ci-cd-pipeline-visualization-from-git-push-to-pr.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/25-ci-cd-pipeline-visualization-from-git-push-to-pr.webp"
+    },
+    {
+      "index": 26,
+      "kind": "IMAGE",
+      "description": "Closing editorial illustration of a published website on laptop and phone with analytics and deploy badges in a minimal dark UI style",
+      "path": "./images/26-closing-editorial-illustration-of-a-published-we.webp",
+      "absPath": "/Users/nonwork/dev/ayabonga/content/blog/different-ways-to-build-a-website-in-2026/images/26-closing-editorial-illustration-of-a-published-we.webp"
+    }
+  ],
+  "unresolved": []
+}
