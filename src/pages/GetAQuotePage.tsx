@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft } from 'lucide-react';
 import GetAQuote from '../components/GetAQuote.jsx';
-import { ScrollReveal } from '../components/ScrollReveal';
+import { PageShell } from '../components/layout/PageShell';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -21,7 +19,7 @@ const PAGE_DESCRIPTION = `Interactive estimator for app and website builds: feat
 
 export default function GetAQuotePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <PageShell>
       <Helmet>
         <title>{`${PAGE_TITLE} | ${SITE_NAME}`}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
@@ -40,26 +38,23 @@ export default function GetAQuotePage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <nav className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
-          <Link
-            to="/"
-            className="interactive-link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to home</span>
-          </Link>
+      <main id="main-content" className="mx-auto max-w-5xl px-4 py-12 sm:px-6 md:py-16">
+        <header className="mb-10 max-w-3xl">
+          <p className="font-technical text-label-sm uppercase tracking-[var(--tracking-label)] text-[var(--gold)]">
+            Scope and pricing
+          </p>
+          <h1 className="mt-4 font-display text-heading-lg font-semibold text-[var(--warm-white)]">
+            {PAGE_TITLE}
+          </h1>
+          <p className="mt-4 font-technical text-base leading-relaxed text-[var(--text-muted)]">
+            {PAGE_DESCRIPTION}
+          </p>
+        </header>
+
+        <div className="quote-tool-shell">
+          <GetAQuote />
         </div>
-      </nav>
-
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-        <ScrollReveal className="mb-10 max-w-3xl block">
-          <h1 className="text-3xl font-bold text-foreground mb-3">{PAGE_TITLE}</h1>
-          <p className="text-muted-foreground leading-relaxed">{PAGE_DESCRIPTION}</p>
-        </ScrollReveal>
-
-        <GetAQuote />
       </main>
-    </div>
+    </PageShell>
   );
 }

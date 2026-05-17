@@ -6,8 +6,27 @@ export function stripInlineMarkdown(text: string): string {
     .trim();
 }
 
+/** Plain-text label from a markdown heading line (no HTML / inline icons). */
+export function headingLabelFromRaw(raw: string): string {
+  const imgAlts = [...raw.matchAll(/<img[^>]*\salt=["']([^"']*)["'][^>]*\/?>/gi)].map(
+    (m) => m[1].trim(),
+  );
+
+  let text = raw
+    .replace(/<img[^>]*\/?>/gi, '')
+    .replace(/<[^>]+>/g, '');
+
+  text = stripInlineMarkdown(text).replace(/\s+/g, ' ').trim();
+
+  if (!text && imgAlts.length > 0) {
+    return imgAlts[0];
+  }
+
+  return text;
+}
+
 export function headingToId(text: string): string {
-  return stripInlineMarkdown(text)
+  return headingLabelFromRaw(text)
     .toLowerCase()
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, '-')
@@ -40,7 +59,7 @@ export function extractHeadingsFromMarkdown(markdown: string): TocEntry[] {
     const raw = h2?.[1] ?? h3?.[1];
     if (!raw) continue;
 
-    const text = stripInlineMarkdown(raw);
+    const text = headingLabelFromRaw(raw);
     let id = headingToId(raw);
     const count = seen.get(id) ?? 0;
     if (count > 0) id = `${id}-${count + 1}`;

@@ -406,6 +406,8 @@ Why they matter:
 
 ### Redux
 
+![Redux unidirectional data flow from actions through reducers to the store](/images/blog/redux-unidirectional-data-flow.png)
+
 **Redux** keeps state in a single **store** (container). Updates are described by **actions** and applied by pure **reducers** that return the next state object.
 
 ```js

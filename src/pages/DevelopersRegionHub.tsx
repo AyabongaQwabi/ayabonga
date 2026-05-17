@@ -1,6 +1,8 @@
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { PageShell } from '../components/layout/PageShell';
+import { TransitionLink } from '../components/ui/TransitionLink';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ChevronRight, MapPin, MessageCircle } from 'lucide-react';
+import { ChevronRight, MapPin, MessageCircle } from 'lucide-react';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -23,20 +25,23 @@ import {
   type RegionSlug,
 } from '../lib/local-developers';
 
+const linkClass =
+  'interactive-link text-primary transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]';
+
 function CityRoleLinks({ city, roles }: { city: LocalCity; roles: LocalRole[] }) {
   return (
-    <article className="rounded-xl border border-border bg-card/40 p-5 hover:border-primary/40 transition-colors">
+    <article className="interactive-card rounded-xl border border-border bg-card/40 p-5 hover:border-primary/40 motion-reduce:hover:translate-y-0">
       <h3 className="text-lg font-semibold text-foreground mb-1">{cityDisplayName(city)}</h3>
       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{city.localIntro}</p>
       <ul className="flex flex-wrap gap-2">
         {roles.map((role) => (
           <li key={role.slug}>
-            <Link
+            <TransitionLink
               to={localPagePath(city.slug, role.slug)}
-              className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-[var(--gold)] transition-colors"
             >
               {role.label}
-            </Link>
+            </TransitionLink>
           </li>
         ))}
       </ul>
@@ -63,7 +68,7 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
   const roles = getAllRoles();
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <PageShell className="bg-background text-foreground font-sans">
       <Helmet>
         <title>{ogTitle}</title>
         <meta name="description" content={region.description} />
@@ -81,28 +86,30 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
         <script type="application/ld+json">{JSON.stringify(buildHubSchema(region, canonical))}</script>
       </Helmet>
 
-      <nav className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Home</span>
-          </Link>
-        </div>
-      </nav>
-
-      <main className="max-w-6xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-12 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-            <MapPin className="w-3.5 h-3.5" aria-hidden />
-            <span>{region.name}</span>
+      <main id="main-content" className="max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <header className="relative mb-12 max-w-3xl overflow-hidden rounded-2xl border border-border p-8 md:p-12">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage: `
+                linear-gradient(135deg, transparent 46%, rgba(255, 215, 0, 0.35) 49%, rgba(255, 215, 0, 0.35) 51%, transparent 54%),
+                linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.04) 75%)
+              `,
+              backgroundSize: '72px 72px, 20px 20px',
+            }}
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,215,0,0.08),transparent_55%)]" aria-hidden />
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
+              <MapPin className="w-3.5 h-3.5" aria-hidden />
+              <span>{region.name}</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight text-balance">
+              {region.title}
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">{region.description}</p>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight text-balance">
-            {region.title}
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">{region.description}</p>
         </header>
 
         {!isEC && (
@@ -112,24 +119,20 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
                 Based in Queenstown, Eastern Cape. I work with founders and SMMEs across South Africa
                 remotely on MVPs, web apps, cloud architecture, and AI integrations.
               </p>
-              <Link
-                to={easternCapeHubPath()}
-                className="inline-flex items-center gap-1 text-primary font-medium hover:underline underline-offset-4"
-              >
+              <TransitionLink to={easternCapeHubPath()} className={`inline-flex items-center gap-1 font-medium ${linkClass}`}>
                 City pages: software developers in the Eastern Cape
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+                <ChevronRight className="w-4 h-4" aria-hidden />
+              </TransitionLink>
             </section>
             <section className="mb-14">
               <h2 className="text-2xl font-bold mb-4">What I build nationally</h2>
               <ul className="grid sm:grid-cols-2 gap-3 text-muted-foreground">
                 {roles.map((role) => (
                   <li key={role.slug} className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0" aria-hidden />
                     <span>
                       <span className="text-foreground font-medium">{role.label}</span>
-                      {' — '}
-                      {role.shortFocus}
+                      <span className="text-muted-foreground"> · {role.shortFocus}</span>
                     </span>
                   </li>
                 ))}
@@ -173,14 +176,11 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
                   const role = roles.find((r) => r.slug === item.role)!;
                   return (
                     <li key={item.label}>
-                      <Link
-                        to={localPagePath(item.city, item.role)}
-                        className="text-primary hover:underline underline-offset-4"
-                      >
+                      <TransitionLink to={localPagePath(item.city, item.role)} className={linkClass}>
                         {item.label}
-                      </Link>
+                      </TransitionLink>
                       <span className="text-muted-foreground ml-1 hidden sm:inline">
-                        — {buildLocalPageTitle(role, city).replace(role.label + ' in ', '')}
+                        ({buildLocalPageTitle(role, city).replace(`${role.label} in `, '')})
                       </span>
                     </li>
                   );
@@ -195,13 +195,13 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               National coverage
             </h2>
-            <Link
+            <TransitionLink
               to={southAfricaHubPath()}
-              className="inline-flex items-center gap-1 text-sm text-primary hover:underline underline-offset-4"
+              className={`inline-flex items-center gap-1 text-sm font-medium ${linkClass}`}
             >
               Software developers South Africa
-              <ChevronRight className="w-4 h-4" />
-            </Link>
+              <ChevronRight className="w-4 h-4" aria-hidden />
+            </TransitionLink>
           </section>
         )}
 
@@ -210,19 +210,19 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-lg transition-colors"
+            className="interactive-button inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-lg"
           >
             <MessageCircle className="w-5 h-5" aria-hidden />
             Message on WhatsApp
           </a>
-          <Link
+          <TransitionLink
             to="/get-a-quote"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border hover:border-primary/50 font-semibold rounded-lg transition-colors"
+            className="interactive-button inline-flex items-center justify-center gap-2 px-6 py-3 border border-border hover:border-primary/50 hover:text-[var(--gold)] font-semibold rounded-lg transition-colors"
           >
             Get a quote
-          </Link>
+          </TransitionLink>
         </section>
       </main>
-    </div>
+    </PageShell>
   );
 }

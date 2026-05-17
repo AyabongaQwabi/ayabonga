@@ -41,7 +41,7 @@ Neither model is "more professional." They are trade-offs.
 
 For an MVP (minimum viable product), a well-structured monolith wins most of the time. You ship one loop, learn from users, then split what actually hurts.
 
-![Monolith versus microservices comparison diagram on a whiteboard](/images/blog/m%20icroservices.png)
+![Kubernetes cluster running multiple microservice workloads](/images/blog/kubernetes-microservices-architecture.png)
 
 ## Why companies adopt microservices
 
@@ -63,9 +63,9 @@ A bug in the newsletter service should not take down login. In practice, cascadi
 
 ## The downsides beginners underestimate
 
-![Distributed system tracing across multiple services in a monitoring dashboard](/images/blog/monolithic-vs-microservices.png)
-
 ### Distributed complexity
+
+![Distributed system tracing and metrics across multiple services](/images/blog/distributed-system-observability.png)
 
 Every user action might touch five services. You need **correlation IDs** in logs, distributed tracing, retries, idempotency keys, and clear timeout budgets. That is not free senior time.
 
@@ -75,7 +75,7 @@ In a monolith, one database transaction can move money and update an order in on
 
 ### Slower local development
 
-Running "the app" might mean Docker Compose with twelve containers, three databases, and a message broker. New developers spend days on setup instead of features.
+Running "the app" might mean <img src="/images/blog/icons/docker.svg" alt="Docker" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Docker Compose with twelve containers, three databases, and a message broker. New developers spend days on setup instead of features.
 
 ### Operational overhead
 
@@ -110,7 +110,7 @@ I have rebuilt products where a junior team microsplit a five-user MVP into eigh
 
 ## Modular monolith: the middle path
 
-![Modular monolith codebase folders separated before any service extraction](/images/blog/m%20icroservices.png)
+![Modular monolith codebase folders separated before any service extraction](/images/blog/modular-monolith-folders.png)
 
 A **modular monolith** keeps one deploy but enforces boundaries inside the codebase:
 
@@ -154,6 +154,8 @@ One front door routes traffic to internal services, handles auth termination, ra
 
 ### Service mesh
 
+![Istio service mesh routing traffic between microservices](/images/blog/istio-service-mesh.svg)
+
 Sidecars manage retries, mTLS (mutual TLS encryption), and traffic policy. Powerful, heavy. Overkill for most SA MVPs.
 
 ### Event-driven architecture
@@ -187,7 +189,7 @@ No. You can expose APIs from a monolith. Microservices are about **deployment an
 
 ### Do microservices require Kubernetes?
 
-No. They require **independent deploy units**. Kubernetes is one way to run them, not a requirement. Serverless functions can be microservices too, with different trade-offs.
+No. They require **independent deploy units**. <img src="/images/blog/icons/kubernetes.svg" alt="Kubernetes" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Kubernetes is one way to run them, not a requirement. Serverless functions can be microservices too, with different trade-offs.
 
 ### When should a startup switch from monolith to microservices?
 

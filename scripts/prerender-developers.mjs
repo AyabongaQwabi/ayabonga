@@ -127,10 +127,31 @@ function startPreview() {
   });
 }
 
+const PRERENDER_SELECTOR = '#main-content h1';
+const GOTO_TIMEOUT_MS = 60_000;
+const CONTENT_TIMEOUT_MS = 45_000;
+
+/** Scroll-reveal hides content until IntersectionObserver runs; headless often never fires. */
+async function waitForPrerenderContent(page) {
+  await page.waitForFunction(
+    (selector) => {
+      const heading = document.querySelector(selector);
+      if (!heading?.textContent?.trim()) return false;
+      const reveal = heading.closest('.reveal, .reveal-stagger');
+      if (reveal && !reveal.classList.contains('is-visible')) {
+        reveal.classList.add('is-visible');
+      }
+      return true;
+    },
+    { timeout: CONTENT_TIMEOUT_MS },
+    PRERENDER_SELECTOR,
+  );
+}
+
 async function prerenderRoute(page, baseUrl, route) {
   const url = `${baseUrl}${route}`;
-  await page.goto(url, { waitUntil: 'networkidle0', timeout: 60_000 });
-  await page.waitForSelector('h1', { timeout: 15_000 });
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: GOTO_TIMEOUT_MS });
+  await waitForPrerenderContent(page);
   const html = await page.content();
   const outFile = routeToHtmlPath(route);
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
@@ -157,6 +178,10 @@ async function main() {
     const browser = await launchBrowser();
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
+    await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
+    await page.evaluateOnNewDocument(() => {
+      window.__PRERENDER__ = true;
+    });
 
     for (const route of routes) {
       const outFile = await prerenderRoute(page, preview.baseUrl, route);

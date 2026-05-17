@@ -13,7 +13,7 @@ ogImage: /images/blog/agent.ai%20v0%20prompt%20generated.png
 
 I get asked a lot how I ship client sites so fast without sacrificing quality. Here’s the exact workflow I use — no gatekeeping, just the stack and the steps.
 
-**TL;DR:** I use an AI agent to generate a v0-ready prompt from the client’s basics, then I feed that into [Vercel v0](https://v0.dev). In 5 minutes or less v0 gives me a full site. I add a custom domain and deploy. Total time: **10–20 minutes** from brief to live.
+**TL;DR:** I use an AI agent to generate a v0-ready prompt from the client’s basics, then I feed that into <img src="/images/blog/icons/vercel.svg" alt="Vercel" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> [Vercel v0](https://v0.dev). In 5 minutes or less v0 gives me a full site. I add a custom domain and deploy. Total time: **10–20 minutes** from brief to live.
 
 ---
 

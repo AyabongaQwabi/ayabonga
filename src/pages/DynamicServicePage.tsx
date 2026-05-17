@@ -1,5 +1,6 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { TransitionLink } from '../components/ui/TransitionLink';
 import { Helmet } from 'react-helmet-async';
 import { 
   Wallet, 
@@ -24,7 +25,31 @@ import {
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, TWITTER_HANDLE, WHATSAPP_URL } from '../lib/site-config';
 import pseoData from '../data/pseo-pages.json';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { PageShell } from '../components/layout/PageShell';
+import {
+  lineReveal,
+  registerEasings,
+  scrambleDecode,
+  scrollMarquee,
+} from '../lib/animations';
 import NotFound from './NotFound';
+
+type PseoPage = (typeof pseoData)[number];
+
+const bgKeywords: Record<string, string> = {
+  'fintech-founders-south-africa': 'FINTECH',
+  'logistics-apps-cape-town': 'LOGISTICS',
+  'healthcare-startups-johannesburg': 'HEALTH',
+  'edutech-platforms-south-africa': 'EDUTECH',
+  'marketplace-founders-south-africa': 'MARKET',
+  'digital-transformation-experts-south-africa': 'TRANSFORM',
+  'ai-integration-specialist-south-africa': 'AI',
+  'technical-cofounder-as-a-service-south-africa': 'TAAS',
+  'proptech-solutions-south-africa': 'PROPTECH',
+  'ecommerce-scale-south-africa': 'ECOMMERCE',
+  'saas-product-engineering-south-africa': 'SAAS',
+  'solar-energy-platforms-south-africa': 'SOLAR',
+};
 
 const iconMap = {
   Wallet,
@@ -41,6 +66,76 @@ const iconMap = {
   Activity
 };
 
+function PseoHero({
+  page,
+  Icon,
+}: {
+  page: PseoPage;
+  Icon: React.ComponentType<{ className?: string }>;
+}) {
+  const bgKeywordRef = useRef<HTMLDivElement>(null);
+  const eyebrowRef = useRef<HTMLSpanElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const bgKeyword =
+    bgKeywords[page.slug] ?? page.industry?.toUpperCase().slice(0, 12) ?? 'BUILD';
+
+  useEffect(() => {
+    registerEasings();
+    if (bgKeywordRef.current) scrollMarquee(bgKeywordRef.current, 1);
+    if (eyebrowRef.current) scrambleDecode(eyebrowRef.current, { delay: 0.2 });
+    if (headlineRef.current) lineReveal(headlineRef.current, { delay: 0.4, stagger: 0.1 });
+  }, [page.slug]);
+
+  return (
+    <div className="relative overflow-hidden px-6 pb-20 pt-32 lg:px-8">
+      <div
+        ref={bgKeywordRef}
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[clamp(4rem,18vw,12rem)] font-bold leading-none text-transparent opacity-[0.05]"
+        style={{ WebkitTextStroke: '1px rgba(255,215,0,0.35)' }}
+      >
+        {bgKeyword}
+      </div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,215,0,0.05),transparent_50%)]" />
+      <div className="relative z-10 mx-auto max-w-7xl text-center">
+        <div className="glass glow-primary mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-primary">
+          <Icon className="h-4 w-4 animate-pulse" />
+          <span ref={eyebrowRef} className="uppercase tracking-wider">
+            {page.industry} Solutions
+          </span>
+        </div>
+        <h1
+          ref={headlineRef}
+          className="mb-8 text-4xl font-bold leading-tight tracking-tighter md:text-7xl"
+        >
+          The Technical Co-founder your <br />
+          <span className="text-gradient">{page.industry} Business</span> Actually Needs.
+        </h1>
+        <p className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-slate-400">
+          For {page.audience} in {page.location} who are tired of the junior dev lottery and want a partner who builds for business ROI.
+        </p>
+        <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-10 py-5 font-bold text-white shadow-xl transition-all duration-300 hover:bg-[#128C7E] sm:w-auto"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Message Me on WhatsApp
+          </a>
+          <TransitionLink
+            to="/technical-cofounder"
+            className="glass-dark w-full rounded-xl border-white/5 px-10 py-5 text-center font-bold text-slate-300 transition-all duration-300 hover:bg-white/5 sm:w-auto"
+          >
+            How TaaS Works
+          </TransitionLink>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const DynamicServicePage = () => {
   const { slug } = useParams();
   const page = pseoData.find((p) => p.slug === slug);
@@ -50,12 +145,13 @@ const DynamicServicePage = () => {
   }
 
   const Icon = iconMap[page.icon as keyof typeof iconMap] || Zap;
+
   const canonicalPath = `/solutions/${page.slug}`;
   const canonical = absoluteUrl(canonicalPath);
   const metaDescription = `Are you an ${page.audience} in ${page.location}? ${page.solution}. Senior technical leadership for your ${page.industry} startup.`;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-emerald-500/30">
+    <PageShell className="selection:bg-emerald-500/30">
       <Helmet>
         <title>{`${page.title} | ${SITE_NAME}`}</title>
         <meta name="description" content={metaDescription} />
@@ -90,40 +186,8 @@ const DynamicServicePage = () => {
         </script>
       </Helmet>
 
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,215,0,0.05),transparent_50%)]" />
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-primary text-sm font-medium mb-8 glow-primary">
-            <Icon className="w-4 h-4 animate-pulse" />
-            <span className="tracking-wider uppercase">{page.industry} Solutions</span>
-          </div>
-          <h1 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter leading-tight">
-            The Technical Co-founder your <br />
-            <span className="text-gradient">{page.industry} Business</span> Actually Needs.
-          </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-            For {page.audience} in {page.location} who are tired of the junior dev lottery and want a partner who builds for business ROI.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all duration-300 shadow-xl w-full sm:w-auto justify-center"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Message Me on WhatsApp
-            </a>
-            <Link
-              to="/technical-cofounder"
-              className="px-10 py-5 glass-dark hover:bg-white/5 text-slate-300 font-bold rounded-xl transition-all duration-300 w-full sm:w-auto text-center border-white/5"
-            >
-              How TaaS Works
-            </Link>
-          </div>
-        </div>
-      </div>
+      <main id="main-content">
+      <PseoHero page={page} Icon={Icon} />
 
       {/* Pain Point Section */}
       <ScrollReveal className="py-24 border-t border-slate-900 relative block">
@@ -223,16 +287,16 @@ const DynamicServicePage = () => {
                 <MessageCircle className="w-5 h-5" />
                 Message Me on WhatsApp
               </a>
-              <Link
+              <TransitionLink
                 to="/"
                 className="text-slate-400 hover:text-white flex items-center gap-2 group font-medium"
               >
-                Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+                Back to Home <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:group-hover:translate-x-0" />
+              </TransitionLink>
             </div>
             <p className="text-sm text-slate-500">
               Want a cost estimate first?{' '}
-              <Link to="/get-a-quote" className="text-slate-400 hover:text-white underline underline-offset-4">See how I scope and price work</Link>.
+              <TransitionLink to="/get-a-quote" className="text-slate-400 hover:text-white underline underline-offset-4">See how I scope and price work</TransitionLink>.
             </p>
           </div>
         </div>
@@ -243,16 +307,17 @@ const DynamicServicePage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav className="flex text-sm text-slate-500" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2">
-              <li><Link to="/" className="hover:text-emerald-400">Home</Link></li>
+              <li><TransitionLink to="/" className="hover:text-emerald-400">Home</TransitionLink></li>
               <li><ChevronRight className="w-4 h-4" /></li>
-              <li><Link to="/services" className="hover:text-emerald-400">Services</Link></li>
+              <li><TransitionLink to="/services" className="hover:text-emerald-400">Services</TransitionLink></li>
               <li><ChevronRight className="w-4 h-4" /></li>
               <li className="text-slate-300 font-medium">{page.title}</li>
             </ol>
           </nav>
         </div>
       </div>
-    </div>
+      </main>
+    </PageShell>
   );
 };
 

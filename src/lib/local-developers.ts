@@ -155,7 +155,7 @@ export function buildLocalSchema(role: LocalRole, city: LocalCity, pageUrl: stri
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: `${role.label} — ${city.name}, Eastern Cape`,
+    name: `${role.label}, ${city.name}, Eastern Cape`,
     description: buildLocalPageDescription(role, city),
     url: pageUrl,
     provider: {
@@ -190,7 +190,7 @@ export function buildHubSchema(region: LocalRegion, pageUrl: string) {
     url: pageUrl,
     about: {
       '@type': 'ProfessionalService',
-      name: `${SITE_NAME} — ${region.name}`,
+      name: `${SITE_NAME}, ${region.name}`,
       areaServed: region.slug === 'eastern-cape' ? 'Eastern Cape, South Africa' : 'South Africa',
     },
   };

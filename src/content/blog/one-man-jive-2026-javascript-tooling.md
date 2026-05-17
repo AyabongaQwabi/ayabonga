@@ -22,7 +22,7 @@ Why This Guide? We solo devs dream big but ship slow. Too many tabs, half-finish
 Here's the supercharged 2026 workflow for full-stack JS domination.
 
 1. The core stack: Full-stack foundation
-   Frontend + Backend in One: Next.js (latest versions, App Router + Server Components). Why: React on steroids. Server-side rendering, API routes, static generation, and streaming—all in one repo. No more separate frontend/backend headaches. Pair with Tailwind CSS, and shadcn/ui for styling and components. Pro Tip: Use the new Turbopack for insanely fast dev servers.
+   Frontend + Backend in One: <img src="/images/blog/icons/nextjs.svg" alt="Next.js" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Next.js (latest versions, App Router + Server Components). Why: React on steroids. Server-side rendering, API routes, static generation, and streaming—all in one repo. No more separate frontend/backend headaches. Pair with Tailwind CSS, and shadcn/ui for styling and components. Pro Tip: Use the new Turbopack for insanely fast dev servers.
 
 2. Frontend magic (UI without the pain)
    v0.dev / v0.app (by Vercel) Why: Describe your UI in plain English (or upload a screenshot/Figma), and it generates production-ready React/Next.js components with Tailwind + shadcn/ui. In 2026, it's agentic—handles full pages, logic stubs, even basic backend hooks. One-click copy to your codebase or direct deploy previews. Perfect for solo devs: Prototype beautiful UIs in minutes instead of hours. Free tier is generous; Pro unlocks more credits and advanced agents.

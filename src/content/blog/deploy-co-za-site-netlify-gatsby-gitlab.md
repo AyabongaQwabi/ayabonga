@@ -1,12 +1,12 @@
 ---
-headerImage: /images/blog/how-to-use-wordpress.jpg
+headerImage: /images/blog/netlify-jamstack-deploy.png
 title: "Deploy a .co.za Site to Netlify with Gatsby, GitLab, and RegisterDomainSA"
 excerpt: "Step-by-step: Gatsby on Netlify, GitLab CI, and pointing RegisterDomainSA nameservers to Netlify DNS."
 date: October 13, 2019
 readTime: 12 min read
 tags: Netlify, Gatsby, GitLab, co.za, South Africa, DNS
 categories: Engineering
-ogImage: /images/blog/how-to-use-wordpress.jpg
+ogImage: /images/blog/netlify-jamstack-deploy.png
 ---
 
 How to deploy a .co.za website to Netlify with GatsbyJS, Gitlab and RegisterDomainSA
@@ -16,19 +16,21 @@ Senior Product Engineer at Simply | Senior Full-Stack Developer | Clojure, React
 
 October 13, 2019
 
-In the past few months I have been playing around with Netlify and Registerdomain.co.za building a couple of websites for some friends . With the latest one being www.bakeni.co.za
+![Netlify deploy pipeline for a Gatsby site](/images/blog/netlify-jamstack-deploy.png)
+
+In the past few months I have been playing around with <img src="/images/blog/icons/netlify.svg" alt="Netlify" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Netlify and Registerdomain.co.za building a couple of websites for some friends . With the latest one being www.bakeni.co.za
 
 I have fell in love with how Netlify makes the process of hosting custom websites so easy. Which has motivated me to write this article, in hope that others might find it compelling to follow this deployment style.
 
 So here's a step guide to how you can deploy your first .co.za website to Netlify.
 
 Please note this tutorial assumes you have a stable internet connection
-Create a GatsbyJS website
+Create a <img src="/images/blog/icons/gatsby.svg" alt="Gatsby" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> GatsbyJS website
 Follow this tutorial here on how you can install GatsbyJS on your machine and bootstrap your first website.
 
 You will need to have a running NodeJS environment. If you don't have one then then you can either follow the process explained here or you can install a Node Version Manager which can make the process easier for you e.g nvm or nvm-windows
 
-Create a Gitlab Repo
+Create a <img src="/images/blog/icons/gitlab.svg" alt="GitLab" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Gitlab Repo
 We could accomplish the same with a Github repo but the reason I selected Gitlab is for its intergrated CI/CD, you can run your pipelines, build images, create custom runners and so much more all from Gitlab. It's very advantageous for devOps purposes.
 
 Register or Login at gitlab.com

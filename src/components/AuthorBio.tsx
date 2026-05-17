@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Calendar, Clock, MessageCircle } from 'lucide-react';
 import { cn } from '../lib/utils';
 import {
@@ -9,6 +8,7 @@ import {
   AUTHOR_PROFILE_IMAGE,
 } from '../lib/author-profile';
 import { SITE_NAME } from '../lib/site-config';
+import { TransitionLink } from './ui/TransitionLink';
 
 export type AuthorBylineProps = {
   date: string;
@@ -16,7 +16,6 @@ export type AuthorBylineProps = {
   className?: string;
 };
 
-/** Compact author row for article headers (photo, name, date). */
 export function AuthorByline({ date, readTime, className }: AuthorBylineProps) {
   return (
     <div
@@ -25,29 +24,29 @@ export function AuthorByline({ date, readTime, className }: AuthorBylineProps) {
         className,
       )}
     >
-      <Link
+      <TransitionLink
         to={AUTHOR_BIO_LINKS.about}
-        className="group flex min-w-0 flex-1 items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:flex-initial"
+        className="group flex min-w-0 flex-1 items-center gap-3 rounded-xl sm:flex-initial focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]"
       >
         <img
           src={AUTHOR_PROFILE_IMAGE}
           alt={`Portrait of ${SITE_NAME}`}
           width={44}
           height={44}
-          className="h-11 w-11 shrink-0 rounded-full border border-border object-cover motion-safe:transition-[box-shadow,border-color] motion-reduce:transition-none group-hover:border-primary/40"
+          className="h-11 w-11 shrink-0 rounded-full border border-[var(--gold)]/20 object-cover group-hover:border-[var(--gold)]/50"
           loading="eager"
           decoding="async"
         />
         <span className="min-w-0 text-left">
-          <span className="block text-sm font-semibold text-foreground group-hover:text-primary motion-safe:transition-colors motion-reduce:transition-none">
+          <span className="block font-technical text-sm font-semibold text-[var(--warm-white)] group-hover:text-[var(--gold)]">
             {SITE_NAME}
           </span>
-          <span className="block text-xs text-primary font-medium">
+          <span className="block font-technical text-xs font-medium text-[var(--gold)]">
             {AUTHOR_JOB_TITLE}
           </span>
         </span>
-      </Link>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+      </TransitionLink>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-technical text-sm text-[var(--text-muted)]">
         {date ? (
           <span className="inline-flex items-center gap-1.5">
             <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden />
@@ -68,16 +67,16 @@ export function AuthorByline({ date, readTime, className }: AuthorBylineProps) {
 export function AuthorBio() {
   return (
     <aside
-      className="not-prose mt-16 rounded-xl border border-border bg-card/50 p-6 md:p-8"
+      className="not-prose mt-16 rounded-xl border border-[var(--gold)]/10 bg-[var(--slate)]/50 p-6 md:p-8"
       aria-labelledby="author-bio-heading"
     >
-      <div className="flex flex-col sm:flex-row gap-6">
+      <div className="flex flex-col gap-6 sm:flex-row">
         <img
           src={AUTHOR_PROFILE_IMAGE}
           alt={`Portrait of ${SITE_NAME}`}
           width={96}
           height={96}
-          className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover border border-border shrink-0"
+          className="h-20 w-20 shrink-0 rounded-xl border border-[var(--gold)]/20 object-cover sm:h-24 sm:w-24"
           loading="lazy"
           decoding="async"
         />
@@ -85,45 +84,47 @@ export function AuthorBio() {
           <div>
             <h2
               id="author-bio-heading"
-              className="text-lg font-semibold text-foreground"
+              className="font-display text-heading-md font-semibold text-[var(--warm-white)]"
             >
               Written by {SITE_NAME}
             </h2>
-            <p className="text-sm text-primary font-medium mt-0.5">
+            <p className="mt-0.5 font-technical text-sm font-medium text-[var(--gold)]">
               {AUTHOR_JOB_TITLE}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">{AUTHOR_LOCATION}</p>
+            <p className="mt-1 font-technical text-xs text-[var(--text-muted)]">
+              {AUTHOR_LOCATION}
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="font-technical text-sm leading-relaxed text-[var(--text-muted)]">
             {AUTHOR_SHORT_BIO}
           </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <Link
+          <div className="flex flex-wrap gap-x-4 gap-y-2 font-technical text-sm">
+            <TransitionLink
               to={AUTHOR_BIO_LINKS.about}
-              className="text-primary font-medium hover:underline underline-offset-4"
+              className="font-medium text-[var(--gold)] hover:underline underline-offset-4"
             >
               About me
-            </Link>
-            <Link
+            </TransitionLink>
+            <TransitionLink
               to={AUTHOR_BIO_LINKS.writing}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[var(--text-muted)] hover:text-[var(--warm-white)]"
             >
               More writing
-            </Link>
+            </TransitionLink>
             <a
               href={AUTHOR_BIO_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 text-[var(--text-muted)] hover:text-[var(--warm-white)]"
             >
-              <MessageCircle className="w-3.5 h-3.5" aria-hidden />
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden />
               WhatsApp
             </a>
             <a
               href={AUTHOR_BIO_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[var(--text-muted)] hover:text-[var(--warm-white)]"
             >
               LinkedIn
             </a>

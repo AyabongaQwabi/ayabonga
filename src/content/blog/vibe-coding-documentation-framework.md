@@ -19,7 +19,7 @@ If you’re still “vibing” your way through building apps with AI, you’re 
 
 ## The problem with raw vibe coding
 
-You open Cursor, type a vague prompt like “build me a task management app,” and hope for the best.
+You open <img src="/images/blog/icons/cursor.svg" alt="Cursor" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Cursor, type a vague prompt like “build me a task management app,” and hope for the best.
 
 What usually happens next is painful:
 

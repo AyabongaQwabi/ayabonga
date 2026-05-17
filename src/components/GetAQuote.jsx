@@ -4,7 +4,7 @@
  * use price_zar in calculations, only days_to_complete and config.
  */
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -65,6 +65,20 @@ import { getTotals, getFeatureBreakdown } from '@/lib/quoteToolPricing';
 import { buildQuoteExportPayload } from '@/lib/buildQuoteExportPayload';
 import { parseApiJsonResponse } from '@/lib/parseApiJsonResponse';
 import { cn } from '@/lib/utils';
+import { lineReveal } from '@/lib/animations';
+
+const QUOTE_CARD =
+  'quote-tool-card w-full max-w-4xl mx-auto rounded-xl border border-[var(--gold)]/12 bg-[var(--slate)] text-[var(--warm-white)] shadow-xl shadow-black/25';
+const QUOTE_INPUT =
+  'quote-tool-input mt-1 min-h-[44px] rounded-md border border-[var(--slate)] bg-[var(--navy-dark)] px-3 py-2 font-technical text-sm text-[var(--warm-white)]';
+const QUOTE_LABEL =
+  'font-technical text-label-sm uppercase tracking-[var(--tracking-label)] text-[var(--text-muted)]';
+const QUOTE_BTN_NEXT =
+  'interactive-button min-h-[44px] rounded-full bg-[var(--emerald)] px-5 font-technical text-sm font-semibold text-[var(--navy-dark)] hover:opacity-90 disabled:opacity-50';
+const QUOTE_BTN_BACK =
+  'interactive-button min-h-[44px] rounded-full border border-[var(--gold)]/50 bg-transparent px-5 font-technical text-sm font-semibold text-[var(--gold)] hover:bg-[var(--gold)]/10';
+const QUOTE_BTN_SUBMIT =
+  'interactive-button min-h-[44px] rounded-full bg-[var(--gold)] px-5 font-technical text-sm font-semibold text-[var(--navy-dark)] hover:opacity-90 disabled:opacity-50';
 
 const FOUNDER_STAGE_OPTIONS = [
   { value: 'idea', label: 'Idea / pre-build' },
@@ -152,9 +166,9 @@ const CROSS_CUTTING_LABEL = 'Cross-cutting / Common';
 
 const PROJECT_TYPE_HINTS = {
   'Fintech / Personal Finance App':
-    'Banking, savings groups, loans, wallets — money made simple',
+    'Banking, savings groups, loans, wallets: money made simple',
   'On-Demand Service / Gig Economy App':
-    'Uber, SweepSouth style — book and track local services',
+    'Uber, SweepSouth style. Book and track local services',
   'Healthcare / Telemedicine App':
     'Video consultations, appointments, patient records',
   'Food Delivery / Restaurant App': 'Menus, orders, drivers, and delivery tracking',
@@ -303,6 +317,34 @@ function formatMoney(amountZar, currencyCode) {
   return `${symbol}${Math.round(value).toLocaleString()}`;
 }
 
+function QuoteSuccessPanel() {
+  const messageRef = useRef(null);
+
+  useEffect(() => {
+    if (messageRef.current) lineReveal(messageRef.current, { delay: 0.15 });
+  }, []);
+
+  return (
+    <Card className={QUOTE_CARD}>
+      <CardContent className="flex flex-col items-center gap-6 pb-8 pt-8 text-center">
+        <div className="quote-success-check" aria-hidden>
+          <svg viewBox="0 0 24 24" role="presentation">
+            <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+        <p
+          ref={messageRef}
+          className="max-w-md font-display text-heading-md font-semibold text-[var(--warm-white)]"
+        >
+          Check your inbox for your scope summary. Over the next two weeks you will get a few
+          short notes on scoping and rebuild prevention. Reply to any email when you are ready
+          to talk through the build.
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function GetAQuote({ trustStats = null }) {
   const [wizardStep, setWizardStep] = useState(1);
   const [hourlyRate, setHourlyRate] = useState(String(CLIENT_QUOTE_HOURLY_RATE_ZAR));
@@ -323,6 +365,13 @@ export default function GetAQuote({ trustStats = null }) {
   });
   const [submitLoading, setSubmitLoading] = useState(false);
   const [submitError, setSubmitError] = useState(null);
+  const [stepMotion, setStepMotion] = useState('forward');
+  const prevWizardStepRef = useRef(wizardStep);
+
+  useEffect(() => {
+    setStepMotion(wizardStep > prevWizardStepRef.current ? 'forward' : 'back');
+    prevWizardStepRef.current = wizardStep;
+  }, [wizardStep]);
 
   useEffect(() => {
     try {
@@ -531,18 +580,18 @@ export default function GetAQuote({ trustStats = null }) {
 
   function renderStage1() {
     return (
-      <Card className="w-full max-w-4xl mx-auto border-border/80 bg-gradient-to-b from-card via-card to-secondary/25 shadow-xl shadow-black/30">
-        <CardHeader className="border-b border-border/60 bg-secondary/20">
-          <CardTitle className="text-xl text-foreground flex items-center gap-2">
+      <Card className={QUOTE_CARD}>
+        <CardHeader className="border-b border-[var(--gold)]/10">
+          <CardTitle className="flex items-center gap-2 font-display text-heading-md text-[var(--warm-white)]">
             <LayoutGrid className="h-5 w-5 text-primary" aria-hidden />
             What kind of project are you building?
           </CardTitle>
-          <CardDescription className="text-muted-foreground">
-            Pick one or more that best match your idea — or choose &quot;Custom /
+          <CardDescription className="font-technical text-sm text-[var(--text-muted)]">
+            Pick one or more that best match your idea, or choose &quot;Custom /
             Mixed&quot; if your app combines several things.
           </CardDescription>
         </CardHeader>
-        <CardContent className="bg-background/40 pt-6">
+        <CardContent className="pt-6">
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
             role="group"
@@ -573,8 +622,8 @@ export default function GetAQuote({ trustStats = null }) {
                   className={cn(
                     'rounded-lg border-2 p-4 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[44px]',
                     isSelected
-                      ? 'border-primary bg-primary/15 text-foreground shadow-[inset_0_1px_0_0_hsl(var(--primary)/0.25)] ring-1 ring-primary/35'
-                      : 'border-border bg-secondary/40 text-foreground hover:border-primary/45 hover:bg-secondary/70'
+                      ? 'border-[var(--gold)] bg-[var(--navy-dark)] text-[var(--warm-white)] ring-1 ring-[var(--gold)]/35'
+                      : 'border-[var(--slate)] bg-[var(--navy-dark)] text-[var(--warm-white)] hover:border-[var(--gold)]/45'
                   )}
                   aria-pressed={isSelected}
                 >
@@ -589,11 +638,12 @@ export default function GetAQuote({ trustStats = null }) {
             })}
           </div>
         </CardContent>
-        <CardFooter className="flex justify-end border-t border-border/60 bg-secondary/15 pt-6">
+        <CardFooter className="flex justify-end border-t border-[var(--gold)]/10 pt-6">
           <Button
             onClick={() => setWizardStep(2)}
             disabled={selectedProjectTypes.length === 0}
             aria-disabled={selectedProjectTypes.length === 0}
+            className={QUOTE_BTN_NEXT}
           >
             Next: Core features →
           </Button>
@@ -613,9 +663,9 @@ export default function GetAQuote({ trustStats = null }) {
     const hasFeatures = groupLabels.length > 0;
 
     return (
-      <Card className="w-full max-w-4xl mx-auto">
+      <Card className={QUOTE_CARD}>
         <CardHeader>
-          <CardTitle className="text-xl text-cyan-800 flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 font-display text-heading-md text-[var(--warm-white)]">
             {IconComponent && <IconComponent className="h-5 w-5" aria-hidden />}
             {title}
           </CardTitle>
@@ -630,7 +680,7 @@ export default function GetAQuote({ trustStats = null }) {
                 <Badge
                   key={bundle.id}
                   variant="secondary"
-                  className="cursor-pointer hover:bg-cyan-100"
+                  className="cursor-pointer border-[var(--gold)]/30 bg-[var(--navy-dark)] text-[var(--gold)] hover:bg-[var(--gold)]/10"
                   onClick={() => applyBundle(bundle.featureIds)}
                   role="button"
                   tabIndex={0}
@@ -693,7 +743,7 @@ export default function GetAQuote({ trustStats = null }) {
                             <div
                               className={cn(
                                 'flex items-center gap-3 rounded-md p-3 min-h-[44px] border border-transparent hover:bg-muted/50 hover:border-muted transition-colors',
-                                selectedFeatures.includes(feature.id) && 'bg-cyan-50/50'
+                                selectedFeatures.includes(feature.id) && 'bg-[var(--gold)]/10 border-[var(--gold)]/20'
                               )}
                             >
                               <Checkbox
@@ -722,7 +772,7 @@ export default function GetAQuote({ trustStats = null }) {
                                 <PopoverContent align="end" className="max-w-xs">
                                   <p className="text-sm">{feature.survey_question}</p>
                                   <p className="text-xs text-muted-foreground mt-1">
-                                    Baseline: {feature.days_to_complete ?? '—'} days (mid-level). Your
+                                    Baseline: {feature.days_to_complete ?? 'n/a'} days (mid-level). Your
                                     estimate depends on your experience and rate.
                                   </p>
                                   <p className="text-xs text-muted-foreground">
@@ -741,18 +791,31 @@ export default function GetAQuote({ trustStats = null }) {
             </Accordion>
           )}
         </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="ghost" onClick={() => setWizardStep((w) => Math.max(1, w - 1))}>
+        <CardFooter className="flex justify-between border-t border-[var(--gold)]/10 pt-6">
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={() => setWizardStep((w) => Math.max(1, w - 1))}
+            className={QUOTE_BTN_BACK}
+          >
             ← Back
           </Button>
           <div className="flex gap-2">
             <Button
+              type="button"
               variant="outline"
               onClick={() => setWizardStep((w) => Math.min(5, w + 1))}
+              className={QUOTE_BTN_BACK}
             >
               None of these → Next
             </Button>
-            <Button onClick={() => setWizardStep((w) => Math.min(5, w + 1))}>Next →</Button>
+            <Button
+              type="button"
+              onClick={() => setWizardStep((w) => Math.min(5, w + 1))}
+              className={QUOTE_BTN_NEXT}
+            >
+              Next →
+            </Button>
           </div>
         </CardFooter>
       </Card>
@@ -777,14 +840,14 @@ export default function GetAQuote({ trustStats = null }) {
 
     const complexityCopy =
       complexityPerc <= 20
-        ? 'Straightforward scope — good to go.'
+        ? 'Straightforward scope. Good to go.'
         : complexityPerc <= 40
-          ? 'Moderate complexity — well within reach.'
+          ? 'Moderate complexity, well within reach.'
           : complexityPerc <= 60
-            ? 'Substantial scope — plan accordingly.'
+            ? 'Substantial scope. Plan accordingly.'
             : complexityPerc <= 80
-              ? 'High complexity — consider phasing.'
-              : 'Very high complexity — break into phases.';
+              ? 'High complexity. Consider phasing.'
+              : 'Very high complexity. Break into phases.';
 
     return (
       <div className="w-full max-w-4xl mx-auto space-y-6">
@@ -889,7 +952,7 @@ export default function GetAQuote({ trustStats = null }) {
                     {breakdown.map((row) => (
                       <TableRow key={row.id}>
                         <TableCell className="font-medium">{row.name}</TableCell>
-                        <TableCell>{row.complexity ?? '—'}</TableCell>
+                        <TableCell>{row.complexity ?? 'n/a'}</TableCell>
                         <TableCell>{row.adjusted_days.toFixed(1)}</TableCell>
                         <TableCell>
                           {Math.round(row.adjusted_days * (parseInt(hoursPerDay, 10) || HOURS_PER_DAY))}
@@ -933,7 +996,7 @@ export default function GetAQuote({ trustStats = null }) {
               <Button
                 onClick={() => setShowEnquiryForm(true)}
                 disabled={!totals.hasFeatures}
-                className="bg-emerald-600 hover:bg-emerald-700 min-h-[44px]"
+                className={QUOTE_BTN_NEXT}
               >
                 Email me this quote
               </Button>
@@ -992,7 +1055,7 @@ export default function GetAQuote({ trustStats = null }) {
                     id="build-stage"
                     value={founderStage}
                     onChange={(e) => setFounderStage(e.target.value)}
-                    className="mt-1 w-full min-h-[44px] rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className={`${QUOTE_INPUT} quote-tool-input w-full`}
                     required
                   >
                     {FOUNDER_STAGE_OPTIONS.map((opt) => (
@@ -1031,7 +1094,7 @@ export default function GetAQuote({ trustStats = null }) {
                     rows={4}
                     required
                     minLength={30}
-                    className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className={`${QUOTE_INPUT} quote-tool-input w-full`}
                   />
                 </div>
                 {submitError && (
@@ -1042,7 +1105,7 @@ export default function GetAQuote({ trustStats = null }) {
                 <Button
                   type="submit"
                   disabled={submitLoading}
-                  className="bg-cyan-600 hover:bg-cyan-700 min-h-[44px]"
+                  className={QUOTE_BTN_SUBMIT}
                 >
                   {submitLoading ? 'Sending...' : 'Send quote to my inbox'}
                 </Button>
@@ -1051,34 +1114,42 @@ export default function GetAQuote({ trustStats = null }) {
           </Card>
         )}
 
-        {showEnquiryForm === true && projectDetailsSent && (
-          <Card>
-            <CardContent className="pt-6">
-              <p className="text-emerald-600 font-medium flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 shrink-0" aria-hidden />
-                Check your inbox for your scope summary. Over the next two weeks you will get
-                a few short notes on scoping and rebuild prevention. Reply to any email when
-                you are ready to talk through the build.
-              </p>
-            </CardContent>
-          </Card>
-        )}
+        {showEnquiryForm === true && projectDetailsSent && <QuoteSuccessPanel />}
       </div>
     );
   }
 
   return (
     <div className="relative pb-24">
-      <div className="sticky top-0 z-10 bg-background/95 backdrop-blur py-3 border-b mb-6">
+      <div className="sticky top-0 z-10 mb-6 border-b border-[var(--gold)]/10 bg-[var(--slate)]/95 py-4 backdrop-blur">
+        <p className="mx-auto max-w-4xl px-4 font-technical text-label-sm uppercase tracking-[var(--tracking-label)] text-[var(--text-muted)]">
+          Step {wizardStep} of {WIZARD_STEPS.length}
+        </p>
+        <div className="quote-progress-bar mx-auto mt-3 max-w-4xl px-4">
+          <div
+            className="quote-progress-bar-fill"
+            style={{ width: `${(wizardStep / WIZARD_STEPS.length) * 100}%` }}
+            role="progressbar"
+            aria-valuenow={wizardStep}
+            aria-valuemin={1}
+            aria-valuemax={WIZARD_STEPS.length}
+          />
+        </div>
         <ProgressSteps
           steps={WIZARD_STEPS}
           currentStep={wizardStep}
           onStepClick={(step) => setWizardStep(step)}
-          className="max-w-4xl mx-auto px-4"
+          className="mx-auto mt-4 max-w-4xl px-4"
         />
       </div>
 
-      <div className="px-4">
+      <div
+        key={wizardStep}
+        className={cn(
+          'quote-step-panel px-2 sm:px-4',
+          stepMotion === 'forward' ? 'quote-step-forward' : 'quote-step-back',
+        )}
+      >
         {wizardStep === 1 && renderStage1()}
         {wizardStep === 2 &&
           renderFeatureStage(
@@ -1109,7 +1180,7 @@ export default function GetAQuote({ trustStats = null }) {
 
       {showMiniSummary && (
         <div
-          className="fixed bottom-0 left-0 right-0 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm z-20 bg-card border shadow-lg rounded-lg p-4 sm:rounded-xl"
+          className="fixed bottom-0 left-0 right-0 z-20 border border-[var(--gold)]/15 bg-[var(--slate)] p-4 shadow-lg sm:bottom-6 sm:left-auto sm:right-6 sm:max-w-sm sm:rounded-xl"
           role="complementary"
           aria-label="Quote summary"
         >
@@ -1118,7 +1189,7 @@ export default function GetAQuote({ trustStats = null }) {
             {formatMoney(totals.adjusted_price, currency)} · ~
             {Math.round(totals.estimated_days)} days
           </p>
-          <Button className="w-full mt-2 min-h-[44px]" onClick={() => setWizardStep(5)}>
+          <Button className={`${QUOTE_BTN_NEXT} mt-2 w-full`} onClick={() => setWizardStep(5)}>
             View full summary →
           </Button>
         </div>

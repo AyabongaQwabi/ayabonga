@@ -105,6 +105,7 @@ async function main() {
     { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { url: '/editorial', changefreq: 'yearly', priority: 0.35 },
     { url: '/corrections', changefreq: 'yearly', priority: 0.3 },
+    { url: '/sitemap', changefreq: 'monthly', priority: 0.35 },
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },

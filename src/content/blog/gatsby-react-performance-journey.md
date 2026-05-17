@@ -1,12 +1,12 @@
 ---
-headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+headerImage: /images/blog/gatsby-react-performance-hero.png
 title: "How I Dramatically Improved the Speed of My Gatsby Website"
 excerpt: "Tree shaking Ramda, Gatsby Image, code splitting social plugins, and value analysis — PageSpeed before and after."
 date: August 15, 2020
 readTime: 10 min read
 tags: React, Gatsby, Performance, Webpack, Ramda
 categories: Engineering
-ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+ogImage: /images/blog/gatsby-react-performance-hero.png
 ---
 
 How I dramatically improved the speed of my website.
@@ -15,7 +15,9 @@ Ayabonga Qwabi
 Senior Product Engineer at Simply | Senior Full-Stack Developer | Clojure, React & Node.js Expert
 
 August 15, 2020
-It is without a doubt that my new found skills have helped me navigate myself in the world of performance upgrades for ReactJS. I had recently took an online course at Udemy titled The Complete Junior to Senior Web Developer Roadmap (2020) . Found within this course were various strategies and tools with which one would use to improve the perfomance of a react application which I utilised and came up with a robust perfomance solution for my GatsbyJS Website.
+![Gatsby and React performance optimization workflow](/images/blog/netlify-jamstack-deploy.png)
+
+It is without a doubt that my new found skills have helped me navigate myself in the world of performance upgrades for <img src="/images/blog/icons/react.svg" alt="React" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> React and <img src="/images/blog/icons/gatsby.svg" alt="Gatsby" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Gatsby. I had recently took an online course at Udemy titled The Complete Junior to Senior Web Developer Roadmap (2020) . Found within this course were various strategies and tools with which one would use to improve the perfomance of a react application which I utilised and came up with a robust perfomance solution for my GatsbyJS Website.
 
 No alt text provided for this image
 These were the page speed insights for the home page of my website on mobile devices. They were terrible. It took 24.1 seconds to make the website interactive and 5.7 seconds before the user could see anything discernable on the webpage. Something had to be done.

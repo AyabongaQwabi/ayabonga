@@ -5,16 +5,15 @@ import { Analytics } from '@vercel/analytics/react';
 import { HomeArtHero } from './components/home/HomeArtHero';
 import { HomeManifesto } from './components/home/HomeManifesto';
 import { HomeWhatIDo } from './components/home/HomeWhatIDo';
-import {
-  HomeCollaborations,
-  HomeSelectedWork,
-  type HomeProject,
-} from './components/home/HomeSelectedWork';
+import { HomeCollaborations, HomeSelectedWork } from './components/home/HomeSelectedWork';
+import { homeProjects } from './data/home-projects';
 import { HomeAboutTeaser } from './components/home/HomeAboutTeaser';
 import { HomeLatestWriting } from './components/home/HomeLatestWriting';
 import { HomeFinalCta } from './components/home/HomeFinalCta';
 import { HomeNav } from './components/home/HomeNav';
+import { HomeProofStrip } from './components/home/HomeProofStrip';
 import { SiteFooter } from './components/SiteFooter';
+import { CustomCursor } from './components/ui/CustomCursor';
 import { blogPosts } from './data/blog-posts';
 import { authorPersonSchema } from './lib/author-profile';
 import {
@@ -29,52 +28,6 @@ import {
   buildOrganizationSchema,
   buildWebSiteSchema,
 } from './lib/entity-schema';
-
-const projects: HomeProject[] = [
-  {
-    title: 'Laundry Marketplace',
-    description:
-      'A turnkey laundry marketplace connecting customers with local laundry service providers.',
-    url: 'https://laundry.qwabi.co.za',
-    tech: ['Next.js', 'React', 'Tailwind CSS'],
-  },
-  {
-    title: 'ClinicPlus',
-    description:
-      'Clinic appointments for mining companies in Witbank, streamlining occupational healthcare access.',
-    url: 'https://clinicplusbookings.co.za',
-    tech: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    title: 'Queens Connect',
-    description:
-      'A friendly AI companion for the Queenstown community, with local information and assistance.',
-    url: 'https://queensconnect.qwabi.co.za',
-    tech: ['AI', 'Next.js', 'OpenAI'],
-  },
-  {
-    title: 'Kingly',
-    description:
-      'An AI tool for vibe coding documents and prompts, built for developer productivity.',
-    url: 'https://kingly.qwabi.co.za',
-    tech: ['AI', 'React', 'TypeScript'],
-  },
-  {
-    title: 'UTap',
-    description:
-      'University NFC access card mobile wallet for campus access and payments.',
-    url: 'https://utaptech.co.za',
-    tech: ['React Native', 'NFC', 'Firebase'],
-  },
-  {
-    title: 'eSpazza',
-    description:
-      'Xhosa hip hop music streaming and blogging celebrating Eastern Cape hip hop culture.',
-    url: '/projects/espazza',
-    tech: ['React', 'Express', 'MongoDB'],
-  },
-];
-
 const collaborations = [
   { name: 'Project Codex', url: 'https://www.projectcodex.co' },
   { name: 'Western Cape Labs', url: 'https://www.westerncapelabs.com' },
@@ -155,16 +108,18 @@ function App() {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-background font-sans text-foreground">
+      <div className="min-h-screen bg-background font-sans text-foreground" data-cursor-root>
+        <CustomCursor />
         <HomeNav scrolled={scrolled} onScrollTo={scrollToSection} />
 
-        <main>
+        <main id="main-content">
           <HomeArtHero onScrollTo={scrollToSection} />
           <HomeManifesto />
           <HomeWhatIDo />
-          <HomeSelectedWork projects={projects} />
+          <HomeSelectedWork projects={homeProjects} />
           <HomeCollaborations collaborations={collaborations} />
           <HomeAboutTeaser />
+          <HomeProofStrip />
           <HomeLatestWriting posts={latestPosts} />
           <HomeFinalCta />
         </main>

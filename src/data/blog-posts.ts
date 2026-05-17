@@ -263,6 +263,16 @@ export function getRelatedPosts(post: BlogPost, limit = 3): BlogPost[] {
   return [...related, ...filler];
 }
 
+/** Map URL param to canonical taxonomy label from the site list (case-insensitive). */
+export function resolveTaxonomyParam(
+  param: string | null,
+  options: string[],
+): string | null {
+  if (!param?.trim()) return null;
+  const want = param.trim().toLowerCase();
+  return options.find((o) => o.toLowerCase() === want) ?? param.trim();
+}
+
 /** Case-insensitive match for URL ?category= / ?tag= params. */
 export function postMatchesFilters(
   post: BlogPost,

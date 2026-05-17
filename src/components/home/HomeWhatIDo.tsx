@@ -1,94 +1,109 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Brain, Cloud, Code2 } from 'lucide-react';
-import { ScrollReveal } from '../ScrollReveal';
+import { useEffect, useRef } from 'react';
+import { lineReveal, scrambleDecode, staggerCards, whenMotionReady } from '../../lib/animations';
 
-const capabilities = [
+const services = [
   {
-    icon: Brain,
-    title: 'AI & intelligent products',
-    copy: 'LLM features, assistants, and automation with guardrails, evals, and human handoff when it matters.',
-    accent: 'border-amber-500/20 hover:border-amber-500/40',
-    iconWrap: 'bg-primary/10 text-primary',
-    tags: ['OpenAI', 'LangChain', 'Python'],
+    num: '01',
+    title: 'Product Engineering',
+    copy: 'Full-stack delivery from schema to UI. React, Node, TypeScript, and AI features that ship with tests and observability.',
   },
   {
-    icon: Cloud,
-    title: 'Cloud architecture',
-    copy: 'GCP, AWS, and Azure systems that scale: serverless, Kubernetes, and infrastructure you can operate.',
-    accent: 'border-primary/20 hover:border-primary/50',
-    iconWrap: 'bg-primary/10 text-primary',
-    tags: ['GCP', 'AWS', 'Azure'],
+    num: '02',
+    title: 'Technical Leadership',
+    copy: 'Hands-on direction for founders and small teams: roadmap calls, code review, hiring signal, and decisions that stick.',
   },
   {
-    icon: Code2,
-    title: 'Full-stack delivery',
-    copy: 'React, Next.js, Node, TypeScript, and mobile when the product needs to ship on every screen.',
-    accent: 'border-accent/25 hover:border-accent/50',
-    iconWrap: 'bg-accent/15 text-accent',
-    tags: ['React', 'Next.js', 'Supabase'],
+    num: '03',
+    title: 'Architecture & Systems Design',
+    copy: 'GCP, AWS, and Azure patterns that scale. Serverless, Kubernetes, and infrastructure you can operate after launch.',
+  },
+  {
+    num: '04',
+    title: 'MVP to Scale',
+    copy: 'Phase-one builds with a path to production traffic, local payments, and the second version already in mind.',
   },
 ] as const;
 
 export function HomeWhatIDo() {
-  return (
-    <ScrollReveal>
-      <section
-        id="expertise"
-        className="scroll-mt-24 border-t border-border py-20 md:py-28"
-        aria-labelledby="expertise-heading"
-      >
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="font-technical text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                What I do
-              </p>
-              <h2
-                id="expertise-heading"
-                className="mt-3 font-display text-mega-sm font-bold text-foreground"
-              >
-                Three lanes,<br className="hidden sm:block" /> one owner
-              </h2>
-            </div>
-            <Link
-              to="/services"
-              className="interactive-link inline-flex shrink-0 items-center gap-2 font-technical text-sm font-semibold text-primary hover:underline underline-offset-4"
-            >
-              All services
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
-          </div>
+  const sectionRef = useRef<HTMLElement>(null);
+  const labelRef = useRef<HTMLParagraphElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
-          <ScrollReveal stagger className="mt-12 grid gap-4 md:grid-cols-3">
-            {capabilities.map(({ icon: Icon, title, copy, accent, iconWrap, tags }) => (
-              <article
-                key={title}
-                className={`interactive-card group rounded-2xl border bg-card/80 p-6 backdrop-blur-sm ${accent}`}
+  useEffect(() => {
+    const cleanups: Array<() => void> = [];
+    let cancelled = false;
+
+    void whenMotionReady().then(() => {
+      if (cancelled) return;
+      if (labelRef.current) scrambleDecode(labelRef.current, { delay: 0.2 });
+      if (headingRef.current) {
+        const cleanup = lineReveal(headingRef.current);
+        if (cleanup) cleanups.push(cleanup);
+      }
+      if (sectionRef.current) {
+        const cleanup = staggerCards(sectionRef.current, '[data-service-item]', {
+          stagger: 0.12,
+          y: 28,
+        });
+        if (cleanup) cleanups.push(cleanup);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      cleanups.forEach((fn) => fn());
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="expertise"
+      className="scroll-mt-24 bg-[var(--slate)] py-[clamp(80px,12vw,180px)]"
+      aria-labelledby="expertise-heading"
+    >
+      <div className="mx-auto max-w-6xl px-6">
+        <p
+          ref={labelRef}
+          data-section-label
+          className="font-technical text-label-sm uppercase tracking-[var(--tracking-label)] text-[var(--text-muted)]"
+        >
+          What I do
+        </p>
+        <h2
+          id="expertise-heading"
+          ref={headingRef}
+          className="mt-6 max-w-3xl font-display text-display-md font-semibold text-[var(--warm-white)]"
+        >
+          Four ways I partner with teams
+        </h2>
+
+        <ol className="mt-16 list-none space-y-14 md:space-y-20">
+          {services.map(({ num, title, copy }, index) => (
+            <li
+              key={num}
+              data-service-item
+              className={`group relative border-l-2 border-transparent pl-6 transition-[border-color] duration-200 ease-out hover:border-[var(--gold)] md:pl-8 ${
+                index % 2 === 0 ? 'md:ml-[15%]' : 'md:mr-[10%] md:ml-0'
+              }`}
+            >
+              <span
+                className="font-display text-display-md font-semibold text-transparent transition-colors duration-200 group-hover:text-[var(--gold)]"
+                style={{ WebkitTextStroke: '1.5px var(--gold)' }}
+                aria-hidden
               >
-                <div
-                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${iconWrap} transition-transform group-hover:scale-105 motion-reduce:group-hover:scale-100`}
-                >
-                  <Icon className="h-6 w-6" aria-hidden />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground">{title}</h3>
-                <p className="mt-3 font-technical text-sm leading-relaxed text-muted-foreground">
-                  {copy}
-                </p>
-                <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${title} stack`}>
-                  {tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full border border-border/80 bg-secondary/50 px-2.5 py-1 font-technical text-xs text-muted-foreground"
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </ScrollReveal>
-        </div>
-      </section>
-    </ScrollReveal>
+                {num}
+              </span>
+              <h3 className="mt-2 font-display text-heading-lg font-semibold text-[var(--warm-white)]">
+                {title}
+              </h3>
+              <p className="mt-4 max-w-xl font-technical text-base leading-[var(--leading-body)] text-[var(--text-muted)]">
+                {copy}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }

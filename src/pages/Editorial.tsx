@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { TrustPageLayout } from '../components/TrustPageLayout';
+import { TransitionLink } from '../components/ui/TransitionLink';
 import { AUTHOR_EMAIL } from '../lib/author-profile';
 import { SITE_NAME } from '../lib/site-config';
 
@@ -14,7 +14,7 @@ export default function Editorial() {
 
       <h2>Who writes here</h2>
       <p>
-        All articles on this site are written by <Link to="/about">{SITE_NAME}</Link>, a working
+        All articles on this site are written by <TransitionLink to="/about">{SITE_NAME}</TransitionLink>, a working
         product engineer. See the about page for background and shipped work.
       </p>
 
@@ -50,7 +50,7 @@ export default function Editorial() {
 
       <h2>Corrections</h2>
       <p>
-        If you spot an error, see the <Link to="/corrections">corrections</Link> page or email{' '}
+        If you spot an error, see the <TransitionLink to="/corrections">corrections</TransitionLink> page or email{' '}
         <a href={`mailto:${AUTHOR_EMAIL}`}>{AUTHOR_EMAIL}</a>.
       </p>
     </TrustPageLayout>

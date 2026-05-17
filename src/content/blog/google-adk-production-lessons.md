@@ -9,6 +9,8 @@ categories: AI, Engineering
 ogImage: /images/blog/modi-openai-anthropic-2261854815.webp
 ---
 
+![Multi-agent orchestration architecture compared across frameworks](/images/blog/llm-architecture-comparison.png)
+
 Over the past few weeks I’ve been deep in Google’s Agent Development Kit (ADK), wiring up multi-agent flows, testing handoffs, debugging tool calls, the full works.
 A few hard-earned lessons from real hands-on time:
 Hierarchy > monolithic prompts

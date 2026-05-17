@@ -1,0 +1,987 @@
+{
+  "react": {
+    "file": "/images/tech-logos/react.svg",
+    "blogIcon": "/images/blog/icons/react.svg",
+    "aliases": [
+      "react",
+      "React",
+      "ReactJS",
+      "reactjs"
+    ]
+  },
+  "nextjs": {
+    "file": "/images/tech-logos/nextjs.svg",
+    "blogIcon": "/images/blog/icons/nextjs.svg",
+    "aliases": [
+      "nextjs",
+      "Next.js",
+      "NextJS",
+      "next"
+    ]
+  },
+  "nodejs": {
+    "file": "/images/tech-logos/nodejs.svg",
+    "blogIcon": "/images/blog/icons/nodejs.svg",
+    "aliases": [
+      "nodejs",
+      "Node.js",
+      "NodeJS",
+      "node"
+    ]
+  },
+  "typescript": {
+    "file": "/images/tech-logos/typescript.svg",
+    "blogIcon": "/images/blog/icons/typescript.svg",
+    "aliases": [
+      "typescript",
+      "TypeScript",
+      "TS"
+    ]
+  },
+  "javascript": {
+    "file": "/images/tech-logos/javascript.svg",
+    "blogIcon": "/images/blog/icons/javascript.svg",
+    "aliases": [
+      "javascript",
+      "JavaScript",
+      "JS"
+    ]
+  },
+  "python": {
+    "file": "/images/tech-logos/python.svg",
+    "blogIcon": "/images/blog/icons/python.svg",
+    "aliases": [
+      "python",
+      "Python"
+    ]
+  },
+  "go": {
+    "file": "/images/tech-logos/go.svg",
+    "blogIcon": "/images/blog/icons/go.svg",
+    "aliases": [
+      "go",
+      "Go",
+      "Golang",
+      "golang"
+    ]
+  },
+  "rust": {
+    "file": "/images/tech-logos/rust.svg",
+    "blogIcon": "/images/blog/icons/rust.svg",
+    "aliases": [
+      "rust",
+      "Rust"
+    ]
+  },
+  "java": {
+    "file": "/images/tech-logos/java.svg",
+    "blogIcon": "/images/blog/icons/java.svg",
+    "aliases": [
+      "java",
+      "Java"
+    ]
+  },
+  "kotlin": {
+    "file": "/images/tech-logos/kotlin.svg",
+    "blogIcon": "/images/blog/icons/kotlin.svg",
+    "aliases": [
+      "kotlin",
+      "Kotlin"
+    ]
+  },
+  "swift": {
+    "file": "/images/tech-logos/swift.svg",
+    "blogIcon": "/images/blog/icons/swift.svg",
+    "aliases": [
+      "swift",
+      "Swift"
+    ]
+  },
+  "dart": {
+    "file": "/images/tech-logos/dart.svg",
+    "blogIcon": "/images/blog/icons/dart.svg",
+    "aliases": [
+      "dart",
+      "Dart"
+    ]
+  },
+  "clojure": {
+    "file": "/images/tech-logos/clojure.svg",
+    "blogIcon": "/images/blog/icons/clojure.svg",
+    "aliases": [
+      "clojure",
+      "Clojure"
+    ]
+  },
+  "graphql": {
+    "file": "/images/tech-logos/graphql.svg",
+    "blogIcon": "/images/blog/icons/graphql.svg",
+    "aliases": [
+      "graphql",
+      "GraphQL"
+    ]
+  },
+  "html5": {
+    "file": "/images/tech-logos/html5.svg",
+    "blogIcon": "/images/blog/icons/html5.svg",
+    "aliases": [
+      "html5",
+      "HTML",
+      "HTML5"
+    ]
+  },
+  "css3": {
+    "file": "/images/tech-logos/css3.svg",
+    "blogIcon": "/images/blog/icons/css3.svg",
+    "aliases": [
+      "css3",
+      "CSS",
+      "CSS3"
+    ]
+  },
+  "sass": {
+    "file": "/images/tech-logos/sass.svg",
+    "blogIcon": "/images/blog/icons/sass.svg",
+    "aliases": [
+      "sass",
+      "Sass",
+      "SCSS"
+    ]
+  },
+  "tailwindcss": {
+    "file": "/images/tech-logos/tailwindcss.svg",
+    "blogIcon": "/images/blog/icons/tailwindcss.svg",
+    "aliases": [
+      "tailwindcss",
+      "Tailwind",
+      "Tailwind CSS"
+    ]
+  },
+  "vite": {
+    "file": "/images/tech-logos/vite.svg",
+    "blogIcon": "/images/blog/icons/vite.svg",
+    "aliases": [
+      "vite",
+      "Vite"
+    ]
+  },
+  "webpack": {
+    "file": "/images/tech-logos/webpack.svg",
+    "blogIcon": "/images/blog/icons/webpack.svg",
+    "aliases": [
+      "webpack",
+      "Webpack"
+    ]
+  },
+  "rollup": {
+    "file": "/images/tech-logos/rollup.svg",
+    "blogIcon": "/images/blog/icons/rollup.svg",
+    "aliases": [
+      "rollup",
+      "Rollup"
+    ]
+  },
+  "esbuild": {
+    "file": "/images/tech-logos/esbuild.svg",
+    "blogIcon": "/images/blog/icons/esbuild.svg",
+    "aliases": [
+      "esbuild",
+      "esbuild"
+    ]
+  },
+  "babel": {
+    "file": "/images/tech-logos/babel.svg",
+    "blogIcon": "/images/blog/icons/babel.svg",
+    "aliases": [
+      "babel",
+      "Babel"
+    ]
+  },
+  "eslint": {
+    "file": "/images/tech-logos/eslint.svg",
+    "blogIcon": "/images/blog/icons/eslint.svg",
+    "aliases": [
+      "eslint",
+      "ESLint"
+    ]
+  },
+  "prettier": {
+    "file": "/images/tech-logos/prettier.svg",
+    "blogIcon": "/images/blog/icons/prettier.svg",
+    "aliases": [
+      "prettier",
+      "Prettier"
+    ]
+  },
+  "jest": {
+    "file": "/images/tech-logos/jest.svg",
+    "blogIcon": "/images/blog/icons/jest.svg",
+    "aliases": [
+      "jest",
+      "Jest"
+    ]
+  },
+  "vitest": {
+    "file": "/images/tech-logos/vitest.svg",
+    "blogIcon": "/images/blog/icons/vitest.svg",
+    "aliases": [
+      "vitest",
+      "Vitest"
+    ]
+  },
+  "cypress": {
+    "file": "/images/tech-logos/cypress.svg",
+    "blogIcon": "/images/blog/icons/cypress.svg",
+    "aliases": [
+      "cypress",
+      "Cypress"
+    ]
+  },
+  "playwright": {
+    "file": "/images/tech-logos/playwright.svg",
+    "blogIcon": "/images/blog/icons/playwright.svg",
+    "aliases": [
+      "playwright",
+      "Playwright"
+    ]
+  },
+  "docker": {
+    "file": "/images/tech-logos/docker.svg",
+    "blogIcon": "/images/blog/icons/docker.svg",
+    "aliases": [
+      "docker",
+      "Docker"
+    ]
+  },
+  "kubernetes": {
+    "file": "/images/tech-logos/kubernetes.svg",
+    "blogIcon": "/images/blog/icons/kubernetes.svg",
+    "aliases": [
+      "kubernetes",
+      "Kubernetes",
+      "K8s",
+      "k8s"
+    ]
+  },
+  "terraform": {
+    "file": "/images/tech-logos/terraform.svg",
+    "blogIcon": "/images/blog/icons/terraform.svg",
+    "aliases": [
+      "terraform",
+      "Terraform"
+    ]
+  },
+  "ansible": {
+    "file": "/images/tech-logos/ansible.svg",
+    "blogIcon": "/images/blog/icons/ansible.svg",
+    "aliases": [
+      "ansible",
+      "Ansible"
+    ]
+  },
+  "aws": {
+    "file": "/images/tech-logos/aws.svg",
+    "blogIcon": "/images/blog/icons/aws.svg",
+    "aliases": [
+      "aws",
+      "AWS",
+      "Amazon Web Services"
+    ]
+  },
+  "google-cloud": {
+    "file": "/images/tech-logos/google-cloud.svg",
+    "blogIcon": "/images/blog/icons/google-cloud.svg",
+    "aliases": [
+      "google-cloud",
+      "GCP",
+      "Google Cloud"
+    ]
+  },
+  "azure": {
+    "file": "/images/tech-logos/azure.svg",
+    "blogIcon": "/images/blog/icons/azure.svg",
+    "aliases": [
+      "azure",
+      "Azure",
+      "Microsoft Azure"
+    ]
+  },
+  "vercel": {
+    "file": "/images/tech-logos/vercel.svg",
+    "blogIcon": "/images/blog/icons/vercel.svg",
+    "aliases": [
+      "vercel",
+      "Vercel"
+    ]
+  },
+  "netlify": {
+    "file": "/images/tech-logos/netlify.svg",
+    "blogIcon": "/images/blog/icons/netlify.svg",
+    "aliases": [
+      "netlify",
+      "Netlify"
+    ]
+  },
+  "cloudflare": {
+    "file": "/images/tech-logos/cloudflare.svg",
+    "blogIcon": "/images/blog/icons/cloudflare.svg",
+    "aliases": [
+      "cloudflare",
+      "Cloudflare"
+    ]
+  },
+  "firebase": {
+    "file": "/images/tech-logos/firebase.svg",
+    "blogIcon": "/images/blog/icons/firebase.svg",
+    "aliases": [
+      "firebase",
+      "Firebase"
+    ]
+  },
+  "supabase": {
+    "file": "/images/tech-logos/supabase.svg",
+    "blogIcon": "/images/blog/icons/supabase.svg",
+    "aliases": [
+      "supabase",
+      "Supabase"
+    ]
+  },
+  "mongodb": {
+    "file": "/images/tech-logos/mongodb.svg",
+    "blogIcon": "/images/blog/icons/mongodb.svg",
+    "aliases": [
+      "mongodb",
+      "MongoDB",
+      "Mongo"
+    ]
+  },
+  "postgresql": {
+    "file": "/images/tech-logos/postgresql.svg",
+    "blogIcon": "/images/blog/icons/postgresql.svg",
+    "aliases": [
+      "postgresql",
+      "PostgreSQL",
+      "Postgres",
+      "postgres"
+    ]
+  },
+  "mysql": {
+    "file": "/images/tech-logos/mysql.svg",
+    "blogIcon": "/images/blog/icons/mysql.svg",
+    "aliases": [
+      "mysql",
+      "MySQL"
+    ]
+  },
+  "redis": {
+    "file": "/images/tech-logos/redis.svg",
+    "blogIcon": "/images/blog/icons/redis.svg",
+    "aliases": [
+      "redis",
+      "Redis"
+    ]
+  },
+  "prisma": {
+    "file": "/images/tech-logos/prisma.svg",
+    "blogIcon": "/images/blog/icons/prisma.svg",
+    "aliases": [
+      "prisma",
+      "Prisma"
+    ]
+  },
+  "drizzle": {
+    "file": "/images/tech-logos/drizzle.svg",
+    "blogIcon": "/images/blog/icons/drizzle.svg",
+    "aliases": [
+      "drizzle",
+      "Drizzle"
+    ]
+  },
+  "express": {
+    "file": "/images/tech-logos/express.svg",
+    "blogIcon": "/images/blog/icons/express.svg",
+    "aliases": [
+      "express",
+      "Express",
+      "Express.js"
+    ]
+  },
+  "nestjs": {
+    "file": "/images/tech-logos/nestjs.svg",
+    "blogIcon": "/images/blog/icons/nestjs.svg",
+    "aliases": [
+      "nestjs",
+      "NestJS",
+      "Nest.js"
+    ]
+  },
+  "fastapi": {
+    "file": "/images/tech-logos/fastapi.svg",
+    "blogIcon": "/images/blog/icons/fastapi.svg",
+    "aliases": [
+      "fastapi",
+      "FastAPI"
+    ]
+  },
+  "django": {
+    "file": "/images/tech-logos/django.svg",
+    "blogIcon": "/images/blog/icons/django.svg",
+    "aliases": [
+      "django",
+      "Django"
+    ]
+  },
+  "flask": {
+    "file": "/images/tech-logos/flask.svg",
+    "blogIcon": "/images/blog/icons/flask.svg",
+    "aliases": [
+      "flask",
+      "Flask"
+    ]
+  },
+  "gatsby": {
+    "file": "/images/tech-logos/gatsby.svg",
+    "blogIcon": "/images/blog/icons/gatsby.svg",
+    "aliases": [
+      "gatsby",
+      "Gatsby",
+      "GatsbyJS"
+    ]
+  },
+  "remix": {
+    "file": "/images/tech-logos/remix.svg",
+    "blogIcon": "/images/blog/icons/remix.svg",
+    "aliases": [
+      "remix",
+      "Remix"
+    ]
+  },
+  "astro": {
+    "file": "/images/tech-logos/astro.svg",
+    "blogIcon": "/images/blog/icons/astro.svg",
+    "aliases": [
+      "astro",
+      "Astro"
+    ]
+  },
+  "svelte": {
+    "file": "/images/tech-logos/svelte.svg",
+    "blogIcon": "/images/blog/icons/svelte.svg",
+    "aliases": [
+      "svelte",
+      "Svelte"
+    ]
+  },
+  "vue": {
+    "file": "/images/tech-logos/vue.svg",
+    "blogIcon": "/images/blog/icons/vue.svg",
+    "aliases": [
+      "vue",
+      "Vue",
+      "Vue.js",
+      "VueJS"
+    ]
+  },
+  "angular": {
+    "file": "/images/tech-logos/angular.svg",
+    "blogIcon": "/images/blog/icons/angular.svg",
+    "aliases": [
+      "angular",
+      "Angular"
+    ]
+  },
+  "nuxt": {
+    "file": "/images/tech-logos/nuxt.svg",
+    "blogIcon": "/images/blog/icons/nuxt.svg",
+    "aliases": [
+      "nuxt",
+      "Nuxt",
+      "Nuxt.js"
+    ]
+  },
+  "expo": {
+    "file": "/images/tech-logos/expo.svg",
+    "blogIcon": "/images/blog/icons/expo.svg",
+    "aliases": [
+      "expo",
+      "Expo"
+    ]
+  },
+  "flutter": {
+    "file": "/images/tech-logos/flutter.svg",
+    "blogIcon": "/images/blog/icons/flutter.svg",
+    "aliases": [
+      "flutter",
+      "Flutter"
+    ]
+  },
+  "electron": {
+    "file": "/images/tech-logos/electron.svg",
+    "blogIcon": "/images/blog/icons/electron.svg",
+    "aliases": [
+      "electron",
+      "Electron"
+    ]
+  },
+  "tauri": {
+    "file": "/images/tech-logos/tauri.svg",
+    "blogIcon": "/images/blog/icons/tauri.svg",
+    "aliases": [
+      "tauri",
+      "Tauri"
+    ]
+  },
+  "openai": {
+    "file": "/images/tech-logos/openai.svg",
+    "blogIcon": "/images/blog/icons/openai.svg",
+    "aliases": [
+      "openai",
+      "OpenAI"
+    ]
+  },
+  "anthropic": {
+    "file": "/images/tech-logos/anthropic.svg",
+    "blogIcon": "/images/blog/icons/anthropic.svg",
+    "aliases": [
+      "anthropic",
+      "Anthropic",
+      "Claude"
+    ]
+  },
+  "claude": {
+    "file": "/images/tech-logos/claude.svg",
+    "blogIcon": "/images/blog/icons/claude.svg",
+    "aliases": [
+      "claude",
+      "claude"
+    ]
+  },
+  "huggingface": {
+    "file": "/images/tech-logos/huggingface.svg",
+    "blogIcon": "/images/blog/icons/huggingface.svg",
+    "aliases": [
+      "huggingface",
+      "Hugging Face",
+      "HuggingFace"
+    ]
+  },
+  "tensorflow": {
+    "file": "/images/tech-logos/tensorflow.svg",
+    "blogIcon": "/images/blog/icons/tensorflow.svg",
+    "aliases": [
+      "tensorflow",
+      "TensorFlow"
+    ]
+  },
+  "pytorch": {
+    "file": "/images/tech-logos/pytorch.svg",
+    "blogIcon": "/images/blog/icons/pytorch.svg",
+    "aliases": [
+      "pytorch",
+      "PyTorch"
+    ]
+  },
+  "cursor": {
+    "file": "/images/tech-logos/cursor.svg",
+    "blogIcon": "/images/blog/icons/cursor.svg",
+    "aliases": [
+      "cursor",
+      "Cursor"
+    ]
+  },
+  "github": {
+    "file": "/images/tech-logos/github.svg",
+    "blogIcon": "/images/blog/icons/github.svg",
+    "aliases": [
+      "github",
+      "GitHub"
+    ]
+  },
+  "gitlab": {
+    "file": "/images/tech-logos/gitlab.svg",
+    "blogIcon": "/images/blog/icons/gitlab.svg",
+    "aliases": [
+      "gitlab",
+      "GitLab"
+    ]
+  },
+  "bitbucket": {
+    "file": "/images/tech-logos/bitbucket.svg",
+    "blogIcon": "/images/blog/icons/bitbucket.svg",
+    "aliases": [
+      "bitbucket",
+      "Bitbucket"
+    ]
+  },
+  "npm": {
+    "file": "/images/tech-logos/npm.svg",
+    "blogIcon": "/images/blog/icons/npm.svg",
+    "aliases": [
+      "npm",
+      "npm"
+    ]
+  },
+  "yarn": {
+    "file": "/images/tech-logos/yarn.svg",
+    "blogIcon": "/images/blog/icons/yarn.svg",
+    "aliases": [
+      "yarn",
+      "Yarn"
+    ]
+  },
+  "pnpm": {
+    "file": "/images/tech-logos/pnpm.svg",
+    "blogIcon": "/images/blog/icons/pnpm.svg",
+    "aliases": [
+      "pnpm",
+      "pnpm"
+    ]
+  },
+  "figma": {
+    "file": "/images/tech-logos/figma.svg",
+    "blogIcon": "/images/blog/icons/figma.svg",
+    "aliases": [
+      "figma",
+      "Figma"
+    ]
+  },
+  "stripe": {
+    "file": "/images/tech-logos/stripe.svg",
+    "blogIcon": "/images/blog/icons/stripe.svg",
+    "aliases": [
+      "stripe",
+      "Stripe"
+    ]
+  },
+  "paystack": {
+    "file": "/images/tech-logos/paystack.png",
+    "blogIcon": "/images/blog/icons/paystack.png",
+    "aliases": [
+      "paystack",
+      "Paystack"
+    ]
+  },
+  "payfast": {
+    "file": "/images/tech-logos/payfast.svg",
+    "blogIcon": "/images/blog/icons/payfast.svg",
+    "aliases": [
+      "payfast",
+      "Payfast",
+      "PayFast"
+    ]
+  },
+  "nginx": {
+    "file": "/images/tech-logos/nginx.svg",
+    "blogIcon": "/images/blog/icons/nginx.svg",
+    "aliases": [
+      "nginx",
+      "Nginx"
+    ]
+  },
+  "apache": {
+    "file": "/images/tech-logos/apache.svg",
+    "blogIcon": "/images/blog/icons/apache.svg",
+    "aliases": [
+      "apache",
+      "Apache"
+    ]
+  },
+  "linux": {
+    "file": "/images/tech-logos/linux.svg",
+    "blogIcon": "/images/blog/icons/linux.svg",
+    "aliases": [
+      "linux",
+      "Linux"
+    ]
+  },
+  "ubuntu": {
+    "file": "/images/tech-logos/ubuntu.svg",
+    "blogIcon": "/images/blog/icons/ubuntu.svg",
+    "aliases": [
+      "ubuntu",
+      "Ubuntu"
+    ]
+  },
+  "debian": {
+    "file": "/images/tech-logos/debian.svg",
+    "blogIcon": "/images/blog/icons/debian.svg",
+    "aliases": [
+      "debian",
+      "Debian"
+    ]
+  },
+  "git": {
+    "file": "/images/tech-logos/git.svg",
+    "blogIcon": "/images/blog/icons/git.svg",
+    "aliases": [
+      "git",
+      "Git"
+    ]
+  },
+  "github-actions": {
+    "file": "/images/tech-logos/github-actions.svg",
+    "blogIcon": "/images/blog/icons/github-actions.svg",
+    "aliases": [
+      "github-actions",
+      "GitHub Actions"
+    ]
+  },
+  "helm": {
+    "file": "/images/tech-logos/helm.svg",
+    "blogIcon": "/images/blog/icons/helm.svg",
+    "aliases": [
+      "helm",
+      "Helm"
+    ]
+  },
+  "prometheus": {
+    "file": "/images/tech-logos/prometheus.svg",
+    "blogIcon": "/images/blog/icons/prometheus.svg",
+    "aliases": [
+      "prometheus",
+      "Prometheus"
+    ]
+  },
+  "grafana": {
+    "file": "/images/tech-logos/grafana.svg",
+    "blogIcon": "/images/blog/icons/grafana.svg",
+    "aliases": [
+      "grafana",
+      "Grafana"
+    ]
+  },
+  "datadog": {
+    "file": "/images/tech-logos/datadog.svg",
+    "blogIcon": "/images/blog/icons/datadog.svg",
+    "aliases": [
+      "datadog",
+      "Datadog"
+    ]
+  },
+  "sentry": {
+    "file": "/images/tech-logos/sentry.svg",
+    "blogIcon": "/images/blog/icons/sentry.svg",
+    "aliases": [
+      "sentry",
+      "Sentry"
+    ]
+  },
+  "slack": {
+    "file": "/images/tech-logos/slack.svg",
+    "blogIcon": "/images/blog/icons/slack.svg",
+    "aliases": [
+      "slack",
+      "Slack"
+    ]
+  },
+  "notion": {
+    "file": "/images/tech-logos/notion.svg",
+    "blogIcon": "/images/blog/icons/notion.svg",
+    "aliases": [
+      "notion",
+      "Notion"
+    ]
+  },
+  "linear": {
+    "file": "/images/tech-logos/linear.svg",
+    "blogIcon": "/images/blog/icons/linear.svg",
+    "aliases": [
+      "linear",
+      "Linear"
+    ]
+  },
+  "jira": {
+    "file": "/images/tech-logos/jira.svg",
+    "blogIcon": "/images/blog/icons/jira.svg",
+    "aliases": [
+      "jira",
+      "Jira"
+    ]
+  },
+  "confluence": {
+    "file": "/images/tech-logos/confluence.svg",
+    "blogIcon": "/images/blog/icons/confluence.svg",
+    "aliases": [
+      "confluence",
+      "Confluence"
+    ]
+  },
+  "shopify": {
+    "file": "/images/tech-logos/shopify.svg",
+    "blogIcon": "/images/blog/icons/shopify.svg",
+    "aliases": [
+      "shopify",
+      "Shopify"
+    ]
+  },
+  "woocommerce": {
+    "file": "/images/tech-logos/woocommerce.svg",
+    "blogIcon": "/images/blog/icons/woocommerce.svg",
+    "aliases": [
+      "woocommerce",
+      "WooCommerce"
+    ]
+  },
+  "wordpress": {
+    "file": "/images/tech-logos/wordpress.svg",
+    "blogIcon": "/images/blog/icons/wordpress.svg",
+    "aliases": [
+      "wordpress",
+      "WordPress"
+    ]
+  },
+  "sanity": {
+    "file": "/images/tech-logos/sanity.svg",
+    "blogIcon": "/images/blog/icons/sanity.svg",
+    "aliases": [
+      "sanity",
+      "Sanity"
+    ]
+  },
+  "contentful": {
+    "file": "/images/tech-logos/contentful.svg",
+    "blogIcon": "/images/blog/icons/contentful.svg",
+    "aliases": [
+      "contentful",
+      "Contentful"
+    ]
+  },
+  "storybook": {
+    "file": "/images/tech-logos/storybook.svg",
+    "blogIcon": "/images/blog/icons/storybook.svg",
+    "aliases": [
+      "storybook",
+      "Storybook"
+    ]
+  },
+  "trpc": {
+    "file": "/images/tech-logos/trpc.svg",
+    "blogIcon": "/images/blog/icons/trpc.svg",
+    "aliases": [
+      "trpc",
+      "tRPC"
+    ]
+  },
+  "zod": {
+    "file": "/images/tech-logos/zod.svg",
+    "blogIcon": "/images/blog/icons/zod.svg",
+    "aliases": [
+      "zod",
+      "Zod"
+    ]
+  },
+  "redux": {
+    "file": "/images/tech-logos/redux.svg",
+    "blogIcon": "/images/blog/icons/redux.svg",
+    "aliases": [
+      "redux",
+      "Redux"
+    ]
+  },
+  "mobx": {
+    "file": "/images/tech-logos/mobx.svg",
+    "blogIcon": "/images/blog/icons/mobx.svg",
+    "aliases": [
+      "mobx",
+      "MobX"
+    ]
+  },
+  "react-query": {
+    "file": "/images/tech-logos/react-query.svg",
+    "blogIcon": "/images/blog/icons/react-query.svg",
+    "aliases": [
+      "react-query",
+      "React Query",
+      "TanStack Query"
+    ]
+  },
+  "solidjs": {
+    "file": "/images/tech-logos/solidjs.svg",
+    "blogIcon": "/images/blog/icons/solidjs.svg",
+    "aliases": [
+      "solidjs",
+      "Solid",
+      "SolidJS"
+    ]
+  },
+  "bun": {
+    "file": "/images/tech-logos/bun.svg",
+    "blogIcon": "/images/blog/icons/bun.svg",
+    "aliases": [
+      "bun",
+      "Bun"
+    ]
+  },
+  "deno": {
+    "file": "/images/tech-logos/deno.svg",
+    "blogIcon": "/images/blog/icons/deno.svg",
+    "aliases": [
+      "deno",
+      "Deno"
+    ]
+  },
+  "cloudinary": {
+    "file": "/images/tech-logos/cloudinary.svg",
+    "blogIcon": "/images/blog/icons/cloudinary.svg",
+    "aliases": [
+      "cloudinary",
+      "Cloudinary"
+    ]
+  },
+  "twilio": {
+    "file": "/images/tech-logos/twilio.svg",
+    "blogIcon": "/images/blog/icons/twilio.svg",
+    "aliases": [
+      "twilio",
+      "Twilio"
+    ]
+  },
+  "sendgrid": {
+    "file": "/images/tech-logos/sendgrid.svg",
+    "blogIcon": "/images/blog/icons/sendgrid.svg",
+    "aliases": [
+      "sendgrid",
+      "SendGrid"
+    ]
+  },
+  "chatgpt": {
+    "file": "/images/tech-logos/chatgpt.webp",
+    "blogIcon": "/images/blog/icons/chatgpt.webp",
+    "aliases": [
+      "chatgpt",
+      "chatgpt"
+    ]
+  },
+  "ikhoka": {
+    "file": "/images/tech-logos/ikhoka.png",
+    "blogIcon": "/images/blog/icons/ikhoka.png",
+    "aliases": [
+      "ikhoka",
+      "ikhoka"
+    ]
+  },
+  "ozow": {
+    "file": "/images/tech-logos/ozow.png",
+    "blogIcon": "/images/blog/icons/ozow.png",
+    "aliases": [
+      "ozow",
+      "ozow"
+    ]
+  },
+  "peach-payments": {
+    "file": "/images/tech-logos/peach-payments.png",
+    "blogIcon": "/images/blog/icons/peach-payments.png",
+    "aliases": [
+      "peach-payments",
+      "peach-payments"
+    ]
+  },
+  "yoco": {
+    "file": "/images/tech-logos/yoco.png",
+    "blogIcon": "/images/blog/icons/yoco.png",
+    "aliases": [
+      "yoco",
+      "yoco"
+    ]
+  }
+}

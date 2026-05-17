@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { Music } from 'lucide-react';
+import { TransitionLink } from './ui/TransitionLink';
 
 const ESPAZZA_TAG = 'espazza';
 
@@ -21,9 +21,12 @@ export default function EspazzaStatusBanner() {
           <p className="text-sm text-muted-foreground leading-relaxed">
             I built eSpazza (Xhosa hip hop streaming). The public site at xhosahiphop.co.za is down
             while we restore hosting.{' '}
-            <Link to="/projects/espazza" className="text-primary hover:underline font-medium">
+            <TransitionLink
+              to="/projects/espazza"
+              className="text-primary hover:underline font-medium"
+            >
               Status and contact
-            </Link>
+            </TransitionLink>
           </p>
         </div>
       </div>

@@ -14,12 +14,9 @@ import {
 export type TocHeading = TocEntry;
 
 export interface BlogTocProps {
-  /** Raw markdown; parsed when `headings` is omitted. */
   markdown?: string;
-  /** Pre-built headings (wins over `markdown`). */
   headings?: TocHeading[];
   className?: string;
-  /** Nav landmark label (default: "On this page"). */
   label?: string;
 }
 
@@ -35,25 +32,23 @@ function TocLinkList({
   onNavigate: (id: string) => void;
 }) {
   return (
-    <ol className="space-y-1 text-sm">
+    <ol className="space-y-0.5 text-sm">
       {entries.map((entry) => {
         const isActive = activeId === entry.id;
         return (
           <li
             key={entry.id}
-            className={cn(
-              entry.level === 3 && 'border-s border-primary/20 ps-3',
-            )}
+            className={cn(entry.level === 3 && 'border-s border-[var(--gold)]/25 ps-3')}
           >
             <a
               href={`#${entry.id}`}
               className={cn(
-                'block rounded-lg px-2 py-1.5 leading-snug',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                'block rounded-md px-2 py-1.5 leading-snug font-technical',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]',
                 'motion-safe:transition-colors motion-reduce:transition-none',
                 isActive
-                  ? 'bg-primary/10 font-medium text-primary'
-                  : 'text-muted-foreground hover:bg-card/60 hover:text-foreground',
+                  ? 'font-medium text-[var(--gold)]'
+                  : 'text-[var(--text-muted)] hover:text-[var(--warm-white)]',
                 entry.level === 2 && !isActive && 'font-medium',
               )}
               onClick={(e) => {
@@ -103,7 +98,7 @@ export function BlogToc({
           setActiveId(visible[0].target.id);
         }
       },
-      { rootMargin: '-80px 0px -70% 0px', threshold: 0 },
+      { rootMargin: '-96px 0px -70% 0px', threshold: 0 },
     );
 
     for (const el of elements) observer.observe(el);
@@ -129,7 +124,7 @@ export function BlogToc({
   if (entries.length < 2) return null;
 
   const panelClassName =
-    'rounded-2xl border border-border bg-card/80 p-4 shadow-sm backdrop-blur-sm';
+    'rounded-xl border border-[var(--gold)]/10 bg-[var(--slate)]/60 p-4 backdrop-blur-sm';
 
   const list = (
     <TocLinkList
@@ -148,19 +143,18 @@ export function BlogToc({
               type="button"
               className={cn(
                 'flex w-full items-center justify-between gap-3 text-left',
-                'rounded-xl text-sm font-semibold text-foreground',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                'motion-safe:transition-colors motion-reduce:transition-none',
+                'rounded-lg font-technical text-sm font-semibold text-[var(--warm-white)]',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]',
               )}
               aria-expanded={mobileOpen}
             >
               <span className="inline-flex items-center gap-2">
-                <List className="h-4 w-4 text-primary" aria-hidden />
+                <List className="h-4 w-4 text-[var(--gold)]" aria-hidden />
                 {label}
               </span>
               <ChevronDown
                 className={cn(
-                  'h-4 w-4 shrink-0 text-muted-foreground motion-safe:transition-transform motion-reduce:transition-none',
+                  'h-4 w-4 shrink-0 text-[var(--text-muted)] motion-safe:transition-transform',
                   mobileOpen && 'rotate-180',
                 )}
                 aria-hidden
@@ -174,20 +168,22 @@ export function BlogToc({
       </div>
 
       <nav
-        className={cn('not-prose hidden lg:block', className)}
+        className={cn(
+          'not-prose hidden w-60 shrink-0 lg:sticky lg:top-[var(--site-nav-height)] lg:z-20 lg:block lg:max-h-[calc(100vh-var(--site-nav-height))] lg:self-start',
+          className,
+        )}
         aria-labelledby="blog-toc-heading-desktop"
       >
         <div
           className={cn(
             panelClassName,
-            'lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:overscroll-contain',
+            'lg:max-h-[calc(100vh-var(--site-nav-height)-1rem)] lg:overflow-y-auto lg:overscroll-contain',
           )}
         >
           <h2
             id="blog-toc-heading-desktop"
-            className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground"
+            className="mb-4 font-technical text-label-sm font-semibold uppercase tracking-[var(--tracking-label)] text-[var(--text-muted)]"
           >
-            <List className="h-3.5 w-3.5 text-primary" aria-hidden />
             {label}
           </h2>
           {list}

@@ -1,6 +1,6 @@
 import type React from 'react';
-import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
+import { TransitionLink } from './ui/TransitionLink';
 
 interface ProjectCardProps {
   title: string;
@@ -57,9 +57,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, url, tech
 
   if (isInternal) {
     return (
-      <Link to={url} className={cardClassName}>
+      <TransitionLink to={url} className={cardClassName}>
         <ProjectCardContent title={title} description={description} tech={tech} showExternalIcon={false} />
-      </Link>
+      </TransitionLink>
     );
   }
 

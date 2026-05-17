@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight, Calculator } from 'lucide-react';
+import { TransitionLink } from './ui/TransitionLink';
 
 type BlogCommercialCtaProps = {
   variant?: 'default' | 'engineering';
@@ -25,20 +25,20 @@ export default function BlogCommercialCta({ variant = 'default' }: BlogCommercia
         I scope MVPs, ship on React and Node, and own cloud and payments for SA startups.
       </p>
       <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-        <Link
+        <TransitionLink
           to="/technical-cofounder"
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--gold-dim)] px-4 py-2.5 text-sm font-medium text-[var(--navy-dark)] transition-opacity hover:opacity-90"
         >
           Technical co-founder
           <ArrowRight className="w-4 h-4" aria-hidden />
-        </Link>
-        <Link
+        </TransitionLink>
+        <TransitionLink
           to="/get-a-quote"
           className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-background transition-colors"
         >
           <Calculator className="w-4 h-4" aria-hidden />
           Get a quote
-        </Link>
+        </TransitionLink>
       </div>
     </aside>
   );

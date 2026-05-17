@@ -21,7 +21,7 @@ In 2026, "web development" usually means far more than editing HTML in Notepad. 
 
 ## Front-end vs back-end vs full-stack
 
-![Full-stack web development workflow on laptop and server diagram](/images/blog/how-to-use-wordpress.jpg)
+![Full-stack web development deploy pipeline from git to production](/images/blog/netlify-jamstack-deploy.png)
 
 ### Front-end development
 
@@ -58,11 +58,9 @@ For apps that span phone, web, and admin, see **[What is application development
 
 ## Modern practices in 2026
 
-![Modern web stack with TypeScript, React components, and cloud deployment pipeline](/images/blog/codex%20openai.jpeg)
-
 ### TypeScript by default
 
-Typed JavaScript catches an entire class of bugs before deploy. For client work I default to **TypeScript** on React and Node.
+Typed JavaScript catches an entire class of bugs before deploy. For client work I default to <img src="/images/blog/icons/typescript.svg" alt="TypeScript" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **TypeScript** on <img src="/images/blog/icons/react.svg" alt="React" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **React** and <img src="/images/blog/icons/nodejs.svg" alt="Node.js" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **Node**.
 
 ### Component-driven UI
 
@@ -90,7 +88,7 @@ Structured logs, error tracking (Sentry and peers), uptime checks. When Paystack
 
 ## Typical project phases
 
-![Web project timeline from discovery through launch and iteration on a whiteboard](/images/blog/how-to-use-wordpress.jpg)
+![AWS serverless and cloud services in a typical production web stack](/images/blog/aws-serverless-architecture.png)
 
 1. **Discovery:** Goals, users, constraints, compliance.
 2. **Architecture:** Stack, data model, integrations, hosting region.
@@ -122,8 +120,6 @@ Skipping discovery shows up as "we need to rebuild auth in month four."
 Public examples from my portfolio include [Queens Connect](https://queensconnect.qwabi.co.za/) (AI-assisted community product) and [Kingly](https://kingly.qwabi.co.za/) (developer tooling). Each needed web development discipline, not only a landing page.
 
 ## Choosing a software development company in South Africa
-
-![Team reviewing a software vendor shortlist and production app references](/images/blog/codex%20openai.jpeg)
 
 Look for:
 

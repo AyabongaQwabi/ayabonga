@@ -20,7 +20,7 @@ This guide defines the role, the skills, the day-to-day, and how to hire without
 
 ## What a software developer actually does
 
-![Software developer writing and reviewing code on a laptop](/images/blog/copilot-chat-ee053e45453d.png)
+![Software developer writing and reviewing code on a laptop](/images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg)
 
 A **software developer** (also called software engineer or programmer) designs, builds, tests, and maintains software. That software might be:
 

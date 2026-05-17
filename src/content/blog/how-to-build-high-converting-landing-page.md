@@ -67,13 +67,11 @@ Metrics, client logos, screenshots, star ratings, compliance badges. Do not inve
 
 ### Offer clarity
 
-What they get, when, and what it costs (or "from R..." for scoped services). Link to [quote estimator](/get-a-quote) when price depends on scope.
+What they get, when, and what it costs (or "from R..." for scoped services).
 
 ### Risk reversal
 
 Guarantees, free audits, "no card required," clear POPIA statement on data use.
-
-Document this in a one-page brief. [Documentation-first](/blog/vibe-coding-documentation-framework) beats redesign loops later.
 
 ## Step 4: Map the page structure
 
@@ -116,8 +114,6 @@ Example: "Get my ballpark quote" beats "Contact us."
 - "Why is this more than a freelancer quote?"
 - "Do I own the code and accounts?"
 - "What if I already burned money on a junior build?"
-
-Link honest answers to [junior MVP rebuild costs](/blog/hidden-cost-junior-mvp) and [TaaS positioning](/vs/technical-cofounder-vs-agency) when relevant.
 
 ## Step 5: Write copy for scanning
 
@@ -186,8 +182,6 @@ Slow pages tax conversion and ad spend.
 - Font subsetting, preconnect to CDN
 - Target strong LCP (Largest Contentful Paint) on mid-tier Android over 3G
 - Test on real devices, not only office Wi-Fi
-
-See also [Stage 6 resilience](/blog/designing-for-stage-six-resilience): light pages help when the grid drops.
 
 ## Step 9: Forms and WhatsApp that actually convert
 

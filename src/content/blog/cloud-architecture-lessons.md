@@ -27,11 +27,13 @@ const getUser = async (id) => {
 
 ## The Cost of Complexity
 
-Every architectural decision has a maintenance cost. That Kubernetes cluster that seems like overkill? It needs to be monitored, updated, and secured. Those microservices? They need to communicate reliably.
+Every architectural decision has a maintenance cost. That <img src="/images/blog/icons/kubernetes.svg" alt="Kubernetes" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Kubernetes cluster that seems like overkill? It needs to be monitored, updated, and secured. Those microservices? They need to communicate reliably.
 
 I have learned to ask: **"What is the simplest solution that will work for the next 6-12 months?"**
 
 ## Serverless is Not Always the Answer
+
+![AWS serverless architecture with functions, API gateway, and managed services](/images/blog/aws-serverless-architecture.png)
 
 Serverless functions are powerful, but they have their place. Cold starts, execution time limits, and vendor lock-in are real considerations. Sometimes a simple container running on Cloud Run or App Engine is the better choice.
 
@@ -45,6 +47,8 @@ I have seen projects struggle not because of their application code, but because
 - Think about backup and recovery
 
 ## Observability from Day One
+
+![Prometheus-style metrics and monitoring for cloud workloads](/images/blog/distributed-system-observability.png)
 
 Add logging, monitoring, and tracing early. When something goes wrong in production, you will thank yourself.
 

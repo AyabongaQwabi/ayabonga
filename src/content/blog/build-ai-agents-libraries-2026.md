@@ -13,6 +13,8 @@ My battle-tested 2026 guide to the best **libraries and platforms for building A
 
 ## 1. Code-first powerhouses (full control and production)
 
+![RAG and agent architecture patterns for production AI systems](/images/blog/rag-agent-architecture.png)
+
 ### LangGraph (LangChain ecosystem)
 
 The current king for **stateful, controllable** agents. Model your agent as a graph: nodes for actions, edges for decisions, built-in persistence, human-in-the-loop, and retry logic.

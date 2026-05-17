@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { PageShell } from '../components/layout/PageShell';
+import { TransitionLink } from '../components/ui/TransitionLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ExternalLink, Music, MessageCircle } from 'lucide-react';
 import {
@@ -38,7 +39,7 @@ export default function EspazzaProject() {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <PageShell className="bg-background text-foreground font-sans">
       <Helmet>
         <title>{`${PAGE_TITLE} | ${SITE_NAME}`}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
@@ -58,19 +59,7 @@ export default function EspazzaProject() {
         <script type="application/ld+json">{projectJsonLd}</script>
       </Helmet>
 
-      <nav className="border-b border-border">
-        <div className="max-w-3xl mx-auto px-6 py-4">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" aria-hidden />
-            Back to home
-          </Link>
-        </div>
-      </nav>
-
-      <main className="max-w-3xl mx-auto px-6 py-16">
+      <main id="main-content" className="max-w-3xl mx-auto px-6 py-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
           <Music className="w-4 h-4" aria-hidden />
           Project
@@ -118,14 +107,14 @@ export default function EspazzaProject() {
             <ExternalLink className="w-4 h-4" aria-hidden />
             Try {ESPAZZA_DOMAIN.replace('https://', '')}
           </a>
-          <Link
+          <TransitionLink
             to="/"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-muted-foreground hover:text-[var(--gold)] transition-colors"
           >
             Hire me for product work
-          </Link>
+          </TransitionLink>
         </div>
       </main>
-    </div>
+        </PageShell>
   );
 }

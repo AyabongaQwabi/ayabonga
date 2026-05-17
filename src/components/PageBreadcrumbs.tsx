@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { TransitionLink } from './ui/TransitionLink';
 
 export type BreadcrumbItem = {
   label: string;
@@ -29,12 +29,12 @@ export function PageBreadcrumbs({ items }: PageBreadcrumbsProps) {
                   {item.label}
                 </span>
               ) : (
-                <Link
+                <TransitionLink
                   to={item.to}
                   className="hover:text-foreground transition-colors"
                 >
                   {item.label}
-                </Link>
+                </TransitionLink>
               )}
             </li>
           );

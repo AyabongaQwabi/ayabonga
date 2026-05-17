@@ -1,9 +1,7 @@
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft } from 'lucide-react';
 import { absoluteUrl, TWITTER_HANDLE } from '../lib/site-config';
-import { SiteFooter } from './SiteFooter';
+import { PageShell } from './layout/PageShell';
 
 type TrustPageLayoutProps = {
   title: string;
@@ -23,7 +21,7 @@ export function TrustPageLayout({
   const canonical = absoluteUrl(canonicalPath);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
+    <PageShell>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -41,23 +39,12 @@ export function TrustPageLayout({
         ) : null}
       </Helmet>
 
-      <nav className="border-b border-border">
-        <div className="max-w-3xl mx-auto px-6 py-4">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" aria-hidden />
-            Home
-          </Link>
-        </div>
-      </nav>
-
-      <main className="flex-1 max-w-3xl mx-auto px-6 py-12 md:py-16 prose prose-invert prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-primary">
+      <main
+        id="main-content"
+        className="mx-auto max-w-3xl px-6 py-12 md:py-16 prose prose-invert prose-headings:font-display prose-headings:text-[var(--warm-white)] prose-p:text-[var(--text-muted)] prose-li:text-[var(--text-muted)] prose-a:text-[var(--gold)]"
+      >
         {children}
       </main>
-
-      <SiteFooter />
-    </div>
+    </PageShell>
   );
 }

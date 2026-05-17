@@ -16,6 +16,8 @@ Bru, 2026 and every Joburg fintech startup, Cape Town e-comm store, and Durban l
 
 But here’s the tea: you don’t need to buy pre-made agents. You build them.
 
+![Agent and RAG architecture patterns used in production stacks](/images/blog/rag-agent-architecture.png)
+
 Here’s the real stack SA devs are using right now to ship production-grade agents (code-first, no-code, and everything in between). Bookmark this. 🧵
 
 **2/10**  

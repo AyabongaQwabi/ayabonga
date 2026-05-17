@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { FolderOpen, Tag } from 'lucide-react';
+import { TransitionLink } from './ui/TransitionLink';
 
 type Props = {
   categories: string[];
@@ -29,13 +29,13 @@ export function BlogTaxonomy({ categories, tags, size = 'md' }: Props) {
           <FolderOpen className="w-3.5 h-3.5 text-muted-foreground shrink-0" aria-hidden />
           <div className="flex flex-wrap gap-1.5">
             {categories.map((c) => (
-              <Link
+              <TransitionLink
                 key={c}
                 to={`/blog?category=${encodeURIComponent(c)}`}
                 className={chipBase(size, false, 'category')}
               >
                 {c}
-              </Link>
+              </TransitionLink>
             ))}
           </div>
         </div>
@@ -45,13 +45,13 @@ export function BlogTaxonomy({ categories, tags, size = 'md' }: Props) {
           <Tag className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-1" aria-hidden />
           <div className="flex flex-wrap gap-1.5">
             {tags.map((t) => (
-              <Link
+              <TransitionLink
                 key={t}
                 to={`/blog?tag=${encodeURIComponent(t)}`}
                 className={chipBase(size, false, 'tag')}
               >
                 {t}
-              </Link>
+              </TransitionLink>
             ))}
           </div>
         </div>
@@ -69,11 +69,11 @@ type FilterChipProps = {
 
 export function BlogFilterChip({ label, to, active, variant }: FilterChipProps) {
   return (
-    <Link
+    <TransitionLink
       to={to}
       className={chipBase('sm', active, variant)}
     >
       {label}
-    </Link>
+    </TransitionLink>
   );
 }

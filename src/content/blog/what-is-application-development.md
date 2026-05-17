@@ -25,7 +25,7 @@ When founders search for an **app development company** or **custom software dev
 
 ### Web applications
 
-Run in the browser, often feel like desktop software: dashboards, marketplaces, booking tools. Built with **React**, **Next.js**, APIs, and hosted on modern cloud platforms.
+Run in the browser, often feel like desktop software: dashboards, marketplaces, booking tools. Built with <img src="/images/blog/icons/react.svg" alt="React" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **React**, <img src="/images/blog/icons/nextjs.svg" alt="Next.js" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> **Next.js**, APIs, and hosted on modern cloud platforms.
 
 Related reading: **[What is web development?](/blog/what-is-web-development)** and **[What is web design?](/blog/what-is-web-design)**.
 

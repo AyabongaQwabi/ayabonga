@@ -24,7 +24,7 @@ Here’s how I explain the current landscape to other South African devs and boo
 
 These are the platforms you’ll probably use first. They hide most infra headaches and play nicely with modern JS frameworks.
 
-### 1. Vercel – The Default for Next.js
+### 1. <img src="/images/blog/icons/vercel.svg" alt="Vercel" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Vercel – The Default for Next.js
 
 **Best for:** Next.js apps, landing pages, SaaS dashboards, marketing sites.  
 **Why devs love it:**
@@ -40,7 +40,9 @@ Trade-offs:
 - It’s opinionated. You’re living in the Next.js/Vercel world.  
 - Costs can creep up if you run heavy background jobs or abuse edge functions.
 
-### 2. Netlify – Jamstack Veteran With Nice DX
+### 2. <img src="/images/blog/icons/netlify.svg" alt="Netlify" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Netlify – Jamstack Veteran With Nice DX
+
+![Netlify Connect style deploy pipeline for Jamstack sites](/images/blog/netlify-jamstack-deploy.png)
 
 **Best for:** Static sites, Jamstack, older Gatsby/React SPAs, simple forms and functions.  
 **Why devs still use it in 2026:**
@@ -57,7 +59,7 @@ Trade-offs:
 - Next.js support is decent, but Vercel is usually better for the latest Next features.  
 - Complex backends eventually feel cramped; you’ll start bolting on other services.
 
-### 3. Supabase – Postgres, Auth, and APIs Out of the Box
+### 3. <img src="/images/blog/icons/supabase.svg" alt="Supabase" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Supabase – Postgres, Auth, and APIs Out of the Box
 
 **Best for:** Full-stack apps where you want a real database + auth without setting up your own backend.  
 **What you get:**
@@ -77,7 +79,9 @@ Trade-offs:
 - Still a managed platform: you’re on their Postgres flavor, their limits, their uptime.  
 - For very high scale / strict compliance, you might still end up on raw cloud Postgres later.
 
-### 4. Firebase – Realtime and Mobile-First
+### 4. <img src="/images/blog/icons/firebase.svg" alt="Firebase" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> Firebase – Realtime and Mobile-First
+
+![Firebase backend services for mobile and realtime apps](/images/blog/firebase-mobile-backend.png)
 
 **Best for:** Realtime apps, mobile-first products, chat, presence features, or teams deep in the Google ecosystem.  
 **What you get:**
@@ -102,7 +106,7 @@ Trade-offs:
 At some point in your career, you’ll hear: “We’re on **AWS**” or “Our stack is **Azure** + on-prem” or “We’re moving more workloads to **GCP**.”  
 These are not “click and deploy my portfolio” tools. They’re **lego boxes** of hundreds of services.
 
-### AWS – The Default Cloud
+### <img src="/images/blog/icons/aws.svg" alt="AWS" width="28" height="28" class="inline-block align-middle mr-1" loading="lazy" /> AWS – The Default Cloud
 
 **Strengths:**
 - Huge ecosystem: compute (EC2, Lambda), storage (S3), managed DBs (RDS, DynamoDB), queues, analytics, ML, everything.  

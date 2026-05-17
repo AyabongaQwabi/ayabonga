@@ -23,7 +23,7 @@ export const TWITTER_HANDLE = '@ayabongaqwabi';
 export const WHATSAPP_NUMBER = '27603116777';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Ayabonga, I found your site and I'd like to chat.")}`;
 
-/** The /get-a-quote page — only link here when the user explicitly wants pricing detail. */
+/** The /get-a-quote page. Only link here when the user explicitly wants pricing detail. */
 export const QUOTE_PAGE = '/get-a-quote';
 
 /** Disqus site shortname (https://disqus.com/admin/settings/general/) */
