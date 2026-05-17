@@ -1,140 +1,198 @@
-# Product Marketing Context
+# Product Marketing Context — Ayabonga Qwabi (Personal)
 
-*Last updated: May 15, 2026*
+*Last updated: 17 May 2026 · Master Positioning v1.1 (WhatsApp ref, equity policy)*
 
-## Product Overview
-**One-liner:** I turn your business idea into a working digital product — apps, platforms, AI tools — without the agency overhead or the junior dev lottery.
+**Site:** https://www.qwabi.co.za  
+**Brand:** Ayabonga Qwabi only
 
-**What it does:** I take an idea from a founder's head and transform it into a real, scalable software business. I own the full stack — mobile, backend, payments, AI, and cloud infrastructure — acting as a technical co-founder without taking equity.
+**Related doc:** Company context in `ayabonga-business/.agents/product-marketing-context.md` (Qwabi Engineering). Share service definitions, pricing logic, and SEO knowledge; **do not** share voice or homepage angle.
 
-**Product category:** Full-Stack Product Engineering & AI Solutions.
+---
 
-**Product type:** Senior Engineering Service / Technical Partnership.
+## Strategic scope
 
-**Business model:** Project-based builds (Phase 1 fixed price) with optional equity stakes and iteration retainers.
+| Layer | Choice |
+| --- | --- |
+| Primary shelf | 1) Senior software / product engineer · 2) Technical founder for startups · 3) AI systems builder / architect  · 4) Software Applications Developer|
+| Geography | South Africa · Eastern Cape (identity and story) · remote/global |
+| Business model | Build-only · selective equity (startup-aligned) |
+| Relationship to company | Personal = craft, thinking, writing, founder credibility. Commercial conversion often hands off to business.qwabi.co.za |
 
-## Target Audience
-**Target companies:** Solo founders (non-technical), Early-stage startups, and Established SMEs looking to digitize or scale operations.
+**Cross-reference:** “I founded Qwabi Engineering” (light). Company site does not speak as “Ayabonga” in first person.
 
-**Decision-makers:** Non-technical CEOs, Founders, and Agency Owners (Middlemen).
+---
 
-**Primary use case:** Building a production-ready MVP or scaling a manual business into a digital platform.
+## Product overview
+
+**One-liner:** I am Ayabonga Qwabi, a Senior Software Engineer and Product Engineer building AI systems and startups from idea to production.
+
+**What I do:** I take founder ideas from conversation to shipped software: architecture, full-stack build, AI automation, cloud, and the product decisions that keep systems maintainable. I work best when I own technical outcomes, not when I am a line item in a committee.
+
+**Product category:** Senior product engineering · technical founder · AI systems builder ·  Software Applications Developer
+
+**Product type:** Founder-led engineering · selective equity partnerships
+
+**Business model:** Project builds; some equity deals where alignment is real; personal site is not the main retainer sales funnel (company site is).
+
+---
+
+## Target audience
+
+**Who this site is for:** Founders and builders who want to know *who* is behind the work before they trust the company. Readers of essays, technical notes, and portfolio depth.
+
+**Decision-makers:** Technical and non-technical founders, early-stage teams, people evaluating seniority and taste.
+
+**Primary use case:** “Is this person the right technical founder-level engineer for our product?”
 
 **Jobs to be done:**
-- Build a prototype to pitch to investors or acquire first customers.
-- Take over a "liability" codebase and turn it into a working product.
-- Automate manual business chaos into a streamlined digital workflow.
 
-**Use cases:**
-- **The Launch**: Going from idea/WhatsApp thread to a live product in weeks.
-- **The Scale**: Moving a social-media-based business (like Lungi's) to a professional platform.
-- **The Hand-off**: Providing reliable white-label execution for agencies (like Tecla Digital).
+- Validate seniority and shipped work
+- Understand how I think about product and engineering
+- Read longer-form context (blog, culture, build logs)
 
-## Personas
-| Persona | Cares about | Challenge | Value we promise |
-|---------|-------------|-----------|------------------|
-| **The Visionary Founder** | Speed & Trust | "I don't know how to build or manage devs." | Technical Co-founder as a Service. |
-| **The Orchestrator (Middleman)** | Reliability & Margin | "I've made a promise I can't build myself." | Reputation Insurance & Quality Execution. |
-| **The Scaler (Operator)** | Credibility & Conversion | "My business is bigger than my Instagram link." | Digital Legitimacy & Professional Scale. |
+**Handoff:** Commercial projects, estimates, and retainers → https://business.qwabi.co.za
 
-## Problems & Pain Points
-**Core problem:** High-risk development. Clients are stuck between expensive, slow agencies and "cheap" junior developers who deliver technical liabilities instead of products.
+---
 
-**Why alternatives fall short:**
-- **Agencies**: High overhead, slow culture, "paying for people who manage people."
-- **Junior Devs**: Broken payment flows, no tests, unmaintainable code, "The Junior Dev Lottery."
-- **No-Code**: Limited scalability and hidden technical debt.
+## Personas (personal lens)
 
-**What it costs them:** Time, money, investor interest, and—most critically for middlemen—their professional reputation.
+| Persona | Why they read here |
+| --- | --- |
+| Founder evaluating trust | Wants voice, judgment, and proof of craft |
+| Technical peer | Wants stack, opinions, and how I build |
+| Community / local reader | Eastern Cape and broader SA tech culture |
 
-**Emotional tension:** "This project is going to blow up in my face and take my reputation with it."
+---
 
-## Competitive Landscape
-**Direct:** Boutique agencies (Spaza) — high polish but slow and expensive; Booked-out senior freelancers with 3-month waitlists.
+## Problems and pain points
 
-**Secondary:** DIY No-Code (Bubble/FlutterFlow); Low-cost Upwork/Fiverr devs who provide a "broken relay race."
+**Core problem:** High-risk development. Buyers are stuck between slow agencies and cheap builds that become liabilities.
 
-**Indirect:** Hiring an in-house junior (becoming a part-time manager); Staying on WhatsApp/Manual workflows (the "invisible cost" of inaction).
+**Why alternatives fall short:** Agencies add overhead; juniors skip architecture and tests; no-code hits scale limits.
 
-## Differentiation
-**Key differentiators:**
-- **AI force multiplication**: Shipping like a team of five with the communication overhead of one.
-- **Business-First Engineering**: Building what is "Business Right" (e.g., ClinicPlus example), not just "Technically Possible."
-- **African Context Expertise**: Deep understanding of local payment gateways, mobile-first realities, and SMME operations.
+**Emotional tension:** “This project could blow up and cost me credibility.”
 
-**How we do it differently:** I don't "go quiet." I work in visible, testable increments with a mutual commitment signal (30% deposit).
+*(Personal site may use sharper diagnostic language than the company site.)*
 
-**Why that's better:** You get senior-level architecture and TDD-quality code at 5x the speed of a traditional agency.
+---
 
-**Why customers choose us:** They want to hand over a vision and receive a working product without having to manage the process.
+## Differentiation (personal)
 
-## Objections
-| Objection | Response |
-|-----------|----------|
-| **"You're just one person."** | "I'm one person directing parallel AI agents. I have zero communication overhead, so I ship faster than a team of five with meetings." |
-| **"Your rate is higher than [X]."** | "You're paying to avoid the 'Junior Dev Lottery.' I deliver a product you can sell, not a liability you have to fix later." |
-| **"What if you go quiet?"** | "I work in visible increments. You see progress early and often, and our contract is built on mutual accountability." |
+- Product and business judgment, not ticket-taking
+- AI systems builder with restraint (capability without hype)
+- African context: payments, mobile-first, SMME reality
+- Direct access: you work with the person who ships
+- Writing and public thinking as proof of clarity
 
-**Anti-persona:** Clients who want to micromanage every line of code or those who refuse to invest in quality/testing.
+---
 
-## Switching Dynamics
-**Push:** System failure (payments breaking), missed deadlines, manual chaos, disappointment from a previous builder.
-**Pull:** Speed, product thinking, UX focus, and "someone who just gets it."
-**Habit:** "I've already spent money here," "Starting over is exhausting."
-**Anxiety:** "Is he really that fast?", "Will he disappear?", "Can one person build this?"
+## Objections (personal voice)
 
-## Customer Language
-**How they describe the problem:**
-- "I paid for a product but got a liability."
-- "The agency is taking forever to make simple decisions."
-- "It works on his machine but not for my customers."
+| Objection | Response (I-voice) |
+| --- | --- |
+| “You are one person.” | You get one senior owner on architecture and delivery, not a meeting chain. |
+| “Your rate is higher than X.” | You are paying to avoid rebuilding later. |
+| “What if you go quiet?” | I work in visible increments with agreed milestones. |
 
-**How they describe us:**
-- "Aya just gets it."
-- "I didn't have to explain the business logic twice."
-- "This is actually usable—not just pretty."
+---
 
-**Words to use:** Human, Practical, Direct, Force multiplier, Product-minded, "Business Right."
-**Words to avoid:** Synergy, Digital transformation, Cutting-edge, World-class, Leveraging.
+## Customer language
 
-**Glossary:**
-| Term | Meaning |
-|------|---------|
-| **Junior Dev Lottery** | The high risk of hiring low-cost devs who deliver unmaintainable code. |
-| **Business-Right** | Decisions made for business ROI/longevity rather than technical purity. |
-| **AI Force Multiplier** | Using autonomous agents to handle scaffolding and routine coding at scale. |
+**Problem language:**
 
-## Brand Voice
-**Tone:** Knowledgeable, Humble, Approachable.
-**Style:** Direct, Human, Product-focused.
-**Personality:** A genuinely smart builder who actually cares about the outcome.
+- “I paid for a product but got a liability.”
+- “The agency takes forever on simple decisions.”
+- “It works on his machine, not for customers.”
 
-## Proof Points
-**Metrics:** Built multi-app ecosystems (Rider, Driver, Admin) in a single week.
-**Customers:** Trip (Founder build), ClinicPlus (Agency partner), Lungi (Established operator).
-**Testimonials:** "Aya just gets it." / "I didn't have to explain the business logic twice."
+**How people describe working with me:**
 
-**Value themes:**
-| Theme | Proof |
-|-------|-------|
-| **Speed** | Documentation of shipping like a team of five using AI agents. |
-| **Quality** | Mandatory TDD, feature testing, and client test drives. |
-| **Context** | Native integration with local SA payment gates and SMME realities. |
+- “Aya just gets it.”
+- “I did not have to explain the business twice.”
+- “This is usable, not just pretty.”
+
+**Words I use:** Direct, practical, human, product-minded, systems, shipped, milestones.
+
+**Words I avoid on personal writing:** Corporate synergy, unlock/empower fluff, hustle preaching, em dashes (site-wide brand rule).
+
+**Phrases allowed here (optional, not on company site):** junior dev lottery · business-right · technical partnership language when it fits a essay or sales conversation.
+
+---
+
+## Brand voice
+
+**Tone:** Knowledgeable, humble, approachable, direct.
+
+**Style:** First person (**I**). More room for story, opinion, and craft than the company site.
+
+**WhatsApp voice:** Same benchmark as business doc (direct, calm, consultative). Personal DMs use **I**; see `ayabonga-business/.agents/product-marketing-context.md` for the three opener templates.
+
+**Confidence:** Calm senior builder; not agency loud.
+
+**Humor:** Light when natural.
+
+**AI:** Honest about AI-powered workflow without “AI influencer” tone.
+
+**Technical depth:** Can go deeper than company pages when the piece is for engineers or founders who want detail.
+
+---
+
+## Proof points
+
+Same shipped work as company proof list (reference business doc for URLs):
+
+ClinicPlus, Warner Music Africa, Future Start, Tecla products, Namoota/Siavista, Estudio Glam, Ilithiyana, SA Tech/Mzeke, plus portfolio pieces (Laundry Marketplace, Queens Connect, Kingly, uTap, eSpazza, etc. per live site).
+
+**Featured narrative:** Future Start as ideal engagement; honesty about paused/rebuilding products where relevant.
+
+**Testimonials on company site:** Use the approved **Client feedback** block in `ayabonga-business/.agents/product-marketing-context.md`. Personal site may quote lightly with link to business work, not a duplicate carousel.
+
+---
+
+## Equity policy (personal brand only)
+
+Do not promote equity on Qwabi Engineering company pages unless the business model changes.
+
+**Public wording (bios, personal site, selective DMs):**
+
+> I selectively partner on equity-based projects where there is strong execution capability, clear market direction, and long-term product potential. I generally avoid idea-stage projects without operational commitment or validated demand.
+
+**Intent:** Professional and founder-friendly. Filters unserious “idea only” pitches. Not desperate for equity deals.
+
+---
 
 ## Goals
-**Business goal:** Sell engineering services to founders and agencies.
-**Conversion action:** Get a project quote / Hire for Phase 1.
 
-## SEO & Local Discovery (priority)
-**Primary intent:** Be found when people search for developers, engineers, and cloud help in South Africa, with **dominance in the Eastern Cape** first, then national head terms.
+**Personal site goals:**
 
-**Target query clusters:**
-- National: `software developers south africa`, `software engineers south africa`, `cloud architect south africa`
-- Local hire: `software engineers eastern cape`, `web developer east london`, `web designer gqeberha`, `web developer queenstown`, `software developer mthatha`
-- Near-me (Maps): `software agencies near me`, `cloud agencies near me`, `web developer near me` (requires Google Business Profile + reviews, not pages alone)
+- Authority and trust that supports Qwabi Engineering inbound
+- Writing and SEO for name-based and topic-based discovery
+- Cultural and technical identity (not primary quote funnel)
 
-**Positioning in search:** Rank as a **senior product engineer / technical partner** (truthful). Do not brand as a multi-person "agency" unless the business model changes.
+**Conversion:** Soft CTAs to business site, WhatsApp, or writing contact. Not “Get estimate” as primary hero.
 
-**Proof for local pages:** Queenstown base; Queens Connect, eSpazza, remote work for Simply (Cape Town). Mention service to entire EC and national remote delivery.
+---
 
-**Anti-SEO:** Thin duplicate city pages, fake office addresses, or keyword-stuffed titles that do not match page H1.
+## SEO (personal)
+
+**Clusters:** Ayabonga Qwabi · senior product engineer south africa · technical founder · AI systems builder · writing on engineering and culture
+
+**Do not compete with company site for:** software development company south africa (company owns that shelf).
+
+**Eastern Cape:** Personal story and community angle; company owns hire-intent local matrix.
+
+---
+
+## Tone calibration (locked)
+
+| Choice | Selection |
+| --- | --- |
+| Opening style | B — founder language (“I turn ideas into production software”) |
+| Confidence | Calm + confident middle |
+| Explainer mode | Business owner who codes |
+| Pricing in hero | Outcomes first |
+| Competitors | Never name on site |
+| Eastern Cape | Context, not only identity |
+
+---
+
+*Agents: use this file for www.qwabi.co.za, personal bios, and I-voice content. Use ayabonga-business context for we-voice, Qwabi Engineering, and commercial SEO.*
