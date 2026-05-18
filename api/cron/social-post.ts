@@ -21,20 +21,36 @@ function isAuthorized(req: VercelRequest): boolean {
 
 function buildArgs(req: VercelRequest): string[] {
   const args: string[] = [];
-  const platform =
-    typeof req.query.platform === 'string' ? req.query.platform : 'facebook-only';
+  const platform = 'facebook-only'; // TODO we will add instagram later
   const dryRun = req.query.dry_run === 'true' || req.query.dry_run === '1';
-  const date =
-    typeof req.query.date === 'string'
-      ? req.query.date
-      : process.env.SOCIAL_POST_DATE?.trim() || '';
 
-  console.log('[cron/social-post] Building args', { platform, dryRun, date });
+  // If no date provided, default to today in YYYY-MM-DD so post.js uses the
+  // correct local date rather than relying on UTC new Date() inside the script.
+  const rawDate =
+    typeof req.query.date === 'string' && req.query.date.trim()
+      ? req.query.date.trim()
+      : process.env.SOCIAL_POST_DATE?.trim() || '';
+  const today = new Date();
+  const todayStr = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, '0'),
+    String(today.getDate()).padStart(2, '0'),
+  ].join('-');
+  const date = rawDate || todayStr;
+
+  const slot =
+    typeof req.query.slot === 'string' && req.query.slot.trim()
+      ? req.query.slot.trim()
+      : process.env.SOCIAL_POST_SLOT?.trim() || '';
+
+  console.log('[cron/social-post] Building args', { platform, dryRun, date, slot });
 
   if (platform === 'facebook-only') args.push('--facebook-only');
   if (platform === 'instagram-only') args.push('--instagram-only');
   if (dryRun) args.push('--dry-run');
-  if (date) args.push('--date', date);
+  // Always pass --date so post.js never falls back to UTC ambiguity
+  args.push('--date', date);
+  if (slot) args.push('--slot', slot);
 
   return args;
 }
@@ -64,8 +80,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       maxBuffer: 10 * 1024 * 1024,
     });
 
-    if (isDevLog() && stderr) {
-      console.log('[cron/social-post] stderr', stderr);
+    if (stderr) {
+      console.log('[cron/social-post] stderr', stderr.slice(-2000));
     }
 
     return res.status(200).json({
@@ -82,14 +98,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       stderr?: string;
     };
 
-    if (isDevLog()) {
-      console.log('[cron/social-post] failed', {
-        code: e.code,
-        message: e.message,
-        stdout: e.stdout,
-        stderr: e.stderr,
-      });
-    }
+    // Always log the full error so Vercel logs show what went wrong
+    console.log('[cron/social-post] failed', {
+      code: e.code,
+      message: e.message,
+      stdout: e.stdout?.slice(-2000),
+      stderr: e.stderr?.slice(-2000),
+    });
 
     const exitCode = typeof e.code === 'number' ? e.code : 1;
 

@@ -22,7 +22,7 @@ import { log, logBanner, logError } from './log.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const calendar = JSON.parse(readFileSync(join(__dirname, 'calendar.json'), 'utf8'));
 
-const DAYS = { 1: 'monday', 3: 'wednesday', 5: 'friday' };
+const DAYS = { 0: 'sunday', 1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday', 5: 'friday', 6: 'saturday' };
 
 const loadedEnv = loadEnvFiles();
 if (loadedEnv.length) {
@@ -34,7 +34,7 @@ function parseLocalDate(dateStr) {
   return new Date(y, m - 1, d);
 }
 
-function getCurrentPost(overrideDate) {
+function getCurrentPost(overrideDate, overrideSlot) {
   const now = overrideDate ? parseLocalDate(overrideDate) : new Date();
   const dayName = DAYS[now.getDay()];
 
@@ -54,14 +54,37 @@ function getCurrentPost(overrideDate) {
   }
 
   const weekIndex = Math.floor(daysDiff / 7);
-  const post = calendar.posts.find((p) => p.week === weekIndex + 1 && p.day === dayName);
+
+  // Determine slotNum
+  let slotNum = 1;
+  if (overrideSlot) {
+    slotNum = parseInt(overrideSlot, 10);
+  } else {
+    // If no overrideSlot is passed, check environment variable
+    const envSlot = process.env.SOCIAL_POST_SLOT;
+    if (envSlot) {
+      slotNum = parseInt(envSlot, 10);
+    } else {
+      // Calculate based on UTC hour boundaries corresponding to cron trigger times
+      const hour = new Date().getUTCHours();
+      if (hour <= 7) slotNum = 1;
+      else if (hour <= 10) slotNum = 2;
+      else if (hour <= 13) slotNum = 3;
+      else if (hour <= 16) slotNum = 4;
+      else slotNum = 5;
+    }
+  }
+
+  const post = calendar.posts.find(
+    (p) => p.week === weekIndex + 1 && p.day === dayName && (p.slot === slotNum || (!p.hasOwnProperty('slot') && slotNum === 1))
+  );
 
   if (!post) {
-    log('calendar', 'No slot for this date', { week: weekIndex + 1, day: dayName });
+    log('calendar', 'No slot for this date and slot number', { week: weekIndex + 1, day: dayName, slot: slotNum });
     return null;
   }
 
-  return { post, weekIndex, dayName, date: formatLocalDate(now) };
+  return { post, weekIndex, dayName, slotNum, date: formatLocalDate(now) };
 }
 
 function formatLocalDate(d) {
@@ -149,6 +172,7 @@ async function run() {
   const dryRun = args.includes('--dry-run');
   const skipImageFetch = args.includes('--skip-image-fetch');
   const overrideDate = getArgValue('--date') || process.env.SOCIAL_POST_DATE || null;
+  const overrideSlot = getArgValue('--slot') || process.env.SOCIAL_POST_SLOT || null;
   const instagramEnabled = isInstagramEnabled();
 
   log('init', 'Starting social poster', {
@@ -157,17 +181,18 @@ async function run() {
     instagramOnly,
     instagramEnabled,
     date: overrideDate ?? 'today',
+    slot: overrideSlot ?? 'auto',
   });
 
   if (!instagramEnabled) {
     log('init', instagramPauseReason());
   }
 
-  const result = getCurrentPost(overrideDate);
+  const result = getCurrentPost(overrideDate, overrideSlot);
   if (!result) process.exit(0);
 
-  const { post, weekIndex, dayName, date } = result;
-  log('calendar', 'Selected slot', { week: weekIndex + 1, day: dayName, date });
+  const { post, weekIndex, dayName, slotNum, date } = result;
+  log('calendar', 'Selected slot', { week: weekIndex + 1, day: dayName, slot: slotNum, date });
 
   const summary = {
     imageUrl: null,

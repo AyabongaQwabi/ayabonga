@@ -4,6 +4,7 @@
     {
       "week": 1,
       "day": "monday",
+      "slot": 1,
       "facebook": "Most founders I talk to are stuck between two bad options: a slow agency burning R400k+ or a junior dev who delivers something that breaks in production.\n\nThere is a third option. Senior engineering, project-based, no equity split.\n\nI work with 2-3 founders at a time. From idea to live product, without the overhead.\n\nqwabi.co.za",
       "instagram": {
         "caption": "Senior engineering for founders who can't afford to get it wrong. qwabi.co.za #TaaS #StartupSA #SoftwareEngineering #FounderLife",
@@ -13,7 +14,107 @@
     },
     {
       "week": 1,
+      "day": "monday",
+      "slot": 2,
+      "facebook": "A mobile app is not just screens.\n\nIt is auth, API design, push notifications, payment flows, admin tools, and a deployment pipeline that does not break every release.\n\nMost quotes price the screens. The build breaks on everything else.\n\nqwabi.co.za/mobile-app-development-south-africa",
+      "instagram": {
+        "caption": "Mobile apps are more than screens. Auth, payments, APIs, admin. All of it. #MobileApp #AppDev #StartupSA",
+        "query": "mobile app development screens multiple",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "monday",
+      "slot": 3,
+      "facebook": "The question I get asked most: how long does an MVP take?\n\nHonest answer: 6-10 weeks for a focused mobile MVP. Less if you have a locked PRD. More if you keep changing scope.\n\nThe variable is not the code. It is the decisions.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "6-10 weeks for a focused MVP. The variable is decisions, not code. #MVP #StartupAdvice #TechFounder",
+        "query": "project timeline planning calendar",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "monday",
+      "slot": 4,
+      "facebook": "Custom software vs off-the-shelf:\n\nOff-the-shelf wins when your process fits the product. Custom wins when you have already bent 5 tools and staff still run parallel spreadsheets.\n\nI will tell you honestly which one you need. Even if it means I do not get the project.\n\nqwabi.co.za/custom-software-development-south-africa",
+      "instagram": {
+        "caption": "Custom vs off-the-shelf. I'll tell you honestly which one you need. #BusinessSoftware #DigitalTransformation #SouthAfrica",
+        "query": "software comparison choice business tools",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "monday",
+      "slot": 5,
+      "facebook": "What makes a technical co-founder different from a developer for hire:\n\nA dev builds what you spec. A technical co-founder pushes back when the spec is wrong.\n\nThat conversation, before the code is written, is worth more than any sprint.\n\nqwabi.co.za/technical-cofounder",
+      "instagram": {
+        "caption": "The best technical partners don't just build what you spec. #TechnicalCofounder #TaaS #Founder",
+        "query": "business partners strategy discussion",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "tuesday",
+      "slot": 1,
+      "facebook": "White-label engineering is the service most agencies do not talk about.\n\nYou have a client, a deadline, and a team gap. I deliver the codebase. Your client sees your brand.\n\nNDA-first. No bench rotation. No surprises on handover.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Your client sees your brand. I ship the codebase. White-label engineering for agencies. #WhiteLabel #AgencyLife #Engineering",
+        "query": "professional code delivery agency work",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "tuesday",
+      "slot": 2,
+      "facebook": "SaaS products fail at scale for one reason more than any other: the data model was wrong on day one.\n\nMulti-tenancy baked in late is not a feature. It is a rewrite.\n\nArchitecture decisions made in week one determine what you can and cannot do in month twelve.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Wrong data model on day one = rewrite in month twelve. Architecture matters. #SaaS #SaaSdev #ProductEngineering",
+        "query": "database architecture diagram schema",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "tuesday",
+      "slot": 3,
+      "facebook": "AI is not a product. It is a feature.\n\nThe businesses winning with AI are not the ones who added a chatbot. They are the ones who identified one repetitive, high-volume task and automated it completely.\n\nStart narrow. Measure it. Then expand.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "AI is not a product. It's a feature. Start narrow, measure it, then expand. #AIBusiness #Automation #AfricanTech",
+        "query": "artificial intelligence automation workflow",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "tuesday",
+      "slot": 4,
+      "facebook": "Running your business on WhatsApp threads and shared spreadsheets works until it does not.\n\nThe break point is usually: staff make errors on live orders, a manager leaves and takes the context with them, or a client asks for a report you cannot produce.\n\nThat is the signal. qwabi.co.za",
+      "instagram": {
+        "caption": "The WhatsApp + spreadsheet break point is coming. Here's what it looks like. #DigitalTransformation #SmallBizSA",
+        "query": "business operations workflow digital",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "tuesday",
+      "slot": 5,
+      "facebook": "Paystack vs Stripe for South African products:\n\nStripe works. Paystack wins on local card success rates, bank transfer support, and ZAR settlement without currency conversion friction.\n\nFor SA-first products, Paystack is the default. Not a preference, a practical choice.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Paystack vs Stripe in South Africa. The practical answer. #Paystack #Fintech #AfricanTech #SouthAfrica",
+        "query": "payment gateway fintech Africa mobile",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
       "day": "wednesday",
+      "slot": 1,
       "facebook": "My first step on every project is not code. It's a PRD.\n\nWriting forces the clarity that conversation never does. Before I touch a database schema or a UI, we have a document that answers: What are we building? Who for? What is the smallest version that proves the idea?\n\nMost junior devs skip this. That's why you end up 3 months in with something that solves the wrong problem.",
       "instagram": {
         "caption": "Documentation first. Code second. Always. #ProductEngineering #MVP #TechFounder #BuildInPublic",
@@ -23,7 +124,107 @@
     },
     {
       "week": 1,
+      "day": "wednesday",
+      "slot": 2,
+      "facebook": "The most expensive line in any software project is not the dev rate.\n\nIt is the requirement that changes after the data model is built.\n\nA schema change mid-build can cost more in rework than the original sprint. This is why I lock data contracts before writing a single component.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The most expensive thing in software isn't the dev rate. It's the requirement that changes too late. #Engineering #TechFounder",
+        "query": "software architecture data model planning",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "wednesday",
+      "slot": 3,
+      "facebook": "Load shedding is not an excuse. It is a product requirement.\n\nSA-built software needs offline queuing, graceful degradation, and retry logic. If your app just freezes during a power cut, that is a design failure.\n\nBuilding for African realities means building for this.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Load shedding is a product requirement, not an excuse. Build for African realities. #LoadShedding #AfricanTech #BuildForAfrica",
+        "query": "south africa city technology resilient",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "wednesday",
+      "slot": 4,
+      "facebook": "Occupational health management for a mining-region clinic.\n\nClinicPlus needed bookings, patient records, and employer reporting in one system. The previous process was spreadsheets and phone calls.\n\nWe built it. They run it in production. Bookings, reports, records.\n\nhttps://clinicplusbookings.co.za",
+      "instagram": {
+        "caption": "ClinicPlus: occupational health software for a mining-region clinic. Replaced spreadsheets and phone calls. #HealthTech #CaseStudy #AfricanTech",
+        "query": "healthcare clinic digital records software",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "wednesday",
+      "slot": 5,
+      "facebook": "If you are building a SaaS product, the three architectural decisions that matter most in week one:\n\n1. How tenants are isolated in the database\n2. How billing events are modelled\n3. How roles and permissions are structured\n\nGet these wrong and every feature costs double.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Three SaaS architecture decisions that matter most in week one. Get them right. #SaaSDev #Architecture #ProductEngineering",
+        "query": "saas architecture cloud software layers",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "thursday",
+      "slot": 1,
+      "facebook": "Retainers are not just for big companies.\n\nA monthly technical retainer means one senior engineer owns your production system, handles incidents, and ships features without you having to brief a new dev every quarter.\n\nFor most SMEs, that is cheaper than the alternative.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "Monthly retainer = one senior owner of your production system. No re-briefing every quarter. #TechRetainer #TaaS #SME",
+        "query": "business retainer contract partnership professional",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "thursday",
+      "slot": 2,
+      "facebook": "The hairstylist training platform for eStudio Glam.\n\nLwandy needed a way to sell and deliver hair courses online. We built the edutech platform. Students enroll, access content, and track progress.\n\nBeauty education, digitised.\n\nhttps://www.estudioglam.co.za",
+      "instagram": {
+        "caption": "eStudio Glam: an edutech platform for hairstylist training in South Africa. Beauty education, digitised. #EdTech #BeautyBusiness #CaseStudy",
+        "query": "online learning beauty education course platform",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "thursday",
+      "slot": 3,
+      "facebook": "React Native vs Flutter in 2026:\n\nBoth ship cross-platform. React Native wins when your team knows JavaScript and your backend is Node. Flutter wins when UI performance is the primary constraint.\n\nFor most SA startups, React Native with Expo is the fastest path from idea to store.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "React Native vs Flutter in 2026. The practical answer for SA startups. #ReactNative #Flutter #MobileApp",
+        "query": "mobile development framework comparison code",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "thursday",
+      "slot": 4,
+      "facebook": "The hidden cost of a junior dev is not the rate. It is:\n\n- No tests, so you cannot refactor safely\n- No documentation, so onboarding the next dev costs R50k+\n- No error handling, so production incidents wake you up at 2am\n- No deployment pipeline, so every release is a manual prayer\n\nSenior engineering is not a luxury. It is insurance.",
+      "instagram": {
+        "caption": "The real cost of a junior dev hire isn't the rate. #JuniorDevLottery #SeniorEngineer #StartupAdvice",
+        "query": "coding error bug frustrated developer",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "thursday",
+      "slot": 5,
+      "facebook": "Warner Music Africa needed a system to manage applications for their Culture Shifters competition.\n\nParticipant registration, media submissions, reviewer workflows, and status tracking. We built it. They ran the competition on it.\n\nCustom over generic when the stakes are real.\n\nhttps://www.warnermusicafrica.com",
+      "instagram": {
+        "caption": "Warner Music Africa: participant management system for the Culture Shifters competition. Custom over generic when stakes are real. #MusicTech #CaseStudy",
+        "query": "music competition application management platform",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
       "day": "friday",
+      "slot": 1,
       "facebook": "What I actually do as a Technical Co-founder as a Service:\n\n- Own the full architecture decision\n- Write and review production code\n- Integrate payments, auth, notifications\n- Set up cloud infra and CI/CD\n- Ship something testable in weeks, not months\n\nIf you are pre-seed or bootstrapped with a real product to build, message me.\n\nqwabi.co.za",
       "instagram": {
         "caption": "From idea to live product. That's the job. qwabi.co.za #SeniorDev #StartupLife #AfricanTech #CodeAfrica",
@@ -32,8 +233,163 @@
       }
     },
     {
+      "week": 1,
+      "day": "friday",
+      "slot": 2,
+      "facebook": "AI agents are not magic. They are software with a language model in the loop.\n\nThe patterns that matter: tool use, memory, retry on failure, graceful handoff to a human.\n\nIf your AI feature does not have graceful handoff, it is not production-ready. It is a demo.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "AI agents without graceful handoff to a human are demos, not products. #AIAgents #AIEngineering #ProductThinking",
+        "query": "ai agent workflow automation diagram",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "friday",
+      "slot": 3,
+      "facebook": "Booking systems are the most underrated digital transformation for service businesses.\n\nA WhatsApp booking thread has no calendar view, no confirmation email, no automated reminder, and no cancellation record.\n\nA custom booking system solves all of that and pays for itself in the first quarter.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "A booking system pays for itself in the first quarter. Stop managing appointments on WhatsApp. #BookingSystem #SME #DigitalTransformation",
+        "query": "booking calendar scheduling app interface",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "friday",
+      "slot": 4,
+      "facebook": "The donation platform for Mpumelelo Foundation.\n\nNomsa needed a way for supporters to contribute online to community development work in Pretoria. We built the donation collection website.\n\nNon-profit digital infrastructure should not be an afterthought.\n\nhttps://mpumelelo.vercel.app",
+      "instagram": {
+        "caption": "Mpumelelo Foundation: online donation platform for community development in Pretoria. Non-profit digital infrastructure matters. #NPO #CaseStudy #GiveBack",
+        "query": "nonprofit donation website community",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "friday",
+      "slot": 5,
+      "facebook": "One slot open this month.\n\nGood fits: non-technical founders with a real problem validated, agencies with a client gap, businesses ready to move off manual workflows.\n\nNot a fit: hourly billing requests, spec changes after sign-off, or starting without a deposit.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "One slot open this month. Real project, real build. qwabi.co.za #Available #TaaS #AfricanTech",
+        "query": "open door opportunity new beginning",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "saturday",
+      "slot": 1,
+      "facebook": "Weekend reading for founders thinking about their first build:\n\nThe single most important thing you can do before talking to a developer is write down the one user action that makes your product valuable.\n\nNot a list of features. One action. Everything else is phase two.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Before talking to a dev: write down the one action that makes your product valuable. #ProductThinking #StartupAdvice #MVP",
+        "query": "startup founder writing notes strategy",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "saturday",
+      "slot": 2,
+      "facebook": "The ecommerce platform for Lungi The Strategist.\n\nLungi needed an online store aligned to her consulting and personal brand. We built it. Products, checkout, and a brand experience that matches her market positioning.\n\nhttps://lungithestrategist.com",
+      "instagram": {
+        "caption": "Lungi The Strategist: branded ecommerce for a consulting and personal brand in Durban. #Ecommerce #CaseStudy #WomenInBusiness",
+        "query": "ecommerce store branding professional women",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "saturday",
+      "slot": 3,
+      "facebook": "The difference between a website and a web application:\n\nA website presents information. A web application processes it.\n\nIf users can create accounts, submit data, or make payments, you are building a web app. That changes the engineering scope, the security requirements, and the ongoing maintenance model.\n\nKnow which one you are building.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Website vs web application. Know which one you're building before you quote. #WebDev #Engineering #TechFounder",
+        "query": "web application development code interface",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "saturday",
+      "slot": 4,
+      "facebook": "Supabase has changed the economics of building web apps in South Africa.\n\nAuth, database, storage, and real-time in one platform. No DevOps hire, no separate infrastructure budget. A senior engineer can run a production system on it for under R2k/month.\n\nThe right tool for the right problem.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Supabase: auth, database, storage, real-time. Under R2k/month for most production apps. #Supabase #WebDev #StartupStack",
+        "query": "supabase database backend developer tools",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "saturday",
+      "slot": 5,
+      "facebook": "If you built something this week, shipped something, or made a hard technical decision: that is the work.\n\nFounders building in South Africa are doing it harder than most. Unreliable power, mobile-constrained users, and a funding environment that demands more for less.\n\nKeep building.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Founders building in South Africa are doing it harder than most. Keep building. #AfricanFounder #StartupSA #BuildInPublic",
+        "query": "africa entrepreneur founder inspire city",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "sunday",
+      "slot": 1,
+      "facebook": "The hardest part of being a non-technical founder is not finding a developer.\n\nIt is knowing whether what they built is good.\n\nThree questions to ask any dev before you pay a final invoice: Can you show me the test coverage? What happens if the API goes down? Who can maintain this if you leave?\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Three questions to ask any dev before you pay the final invoice. #NonTechnicalFounder #TechAdvice #StartupSA",
+        "query": "business questions checklist review professional",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "sunday",
+      "slot": 2,
+      "facebook": "CRM is not software. It is a process.\n\nThe best CRM I have ever built did not have a single integration on launch day. It had the five fields the sales team used every day and a pipeline view they could action in under a minute.\n\nSimple first. Integrated when the simple version is running correctly.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The best CRM is the one your team actually uses. Start simple. #CRM #SalesOps #BusinessSoftware",
+        "query": "crm pipeline sales workflow simple",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "sunday",
+      "slot": 3,
+      "facebook": "Case Pro — a case management system built in collaboration with Western Cape Labs.\n\nCase tracking, status workflows, and reporting for an innovation lab environment. When generic tools do not fit the operational model, custom software is not extravagant. It is practical.\n\nhttps://mlab.co.za",
+      "instagram": {
+        "caption": "Case Pro: case management for Western Cape Labs. When generic tools don't fit, build specific. #CaseManagement #CaseStudy #InnovationLab",
+        "query": "case management workflow dashboard software",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 1,
+      "day": "sunday",
+      "slot": 4,
+      "facebook": "The most underused service in software development: the architecture review.\n\nBefore you hire a team, before you raise funding, before you commit to a roadmap: pay a senior engineer to spend 4 hours reading your codebase and telling you what is going to break.\n\nCheaper than finding out at scale.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "An architecture review before you scale is worth more than a sprint. #CodeReview #SoftwareArchitecture #TechAdvice",
+        "query": "code review architecture audit technical",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 1,
+      "day": "sunday",
+      "slot": 5,
+      "facebook": "Week one complete.\n\nIf anything this week described a problem you are sitting with, the next step is a 30-minute call. No pitch deck. No agency presentation.\n\nJust two people figuring out whether the problem is real and whether I am the right person to solve it.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "No pitch deck. No agency presentation. Just two people and a real problem. qwabi.co.za #TaaS #DirectEngineering",
+        "query": "two people conversation meeting honest",
+        "media": "photo"
+      }
+    },
+    {
       "week": 2,
       "day": "monday",
+      "slot": 1,
       "facebook": "The Junior Dev Lottery is real.\n\nYou hire cheap, you get: no tests, no documentation, broken payment flows on launch day, and a codebase no one else can maintain.\n\nThe hidden cost is not the rate. It is the rebuild 6 months later when the product fails under real users.\n\nSenior engineering is not a luxury. It is insurance.",
       "instagram": {
         "caption": "Cheap code is the most expensive mistake a founder makes. #JuniorDevLottery #StartupMistakes #TechFounder",
@@ -43,7 +399,107 @@
     },
     {
       "week": 2,
+      "day": "monday",
+      "slot": 2,
+      "facebook": "The bookings and CRM system for Ilithiyana.\n\nMasande needed a system to manage client appointments and track customer relationships in Mthatha. We built it. Bookings, CRM, and the operational view they needed to run the business day to day.\n\nhttps://ilithiyana.co.za",
+      "instagram": {
+        "caption": "Ilithiyana: bookings and CRM system for a service business in Mthatha. Operations digitised. #CaseStudy #CRM #EasternCape",
+        "query": "booking crm system business operations",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "monday",
+      "slot": 3,
+      "facebook": "POPIA is not optional.\n\nIf your South African product collects names, emails, IDs, or health data, you are bound by the Protection of Personal Information Act.\n\nMost junior-built products have no data retention policy, no deletion flow, and no audit trail. That is a regulatory liability that grows with every new user.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "POPIA compliance is not a nice-to-have. It is a legal requirement for SA products. #POPIA #DataPrivacy #SouthAfrica",
+        "query": "data privacy security compliance document",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "monday",
+      "slot": 4,
+      "facebook": "Vercel, Railway, and GCP: how I choose.\n\nVercel for frontend and serverless APIs. Railway when you need persistent processes and a simple ops model. GCP when data sovereignty, compliance, or scale demand it.\n\nMost South African products start on Vercel and Railway. That is not a compromise. It is the right choice for the stage.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Vercel, Railway, or GCP? Here's how I choose for SA products. #CloudInfra #DevOps #TechStack",
+        "query": "cloud infrastructure server deployment technology",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "monday",
+      "slot": 5,
+      "facebook": "The accommodation request and book sales system for Future Start.\n\nNtokozo needed a platform where students could request accommodation and purchase course materials. We built both in one system.\n\nEducation infrastructure for a new generation of SA students.\n\nhttps://futurestart.co.za",
+      "instagram": {
+        "caption": "Future Start: student accommodation requests and digital book sales in one platform. #EdTech #CaseStudy #StudentLife",
+        "query": "student education platform digital campus",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "tuesday",
+      "slot": 1,
+      "facebook": "What a discovery call actually does:\n\nIt tells me whether the problem is real, whether the timeline is honest, and whether there is budget for quality.\n\nIt also tells you whether I understand your domain, whether I push back intelligently, and whether you would want to work with me for 3 months.\n\nBoth sides are interviewing. qwabi.co.za",
+      "instagram": {
+        "caption": "A discovery call is a mutual interview. Both sides are deciding. #ClientRelationship #TaaS #Consulting",
+        "query": "two people meeting interview professional honest",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "tuesday",
+      "slot": 2,
+      "facebook": "The financial records management system for AN Consulting.\n\nAxolile needed a system to manage financial records internally. The previous workflow was manual and fragile. We built the system. Records are now tracked, auditable, and accessible.\n\nhttps://www.anconsulting.co.za",
+      "instagram": {
+        "caption": "AN Consulting: financial records management system. Manual workflows replaced. #CaseStudy #FinTech #BusinessSoftware",
+        "query": "financial records management software dashboard",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "tuesday",
+      "slot": 3,
+      "facebook": "TypeScript is not pedantry.\n\nFor a small team or a solo engineer, strict types eliminate an entire category of runtime bugs before production. It is your test suite when you do not have five QA engineers.\n\nAn untyped JS codebase is a liability you carry every day.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "TypeScript strict types are your test suite when you're a small team. #TypeScript #WebDev #Engineering",
+        "query": "typescript code editor strict types programming",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "tuesday",
+      "slot": 4,
+      "facebook": "AI automation for business is not about replacing people. It is about removing the tasks that prevent people from doing their actual job.\n\nThe support agent who spends 3 hours a day copying data between systems is not doing support. They are doing data entry.\n\nFix the data entry. They do the support.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "AI automation removes the tasks that prevent people from doing their real job. #AIAutomation #BusinessOps #WorkflowAutomation",
+        "query": "automation workflow robot process business",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "tuesday",
+      "slot": 5,
+      "facebook": "The ecommerce platform I built for Lungi The Strategist runs on a stack that is maintained by one person.\n\nNo devops engineer. No infrastructure team. No $5k/month cloud bill.\n\nRight-sized infrastructure is not about being cheap. It is about not paying for complexity you do not need yet.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Right-sized infrastructure: not cheap, just not paying for complexity you don't need yet. #DevOps #Infrastructure #StartupStack",
+        "query": "minimal infrastructure cloud cost efficient",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
       "day": "wednesday",
+      "slot": 1,
       "facebook": "I built a multi-app ride-hailing ecosystem (Rider, Driver, Admin, Media platform) in a single week.\n\nNot a prototype. A working, testable product with auth, real-time location, and payment integration.\n\nThis is what AI force multiplication looks like in practice. One senior engineer directing parallel agents. Zero meeting overhead. Full stack output.\n\ntrip.qwabi.co.za",
       "instagram": {
         "caption": "Rider app. Driver app. Admin. Media platform. One week. This is what AI force multiplication looks like. #BuildInPublic #AfricanTech #AI",
@@ -53,7 +509,107 @@
     },
     {
       "week": 2,
+      "day": "wednesday",
+      "slot": 2,
+      "facebook": "The most requested feature in every CRM I have ever built is the same: a way to filter customers by how long since the last contact.\n\nNot a complex feature. But no off-the-shelf tool surfaces it the way each business needs.\n\nCustom software exists for gaps like this.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The most requested CRM feature: filter by time since last contact. Custom software for gaps like this. #CRM #BusinessSoftware #CustomDev",
+        "query": "crm customer contact filter list software",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "wednesday",
+      "slot": 3,
+      "facebook": "WhatsApp automation is one of the highest-ROI investments a South African service business can make.\n\nAppointment reminders, booking confirmations, order status updates. All automated. No staff time.\n\nThe WhatsApp Business API is not difficult to integrate if you have a senior developer.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "WhatsApp automation is one of the highest-ROI investments for SA service businesses. #WhatsApp #Automation #SME #SouthAfrica",
+        "query": "whatsapp business automation messaging south africa",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "wednesday",
+      "slot": 4,
+      "facebook": "SaaS pricing models I have built in the last 3 years:\n\n- Per seat (user count)\n- Per transaction (usage-based)\n- Per feature tier (freemium gating)\n- Per usage unit (API calls, records)\n\nEach model creates different behaviour from customers. Choose based on how your customers get value, not what is easiest to implement.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SaaS pricing models: choose based on how customers get value, not what's easiest to code. #SaaS #Pricing #ProductEngineering",
+        "query": "saas pricing tiers model subscription",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "wednesday",
+      "slot": 5,
+      "facebook": "Mobile data costs in South Africa are still a real constraint.\n\nAn app that loads 4MB of images on the home screen, makes 12 API calls before displaying content, and has no skeleton state is not just slow. It actively excludes users.\n\nPerformance is a product decision, not a technical detail.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Performance is a product decision. SA data costs make this non-negotiable. #MobilePerformance #AfricanTech #BuildForAfrica",
+        "query": "mobile data performance loading speed africa",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "thursday",
+      "slot": 1,
+      "facebook": "The three questions that determine your app's budget:\n\n1. Does it need payments?\n2. Does it need real-time features (chat, location, live updates)?\n3. Does it need admin tools, or will staff use the same app as customers?\n\nEach yes adds scope. Knowing this before the first call makes the conversation faster for everyone.\n\nqwabi.co.za/app-development-cost-south-africa",
+      "instagram": {
+        "caption": "Three questions that determine your app's budget. Know the answers before your first dev call. #AppDev #Budget #StartupAdvice",
+        "query": "app budget planning checklist cost",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "thursday",
+      "slot": 2,
+      "facebook": "The difference between an MVP and a prototype:\n\nA prototype is a simulation. An MVP is production-grade software with limited scope.\n\nIf real users are using it with real data and real payments, it is an MVP. If it is a demo for investors with fake data, it is a prototype.\n\nBoth have value. They cost different amounts to build correctly.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "MVP vs prototype: not the same thing. Both have value. Different costs. #MVP #Prototype #StartupAdvice",
+        "query": "product prototype versus mvp comparison",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "thursday",
+      "slot": 3,
+      "facebook": "RAG (Retrieval-Augmented Generation) is the pattern behind most useful AI products in 2026.\n\nInstead of asking an LLM to remember your documents, you retrieve the relevant chunks at query time and include them in the prompt.\n\nThis is how you build AI features that are accurate on your specific domain.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "RAG is the pattern behind most useful AI products right now. Here's the core idea. #RAG #AI #LLM #AIEngineering",
+        "query": "rag retrieval augmented generation ai diagram",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "thursday",
+      "slot": 4,
+      "facebook": "South African software founders reading this: your biggest competitive advantage is that you understand the operational context here.\n\nLoad shedding, mobile-first users, ZAR pricing, WhatsApp as a primary business channel, Paystack for payments.\n\nForeign products are always a step behind on this. Use it.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA founders: your understanding of the local context is your competitive advantage. Use it. #AfricanFounder #StartupSA #LocalAdvantage",
+        "query": "south africa entrepreneur advantage local market",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "thursday",
+      "slot": 5,
+      "facebook": "Monitoring is not optional in production.\n\nIf you do not have error tracking (Sentry or equivalent), uptime alerts, and database performance metrics before you launch, your first user incident will be the first time you learn something is broken.\n\nInstrumentation before launch. Not after.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Error tracking, uptime alerts, DB metrics. Instrumentation before launch, not after. #DevOps #Monitoring #Engineering",
+        "query": "monitoring dashboard metrics production software",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
       "day": "friday",
+      "slot": 1,
       "facebook": "If your current build situation is one of these, we should talk:\n\n- Agency is slow and you are paying for people who manage people\n- Junior dev went quiet or delivered something that does not work\n- You have a working idea but no technical co-founder\n- Your business runs on WhatsApp and you need a real platform\n\nOne slot open this quarter. qwabi.co.za",
       "instagram": {
         "caption": "Still running your business on WhatsApp? There's a better way. qwabi.co.za #SmallBusiness #Digitize #StartupSA",
@@ -62,8 +618,163 @@
       }
     },
     {
+      "week": 2,
+      "day": "friday",
+      "slot": 2,
+      "facebook": "The participant management system for Warner Music Africa's Culture Shifters competition is the kind of project that shows why custom software matters.\n\nThe competition had specific submission formats, reviewer workflows, and status communication needs that no off-the-shelf platform handles.\n\nBespoke for a reason.\n\nhttps://www.warnermusicafrica.com",
+      "instagram": {
+        "caption": "Warner Music Culture Shifters: when no off-the-shelf tool fits, you build your own. #MusicBusiness #CustomSoftware #CaseStudy",
+        "query": "music competition platform application management",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "friday",
+      "slot": 3,
+      "facebook": "The biggest mistake SaaS founders make in South Africa:\n\nBuilding for US or European users first, then trying to retrofit local payment methods, local compliance, and local mobile behaviour.\n\nStart with the SA context. Expand outward. Not the other way around.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA SaaS founders: build for the local context first. Expand outward. #SaaS #AfricanTech #ProductStrategy",
+        "query": "south africa saas startup product local market",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "friday",
+      "slot": 4,
+      "facebook": "Deployment is not the end of the project. It is the beginning of the maintenance window.\n\nEvery production system needs: a process for applying security patches, a backup and restore procedure, a rollback plan for bad deploys, and someone who is accountable for uptime.\n\nNot optional. Not later. Before launch.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Production systems need: patches, backups, rollback, and accountable ownership. Before launch, not after. #DevOps #SoftwareOps",
+        "query": "server maintenance deployment production system",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "friday",
+      "slot": 5,
+      "facebook": "Retainer tiers I offer:\n\nBuild and Support: maintenance, fixes, small features.\nProduct Growth: active feature development and product decisions.\nAI Systems: integrations, agents, and automation pipelines.\n\nMonthly, no lock-in beyond notice period. One senior engineer, direct communication.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "Three retainer tiers. Monthly. No agency overhead. Direct senior engineering. qwabi.co.za #Retainer #TaaS #TechnicalTeam",
+        "query": "retainer service contract monthly partnership",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "saturday",
+      "slot": 1,
+      "facebook": "The hardest conversation in consulting is telling a founder that what they want to build is not what their users need.\n\nI have had this conversation multiple times. Some founders push back. Some listen.\n\nThe ones who listen almost always build something better.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The hardest part of consulting: telling a founder their idea needs rethinking. The ones who listen build better. #ProductThinking #TechAdvice",
+        "query": "honest conversation feedback mentor advice",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "saturday",
+      "slot": 2,
+      "facebook": "GCP vs AWS for South African products:\n\nGCP has a Johannesburg region. AWS has Cape Town. Both are viable.\n\nFor most projects, the choice comes down to team familiarity and which managed services fit the architecture. Neither is wrong. Both beat self-managed servers for 99% of early-stage products.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "GCP vs AWS in South Africa. Both have local regions. Here's how to choose. #GCP #AWS #CloudSA #DevOps",
+        "query": "cloud provider comparison server infrastructure",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "saturday",
+      "slot": 3,
+      "facebook": "The industries where custom software creates the most leverage in South Africa:\n\nHealthcare, logistics, property management, field services, education, and any business that runs on WhatsApp group management.\n\nGeneric tools do not fit these operational models. The gap is the opportunity.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Custom software creates the most leverage where generic tools don't fit. SA industries where this applies. #CustomSoftware #IndustrySA",
+        "query": "industry software custom solution sectors",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "saturday",
+      "slot": 4,
+      "facebook": "Expo simplifies React Native significantly.\n\nManaged workflow for apps that do not need native modules. Bare workflow when you need custom native code. EAS Build for CI without maintaining Xcode on a CI server.\n\nFor most South African mobile products, the Expo managed workflow is the right starting point.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Expo managed workflow: the right starting point for most SA mobile products. #ReactNative #Expo #MobileApp",
+        "query": "expo react native mobile development workflow",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "saturday",
+      "slot": 5,
+      "facebook": "Something I tell every founder at the start of an engagement:\n\nThe goal is not to build the app. The goal is to build the business.\n\nThe app is a tool. If we lose sight of the business objective while building the tool, we have failed, regardless of how clean the code is.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The goal is not to build the app. The goal is to build the business. #ProductMindset #TechFounder #StartupSA",
+        "query": "business goal strategy growth founder vision",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "sunday",
+      "slot": 1,
+      "facebook": "The Field Service management problem in South Africa:\n\nScheduling, dispatch, proof of job completion, parts and invoicing. Most field service companies still do this over phone calls and WhatsApp.\n\nA custom mobile + web system for this pays for itself in two quarters through reduced admin and faster invoicing.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Field service management on WhatsApp and phone calls. There's a better way. #FieldService #BusinessOps #CustomSoftware",
+        "query": "field service mobile dispatch management worker",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "sunday",
+      "slot": 2,
+      "facebook": "AI agents in 2026 are most useful when they are narrow and supervised.\n\nAn agent that summarises customer support tickets into a brief before a human reviews them: high value, low risk.\n\nAn agent that autonomously closes support tickets without human review: high risk, medium value.\n\nNarrow and supervised first.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Narrow and supervised AI agents first. Autonomous later. The right progression. #AIAgents #AIAutomation #ProductSafety",
+        "query": "ai agent supervised narrow workflow human",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "sunday",
+      "slot": 3,
+      "facebook": "Education technology in South Africa has a specific challenge: connectivity.\n\nAn edutech platform that requires a 4G connection for every lesson delivery will fail in rural and township contexts.\n\nOffline-first design, downloadable content, and low-bandwidth modes are not features. They are prerequisites.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA edutech needs offline-first design. Connectivity is the constraint, not an afterthought. #EdTech #AfricanTech #OfflineFirst",
+        "query": "education technology offline rural africa learning",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 2,
+      "day": "sunday",
+      "slot": 4,
+      "facebook": "Fixed-price quoting is better for both parties.\n\nHourly billing incentivises slow work. Fixed pricing incentivises quality and speed.\n\nI scope, price the phase, and deliver to that scope. If I underestimate, that is my risk. If scope changes, we discuss it before the work, not after.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Fixed-price > hourly billing. Better incentives for everyone. #Consulting #Freelance #TaaS #Pricing",
+        "query": "fixed price contract quote agreement professional",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 2,
+      "day": "sunday",
+      "slot": 5,
+      "facebook": "Week two. Still building.\n\nIf you have a product to build, a system to replace, or a workflow to automate, the conversation starts on WhatsApp or at qwabi.co.za.\n\nDirect. No forms. No waiting rooms.",
+      "instagram": {
+        "caption": "Direct. No forms. No waiting rooms. Real builds for real businesses. qwabi.co.za #TaaS #AfricanTech #DirectEngineering",
+        "query": "direct contact build launch product founder",
+        "media": "photo"
+      }
+    },
+    {
       "week": 3,
       "day": "monday",
+      "slot": 1,
       "facebook": "My stack for most South African products:\n\nFrontend: React Native (Expo) for mobile, Next.js or Vite/React for web\nBackend: Node.js, Supabase, or Clojure for complex domains\nPayments: Paystack (SA-native, not Stripe)\nInfra: Vercel, Railway, or GCP depending on the scale\nAI: OpenAI or local models where data privacy matters\n\nEvery choice is Business-Right, not just technically interesting.",
       "instagram": {
         "caption": "Stack choices that work in the SA context. Paystack, Supabase, Expo. Built for Africa. #AfricanTech #TechStack #ReactNative",
@@ -73,7 +784,107 @@
     },
     {
       "week": 3,
+      "day": "monday",
+      "slot": 2,
+      "facebook": "Property management software for South Africa needs:\n\n- Lease schedules in ZAR with escalation clauses\n- Maintenance ticket workflows\n- Owner statements in SA reporting formats\n- Arrears tracking with legal escalation flags\n\nGeneric property management tools built for the US market miss most of this.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Property management software for SA needs SA-specific features. Generic tools miss most of it. #PropTech #PropertyManagement #SouthAfrica",
+        "query": "property management real estate software dashboard",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "monday",
+      "slot": 3,
+      "facebook": "The difference between a tech agency and a technical partner:\n\nAn agency delivers a project and moves to the next client.\n\nA partner understands your business model, challenges your scope, owns the architecture decisions, and is accountable for what they shipped 8 months after launch.\n\nI work as a partner.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Tech agency vs technical partner. One delivers and moves on. The other stays accountable. #TechnicalPartner #TaaS #Engineering",
+        "query": "partnership accountability long term business",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "monday",
+      "slot": 4,
+      "facebook": "The most dangerous phrase in a software project brief:\n\n\"It should be simple to add later.\"\n\nEvery feature that was going to be simple to add later ends up requiring a data migration, a UI rethink, and two weeks of unexpected work.\n\nScope it in phase one or explicitly scope it out. Never leave it ambiguous.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "'Simple to add later' is the most expensive phrase in software. Scope it in or explicitly out. #ScopeManagement #Engineering #TechFounder",
+        "query": "scope creep project management risk planning",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "monday",
+      "slot": 5,
+      "facebook": "OpenAI API integration is a commodity in 2026. The value is in what you wrap around it.\n\nSystem prompt design, retrieval strategy, memory management, evaluation pipelines, and guardrails for production.\n\nAny developer can call the API. The value is in making the feature reliable at scale.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Calling the OpenAI API is easy. Making an AI feature reliable at scale is the hard part. #OpenAI #AIEngineering #LLM",
+        "query": "openai api integration software engineering",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "tuesday",
+      "slot": 1,
+      "facebook": "Restaurant tech in South Africa is still underserved.\n\nMost restaurants use a mix of manual order books, WhatsApp for table bookings, and cash registers that do not connect to inventory.\n\nA simple custom system: online reservations, kitchen display, and end-of-day stock reconciliation changes operations immediately.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA restaurant tech is still manual. A simple custom system changes operations immediately. #RestaurantTech #Hospitality #CustomSoftware",
+        "query": "restaurant kitchen digital order system tablet",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "tuesday",
+      "slot": 2,
+      "facebook": "eCommerce in South Africa has specific infrastructure requirements:\n\n- Paystack or Peach Payments (not just Stripe)\n- Courier integration (Courier Guy, Aramex, Pargo)\n- SARS-compliant VAT invoicing\n- Mobile-first checkout (most SA shoppers are on phones)\n\nAny eCommerce build that ignores these is not ready for a South African market.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA ecommerce infrastructure: Paystack, SA couriers, VAT invoicing, mobile-first checkout. Build for the market. #Ecommerce #SouthAfrica #AfricanTech",
+        "query": "ecommerce south africa mobile checkout payment",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "tuesday",
+      "slot": 3,
+      "facebook": "The biggest engineering mistake I see in startup SaaS products:\n\nBuilding a polished frontend before the backend is solid.\n\nA beautiful UI on an unstable API is a demo that cannot scale. Backend first. Schema first. API contracts first. Then the UI.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Beautiful UI on an unstable API is a demo that can't scale. Backend first. Always. #SaaS #Engineering #BackendFirst",
+        "query": "backend api design architecture solid foundation",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "tuesday",
+      "slot": 4,
+      "facebook": "Insurance technology (InsureTech) in South Africa needs specific domain knowledge.\n\nPolicy administration, claims processing, broker portals, and FSCA compliance requirements.\n\nI have built in adjacent domains (healthcare operations, financial records) and understand the operational model.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "InsureTech in SA: policy admin, claims, broker portals, FSCA. Adjacent domain knowledge matters. #InsureTech #FinTech #SouthAfrica",
+        "query": "insurance technology software compliance digital",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "tuesday",
+      "slot": 5,
+      "facebook": "I take on white-label engagements for agencies who need a senior technical person without the overhead of a permanent hire.\n\nYou handle the client relationship. I handle the architecture, code, and delivery. Your brand stays on the work.\n\nIf you are an agency protecting a key account, message me.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "White-label engineering for agencies protecting key accounts. Your brand, my build. #WhiteLabel #AgencyDev #TaaS",
+        "query": "agency white label branding partnership",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
       "day": "wednesday",
+      "slot": 1,
       "facebook": "A founder came to me with a clinic management system that an agency built for R280k.\n\nIt could not generate a patient report without crashing.\n\nWe rebuilt the core in 3 weeks, added the features they actually needed, and launched. The business has been running it in production for 8 months.\n\nThat is what Business-Right engineering looks like.",
       "instagram": {
         "caption": "R280k agency build. Crashed on patient reports. Rebuilt in 3 weeks. Running in production 8 months later. #ProductEngineering #AfricanTech",
@@ -83,7 +894,52 @@
     },
     {
       "week": 3,
-      "day": "friday",
+      "day": "wednesday",
+      "slot": 2,
+      "facebook": "Logistics software in South Africa needs to handle:\n\nMulti-stop routes, driver apps, proof of delivery with photo capture, fuel logs, client portal for live tracking, and invoicing per delivery.\n\nMost logistics companies are running this on phone calls and WhatsApp status updates. That is a product opportunity.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA logistics is still running on WhatsApp and phone calls. Custom software for this is a genuine opportunity. #Logistics #FleetManagement #TechSA",
+        "query": "logistics delivery driver route tracking mobile",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "wednesday",
+      "slot": 3,
+      "facebook": "Validation before build.\n\nThe cheapest way to test a SaaS idea in South Africa: build a landing page, collect emails, do 10 customer interviews, and get three people to pay you before you write a line of code.\n\nIf you cannot do that, the software will not save you.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Get three people to pay you before you write a line of code. Validation before build. #StartupAdvice #MVP #ProductValidation",
+        "query": "startup validation customer research feedback",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "wednesday",
+      "slot": 4,
+      "facebook": "Node.js vs Python for backend APIs in 2026:\n\nNode wins on ecosystem consistency when your frontend is JavaScript. Python wins when you need ML libraries or your team has data science backgrounds.\n\nFor most South African product teams, Node with TypeScript is the practical default.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Node.js vs Python for SA product backends. The practical answer in 2026. #NodeJS #Python #BackendDev",
+        "query": "nodejs python backend api development comparison",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "wednesday",
+      "slot": 5,
+      "facebook": "The most honest thing I can tell a founder about timelines:\n\nThe build time is predictable. The decision time is not.\n\nProjects slow down when approval chains are long, when requirements change after sign-off, and when stakeholders go quiet for a week.\n\nThe calendar is a collaboration. Both sides are responsible.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Build time is predictable. Decision time is not. Timelines are a collaboration. #ProjectManagement #TechFounder #Consulting",
+        "query": "project timeline collaboration schedule decision",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "thursday",
+      "slot": 1,
       "facebook": "What founders actually need from a technical partner:\n\n1. Someone who understands the business goal, not just the feature request\n2. Visible progress early and often, not a big reveal\n3. A product they can sell, not a liability they have to fix\n4. Direct communication, no account managers\n\nThat is the pitch. If it fits your situation, qwabi.co.za",
       "instagram": {
         "caption": "You need a builder who understands the business, not just the tech. qwabi.co.za #TaaS #FounderLife #Startup",
@@ -92,8 +948,218 @@
       }
     },
     {
+      "week": 3,
+      "day": "thursday",
+      "slot": 2,
+      "facebook": "Healthcare operations software in South Africa is a high-impact vertical.\n\nOccupational health clinics, private practices, specialist networks. All of them have manual processes that create liability.\n\nClinicPlus is one example. The category has many more.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Healthcare operations software in SA is a high-impact vertical. The category has more opportunities than products. #HealthTech #MedTech #SouthAfrica",
+        "query": "healthcare operations software medical clinic",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "thursday",
+      "slot": 3,
+      "facebook": "The AI features most useful for South African businesses right now:\n\n- Document extraction (invoices, claims, forms)\n- WhatsApp chatbot with handoff to human\n- Customer support ticket classification\n- Internal knowledge base search\n\nAll of these are production-ready with current LLM tooling. None of them require ML expertise.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Four AI features production-ready for SA businesses right now. No ML expertise required. #AIBusiness #Automation #AfricanTech",
+        "query": "ai business automation features south africa",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "thursday",
+      "slot": 4,
+      "facebook": "The minimum a new production app needs on launch day:\n\n- Error tracking (Sentry)\n- Uptime monitoring (Better Uptime or similar)\n- Application logs (not just console.log)\n- Database backups on a schedule\n- An on-call contact who has access to fix things\n\nThis is the baseline. Not the gold standard.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Production app launch day checklist: error tracking, uptime monitoring, logs, backups, on-call contact. This is the baseline. #DevOps #Engineering",
+        "query": "production app monitoring checklist launch devops",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "thursday",
+      "slot": 5,
+      "facebook": "SA SMEs spending over R300k/year on accounting staff to reconcile data between tools that do not talk to each other:\n\nThat is a software problem, not a staffing problem.\n\nA well-designed integration layer between your invoicing, CRM, and bank feed eliminates the manual work and the errors.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Spending R300k/year on staff reconciling disconnected tools? That's a software problem. #Integration #BusinessOps #DigitalTransformation",
+        "query": "business integration software tools connected workflow",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "friday",
+      "slot": 1,
+      "facebook": "What I look for in a project before I take it:\n\n- A real business problem, not a feature list\n- A founder who can make decisions quickly\n- A budget that signals they are serious\n- A timeline that is ambitious but not delusional\n\nIf your project fits, I will give it everything. If it does not, I will tell you clearly and point you somewhere better.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "I only take projects I can win. Here's what I look for before I say yes. #Consulting #TaaS #ClientSelection",
+        "query": "quality selection filter choice professional",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "friday",
+      "slot": 2,
+      "facebook": "Ride-hailing is a complex product category.\n\nRider app, driver app, admin dashboard, real-time location, payment splits, dispute resolution, and driver onboarding. All of these have to work simultaneously.\n\nThe eSpazza and Trip projects are the reference builds. The pattern scales.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Ride-hailing tech: rider app, driver app, admin, real-time location, payments. The pattern scales. #RideHailing #Mobility #AfricanTech",
+        "query": "ride hailing app map driver passenger mobile",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "friday",
+      "slot": 3,
+      "facebook": "Two reasons most AI automations fail in production:\n\n1. The prompt was designed for demos, not for edge cases that appear in real data\n2. There is no fallback when the LLM returns something unexpected\n\nEdge case handling and graceful degradation are not optional. They are the product.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Most AI automations fail on edge cases and missing fallbacks. Here's why. #AIEngineering #Production #LLM",
+        "query": "ai automation failure edge case production",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "friday",
+      "slot": 4,
+      "facebook": "The Build and Support Retainer is designed for businesses with a live product.\n\nMonthly: fixes, security patches, dependency updates, small features, and a senior engineer who knows your codebase.\n\nThis is what keeps a production system healthy without rehiring a dev team every quarter.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "Build and Support Retainer: monthly engineering to keep a live product healthy. No rehiring every quarter. #TechRetainer #Engineering #TaaS",
+        "query": "software maintenance support retainer engineering",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "friday",
+      "slot": 5,
+      "facebook": "Non-profit digital infrastructure in South Africa is chronically underfunded.\n\nThe Mpumelelo Foundation needed a donation platform. Not a complex system. A reliable, working one.\n\nNon-profits deserve software that works as well as for-profit businesses. Sometimes better.\n\nhttps://mpumelelo.vercel.app",
+      "instagram": {
+        "caption": "Non-profits deserve software that works. Mpumelelo Foundation donation platform. #NPO #DigitalInfrastructure #GiveBack #CaseStudy",
+        "query": "nonprofit donation platform website community give",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "saturday",
+      "slot": 1,
+      "facebook": "Feature flags are underused in South African products.\n\nThey let you deploy code to production without activating it for all users. Gradual rollouts, A/B tests, and kill switches for problematic features without a full deployment.\n\nOne line of infrastructure that prevents several types of incidents.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Feature flags: deploy without activating. Gradual rollouts, kill switches, safer production. #FeatureFlags #Engineering #DevOps",
+        "query": "feature flag toggle software deployment production",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "saturday",
+      "slot": 2,
+      "facebook": "The most impactful thing a non-technical co-founder can do before a scoping call:\n\nWrite down the five things that must work on day one for the product to be usable.\n\nNot the full vision. Just the five things. Everything else is phase two.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Before a scoping call: write down the five things that must work on day one. Everything else is phase two. #ProductScoping #TechFounder",
+        "query": "founder writing notes five priorities product",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "saturday",
+      "slot": 3,
+      "facebook": "Salon software in South Africa still has gaps.\n\nAppointments, stylist schedules, product inventory, client history, and revenue reporting in one tool.\n\nMost salons are running appointments on WhatsApp, inventory on paper, and revenue on gut feel.\n\nThe gap is the product.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA salon management: appointments on WhatsApp, inventory on paper. Custom software fills this gap. #SalonBusiness #SmallBiz #CustomSoftware",
+        "query": "salon appointment scheduling software beauty business",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "saturday",
+      "slot": 4,
+      "facebook": "Supabase Row Level Security (RLS) is one of the most powerful features in the modern stack.\n\nDatabase-level permission rules that make it impossible for a user to accidentally access another tenant's data, regardless of application-level bugs.\n\nSecurity at the right layer.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Supabase RLS: database-level permissions that survive application bugs. Security at the right layer. #Supabase #Security #SaaSDev",
+        "query": "database row level security rls permissions",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "saturday",
+      "slot": 5,
+      "facebook": "A message for SA founders who are not technical:\n\nYou do not need to understand every technical decision. You need to understand the tradeoffs.\n\nFaster to build but harder to maintain. Cheaper now but more expensive to scale. More features but harder to learn.\n\nA technical partner should explain these clearly. If they do not, that is a red flag.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Non-technical founder tip: you need to understand tradeoffs, not every decision. A good tech partner explains them clearly. #NonTechnicalFounder #TechAdvice",
+        "query": "non technical founder technology partner tradeoff",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "sunday",
+      "slot": 1,
+      "facebook": "The Product Growth Retainer is for businesses that have product-market fit and are actively building new features.\n\nMonthly: active feature development, product decision input, architecture reviews, and team extension when capacity demands it.\n\nFor when the product is growing and needs engineering that keeps pace.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "Product Growth Retainer: active feature development for businesses with PMF. Engineering that keeps pace. #TaaS #ProductGrowth #Retainer",
+        "query": "product growth development feature engineering team",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "sunday",
+      "slot": 2,
+      "facebook": "Email marketing tools in South Africa have a trust problem.\n\nDelivery rates on .co.za domains are worse than on international domains. SPF, DKIM, and DMARC configuration is not optional.\n\nIf your transactional emails are landing in spam, it is almost always an infrastructure problem, not a content problem.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA transactional emails landing in spam? 99% of the time it's an infrastructure problem, not content. #EmailDelivery #DevOps #TechSA",
+        "query": "email delivery infrastructure spam dns configuration",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "sunday",
+      "slot": 3,
+      "facebook": "Education technology built for South Africa:\n\nContent must work on intermittent connectivity. Payment must support EFT and card. Admin tools must work on mobile for principals who are not at desks.\n\nThe eStudio Glam platform is the reference build for this pattern.\n\nhttps://www.estudioglam.co.za",
+      "instagram": {
+        "caption": "EdTech built for SA: works on intermittent connectivity, supports EFT, mobile admin. eStudio Glam is the pattern. #EdTech #CaseStudy #AfricanTech",
+        "query": "education technology africa connectivity mobile learning",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 3,
+      "day": "sunday",
+      "slot": 4,
+      "facebook": "Three signs your current codebase is becoming a liability:\n\n1. You are afraid to deploy on a Friday\n2. New developers take 3+ weeks to become productive\n3. Bug fixes regularly introduce new bugs\n\nThese are not team problems. They are architectural problems. And they compound over time.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Afraid to deploy on a Friday? Can't onboard devs quickly? Bug fixes create new bugs? Architectural red flags. #TechDebt #Engineering",
+        "query": "technical debt code legacy problem risk",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 3,
+      "day": "sunday",
+      "slot": 5,
+      "facebook": "Week three.\n\nIf you have been following along: the themes are consistency, Business-Right engineering, and direct delivery without agency overhead.\n\nIf that maps to a problem you are sitting with, the conversation starts at qwabi.co.za.",
+      "instagram": {
+        "caption": "Three weeks of building in public. Business-Right engineering. Direct delivery. qwabi.co.za #BuildInPublic #TaaS #AfricanTech",
+        "query": "building in public progress growth journey",
+        "media": "photo"
+      }
+    },
+    {
       "week": 4,
       "day": "monday",
+      "slot": 1,
       "facebook": "Most MVPs fail before they meet a real user.\n\nNot because of bad design. Because of bad assumptions baked into the data model on week one.\n\nIf your schema is wrong, your product is wrong. Everything built on top of it is borrowed time.\n\nThis is why the PRD and data model come before any UI work in my process.",
       "instagram": {
         "caption": "Wrong data model = wrong product. The foundation matters more than the design. #MVP #DataModel #Engineering",
@@ -103,7 +1169,107 @@
     },
     {
       "week": 4,
+      "day": "monday",
+      "slot": 2,
+      "facebook": "The AI Systems Retainer is for businesses that are actively deploying AI features.\n\nMonthly: agent development, automation pipeline maintenance, model evaluation, and integration engineering.\n\nFor businesses where AI is a core part of the product, not an experiment.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "AI Systems Retainer: for businesses where AI is a core product feature, not an experiment. #AIRetainer #AIEngineering #TaaS",
+        "query": "ai systems retainer automation engineering monthly",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "monday",
+      "slot": 3,
+      "facebook": "The single most important metric for a new SaaS product is not revenue.\n\nIt is whether users return without prompting.\n\nIf you have to message users to get them to open your app, you have not found the habit loop yet. Everything else is a distraction until you find it.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The most important SaaS metric early on: do users return without prompting? Find the habit loop first. #SaaS #ProductMetrics #StartupAdvice",
+        "query": "user retention engagement habit loop product",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "monday",
+      "slot": 4,
+      "facebook": "React Server Components in 2026 are worth the learning curve.\n\nServer-side rendering, reduced client bundle, and data fetching at the component level without waterfall requests.\n\nFor content-heavy web apps and portals, the performance improvement is significant enough to justify the architectural shift.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "React Server Components in 2026: worth the learning curve for content-heavy web apps. #ReactJS #WebDev #NextJS",
+        "query": "react server components web development performance",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "monday",
+      "slot": 5,
+      "facebook": "The accommodation and booking system for Future Start was built to serve two user types simultaneously.\n\nStudents requesting accommodation. Administrators managing availability and approvals.\n\nTwo roles, one system, one codebase. That is the efficiency of building it right the first time.\n\nhttps://futurestart.co.za",
+      "instagram": {
+        "caption": "Future Start: two user roles, one system. Students and admins. Built right the first time. #CaseStudy #EdTech #ProductEngineering",
+        "query": "student admin system role management platform",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "tuesday",
+      "slot": 1,
+      "facebook": "The project scope estimator at qwabi.co.za is not a lead capture form.\n\nIt gives you a real ZAR range based on the project type, complexity, and timeline you enter. No email required to see the output.\n\nIf you need a number before a conversation, start there.\n\nqwabi.co.za/get-a-quote",
+      "instagram": {
+        "caption": "Get a real ZAR range for your project without filling a contact form. Project scope estimator. qwabi.co.za/get-a-quote #AppDev #Pricing",
+        "query": "project cost estimate calculator pricing tool",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "tuesday",
+      "slot": 2,
+      "facebook": "Wholesale and distribution businesses in South Africa are still running on phone orders and WhatsApp price lists.\n\nA simple B2B ordering portal: product catalogue, pricing per client tier, order history, and delivery scheduling.\n\nThe technology is straightforward. The business impact is significant.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA wholesale still on phone orders and WhatsApp price lists. A B2B portal changes this fast. #B2B #Wholesale #DigitalTransformation",
+        "query": "b2b wholesale ordering portal product catalogue",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "tuesday",
+      "slot": 3,
+      "facebook": "CI/CD is not optional for a serious production product.\n\nAutomated testing on every pull request. Automated deployment to staging. One-click promotion to production.\n\nWithout this, every deploy is a manual process that someone has to remember. That is how incidents happen.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "CI/CD: automated test, deploy to staging, one-click to production. Manual deploys are how incidents happen. #CICD #DevOps #Engineering",
+        "query": "ci cd pipeline automation deployment github",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "tuesday",
+      "slot": 4,
+      "facebook": "The difference between a booking system and a real scheduling platform:\n\nA booking system takes appointments. A scheduling platform manages capacity, sends reminders, handles cancellations, and produces utilization reports.\n\nWhich one you need depends on how many bookings you process and how much manual work you currently do around them.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Booking system vs scheduling platform. Know which one your business actually needs. #BookingSystem #Scheduling #BusinessOps",
+        "query": "scheduling platform booking system capacity management",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "tuesday",
+      "slot": 5,
+      "facebook": "Occupational health management for South African companies is a compliance requirement, not a nice-to-have.\n\nEmployee health monitoring, fitness-for-duty records, incident reporting, and employer reporting.\n\nClinicPlus exists because no generic tool handled the occupational health workflow correctly for SA context.\n\nhttps://clinicplusbookings.co.za",
+      "instagram": {
+        "caption": "ClinicPlus: occupational health management because no generic tool handled SA compliance correctly. #OccupationalHealth #HealthTech #CaseStudy",
+        "query": "occupational health management compliance medical records",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
       "day": "wednesday",
+      "slot": 1,
       "facebook": "I built a full laundry marketplace: Customer app, Driver app, Partner dashboard for laundromats, Admin dashboard.\n\nReact Native. Supabase. Paystack. Real-time order tracking. Scheduled pickups.\n\nOne person. One stack. Live in South Africa.\n\nlaundry.qwabi.co.za",
       "instagram": {
         "caption": "Customer app. Driver app. Laundromat dashboard. Admin panel. One stack, live in SA. laundry.qwabi.co.za #BuildInPublic #ReactNative #AfricanStartup",
@@ -113,7 +1279,30 @@
     },
     {
       "week": 4,
-      "day": "friday",
+      "day": "wednesday",
+      "slot": 2,
+      "facebook": "The healthiest codebases I have worked in share one characteristic:\n\nThe domain logic is isolated from the framework.\n\nIf your business logic is inside Express route handlers or React components, you cannot test it in isolation. Moving it out is the most impactful refactor for any mature codebase.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The healthiest codebases isolate domain logic from the framework. This is the most impactful refactor. #SoftwareArchitecture #CleanCode #Engineering",
+        "query": "clean code architecture domain logic separation",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "wednesday",
+      "slot": 3,
+      "facebook": "Retail software for South African businesses needs:\n\n- Barcode scanning\n- Multi-branch stock management\n- ZAR pricing with VAT\n- Lay-by and credit account handling\n- Staff shift and commission tracking\n\nGeneric POS systems handle 60% of this. The remaining 40% is where local software wins.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "SA retail software: barcode scanning, multi-branch, ZAR + VAT, lay-by, commission tracking. Generic POS misses 40% of this. #RetailTech #POS #SouthAfrica",
+        "query": "retail point of sale software barcode south africa",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "wednesday",
+      "slot": 4,
       "facebook": "The question I ask every founder on our first call:\n\n\"What happens to your business if this product does not exist in 12 months?\"\n\nIf the answer is nothing, we are building a nice-to-have. If the answer is real pain, we are building something worth investing in.\n\nClarity on this question changes everything about how we scope, prioritize, and build.",
       "instagram": {
         "caption": "The one question that clarifies every product decision. What happens if this doesn't get built? #ProductThinking #Startup #FounderMindset",
@@ -122,8 +1311,20 @@
       }
     },
     {
-      "week": 5,
-      "day": "monday",
+      "week": 4,
+      "day": "wednesday",
+      "slot": 5,
+      "facebook": "Stitch and Peach Payments are worth knowing for SA products that need bank-to-bank transfers.\n\nInstant EFT without the card network. Lower fees for high-value transactions. Relevant for fintech, property, and B2B product categories.\n\nPayment infrastructure choices are a product decision.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Stitch and Peach Payments for SA bank-to-bank transfers. Lower fees, instant EFT, relevant for fintech and B2B. #Fintech #Payments #SouthAfrica",
+        "query": "south africa payment gateway bank transfer fintech",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "thursday",
+      "slot": 1,
       "facebook": "Hiring a CTO vs working with me:\n\nCTO: 12+ months to hire, equity, R1M+ comp, may not fit early-stage culture\nMe: Direct start, project-based, senior architecture and code, no equity\n\nI am not a replacement for a CTO long-term. But for the first 12-18 months while you are validating product-market fit, the math is straightforward.",
       "instagram": {
         "caption": "TaaS vs hiring a CTO. The math is different at the early stage. #TechFounder #StartupAdvice #CTO #AfricanStartup",
@@ -132,172 +1333,211 @@
       }
     },
     {
-      "week": 5,
-      "day": "wednesday",
-      "facebook": "I work in Clojure for backend systems that need to last.\n\nNot a popular choice. But functional programming, immutable data, and a REPL-driven workflow produces code that is genuinely easier to maintain 3 years later.\n\nMost client projects use Node.js or Python for speed. Clojure is what I reach for when correctness and longevity matter more than hiring a big team.",
+      "week": 4,
+      "day": "thursday",
+      "slot": 2,
+      "facebook": "Documentation-driven development is not a formality.\n\nWriting out what a feature should do before coding it forces you to find the edge cases while they are still cheap to change.\n\nPRD, API spec, and data model first. Then the implementation. Every time.\n\nqwabi.co.za",
       "instagram": {
-        "caption": "Functional programming isn't trendy. It's just more correct. #Clojure #FunctionalProgramming #BackendDev #Engineering",
-        "query": "software developer coding vector illustration",
+        "caption": "Documentation-driven development: find edge cases while they're still cheap to change. PRD before code. #Engineering #DocumentationFirst",
+        "query": "documentation spec driven development writing planning",
         "media": "vector"
       }
     },
     {
-      "week": 5,
+      "week": 4,
+      "day": "thursday",
+      "slot": 3,
+      "facebook": "AI-powered rapid development is not about replacing senior engineering judgment.\n\nIt is about removing the time spent on scaffolding so senior judgment can be applied to the parts that matter: architecture, security, business logic, and user experience.\n\nThe combination is what creates the velocity.\n\nqwabi.co.za/services/ai-powered-rapid-app-development",
+      "instagram": {
+        "caption": "AI removes the scaffolding. Senior engineering handles what matters. The combination creates the velocity. #AIDevTools #Engineering #Cursor",
+        "query": "ai developer tools cursor coding accelerated",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "thursday",
+      "slot": 4,
+      "facebook": "The most underbuilt part of most South African products:\n\nThe admin panel.\n\nFounders spend all their time on the customer-facing interface and none on the internal tooling their own team needs to operate the product.\n\nAn ops team with no admin tools calls the dev for every operational task. That is not sustainable.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "The most underbuilt part of most SA products: the admin panel. Your ops team needs tools too. #AdminPanel #InternalTools #ProductEngineering",
+        "query": "admin dashboard internal tools operations panel",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "thursday",
+      "slot": 5,
+      "facebook": "Case Pro with Western Cape Labs is a reminder that innovation infrastructure needs software too.\n\nManaging cases, tracking progress, and producing reports for an innovation lab is not a generic helpdesk problem.\n\nCustom because the process was specific.\n\nhttps://mlab.co.za",
+      "instagram": {
+        "caption": "Case Pro: custom case management for Western Cape Labs. Innovation infrastructure needs real software. #CaseStudy #InnovationLab #CustomSoftware",
+        "query": "innovation lab case management system tracking",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
       "day": "friday",
-      "facebook": "Three signals that a founder is ready to work with me:\n\n1. They can explain the business problem clearly, not just the features\n2. They understand that quality takes some real investment\n3. They want progress they can see, not a big reveal after months\n\nIf that is you, the next step is a scoping call. qwabi.co.za",
-      "instagram": {
-        "caption": "Ready to build? Three things tell me we're a good fit. qwabi.co.za #TaaS #Founder #TechPartner",
-        "query": "business call meeting professional",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 6,
-      "day": "monday",
-      "facebook": "AI is not replacing senior engineers. It is replacing the time senior engineers spend on scaffolding.\n\nI use Cursor, custom agents, and prompt chains to handle boilerplate, file generation, and routine code. That frees me to focus on architecture, business logic, and quality.\n\nThe output: a small team's velocity with one engineer's communication overhead.",
-      "instagram": {
-        "caption": "AI removes the scaffolding. Senior engineers handle the architecture. That's the combination. #AIEngineering #CursorAI #BuildFaster",
-        "query": "artificial intelligence technology vector",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 6,
-      "day": "wednesday",
-      "facebook": "The most underrated thing about working with a senior engineer:\n\nThey push back.\n\nA junior will build exactly what you asked for. A senior will tell you when what you asked for is the wrong thing to build.\n\nThat conversation, before the code is written, is worth more than any feature.",
-      "instagram": {
-        "caption": "The best engineers don't just build what you ask for. They tell you when you're asking for the wrong thing. #SeniorDev #ProductThinking",
-        "query": "mentor conversation advice coaching",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 6,
-      "day": "friday",
-      "facebook": "Agencies are not bad. They are optimized for different problems.\n\nAn agency makes sense when: you have a large team, a long-term retainer, and a complex marketing operation.\n\nI make sense when: you need a production-ready product built fast, with someone who owns the architecture and can make technical decisions without a committee.\n\nKnow which problem you actually have.",
-      "instagram": {
-        "caption": "Agency vs TaaS. Different tools for different problems. Know which one you need. #Freelance #Agency #StartupAdvice",
-        "query": "business decision crossroads vector illustration",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 7,
-      "day": "monday",
-      "facebook": "10 years of building in South Africa has taught me:\n\n- Mobile-first is not optional. SA users live on phones.\n- Paystack beats Stripe for local payment success rates.\n- Load shedding means offline-capable features are a real product requirement.\n- Data costs matter. Your app cannot assume fast, cheap bandwidth.\n\nBuilding for Africa means building for African realities.",
-      "instagram": {
-        "caption": "Building for Africa means building for African realities. Mobile-first. Paystack. Load-shedding resilient. #AfricanTech #BuildForAfrica #TechSA",
-        "query": "africa mobile phone technology city",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 7,
-      "day": "wednesday",
-      "facebook": "What a 30% deposit actually signals:\n\nNot just payment. It is a mutual commitment that we are both serious.\n\nClients who pay a deposit show up to calls. They provide feedback. They make decisions. They treat the project like the business investment it is.\n\nClients who want to start without one almost always want to stop without warning too.",
-      "instagram": {
-        "caption": "Commitment signals matter before the first line of code. #FreelanceLife #ClientManagement #Contracts #StartupAdvice",
-        "query": "contract agreement business handshake",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 7,
-      "day": "friday",
-      "facebook": "I am currently open for one new project this quarter.\n\nGood fits: non-technical founders who have validated a real problem, agencies needing a reliable white-label technical partner, SMEs ready to move off manual workflows.\n\nNot a fit: clients who want hourly billing, spec changes after sign-off, or to start without a deposit.\n\nqwabi.co.za to start the conversation.",
-      "instagram": {
-        "caption": "One slot open this quarter. Is your project a good fit? qwabi.co.za #TaaS #HireaDev #AfricanStartup #SoftwareEngineering",
-        "query": "open door opportunity new beginning",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 8,
-      "day": "monday",
-      "facebook": "Shipping is not the end of the product. It is the beginning of the real work.\n\nPost-launch: monitoring, user feedback loops, performance optimization, feature iterations based on real data.\n\nMost junior devs disappear after launch. Most agencies start the next project.\n\nI offer iteration retainers precisely because a product is never done.",
-      "instagram": {
-        "caption": "Launch is not the finish line. It's where the real product work begins. #ProductEngineering #PostLaunch #Iteration",
-        "query": "product launch rocket vector illustration",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 8,
-      "day": "wednesday",
-      "facebook": "I use TypeScript for everything now. Not optional.\n\nStrict types eliminate an entire category of runtime bugs before they reach production. For a small team or a solo engineer, type safety is not pedantry. It is your test suite when you do not have five QA engineers.\n\nIf your current codebase is untyped JS, that is a liability you are carrying every day.",
-      "instagram": {
-        "caption": "TypeScript is not optional. Strict types are your first line of defense in a small team. #TypeScript #WebDev #EngineeringBestPractices",
-        "query": "code typescript javascript programming",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 8,
-      "day": "friday",
-      "facebook": "What I look for in a project before I take it:\n\n- A real business problem, not a feature list\n- A founder who can make decisions quickly\n- A budget that signals they are serious\n- A timeline that is ambitious but not delusional\n\nIf your project fits, I will give it everything. If it does not, I will tell you clearly and point you somewhere better.",
-      "instagram": {
-        "caption": "I only take projects I can win. Here's what I look for before I say yes. #Consulting #TaaS #ClientSelection",
-        "query": "quality selection filter choice professional",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 9,
-      "day": "monday",
-      "facebook": "The real cost of staying on WhatsApp:\n\n- Orders lost because someone did not see a message\n- No transaction history, no analytics, no audit trail\n- Customer expectations you cannot meet at scale\n- Zero credibility with investors or enterprise clients\n\nYour business is bigger than an Instagram link. Time to build the platform.",
-      "instagram": {
-        "caption": "Your business is bigger than your Instagram link. Time to build the platform. #Digitize #SmallBusiness #DigitalTransformation #AfricanBusiness",
-        "query": "digital business platform vector illustration",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 9,
-      "day": "wednesday",
-      "facebook": "I worked remotely from Queenstown for a Cape Town company for over a year.\n\nWhat I learned: over-communication is not optional. You have to write things down. You have to take notes that save the next person 2 hours. You have to show progress before anyone asks.\n\nThese habits make me a better builder for remote-first founders everywhere.",
-      "instagram": {
-        "caption": "Remote work taught me that written communication is a technical skill. Notes save lives. #RemoteWork #Engineering #Productivity",
-        "query": "remote work home office laptop coffee",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 9,
-      "day": "friday",
-      "facebook": "My pricing is not hourly.\n\nHourly billing creates the wrong incentives: slow = more money. That is backwards.\n\nI scope projects at a fixed Phase 1 price based on scope, complexity, and timeline. You know what you are getting and what it costs before we start.\n\nFor ongoing work, there are monthly retainers. No surprises.\n\nqwabi.co.za",
-      "instagram": {
-        "caption": "Fixed price. Clear scope. No hourly billing surprises. That's how I work. qwabi.co.za #Pricing #Freelance #TaaS",
-        "query": "transparent pricing business invoice",
-        "media": "photo"
-      }
-    },
-    {
-      "week": 10,
-      "day": "monday",
-      "facebook": "Ten weeks ago I started this content series to explain what Technical Co-founder as a Service actually means.\n\nThe short version: you get a senior engineer who thinks about your business, not just your tickets.\n\nIf anything in these posts described a problem you have, let's talk.\n\nqwabi.co.za or message me directly on WhatsApp.",
-      "instagram": {
-        "caption": "10 weeks. One message: build with someone who thinks about your business, not just your code. qwabi.co.za #TaaS #FounderLife",
-        "query": "success milestone journey vector illustration",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 10,
-      "day": "wednesday",
-      "facebook": "I am Ayabonga Qwabi. Senior Product Engineer at Simply Financial Services. Co-founder of Namoota Technologies.\n\n10 years building apps, platforms, and AI tools in South Africa.\n\nI take on 2-3 client projects per quarter outside of my day role. Project-based, senior engineering, no equity.\n\nIf your build needs a senior technical mind, that is what I offer.\n\nqwabi.co.za",
-      "instagram": {
-        "caption": "10 years. Two roles. One offer: senior engineering for founders who can't afford to get it wrong. qwabi.co.za",
-        "query": "professional software engineer vector portrait",
-        "media": "vector"
-      }
-    },
-    {
-      "week": 10,
-      "day": "friday",
+      "slot": 1,
       "facebook": "Open for new projects.\n\nIf you are a founder with a real product to build, an agency that needs a reliable technical partner, or an SME ready to digitize, let's have a conversation.\n\nNo forms. No waiting rooms. Message me directly.\n\nWhatsApp: wa.me/27603116777\nWebsite: qwabi.co.za",
       "instagram": {
         "caption": "Open for new projects. Real founders, real problems, real builds. wa.me/27603116777 #Available #TaaS #HireADev #AfricanTech",
         "query": "new project start fresh beginning work",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "friday",
+      "slot": 2,
+      "facebook": "The ecommerce platform for Lungi The Strategist is built on a stack that any developer can maintain.\n\nNo proprietary CMS lock-in. No monthly platform fees that scale with revenue. Clean code, documented, and owned outright.\n\nOwnership of your digital infrastructure matters.\n\nhttps://lungithestrategist.com",
+      "instagram": {
+        "caption": "Lungi The Strategist: ecommerce you own outright. No lock-in, no platform fees that scale against you. #Ecommerce #CaseStudy #DigitalOwnership",
+        "query": "ecommerce owned platform independent store branding",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "friday",
+      "slot": 3,
+      "facebook": "If you are comparing custom development quotes in South Africa:\n\nWatch for quotes that do not include: admin tooling, staging environment, error tracking setup, deployment pipeline, and documentation.\n\nA cheap quote that excludes these is not a low price. It is a hidden cost.\n\nqwabi.co.za/app-development-cost-south-africa",
+      "instagram": {
+        "caption": "SA dev quotes that exclude admin tools, staging, error tracking, CI/CD, and docs are not cheap. They're hiding costs. #DevQuotes #SoftwarePricing #TechAdvice",
+        "query": "software quote comparison hidden cost pricing",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "friday",
+      "slot": 4,
+      "facebook": "Schema migrations are the most anxiety-inducing part of running a production database.\n\nGood migration tooling (Prisma, Flyway, or Supabase migrations) makes them automated and reversible.\n\nManual schema changes on a live database are how you lose data.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Good migration tooling makes schema changes automated and reversible. Manual changes on live DB = data loss risk. #Database #DevOps #Engineering",
+        "query": "database migration schema versioning tool",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "friday",
+      "slot": 5,
+      "facebook": "Four weeks of posts. One message:\n\nSenior engineering, direct delivery, no agency overhead.\n\nIf you have a product that needs to be built or a system that needs to be replaced, qwabi.co.za is the starting point.",
+      "instagram": {
+        "caption": "Four weeks. One message: senior engineering, direct delivery, no overhead. qwabi.co.za #TaaS #AfricanTech #BuildInPublic",
+        "query": "four weeks milestone progress achievement",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "saturday",
+      "slot": 1,
+      "facebook": "Founders building in Johannesburg, Cape Town, Durban, and the Eastern Cape:\n\nYou do not need to be in a major tech hub to build a serious product.\n\nI have shipped production software remotely from Queenstown, East London, and Pretoria. Location is not a constraint. Execution is.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "You don't need to be in a tech hub to build a serious product. Location is not the constraint. Execution is. #AfricanFounder #RemoteWork #StartupSA",
+        "query": "south africa remote work founder city startup",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "saturday",
+      "slot": 2,
+      "facebook": "The most impactful automation for a 5-person business:\n\nAn automated follow-up sequence after a new inquiry.\n\nEmail or WhatsApp, triggered by a form submission or CRM status change. No one forgets to follow up. No leads go cold because someone was busy.\n\nSimple automation, high impact.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Automated follow-up after a new inquiry: simple automation, high impact for small teams. #Automation #CRM #BusinessOps",
+        "query": "automated follow up crm lead workflow email",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "saturday",
+      "slot": 3,
+      "facebook": "Microservices are usually the wrong choice for an early-stage product.\n\nMonolith first. Extract services when you have a clear performance bottleneck or team boundary that justifies the operational complexity.\n\nMost South African startups that chose microservices from day one regretted it before year two.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Microservices from day one is usually a mistake. Monolith first, extract when justified. #Microservices #SoftwareArchitecture #StartupAdvice",
+        "query": "monolith microservices architecture comparison startup",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "saturday",
+      "slot": 4,
+      "facebook": "The booking and CRM system for Ilithiyana handles the operational core of a service business in Mthatha.\n\nAppointment scheduling, client history, and the daily management view.\n\nService businesses in secondary cities deserve the same quality software as Joburg agencies.\n\nhttps://ilithiyana.co.za",
+      "instagram": {
+        "caption": "Ilithiyana: booking and CRM for a service business in Mthatha. Service businesses in secondary cities deserve quality software too. #CaseStudy #EasternCape",
+        "query": "service business booking crm mthatha eastern cape",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "saturday",
+      "slot": 5,
+      "facebook": "The Product Growth Retainer is built for the moment after launch when you actually need continuous development.\n\nNot a one-time build. A monthly engineering partnership with active feature work, product feedback loops, and senior decision-making in the room.\n\nqwabi.co.za/pricing-strategy",
+      "instagram": {
+        "caption": "The moment after launch is when you need continuous development most. Product Growth Retainer for that. #TaaS #ProductEngineering #Retainer",
+        "query": "product growth continuous development engineering partnership",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "sunday",
+      "slot": 1,
+      "facebook": "GraphQL vs REST for South African product APIs:\n\nREST is simpler to build, cache, and maintain for most product categories. GraphQL wins when you have many client types consuming the same data with different shape requirements.\n\nDo not choose GraphQL because it sounds modern. Choose it when the problem demands it.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "GraphQL vs REST. Don't choose GraphQL because it sounds modern. Choose it when the problem demands it. #GraphQL #REST #APIDesign",
+        "query": "graphql rest api comparison web development",
+        "media": "vector"
+      }
+    },
+    {
+      "week": 4,
+      "day": "sunday",
+      "slot": 2,
+      "facebook": "The financial records management system for AN Consulting was not a complex product.\n\nIt was a well-designed one.\n\nSimple, reliable, and built for the specific workflow of a financial consulting team. Not a generic tool bent to fit. A specific tool built to fit.\n\nhttps://www.anconsulting.co.za",
+      "instagram": {
+        "caption": "AN Consulting: not a complex system. A well-designed one. Built for the specific workflow, not a generic tool. #CaseStudy #FinanceSoftware #CustomDev",
+        "query": "financial records management consulting software simple",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "sunday",
+      "slot": 3,
+      "facebook": "The most valuable hour you can spend before scoping a software project:\n\nDraw the user journey for your most important customer action on a piece of paper.\n\nEvery step, every decision point, every place where they could fail or give up.\n\nThat drawing will surface more requirements than an hour of conversation.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Before scoping: draw the user journey on paper. It surfaces more requirements than any conversation. #UX #ProductScoping #TechFounder",
+        "query": "user journey map drawing flow diagram whiteboard",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "sunday",
+      "slot": 4,
+      "facebook": "Offline-capable mobile apps are not a luxury in South Africa.\n\nFor field service workers, healthcare workers in rural clinics, and delivery drivers in low-coverage areas: offline mode is the product.\n\nIf the app becomes useless when the connection drops, you have not built for the market.\n\nqwabi.co.za",
+      "instagram": {
+        "caption": "Offline-capable mobile apps are not a luxury in SA. For field workers and rural clinics, offline mode is the product. #OfflineFirst #AfricanTech #MobileApp",
+        "query": "offline mobile app field worker rural south africa",
+        "media": "photo"
+      }
+    },
+    {
+      "week": 4,
+      "day": "sunday",
+      "slot": 5,
+      "facebook": "Month one.\n\nOver 100 posts. One consistent message:\n\nSouth African businesses deserve senior-engineered software, direct delivery, and no agency overhead.\n\nIf you have a product to build or a system to replace, qwabi.co.za is where the conversation starts.",
+      "instagram": {
+        "caption": "Month one complete. SA businesses deserve senior engineering, direct delivery, no overhead. qwabi.co.za #BuildInPublic #AfricanTech #TaaS",
+        "query": "milestone month one complete achievement progress",
         "media": "photo"
       }
     }
