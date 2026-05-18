@@ -37,9 +37,6 @@ export default defineConfig({
           ) {
             return 'markdown';
           }
-          if (id.includes('node_modules/disqus-react')) {
-            return 'disqus';
-          }
           if (id.includes('node_modules/@radix-ui')) {
             return 'radix';
           }

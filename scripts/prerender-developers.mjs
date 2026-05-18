@@ -178,14 +178,30 @@ async function main() {
     const browser = await launchBrowser();
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
+    
+    // Wire up console and error listeners to capture page logs
+    page.on('console', msg => {
+      const text = msg.text();
+      if (!text.includes('Download the React DevTools') && !text.includes('Lit is in dev mode')) {
+        console.log(`PAGE LOG [${msg.type()}]:`, text);
+      }
+    });
+    page.on('pageerror', err => {
+      console.error('PAGE ERROR (unhandled exception):', err.stack || err.toString());
+    });
+    page.on('requestfailed', request => {
+      console.error(`PAGE REQUEST FAILED: ${request.url()} - ${request.failure()?.errorText || 'unknown error'}`);
+    });
+
     await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
     await page.evaluateOnNewDocument(() => {
       window.__PRERENDER__ = true;
     });
 
     for (const route of routes) {
+      console.log(`prerender-developers: Starting prerender for ${route}...`);
       const outFile = await prerenderRoute(page, preview.baseUrl, route);
-      console.log(`prerender-developers: ${route} → ${path.relative(root, outFile)}`);
+      console.log(`prerender-developers: Finished ${route} → ${path.relative(root, outFile)}`);
     }
 
     await browser.close();
