@@ -629,7 +629,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
 
             <div className="min-w-0 flex-1 lg:order-1">
               <div className="mx-auto max-w-[680px]">
-                <BlogImageDisclaimer />
+                
                 <div className="blog-post-body">
                   <ReactMarkdown
                     key={post.slug}
@@ -677,6 +677,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
           <div className="mx-auto mt-16 max-w-7xl border-t border-[var(--gold)]/10 bg-[var(--slate)] px-4 py-16 sm:px-6 lg:px-8">
             <BlogRelatedPosts post={post} />
           </div>
+          <BlogImageDisclaimer />
         </article>
       </main>
     </PageShell>

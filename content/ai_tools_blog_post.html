@@ -1,0 +1,186 @@
+
+<style>
+  :root { --navy: #0a0f1e; --amber: #f59e0b; --emerald: #10b981; --glass: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.08); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .blog-wrap { font-family: var(--font-sans); max-width: 680px; color: var(--color-text-primary); }
+  .hero { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 2rem 2rem 1.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 180px; height: 180px; background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #854F0B; background: #FAEEDA; padding: 4px 12px; border-radius: var(--border-radius-md); margin-bottom: 1rem; }
+  .hero h1 { font-size: 26px; font-weight: 500; line-height: 1.3; margin-bottom: 0.75rem; }
+  .hero-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--color-text-secondary); }
+  .hero-meta span { display: flex; align-items: center; gap: 4px; }
+  .hero-img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--border-radius-md); margin-top: 1.25rem; background: var(--color-background-secondary); display: block; border: 0.5px solid var(--color-border-tertiary); }
+  .content { font-size: 16px; line-height: 1.8; color: var(--color-text-primary); }
+  .content p { margin-bottom: 1.25rem; }
+  .content h2 { font-size: 20px; font-weight: 500; margin: 2.5rem 0 1rem; }
+  .content h3 { font-size: 17px; font-weight: 500; margin: 2rem 0 0.75rem; color: var(--color-text-primary); }
+  .tool-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .tool-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .tool-name { font-size: 16px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .verdict { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); }
+  .verdict.hot { background: #EAF3DE; color: #27500A; }
+  .verdict.mid { background: #FAEEDA; color: #633806; }
+  .verdict.nah { background: #FCEBEB; color: #791F1F; }
+  .tool-card p { font-size: 14px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 1.5rem 0; }
+  .stat { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.875rem 1rem; text-align: center; }
+  .stat-num { font-size: 22px; font-weight: 500; color: var(--color-text-primary); display: block; }
+  .stat-label { font-size: 12px; color: var(--color-text-secondary); display: block; margin-top: 2px; }
+  .pull-quote { border-left: 3px solid #f59e0b; padding: 0.875rem 1.25rem; margin: 2rem 0; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; font-size: 17px; line-height: 1.6; font-style: italic; color: var(--color-text-primary); }
+  .section-img { width: 100%; height: 160px; object-fit: cover; border-radius: var(--border-radius-md); margin: 1.5rem 0; border: 0.5px solid var(--color-border-tertiary); display: block; }
+  a { color: #185FA5; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--color-border-tertiary); }
+  .tag { font-size: 12px; color: var(--color-text-secondary); background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); padding: 4px 10px; border-radius: var(--border-radius-md); }
+  .cta-bar { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem 1.5rem; margin-top: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .cta-bar p { font-size: 14px; color: var(--color-text-secondary); margin: 0; }
+  .cta-btn { font-size: 13px; font-weight: 500; background: transparent; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-primary); padding: 8px 16px; border-radius: var(--border-radius-md); cursor: pointer; white-space: nowrap; }
+  .cta-btn:hover { background: var(--color-background-secondary); }
+</style>
+
+<div class="blog-wrap">
+  <h2 class="sr-only">Blog post: I tested every AI coding tool so you don't have to — here's my honest take</h2>
+
+  <div class="hero">
+    <div class="hero-tag">
+      <i class="ti ti-cpu" aria-hidden="true"></i>
+      Opinion &amp; Tools
+    </div>
+    <h1>I tested every AI coding tool so you don't have to — here's my honest take</h1>
+    <div class="hero-meta">
+      <span><i class="ti ti-user" aria-hidden="true"></i> Ayabonga Qwabi</span>
+      <span><i class="ti ti-calendar" aria-hidden="true"></i> May 2026</span>
+      <span><i class="ti ti-clock" aria-hidden="true"></i> 8 min read</span>
+    </div>
+    <img
+      class="hero-img"
+      src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      alt="Code on a dark screen"
+      onerror="this.style.display='none'"
+    />
+  </div>
+
+  <div class="content">
+    <p>Over the past few months I've thrown real work at pretty much every AI coding tool on the market — <a href="https://cursor.sh" target="_blank" rel="noopener">Cursor</a>, <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>, <a href="https://manus.im" target="_blank" rel="noopener">Manus</a>, Antigravity, <a href="https://platform.openai.com/codex" target="_blank" rel="noopener">Codex</a>, <a href="https://bolt.new" target="_blank" rel="noopener">Bolt</a>, <a href="https://v0.dev" target="_blank" rel="noopener">Vercel v0</a>, and more. Not benchmarks — actual project work on <a href="https://business.qwabi.co.za" target="_blank" rel="noopener">Qwabi Engineering</a> builds. Here's what I found.</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-num">8+</span>
+        <span class="stat-label">Tools tested</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">~R350</span>
+        <span class="stat-label">Cost of one Cursor on-demand top-up</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6h</span>
+        <span class="stat-label">How long that on-demand lasts</span>
+      </div>
+    </div>
+
+    <h2>Cursor — the daily driver</h2>
+    <p>Cursor is my workhorse. The multi-agent composer lets you spin up to 8 sub-agents scoped to avoid file conflicts, which means you can prompt a full site redesign in a single pass without agents stepping on each other's toes.</p>
+
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-bolt" aria-hidden="true"></i> <a href="https://cursor.sh" target="_blank" rel="noopener">Cursor</a></span>
+        <span class="verdict hot">Daily driver</span>
+      </div>
+      <p>Auto mode picks the right model per task — lighter ones for grunt work, heavier reasoners like GPT-5.5 or Codex 5.3 for complex architecture. Heads up though: those heavyweight models eat tokens in the millions even for simple prompts. Don't select them manually unless you enjoy watching credits disappear. The planning agent is great — shows you how the AI thinks before it acts.</p>
+    </div>
+
+    <p>The pricing reality is worth knowing: the $20/month premium subscription lasts me about two days of real-world usage. After that there's an on-demand tier — I cap it at $20 (around R350) but it can be gone in roughly 6 hours of intensive use. It's expensive, but nothing else matches the speed. On my very first month in April 2026 I somehow burned through what felt like billions of tokens on a single subscription — not sure if there was a glitch on their end, but it was wild.</p>
+
+    <div class="pull-quote">"Cursor is what I use when I need to think in code and ship fast. Everything else is supplementary."</div>
+
+    <img
+      class="section-img"
+      src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Developer working across multiple screens"
+      onerror="this.style.display='none'"
+    />
+
+    <h2>Claude — the thinker in the room</h2>
+    <p>Claude doesn't just answer — it reasons. I tested this by asking <a href="https://grok.com" target="_blank" rel="noopener">Grok</a> and Claude the same research task: synthesize landing page best practices from 10+ sources into a usable design brief. Grok gave me a bloated doc full of contradictions. Claude flagged that the gathered information conflicted and reframed the problem before producing something I could actually work with.</p>
+
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-brain" aria-hidden="true"></i> <a href="https://claude.ai" target="_blank" rel="noopener">Claude (Anthropic)</a></span>
+        <span class="verdict hot">Sharpest thinker</span>
+      </div>
+      <p>Claude is the AI I use to sense-check everything else. It thinks more like a human — it notices when something doesn't make sense and says so rather than confidently producing nonsense. The free tier gives you maybe 15–20 minutes of use every 5–6 hours before it kicks you out, which is tight for deep work. But it's also the most equipped — plugins, connectors, and custom MCP skills make it the most extensible of the lot. I think of it as the AI that keeps other AIs honest.</p>
+    </div>
+
+    <h2>Codex — the genius behind a paywall</h2>
+    <p>I've used <a href="https://platform.openai.com/codex" target="_blank" rel="noopener">OpenAI Codex</a> exactly twice on the free tier (different accounts, let's move on). Both times it floored me. The reasoning was on another level — it has an intelligence dial from low to extra-high on GPT-5.5, which I haven't seen on any other tool. Even set to medium it was sharper than most tools at their maximum.</p>
+
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-sparkles" aria-hidden="true"></i> <a href="https://platform.openai.com/codex" target="_blank" rel="noopener">OpenAI Codex</a></span>
+        <span class="verdict hot">Elite — if you can access it</span>
+      </div>
+      <p>The catch: you need a pro account, or you wait roughly 17 days for a free-tier refill. That friction is brutal. If it were more accessible this would be my default. For now it stays in the "impressive but impractical" category unless you're on a paid plan.</p>
+    </div>
+
+    <img
+      class="section-img"
+      src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="AI and technology abstract"
+      onerror="this.style.display='none'"
+    />
+
+    <h2>The rest of the field</h2>
+
+    <h3>Manus</h3>
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-world" aria-hidden="true"></i> <a href="https://manus.im" target="_blank" rel="noopener">Manus</a></span>
+        <span class="verdict mid">Research agent, not a coder</span>
+      </div>
+      <p>Manus can launch a real browser and interact with pages, which is a genuine superpower for research and automation tasks. It gives you 8,000 credits on the trial — but the UI claimed I had used 0 of 8,000 while I was clearly burning through them (700 one day, 400 the next). Confusing. My read: Manus is excellent as a research agent, not for coding.</p>
+    </div>
+
+    <h3>Antigravity</h3>
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-atom" aria-hidden="true"></i> Antigravity</span>
+        <span class="verdict mid">Capable but slow</span>
+      </div>
+      <p>Antigravity can puppeteer a Chromium browser and act as you, which is interesting. But it moves slowly and has a narrow model library — it leans heavily on Gemini. To fix some animations that should have taken 5 minutes in Cursor it spent 2 hours 17 minutes trying to understand the context — including opening a browser to research why the animations weren't working. Impressive effort, wrong direction. I'm on Google AI Pro so when I run out of credits I fall back to Gemini Flash while I wait for the 5-day refill.</p>
+    </div>
+
+    <h3>Bolt.new &amp; Vercel v0</h3>
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-name"><i class="ti ti-package" aria-hidden="true"></i> <a href="https://bolt.new" target="_blank" rel="noopener">Bolt.new</a> &amp; <a href="https://v0.dev" target="_blank" rel="noopener">Vercel v0</a></span>
+        <span class="verdict nah">Too stingy on free tiers</span>
+      </div>
+      <p>Bolt gives you around 1 million tokens per month on free — I can burn that in about 90 minutes on Cursor. Their 10M pro tier sounds better until you realize the same goes there too. Vercel v0 gives you 5 credits per month — that's one single-page site with one prompt and one follow-up edit, if you gave it good context. Both are impressive demos but punishing to actually rely on.</p>
+    </div>
+
+    <h2>So what does this all mean?</h2>
+    <p>We're in a weird moment where the best tools are the most expensive, and the free tiers are designed to frustrate you into subscribing. For anyone building on a budget in South Africa — where these dollar costs translate to serious rand spend — you have to be strategic about which tools you invest in.</p>
+
+    <p>My stack right now: Cursor for building, Claude for thinking and sense-checking, Codex when I need to throw a hard problem at something genuinely smart. Everything else is situational.</p>
+
+    <div class="pull-quote">"The tools that are worth paying for are the ones that get out of the way and let you ship. Everything else is just expensive distraction."</div>
+
+    <p>I build systems for South African businesses at <a href="https://business.qwabi.co.za" target="_blank" rel="noopener">Qwabi Engineering</a>. If you're curious how I apply these tools to real client work — from SMME digitisation to AI-powered ops — reach out or follow along here.</p>
+
+    <div class="tag-list">
+      <span class="tag">AI tools</span>
+      <span class="tag">Cursor</span>
+      <span class="tag">Claude</span>
+      <span class="tag">Codex</span>
+      <span class="tag">Developer experience</span>
+      <span class="tag">South Africa</span>
+      <span class="tag">Product engineering</span>
+    </div>
+
+    <div class="cta-bar">
+      <p>Want to discuss how I use these on real builds? Let's talk.</p>
+      <button class="cta-btn" onclick="sendPrompt('Tell me more about Qwabi Engineering and the kind of projects Ayabonga works on')">About Qwabi Engineering ↗</button>
+    </div>
+  </div>
+</div>
