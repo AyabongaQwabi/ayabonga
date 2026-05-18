@@ -57,7 +57,7 @@ export function HomeSelectedWork({ projects }: HomeSelectedWorkProps) {
           id="work-heading"
           className="font-technical text-label-sm uppercase tracking-[var(--tracking-label)] text-[var(--text-muted)]"
         >
-          Selected work
+          My projects
         </p>
 
         <ul className="mt-12 list-none divide-y divide-white/10">

@@ -4,7 +4,7 @@ export const homeProjects: HomeProject[] = [
   {
     title: 'uTap',
     description:
-      'Campus digital wallet for South African students: campus vendor orders (uShop), event tickets (uGig), and phone-first campus access. Student app, vendor dashboard, and admin console in active build.',
+      'Here I joined forces with some friends from UJ to create a Campus digital wallet for South African students: campus vendor orders (uShop), event tickets (uGig), and phone-first campus access. Student app, vendor dashboard, and admin console in active build.',
     url: 'https://utaptech.co.za',
     tech: ['React Native', 'Expo', 'Supabase'],
     featured: true,
@@ -16,7 +16,7 @@ export const homeProjects: HomeProject[] = [
   {
     title: 'Trip (Taxi Assist)',
     description:
-      'Compliance-first ride-hailing for verified drivers and riders: document-heavy onboarding, wallet and card payments, in-trip advertising credits, and ops tooling for pilot corridors in the Eastern Cape and Gauteng.',
+      'My first time doing a Flutter based project. In the works is a compliance-first ride-hailing for verified drivers and riders: document-heavy onboarding, wallet and card payments, in-trip advertising credits, and ops tooling for pilot corridors in the Eastern Cape and Gauteng.',
     url: 'https://trip.qwabi.co.za/',
     tech: ['Flutter', 'Supabase', 'React'],
     wip: true,
@@ -25,7 +25,7 @@ export const homeProjects: HomeProject[] = [
   {
     title: 'My Grad Zaka',
     description:
-      'Milestone savings platform with locked and liquid vault discipline, sponsor contribution links, and a compliance layer built for FICA, POPIA, and AML from day one.',
+      'Thinking about kids and school Ntozkozo and I brainstormed a milestone savings platform with locked and liquid vault discipline, sponsor contribution links, and a compliance layer built for FICA, POPIA, and AML from day one.',
     url: 'https://mygradzaka-web.vercel.app/',
     tech: ['React Native', 'Supabase', 'TypeScript'],
     wip: true,
@@ -40,7 +40,7 @@ export const homeProjects: HomeProject[] = [
   {
     title: 'ClinicPlus',
     description:
-      'Occupational health bookings for mining and construction companies in Witbank and Mpumalanga. Customer-facing web app and admin console with realtime coordination on the MERN stack.',
+      'An old project with my good friend Humphrey which allows occupational health bookings for mining and construction companies in Witbank and Mpumalanga. Customer-facing web app and admin console with realtime coordination on the MERN stack.',
     url: 'https://clinicplusbooking.co.za/',
     tech: ['React', 'Node.js', 'MongoDB'],
   },
@@ -56,20 +56,20 @@ export const homeProjects: HomeProject[] = [
     description:
       'A friendly AI companion for the Queenstown community, with local information and assistance.',
     url: 'https://queensconnect.qwabi.co.za',
-    tech: ['AI', 'Next.js', 'OpenAI'],
+    tech: ['AI', 'React', 'Python', "FastAPI",'Google Agent Development Kit'],
   },
   {
     title: 'Kingly',
     description:
       'An AI tool for vibe coding documents and prompts, built for developer productivity.',
     url: 'https://kingly.qwabi.co.za',
-    tech: ['AI', 'React', 'TypeScript'],
+    tech: ['AI', 'React', 'TypeScript', 'Python', "FastAPI",'Google Agent Development Kit'],
   },
   {
     title: 'eSpazza',
     description:
       'Xhosa hip hop music streaming and blogging celebrating Eastern Cape hip hop culture.',
     url: '/projects/espazza',
-    tech: ['React', 'Express', 'MongoDB'],
+    tech: ['React', 'NextJS', 'Supabase'],
   },
 ];

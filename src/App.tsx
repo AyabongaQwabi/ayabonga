@@ -116,11 +116,11 @@ function App() {
           <HomeArtHero onScrollTo={scrollToSection} />
           <HomeManifesto />
           <HomeWhatIDo />
-          <HomeSelectedWork projects={homeProjects} />
           <HomeCollaborations collaborations={collaborations} />
           <HomeAboutTeaser />
           <HomeProofStrip />
           <HomeLatestWriting posts={latestPosts} />
+          <HomeSelectedWork projects={homeProjects} />
           <HomeFinalCta />
         </main>
 
