@@ -218,15 +218,19 @@ async function run() {
       // todo add this later post.instagram && !facebookOnly && (!instagramOnly || !instagramEnabled);
 
     if (fetchImageForFacebook) {
+      console.log("FETCHING FOR FACEBOOK")
       if (instagramEnabled && !instagramOnly) {
         const media = post.instagram.media ?? 'photo';
         log('dry-run', 'Instagram caption (paused, not posted)', { caption: post.instagram.caption });
         log('dry-run', 'Instagram media', { media, provider: media === 'vector' ? 'Vecteezy' : 'Pexels' });
       }
-
+      console.log("SKIP IMAGE FETCH", skipImageFetch)
       if (!skipImageFetch) {
+        console.log("GOING INTO IMAGE FETCH")
         try {
+          console.log("CHECKING ENV FOR IMAGE")
           checkEnvForImage(post.instagram);
+          console.log("RESOLVING IMAGE URL")
           summary.imageUrl = await resolveInstagramImage(post.instagram);
         } catch (err) {
           logError('dry-run', 'Image fetch failed (add PEXELS_API_KEY to .env.local or use --skip-image-fetch)', err);
@@ -255,11 +259,14 @@ async function run() {
 
   const errors = [];
   const testPrefix = '[TEST POST — safe to delete]\n\n';
-  const useFacebookPhoto = Boolean(post.facebook && post.instagram && !instagramOnly);
-
+  const useFacebookPhoto = true; // TODO: Reenable this line => Boolean(post.facebook && post.instagram && !instagramOnly);
+  console.log("useFacebookPhoto: ", useFacebookPhoto)
   if (!facebookOnly && post.instagram) {
+    console.log("GOING INTO IMAGE FETCH FOR REAL")
     try {
+      console.log("RESOLVING IMAGE URL")
       summary.imageUrl = await resolveInstagramImage(post.instagram);
+      console.log("IMAGE URL RESOLVED: ", summary.imageUrl)
       logBanner('STOCK IMAGE URL', [
         instagramEnabled
           ? 'Used for Instagram image_url and Facebook /photos url:'
@@ -275,11 +282,12 @@ async function run() {
   console.log("About to post")
   console.log("summary.imageUrl: ", summary.imageUrl)
   console.log("useFacebookPhoto: ", useFacebookPhoto)
-  console.log("post.facebook: ", post.facebook)
   console.log("POSTING TO FB PHOTO:",!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto)
 
   if (!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto) {
+    console.log("GOING INTO FB PHOTO POST")
     try {
+      console.log("POSTING TO FB PHOTO 1")
       const fb = await postPhotoToFacebook(summary.imageUrl, `${post.facebook}`);
       summary.facebookUrl = fb.permalink;
       log('facebook', 'Photo post published', { imageUrl: summary.imageUrl });
