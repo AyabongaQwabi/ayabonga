@@ -5,16 +5,26 @@
 const SECRET_KEYS = /token|secret|password|api_key|apikey|authorization/i;
 
 function redactValue(key, value) {
-  if (SECRET_KEYS.test(key)) return value ? '[set]' : '[missing]';
+  if (SECRET_KEYS.test(key)) return value
+    ? value.slice(0, 6) + '...' // first 6 chars
+    : '[missing]';
   return value;
 }
 
 export function log(step, message, fields = {}) {
   const ts = new Date().toISOString();
-  console.log(`[${ts}] [${step}] ${message}`);
+  console.log(`
+    
+    [${ts}] [${step}] ${message}
+    
+    `);
   for (const [key, value] of Object.entries(fields)) {
     if (value === undefined) continue;
-    console.log(`\n\n ${key}: ${redactValue(key, value)}`);
+    console.log(`
+
+       ${key}: ${redactValue(key, value)}
+
+       `);
   }
 }
 
