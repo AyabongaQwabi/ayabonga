@@ -261,9 +261,8 @@ async function run() {
   const testPrefix = '[TEST POST — safe to delete]\n\n';
   const useFacebookPhoto = true; // TODO: Reenable this line => Boolean(post.facebook && post.instagram && !instagramOnly);
   console.log("useFacebookPhoto: ", useFacebookPhoto)
-  if (!facebookOnly && post.instagram) {
-    console.log("GOING INTO IMAGE FETCH FOR REAL")
-    try {
+  
+  try {
       console.log("RESOLVING IMAGE URL")
       summary.imageUrl = await resolveInstagramImage(post.instagram);
       console.log("IMAGE URL RESOLVED: ", summary.imageUrl)
@@ -277,7 +276,6 @@ async function run() {
       logError('image', 'Could not fetch image (Instagram and photo-Facebook need this)', err);
       errors.push(err);
     }
-  }
 
   console.log("About to post")
   console.log("summary.imageUrl: ", summary.imageUrl)
