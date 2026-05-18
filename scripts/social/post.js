@@ -274,7 +274,7 @@ async function run() {
 
   if (!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto) {
     try {
-      const fb = await postPhotoToFacebook(summary.imageUrl, `${testPrefix}${post.facebook}`);
+      const fb = await postPhotoToFacebook(summary.imageUrl, `${post.facebook}`);
       summary.facebookUrl = fb.permalink;
       log('facebook', 'Photo post published', { imageUrl: summary.imageUrl });
     } catch (err) {
@@ -283,7 +283,7 @@ async function run() {
     }
   } else if (!instagramOnly && post.facebook) {
     try {
-      const fb = await postToFacebook(`${testPrefix}${post.facebook}`);
+      const fb = await postToFacebook(`${post.facebook}`);
       summary.facebookUrl = fb.permalink;
     } catch (err) {
       logError('facebook', 'Feed post failed', err);
@@ -295,7 +295,7 @@ async function run() {
     try {
       const ig = await postToInstagram(
         summary.imageUrl,
-        `${testPrefix}${post.instagram.caption}`
+        `${post.instagram.caption}`
       );
       summary.instagramUrl = ig.permalink;
       summary.instagramMediaUrl = ig.mediaUrl;

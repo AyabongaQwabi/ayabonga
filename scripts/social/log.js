@@ -15,18 +15,11 @@ function redactValue(key, value) {
 
 export function log(step, message, fields = {}) {
   const ts = new Date().toISOString();
-  console.log(`
-    
-    [${ts}] [${step}] ${message}
-    
+  console.log(`\n [${ts}] [${step}] ${message}
     `);
   for (const [key, value] of Object.entries(fields)) {
     if (value === undefined) continue;
-    console.log(`
-
-       ${key}: ${redactValue(key, value)}
-
-       `);
+    console.log(`\n ${key}: ${redactValue(key, value)} `);
   }
 }
 
@@ -39,7 +32,7 @@ export function logError(step, message, err) {
 
 export function logBanner(title, lines) {
   const bar = '═'.repeat(56);
-  console.log(`\n${bar}`);
+  console.log(`\n ${bar}`);
   console.log(title);
   console.log(bar);
   for (const line of lines) {
