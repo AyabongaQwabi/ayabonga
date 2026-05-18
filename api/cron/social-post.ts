@@ -16,6 +16,7 @@ function isAuthorized(req: VercelRequest): boolean {
     return process.env.VERCEL_ENV === 'development' || process.env.NODE_ENV === 'development';
   }
   console.log('[cron/social-post] CRON_SECRET is present');
+  console.log('[cron/social-post] Header:', req.headers);
   console.log('[cron/social-post] Authorization header:', req.headers.authorization);
   console.log('[cron/social-post] Expected value:', `Bearer ${secret}`);
   console.log('[cron/social-post] Authorization header matches:', req.headers.authorization === `Bearer ${secret}`);
@@ -67,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (!isAuthorized(req)) {
     console.log('[cron/social-post] Unauthorized');
-    return res.status(401).json({ error: 'Unauthorized' });
+    return res.status(401).json({ error: 'Unauthorized', message: 'Lewey uyithumeleyo ayi dibani, cela uphinde uyijonge' });
   }
 
   const scriptPath = path.join(process.cwd(), 'scripts/social/post.js');
