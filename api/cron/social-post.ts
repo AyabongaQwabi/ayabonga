@@ -6,7 +6,7 @@ import { promisify } from 'node:util';
 const execFileAsync = promisify(execFile);
 
 function isDevLog(): boolean {
-  return process.env.NODE_ENV === 'development';
+  return false;
 }
 
 function isAuthorized(req: VercelRequest): boolean {
