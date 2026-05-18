@@ -12,6 +12,7 @@ function isDevLog(): boolean {
 function isAuthorized(req: VercelRequest): boolean {
   const secret = process.env.CRON_SECRET;
   if (!secret) {
+    console.log('[cron/social-post] CRON_SECRET is missing');
     return process.env.VERCEL_ENV === 'development' || process.env.NODE_ENV === 'development';
   }
   return req.headers.authorization === `Bearer ${secret}`;
@@ -27,6 +28,8 @@ function buildArgs(req: VercelRequest): string[] {
       ? req.query.date
       : process.env.SOCIAL_POST_DATE?.trim() || '';
 
+  console.log('[cron/social-post] Building args', { platform, dryRun, date });
+
   if (platform === 'facebook-only') args.push('--facebook-only');
   if (platform === 'instagram-only') args.push('--instagram-only');
   if (dryRun) args.push('--dry-run');
@@ -38,10 +41,12 @@ function buildArgs(req: VercelRequest): string[] {
 /** Vercel Cron: GET /api/cron/social-post (Mon/Wed/Fri schedules in vercel.json) */
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET' && req.method !== 'POST') {
+    console.log('[cron/social-post] Method not allowed');
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   if (!isAuthorized(req)) {
+    console.log('[cron/social-post] Unauthorized');
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
