@@ -96,7 +96,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({
       ok: true,
       args,
-      stdout: stdout.slice(-4000),
+      stdout: stdout.slice(-4000).split('\n'),
       stderr: stderr?.slice(-4000) ?? '',
     });
   } catch (err: unknown) {
