@@ -101,7 +101,7 @@ function getArgValue(flag) {
 }
 
 function checkEnvForImage(instagram) {
-  const media = instagram.media ?? 'photo';
+  const media =  'photo';
   const missing = [];
   if (media === 'photo' && !process.env.PEXELS_API_KEY) missing.push('PEXELS_API_KEY');
   if (media === 'vector') {
@@ -271,6 +271,12 @@ async function run() {
       errors.push(err);
     }
   }
+
+  console.log("About to post")
+  console.log("summary.imageUrl: ", summary.imageUrl)
+  console.log("useFacebookPhoto: ", useFacebookPhoto)
+  console.log("post.facebook: ", post.facebook)
+  console.log("POSTING TO FB PHOTO:",!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto)
 
   if (!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto) {
     try {
