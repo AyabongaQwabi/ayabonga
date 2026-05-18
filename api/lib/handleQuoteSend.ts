@@ -20,7 +20,10 @@ const FOUNDER_STAGES = new Set<FounderStage>(['idea', 'mvp', 'live', 'rebuild'])
 
 export function isDevLogEnv(): boolean {
   return (
-    process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview'
+    process.env.NODE_ENV === 'development' ||
+    process.env.VERCEL === '1' ||
+    process.env.VERCEL_ENV === 'preview' ||
+    process.env.VERCEL_ENV === 'production'
   );
 }
 
@@ -83,13 +86,12 @@ async function upsertLeadContact(
       audienceId: AUDIENCE_ID,
       segmentIds: [LEADS_SEGMENT_ID],
     } as Parameters<typeof resend.contacts.create>[0]);
+    console.log('[handleQuoteSend] upsertLeadContact successful for:', body.email);
   } catch (err) {
-    if (isDevLogEnv()) {
-      console.log('[send] Contact upsert skipped or failed', {
-        email: body.email,
-        err,
-      });
-    }
+    console.error('[handleQuoteSend] Contact upsert skipped or failed', {
+      email: body.email,
+      err,
+    });
   }
 }
 
@@ -97,13 +99,22 @@ async function scheduleNurtureEmails(
   resend: Resend,
   body: SendQuoteRequestBody,
 ): Promise<void> {
-  if (!NURTURE_ENABLED) return;
+  if (!NURTURE_ENABLED) {
+    console.log('[handleQuoteSend] Nurture emails sequence is disabled via RESEND_NURTURE_ENABLED environment flag.');
+    return;
+  }
 
   const firstName = body.name.split(' ')[0] || body.name;
   const sequence = getFounderNurtureSequence(firstName);
-
+  console.log('[handleQuoteSend] Scheduling nurture email sequence. Count:', sequence.length);
   for (const item of sequence) {
     const scheduledAt = scheduleAtDaysFromNow(item.delayDays);
+    console.log('[handleQuoteSend] Sending scheduled nurture email:', {
+      to: body.email,
+      subject: item.subject,
+      delayDays: item.delayDays,
+      scheduledAt,
+    });
     const { error } = await resend.emails.send({
       from: FROM,
       to: [body.email],
@@ -113,12 +124,14 @@ async function scheduleNurtureEmails(
       scheduledAt,
     });
 
-    if (error && isDevLogEnv()) {
-      console.log('[send] Nurture schedule failed', {
+    if (error) {
+      console.error('[handleQuoteSend] Nurture schedule failed:', {
         delayDays: item.delayDays,
         subject: item.subject,
         error,
       });
+    } else {
+      console.log('[handleQuoteSend] Nurture schedule successful for delayDays:', item.delayDays);
     }
   }
 }
@@ -126,18 +139,31 @@ async function scheduleNurtureEmails(
 export async function handleQuoteSend(
   body: SendQuoteRequestBody | null,
 ): Promise<QuoteSendResponse> {
-  if (!process.env.RESEND_API_KEY?.trim()) {
+  console.log('[handleQuoteSend] Initiating quote export / send processing...', {
+    hasBody: !!body,
+    email: body?.email,
+    name: body?.name,
+    stage: body?.founderStage,
+  });
+
+  const resendKey = process.env.RESEND_API_KEY?.trim();
+  console.log('[handleQuoteSend] RESEND_API_KEY checks:', {
+    hasKey: !!resendKey,
+    keyLength: resendKey ? resendKey.length : 0,
+  });
+
+  if (!resendKey) {
+    console.error('[handleQuoteSend] RESEND_API_KEY is missing or empty.');
     return {
       status: 503,
       body: {
-        error: isDevLogEnv()
-          ? 'RESEND_API_KEY is missing. Add it to .env.local (local) or Vercel env vars, then restart the dev server.'
-          : 'Email service is not configured',
+        error: 'Email service is not configured',
       },
     };
   }
 
   if (!body) {
+    console.warn('[handleQuoteSend] Validation failed: body is null or undefined');
     return {
       status: 400,
       body: {
@@ -148,6 +174,7 @@ export async function handleQuoteSend(
   }
 
   if (!body.quote.features?.length) {
+    console.warn('[handleQuoteSend] Validation failed: features array is empty or undefined', { features: body.quote.features });
     return {
       status: 400,
       body: {
@@ -156,26 +183,35 @@ export async function handleQuoteSend(
     };
   }
 
+  console.log('[handleQuoteSend] Quote payload details:', {
+    email: body.email,
+    founderStage: body.founderStage,
+    featureCount: body.quote.features.length,
+    adjustedPriceZar: body.quote.totals.adjustedPriceZar,
+  });
+
   const resend = getResend();
   if (!resend) {
+    console.error('[handleQuoteSend] Failed to initialize Resend client with provided API key.');
     return {
       status: 503,
       body: { error: 'Email service is not configured' },
     };
   }
 
-  if (isDevLogEnv()) {
-    console.log('[send] Quote export request', {
-      email: body.email,
-      founderStage: body.founderStage,
-      featureCount: body.quote.features.length,
-      adjustedPriceZar: body.quote.totals.adjustedPriceZar,
-    });
-  }
-
   try {
+    console.log('[handleQuoteSend] 1. Upserting contact into Resend audience...', {
+      email: body.email,
+      audienceId: AUDIENCE_ID,
+      segmentIds: [LEADS_SEGMENT_ID],
+    });
     await upsertLeadContact(resend, body);
 
+    console.log('[handleQuoteSend] 2. Sending project scope summary email to client...', {
+      from: FROM,
+      to: body.email,
+      subject: 'Your project scope summary (qwabi.co.za)',
+    });
     const { error: quoteError } = await resend.emails.send({
       from: FROM,
       to: [body.email],
@@ -185,22 +221,27 @@ export async function handleQuoteSend(
     });
 
     if (quoteError) {
-      if (isDevLogEnv()) {
-        console.log('[send] Quote email error', quoteError);
-      }
+      console.error('[handleQuoteSend] Project scope summary email sending failed:', quoteError);
       return {
         status: 400,
         body: { error: quoteError.message || 'Failed to send quote' },
       };
     }
+    console.log('[handleQuoteSend] Project scope summary email sent successfully to client.');
 
+    console.log('[handleQuoteSend] 3. Scheduling nurture emails. Nurture enabled:', NURTURE_ENABLED);
     await scheduleNurtureEmails(resend, body);
+    console.log('[handleQuoteSend] Nurture sequence scheduling complete.');
 
+    console.log('[handleQuoteSend] 4. Sending internal notification email...', {
+      from: `Quote tool <onboarding@qwabi.co.za>`,
+      to: NOTIFY_TO,
+    });
     const internal = buildInternalLeadEmail(body);
     const fromAddress =
       FROM.match(/<([^>]+)>/)?.[1] || 'onboarding@qwabi.co.za';
 
-    await resend.emails.send({
+    const { error: internalError } = await resend.emails.send({
       from: `Quote tool <${fromAddress}>`,
       to: [NOTIFY_TO],
       subject: internal.subject,
@@ -208,11 +249,16 @@ export async function handleQuoteSend(
       replyTo: body.email,
     });
 
+    if (internalError) {
+      console.warn('[handleQuoteSend] Internal notification email sending failed, but client email succeeded. Error:', internalError);
+    } else {
+      console.log('[handleQuoteSend] Internal notification email sent successfully.');
+    }
+
+    console.log('[handleQuoteSend] Process completed successfully.');
     return { status: 200, body: { ok: true } };
   } catch (err) {
-    if (isDevLogEnv()) {
-      console.log('[send] Unexpected error', err);
-    }
+    console.error('[handleQuoteSend] Unexpected exception during quote send process:', err);
     return { status: 500, body: { error: 'Failed to send email' } };
   }
 }
