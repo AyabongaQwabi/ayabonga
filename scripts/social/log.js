@@ -6,8 +6,10 @@ const SECRET_KEYS = /token|secret|password|api_key|apikey|authorization/i;
 
 function redactValue(key, value) {
   if (SECRET_KEYS.test(key)) return value
-    ? value.slice(0, 6) + '...' // first 6 chars
-    : '[missing]';
+    ? typeof value === "string"
+      ? `${value.slice(0, 6)}...`
+      : "[set]"
+    : "[missing]";
   return value;
 }
 
