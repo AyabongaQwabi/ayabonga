@@ -16,6 +16,9 @@ function isAuthorized(req: VercelRequest): boolean {
     return process.env.VERCEL_ENV === 'development' || process.env.NODE_ENV === 'development';
   }
   console.log('[cron/social-post] CRON_SECRET is present');
+  console.log('[cron/social-post] Authorization header:', req.headers.authorization);
+  console.log('[cron/social-post] Expected value:', `Bearer ${secret}`);
+  console.log('[cron/social-post] Authorization header matches:', req.headers.authorization === `Bearer ${secret}`);
   return req.headers.authorization === `Bearer ${secret}`;
 }
 
