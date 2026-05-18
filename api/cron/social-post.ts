@@ -72,17 +72,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const scriptPath = path.join(process.cwd(), 'scripts/social/post.js');
+  console.log('[cron/social-post] Script path', scriptPath);
   const args = buildArgs(req);
+  console.log('[cron/social-post] Args', args);
 
   if (isDevLog()) {
     console.log('[cron/social-post] Running', { scriptPath, args });
   }
 
   try {
+    console.log('[cron/social-post] Calling execFileAsync', { scriptPath, args });
     const { stdout, stderr } = await execFileAsync('node', [scriptPath, ...args], {
       env: process.env,
       maxBuffer: 10 * 1024 * 1024,
     });
+
+  
 
     if (stderr) {
       console.log('[cron/social-post] stderr', stderr.slice(-2000));

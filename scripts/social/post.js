@@ -214,8 +214,8 @@ async function run() {
       });
     }
 
-    const fetchImageForFacebook =
-      post.instagram && !facebookOnly && (!instagramOnly || !instagramEnabled);
+    const fetchImageForFacebook = true;
+      // todo add this later post.instagram && !facebookOnly && (!instagramOnly || !instagramEnabled);
 
     if (fetchImageForFacebook) {
       if (instagramEnabled && !instagramOnly) {

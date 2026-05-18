@@ -14,7 +14,7 @@ export function log(step, message, fields = {}) {
   console.log(`[${ts}] [${step}] ${message}`);
   for (const [key, value] of Object.entries(fields)) {
     if (value === undefined) continue;
-    console.log(`           ${key}: ${redactValue(key, value)}`);
+    console.log(`\n\n ${key}: ${redactValue(key, value)}`);
   }
 }
 
