@@ -29,7 +29,7 @@ export function HomeProofStrip() {
     >
       <div className="mx-auto max-w-4xl px-6 text-center">
         <h2 id="proof-heading" className="sr-only">
-          Credibility
+          My Projects
         </h2>
 
         <ul className="grid gap-12 sm:grid-cols-2">
@@ -58,8 +58,8 @@ export function HomeProofStrip() {
           ref={statementRef}
           className="mx-auto mt-14 max-w-2xl font-display text-heading-md font-medium leading-[var(--leading-editorial)] text-[var(--warm-white)]/90"
         >
-          Founders hire me when they need one senior engineer accountable from architecture through
-          launch, not a rotating bench of juniors.
+          I partner with friends who need a senior engineer accountable from architecture through
+          launch.
         </p>
       </div>
     </section>

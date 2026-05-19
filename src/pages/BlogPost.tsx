@@ -4,6 +4,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
   type ReactNode,
 } from 'react';
 import { useParams } from 'react-router-dom';
@@ -11,6 +12,7 @@ import { PageShell } from '../components/layout/PageShell';
 import { Helmet } from 'react-helmet-async';
 import { blogPosts, getPostThumbnailSources } from '../data/blog-posts';
 import type { BlogPost } from '../data/blog-posts';
+import { designCategories } from '../data/design-styles';
 import BlogCommercialCta from '../components/BlogCommercialCta';
 import { BlogPostHero } from '../components/BlogPostHero';
 import { BlogToc } from '../components/BlogToc';
@@ -60,8 +62,10 @@ import { cn } from '../lib/utils';
 import { TransitionLink } from '../components/ui/TransitionLink';
 import { TechLogo } from '../components/ui/TechLogo';
 import { resolveTechLogo } from '../lib/tech-logos';
+import './design-styles.css';
 
 const CITE_HREF = /^#cite-(\d+)$/;
+const DESIGN_STYLES_SLUG = 'modern-web-design-styles';
 
 function CitationRef({ href }: { href: string }) {
   const m = href.match(CITE_HREF);
@@ -238,6 +242,231 @@ function createMarkdownImageRenderer(heroImageSrc: string | undefined) {
   };
 }
 
+function DesignStylesGuide() {
+  const [query, setQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleCategories = useMemo(
+    () =>
+      designCategories
+        .map((category) => ({
+          ...category,
+          styles: category.styles.filter((style) => {
+            const matchesCategory =
+              activeCategory === 'all' || style.category === activeCategory;
+            const matchesQuery =
+              !normalizedQuery ||
+              [style.title, style.desc, style.bestFor, style.tag]
+                .join(' ')
+                .toLowerCase()
+                .includes(normalizedQuery);
+            return matchesCategory && matchesQuery;
+          }),
+        }))
+        .filter((category) => category.styles.length > 0),
+    [activeCategory, normalizedQuery],
+  );
+
+  const visibleCount = visibleCategories.reduce(
+    (total, category) => total + category.styles.length,
+    0,
+  );
+  const totalCount = designCategories.reduce(
+    (total, category) => total + category.styles.length,
+    0,
+  );
+
+  return (
+    <div className="design-styles-post not-prose -mx-4 sm:-mx-6 lg:-mx-8">
+      <section className="intro">
+        <div className="container">
+          <div className="intro-grid">
+            <div>
+              <h2 className="section-title">What is web design, really?</h2>
+              <p className="section-text">
+                Web design is the discipline of shaping how a digital product
+                looks, feels, and communicates. It is decision-making: every
+                colour, font, layout, and animation either builds trust or
+                weakens it.
+              </p>
+              <p className="section-text">
+                At its core, design is a communication tool. It says who this is
+                for, what it does, and why you should care before you read a
+                single word.
+              </p>
+              <div className="callout-box">
+                <p>
+                  <strong>Design is the first language users read.</strong>{' '}
+                  Before they process your copy, they have already decided
+                  whether they trust you. That decision happens in milliseconds,
+                  driven by visual choices.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="section-title">What are design styles?</h2>
+              <p className="section-text">
+                A design style, or aesthetic direction, is a coherent visual
+                language. It is a collection of decisions about typography,
+                colour, spacing, imagery, interaction, and layout that create a
+                specific feeling.
+              </p>
+              <p className="section-text">
+                Think of it like genre in music. Jazz and punk both use
+                instruments, but they produce completely different feelings.
+                Brutalism and luxury minimalism both use HTML and CSS, but they
+                communicate entirely different things.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="count-strip" aria-label="Guide summary">
+        <div className="container">
+          <div className="count-grid">
+            <div className="count-card">
+              <div className="count-num">{totalCount}</div>
+              <div className="count-label">Design Styles</div>
+            </div>
+            <div className="count-card">
+              <div className="count-num">{designCategories.length}</div>
+              <div className="count-label">Categories</div>
+            </div>
+            <div className="count-card">
+              <div className="count-num">~80</div>
+              <div className="count-label">Years Covered</div>
+            </div>
+            <div className="count-card">
+              <div className="count-num">∞</div>
+              <div className="count-label">Combinations</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container">
+        <div className="search-bar">
+          <div className="search-input-wrap">
+            <span className="search-icon" aria-hidden>
+              ⌕
+            </span>
+            <input
+              type="search"
+              className="search-input"
+              placeholder="Search design styles..."
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </div>
+          <div className="results-count" aria-live="polite">
+            Showing <span>{visibleCount}</span> styles
+          </div>
+        </div>
+      </div>
+
+      <div className="cat-nav">
+        <div className="container">
+          <div className="cat-nav-scroll">
+            <button
+              type="button"
+              className={cn('cat-pill', activeCategory === 'all' && 'active')}
+              onClick={() => setActiveCategory('all')}
+            >
+              All Styles
+            </button>
+            {designCategories.map((category) => (
+              <button
+                key={category.id}
+                type="button"
+                className={cn(
+                  'cat-pill',
+                  activeCategory === category.id && 'active',
+                )}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {visibleCategories.map((category) => (
+        <section
+          key={category.id}
+          className="category-section"
+          id={category.id}
+        >
+          <div className="container">
+            <div className="category-header">
+              <div className="category-icon">{category.icon}</div>
+              <div className="category-header-text">
+                <h2>{category.name}</h2>
+                <p>{category.description}</p>
+              </div>
+            </div>
+            <div className="styles-grid">
+              {category.styles.map((style) => (
+                <article
+                  key={`${category.id}-${style.name}`}
+                  className="style-card"
+                  data-category={style.category}
+                  data-name={style.name}
+                >
+                  <div
+                    className={cn('style-preview', style.previewClass)}
+                    {...(style.previewHtml
+                      ? {
+                          dangerouslySetInnerHTML: {
+                            __html: style.previewHtml,
+                          },
+                        }
+                      : {})}
+                  />
+                  <div className="style-card-body">
+                    <div className="style-card-header">
+                      <h3 className="style-card-title">{style.title}</h3>
+                      <span className={cn('style-tag', style.tagClass)}>
+                        {style.tag}
+                      </span>
+                    </div>
+                    <p className="style-card-desc">{style.desc}</p>
+                    <div className="style-card-meta">
+                      <div className="style-card-use">
+                        Best for: {style.bestFor}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className="cta-section">
+        <div className="container">
+          <h2>
+            Design is a
+            <br />
+            <span>language</span> you can learn.
+          </h2>
+          <p>
+            Understanding design styles is how engineers stop building things
+            that only work and start building things that resonate. The style is
+            the signal. Choose intentionally.
+          </p>
+          <TransitionLink to="/get-a-quote" className="cta-btn">
+            Work with me →
+          </TransitionLink>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
@@ -277,6 +506,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
     : undefined;
 
   const primaryCategory = post.categories[0] ?? 'Writing';
+  const isDesignStylesPost = post.slug === DESIGN_STYLES_SLUG;
 
   const tocEntries = useMemo(
     () => extractHeadingsFromMarkdown(post.content),
@@ -623,22 +853,33 @@ function BlogPostView({ post }: { post: BlogPost }) {
 
         <article data-reading-article className="bg-[var(--navy)] py-12 md:py-16">
           <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-stretch lg:gap-12 lg:px-8">
-            <aside className="lg:order-2 lg:w-60 lg:shrink-0">
-              <BlogToc headings={tocEntries} />
-            </aside>
+            {!isDesignStylesPost ? (
+              <aside className="lg:order-2 lg:w-60 lg:shrink-0">
+                <BlogToc headings={tocEntries} />
+              </aside>
+            ) : null}
 
             <div className="min-w-0 flex-1 lg:order-1">
-              <div className="mx-auto max-w-[680px]">
+              <div
+                className={cn(
+                  'mx-auto',
+                  isDesignStylesPost ? 'max-w-6xl' : 'max-w-[680px]',
+                )}
+              >
                 
                 <div className="blog-post-body">
-                  <ReactMarkdown
-                    key={post.slug}
-                    remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeRaw]}
-                    components={markdownComponents}
-                  >
-                    {post.content}
-                  </ReactMarkdown>
+                  {isDesignStylesPost ? (
+                    <DesignStylesGuide />
+                  ) : (
+                    <ReactMarkdown
+                      key={post.slug}
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={markdownComponents}
+                    >
+                      {post.content}
+                    </ReactMarkdown>
+                  )}
                 </div>
 
                 <BlogCommercialCta
