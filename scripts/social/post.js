@@ -10,7 +10,7 @@
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { postToFacebook, postPhotoToFacebook } from './facebook.js';
+import { postToFacebook, postPhotoToFacebook, postVideoToFacebook } from './facebook.js';
 import { postToInstagram } from './instagram.js';
 import { fetchImageUrl } from './image.js';
 import { loadEnvFiles, envStatus } from './load-env.js';
@@ -132,14 +132,15 @@ async function checkEnvForPost({ facebookOnly, instagramOnly, post, instagramEna
     );
   }
 
+  const postType = post.postType || 'photo';
   const needsFacebook = !instagramOnly && post.facebook;
-  const needsInstagram = instagramEnabled && !facebookOnly && post.instagram;
+  const needsInstagram = instagramEnabled && !facebookOnly && post.instagram && postType !== 'text';
 
   if (needsFacebook || needsInstagram) {
     await resolveMetaIds();
   }
 
-  if (needsInstagram) {
+  if (needsInstagram && postType === 'photo') {
     checkEnvForImage(post.instagram);
   }
 
@@ -162,6 +163,7 @@ async function resolveInstagramImage(instagram) {
     media: instagram.media,
     source: instagram.imageSource,
     url: instagram.imageUrl,
+    caption: instagram.caption,
   });
 }
 
@@ -201,11 +203,49 @@ async function run() {
     instagramMediaUrl: null,
   };
 
-  if (dryRun) {
-    log('dry-run', 'Preview mode (no posts will be published)');
+  const postType = post.postType || 'photo';
 
+  if (dryRun) {
+    log('dry-run', 'Preview mode (no posts will be published)', { postType });
+
+    if (postType === 'text') {
+      if (post.facebook && !instagramOnly) {
+        log('dry-run', 'Facebook message', { preview: post.facebook.slice(0, 120) + '…' });
+        log('dry-run', 'Facebook endpoint', { type: 'POST /{page-id}/feed (text only)' });
+      }
+      log('dry-run', 'Instagram', { status: 'Skipped (text-only posts not supported on Instagram)' });
+
+      logBanner('DRY RUN SUMMARY', [
+        'Post Type: Text-Only',
+        !instagramOnly && post.facebook ? `Facebook: would POST /feed (text only)` : 'Facebook: skipped',
+        'Instagram: skipped (text-only not supported)',
+      ]);
+      process.exit(0);
+    }
+
+    if (postType === 'video') {
+      const videoUrl = post.videoUrl || (post.instagram && (post.instagram.videoUrl || post.instagram.url || post.instagram.imageUrl)) || 'https://example.com/mock-video.mp4';
+      if (post.facebook && !instagramOnly) {
+        log('dry-run', 'Facebook message', { preview: post.facebook.slice(0, 120) + '…' });
+        log('dry-run', 'Facebook endpoint', { type: `POST /{page-id}/videos (video post with url: ${videoUrl})` });
+      }
+      if (instagramEnabled && !facebookOnly && post.instagram) {
+        log('dry-run', 'Instagram caption', { caption: post.instagram.caption });
+        log('dry-run', 'Instagram endpoint', { type: `POST /{ig-user-id}/media (video Reels with url: ${videoUrl})` });
+      }
+
+      logBanner('DRY RUN SUMMARY', [
+        'Post Type: Video',
+        `Video URL: ${videoUrl}`,
+        !instagramOnly && post.facebook ? `Facebook: would POST /videos` : 'Facebook: skipped',
+        instagramEnabled && !facebookOnly && post.instagram ? 'Instagram: would POST /media (Reels)' : 'Instagram: skipped/paused',
+      ]);
+      process.exit(0);
+    }
+
+    // Default: photo post
     const willUseFacebookPhoto =
-      post.facebook && post.instagram && !facebookOnly && (!instagramOnly || !instagramEnabled);
+      post.facebook && post.instagram && !instagramOnly && !skipImageFetch;
 
     if (post.facebook && !instagramOnly) {
       log('dry-run', 'Facebook message', { preview: post.facebook.slice(0, 120) + '…' });
@@ -214,33 +254,25 @@ async function run() {
       });
     }
 
-    const fetchImageForFacebook = true;
-      // todo add this later post.instagram && !facebookOnly && (!instagramOnly || !instagramEnabled);
+    if (instagramEnabled && !instagramOnly && post.instagram) {
+      const media = post.instagram.media ?? 'photo';
+      log('dry-run', 'Instagram caption (paused, not posted)', { caption: post.instagram.caption });
+      log('dry-run', 'Instagram media', { media, provider: 'Cloudflare Worker with stock fallbacks' });
+    }
 
-    if (fetchImageForFacebook) {
-      console.log("FETCHING FOR FACEBOOK")
-      if (instagramEnabled && !instagramOnly) {
-        const media = post.instagram.media ?? 'photo';
-        log('dry-run', 'Instagram caption (paused, not posted)', { caption: post.instagram.caption });
-        log('dry-run', 'Instagram media', { media, provider: media === 'vector' ? 'Vecteezy' : 'Pexels' });
+    if (!skipImageFetch && post.instagram) {
+      try {
+        checkEnvForImage(post.instagram);
+        summary.imageUrl = await resolveInstagramImage(post.instagram);
+      } catch (err) {
+        logError('dry-run', 'Image fetch failed (add PEXELS_API_KEY to .env.local or use --skip-image-fetch)', err);
       }
-      console.log("SKIP IMAGE FETCH", skipImageFetch)
-      if (!skipImageFetch) {
-        console.log("GOING INTO IMAGE FETCH")
-        try {
-          console.log("CHECKING ENV FOR IMAGE")
-          checkEnvForImage(post.instagram);
-          console.log("RESOLVING IMAGE URL")
-          summary.imageUrl = await resolveInstagramImage(post.instagram);
-        } catch (err) {
-          logError('dry-run', 'Image fetch failed (add PEXELS_API_KEY to .env.local or use --skip-image-fetch)', err);
-        }
-      } else {
-        log('dry-run', 'Image fetch skipped (--skip-image-fetch)');
-      }
+    } else {
+      log('dry-run', 'Image fetch skipped (--skip-image-fetch)');
     }
 
     logBanner('DRY RUN SUMMARY', [
+      'Post Type: Photo',
       summary.imageUrl ? `Image URL (open in browser):\n  ${summary.imageUrl}` : 'Image URL: (not fetched)',
       willUseFacebookPhoto && summary.imageUrl
         ? `Facebook: would POST /photos with this image`
@@ -258,15 +290,62 @@ async function run() {
   }
 
   const errors = [];
-  const testPrefix = '[TEST POST — safe to delete]\n\n';
-  const useFacebookPhoto = true; // TODO: Reenable this line => Boolean(post.facebook && post.instagram && !instagramOnly);
-  console.log("useFacebookPhoto: ", useFacebookPhoto)
-  
-  try {
-      console.log("RESOLVING IMAGE URL")
+
+  if (postType === 'text') {
+    if (!instagramOnly && post.facebook) {
+      try {
+        const fb = await postToFacebook(`${post.facebook}`);
+        summary.facebookUrl = fb.permalink;
+        log('facebook', 'Feed post published');
+      } catch (err) {
+        logError('facebook', 'Feed post failed', err);
+        errors.push(err);
+      }
+    }
+    if (!facebookOnly && post.instagram) {
+      log('instagram', 'Skipping Instagram post (text-only posts not supported on Instagram)');
+    }
+  } else if (postType === 'video') {
+    const videoUrl = post.videoUrl || (post.instagram && (post.instagram.videoUrl || post.instagram.url || post.instagram.imageUrl));
+    if (!videoUrl) {
+      const err = new Error('Video post selected but no videoUrl found in calendar entry.');
+      logError('init', 'Cannot post video', err);
+      errors.push(err);
+    } else {
+      log('video', 'Resolved video URL', { videoUrl });
+
+      if (!instagramOnly && post.facebook) {
+        try {
+          const fb = await postVideoToFacebook(videoUrl, `${post.facebook}`);
+          summary.facebookUrl = fb.permalink;
+          log('facebook', 'Video post published');
+        } catch (err) {
+          logError('facebook', 'Video post failed', err);
+          errors.push(err);
+        }
+      }
+
+      if (instagramEnabled && !facebookOnly && post.instagram) {
+        try {
+          const ig = await postToInstagram(videoUrl, `${post.instagram.caption}`, 'video');
+          summary.instagramUrl = ig.permalink;
+          summary.instagramMediaUrl = ig.mediaUrl;
+          log('instagram', 'Instagram Reels post published');
+        } catch (err) {
+          logError('instagram', 'Instagram Reel post failed', err);
+          errors.push(err);
+        }
+      } else if (!facebookOnly && post.instagram && !instagramEnabled) {
+        log('instagram', instagramPauseReason());
+      }
+    }
+  } else {
+    // Default to photo post
+    try {
+      console.log("RESOLVING IMAGE URL");
       summary.imageUrl = await resolveInstagramImage(post.instagram);
-      console.log("IMAGE URL RESOLVED: ", summary.imageUrl)
-      logBanner('STOCK IMAGE URL', [
+      console.log("IMAGE URL RESOLVED: ", summary.imageUrl);
+      logBanner('STOCK/GENERATED IMAGE URL', [
         instagramEnabled
           ? 'Used for Instagram image_url and Facebook /photos url:'
           : 'Used for Facebook /photos url (Instagram paused):',
@@ -274,49 +353,46 @@ async function run() {
       ]);
     } catch (err) {
       logError('image', 'Could not fetch image (Instagram and photo-Facebook need this)', err);
-      errors.push(err);
+      const instagramActive = instagramEnabled && !facebookOnly && post.instagram;
+      if (instagramActive) {
+        errors.push(err);
+      }
     }
 
-  console.log("About to post")
-  console.log("summary.imageUrl: ", summary.imageUrl)
-  console.log("useFacebookPhoto: ", useFacebookPhoto)
-  console.log("POSTING TO FB PHOTO:",!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto)
+    if (!instagramOnly && post.facebook && summary.imageUrl) {
+      try {
+        const fb = await postPhotoToFacebook(summary.imageUrl, `${post.facebook}`);
+        summary.facebookUrl = fb.permalink;
+        log('facebook', 'Photo post published', { imageUrl: summary.imageUrl });
+      } catch (err) {
+        logError('facebook', 'Photo post failed', err);
+        errors.push(err);
+      }
+    } else if (!instagramOnly && post.facebook) {
+      // Fallback to text post on Facebook if image resolution failed
+      try {
+        const fb = await postToFacebook(`${post.facebook}`);
+        summary.facebookUrl = fb.permalink;
+        log('facebook', 'Feed post published (fallback as image failed)');
+      } catch (err) {
+        logError('facebook', 'Feed post fallback failed', err);
+        errors.push(err);
+      }
+    }
 
-  if (!instagramOnly && post.facebook && summary.imageUrl && useFacebookPhoto) {
-    console.log("GOING INTO FB PHOTO POST")
-    try {
-      console.log("POSTING TO FB PHOTO 1")
-      const fb = await postPhotoToFacebook(summary.imageUrl, `${post.facebook}`);
-      summary.facebookUrl = fb.permalink;
-      log('facebook', 'Photo post published', { imageUrl: summary.imageUrl });
-    } catch (err) {
-      logError('facebook', 'Photo post failed', err);
-      errors.push(err);
+    if (instagramEnabled && !facebookOnly && post.instagram && summary.imageUrl) {
+      try {
+        const ig = await postToInstagram(summary.imageUrl, `${post.instagram.caption}`, 'photo');
+        summary.instagramUrl = ig.permalink;
+        summary.instagramMediaUrl = ig.mediaUrl;
+        log('instagram', 'Photo post published');
+      } catch (err) {
+        logError('instagram', 'Post failed', err);
+        errors.push(err);
+      }
+    } else if (!facebookOnly && post.instagram && !instagramEnabled) {
+      log('instagram', instagramPauseReason());
     }
-  } else if (!instagramOnly && post.facebook) {
-    try {
-      const fb = await postToFacebook(`${post.facebook}`);
-      summary.facebookUrl = fb.permalink;
-    } catch (err) {
-      logError('facebook', 'Feed post failed', err);
-      errors.push(err);
-    }
-  }
-
-  if (instagramEnabled && !facebookOnly && post.instagram && summary.imageUrl) {
-    try {
-      const ig = await postToInstagram(
-        summary.imageUrl,
-        `${post.instagram.caption}`
-      );
-      summary.instagramUrl = ig.permalink;
-      summary.instagramMediaUrl = ig.mediaUrl;
-    } catch (err) {
-      logError('instagram', 'Post failed', err);
-      errors.push(err);
-    }
-  } else if (!facebookOnly && post.instagram && !instagramEnabled) {
-    log('instagram', instagramPauseReason());
   }
 
   logBanner('POST RESULTS', [

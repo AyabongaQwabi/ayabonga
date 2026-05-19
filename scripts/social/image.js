@@ -4,12 +4,78 @@
  * - vector → Vecteezy (vectors / illustrations)
  */
 
+import { put } from '@vercel/blob';
 import { log, logError } from './log.js';
 
 const BRAND_IMAGE_URL =
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/634131924_4362348684012184_2809328754212142225_n%20%281%29-n9dEY5Noh5Y0nxfTCK3TwAMABTs8KG.jpg';
 
 const VECTEEZY_API = 'https://api.vecteezy.com';
+
+/**
+ * Generate a custom, high-fidelity square image using the Cloudflare Worker image generator,
+ * enforcing Qwabi Engineering's brand aesthetics (Deep Navy, Vibrant Amber, Emerald accents, Glassmorphism).
+ */
+async function generateWithCloudflare(query, caption) {
+  const apiKey = process.env.CLOUDFLARE_IMAGE_WORKER_KEY;
+  const blobToken = process.env.BLOB_READ_WRITE_TOKEN || process.env.NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN;
+
+  if (!apiKey || !blobToken) {
+    if (!apiKey) {
+      log('image', 'CLOUDFLARE_IMAGE_WORKER_KEY is missing. Skipping Cloudflare generation.');
+    }
+    if (!blobToken) {
+      log('image', 'Vercel Blob token is missing. Skipping Cloudflare generation.');
+    }
+    return null;
+  }
+
+  const prompt = `
+Premium technology marketing photography.
+
+Subject:
+${query}
+
+Context:
+${caption || ''}
+
+`;
+
+  log('image', 'Attempting Cloudflare Worker image generation...', { query });
+  log("prompt:", prompt);
+  try {
+    const url = 'https://genimage.ayabongaqwabi.workers.dev/';
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt }),
+    });
+
+    if (response.ok) {
+      const arrayBuffer = await response.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      
+      log('image', 'Cloudflare image generated successfully. Uploading to Vercel Blob...');
+      const blobResult = await put(`social/generated-${Date.now()}.jpg`, buffer, {
+        access: 'public',
+        token: blobToken,
+      });
+
+      log('image', 'Uploaded to Vercel Blob successfully', { url: blobResult.url });
+      return blobResult.url;
+    } else {
+      const responseText = await response.text();
+      log('image', `Cloudflare Worker generation failed (${response.status}): ${responseText.slice(0, 300)}`);
+    }
+  } catch (err) {
+    logError('image', 'Cloudflare Worker request error', err);
+  }
+
+  return null;
+}
 
 export async function fetchImageUrl(query, options = {}) {
   if (options.source === 'brand') {
@@ -21,32 +87,85 @@ export async function fetchImageUrl(query, options = {}) {
     return options.url;
   }
 
-  const media = normalizeMedia(options.media);
-  log('image', 'Fetching stock asset', { media, query, provider: media === 'photo' ? 'Pexels' : 'Vecteezy' });
-
+  // 1. Try Cloudflare Worker image generation first
   try {
-    if (media === 'photo') {
-      const key = process.env.PEXELS_API_KEY;
-      if (!key) throw new Error('Photo posts require PEXELS_API_KEY (pexels.com/api).');
-      const imageUrl = await fetchPexelsPhoto(query, key);
-      log('image', 'Pexels photo selected', { imageUrl });
-      return imageUrl;
+    const generatedUrl = await generateWithCloudflare(query, options.caption);
+    if (generatedUrl) {
+      log('image', 'Successfully generated and stored custom Cloudflare image', { imageUrl: generatedUrl });
+      return generatedUrl;
     }
+  } catch (err) {
+    logError('image', 'Cloudflare image generation/upload failed, falling back to stock assets', err);
+  }
 
+  // 2. Fallback to existing stock/vector methods
+  const preferredMedia = normalizeMedia(options.media);
+  log('image', 'Preferred media source for fallback', { preferredMedia, query });
+
+  const tryPexels = async () => {
+    const key = process.env.PEXELS_API_KEY;
+    if (!key) {
+      log('image', 'Skipping Pexels search: PEXELS_API_KEY is missing.');
+      return null;
+    }
+    log('image', 'Attempting Pexels photo search...', { query });
+    const imageUrl = await fetchPexelsPhoto(query, key);
+    log('image', 'Pexels photo selected', { imageUrl });
+    return imageUrl;
+  };
+
+  const tryVecteezy = async () => {
     const accountId = process.env.VECTEEZY_ACCOUNT_ID;
     const apiKey = process.env.VECTEEZY_SECRET_KEY;
     if (!accountId || !apiKey) {
-      throw new Error(
-        'Vector posts require VECTEEZY_ACCOUNT_ID and VECTEEZY_SECRET_KEY (vecteezy.com/developers).'
-      );
+      log('image', 'Skipping Vecteezy search: VECTEEZY_ACCOUNT_ID or VECTEEZY_SECRET_KEY is missing.');
+      return null;
     }
+    log('image', 'Attempting Vecteezy vector search...', { query, accountId });
     const imageUrl = await fetchVecteezyVector(query, accountId, apiKey);
     log('image', 'Vecteezy vector selected', { imageUrl });
     return imageUrl;
-  } catch (err) {
-    logError('image', 'Failed to fetch image', err);
-    throw err;
+  };
+
+  let imageUrl = null;
+  if (preferredMedia === 'photo') {
+    try {
+      imageUrl = await tryPexels();
+    } catch (err) {
+      logError('image', 'Pexels search failed, trying Vecteezy fallback...', err);
+    }
+
+    if (!imageUrl) {
+      try {
+        imageUrl = await tryVecteezy();
+      } catch (err) {
+        logError('image', 'Vecteezy search fallback failed...', err);
+      }
+    }
+  } else {
+    // preferredMedia === 'vector'
+    try {
+      imageUrl = await tryVecteezy();
+    } catch (err) {
+      logError('image', 'Vecteezy search failed, trying Pexels fallback...', err);
+    }
+
+    if (!imageUrl) {
+      try {
+        imageUrl = await tryPexels();
+      } catch (err) {
+        logError('image', 'Pexels search fallback failed...', err);
+      }
+    }
   }
+
+  if (imageUrl) {
+    return imageUrl;
+  }
+
+  // 3. Ultimate fallback: Brand Image
+  log('image', 'All image generation and stock image fallbacks failed. Using brand image as safety fallback.', { imageUrl: BRAND_IMAGE_URL });
+  return BRAND_IMAGE_URL;
 }
 
 function normalizeMedia(media) {

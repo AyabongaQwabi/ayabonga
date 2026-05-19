@@ -5,7 +5,7 @@
 import { log, logError } from './log.js';
 import { graphApiBase, graphVersion, pageAccessToken } from './graph-config.js';
 
-export async function postToInstagram(imageUrl, caption) {
+export async function postToInstagram(mediaUrl, caption, mediaType = 'photo') {
   const GRAPH_API = graphApiBase();
   const GRAPH_VER = graphVersion();
   const accountId = process.env.INSTAGRAM_ACCOUNT_ID;
@@ -15,25 +15,34 @@ export async function postToInstagram(imageUrl, caption) {
 
   if (!accountId) throw new Error('Missing env var: INSTAGRAM_ACCOUNT_ID');
   if (!token) throw new Error('Missing env var: INSTAGRAM_ACCESS_TOKEN');
-  if (!imageUrl) throw new Error('Instagram requires an image URL');
+  if (!mediaUrl) throw new Error('Instagram requires a media URL');
 
   log('instagram', 'Starting publish flow', {
     graphVersion: GRAPH_VER,
     accountId,
-    imageUrl,
-    captionLength: caption.length,
+    mediaUrl,
+    mediaType,
+    captionLength: caption?.length ?? 0,
   });
 
   const containerUrl = `${GRAPH_API}/${accountId}/media`;
   log('instagram', 'Step 1/3: create media container', { endpoint: containerUrl });
 
+  const bodyParams = {
+    caption: caption || '',
+    access_token: token,
+  };
+
+  if (mediaType === 'video') {
+    bodyParams.media_type = 'REELS';
+    bodyParams.video_url = mediaUrl;
+  } else {
+    bodyParams.image_url = mediaUrl;
+  }
+
   const containerRes = await fetch(containerUrl, {
     method: 'POST',
-    body: new URLSearchParams({
-      image_url: imageUrl,
-      caption,
-      access_token: token,
-    }),
+    body: new URLSearchParams(bodyParams),
   });
   const container = await containerRes.json();
 
@@ -74,7 +83,7 @@ export async function postToInstagram(imageUrl, caption) {
   };
 }
 
-async function waitForContainer(creationId, token, maxAttempts = 12) {
+async function waitForContainer(creationId, token, maxAttempts = 30) {
   const base = graphApiBase();
   for (let i = 0; i < maxAttempts; i++) {
     const res = await fetch(

@@ -102,6 +102,48 @@ export async function postPhotoToFacebook(imageUrl, message, options = {}) {
   };
 }
 
+/**
+ * Video post — video must be a public URL.
+ * @see https://developers.facebook.com/docs/video-api/guides/publishing
+ */
+export async function postVideoToFacebook(videoUrl, description, options = {}) {
+  const { pageId, token } = requirePageCredentials();
+  const url = `${graphApiBase()}/${pageId}/videos`;
+
+  log('facebook', 'POST /{page-id}/videos (video post)', {
+    graphVersion: graphVersion(),
+    pageId,
+    endpoint: url,
+    videoUrl,
+    descriptionLength: description?.length ?? 0,
+    published: options.published ?? true,
+  });
+
+  const body = new URLSearchParams({
+    file_url: videoUrl,
+    description: description || '',
+    access_token: token,
+    published: String(options.published ?? true),
+  });
+
+  if (options.published === false && options.scheduledPublishTime) {
+    body.set('scheduled_publish_time', String(options.scheduledPublishTime));
+  }
+
+  const data = await graphPost(url, body);
+  log('facebook', 'Video published', { videoId: data.id });
+
+  const permalink = pagePostPermalink(data.id);
+  log('facebook', 'Permalink', { permalink, videoId: data.id });
+
+  return {
+    id: data.id,
+    permalink,
+    type: 'video',
+    videoUrl,
+  };
+}
+
 /** Docs: permalink is https://www.facebook.com/{page_post_id} */
 function pagePostPermalink(pagePostId) {
   return `https://www.facebook.com/${pagePostId}`;
