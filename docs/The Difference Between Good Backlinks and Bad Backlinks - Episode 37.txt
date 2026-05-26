@@ -1,0 +1,304 @@
+00:00 this is grumpy SEO Guy episode 37 the difference between bad backlinks and
+00:06 good backlinks you're listening to grumpy SEO guy the SEO podcast that doesn't waste your time with nonsense
+00:13 that doesn't work I'm the grumpy SEO guy and I'm sharing with you the strategies that have helped me successfully run my
+00:18 SEO Agency for the last 14 years in this podcast I'll be sharing my knowledge and experience discussing tips and
+00:24 strategies and trying to help you cut through the confusion that permeates this industry if you listen to this
+00:30 podcast you will know more about SEO than 99% of people on the planet ready let's get
+00:37 started I'm the grumpy SEO guy let me tell you why I'm grumpy today I'm grumpy today because there seems to be a lot of
+00:43 confusion and a lot of discussion about the difference between good backlinks
+00:49 and bad backlinks so today we're going to discuss a lot of different kind of links and we're going to talk about what
+00:55 makes a good backlink and what makes a bad backlink okay okay before we get
+01:01 into that though let's talk about some cool stuff okay it's 2024 this is the
+01:06 first episode of 2024 that's pretty awesome I hope that you enjoyed listening to the podcast last year and I
+01:12 really want to say thank you to all the listeners too I started this podcast like I don't know 6 months ago or something and I was completely Unsure
+01:19 how to make a podcast but I've also had a great podcast Mentor who I know is listening to this podcast so don't worry
+01:26 I'm not going to reveal who you are but thank you I I really appreciate all of the help that you've given me on this but I'm very happy that I have listeners
+01:32 and I love hearing from my listeners every time I get an email or a message on Reddit or whatever or somebody posts a thread in the grumpy guy subreddit
+01:39 which is awesome come check it out it's r/g grumpy SEO guy we mostly just talk about the podcast and we talk about some
+01:45 stuff that is not allowed to be talked about on other SEO forums because grumpy SEO guy is the podcast that doesn't
+01:50 waste your time with nonsense that doesn't work so if it's related to the SEO industry you're allowed to talk
+01:56 about it but anyway for anybody listening who doesn't know how to get a hold of me you can email me at hello
+02:02 grumpy seo.com however if you email me please whitelist my email address because all the talk about backlinks and
+02:08 SEO will sometimes put the message in your spam folder I'm on Reddit grumpy
+02:14 SEO guy is my username of course there's the grumpy SEO guy subreddit and if you want to support the show you can do so
+02:21 at patreon.com grumpy SEO guy but as far as this podcast goes I hope that you're
+02:27 looking forward to a lot more episodes this here I have some super awesome episodes planned for you and I'm really
+02:35 excited to be sharing with you some of the stuff that I'm going to be sharing with you a little note though I've got a
+02:42 lot of things going on right now so next week we're going to do a micro episode I was going to do two episodes a month for
+02:48 a while because I've got a whole lot of other stuff that I'm working on but with that said I'm like do I want to make
+02:54 people wait a whole week and not get an episode no that doesn't sound fun so next week is going to be a mic micro
+03:00 episode and then the following week we're going to be back on with a full length episode but don't worry cuz a
+03:06 micro episode is going to be phenomenally useful just like everything else I publish okay let's talk about
+03:13 backlinks but before we do that my lawyer tells me that I have to say this right now a quick disclaimer before we
+03:19 get started everything I say here is based on my experience and opinion from 14 years in the industry I don't officially know how Google or any other
+03:25 search engines work everything I say here is hypothetical and based on my experience this podcast does not constitute device or Services what
+03:31 worked for me may or may not work for you okay back to the show now if you listen to this podcast you know the
+03:37 backlinks are a huge part of SEO backlinks are how you get authority authority is how you rank if you're just
+03:44 joining us for the first time the first thing you should know is that content is not King and I say that because
+03:51 basically every SEO course and every SEO piece of instruction I've seen on the internet and every SEO concept that
+03:58 people teach is somehow based around the idea that content is King content is not
+04:04 King in fact for the most part this entire podcast series is based on the
+04:10 fact that content is not King okay now if you listen to this podcast we talk
+04:17 about why content is not King what actually is King and how to get your
+04:22 websites to and keep them at the top of the search engines okay but I just want
+04:28 to say this because every body especially beginners seems to think that
+04:34 content is King and somehow somehow if they can just write amazing quality
+04:41 content they will rank it doesn't work that way okay now if you've been
+04:46 listening to this podcast for a long time you're totally knowledgeable of the fact that content is not King but anyway
+04:53 content is not King Authority is King and Authority comes from backlinks from authoritative websites that's how you
+04:59 get author Authority we'll talk about that more I've talked about that a lot in other episodes so for now we're just
+05:04 going to talk about different types of backlinks I often see questions on the internet what kind of backlinks do I get
+05:11 what kind of backlinks are good what kind of backlinks are bad how do I know if a backlink is good or if a backlink is bad I'm going to answer all those
+05:18 questions for you right now so I'm going to go over a bunch of different kind of backlinks and by the way I'm going to do
+05:24 it from worst to best okay but I have to tell you there are two exceptions to
+05:31 everything that I say and I'm going to save those exceptions for the end okay just to start we're going to do a lot of
+05:39 different kinds of backlinks don't worry it's not it's not that sounds like complicated oh no a lot of kinds of backlinks no it's just trust me it's not
+05:45 we're going to do them from least effective to most effective and then
+05:51 we're going to talk about those exceptions that I mentioned okay because exceptions change the rules on
+05:57 everything just like when I tell you about how you have to rank all the things that you have to do you have to
+06:03 do but the exception is if you have a penalty Nothing Else Matters well there's an exception like that for
+06:09 backlinks too actually there's two exceptions so we're going to discuss
+06:15 those exceptions at the end okay let me start this is the last little comment I
+06:22 have to make before we start backlinks are about quality they
+06:27 are not about quantity okay so and I'm just saying this because like let's say
+06:33 maybe you're just starting in the world of SEO or maybe this is the first episode of grumpy SEO guy that you've
+06:39 ever listened to okay and you might have some incorrect theories about backlinks in your head because you've been hearing
+06:44 some terrible information from some other sources that is unhelpful so the
+06:50 first thing that people think of when they learn that backlinks are important is well I'm going to get a lot of
+06:56 backlinks I need to get a lot of backlinks okay first of all that that's that's the wrong that's the wrong way to
+07:01 think about it but don't feel bad if you think about it because that is a logical thought it's just not the manner in
+07:07 which you do it okay so that kind of idea is perpetuated by people that are
+07:14 selling huge quantities of backlinks because as soon as you learn about backlinks probably the first thing you
+07:20 do is search for something like how do I get backlinks or how do I buy backlinks or something like that and you will see
+07:26 people selling hundreds or thousands of backlinks for a couple dollars that's the wrong way to do it I
+07:34 just I don't even have to know anything else about whatever the service is if you're getting one backlink for a couple
+07:39 dollars it's already not going to help you but look if you're getting hundreds or thousands of backlinks for a couple
+07:46 dollars they're not going to help you they're going to hurt you okay backlinks
+07:52 are about quality they are not about how many backlinks you have okay ,000
+07:59 backlinks does not mean you will rank better than five backlinks okay one
+08:05 highquality backlink will outrank thousands of spam backlinks and most
+08:11 backlinks for sale on the internet are trash how about that most backlinks for sale on the internet are trash like
+08:18 literal trash will not help you likely will hurt you so just we're guess what
+08:24 we're going to cover all that let's get started okay so one more thing that I want to say before we get started a very very
+08:31 common question that I see on the internet and that people ask me is well
+08:36 my website has 10,000 backlinks and we're being outranked by somebody that only has 500 backlinks what's happening
+08:44 like okay this question makes perfect sense for somebody who doesn't
+08:50 understand that backlink quality matters okay backlink quality matters one good
+08:58 backlink can can help you more than 5,000 bad quality backlinks okay and a
+09:04 lot of that has to do with how much Authority the website has that's giving you the link okay but that's a different
+09:11 topic for a different episode we've talked about that a lot in the past we'll talk about that more in the future this episode is about types of backlinks
+09:19 irrespective of how much Authority a website has okay because there are good
+09:24 types of backlinks and there are bad types of backlinks but but if you learn
+09:30 nothing else from this episode just remember quantity does not matter
+09:36 quality matters I would rather pay a lot of money for one good backlink than pay
+09:43 a little money for thousands of bad backlinks and that is how you should
+09:49 approach SEO too by the way so from least helpful to most helpful that's how
+09:55 we're going to talk about these backlinks okay so the first kind of backlink we're going to to talk about is
+10:00 blog comment backlinks now you've probably heard of these before blog comment backlinks are just what they
+10:07 sound like it's when you're posting a comment on some person's blog and you can leave a backlink to
+10:14 your site right like you type your name and your email address and then there's like a URL field where you can put your
+10:20 website address and then like the comment field and then you can submit it right well blog comment backlinks are
+10:26 pretty useless um let me tell you why they're useless we have a whole episode that covers this but the short version
+10:32 of why they're useless is because they can be automated there are literally programs that will post thousands of
+10:38 blog comments when you run the program okay and it's like it just look the a
+10:45 general rule in SEO is that anything that can be automated will be devalued okay let me say that one more time we
+10:50 have an entire episode about this but let me say it one more time anything that can be automated will be devalued
+10:57 so what does that mean if you you can write a program that will create thousands of blog comment links they
+11:04 will be devalued the search engines will say hey hey everyone blog comment
+11:09 backlinks can be automated therefore they are not a reliable source of
+11:16 authority therefore they will not be counted anymore so you can get blog
+11:22 comment backlinks it doesn't matter but they're not going to help you okay and by the way blog comment backlinks is one
+11:28 way to do negative SEO which we don't teach on this podcast but we literally talk about it sometimes because it's a
+11:34 thing and episode 2 if you want to learn more about negative SEO um talks about a client of ours that got negative SEO and
+11:42 what we had to do to fix the situation but let me just say it this way if blog
+11:47 comment backlinks are so spammy that they can be used for negative SEO that's probably not the kind of
+11:53 backlink you want to your website okay just leave it like that and the last thing I'm going to say about blog
+11:59 comment backlinks if you're buying backlinks from somebody don't buy blog comment backlinks okay just don't I
+12:05 don't care how cheap they are I don't care if it's $10 for 50,000 of them don't buy them they're not going to help
+12:11 you you heard it here okay don't buy them they're not going to help you okay
+12:17 next type of backlink forum profile backlinks Forum profile back well let me
+12:23 let me tell you what they are first you know how when you join a forum on the internet you can create your username
+12:28 and then there's like a profile page where you can put in information about yourself like maybe where you live or what your interests are and that kind of
+12:34 thing and there's a URL field where you can put in a link back to your website I
+12:40 literally have no problem with that here's the problem with getting backlinks from there though exactly the
+12:45 same problem as blog comments you can write software that will do it for you it's automated it's devalued it's super
+12:51 spammy I'm not saying that one Forum profile backlink is going to hurt you okay but you can use Forum profile
+12:57 backlinks to negative SEO your competition I'm not suggesting you do that but I'm saying Forum profiles can
+13:04 be used for negative SEO okay so considering Forum profiles can be used
+13:11 for negative SEO they must be so spammy that you probably don't even want to use
+13:17 them on a website where you're concerned about its rankings okay again if you're
+13:22 a member of a forum and you placed your URL in your profile that's fine that is totally fine
+13:30 but don't waste your time trying to rank your website with Forum profile
+13:38 backlinks considering it's not even going to work okay and by the way if you
+13:43 see somebody selling backlinks you need to ask questions you need to ask them questions like what kind of backlinks
+13:49 are you selling because you can't just say 500 backlinks for $5 or like whatever they are right that could be
+13:55 anything it could be literal garbage it could be one page with 500 backlinks on the same website which would be garbage
+14:01 completely unhelpful okay 500 backlinks doesn't mean anything okay so one of the
+14:06 questions you have to ask a link seller is where are these backlinks coming from so anyways if somebody's selling Forum
+14:13 profile backlinks just completely avoid that seller don't even buy that package it's not going to help you and it could
+14:20 hurt you okay let's move on to the next type of backlinks footer links what are footer
+14:27 links footer links are footer means at the bottom so like a footer link is when
+14:33 you get a link at the bottom of every page on a website this is very common in blogs you might see uh for example um a
+14:42 parent company is linked to at the bottom of every um post on a Blog right
+14:47 or maybe like you'll see this a lot with web developers right like if if some web development company is making websites
+14:53 for different clients they might put at the bottom of every page you know um
+14:59 designed by so and so with like a link back to their web development company or
+15:04 something that's a footer link basically a footer link means at the bottom of every single page on the website now
+15:10 footer links are problems because they are at the bottom of every single page
+15:17 on the website okay footer links just
+15:22 like blog comments and Forum profiles are pretty spammy look when you get a lot of backlinks from the same website
+15:30 that's suspicious why would one website link to the same page multiple times
+15:36 that's weird that would probably never happen now yes they are footerlinks and it makes sense that a footer link would
+15:43 link to the same website every single time that makes perfect sense here's the problem footer links just like blog
+15:49 comments and Forum profiles have been taken advantage of by spammers and
+15:56 therefore they have become devalued Val do not buy footer links previously it
+16:02 was common that you could buy footer links cuz let's say I mean think about it like think about it okay if if if the
+16:08 amount of backlinks you have matters think about why this would be a good idea okay by the way the amount of
+16:13 backlinks you have doesn't matter the quality of those backlinks matters but the amount of backlinks you have doesn't
+16:20 matter but think about if it did okay let's you have a website with 100 pages on it and you sell somebody a footer
+16:27 link service or something so every one of those 100 Pages you have they get a
+16:33 backlink from that to their website well that would be awesome if the number of
+16:39 backlinks you have matters but it doesn't the quality of those links
+16:46 matters anyway footer links have been taken advantage of they're pretty useless now and by the way I just want
+16:53 to mention this because I'm certain somebody had this idea while I was listening to this they probably said
+16:58 wait a minute wait wait a minute grumpy SEO guy you just said that some web development companies will put a footer
+17:04 Link at the bottom of their clients websites back to their site website built by so and so right well wouldn't
+17:10 that affect them negatively yep web developers have gotten themselves in trouble by doing
+17:17 this okay and it it it seemed like it would be smart like I'm I'm going to be
+17:23 completely honest with you okay like 12 years ago like 14 years ago if I had a
+17:29 web development company I would have done exactly the same thing okay because first of all anybody who views that
+17:35 website they're going to scroll down to the bottom and say oh it appears that a certain company made this website this website's pretty cool maybe I'll let
+17:41 them make my website so good way to get new clients okay smart and then the second reason is because back in the day
+17:47 footer links were not useless they were actually helpful okay so you're not only
+17:53 getting new business by having footer links but you were also getting an SEO
+17:59 boost so if somebody searched for like some you know um web design company or something you might show up to the Top
+18:06 If you had a lot of clients and all of those clients had footer links back to you because you'd have a lot of links it was a great idea back in the
+18:14 day it's a terrible idea now because why they were overused and now they don't
+18:19 help anymore so yes web design companies did actually find themselves damaged by
+18:26 all the footer links they had built in conclusion don't use footer links don't
+18:31 buy footer links if somebody's selling you a package and it's footer links and you know because you ask them
+18:38 right don't buy it okay one more type of kind of bad link
+18:44 because remember this is going from worst to best and to be fair like blog comment backlinks and form profile
+18:50 backlinks they're both terrible so like it doesn't matter which one I put first because neither of them is good footer
+18:55 links same thing okay we have one more bad kind of backlink link and that is blog roll
+19:01 links what's a Blog roll okay you got your blog and sometimes not always I
+19:06 don't think people even like have this anymore but you might still see it sometimes like in one of the columns
+19:12 there be something called a Blog roll and it's just like other blogs that are maybe related that you want to link to
+19:17 right like maybe your blog discusses blue widgets and maybe there's another blue widget blog on the internet that's
+19:22 pretty awesome and so you put them in your blog rooll right it's just like it's like a long long long time ago
+19:29 when there was what was called a web ring like I don't man I don't know if anybody has been using the internet as
+19:35 long as me but in the like mid90s there was stuff called Web Rings cuz like
+19:40 search engines weren't really that good back in the day and so like at the bottom of your website you would have
+19:46 something called a web ring which was like related websites like your website you know talks about blue widgets and
+19:53 you are hanging out on bulletin boards because this is you know the mid 90s and it wasn't really forums it was was
+19:58 bulletin boards but anyways you're hanging out on bulle boards you guys are talking about blue widgets and you built
+20:04 a blue widget website and this other person built a blue widget website and you're like hey we should link our websites together and then all these
+20:11 other people that have blue widget websites they all link their websites together because how else are you going to find out about blue widget websites
+20:18 search engines aren't that great back in the day so you'd have it's called a web ring and it just referred to the sites that were part of this group and there
+20:24 would be options at the I actually bet that nobody listening this podcast even knows what I'm talking about right now
+20:30 cuz I feel like I've been on the internet for longer than most people okay but anyway and there would always be two buttons on the left and two
+20:36 buttons on the right and it would be like next site or next five sites to the right or previous site or previous five
+20:43 sites to the left and it was like do you want to go to the next site in the ring or do you want to jump forward five more sites in the ring just to help get
+20:50 people to a larger variety of websites anyways it was pretty cool because like
+20:57 I said you couldn't really find a lot in search but maybe somebody else on a different bulletin board that knew a
+21:02 mutual acquaintance of yours from the internet was in this web ring and look the point is it's basically a
+21:08 predecessor of blog roll links okay but back in the day there was no Authority and there was no it like it didn't matter it was a good idea back in the
+21:14 day but today you know they don't use they don't use web Rings anymore but they use blog roles I think they
+21:21 actually I don't think anybody uses blog rolls anymore I'm sure somebody does anyway if somebody's selling you blog roll backlinks don't buy them they're
+21:27 they're bad for the same reason in as blog comment back links and Forum profile links and footer links okay
+21:34 they're all bad for the same reasons because look if you get a Blog roll backlink it's going to be on every single page on the website that's
+21:40 suspicious and they were used by spammers to sell link packages a long time ago they got devalued don't use
+21:47 them they're not going to help you they might hurt you okay this brings us to the end of bad
+21:55 backlinks now let's talk about good back links after that we're going to talk about the two exceptions that basically
+22:03 override everything I've talked about so far in this episode okay the first kind of good backlink is a citation link what
+22:13 is a citation link let's say somebody writes an article blah blah blah blah blah blah blah right blue widgets
+22:19 whatever great blue widgets article and then you have a website about blue widgets okay at the end of the article
+22:25 just like when you were in school and you list your sources at the end of the paper so there's this article and then at the bottom they will have sources
+22:31 that they used to write the article those are citation links they are sources they cited while they were
+22:38 writing the article those are fine why are those fine well couple reasons first
+22:44 they're probably on a page that is at least somewhat relevant to your topic if
+22:50 the article for example was about blue widgets and then at the bottom of the article they have a link to your website
+22:56 and your website is a blue widget website well that's kind of contextually relevant isn't it that makes sense so
+23:04 that's helpful and number two that link isn't on every page on the website it's on one page which means it's not spammy
+23:10 okay citation links are nice now I don't know if anybody is
+23:17 selling citation links but every once in a while you will get them and usually they're a pretty good kind of backlink
+23:25 okay now let's talk about the best kind of backlink ready the best kind of backlink is a contextual link what does
+23:32 contextual mean contextual means the link is in the content and makes sense
+23:39 to be there okay let's say your website is about blue widgets and somebody is linking to you from within the content
+23:47 and they might say like to learn more about blue widgets check out this website and blue widgets is the link
+23:53 back to your website that's a contextual link it's in the content it is a logical
+23:60 place to put the link and it is in content that is related to your topic
+24:06 now in that specific case that I just gave blue widgets is the anchor text anchor text is whatever the link says
+24:13 and I have an entire episode on anchor text and why it's important so if you want to learn more about that go listen
+24:20 to episode 29 which is called what is Anchor text and why is it important or
+24:25 how to rank any website for any keyword okay but generally speaking contextual backlinks are by far the best kind of
+24:34 backlink you can get so let's go over these again one more time we've got blog
+24:41 comment backlinks they're terrible we've got Forum profile backlinks they're terrible we've got footer links they're
+24:47 terrible we've got blog roll links they're terrible we've got citation links they're pretty awesome and we've
+24:53 got contextual links they are super awesome okay
+24:58 I hope this all makes sense so far now let's talk about the two exceptions because everything that we've
+25:05 talked about so far in this episode is just types of backlinks we have not considered anything else we haven't
+25:11 considered the quality of the page providing the backlink we haven't considered the attributes of the link
+25:19 okay so I'm mentioning this because I know somebody out there is thinking well what if it's a no follow backlink what
+25:24 if it's those other kinds of backlinks look it's kind of a different topic the only thing I'm going to say about it now
+25:30 is don't worry too much about follow versus no follow all right just let we'll just just don't just don't worry
+25:36 about that for now okay but let's continue to those two
+25:42 exceptions okay the first exception to everything I just said is if the site is
+25:49 spammed okay if you're getting a backlink from a spammy low value website
+25:56 okay and that could mean bunch of different things it could mean a website that is penalized okay it could mean a
+26:02 website that is a link Farm okay a link Farm just means a website that has way too many backlinks on it compared to the
+26:07 amount of content it has on it it could be a website that links to suspicious websites okay for example um if you have
+26:14 a website that links to a lot of uh Pharmacy and gambling or adult websites and then that website also links to you
+26:21 that could negatively affect you okay if the website is low value or spammy
+26:29 okay then it doesn't matter what kind of backlink you have you still don't want it so the best most amazing contextual
+26:37 backlink on a spammy website that links to your website it's not going to help you at all you don't want it okay now
+26:45 let's talk about the other exception okay the other exception is like pretty much just the opposite of what I just
+26:52 said if a website is super high quality okay like let's say ibm.com I'm just just randomly picking this you guys it
+26:59 doesn't matter like ibm.com because they probably have more Authority than me and literally everyone else listening to
+27:04 this podcast combined okay if ibm.com wanted to give me a footer link
+27:12 I wouldn't say no okay because it's ibm.com now they're not going to give
+27:18 anyone a footer link probably but you get the point okay anyways okay the
+27:24 second exception is pretty much the opposite of the first one look if you get a backlink from a super high value
+27:29 website let's say let's say ibm.com wants to give you a backlink okay and
+27:35 it's not a perfect contextual backl like who cares because it's ibm.com I would
+27:42 take a backlink from ibm.com I wouldn't write them and say excuse me ibm.com I only want contextual
+27:51 links within the blog post with my keywords as the anchor text no I would
+27:57 say holy cow I just got a backlink from ibm.com that's awesome okay now just
+28:03 just a little side note here and I've talked about this before I think this isn't what I'm talking about at all in this episode but I just want to say
+28:09 backlinks from Super authoritative domains aren't necessarily awesome because every once in a while you will
+28:15 have somebody selling backlinks on an extremely authoritative domain but those pages with the backlinks don't get
+28:22 indexed in that case you completely wasted your money I have seen people
+28:27 sell I'm not going to name these places but I've seen people selling on very authoritative media Outlets okay places
+28:34 that if I said them you would know who they are okay for like four figures per
+28:39 link okay and you know what these links they never get indexed okay the pages with the links they don't get indexed so
+28:46 why is that a problem well because if a page isn't indexed then any link on it doesn't matter so if you pay thousands
+28:53 of dollars for a backlink from some super famous media out outlet for
+28:58 example okay that's cool that's cool because you can tell people hey we were mentioned on such and such website okay
+29:04 that's cool but guess what as far as SEO goes if that page is not indexed you
+29:11 wasted your thousands of dollars so if you want to pay thousands of dollars to tell people that you're featured on some
+29:17 website that's cool I guess but from an SEO perspective if the page doesn't get
+29:22 indexed it's worthless it's completely worthless if a page is not indexed the links on that page have no value it does
+29:29 not matter what domain they are on but for like 99.9% of things that you're
+29:35 going to do with backlink building just don't ignore the first exception like stay away from backlinks on span
+29:40 websites that's the worst it doesn't matter like a contextual link like I said a perfect contextual Link in the
+29:46 middle of amazing content on a spammy website is still going to hurt you even though that's the best kind of backlink
+29:52 you can get okay so just for like pretty much every case that you will ever be
+29:57 involved D in just pay attention to what we talked about on this episode blog
+30:02 comment backlinks are spam don't use them Forum profile comments are spam don't use them footer links are spam
+30:10 don't use them blog roll links are spam don't use them citation links are pretty
+30:16 awesome if you can get them and contextual backlinks are always the best
+30:22 contextual backlinks are always the best you should try to use them if you can we
+30:28 only build contextual backlinks which means a backlink in the content that
+30:34 makes sense to be there to our clients why because they're so much more effective and so much better than
+30:39 literally everything else and that is all that you need to know about good backlinks versus bad backlinks thanks
+30:47 for listening don't forget to subscribe and if you enjoy this podcast please leave a review it would really help the
+30:54 show out I hope this episode was helpful if you have any questions or want to suggest a subject for a future episode
+30:60 you can contact me on Reddit my username is grumpy SEO guy you can visit the grumpy SEO guy subreddit or you can
+31:07 email me at hello grumpy guy.com if you email me please either whitelist my
+31:13 email address or check your junk folders because I've been told that my replies are going into the junk folder and it's
+31:20 probably because we're talking about things like SEO and backlinks and I think those words will classify an email
+31:28 as spam and if you want to support the podcast because it's the best source of SEO information on the planet and it's
+31:35 free you can do so at patreon.com grumpy SEO guy and I will
+31:40 talk to you later you're listening to grumpy SEO guy the SEO podcast that doesn't waste your time with nonsense that doesn't work join us next Wednesday
+31:47 when we talk about link attributes like no follow and
+31:56 others

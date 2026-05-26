@@ -1,0 +1,4765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Web Design Styles: The Complete Visual Language Guide | Ayabonga Qwabi</title>
+  <meta name="description" content="A comprehensive guide to 100+ modern web design styles — from Brutalism to AI-native UX. Understand what each style is, when to use it, and what makes it distinctive." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS Custom Properties ─────────────────────────────── */
+    :root {
+      --navy:       #0a0f1e;
+      --navy-mid:   #111827;
+      --navy-light: #1e293b;
+      --amber:      #f59e0b;
+      --amber-dim:  #d97706;
+      --amber-glow: rgba(245,158,11,0.12);
+      --emerald:    #10b981;
+      --emerald-dim:#059669;
+      --emerald-glow: rgba(16,185,129,0.10);
+      --white:      #f8fafc;
+      --muted:      #94a3b8;
+      --border:     rgba(255,255,255,0.08);
+      --glass-bg:   rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.10);
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --font-head:  'Syne', sans-serif;
+      --font-body:  'Space Grotesk', sans-serif;
+      --font-mono:  'JetBrains Mono', monospace;
+    }
+
+    /* ─── Reset & Base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Noise Texture Overlay ─────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* ─── Layout ────────────────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Progress Bar ──────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--amber), var(--emerald));
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* ─── Navigation ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10,15,30,0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    nav .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    nav .logo span { color: var(--amber); }
+
+    nav .nav-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────── */
+    .hero {
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(245,158,11,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--amber);
+      background: var(--amber-glow);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 100px;
+      padding: 6px 14px;
+      margin-bottom: 28px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    h1 .accent-amber { color: var(--amber); }
+    h1 .accent-emerald { color: var(--emerald); }
+
+    .hero-desc {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-meta-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    /* ─── Intro Section ─────────────────────────────────────── */
+    .intro {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    h2.section-title {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .callout-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 3px solid var(--amber);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout-box p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .callout-box strong { color: var(--white); }
+
+    /* ─── Categories Nav ────────────────────────────────────── */
+    .cat-nav {
+      padding: 40px 0;
+      position: sticky;
+      top: 65px;
+      z-index: 90;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cat-nav-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+
+    .cat-nav-scroll::-webkit-scrollbar { display: none; }
+
+    .cat-pill {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .cat-pill:hover,
+    .cat-pill.active {
+      color: var(--amber);
+      border-color: rgba(245,158,11,0.4);
+      background: var(--amber-glow);
+    }
+
+    /* ─── Count Badge ───────────────────────────────────────── */
+    .count-strip {
+      padding: 48px 0 24px;
+    }
+
+    .count-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .count-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .count-card .count-num {
+      font-family: var(--font-head);
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .count-card .count-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── Category Sections ─────────────────────────────────── */
+    .category-section {
+      padding: 64px 0 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .category-icon {
+      width: 48px; height: 48px;
+      flex-shrink: 0;
+      border-radius: var(--radius-md);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .category-header-text h2 {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .category-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* ─── Style Cards ───────────────────────────────────────── */
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .style-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-card:hover {
+      border-color: var(--glass-border);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Style Preview Canvas ──────────────────────────────── */
+    .style-preview {
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Individual style previews */
+    .preview-brutalism {
+      background: #fff;
+      border-bottom: 4px solid #000;
+    }
+    .preview-brutalism::before {
+      content: 'BRUTALISM';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(-5deg);
+      font-family: 'Impact', sans-serif;
+      font-size: 36px;
+      color: #000;
+      letter-spacing: -1px;
+    }
+    .preview-brutalism::after {
+      content: '';
+      position: absolute;
+      top: 10px; left: 10px;
+      width: 60px; height: 60px;
+      background: #ff0000;
+    }
+
+    .preview-neo-brutalism {
+      background: #fffdf0;
+    }
+    .preview-neo-brutalism::before {
+      content: 'Neo-Brutal';
+      position: absolute;
+      top: 40px; left: 30px;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 26px;
+      color: #1a1a1a;
+      background: #ffd60a;
+      padding: 4px 12px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+    .preview-neo-brutalism::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; right: 30px;
+      width: 80px; height: 30px;
+      background: #ff6b6b;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .preview-typography {
+      background: #f5f0e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-typography::before {
+      content: 'Aa';
+      font-family: 'Georgia', serif;
+      font-size: 80px;
+      color: #1a1a1a;
+      opacity: 0.9;
+      line-height: 1;
+    }
+
+    .preview-swiss {
+      background: #fff;
+      position: relative;
+    }
+    .preview-swiss::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 30px; height: 30px;
+      background: #e63a2e;
+    }
+    .preview-swiss::after {
+      content: 'Helvetica\A Grid. Order.\A Clarity.';
+      white-space: pre;
+      position: absolute;
+      top: 60px; left: 20px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      color: #1a1a1a;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .preview-editorial {
+      background: #1a1a1a;
+    }
+    .preview-editorial::before {
+      content: 'EDITORIAL';
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      color: #f0e8d0;
+      letter-spacing: 0.2em;
+    }
+    .preview-editorial::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(135deg, #c8a96e 0%, #8b6914 100%);
+    }
+
+    .preview-minimalism {
+      background: #fafafa;
+    }
+    .preview-minimalism::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px; height: 1px;
+      background: #333;
+    }
+    .preview-minimalism::after {
+      content: 'Less.';
+      position: absolute;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 0.3em;
+    }
+
+    .preview-maximalism {
+      background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff, #fb5607);
+    }
+    .preview-maximalism::before {
+      content: 'MORE IS MORE ✦';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+      white-space: nowrap;
+    }
+
+    .preview-bento {
+      background: #f0f0f0;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+      padding: 10px;
+    }
+    .preview-bento::before {
+      content: '';
+      background: #1a1a1a;
+      grid-row: 1 / 3;
+      border-radius: 10px;
+    }
+    .preview-bento::after {
+      content: '';
+      background: #f59e0b;
+      border-radius: 10px;
+    }
+
+    .preview-glassmorphism {
+      background: linear-gradient(135deg, #0a0f1e 0%, #1e3a5f 100%);
+    }
+    .preview-glassmorphism::before {
+      content: 'Glass UI';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px; height: 80px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .preview-neumorphism {
+      background: #e0e5ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-neumorphism::before {
+      content: 'Neumorphic';
+      width: 160px; height: 60px;
+      background: #e0e5ec;
+      border-radius: 12px;
+      box-shadow: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #6b7a8d;
+    }
+
+    .preview-claymorphism {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-claymorphism::before {
+      content: '🍬 Clay';
+      width: 120px; height: 60px;
+      background: #ff9f7f;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 8px 30px rgba(255,120,80,0.4), inset 0 2px 6px rgba(255,255,255,0.5);
+    }
+
+    .preview-skeuomorphism {
+      background: linear-gradient(180deg, #8B7355 0%, #6B5A3E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-skeuomorphism::before {
+      content: '📔';
+      font-size: 60px;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+    }
+
+    .preview-cyberpunk {
+      background: #000;
+    }
+    .preview-cyberpunk::before {
+      content: 'CYBER//PUNK';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      color: #00ff9f;
+      text-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f;
+      white-space: nowrap;
+    }
+    .preview-cyberpunk::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 20px; right: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff007f, transparent);
+    }
+
+    .preview-futurism {
+      background: linear-gradient(180deg, #00001a, #000c2e);
+    }
+    .preview-futurism::before {
+      content: '∞ 2087';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Courier New', monospace;
+      font-size: 22px;
+      color: #00c8ff;
+      text-shadow: 0 0 15px rgba(0,200,255,0.8);
+      letter-spacing: 4px;
+      white-space: nowrap;
+    }
+
+    .preview-retro-futurism {
+      background: #1a0030;
+    }
+    .preview-retro-futurism::before {
+      content: 'SPACE\AAGE';
+      white-space: pre;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Courier New', monospace;
+      font-size: 28px;
+      color: #ff7c00;
+      text-shadow: 0 0 20px rgba(255,124,0,0.9);
+      text-align: center;
+      line-height: 1;
+    }
+
+    .preview-y2k {
+      background: linear-gradient(135deg, #c0c0c0, #a0a0b0);
+    }
+    .preview-y2k::before {
+      content: 'Y2K ✦ 2000';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,200,0.5), -2px -2px 4px rgba(200,0,200,0.5);
+      white-space: nowrap;
+    }
+
+    .preview-vaporwave {
+      background: linear-gradient(180deg, #2e1052 0%, #1a1a6e 50%, #0d3060 100%);
+    }
+    .preview-vaporwave::before {
+      content: 'Ａ Ｅ Ｓ Ｔ Ｈ Ｅ Ｔ Ｉ Ｃ';
+      position: absolute;
+      top: 40px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: #ff71ce;
+      text-shadow: 0 0 10px #ff71ce;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+    .preview-vaporwave::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: repeating-linear-gradient(0deg, rgba(255,113,206,0.3) 0px, rgba(255,113,206,0.3) 1px, transparent 1px, transparent 10px);
+    }
+
+    .preview-memphis {
+      background: #fff;
+      overflow: hidden;
+    }
+    .preview-memphis::before {
+      content: '';
+      position: absolute;
+      width: 40px; height: 40px;
+      background: #ff0;
+      border-radius: 50%;
+      top: 20px; left: 30px;
+    }
+    .preview-memphis::after {
+      content: '';
+      position: absolute;
+      width: 50px; height: 50px;
+      background: #ff007f;
+      top: 80px; right: 40px;
+      transform: rotate(45deg);
+    }
+
+    .preview-postmodern {
+      background: #e8e0d0;
+    }
+    .preview-postmodern::before {
+      content: '(de)construct';
+      position: absolute;
+      top: 30px; left: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      text-decoration: line-through;
+    }
+    .preview-postmodern::after {
+      content: '✦';
+      position: absolute;
+      bottom: 20px; right: 30px;
+      font-size: 40px;
+      color: #ff4500;
+    }
+
+    .preview-antidesign {
+      background: #0000ff;
+    }
+    .preview-antidesign::before {
+      content: 'ANTI\ADESIGN';
+      white-space: pre;
+      position: absolute;
+      top: 15px; left: 15px;
+      font-family: 'Arial', sans-serif;
+      font-size: 30px;
+      color: #ff0;
+      line-height: 1;
+    }
+    .preview-antidesign::after {
+      content: '→ BREAK IT';
+      position: absolute;
+      bottom: 20px; right: 15px;
+      font-size: 14px;
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .preview-experimental {
+      background: #0f0f0f;
+      overflow: hidden;
+    }
+    .preview-experimental::before {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      top: -50px; left: -50px;
+    }
+    .preview-experimental::after {
+      content: 'exp.eriment';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(-20deg);
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 3px;
+      white-space: nowrap;
+    }
+
+    .preview-kinetic-typography {
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .preview-kinetic-typography::before {
+      content: 'MOVE';
+      font-family: var(--font-head);
+      font-size: 56px;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px #f59e0b;
+      animation: kinetic 3s ease-in-out infinite;
+    }
+    @keyframes kinetic {
+      0%   { letter-spacing: -8px; opacity: 0.3; }
+      50%  { letter-spacing: 12px; opacity: 1; }
+      100% { letter-spacing: -8px; opacity: 0.3; }
+    }
+
+    .preview-immersive {
+      background: linear-gradient(180deg, #000 0%, #001a33 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-immersive::before {
+      content: '◉ Immerse';
+      font-size: 20px;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 4px;
+    }
+
+    .preview-scrollytelling {
+      background: linear-gradient(180deg, #0a1628, #1a3a6b);
+      overflow: hidden;
+    }
+    .preview-scrollytelling::before {
+      content: '↓ Scroll\Ato reveal';
+      white-space: pre;
+      position: absolute;
+      top: 40px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .preview-scrollytelling::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 40px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+    }
+
+    .preview-cinematic {
+      background: #000;
+      position: relative;
+    }
+    .preview-cinematic::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 35px;
+      background: #111;
+    }
+    .preview-cinematic::after {
+      content: '— CINEMATIC —';
+      position: absolute;
+      bottom: 25px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 4px;
+      white-space: nowrap;
+    }
+
+    .preview-monochrome {
+      background: #f0f0f0;
+    }
+    .preview-monochrome::before {
+      content: 'Mono\Achrome';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 30px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+    }
+    .preview-monochrome::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+      background: #111;
+    }
+
+    .preview-dark-mode {
+      background: #0a0a0a;
+    }
+    .preview-dark-mode::before {
+      content: '● Dark Mode';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+    .preview-dark-mode::after {
+      content: '';
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+
+    .preview-gradient {
+      background: linear-gradient(135deg, #667eea, #764ba2, #f64f59, #c471ed);
+      background-size: 300% 300%;
+      animation: gradShift 4s ease infinite;
+    }
+    @keyframes gradShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .preview-3d {
+      background: linear-gradient(135deg, #0f0f23, #1a1a3e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 400px;
+    }
+    .preview-3d::before {
+      content: '3D';
+      font-family: var(--font-head);
+      font-size: 60px;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(100,200,255,0.8);
+      transform: rotateX(20deg) rotateY(-20deg);
+      text-shadow: 2px 4px 8px rgba(0,100,255,0.4);
+    }
+
+    .preview-webgl {
+      background: #000;
+      overflow: hidden;
+    }
+    .preview-webgl::before {
+      content: 'WebGL';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00c8ff, #00ff9f, #ff007f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .preview-ai-visual {
+      background: #0f0f1e;
+    }
+    .preview-ai-visual::before {
+      content: '⬡ AI Generated';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+    .preview-ai-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 30%, rgba(160,100,255,0.3), transparent 60%),
+                  radial-gradient(ellipse at 70% 70%, rgba(0,200,150,0.2), transparent 60%);
+    }
+
+    .preview-blob {
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    }
+    .preview-blob::before {
+      content: '';
+      position: absolute;
+      top: 30px; left: 60px;
+      width: 100px; height: 80px;
+      background: #10b981;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      opacity: 0.8;
+    }
+
+    .preview-liquid {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      overflow: hidden;
+    }
+    .preview-liquid::before {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 200px; height: 160px;
+      background: rgba(14,165,233,0.3);
+      border-radius: 50% 60% 40% 70%;
+      animation: liquidMove 4s ease-in-out infinite;
+    }
+    @keyframes liquidMove {
+      0%,100% { border-radius: 50% 60% 40% 70%; }
+      50%      { border-radius: 70% 40% 60% 50%; }
+    }
+
+    .preview-morphism {
+      background: linear-gradient(135deg, #1e3a5f, #0f2040);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-morphism::before {
+      content: 'Morphism';
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .preview-bauhaus {
+      background: #f5f5f0;
+    }
+    .preview-bauhaus::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 60px; height: 60px;
+      background: #e63a2e;
+      border-radius: 50%;
+    }
+    .preview-bauhaus::after {
+      content: '';
+      position: absolute;
+      top: 20px; left: 100px;
+      width: 0; height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid #1a1a1a;
+    }
+
+    .preview-grid-based {
+      background: #fff;
+    }
+    .preview-grid-based::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(200,200,200,0.5) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(200,200,200,0.5) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .preview-broken-grid {
+      background: #fafafa;
+      overflow: hidden;
+    }
+    .preview-broken-grid::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: 60px;
+      width: 120px; height: 120px;
+      background: #1a1a1a;
+      transform: rotate(15deg);
+    }
+    .preview-broken-grid::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 80px; height: 80px;
+      background: #f59e0b;
+    }
+
+    .preview-asymmetric {
+      background: #f8f8f8;
+      overflow: hidden;
+    }
+    .preview-asymmetric::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 200px; height: 100%;
+      background: #1a1a1a;
+    }
+    .preview-asymmetric::after {
+      content: 'ASYM';
+      position: absolute;
+      top: 50%; left: 220px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: 900;
+      color: #1a1a1a;
+    }
+
+    .preview-modular {
+      background: #f0f4f8;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+    }
+    .preview-modular::before,
+    .preview-modular::after { display: none; }
+
+    .preview-card-based {
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .preview-card-based::before {
+      content: '☰';
+      width: 80px; height: 100px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #999;
+    }
+
+    .preview-magazine {
+      background: #faf8f3;
+      overflow: hidden;
+    }
+    .preview-magazine::before {
+      content: 'THE\AMAGAZINE';
+      white-space: pre;
+      position: absolute;
+      top: 10px; left: 15px;
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      color: #1a1a1a;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .preview-magazine::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+      background: #1a1a1a;
+    }
+
+    .preview-data-driven {
+      background: #0a1628;
+      padding: 10px;
+    }
+    .preview-data-driven::before {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 20px;
+      width: 20px; height: 60px;
+      background: #f59e0b;
+      border-radius: 2px 2px 0 0;
+    }
+    .preview-data-driven::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 50px;
+      width: 20px; height: 100px;
+      background: #10b981;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .preview-dashboard {
+      background: #0f172a;
+      padding: 10px;
+    }
+    .preview-dashboard::before {
+      content: '◉ 98%\A▲ 12.4%\A● Live';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #10b981;
+      line-height: 2;
+    }
+    .preview-dashboard::after {
+      content: '';
+      position: absolute;
+      right: 20px; top: 20px;
+      width: 80px; height: 80px;
+      border: 3px solid rgba(16,185,129,0.3);
+      border-radius: 50%;
+      border-top-color: #10b981;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .preview-terminal {
+      background: #0d0d0d;
+    }
+    .preview-terminal::before {
+      content: '$ hello --world\A> Loading...\A> Done ✓';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #00ff41;
+      line-height: 1.8;
+      text-shadow: 0 0 6px rgba(0,255,65,0.5);
+    }
+
+    .preview-monospace {
+      background: #f0ede6;
+    }
+    .preview-monospace::before {
+      content: 'mono\Aspaced\Adesign';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 20px;
+      color: #1a1a1a;
+      line-height: 1.4;
+    }
+
+    .preview-dev-first {
+      background: #1e1e1e;
+    }
+    .preview-dev-first::before {
+      content: '<Component\A  props={data}\A/>';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #569cd6;
+      line-height: 1.6;
+    }
+    .preview-dev-first::after {
+      content: '{"status": "ok"}';
+      position: absolute;
+      bottom: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #4ec9b0;
+    }
+
+    .preview-saas {
+      background: linear-gradient(135deg, #f8faff 0%, #eff6ff 100%);
+    }
+    .preview-saas::before {
+      content: 'Ship Faster.';
+      position: absolute;
+      top: 40px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+      font-weight: 800;
+      color: #1e40af;
+      white-space: nowrap;
+    }
+    .preview-saas::after {
+      content: 'Try free →';
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      background: #3b82f6;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .preview-luxury {
+      background: linear-gradient(180deg, #0a0a0a, #1a1510);
+    }
+    .preview-luxury::before {
+      content: 'L U X U R Y';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Georgia', serif;
+      font-size: 14px;
+      color: #c8a96e;
+      letter-spacing: 8px;
+      white-space: nowrap;
+    }
+    .preview-luxury::after {
+      content: '';
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 1px;
+      background: #c8a96e;
+    }
+
+    .preview-high-fashion {
+      background: #fff;
+    }
+    .preview-high-fashion::before {
+      content: 'SS/25';
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 36px;
+      color: #1a1a1a;
+      font-style: italic;
+      letter-spacing: -2px;
+    }
+    .preview-high-fashion::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 40px;
+      width: 1px; height: 100%;
+      background: #1a1a1a;
+    }
+
+    .preview-art-direction {
+      background: #e8ddd0;
+      overflow: hidden;
+    }
+    .preview-art-direction::before {
+      content: '';
+      position: absolute;
+      top: -30px; left: -30px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: #c8a96e;
+      opacity: 0.5;
+    }
+    .preview-art-direction::after {
+      content: 'Art\ADirection';
+      white-space: pre;
+      position: absolute;
+      bottom: 20px; right: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 18px;
+      color: #1a1a1a;
+      text-align: right;
+      line-height: 1.3;
+    }
+
+    .preview-motion-first {
+      background: #0a0a1e;
+      overflow: hidden;
+    }
+    .preview-motion-first::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 80px; height: 80px;
+      margin: -40px 0 0 -40px;
+      border: 3px solid rgba(245,158,11,0.8);
+      border-radius: 50%;
+      animation: motionPulse 1.5s ease-out infinite;
+    }
+    @keyframes motionPulse {
+      0%  { transform: scale(0.5); opacity: 1; }
+      100%{ transform: scale(2.5); opacity: 0; }
+    }
+
+    .preview-interaction {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-interaction::before {
+      content: 'Hover ✦ Click\ATap ✦ Swipe';
+      white-space: pre;
+      font-size: 14px;
+      color: #3b82f6;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .preview-microinteraction {
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-microinteraction::before {
+      content: '♡';
+      font-size: 50px;
+      color: #ef4444;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    @keyframes heartbeat {
+      0%,100% { transform: scale(1); }
+      14%  { transform: scale(1.3); }
+      28%  { transform: scale(1); }
+      42%  { transform: scale(1.15); }
+    }
+
+    .preview-a11y {
+      background: #fff3cd;
+    }
+    .preview-a11y::before {
+      content: 'A11Y\AFIRST';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 30px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .preview-a11y::after {
+      content: 'WCAG AAA';
+      position: absolute;
+      bottom: 20px; left: 30px;
+      font-size: 12px;
+      color: #000;
+      background: #10b981;
+      padding: 4px 10px;
+      font-weight: 700;
+    }
+
+    .preview-perf-first {
+      background: #0f172a;
+    }
+    .preview-perf-first::before {
+      content: '⚡ 100\APERFORMANCE';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 18px;
+      color: #f59e0b;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .preview-mobile-first {
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-mobile-first::before {
+      content: '📱';
+      font-size: 60px;
+    }
+
+    .preview-spatial {
+      background: linear-gradient(135deg, #0a0f1e, #1a2a4e);
+      perspective: 600px;
+      overflow: hidden;
+    }
+    .preview-spatial::before {
+      content: '';
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%) rotateX(60deg);
+      width: 160px; height: 120px;
+      border: 1px solid rgba(100,200,255,0.4);
+      border-radius: 8px;
+      background: rgba(100,200,255,0.05);
+    }
+
+    .preview-parallax {
+      background: linear-gradient(180deg, #87ceeb 0%, #228b22 100%);
+      overflow: hidden;
+    }
+    .preview-parallax::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+      background: #1a4a1a;
+      clip-path: polygon(0 60%, 15% 20%, 30% 50%, 50% 10%, 70% 40%, 85% 15%, 100% 50%, 100% 100%, 0 100%);
+    }
+
+    .preview-collage {
+      background: #f0e8d0;
+      overflow: hidden;
+    }
+    .preview-collage::before {
+      content: '';
+      position: absolute;
+      top: 10px; left: 10px;
+      width: 100px; height: 80px;
+      background: #1a1a1a;
+      transform: rotate(-8deg);
+    }
+    .preview-collage::after {
+      content: '';
+      position: absolute;
+      bottom: 10px; right: 10px;
+      width: 80px; height: 90px;
+      background: #f59e0b;
+      transform: rotate(5deg);
+    }
+
+    .preview-illustration {
+      background: #fff9f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-illustration::before {
+      content: '🎨';
+      font-size: 60px;
+    }
+
+    .preview-abstract {
+      background: #0a0a1e;
+      overflow: hidden;
+    }
+    .preview-abstract::before {
+      content: '';
+      position: absolute;
+      top: -50px; left: -50px;
+      width: 200px; height: 200px;
+      border: 2px solid rgba(245,158,11,0.4);
+      border-radius: 30% 70% 60% 40%;
+    }
+    .preview-abstract::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 150px; height: 150px;
+      border: 2px solid rgba(16,185,129,0.4);
+      border-radius: 60% 40% 30% 70%;
+    }
+
+    .preview-generative {
+      background: #000;
+      overflow: hidden;
+    }
+    .preview-generative::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: conic-gradient(from 0deg at 30% 60%, #ff006e, #8338ec, #3a86ff, #06d6a0, #ff006e);
+      opacity: 0.4;
+      border-radius: 40% 60% 50% 70%;
+      transform: scale(1.5);
+    }
+
+    .preview-parametric {
+      background: #0f0f0f;
+    }
+    .preview-parametric::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .preview-parametric::after {
+      content: 'f(x,y)';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .preview-soft-ui {
+      background: #e0e5ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-soft-ui::before {
+      content: 'Soft UI';
+      width: 120px; height: 50px;
+      background: #e0e5ec;
+      border-radius: 12px;
+      box-shadow: 6px 6px 14px #b8bfc9, -6px -6px 14px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #6b7a8d;
+    }
+
+    .preview-flat {
+      background: #4a90d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-flat::before {
+      content: '⬡';
+      font-size: 60px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .preview-material {
+      background: #3f51b5;
+      overflow: hidden;
+    }
+    .preview-material::before {
+      content: 'Material';
+      position: absolute;
+      top: 40px; left: 20px;
+      font-size: 22px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .preview-material::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; right: 20px;
+      width: 48px; height: 48px;
+      background: #e91e63;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .preview-fluent {
+      background: #0078d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-fluent::before {
+      content: 'Fluent';
+      width: 160px; height: 70px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .preview-industrial {
+      background: #2a2a2a;
+      overflow: hidden;
+    }
+    .preview-industrial::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,165,0,0.15) 0px,
+        rgba(255,165,0,0.15) 8px,
+        transparent 8px,
+        transparent 24px
+      );
+    }
+    .preview-industrial::after {
+      content: 'INDUSTRIAL';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffa500;
+      letter-spacing: 4px;
+    }
+
+    .preview-analog {
+      background: #f0e6d0;
+    }
+    .preview-analog::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.05) 0px,
+        rgba(0,0,0,0.05) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+    }
+    .preview-analog::after {
+      content: 'Printed\Amatter';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      color: #3a2a1a;
+      line-height: 1.2;
+    }
+
+    .preview-newspaper {
+      background: #f8f4ec;
+    }
+    .preview-newspaper::before {
+      content: 'THE DAILY\AWEB GAZETTE';
+      white-space: pre;
+      position: absolute;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Georgia', serif;
+      font-size: 14px;
+      color: #1a1a1a;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 2px;
+      white-space: pre;
+      line-height: 1.3;
+    }
+    .preview-newspaper::after {
+      content: '';
+      position: absolute;
+      top: 70px; left: 10px; right: 10px;
+      height: 1px;
+      background: #1a1a1a;
+    }
+
+    .preview-zine {
+      background: #f5f000;
+      overflow: hidden;
+    }
+    .preview-zine::before {
+      content: 'ZINE\ACULTURE';
+      white-space: pre;
+      position: absolute;
+      top: 10px; left: 10px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+      line-height: 1;
+      transform: rotate(-5deg);
+    }
+    .preview-zine::after {
+      content: '✂';
+      position: absolute;
+      bottom: 10px; right: 20px;
+      font-size: 36px;
+      color: #000;
+    }
+
+    .preview-raw-html {
+      background: #fff;
+      font-family: 'Courier New', monospace;
+    }
+    .preview-raw-html::before {
+      content: '<h1>Hello</h1>\A<p>World</p>\A<a href="#">Link</a>';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #000080;
+      line-height: 1.6;
+    }
+
+    .preview-indie-web {
+      background: #fffef0;
+    }
+    .preview-indie-web::before {
+      content: '☕ My\Apersonal\Acorner';
+      white-space: pre;
+      position: absolute;
+      top: 15px; left: 15px;
+      font-size: 14px;
+      color: #4a3728;
+      line-height: 1.5;
+    }
+    .preview-indie-web::after {
+      content: '⌛ Since 1997';
+      position: absolute;
+      bottom: 15px; right: 15px;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .preview-retro-web {
+      background: #000080;
+    }
+    .preview-retro-web::before {
+      content: '★ WELCOME ★\ATO MY PAGE';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #ffff00;
+      text-align: center;
+      line-height: 1.5;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .preview-retro-web::after {
+      content: '▶▶ Under Construction ◀◀';
+      position: absolute;
+      bottom: 15px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      color: #ff8800;
+      white-space: nowrap;
+    }
+
+    .preview-arcade {
+      background: linear-gradient(180deg, #000 0%, #0a001a 100%);
+    }
+    .preview-arcade::before {
+      content: 'INSERT\ACOIN';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      color: #ffff00;
+      text-align: center;
+      animation: blink 1s step-end infinite;
+      line-height: 1.2;
+    }
+    .preview-arcade::after {
+      content: '● ○ ○ SCORE: 0000';
+      position: absolute;
+      bottom: 15px; left: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .preview-anime {
+      background: linear-gradient(135deg, #1a0030, #2e0050);
+      overflow: hidden;
+    }
+    .preview-anime::before {
+      content: '✨';
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 30px;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    @keyframes sparkle {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    .preview-anime::after {
+      content: 'アニメ\ASTYLE';
+      white-space: pre;
+      position: absolute;
+      top: 40px; left: 20px;
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .preview-luxury-minimal {
+      background: #fafafa;
+    }
+    .preview-luxury-minimal::before {
+      content: '';
+      position: absolute;
+      top: 40px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 1px;
+      background: #c8a96e;
+    }
+    .preview-luxury-minimal::after {
+      content: 'Maison';
+      position: absolute;
+      top: 60px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      color: #1a1a1a;
+      letter-spacing: 6px;
+      white-space: nowrap;
+    }
+
+    .preview-scandi {
+      background: #f4f2ee;
+    }
+    .preview-scandi::before {
+      content: '○';
+      position: absolute;
+      top: 30px; left: 30px;
+      font-size: 40px;
+      color: #1a1a1a;
+    }
+    .preview-scandi::after {
+      content: 'Hygge.';
+      position: absolute;
+      bottom: 30px; left: 30px;
+      font-family: 'Georgia', serif;
+      font-size: 24px;
+      color: #4a4a3a;
+    }
+
+    .preview-swiss-brutal {
+      background: #fff;
+    }
+    .preview-swiss-brutal::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 80px;
+      width: 6px; height: 100%;
+      background: #e63a2e;
+    }
+    .preview-swiss-brutal::after {
+      content: 'SCHWEIZ\BRUTAL';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 100px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: #000;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .preview-techwear {
+      background: #111;
+    }
+    .preview-techwear::before {
+      content: 'SYS_01\A◈ ACTIVE';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .preview-techwear::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 20px;
+      width: 1px; height: 60%;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.3), transparent);
+    }
+
+    .preview-futuristic-saas {
+      background: linear-gradient(135deg, #050014, #0a0028);
+    }
+    .preview-futuristic-saas::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(90,0,255,0.4), transparent 70%);
+    }
+    .preview-futuristic-saas::after {
+      content: 'The future\Aof SaaS';
+      white-space: pre;
+      position: absolute;
+      bottom: 20px; left: 20px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .preview-ai-agent {
+      background: #050f1a;
+    }
+    .preview-ai-agent::before {
+      content: '⬡ Agent\A● Thinking...';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #00e5ff;
+      line-height: 1.8;
+      text-shadow: 0 0 8px rgba(0,229,255,0.5);
+    }
+    .preview-ai-agent::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 20px; right: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,229,255,0.6), transparent);
+    }
+
+    .preview-conversational {
+      background: #fff;
+    }
+    .preview-conversational::before {
+      content: 'How can I help?';
+      position: absolute;
+      top: 30px; left: 20px; right: 20px;
+      font-size: 14px;
+      color: #3b82f6;
+      background: #eff6ff;
+      padding: 10px 16px;
+      border-radius: 12px 12px 12px 2px;
+    }
+    .preview-conversational::after {
+      content: 'Design a homepage.';
+      position: absolute;
+      bottom: 25px; right: 20px;
+      font-size: 13px;
+      color: #fff;
+      background: #3b82f6;
+      padding: 8px 14px;
+      border-radius: 12px 12px 2px 12px;
+    }
+
+    .preview-spatial-computing {
+      background: linear-gradient(135deg, #0a0a1e, #1a0a2e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 600px;
+    }
+    .preview-spatial-computing::before {
+      content: 'visionOS';
+      width: 160px; height: 60px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(20px);
+      transform: rotateX(15deg);
+    }
+
+    .preview-bento-apple {
+      background: #f5f5f7;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: 2fr 1fr;
+      gap: 8px;
+    }
+    .preview-bento-apple::before,
+    .preview-bento-apple::after { display: none; }
+
+    .preview-interactive-portfolio {
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+    .preview-interactive-portfolio::before {
+      content: '{ portfolio }';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: #f59e0b;
+    }
+    .preview-interactive-portfolio::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber), var(--emerald));
+    }
+
+    .preview-creative-dev {
+      background: #0f0f0f;
+    }
+    .preview-creative-dev::before {
+      content: 'const\Acreate =\A() => ✦';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: #10b981;
+      line-height: 1.6;
+    }
+
+    .preview-startup {
+      background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%);
+    }
+    .preview-startup::before {
+      content: '🚀 Launch.';
+      position: absolute;
+      top: 40px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      font-weight: 800;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+    .preview-startup::after {
+      content: 'Built for builders.';
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .preview-motion-graphics {
+      background: #0a001a;
+      overflow: hidden;
+    }
+    .preview-motion-graphics::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 60px; height: 60px;
+      background: #8338ec;
+      border-radius: 50%;
+      animation: mgMove 2s ease-in-out infinite;
+    }
+    @keyframes mgMove {
+      0%,100% { transform: translateX(0) scale(1); }
+      50%      { transform: translateX(140px) scale(0.6); }
+    }
+    .preview-motion-graphics::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; right: 20px;
+      width: 50px; height: 50px;
+      background: #3a86ff;
+      animation: mgMove2 2s ease-in-out infinite 1s;
+    }
+    @keyframes mgMove2 {
+      0%,100% { transform: translateX(0) rotate(0deg); }
+      50%      { transform: translateX(-120px) rotate(180deg); }
+    }
+
+    .preview-architectural {
+      background: #f8f6f0;
+    }
+    .preview-architectural::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px; right: 20px; bottom: 20px;
+      border: 1px solid #1a1a1a;
+    }
+    .preview-architectural::after {
+      content: '';
+      position: absolute;
+      top: 50px; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 60px;
+      background: #1a1a1a;
+    }
+
+    .preview-isometric {
+      background: #f0f4f8;
+      overflow: hidden;
+    }
+    .preview-isometric::before {
+      content: '';
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+      width: 80px; height: 80px;
+      background: #3b82f6;
+    }
+
+    .preview-split-screen {
+      background: #fff;
+      display: flex;
+    }
+    .preview-split-screen::before {
+      content: '';
+      flex: 1;
+      background: #1a1a1a;
+    }
+    .preview-split-screen::after {
+      content: '';
+      flex: 1;
+      background: #f59e0b;
+    }
+
+    .preview-fullscreen-hero {
+      background: linear-gradient(135deg, #0a0f1e, #1a2a4e);
+    }
+    .preview-fullscreen-hero::before {
+      content: 'Hero.';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: -2px;
+    }
+
+    .preview-cursor {
+      background: #f5f5f5;
+      cursor: none;
+      overflow: hidden;
+    }
+    .preview-cursor::before {
+      content: '✦';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: #1a1a1a;
+      animation: cursorPulse 2s ease-in-out infinite;
+    }
+    @keyframes cursorPulse {
+      0%,100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.5); }
+    }
+
+    .preview-cursor-reactive {
+      background: #0a0a1e;
+      overflow: hidden;
+    }
+    .preview-cursor-reactive::before {
+      content: '→ Cursor reactive';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+    }
+
+    .preview-noise {
+      background: #1a1a2e;
+    }
+    .preview-noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+      opacity: 0.8;
+    }
+    .preview-noise::after {
+      content: 'Grain';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 6px;
+    }
+
+    .preview-layered-depth {
+      background: #0a0f1e;
+      overflow: hidden;
+    }
+    .preview-layered-depth::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 120px; height: 80px;
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 8px;
+    }
+    .preview-layered-depth::after {
+      content: '';
+      position: absolute;
+      top: 40px; left: 60px;
+      width: 120px; height: 80px;
+      background: rgba(16,185,129,0.2);
+      border: 1px solid rgba(16,185,129,0.4);
+      border-radius: 8px;
+    }
+
+    .preview-hyper-contrast {
+      background: #000;
+    }
+    .preview-hyper-contrast::before {
+      content: 'HIGH\ACONTRAST';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .preview-hyper-contrast::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+      background: #fff;
+    }
+
+    .preview-chromatic {
+      background: #0a0a0a;
+    }
+    .preview-chromatic::before {
+      content: 'CHROMA';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      font-weight: 900;
+      color: transparent;
+      background: linear-gradient(135deg, #ff006e, #f59e0b, #10b981, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+
+    .preview-variable-font {
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-variable-font::before {
+      content: 'Vf';
+      font-size: 72px;
+      font-weight: 100;
+      color: #1a1a1a;
+      animation: varWeight 3s ease-in-out infinite;
+    }
+    @keyframes varWeight {
+      0%,100% { font-weight: 100; font-stretch: 75%; }
+      50%      { font-weight: 900; font-stretch: 125%; }
+    }
+
+    .preview-monospaced-editorial {
+      background: #fafaf5;
+    }
+    .preview-monospaced-editorial::before {
+      content: '001 / DESIGN\n─────────────\nMono. Space.';
+      white-space: pre;
+      position: absolute;
+      top: 15px; left: 15px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+
+    .preview-a11y-brutal {
+      background: #fff;
+      border: 4px solid #000;
+    }
+    .preview-a11y-brutal::before {
+      content: '⬛ A11Y\ABRUTAL';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-size: 24px;
+      font-weight: 900;
+      color: #000;
+      line-height: 1.1;
+    }
+
+    .preview-low-tech {
+      background: #f5f0e0;
+    }
+    .preview-low-tech::before {
+      content: 'low-tech\Asimple\Ahonest';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      color: #3a2a1a;
+      line-height: 1.5;
+    }
+
+    .preview-high-tech {
+      background: #000812;
+    }
+    .preview-high-tech::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px; right: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+    }
+    .preview-high-tech::after {
+      content: 'TECH ∞ FUTURE';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
+      letter-spacing: 3px;
+      white-space: nowrap;
+    }
+
+    .preview-digital-magazine {
+      background: #fff;
+      overflow: hidden;
+    }
+    .preview-digital-magazine::before {
+      content: 'VOL 01\AISSUE 12\A2025';
+      white-space: pre;
+      position: absolute;
+      top: 10px; left: 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #666;
+      line-height: 1.6;
+    }
+    .preview-digital-magazine::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 60px;
+      width: 60px; height: 100%;
+      background: #ff006e;
+    }
+
+    .preview-museum {
+      background: #f5f2ec;
+    }
+    .preview-museum::before {
+      content: '○ Exhibition\ASpace No. 7';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 30px;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+    .preview-museum::after {
+      content: '';
+      position: absolute;
+      bottom: 30px; right: 30px;
+      width: 30px; height: 30px;
+      border: 1px solid #1a1a1a;
+    }
+
+    .preview-narrative {
+      background: linear-gradient(180deg, #0a0f1e, #1a2a3e);
+    }
+    .preview-narrative::before {
+      content: '"The story\Abegins here."';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 20px;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .preview-interactive-doc {
+      background: #0a0a1e;
+    }
+    .preview-interactive-doc::before {
+      content: '▶ Chapter 01\A○ Chapter 02\A○ Chapter 03';
+      white-space: pre;
+      position: absolute;
+      top: 20px; left: 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      line-height: 2;
+    }
+
+    .preview-computational {
+      background: #f0f4ff;
+    }
+    .preview-computational::before {
+      content: 'f(n) =\An * f(n-1)';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 30px;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .preview-ai-native {
+      background: linear-gradient(135deg, #0a0a1e, #1a0a2e);
+    }
+    .preview-ai-native::before {
+      content: 'AI-native\AInterface';
+      white-space: pre;
+      position: absolute;
+      top: 30px; left: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .preview-ai-native::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 20px; right: 20px;
+      height: 2px;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981);
+      border-radius: 2px;
+      animation: aiScan 2s ease-in-out infinite;
+    }
+    @keyframes aiScan {
+      0%,100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ─── Style Card Content ────────────────────────────────── */
+    .style-card-body {
+      padding: 20px 20px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .style-card-title {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: var(--white);
+    }
+
+    .style-tag {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+
+    .tag-classic {
+      color: #94a3b8;
+      border-color: rgba(148,163,184,0.3);
+      background: rgba(148,163,184,0.08);
+    }
+    .tag-modern {
+      color: #10b981;
+      border-color: rgba(16,185,129,0.3);
+      background: rgba(16,185,129,0.08);
+    }
+    .tag-emerging {
+      color: #f59e0b;
+      border-color: rgba(245,158,11,0.3);
+      background: rgba(245,158,11,0.08);
+    }
+    .tag-experimental {
+      color: #f472b6;
+      border-color: rgba(244,114,182,0.3);
+      background: rgba(244,114,182,0.08);
+    }
+
+    .style-card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .style-card-meta {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .style-card-use {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--emerald);
+      line-height: 1.5;
+    }
+
+    .style-card-use::before {
+      content: '→ ';
+      opacity: 0.6;
+    }
+
+    /* ─── Closing CTA ───────────────────────────────────────── */
+    .cta-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--amber);
+      border: none;
+      border-radius: 100px;
+      padding: 14px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: var(--amber-dim);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-copy a {
+      color: var(--amber);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    /* ─── Scrollbar ─────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--amber-dim); }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .styles-grid { grid-template-columns: 1fr; }
+      nav .nav-meta { display: none; }
+    }
+
+    /* ─── Bento preview cells ───────────────────────────────── */
+    .bento-cell-1 { background: #1a1a1a; border-radius: 8px; grid-row: 1/3; }
+    .bento-cell-2 { background: #f59e0b; border-radius: 8px; }
+    .bento-cell-3 { background: #10b981; border-radius: 8px; }
+
+    .bento-apple-cell-1 { background: #1a1a1a; border-radius: 10px; grid-row: 1/3; }
+    .bento-apple-cell-2 { background: #f0f0f0; border-radius: 10px; }
+    .bento-apple-cell-3 { background: #e8e8e8; border-radius: 10px; grid-column: 1/3; }
+
+    .modular-cell { background: rgba(16,185,129,0.2); border-radius: 4px; }
+
+    /* ─── Search / Filter ───────────────────────────────────── */
+    .search-bar {
+      padding: 32px 0 0;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      max-width: 500px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--glass-bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 12px 20px 12px 44px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: rgba(245,158,11,0.5);
+    }
+
+    .search-input::placeholder { color: var(--muted); }
+
+    .search-icon {
+      position: absolute;
+      left: 16px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .results-count {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .results-count span { color: var(--amber); }
+
+    /* ─── Back to Top ───────────────────────────────────────── */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      width: 44px; height: 44px;
+      background: var(--amber);
+      color: var(--navy);
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 500;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="https://qwabi.co.za" class="logo">Aya<span>bonga</span></a>
+        <span class="nav-meta">05.2025 · Long read · ~40 min</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-tag">Visual Design</div>
+      <h1>
+        The Complete Guide to<br/>
+        <span class="accent-amber">Modern Web</span><br/>
+        <span class="accent-emerald">Design Styles</span>
+      </h1>
+      <p class="hero-desc">
+        100+ visual languages powering the web today — from Bauhaus geometry to AI-native interfaces. 
+        Understanding design styles is how you move from developer to systems thinker.
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item">By Ayabonga Qwabi</span>
+        <span class="hero-meta-dot"></span>
+        <span class="hero-meta-item">Senior Product Engineer</span>
+        <span class="hero-meta-dot"></span>
+        <span class="hero-meta-item">102 styles covered</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <h2 class="section-title">What is web design, really?</h2>
+          <p class="section-text">
+            Web design is the discipline of shaping how a digital product looks, feels, and communicates. 
+            It's not decoration — it's decision-making. Every colour, font, layout, and animation is a 
+            choice that either builds trust or destroys it.
+          </p>
+          <p class="section-text">
+            At its core, design is a communication tool. It says: who this is for, what it does, 
+            and why you should care — before you read a single word.
+          </p>
+          <div class="callout-box">
+            <p>
+              <strong>Design is the first language users read.</strong> Before they process your copy, 
+              they've already decided whether they trust you. That decision happens in milliseconds, 
+              driven entirely by your visual choices.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2 class="section-title">What are design styles?</h2>
+          <p class="section-text">
+            A design style — or aesthetic direction — is a coherent visual language. It's a collection of 
+            decisions about typography, colour, spacing, imagery, interaction, and layout that work 
+            together to create a specific feeling or meaning.
+          </p>
+          <p class="section-text">
+            Think of it like genre in music. Jazz and punk both use instruments, but they produce 
+            completely different feelings. Similarly, Brutalism and Luxury Minimalism both use HTML and CSS, 
+            but they communicate entirely different things to different audiences.
+          </p>
+          <p class="section-text">
+            The best engineers I've worked with treat design styles as tools — choosing them intentionally 
+            based on audience, context, and the specific feeling they want to create.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Count Strip -->
+  <section class="count-strip">
+    <div class="container">
+      <div class="count-grid">
+        <div class="count-card">
+          <div class="count-num">102</div>
+          <div class="count-label">Design Styles</div>
+        </div>
+        <div class="count-card">
+          <div class="count-num">11</div>
+          <div class="count-label">Categories</div>
+        </div>
+        <div class="count-card">
+          <div class="count-num">~80</div>
+          <div class="count-num" style="font-size:14px;color:var(--muted);margin-top:-8px">yrs</div>
+          <div class="count-label">Design History Covered</div>
+        </div>
+        <div class="count-card">
+          <div class="count-num">∞</div>
+          <div class="count-label">Combinations Possible</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <div style="padding: 0 0 20px;">
+    <div class="container">
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            class="search-input"
+            id="styleSearch"
+            placeholder="Search design styles..."
+            oninput="filterStyles(this.value)"
+          />
+        </div>
+        <div class="results-count" id="resultsCount">Showing <span id="countNum">102</span> styles</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Nav -->
+  <div class="cat-nav">
+    <div class="container">
+      <div class="cat-nav-scroll" id="catNav">
+        <a href="#raw-foundations" class="cat-pill active" data-cat="all">All Styles</a>
+        <a href="#raw-foundations" class="cat-pill" data-cat="raw-foundations">Raw Foundations</a>
+        <a href="#typography-print" class="cat-pill" data-cat="typography-print">Typography & Print</a>
+        <a href="#cultural-aesthetic" class="cat-pill" data-cat="cultural-aesthetic">Cultural & Aesthetic</a>
+        <a href="#morphisms" class="cat-pill" data-cat="morphisms">Morphisms & Materials</a>
+        <a href="#layout-structure" class="cat-pill" data-cat="layout-structure">Layout & Structure</a>
+        <a href="#tech-digital" class="cat-pill" data-cat="tech-digital">Tech & Digital</a>
+        <a href="#motion-interaction" class="cat-pill" data-cat="motion-interaction">Motion & Interaction</a>
+        <a href="#art-generative" class="cat-pill" data-cat="art-generative">Art & Generative</a>
+        <a href="#retro-nostalgic" class="cat-pill" data-cat="retro-nostalgic">Retro & Nostalgic</a>
+        <a href="#systems-design" class="cat-pill" data-cat="systems-design">Systems Design</a>
+        <a href="#future-native" class="cat-pill" data-cat="future-native">Future & AI-Native</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: RAW FOUNDATIONS                                  -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="raw-foundations">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">⬛</div>
+        <div class="category-header-text">
+          <h2>Raw Foundations</h2>
+          <p>Styles built on strong, uncompromising visual principles — clarity, contrast, intentional rawness. These are the building blocks of design philosophy.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="raw-foundations" data-name="Brutalism">
+          <div class="style-preview preview-brutalism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Brutalism</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Embraces raw, ugly, honest aesthetics — exposed structure, clashing colours, heavy borders, no softening. Inspired by Brutalist architecture. Deliberately uncomfortable, impossible to ignore. Often uses system fonts, visible HTML scaffolding, and zero decorative polish.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: art projects, cultural commentary, anti-establishment brands, developer personal sites wanting personality.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Neo-Brutalism">
+          <div class="style-preview preview-neo-brutalism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Neo-Brutalism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Brutalism with personality — still raw and bold but adds playful colour, thick offset box-shadows, and chunky borders. Popularised by tools like Figma and Linear. Feels intentional rather than broken. Often high-contrast with yellow, coral, or lime pops.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: SaaS tools, developer products, startup landing pages that want to stand out.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Minimalism">
+          <div class="style-preview preview-minimalism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Minimalism</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Less is more — white space as a design element, single focal points, muted palettes, and deliberate absence. Reduces visual noise to its essential core. Feels calm, confident, and premium when done well. Requires exceptional content to work — you have nowhere to hide.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: portfolios, premium products, editorial sites, high-end services.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Maximalism">
+          <div class="style-preview preview-maximalism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Maximalism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">More of everything — patterns, colour, texture, type, animation, imagery, all at once. The complete opposite of minimalism. Demands attention and creates sensory richness. Works because the excess is intentional, not accidental. Requires skill to avoid feeling chaotic.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: music festivals, fashion brands, creative agencies, youth-focused products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Monochrome Design">
+          <div class="style-preview preview-monochrome"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Monochrome Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Single colour (or black/white) carried across the entire design. Communicates focus, restraint, and confidence. When everything is one colour, composition and typography carry all the weight. Forces you to find contrast through scale and form rather than hue.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: luxury brands, editorial design, photography portfolios, strong concept-first products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Hyper-Contrast Design">
+          <div class="style-preview preview-hyper-contrast"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Hyper-Contrast Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Maximum contrast as a design philosophy — pure black against pure white, dark backgrounds with blazing white text. Creates energy and legibility simultaneously. Not just for accessibility — high contrast is a bold aesthetic statement that demands presence.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: tech brands, performance-first products, any context needing high visual impact.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Anti-Design">
+          <div class="style-preview preview-antidesign"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Anti-Design</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Deliberately breaks rules — clashing colours, unreadable layouts, deliberately bad choices made intentionally. It's design that critiques design. Born from Italian design movements of the 70s. Signals: "we know the rules, we choose to break them." Requires real mastery to pull off.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: conceptual projects, art/culture brands, provocative commentary.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Raw HTML Aesthetic">
+          <div class="style-preview preview-raw-html"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Raw HTML Aesthetic</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Unstyled or near-unstyled HTML — default serif fonts, blue links, no layout system. Makes a statement about information over presentation. Popular in certain developer circles as philosophical commentary on over-designed web. Surprisingly readable, extremely fast.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: technical blogs, developer diaries, performance-obsessed sites, commentary projects.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Low-Tech Aesthetic">
+          <div class="style-preview preview-low-tech"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Low-Tech Aesthetic</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Celebrates simplicity and restraint — monospace text, minimal imagery, no JavaScript dependencies. Anti-bloat philosophy expressed visually. Feels human and honest. Part of the broader "slow web" movement that values substance over spectacle.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: personal blogs, open-source projects, sustainability-first brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="raw-foundations" data-name="Accessibility Brutalism">
+          <div class="style-preview preview-a11y-brutal"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Accessibility Brutalism</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Combines brutalist visual language with rigorous WCAG compliance — maximum contrast, plain language, obvious affordances. Proves accessibility and strong aesthetics aren't opposites. Thick borders and raw typography naturally create accessible experiences.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: government services, public information tools, inclusive-first products.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: TYPOGRAPHY & PRINT                               -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="typography-print">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">Aa</div>
+        <div class="category-header-text">
+          <h2>Typography & Print Traditions</h2>
+          <p>Design systems rooted in the discipline of print — where type was king, grid was law, and every decision had structural purpose.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="typography-print" data-name="Typography-Heavy Design">
+          <div class="style-preview preview-typography"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Typography-Heavy Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Type as the primary visual element — oversized headlines, contrasting weights, expressive letterspacing. Imagery is secondary or absent entirely. Requires mastery of font pairing, optical sizing, and reading rhythm. When done right, text itself becomes illustration.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: editorial sites, personal brands, writing-focused platforms, publications.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Swiss / International Style">
+          <div class="style-preview preview-swiss"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Swiss / International Style</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Born in 1950s Switzerland — Helvetica, strict grids, left-aligned text, functional photography. Objective, clear, universal. Became the visual language of corporate design worldwide. Every piece has a defined reason for existing. Nothing decorative; everything communicates.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: corporate brands, institutional sites, design systems, technical documentation.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Editorial Design">
+          <div class="style-preview preview-editorial"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Editorial Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Brings magazine and book sensibility to the screen — pull quotes, drop caps, rich imagery alongside text, deliberate whitespace. Storytelling through layout. Every spread feels considered. The grid is used expressively, not just structurally.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: long-form journalism, online magazines, case studies, thought leadership.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Bauhaus-Inspired Design">
+          <div class="style-preview preview-bauhaus"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Bauhaus-Inspired Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Form follows function — circles, triangles, primary colours. Geometric abstraction as meaning. The Bauhaus school (1919-1933) believed beauty and utility were the same thing. Clean shapes, primary palette, geometric type. Timeless and immediately recognisable.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: design schools, architecture firms, cultural institutions, craft brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Magazine / Editorial Layouts">
+          <div class="style-preview preview-magazine"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Magazine Layouts</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Multi-column grids, dominant images, varied type sizes, and colour-coded sections. Borrows directly from print magazine conventions. Creates visual hierarchy that guides readers through content at different depths. Satisfying information density without overwhelm.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: news platforms, online publications, content-heavy products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Newspaper-Style Layouts">
+          <div class="style-preview preview-newspaper"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Newspaper-Style Layouts</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Narrow columns, dense text, masthead typography, horizontal rule separators. Signals: trustworthy, information-first, established. Creates the feeling of authority through familiar print conventions. Often deliberately old-school as a statement of serious journalism.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: news sites, investigative journalism, archival projects.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Zine-Inspired Design">
+          <div class="style-preview preview-zine"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Zine-Inspired Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">DIY print culture brought online — cut-and-paste aesthetics, misregistered type, photocopier textures, hand-drawn elements. Signals independence and authenticity. Sub-cultural communication style. Raw, personal, and unapologetically lo-fi.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: independent artists, activist projects, music/subculture platforms.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Analog / Print-Inspired Design">
+          <div class="style-preview preview-analog"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Analog / Print-Inspired Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Simulates the warmth of physical print — paper textures, ink bleeds, registration marks, slightly imperfect typography. Digital design that misses physical media. Counterculture to pixel-perfect screens. Creates warmth and tactility in an inherently cold medium.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: artisan brands, independent publishers, craft-focused products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Kinetic Typography">
+          <div class="style-preview preview-kinetic-typography"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Kinetic Typography</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Text as animation — letters that grow, split, orbit, or pulse in sync with meaning. Type communicates through movement as well as letterform. Popularised in film titles and advertising. Online, it's used to create memorable hero sections where the words themselves perform.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: hero sections, loading states, brand films, creative agency sites.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Chromatic Typography">
+          <div class="style-preview preview-chromatic"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Chromatic Typography</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Colour applied to type as primary visual communication — gradient fills, split-colour letterforms, outlined text with coloured fills. The colour system within the type itself carries meaning and emotion. Makes headlines feel like visual art rather than just words.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: brand launches, product announcements, creative tools, vibrant SaaS.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Variable Font–Driven Design">
+          <div class="style-preview preview-variable-font"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Variable Font–Driven Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Uses modern variable font technology — single font files with axes for weight, width, slant, and more — to create fluid typography that morphs as you scroll or interact. Typography becomes genuinely responsive, not just sized differently.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: experimental editorial, interactive portfolios, technically ambitious projects.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="typography-print" data-name="Monospaced Editorial Design">
+          <div class="style-preview preview-monospaced-editorial"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Monospaced Editorial Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Monospace typefaces used as a primary editorial voice, not just for code. Communicates precision, objectivity, and technical thinking. Pairs a terminal-native aesthetic with editorial layout conventions. Creates the feeling of reading a technical document that's been beautifully designed.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: technical blogs, developer tools, design systems documentation.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: CULTURAL & AESTHETIC MOVEMENTS                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="cultural-aesthetic">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">◈</div>
+        <div class="category-header-text">
+          <h2>Cultural & Aesthetic Movements</h2>
+          <p>Design styles rooted in specific cultural moments, subcultures, or artistic movements — carrying meaning beyond their visual elements.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Cyberpunk UI">
+          <div class="style-preview preview-cyberpunk"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Cyberpunk UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Dark worlds, neon lights, tech-overcrowded cities — translated into UI. Green-on-black terminal aesthetics, glitch effects, scanning lines, HUD overlays. Inspired by Blade Runner, Ghost in the Shell, and Gibson's Neuromancer. High information density with an unsettling undercurrent.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: gaming, cybersecurity tools, sci-fi products, hacker-culture adjacent brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Vaporwave">
+          <div class="style-preview preview-vaporwave"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Vaporwave</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">A nostalgic, ironic aesthetic born in internet music culture — purple and pink gradients, Japanese text, retro 3D objects, glitch effects, and early internet imagery. Critiques consumerism through the lens of mall aesthetics and Windows 95 screensavers. Deeply ironic yet sincerely beautiful.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: music platforms, internet art, niche cultural products, nostalgia-driven campaigns.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Y2K Aesthetic">
+          <div class="style-preview preview-y2k"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Y2K Aesthetic</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Turn-of-millennium visual culture — chrome effects, metallic UI, bubble typography, alien greens and blues, butterflies and stars. The early internet's breathless optimism about technology. Makes a comeback every decade as genuine nostalgia replaces irony.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: fashion brands targeting Gen Z, music, pop culture-adjacent products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Memphis Design">
+          <div class="style-preview preview-memphis"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Memphis Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">1980s Italian design movement — primary colours, geometric shapes, squiggles, dots, and zigzags all at once. Anti-minimalist, joyful chaos. Ettore Sottsass and the Memphis Group deliberately clashed aesthetics. Digital revival is everywhere from Instagram feeds to UI toolkits.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: lifestyle brands, playful apps, youth products, creative agencies.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Postmodern Design">
+          <div class="style-preview preview-postmodern"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Postmodern Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Rejection of modernist absolutes — quotes rule-breaking, mixes historical references, layers irony. David Carson's Ray Gun magazine is the iconic reference. Deconstructs the grid, plays with legibility, challenges whether design needs to communicate at all.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: contemporary art, design culture sites, experimental publishing.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Retro Futurism">
+          <div class="style-preview preview-retro-futurism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Retro Futurism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The future as imagined in the past — Space Age optimism, chrome rockets, atomic-age lounge aesthetics. The 1950s/60s vision of tomorrow. Jet Age confidence translated into visual language. Orange and white, sleek forms, scientific optimism. Nostalgia for a future that never arrived.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: space companies, retro-tech brands, science communication, events.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Futurism">
+          <div class="style-preview preview-futurism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Futurism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Speed, technology, and tomorrow — dark backgrounds, electric blue and cyan highlights, motion trails, sharp geometry. Celebrates acceleration and innovation. Every element feels like it's moving forward. Associated with tech launches and products that position themselves as paradigm shifts.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: tech launches, EV companies, AI products, anything claiming to be the future.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Techwear Aesthetic">
+          <div class="style-preview preview-techwear"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Techwear Aesthetic</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Utilitarian-meets-high-performance fashion translated into UI — dark greys, subtle texture, system-font readouts, MOLLE-grid modularity. Feels functional, tactical, stripped of unnecessary decoration. The aesthetic of someone who built their own mechanical keyboard and wears Arc'teryx daily.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: productivity tools, hardware products, premium developer tooling.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Arcade / Gaming UI">
+          <div class="style-preview preview-arcade"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Arcade / Gaming UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Pixel fonts, scanlines, coin-insert prompts, HP bars, score displays — the language of the arcade translated to the web. Creates instant engagement through familiar game conventions. Leaderboards, streaks, and flashing animations are native to this style.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: gamification products, games, community platforms, learning apps.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="cultural-aesthetic" data-name="Anime-Inspired UI">
+          <div class="style-preview preview-anime"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Anime-Inspired UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Deep purples, magical sparkles, dramatic typography, and cel-shaded illustration influences. Japanese animation aesthetic applied to interfaces. Intense emotion, dramatic colour shifts, kawaii and dark themes often co-existing. Deeply resonant with specific global communities.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: gaming, manga platforms, otaku-adjacent products, community apps.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: MORPHISMS & MATERIALS                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="morphisms">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">◉</div>
+        <div class="category-header-text">
+          <h2>Morphisms & Material Styles</h2>
+          <p>Styles defined by how they simulate or subvert the physicality of materials — glass, clay, soft foam, actual 3D objects.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="morphisms" data-name="Glassmorphism">
+          <div class="style-preview preview-glassmorphism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Glassmorphism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Frosted glass effect — backdrop blur, semi-transparent surfaces, subtle white borders. Creates depth by layering content over vivid backgrounds. Made famous by macOS Big Sur and Apple's design language. Works beautifully over gradients or images; falls flat on plain backgrounds.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: dashboards, app UIs, premium SaaS, any dark-themed product wanting depth.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Neumorphism">
+          <div class="style-preview preview-neumorphism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Neumorphism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Soft 3D — elements appear to be extruded from the background through dual box shadows (light and dark). Creates a physical plastic/foam feeling. Extremely subtle and demanding — requires perfect colour matching between element and background. Gorgeous in isolation, challenging for complex UIs.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: finance apps, calculators, music players, any UI with simple, tactile controls.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Claymorphism">
+          <div class="style-preview preview-claymorphism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Claymorphism</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Elements that look like soft, squishy clay — inflated 3D shapes, bright pastel colours, exaggerated shadows, and inner glow highlights. Feels tactile and friendly. Think 3D Notion-style illustrations or Apple's sticker packs. Communicates approachability and playfulness.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: consumer apps, kids' products, wellness brands, playful SaaS.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Skeuomorphism">
+          <div class="style-preview preview-skeuomorphism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Skeuomorphism</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Digital elements that imitate physical objects — leather-bound notebooks, real wood textures, stitching on buttons. iOS 6-era design. Famously replaced by flat design but is seeing a quiet revival in specific contexts. Creates tangibility and anchors users in familiar metaphors.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: music apps, note-taking tools, luxury goods, nostalgia-driven products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Soft UI">
+          <div class="style-preview preview-soft-ui"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Soft UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The gentler cousin of neumorphism — soft shadows, rounded corners, muted palettes, subtle gradients. Feels comfortable and approachable without the extremes. Popular in health, wellness, and productivity apps. Creates calm without being boring.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: health apps, mental wellness tools, productivity apps, anything needing calm.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Morphism Design">
+          <div class="style-preview preview-morphism"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Morphism Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Umbrella term for design systems where surfaces have material qualities — glass, clay, soft foam, depth. Uses layering and blur to create spatial hierarchy. UI components have weight, physical presence. The interface feels like it occupies a three-dimensional space.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: premium app UIs, spatial computing interfaces, high-end dashboards.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Organic / Blob UI">
+          <div class="style-preview preview-blob"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Organic / Blob UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Irregular, blob-shaped elements — fluid, amoeba-like borders and backgrounds. CSS border-radius pushed to extremes. Communicates growth, nature, and non-corporate warmth. Often paired with earthy or pastel palettes. The antithesis of the right-angle corporate web.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: sustainability brands, wellness, creative agencies, organic product companies.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="morphisms" data-name="Liquid Motion Design">
+          <div class="style-preview preview-liquid"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Liquid Motion Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Fluid, morphing animations — shapes that breathe, liquify, and transform. SVG path morphing, WebGL distortion, CSS clip-path animations. Creates hypnotic, organic energy. The UI feels alive. Heavy on performance but extraordinary visual impact when executed well.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative agency hero sections, brand films, experimental portfolios.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: LAYOUT & STRUCTURE                               -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="layout-structure">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">⊞</div>
+        <div class="category-header-text">
+          <h2>Layout & Structure</h2>
+          <p>How space, columns, and composition are organised. The skeleton beneath the aesthetic — arguably the most important design decision of all.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="layout-structure" data-name="Bento Grid Design">
+          <div class="style-preview preview-bento">
+            <div class="bento-cell-1"></div>
+            <div class="bento-cell-2"></div>
+            <div class="bento-cell-3"></div>
+          </div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Bento Grid Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">CSS Grid layouts that break content into varied-size tiles, like a Japanese bento box. Each tile is a different feature, stat, or story — no two the same size. Popularised by Apple's product pages and Notion's marketing. Creates information density with visual interest.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: SaaS feature showcases, portfolio sections, product marketing pages.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Grid-Based Design">
+          <div class="style-preview preview-grid-based"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Grid-Based Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Strict adherence to grid systems — columns, gutters, baselines. Everything snaps to an invisible structure that creates visual order and rhythm. Underlying foundation of almost all good design, even when invisible. When the grid shows, it communicates precision and intentionality.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: any structured interface — dashboards, e-commerce, documentation.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Broken Grid Layouts">
+          <div class="style-preview preview-broken-grid"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Broken Grid Layouts</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Elements that deliberately escape their columns — overlapping sections, text running into images, containers that break the page edge. Signals energy, ambition, and creative confidence. Works because the underlying grid exists to be broken. Random breaking without a grid looks like a mistake.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative agencies, editorial sites, bold startup landing pages.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Asymmetrical Layouts">
+          <div class="style-preview preview-asymmetric"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Asymmetrical Layouts</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Visual balance achieved without symmetry — large elements on one side balanced by whitespace or small elements on the other. Creates dynamic tension and guides the eye. More interesting than symmetrical layouts but requires a stronger sense of visual weight.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: portfolio sites, brand pages, creative products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Modular Design Systems">
+          <div class="style-preview preview-modular">
+            <div class="modular-cell"></div>
+            <div class="modular-cell"></div>
+            <div class="modular-cell"></div>
+            <div class="modular-cell"></div>
+            <div class="modular-cell"></div>
+            <div class="modular-cell"></div>
+          </div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Modular Design Systems</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Component-driven design where every element is a reusable, configurable module. Design tokens, atomic components, variant systems. The page is composed of blocks, not designed as a whole. Essential for scalable products. The design system becomes a product in itself.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: design systems, product design teams, enterprise SaaS, scalable platforms.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Card-Based Interfaces">
+          <div class="style-preview preview-card-based"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Card-Based Interfaces</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Content organised into bounded, equal-weight cards. Each card is a self-contained unit of information. Popularised by Material Design and Pinterest. Enables responsive layouts naturally, supports scanning over reading, and scales gracefully from mobile to desktop.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: content feeds, e-commerce, news aggregators, dashboard widgets.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Split-Screen Design">
+          <div class="style-preview preview-split-screen"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Split-Screen Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Viewport divided into two equal halves — different colours, content, or perspectives. Creates immediate tension and choice. Often used for before/after, dual audiences, or contrast between problem and solution. Simple, bold, and unmistakable.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: comparison pages, dual-audience products, login/register screens.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Fullscreen Hero Design">
+          <div class="style-preview preview-fullscreen-hero"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Fullscreen Hero Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">100vh hero section that occupies the entire first screen — the most important content before a single scroll. Forces hierarchy decisions. What is the single most important thing? This layout demands an answer. Works when the hero content earns the real estate.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: brand launches, marketing pages, storytelling-driven products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Bento + Apple-Style Product Design">
+          <div class="style-preview preview-bento-apple">
+            <div class="bento-apple-cell-1"></div>
+            <div class="bento-apple-cell-2"></div>
+            <div class="bento-apple-cell-3"></div>
+          </div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Bento + Apple-Style</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The clean, product-feature-focused version of bento grid — monochrome tiles, SF Pro typography influences, generous white space, and feature-first copy. Each bento cell tells one product story with a headline and simple illustration. Premium and instantly legible.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: tech product pages, SaaS feature sections, hardware products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Architectural Layout Design">
+          <div class="style-preview preview-architectural"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Architectural Layout Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Design inspired by architectural plans and blueprints — precise rules, structural lines, technical annotation. Treats the page like a built environment with structural and decorative elements clearly distinct. Often uses thin lines, technical typefaces, and measured negative space.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: architecture firms, engineering companies, luxury real estate, technical products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Collage Design">
+          <div class="style-preview preview-collage"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Collage Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Elements layered, overlapped, and combined from disparate sources — photographs, textures, type, illustration, all in the same frame. Digital continuation of physical collage art. Creates richness and density. Feels handmade and curated. Every detail rewards closer inspection.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: fashion, music, cultural brands, art-direction-heavy campaigns.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="layout-structure" data-name="Isometric Design">
+          <div class="style-preview preview-isometric"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Isometric Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">3D perspective achieved through a 30-degree isometric projection — no vanishing points, consistent scale at any distance. Makes complex systems comprehensible through spatial visualisation. Highly popular in SaaS illustration style. Feels technical and informative simultaneously.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: tech illustrations, infrastructure diagrams, SaaS marketing illustrations.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: TECH & DIGITAL NATIVE                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="tech-digital">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">⌗</div>
+        <div class="category-header-text">
+          <h2>Tech & Digital-Native</h2>
+          <p>Styles born from software culture, developer aesthetics, and the specific visual languages of platforms and products.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="tech-digital" data-name="Terminal / Hacker Aesthetic">
+          <div class="style-preview preview-terminal"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Terminal / Hacker Aesthetic</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Command line culture made beautiful — green text on black, monospace fonts, prompt symbols, blinking cursors. Signals technical credibility and depth. The original developer aesthetic. Used sincerely by technical tools and ironically by brands wanting to signal engineering-first culture.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: developer tools, CLI products, security companies, open-source projects.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Developer-First Design">
+          <div class="style-preview preview-dev-first"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Developer-First Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Code snippets as hero elements, dark IDE-inspired aesthetics, copy buttons everywhere, syntax highlighting as visual design. Shows the product's value through the code itself. Signals: "we built this for engineers." The design is proof of technical credibility.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: APIs, SDKs, developer platforms, documentation sites, DevTools.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="SaaS Landing Page Design">
+          <div class="style-preview preview-saas"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">SaaS Landing Page Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Clean, benefit-focused, conversion-optimised. Blue and white, social proof strips, feature grids, CTA buttons above the fold. So ubiquitous it's almost a genre unto itself. Instantly communicates: trustworthy software product. Works because it's a familiar pattern users understand.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: SaaS products, productivity tools, B2B software, startup MVPs.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Dashboard UI Design">
+          <div class="style-preview preview-dashboard"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Dashboard UI Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Dense information architecture with visual hierarchy — charts, metrics, tables, and filters all coexisting. Dark-themed dashboards communicate power and professionalism. Every pixel justifies its existence through data. The challenge is managing complexity without chaos.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: analytics tools, business intelligence, admin panels, monitoring systems.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Data-Driven Design">
+          <div class="style-preview preview-data-driven"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Data-Driven Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Visualisation-first — charts, graphs, and numbers as design elements rather than additions. Every visual choice serves data comprehension. Typography, colour, and layout all optimised for reading information quickly and accurately. D3.js, Recharts, and custom SVG as design medium.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: research platforms, data journalism, analytics products, reporting tools.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Dark Mode Design">
+          <div class="style-preview preview-dark-mode"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Dark Mode Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Not just a colour inversion — dark mode is its own design language. Deep charcoal surfaces, carefully calibrated element elevation, reduced-saturation colours, glowing accents. Reduces eye strain, saves battery on OLED screens, and creates a premium, focused feel. Now expected as a first-class experience.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: developer tools, IDEs, late-night products, any premium technical product.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Flat Design">
+          <div class="style-preview preview-flat"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Flat Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">No gradients, no shadows, no depth — purely 2D. Microsoft's Metro/Modern design language popularised it in 2010. Clean, fast-loading, icon-forward. Simple geometric shapes and saturated colours. Easy to maintain, scales well across platforms. The universal base layer of modern UI.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: any digital product. Universal baseline that everything else builds on.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Material Design">
+          <div class="style-preview preview-material"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Material Design</h3>
+              <span class="style-tag tag-classic">Classic</span>
+            </div>
+            <p class="style-card-desc">Google's design system — surfaces as paper with ink printed on them. Z-elevation, realistic shadows, bold primary colours, floating action buttons. Opinionated, comprehensive, and universal. Material 3 continues to evolve it. The template for most consumer-facing Android and web products.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: Android apps, Google ecosystem products, enterprise web apps.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Fluent Design">
+          <div class="style-preview preview-fluent"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Fluent Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Microsoft's design language — Acrylic blur effects, light and depth, motion-driven reveals. Windows 11's entire visual language is Fluent. Balances translucency with legibility. Feels native and polished in Microsoft contexts. Increasingly influential on cross-platform design.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: Windows apps, Microsoft ecosystem products, productivity tools.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Gradient-Heavy Design">
+          <div class="style-preview preview-gradient"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Gradient-Heavy Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Expressive, multi-stop gradients as primary design elements — mesh gradients, conic gradients, animated colour shifts. Moves away from flat design's rigidity. When done well, gradients create depth, warmth, and vibrancy. When done poorly, they become generic "AI startup" purple soup.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative tools, AI products (carefully), lifestyle apps, brand hero sections.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Futuristic SaaS Design">
+          <div class="style-preview preview-futuristic-saas"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Futuristic SaaS Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Deep dark backgrounds, electric purple or blue accent lights, abstract 3D elements, orbit lines, and particle effects. The "we're building the future" aesthetic. Signals ambition and innovation. Vercel, Linear, and many AI companies live here. Feels like science fiction becoming product.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: AI/ML tools, infrastructure products, next-gen platform companies.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="tech-digital" data-name="Noise / Grain Texture Design">
+          <div class="style-preview preview-noise"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Noise / Grain Texture Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">SVG noise filters or CSS grain overlays add film-like texture to digital surfaces. Counteracts the sterile perfection of flat design. Adds warmth, tangibility, and visual interest. Used subtly, it elevates; used heavily, it creates atmosphere. Popular across premium and artistic contexts.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative brands, portfolios, premium products wanting organic warmth.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: MOTION & INTERACTION                             -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="motion-interaction">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">◐</div>
+        <div class="category-header-text">
+          <h2>Motion & Interaction</h2>
+          <p>Design where movement isn't decoration — it's communication. How things move tells users what they do.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="motion-interaction" data-name="Motion-First Design">
+          <div class="style-preview preview-motion-first"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Motion-First Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Animation defined before visuals — movement and timing are the primary design decisions. Static screenshots don't represent the design; the experience only exists in motion. Requires designing in time, not just space. Creates memorable first impressions that static competitors can't replicate.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative agencies, storytelling products, brand experiences, interactive portfolios.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Microinteraction Design">
+          <div class="style-preview preview-microinteraction"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Microinteraction Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Tiny animations that respond to specific user actions — button presses that ripple, likes that burst, checkmarks that draw themselves. Dan Saffer's foundational concept. Creates delight and feedback at the granular level. The difference between a product that feels alive and one that feels dead.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: consumer apps, social products, anything where emotional connection matters.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Immersive Storytelling">
+          <div class="style-preview preview-immersive"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Immersive Storytelling</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Full-screen, multimedia narrative experiences — the page becomes a cinema. Combines video, audio, scroll-triggered animation, and typography into a single coherent story. The user is a reader and a participant. The New York Times' Snowfall article invented this category in 2012.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: investigative journalism, brand films, annual reports, product stories.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Scrollytelling">
+          <div class="style-preview preview-scrollytelling"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Scrollytelling</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Scroll position drives narrative — as you scroll, the story unfolds through text reveals, animation triggers, and perspective changes. Converts reading into active participation. Requires careful choreography: too much and it's frustrating, too little and it's pointless.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: editorial features, data journalism, onboarding flows, annual reports.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Cinematic Web Design">
+          <div class="style-preview preview-cinematic"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Cinematic Web Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Film language applied to web — letterboxing, title cards, dramatic lighting, scene transitions. The page feels like a film experience. Wide-aspect ratios, atmospheric video, deliberate pacing. Borrows cinematography conventions to create narrative gravity and emotional weight.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: film studios, luxury brands, narrative products, experience-driven companies.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Parallax Design">
+          <div class="style-preview preview-parallax"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Parallax Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Foreground and background elements scroll at different speeds, creating depth perception. Simple but effective when used intentionally. Overused in the 2010s, now more restrained. Modern parallax is subtle — a slight depth shift rather than dramatic layer separation.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: hero sections, product showcases, storytelling pages with landscape imagery.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Interaction-Heavy Design">
+          <div class="style-preview preview-interaction"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Interaction-Heavy Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Every element responds to user input — hover, click, touch, drag all produce distinct feedback. The interface is participatory, not passive. Creates a sense of physical agency in a digital medium. Requires careful performance management and accessibility consideration.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: portfolio sites, creative tools, demo experiences, educational apps.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Oversized Cursor Design">
+          <div class="style-preview preview-cursor"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Oversized Cursor Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Custom cursors that replace the default pointer — large circles, crosshairs, branded shapes. The cursor itself becomes part of the experience. Often scales, changes colour, or morphs based on context. Creates immediate distinction and signals that the experience has been thought through in detail.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative agency sites, portfolio pages, interactive art experiences.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Cursor-Reactive Design">
+          <div class="style-preview preview-cursor-reactive"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Cursor-Reactive Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Elements that respond to cursor position — gradient backgrounds that shift toward the cursor, text that follows mouse movement, particles that avoid or pursue. Creates a feeling of physical presence in digital space. JavaScript-heavy but creates unforgettable experiences.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative portfolios, award-site-style experiences, brand activations.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="motion-interaction" data-name="Motion Graphics–Inspired UI">
+          <div class="style-preview preview-motion-graphics"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Motion Graphics–Inspired UI</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">After Effects and Cinema 4D aesthetic translated to CSS and WebGL — shapes that orbit, transform, and compose themselves. Treats every page element as an animation keyframe. Borrows broadcast design language (station IDs, title sequences) for web contexts. Creates memorable brand moments.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: broadcasting companies, creative studios, brand hero sections.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: ART & GENERATIVE                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="art-generative">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">∿</div>
+        <div class="category-header-text">
+          <h2>Art & Generative Design</h2>
+          <p>Where code becomes art and algorithms generate the aesthetic. Design that couldn't exist without computation.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="art-generative" data-name="3D Web Design">
+          <div class="style-preview preview-3d"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">3D Web Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">CSS 3D transforms, WebGL models, and Three.js scenes embedded directly in web pages. Products displayed as rotatable 3D objects, abstract 3D environments as hero backgrounds. Creates a dimension that flat design can't achieve. GPU-intensive but increasingly accessible.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: product showcases, hardware companies, gaming, premium tech brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="WebGL / Three.js Experiences">
+          <div class="style-preview preview-webgl"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">WebGL / Three.js Experiences</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">GPU-rendered 3D scenes in the browser — particle systems, shader art, interactive 3D environments. The most technically ambitious category of web design. Creates experiences impossible in CSS. Award-winning sites at Awwwards live here. Requires significant engineering investment.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative developer portfolios, luxury products, high-investment brand experiences.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Generative Design">
+          <div class="style-preview preview-generative"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Generative Design</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Algorithms generate the visual output — no two instances are the same. Perlin noise, L-systems, particle physics, reaction-diffusion all create organic, rule-based patterns. Processing and p5.js brought this to web. Design as a system that runs, not just a file that renders.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: digital art, NFT platforms, generative branding, creative portfolios.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Parametric Design">
+          <div class="style-preview preview-parametric"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Parametric Design</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Shape and form defined by adjustable parameters — change one value and the entire system responds. Borrowed from architecture (Zaha Hadid) and industrial design. In web, creates UI where the visual system adapts to data or user input. The design is a function, not an image.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: architecture firms, computational design tools, data-responsive interfaces.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Abstract Geometry Design">
+          <div class="style-preview preview-abstract"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Abstract Geometry Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Geometric shapes as primary visual language — circles, polygons, morphing paths used as atmospheric elements rather than illustrations. Creates visual sophistication without representation. The shapes carry mood through colour and motion rather than recognisable form.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: technology brands, financial products, serious B2B wanting visual sophistication.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="AI-Generated Visual Design">
+          <div class="style-preview preview-ai-visual"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">AI-Generated Visual Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Midjourney, DALL-E, and Stable Diffusion imagery as design elements — dreamlike, surreal, or photo-realistic imagery generated from prompts. Creates visual styles impossible through traditional photography or illustration. Raises questions of authenticity. Use carefully and transparently.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: concept exploration, niche products, editorial illustration, experimental campaigns.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Illustration-Heavy Design">
+          <div class="style-preview preview-illustration"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Illustration-Heavy Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Custom illustration as the primary visual system rather than photography or UI components. Creates immediate personality, explains complex concepts visually, and builds distinct brand identity. Expensive but powerful. Stripe's illustrations are the iconic reference. Every brand gets to own its visual world.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: consumer products, FinTech, any brand wanting distinctive visual ownership.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Computational Design">
+          <div class="style-preview preview-computational"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Computational Design</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Design processes where code is the design tool — p5.js sketches, Processing compositions, algorithmic typography. The designer writes programs rather than drawing. Output is determined by logic, not manual composition. The computer's decisions are part of the aesthetic.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: research projects, creative coding exhibitions, digital art platforms.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="art-generative" data-name="Experimental Web Design">
+          <div class="style-preview preview-experimental"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Experimental Web Design</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Treats the browser as an artistic medium with no constraints — unconventional navigation, non-linear content, interface as art. Bruno Simon's portfolio (a 3D driving game) is the canonical example. Pushes CSS, WebGL, and interaction design beyond their conventional limits.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: creative developer portfolios, interactive art, concept demonstrations.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: RETRO & NOSTALGIC                                -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="retro-nostalgic">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">⌚</div>
+        <div class="category-header-text">
+          <h2>Retro & Nostalgic</h2>
+          <p>The web looking back at itself — early internet aesthetics, analog warmth, and designs that reference the physical past.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Retro Web / Web 1.0 Revival">
+          <div class="style-preview preview-retro-web"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Retro Web / Web 1.0 Revival</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Geocities-era aesthetics earnestly revived — tiling backgrounds, blinking text, visitor counters, Comic Sans, animated GIFs, dark blue backgrounds with yellow text. The early web's chaotic democracy and personal expression celebrated without irony. Profoundly human compared to polished modern design.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: personal sites, nostalgia projects, counter-cultural statements.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Indie Web Aesthetic">
+          <div class="style-preview preview-indie-web"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Indie Web Aesthetic</h3>
+              <span class="style-tag tag-experimental">Experimental</span>
+            </div>
+            <p class="style-card-desc">Personal, idiosyncratic, deliberately non-commercial web design. Hand-coded pages, RSS feeds, webmention support. Part of the small-web movement that values ownership and individuality over engagement metrics. The antithesis of growth-hacking UX. Deeply authentic and increasingly rare.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: personal publishing, digital gardens, creative professionals.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Minimal Monospace Design">
+          <div class="style-preview preview-monospace"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Minimal Monospace Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Monospace typography as a full design system — courier-like fonts for body copy, headers, and UI elements. Creates technical precision and readability. Often paired with stark colour palettes. The technical writer's aesthetic. Signals thoughtfulness and discomfort with decoration.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: developer tools, technical writing, research-focused sites.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Museum / Exhibition Style Design">
+          <div class="style-preview preview-museum"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Museum / Exhibition Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The visual language of the museum wall — white space as breathing room, object numbers and catalogue references, understated sans-serifs, deliberate pacing. Content treated as an exhibit. Communicates cultural authority and curation. Nothing competes with the work itself.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: museums, galleries, archives, cultural institutions, luxury brands.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Digital Magazine Aesthetic">
+          <div class="style-preview preview-digital-magazine"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Digital Magazine Aesthetic</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Print magazine sensibility translated to screen — volume numbers, issue dates, strong colour blocking, editorial photography. Communicates seriousness and regularity. Readers know what to expect with each issue. The structure and rhythm of publishing as a design choice.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: newsletters, opinion platforms, branded editorial content.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Luxury Brand Design">
+          <div class="style-preview preview-luxury"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Luxury Brand Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Dark backgrounds, gold or warm-white typography, extreme white space, slow loading by design, single-product focus. Less information is more expensive. The Rolls-Royce of web design — everything moves deliberately. Never shouts. Creates desire through restraint and implication.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: luxury goods, high-end services, premium experiences.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="High-Fashion Web Design">
+          <div class="style-preview preview-high-fashion"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">High-Fashion Web Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Season codes, editorial photography, stark serif type, unexpected layout choices. Eschews usability conventions for aesthetic ones. Balenciaga's website is famously difficult to use — intentionally. Fashion design prioritises feeling over function in ways that would be catastrophic in SaaS but perfect for culture.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: fashion labels, cultural brands, high-art institutions.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Luxury Minimalism">
+          <div class="style-preview preview-luxury-minimal"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Luxury Minimalism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Minimalism with expensive taste — off-white backgrounds, gold hairline rules, serif headings, generous tracking in headlines. Communicates: "we don't need to try." Every element is exquisitely placed. Often used by wealth management, premium real estate, and heritage fashion brands.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: luxury services, premium real estate, wealth management, heritage brands.</div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="retro-nostalgic" data-name="Scandinavian Minimalism">
+          <div class="style-preview preview-scandi"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Scandinavian Minimalism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Warm minimalism inspired by Nordic design — off-whites, natural textures, carefully considered negative space, functional beauty. Hygge and lagom translated to pixels. Feels lived-in rather than sterile. Human warmth within minimalist constraints. Think IKEA's digital presence.</p>
+            <div class="style-card-use" style="font-size:11px;font-family:var(--font-mono);color:var(--emerald);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">→ Best for: lifestyle brands, home goods, wellness, Scandinavian-inspired products.</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: SYSTEMS DESIGN                                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="systems-design">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">◫</div>
+        <div class="category-header-text">
+          <h2>Systems & Principles-Based Design</h2>
+          <p>Design as a repeatable system — concerned with the rules that generate good outcomes rather than individual visual choices.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="systems-design" data-name="Accessibility-First Design">
+          <div class="style-preview preview-a11y"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Accessibility-First Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">WCAG compliance as design foundation — 4.5:1 contrast ratios, semantic HTML, focus indicators, screen reader support. Not a limitation: accessibility constraints often produce better design for everyone. The curb cut effect: ramps help wheelchair users, cyclists, and parents with prams alike.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: public services, healthcare, financial tools, and frankly all products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Performance-First Design">
+          <div class="style-preview preview-perf-first"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Performance-First Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Every aesthetic decision evaluated against its performance cost. Images compressed to minimal viable quality. Fonts subset. Animations CSS-only. No third-party scripts unless essential. Creates design that functions beautifully on 3G — particularly relevant for African mobile-first contexts where data is expensive.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: Africa-market products, rural-accessible tools, any global product with diverse connectivity.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Mobile-First Design">
+          <div class="style-preview preview-mobile-first"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Mobile-First Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Designed for small screens first, expanded to large. Forces prioritisation — you can't put everything on a 375px screen, so you discover what actually matters. In South Africa, where most users access the web on mobile, this isn't a methodology choice — it's a reality requirement.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: all African-market products. Most consumer apps globally. The default starting point.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Grid-Based Design">
+          <div class="style-preview preview-grid-based"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Swiss Brutalism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The unlikely fusion of Swiss grid precision and brutal rawness — strict structural underlying grids combined with aggressive typography and harsh contrasts. Uses Helvetica at brutal scale, red and black primaries, visible column structure. Discipline and aggression in the same breath.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: design publications, cultural institutions wanting gravitas and edge.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Industrial Design Aesthetic">
+          <div class="style-preview preview-industrial"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Industrial Design Aesthetic</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Machine aesthetics applied to UI — warning stripes, metal textures, utility typography, structural grid patterns. Communicates durability, precision, and power. Common in manufacturing, engineering, and logistics software. Function expressed so clearly it becomes beauty.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: manufacturing software, engineering tools, logistics platforms, hardware brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Layered Depth Design">
+          <div class="style-preview preview-layered-depth"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Layered Depth Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Z-axis used as a primary design tool — foreground, midground, background clearly differentiated through colour, blur, and opacity. Creates visual hierarchy through spatial depth rather than just size. The page has physical presence. Important information lives at the front.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: complex dashboards, multi-layer applications, premium product experiences.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="systems-design" data-name="Postmodern Design">
+          <div class="style-preview preview-postmodern"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Art Direction–Driven Design</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">Every section of the page has its own visual language, directed by an art director rather than constrained to a design system. Creates editorial variety — scrolling through feels like flipping through a portfolio. Requires strong central vision to prevent incoherence.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: agency websites, annual reports, editorial projects, brand showcases.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CATEGORY: FUTURE & AI-NATIVE                               -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="category-section" id="future-native">
+    <div class="container">
+      <div class="category-header">
+        <div class="category-icon">⬡</div>
+        <div class="category-header-text">
+          <h2>Future & AI-Native Design</h2>
+          <p>The frontier — design systems being invented right now for new paradigms: spatial computing, AI agents, and conversational interfaces.</p>
+        </div>
+      </div>
+      <div class="styles-grid">
+
+        <article class="style-card" data-category="future-native" data-name="AI-Agent Interface Design">
+          <div class="style-preview preview-ai-agent"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">AI-Agent Interface Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Interfaces designed around AI agents that act — not just answer. Progress indicators for multi-step tasks, tool call visualisation, uncertainty communication, and intervention points where humans take back control. New challenges: how do you show a computer thinking? This design language is still being invented.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: AI workflow tools, coding assistants, autonomous agents, LLM-powered products.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Conversational UI Design">
+          <div class="style-preview preview-conversational"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Conversational UI Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Chat as primary interaction model — bubbles, typing indicators, message threading, quick reply suggestions. Design around dialogue rather than forms and buttons. Reduces UI surface area massively. Challenges: discoverability, history, and the moment conversation is worse than a button.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: chatbots, AI assistants, customer service, voice interfaces.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Spatial Computing UI">
+          <div class="style-preview preview-spatial-computing"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Spatial Computing UI</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">visionOS and AR/VR design conventions — windows that float in physical space, translucent panels, eye-tracked interactions, depth and occlusion as design elements. Apple Vision Pro established a new visual language. The design constraints of 3D space differ fundamentally from 2D screens.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: Apple Vision Pro apps, AR applications, future-forward product exploration.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="AI-native UX Design">
+          <div class="style-preview preview-ai-native"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">AI-Native UX Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Products built from the ground up around AI capabilities — not AI bolted onto existing UX. Interfaces that adapt to individual users, context-aware defaults, natural language everywhere. Challenges every UX assumption built over 40 years. The biggest design shift since the touchscreen.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: AI-first products, next-generation SaaS, any product category being rebuilt with LLMs.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="High-Tech Futurism">
+          <div class="style-preview preview-high-tech"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">High-Tech Futurism</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Deeply dark UIs, electric cyan accents, particle systems, thin scanning lines, and radial UI elements. Military HUD meets consumer interface. Creates the feeling of operating advanced systems. Associated with defence tech, quantum computing, and next-gen infrastructure companies.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: frontier tech companies, advanced engineering tools, science-fiction becoming product.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Narrative Product Design">
+          <div class="style-preview preview-narrative"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Narrative Product Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">The product itself tells its story — feature discovery through narrative, onboarding as a journey, contextual storytelling at the point of value. Combines UX with content strategy. Users understand why they're doing something, not just how. Deep context delivered exactly when needed.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: complex products with steep learning curves, innovative tools, mission-driven companies.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Interactive Documentary Style">
+          <div class="style-preview preview-interactive-doc"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Interactive Documentary Style</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Long-form multimedia exploration of a single topic — chapter navigation, embedded video, data visualisations, and text interwoven. The user controls their depth of engagement. National Geographic, ProPublica, and The Guardian define this space. Web journalism at its highest craft.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: investigative journalism, in-depth brand stories, complex topic explainers.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Creative Developer Aesthetic">
+          <div class="style-preview preview-creative-dev"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Creative Developer Aesthetic</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">The visual language of developers who are also artists — code snippets as design elements, dark IDEs as aesthetic context, function calls as typography. The craft of engineering displayed as proudly as the product. Personal brand design for people who build things.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: developer portfolios, engineering blogs, OSS project sites, technical personal brands.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Interactive Portfolio Design">
+          <div class="style-preview preview-interactive-portfolio"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Interactive Portfolio Design</h3>
+              <span class="style-tag tag-emerging">Emerging</span>
+            </div>
+            <p class="style-card-desc">Portfolios that demonstrate skill through the experience itself — a designer's portfolio that is beautifully designed, a developer's portfolio that does something technically impressive. The best portfolio proves the brief before you read a single case study.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: designers, developers, creative professionals whose work is their proof.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="style-card" data-category="future-native" data-name="Startup Modernism">
+          <div class="style-preview preview-startup"></div>
+          <div class="style-card-body">
+            <div class="style-card-header">
+              <h3 class="style-card-title">Startup Modernism</h3>
+              <span class="style-tag tag-modern">Modern</span>
+            </div>
+            <p class="style-card-desc">The clean, optimistic visual language of venture-backed software companies — friendly illustrations, product screenshots, testimonial rows, clear benefit-driven copy. Polished but approachable. Communicates: serious product, accessible team. The dominant aesthetic of Y Combinator demo days.</p>
+            <div class="style-card-meta">
+              <div class="style-card-use">Best for: early-stage startups, VC pitch materials, product-market-fit stage companies.</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Section ──────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Design is a<br/><span style="color:var(--amber)">language</span> you can learn.</h2>
+      <p>
+        Understanding design styles is how engineers stop building things that work and start building 
+        things that resonate. The style is the signal. Choose intentionally.
+      </p>
+      <a href="https://qwabi.co.za" class="cta-btn">
+        Work with me →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          © 2025 <a href="https://qwabi.co.za">Ayabonga Qwabi</a> · Senior Product Engineer · Eastern Cape
+        </div>
+        <div class="footer-links">
+          <a href="https://qwabi.co.za">Portfolio</a>
+          <a href="https://business.qwabi.co.za">Qwabi Engineering</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const scrolled = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+
+      // Back to top
+      const btn = document.getElementById('back-to-top');
+      if (doc.scrollTop > 400) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    });
+
+    // Filter styles
+    function filterStyles(query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.style-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const desc = card.querySelector('.style-card-desc').textContent.toLowerCase();
+        const match = !q || name.includes(q) || desc.includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      document.getElementById('countNum').textContent = visible;
+
+      // Hide/show empty sections
+      document.querySelectorAll('.category-section').forEach(section => {
+        const hasVisible = Array.from(section.querySelectorAll('.style-card'))
+          .some(c => c.style.display !== 'none');
+        section.style.display = hasVisible ? '' : 'none';
+      });
+    }
+
+    // Category pill active state
+    document.querySelectorAll('.cat-pill[data-cat]').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const cat = pill.dataset.cat;
+        const searchInput = document.getElementById('styleSearch');
+        searchInput.value = '';
+
+        if (cat === 'all') {
+          document.querySelectorAll('.style-card').forEach(c => c.style.display = '');
+          document.querySelectorAll('.category-section').forEach(s => s.style.display = '');
+          document.getElementById('countNum').textContent = '102';
+        }
+      });
+    });
+
+    // Intersection observer for category pills
+    const sections = document.querySelectorAll('.category-section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+          const active = document.querySelector(`.cat-pill[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

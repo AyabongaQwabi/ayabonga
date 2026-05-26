@@ -61,9 +61,48 @@ export function refreshScrollTriggers(): void {
   ScrollTrigger.refresh();
 }
 
-const prefersReduced = (): boolean =>
-  typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+export type MotionPreference = 'system' | 'play' | 'reduce';
+
+export function getMotionPreference(): MotionPreference {
+  if (typeof window === 'undefined') return 'system';
+  const stored = localStorage.getItem('ayabonga-motion-preference');
+  if (stored === 'play' || stored === 'reduce') return stored;
+  return 'system';
+}
+
+export function setMotionPreference(pref: MotionPreference): void {
+  if (typeof window === 'undefined') return;
+  if (pref === 'system') {
+    localStorage.removeItem('ayabonga-motion-preference');
+  } else {
+    localStorage.setItem('ayabonga-motion-preference', pref);
+  }
+  
+  // Propagate the change via DOM attribute so CSS selectors can react immediately
+  const resolved = prefersReduced() ? 'reduce' : 'play';
+  document.documentElement.setAttribute('data-motion-preference', resolved);
+  
+  window.dispatchEvent(new Event('motion-preference-changed'));
+}
+
+export function prefersReduced(): boolean {
+  if (typeof window === 'undefined') return false;
+  if ((window as Window & { __PRERENDER__?: boolean }).__PRERENDER__) return true;
+
+  // Strategic URL override flags
+  if (window.location.search.includes('motion=play') || window.location.search.includes('animate=true')) {
+    return false;
+  }
+  if (window.location.search.includes('motion=reduce') || window.location.search.includes('animate=false')) {
+    return true;
+  }
+
+  const pref = getMotionPreference();
+  if (pref === 'play') return false;
+  if (pref === 'reduce') return true;
+
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
 /** Page curtain exit: delay 50ms + duration 650ms (see PageCurtain.tsx). */
 export const PAGE_CURTAIN_EXIT_MS = 720;
