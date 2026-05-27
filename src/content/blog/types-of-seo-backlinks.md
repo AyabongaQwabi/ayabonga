@@ -74,12 +74,12 @@ Sidebars that list "blogs I read," often sitewide. Same pattern as footers: repe
 
 Episode 37 does not name these, but you will see them next to the types above:
 
-| Package name | What you usually get |
-| --- | --- |
-| Social bookmark backlinks | Bookmarking site listings, not an article that cites you |
-| PBN posts | Articles on sites that exist to sell links |
-| Web 2.0 posts | Spun posts on free subdomains (wordpress.com, blogger.com, etc.) |
-| Wiki backlinks | Wiki pages, sometimes relevant, often same footprint at scale |
+| Package name              | What you usually get                                             |
+| ------------------------- | ---------------------------------------------------------------- |
+| Social bookmark backlinks | Bookmarking site listings, not an article that cites you         |
+| PBN posts                 | Articles on sites that exist to sell links                       |
+| Web 2.0 posts             | Spun posts on free subdomains (wordpress.com, blogger.com, etc.) |
+| Wiki backlinks            | Wiki pages, sometimes relevant, often same footprint at scale    |
 
 A real article on a property you control, with a link that fits the paragraph, is not the same as 50 spun posts with matching anchors. PBNs in particular fail the spam-site test in the exceptions section below.
 
@@ -143,5 +143,11 @@ Because counts include junk the competitor does not have, or because their fewer
 ## Where to go next
 
 For the full audio walkthrough (including link attributes like nofollow), watch [Episode 37 on YouTube](https://www.youtube.com/watch?v=HFHg6XwPha4).
+
+If you are launching on a fresh domain, read [How I'd Run SEO on a New Website](/blog/seo-brand-new-website-playbook) next (Grumpy SEO Guy Episode 16).
+
+For AI Overviews and showing up beyond Google, see [SEO in 2025 When Search Is Not Just Google](/blog/seo-2025-ai-era-search-everywhere).
+
+For citations in ChatGPT and how that differs from classic link building, see [What SEO and AEO Are and When to Use Each](/blog/seo-vs-aeo-what-actually-differs).
 
 If you are untangling a penalty, planning launch SEO, or trying to tell a vendor package from a real editorial link, this taxonomy is the first pass I run. If you want help on a live site, [get a quote](https://www.qwabi.co.za/get-a-quote) and send your domain plus your target keywords.
