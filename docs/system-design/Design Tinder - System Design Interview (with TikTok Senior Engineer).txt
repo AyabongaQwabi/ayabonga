@@ -1,0 +1,761 @@
+00:00 I'd like you to design either Tinder or
+00:02 Bumble take your pick
+00:07 hi everyone and welcome to another mock
+00:09 interview with exponent today I'm here
+00:12 with Yen Lee Yan you want to introduce
+00:14 yourself
+00:15 yeah hi everyone I'm Yen I'm currently
+00:18 working as a senior software engineer at
+00:21 Tech talk
+00:23 um we're on the mobile reliability team
+00:24 and previously I was a meta for four
+00:27 years working on Android messenger and
+00:29 also arvr for the Ray-Ban stories of
+00:33 Facebook released
+00:35 um yeah I'm happy to be here uh doing a
+00:37 mock interview
+00:38 awesome we're happy to have you so my
+00:41 question today for you yen is I'd like
+00:43 you to design either Tinder or Bumble
+00:45 take your pick before I jump straight
+00:47 into the design
+00:49 uh let me go over the functionalities
+00:53 and requirements
+00:54 so
+00:57 um
+00:57 I would like to list out kind of like
+00:60 the functionalities that we're going to
+01:01 be touch on
+01:04 uh today so for example I think that
+01:07 when I think of a
+01:09 app like Tinder I am thinking about like
+01:13 a profile that will probably be
+01:16 creating when the user first joined
+01:20 um
+01:21 and probably like a feed slash
+01:25 recommendation
+01:28 and then like matching so like this
+01:32 swipe right and if two users write swipe
+01:35 right on each other will be uh matching
+01:38 that to users on the back end
+01:41 and then lastly private messaging so
+01:45 once two users are matched they'll
+01:48 probably be creating a thread for
+01:51 texting and exchanging messages uh
+01:54 possibly uploading images or videos in
+01:58 their private inbox so images videos
+02:03 and then uh just kind of going a little
+02:07 bit more detail on the profile creation
+02:10 I'm probably like a bio so like
+02:12 preferences
+02:15 and then uh images for the their
+02:17 profiles and then potentially videos
+02:20 maybe that's an extra
+02:23 um
+02:24 so these are kind of the core uh
+02:28 functionalities that I'm thinking of let
+02:31 me know if I'm missing anything
+02:33 I think this is a good start yeah okay
+02:37 um and then maybe I can uh
+02:40 uh here I can maybe add like a little
+02:43 extra if we have time so something like
+02:46 super alike that I so I personally
+02:49 not been an active user of Tinder but I
+02:52 kind of know what
+02:53 super luck is but
+02:56 um and then system monitoring like
+02:58 logging
+02:60 just kind of Health uh state of the
+03:04 overall system and then maybe like a
+03:06 subscription model uh which I assume is
+03:09 how they actually monetize their
+03:11 platform yeah yeah
+03:13 and then I'm curious I'm curious why
+03:16 system monitoring and logging is under
+03:18 is under extra like what What affected
+03:20 that decision to put it there
+03:22 um so it's more for the sake of the
+03:25 interview just because I think logging
+03:27 system and monitoring is pretty much
+03:30 like its own sort of like design and
+03:34 um for the sake of the interview I uh I
+03:37 think it's a core component but I I
+03:39 don't know if we want to dive super deep
+03:41 into this part of it but
+03:45 yeah okay sounds good
+03:49 so next I think we can discuss a little
+03:52 bit about the traffic so traffic
+03:56 I think roughly I'm thinking
+03:59 um from like a social media app
+04:01 perspective I'm thinking maybe they have
+04:03 50 million users
+04:06 um maybe
+04:07 uh I'm just guessing here a million
+04:09 active user per day
+04:13 so uh not everyone is actively using
+04:16 Tinder but there can be only 50 users
+04:19 registered
+04:21 um and then let's say 500k new profile I
+04:25 might be underestimating
+04:26 numbers uh created and then
+04:30 like a billion matches per day let's say
+04:35 um
+04:38 the number is kind of roughly estimated
+04:40 uh it could be a little on the lower end
+04:44 um but essentially this should let us
+04:49 uh have a little rough estimate on like
+04:53 the storage that we need for all the
+04:56 images for the profiles so let's say
+04:59 there is 50 million users and 1 million
+05:03 active users and let's say like 500k new
+05:06 profile create every day then uh I think
+05:09 we can probably do some calculation on
+05:12 uh the photo storage so for in terms of
+05:15 profile
+05:17 uh
+05:19 uh photo storage let's say
+05:24 um 200k
+05:28 um per photo and then there's
+05:31 let's say
+05:34 on average six photos per user and then
+05:37 there's
+05:38 uh 50 million user roughly and then
+05:42 plus like the 500k new profile created
+05:46 uh I think roughly
+05:49 um
+05:50 we'll be looking at
+05:54 like
+05:60 like 300
+06:05 um 300 to 600 TB I think
+06:11 um and then for messaging there's
+06:13 probably way more here
+06:16 so I think for messaging we can say
+06:20 there's 200 million messages Exchange
+06:25 and
+06:26 um
+06:27 10 million photos uploaded every day
+06:31 and then we can do more deep dive into
+06:34 like the storage part when we get into
+06:36 that section of the design
+06:39 um yeah overall I think this is kind of
+06:42 the background functionality and
+06:44 requirements that I'm gonna base off of
+06:46 my design if uh do you have any other
+06:49 questions before I dive right into the
+06:51 design portion no I think we can again
+06:54 we can dive in
+06:56 so let's start with the let's just go
+06:59 down from like the the list of uh
+07:01 functionality here let's go from profile
+07:04 creation so
+07:07 um here I think we're thinking of
+07:09 creating a profile and then
+07:12 um
+07:14 let's say
+07:16 we need to upload the images and also
+07:19 creating storing all the preferences and
+07:22 like the bio information
+07:25 so
+07:27 um let's say from the client perspective
+07:30 we'll start from the client side so
+07:32 client
+07:33 said the app
+07:36 and I think that
+07:38 the flow that I'm thinking of is when
+07:42 user are kind of setting up their
+07:45 profile they'll be
+07:47 uh kind of answering a series of
+07:49 questions so those are kind of like in
+07:51 like a text form with like I'm thinking
+07:53 like a Json format but then they'll also
+07:56 be uploading images so what I'm thinking
+07:58 is they'll probably first need to upload
+08:01 images before they can actually
+08:03 successfully store everything together
+08:06 so
+08:09 um hear the flow the general flow that
+08:12 I'm thinking of is they'll probably need
+08:14 to upload and their profile images to
+08:18 like upload services
+08:20 and then
+08:22 um
+08:23 then it touches like the application
+08:25 service
+08:26 so this will be
+08:29 sort of like
+08:30 uh transcoding the images or resizing
+08:33 the images to make sure that we don't
+08:34 store like the original size and we can
+08:37 save a little bit of space and then
+08:39 doing some
+08:40 other kind of processing on the image to
+08:44 ensure like whether we want to filter or
+08:46 do some encoding or something
+08:48 and then we can store it into like a
+08:51 back-end blob storage
+08:54 um and then this is kind of like the
+08:56 image Pipeline and I would assume that
+08:59 it would kind of return back some sort
+09:01 of image ID for each of the images which
+09:05 we can use for the overall profile of
+09:10 Json metadata so I think here uh before
+09:15 I dive into the design of the whole
+09:17 profile image I'm just gonna
+09:19 outline what like a profile data kind of
+09:22 looks like
+09:24 so for profile data I'm thinking there's
+09:27 going to be a profile ID which is the
+09:29 string
+09:31 and then user ID
+09:34 uh also a string
+09:39 and uh just secure kind of noting that I
+09:42 have a profile ID and a user ID because
+09:44 uh if the user decides to delete their
+09:48 profile once they do find like a partner
+09:51 and then if Unfortunately they
+09:53 emotionally need to break up with them
+09:54 and recreate a profile uh they'll be a
+09:56 different profile ID for the same user
+09:58 correct and then for preference
+10:02 um
+10:03 there's another layer of um
+10:07 Json so like for example gender
+10:11 uh string
+10:13 and then if they have like a low like a
+10:17 h-bound
+10:18 preference
+10:21 um
+10:23 and then other kind of file preference
+10:26 that they have
+10:29 um
+10:31 I won't list all of them and then some
+10:33 sort of Bio information about themselves
+10:35 uh
+10:37 so their own gender
+10:40 age
+10:43 and then location information
+10:50 and then maybe other types of bile
+10:53 information
+10:56 and then photo
+10:58 IDs which will be
+11:03 just a list of IDs
+11:08 so the list of IDs are coming from the
+11:11 back end server once the uploads have
+11:14 been successful so only when they are
+11:16 able to upload their profile images
+11:19 while we actually finish filling out
+11:22 this profile data and then
+11:25 um
+11:26 once they do that I think we can go
+11:30 ahead and kind of fill up the second
+11:32 part of this pipeline which is uh
+11:35 creating that profile into inserting
+11:38 that into the profile database
+11:41 so again I think here
+11:45 uh
+11:48 there's kind of like two and so profile
+11:53 user profile DB which I'm thinking of
+11:56 using sort of like a
+11:59 a nosql database uh to Pro uh to kind of
+12:03 capture this uh kind of
+12:06 unstructured sort of Json format Okay so
+12:11 here they would go
+12:15 from
+12:22 some sort of like a htvd
+12:25 post request
+12:29 and then um to the application server
+12:32 which will
+12:39 uh end up storing
+12:42 do any sort of processing it needs to
+12:44 um this sort of General lines which uh
+12:47 we can dive a little bit deeper but it
+12:50 will end up storing into
+12:54 um
+12:55 the profile DB and like I mentioned
+12:60 earlier like this is also
+13:04 like where we would be talking to like
+13:06 encoding service for like the
+13:18 um for the uploading service okay
+13:21 so this is pretty much like the general
+13:24 design flow for the profile creation
+13:28 and then um I think I will go on to the
+13:31 next part which is feed and
+13:33 recommendation and
+13:35 um I think after we've gone through kind
+13:38 of all the core components we can go
+13:40 back and talk about like scalability
+13:42 adding load balancer or like additional
+13:44 cash memory caches stuff like that
+13:48 um yeah so the next part is uh
+13:51 let's see feed recommendation
+13:56 so uh this part I think I kind of want
+14:00 to talk about sort of like the uh small
+14:05 many requirements of this area so
+14:09 um we want to first kind of like
+14:13 talk about General requirements of like
+14:16 our feed recommendation we would like to
+14:19 recommend
+14:21 um
+14:22 sort of like local
+14:24 users so we don't want to recommend
+14:27 people who are kind of across the globe
+14:30 and we also want to show active users
+14:34 so uh like I mentioned earlier there
+14:36 could be like 15 million registered
+14:38 users and some of them are within your
+14:42 area but they are not actually actively
+14:44 using so we do want to make sure that
+14:46 we're showing active users when it when
+14:49 it comes to feed recommendations yeah
+14:51 and we also want to make sure we balance
+14:53 between
+14:55 kind of like
+14:57 showing too many
+14:59 um matches versus not enough matches for
+15:02 each user
+15:04 so what that means is uh sort of like if
+15:08 one user is getting too many matches
+15:11 um then we kind of want to make sure
+15:12 that they are not uh getting recommended
+15:15 even more
+15:18 um and whereas some people are not
+15:20 getting any matches so we want to make
+15:22 sure we are focusing on uh adding
+15:26 more kind of like
+15:28 um I guess like reducing more uh
+15:32 requirements so reducing some of the
+15:34 filters or kind of loosening up those
+15:37 requirements when it comes to the
+15:39 recommendation
+15:40 um algorithm
+15:42 okay um is that is that like a product
+15:44 inspired
+15:47 um direction that you're going in yeah
+15:49 yeah okay
+15:51 and this could be kind of an extra thing
+15:53 but uh just kind of listening now and
+15:56 then maybe some sort of like
+15:58 so I think we want to prioritize either
+16:00 kind of like pretty fast recommendations
+16:04 So like
+16:05 um
+16:06 there's always like new matches or sorry
+16:09 new recommendations showing up so low
+16:12 latency versus kind of real uh time
+16:17 match
+16:18 uh recommendation I just say
+16:21 so this is kind of like where do we want
+16:24 to prioritize do we want to make sure
+16:26 that there's
+16:27 more recommendations coming in once a
+16:30 user kind of like swipe all that their
+16:33 profiles or do we want to make sure
+16:36 there are more users of the uh kind of
+16:41 newly created profiles that are showing
+16:43 up so I think this is something that we
+16:45 can discuss a little bit more I'm more
+16:47 leaning towards low Lindsay just because
+16:49 I feel like it doesn't really matter if
+16:51 we're kind of late to some of the newly
+16:54 created uh profiles if we eventually
+16:57 will show them
+16:59 but that is something that
+17:02 we can decide yeah so
+17:05 yeah so these are some of the things I'm
+17:08 gonna kind of keep in the back of my
+17:10 mind when I'm
+17:11 um designing this part okay
+17:14 um yeah so first I would like to kind of
+17:18 talk a little bit about how we can
+17:23 recommend the local users so one thing
+17:28 we can do is
+17:30 to kind of do like a database sharding
+17:33 based on geographical locations so since
+17:36 every user has provided their kind of
+17:39 like location so latitude and want to do
+17:42 we can use that information to sort of
+17:46 do like a Geo sharding when it comes to
+17:48 a database
+17:51 destroying their bio information when
+17:55 um when they are creating their profiles
+17:57 so
+17:58 using this sort of approach we can then
+18:03 perform a pretty fast look up and also
+18:07 make sure that we only
+18:10 retrieve information related to users
+18:13 that are surrounded by you
+18:15 and
+18:17 let's go ahead and sort of map out this
+18:20 design again we have the client
+18:26 the app
+18:29 and then
+18:32 let's
+18:37 uh
+18:40 this way
+18:42 so
+18:47 so we have a recommendation service
+18:51 okay
+18:52 which uh the client will be sending like
+18:55 a request
+18:57 so
+19:02 it's for a recommendation list
+19:10 and then
+19:13 so this part
+19:15 um I think uh to make things a little
+19:18 bit easier if you all understand we can
+19:20 go with a Geo sharding mapper
+19:24 okay so this uh allows us to kind of
+19:29 quickly
+19:31 grab or store file into the correct
+19:36 um
+19:37 Shard and essentially it's using
+19:41 um users latitude and longitude to kind
+19:44 of
+19:45 um
+19:47 uh store like a mapping between that and
+19:50 the sharding index and be able to kind
+19:54 of correctly figure out which Sharda we
+19:56 should be uh talking to
+19:59 okay and then
+20:03 um
+20:06 so this can be so so essentially the
+20:10 shorting mapper is kind of like a
+20:13 more like a wrapper interface to kind of
+20:16 talk to a an actual Library so for
+20:21 example we can use
+20:24 um
+20:25 like Google S2 is one of the I think
+20:28 popular Geo sharding uh database that we
+20:31 can be using so here we can kind of uh
+20:35 use that as our actual
+20:38 uh storage for achieving the Geo
+20:42 sharding and the geosharting mapper will
+20:44 just kind of directly talk to Google S2
+20:47 and store file into the storage or get
+20:51 all the shards uh needed and then
+20:54 um
+20:56 and I think that it will also just kind
+20:59 of
+21:00 talk to the shards so
+21:03 essentially here the uh design is that
+21:08 we will the client on the app will send
+21:10 like a get request for the
+21:12 recommendation list uh providing
+21:17 latitude and long
+21:20 and then the Geo
+21:24 um
+21:25 and the recommendation service will kind
+21:28 of send the location
+21:30 and other information needed over to the
+21:34 geosharting mapper
+21:37 and
+21:40 so here we have
+21:42 Zen thing location
+21:45 slash other info
+21:49 and then
+21:56 so here we kind of
+21:60 get all the shards
+22:03 needed
+22:04 for the current uh location so for
+22:07 example if we are looking at
+22:10 a user base in New York and it's the
+22:14 city is pretty dense so I would assume
+22:17 that uh there might be multiple uh cells
+22:21 or servers uh
+22:23 storing relevant information that will
+22:25 be needed for the user to use for the
+22:29 recommendation service so here we can
+22:32 access that by just talking to the US to
+22:35 interface and it will kind of access the
+22:37 right shards for us and then come back
+22:39 with the
+22:41 uh store information so
+22:44 okay
+22:50 so uh kind of making that into a more
+22:54 explicit
+22:56 API so we can say get recommended
+22:59 feed is our end coin
+23:03 and then
+23:06 we provide the user ID
+23:09 a profile ID
+23:17 so here actually if we think about it we
+23:21 uh request send get requests so instead
+23:25 of providing the lists we can just
+23:27 provide simply the user ID and the
+23:30 providing
+23:32 of the of the clients that you're sorry
+23:34 of the um users that you're returning
+23:36 from the recommender
+23:38 uh so so
+23:40 no so we are providing the
+23:45 um the user ID and providing of the user
+23:47 that we are currently
+23:50 um requesting the recommendation list
+23:53 from okay
+23:55 and then so by providing that it will
+23:58 send it to the server for the
+24:00 recommendation servers and then they
+24:02 will use their user ID and profile ID to
+24:06 retrieve the relative
+24:08 uh information store on the server side
+24:10 so if they're providing uh information
+24:13 has all the uh file information so for
+24:18 the locations of it will retrieve that
+24:20 recommendation and then send the
+24:21 location and other info information to
+24:24 the Geo sharding mapper which will get
+24:27 all the shards needed and then come back
+24:29 with a list of the
+24:31 uh
+24:32 other people users information back to
+24:35 the recommendation service and then it
+24:38 will
+24:38 do filtering on that so let's talk a
+24:42 little bit more on the recommendation
+24:44 service okay
+24:51 so this is the get request it will send
+24:56 and then
+24:58 um I think the response that we are
+25:01 hoping for is
+25:04 simply like a list of
+25:07 profiles that we wanna
+25:12 uh display and
+25:14 um
+25:15 a profile is simply I think earlier we
+25:20 had sort of like uh defined that here
+25:24 so if we can grab Alyssa profiles that
+25:28 we need to share to this user's fee then
+25:31 uh on the app and we can just simply
+25:34 display that into a UI so for the
+25:37 recommendation service
+25:39 um let's talk about what we need to be
+25:41 doing so we need to develop a strong
+25:44 kind of algorithm to filter out
+25:47 um
+25:48 sort of like a giant list of profiles or
+25:53 bio infos return back from like the Geo
+25:56 sharding mapper
+25:58 um
+25:59 and
+26:02 I think let's list a couple requirements
+26:05 what the recommendation service is
+26:07 actually doing so okay
+26:10 um um the first one is we need to make
+26:13 sure
+26:14 all the profiles being displayed on the
+26:17 feed is uh fulfilling
+26:22 the current
+26:24 users
+26:27 preferences
+26:30 so remember when we were defining kind
+26:33 of like the profile every user has like
+26:35 preference that they can set so as part
+26:38 of the recommendation service is to make
+26:40 sure we are filtering out the
+26:43 um
+26:45 the profiles that are not meeting these
+26:49 user preferences and then
+26:51 we should also only include
+26:55 active users
+26:58 so what this means is any users who
+27:02 have not been you using the app for at
+27:06 least more than
+27:08 um within like five days for example we
+27:12 will be filtering them out so
+27:15 filter out any user who
+27:19 has lost logged into the app
+27:24 more than
+27:26 X days ago okay so
+27:31 um this can be part of the profile
+27:33 information that we get in the back end
+27:36 where we are storing any
+27:39 um
+27:40 login information so when the user login
+27:42 will do like a push to the server to
+27:44 update their profile and add like a lost
+27:47 login field with a server time okay and
+27:52 then this will allow us to also
+27:53 recognize who are the active users
+27:58 um and then we should ensure that um
+28:03 the list has like a higher limit so for
+28:06 example we don't want to be
+28:09 um we don't want to be returning back
+28:12 like 2 000 um profiles back to the user
+28:16 because
+28:18 then they will not be able to like half
+28:20 the time to scroll all of them and by
+28:23 the time they go through all of them it
+28:24 might be kind of old stale so hardly
+28:28 limit on the return
+28:32 count so let's say 50 is the count
+28:38 okay could be dynamic set by a setting
+28:40 so
+28:42 um sort of like
+28:45 very basic and I think that uh let's go
+28:49 back to what we have here we are
+28:51 recommending local users so by using the
+28:54 Joe sharding algorithm we should be able
+28:58 to achieve that show active user so this
+29:00 is a part of the recommendation services
+29:04 uh balancing between matches so this is
+29:06 something extra that we have not been
+29:08 touching on so this can also be included
+29:10 in part of the recommendation service
+29:12 where uh users are also filtering
+29:15 through to make sure that they've only
+29:17 been
+29:19 um
+29:20 they've only been matched a certain
+29:22 number of times otherwise we can have a
+29:25 smaller limit on the uh returning count
+29:28 a low latency versus real-time
+29:30 recommendation I think by using the Geo
+29:32 sharding algorithm I think we will
+29:35 achieve pretty lowly and see just
+29:37 because we will also always be accessing
+29:39 uh the shards that are relevant to us
+29:42 yeah I'd like to hear a little bit more
+29:44 about this low latency decision so I
+29:46 remember you touched on a little bit
+29:48 earlier what factored into that decision
+29:50 that you made
+29:52 yeah so I I guess this is kind of like a
+29:56 personal decision on on this but just
+29:58 kind of breaking down the two different
+30:01 approach so low latency versus real-time
+30:04 recommendation so low latency uh is sort
+30:07 of like when it comes to the app uh kind
+30:11 of running out of recommended feed so
+30:13 when the feed is kind of empty when you
+30:15 have no longer any profiles to swipe on
+30:18 um when the fee needs to retrieve more
+30:21 recommended uh lists I think when it
+30:24 comes to low Lindsay versus real-time
+30:27 recommendation real-time recommendation
+30:29 uh sort of requires like a set of
+30:34 different
+30:35 um algorithm and
+30:37 um storing mechanism where could you
+30:40 define could you define the two first
+30:45 uh the two like what it means yeah like
+30:49 what is the product behavior on either
+30:51 of these options
+30:52 sure so low latency I think it means
+30:55 when you are running out of uh
+30:58 recommended feed for example if the user
+31:01 swipes left uh just really fast and went
+31:05 through all of their feed entirely in
+31:07 like a very short amount of time and
+31:11 um the app needs to request a
+31:13 recommended list from the server and
+31:16 this the waiting time here if it's
+31:20 for example if it's under
+31:22 um
+31:23 a few seconds
+31:26 um
+31:27 let's say 10 seconds
+31:30 um I think I would say like within a
+31:33 couple seconds it's all pretty
+31:35 relatively
+31:36 low latency when we're talking about
+31:39 such large scale and doing sort of
+31:42 back-end processing on filtering and
+31:44 everything so I think within seconds
+31:47 user can kind of go back to swiping
+31:50 versus real-time recommendation I'm
+31:52 thinking of uh where the the back end
+31:55 needs to do more processing and could
+31:57 take up to minutes
+31:59 to kind of curate a more real-time
+32:03 recommendation on user who are both
+32:06 relevant to you but also
+32:08 uh have like new profiles created
+32:12 and why are we why do we care about the
+32:15 new profiles created is that because
+32:16 they've just run out of people in the
+32:18 geographic area that they've specified
+32:20 yeah I think the new
+32:23 when it comes to real-time
+32:24 recommendation like new profiles
+32:27 I think it matters to Tinder or like
+32:30 kind of dating app just because
+32:33 um
+32:34 it kind of ties into the active user
+32:37 part where uh we need user who are
+32:40 actively using and who are fresh to the
+32:43 app as opposed to people who could be
+32:45 kind of like three day oh or um not
+32:50 actively using the app
+32:52 um to create like more matches right so
+32:55 the point is creating more matches got
+32:58 it so we're saying we're optimizing for
+32:60 even if it's like you know people who
+33:02 are not Super Active even if it's not
+33:04 the best match for you we'd rather just
+33:06 give you people ASAP for you to see
+33:08 beyond the initial list that we gave you
+33:11 then make you wait for the best possible
+33:13 matches yeah yeah got it okay and and I
+33:16 think the decision is kind of subjective
+33:19 I I would say I I think in general from
+33:22 like the social media aspect I know that
+33:24 uh at least from my experience uh people
+33:26 users are pretty impatient so
+33:30 um kind of design that I've always opted
+33:33 for would be kind of like low William
+33:34 Siva sacrificing the quality of the
+33:37 algorithm uh result here okay yeah
+33:40 that's fair yeah
+33:42 so
+33:44 yeah so that's uh kind of where I was
+33:47 going with and
+33:50 uh let's see
+33:52 yeah so going back to the recommendation
+33:54 Service uh these are kind of like the
+33:57 base basic algorithm uh filtering system
+34:00 we have and then
+34:03 um we can add a bit more on the
+34:06 balancing between matches and then the
+34:08 lowland C versus real-time
+34:09 recommendations when it comes to uh
+34:12 using the Geo sharding
+34:15 this is a good place to stop
+34:17 stop much yen
+34:19 post
+34:24 no I think that I this does a huge space
+34:27 like I mentioned I think monitoring and
+34:29 logging is like a whole other area
+34:32 yeah if for people who gets broad
+34:36 questions like these in their interviews
+34:38 what are what are your recommendations
+34:40 to them how do you recommend they
+34:41 approach it
+34:44 um yeah I think I would always go from
+34:46 kind of big to small so breaking down
+34:50 from the general requirements
+34:53 functionalities and focusing on a couple
+34:56 components and then from there kind of
+34:59 apply the same thing just kind of
+35:02 breaking down
+35:03 um like here I think even in this space
+35:05 I was doing breaking down into kind of
+35:08 different components and different
+35:09 requirements within each of the these
+35:12 sub-components
+35:14 and then focusing on different things
+35:16 and I think as an interviewer I would
+35:19 also kind of do the same thing if the
+35:23 interviewee is kind of focusing on
+35:25 something and going too deep into one
+35:27 thing kind of pull them back and ask
+35:29 about something else or kind of hint
+35:32 towards like okay let's what about this
+35:34 other core functionality that you
+35:36 mentioned yeah yeah okay that's great
+35:39 thank you so much yeah and it was
+35:41 wonderful having you
+35:43 um and I hope people are able to use
+35:44 this to build their own dating app so
+35:45 we'll see
+35:48 foreign
+35:53 foreign

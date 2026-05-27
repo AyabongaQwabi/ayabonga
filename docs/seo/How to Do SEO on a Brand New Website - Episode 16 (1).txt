@@ -1,0 +1,357 @@
+00:00 this is grumpy SEO Guy episode 16. how I would do SEO on a brand new website
+00:07 you're listening to grumpy SEO guide the SEO podcast that doesn't waste your time with nonsense that doesn't work I'm the
+00:13 grumpy SEO guy and I'm sharing with you the strategies that have helped me successfully run my SEO Agency for the
+00:19 last 14 years in this podcast I'll be sharing my knowledge and experience discussing tips and strategies and
+00:25 trying to help you cut through the confusion that permeates this industry if you listen to this podcast you will
+00:30 know more about SEO than 99 of people on the planet ready let's get started
+00:38 the grumpy SEO guy let me tell you I am grumpy today I'm grumpy today because people always think they know a lot
+00:45 about SEO but they don't actually know how to do it they don't actually know how to put it all together
+00:52 in this episode I'm going to walk you through how I would do SEO for a brand
+00:57 new website and when I say brand new website I mean a website that was just recently created and that has no SEO
+01:05 done to it yet but before we do that my lawyer tells me that I have to say this right now a quick disclaimer before we
+01:11 get started everything I say here is based on my experience and opinion from 14 years in the industry I don't officially know how Google or any other
+01:17 search engines work everything I say here is hypothetical and based on my experience this podcast does not constitute advice or Services what
+01:23 worked for me may or may not work for you okay back to the show so I want to tell you before we go any
+01:29 further that I like getting a client like that for example if a client comes
+01:35 to us maybe they're a startup company maybe they're a brand new business maybe they just haven't really done any SEO on
+01:41 their domain yet I like getting that kind of client why because it means we don't have to undo
+01:47 any of the bad SEO that some other SEO agency did I've mentioned this before but it's not
+01:55 surprising to me how often a client will come to us and say look we've worked
+01:60 with like two other SEO agencies before you and they didn't even do anything you know we worked with them for six months
+02:06 we worked with them for a year and they literally did nothing we didn't get any ranking increase at all
+02:12 I'm not even surprised when I hear that because so many SEO agencies and so many
+02:17 consultants are scammers so I like it when we get a client that has not had a
+02:24 single thing done with regard to SEO because it means we can do everything the proper way and you know what it gets
+02:32 awesome results okay so I'm gonna be kind of high level in this episode and
+02:37 we're going to talk about four things we're going to talk about keyword research we're going to talk about competitor analysis we're going to talk
+02:45 about how to put content on your website and how quickly to put content on your website and we're going to talk about
+02:50 building backlinks to your website and to go into more depth on that last one we're going to talk about how quickly
+02:56 and when you should build backlinks now all those things that I just said okay keyword research competitor analysis
+03:03 putting content on your website and the speed of backlink building
+03:09 it's going to be very high level okay I'm not going to give you exact
+03:14 specifics you must do it exactly this way because there is no exactly this way
+03:20 but more importantly if you understand the principles and the concepts that I'm
+03:25 explaining in this episode you will know how to do it in the future okay have you
+03:30 ever heard the saying give a man a fish feed him for a day teach a man to fish feed him for the rest of his life okay
+03:37 first of all I don't really like that saying because I feel like it's frequently used by selfish people as a
+03:43 reason for why they don't want to help you like they're not trying to help you by not giving you a fish they just don't
+03:50 want to give you a fish and so they say oh forgive you a fish then you'll eat for a day but if I teach you to
+03:56 officially for a lifetime but then they don't even teach you how to fish either they just don't want to help you and
+04:02 they're blaming it on that saying that's why I don't like that saying make no mistake the saying is true but I don't
+04:08 like the way it's used because it's generally used as an excuse for selfishness and laziness
+04:14 but I but I don't I don't want you to misinterpret what I'm doing here I'm not giving you the exact specifics but I'm
+04:21 teaching you a concept for how to do it so maybe you could say I'm giving you a
+04:27 fish while I'm teaching you how to fish so not only do you eat today but you'll
+04:32 know how to eat every day for the rest of your life okay so we're going to be very high level
+04:38 because it's important that you understand these Concepts and if I were to just okay let me put it another way have you ever had somebody try to
+04:44 explain something to you and they just teach you all of this stuff but you don't know why you're doing any of the
+04:49 things that they're teaching you for example maybe you felt that way about math class in high school or college or
+04:55 university or whatever and you're learning these complicated formulas to do things but you didn't know why you
+05:01 were doing them you just memorized formulas and what to do to the numbers but you didn't actually know why you
+05:06 were doing anything you're just like okay like that drives me nuts so I'm going to teach you the concepts of why
+05:13 you need to do things a certain way and then in future episodes we might go more into specifics about exactly how to do
+05:20 the things in specific scenarios with exact numbers and figures and all the
+05:26 data that everybody wants but the data is useless if you don't understand the theory okay enough ranting let's get
+05:33 started okay so let's assume like I said for this example that we have a brand new
+05:38 website recently created maybe it's got you know maybe it's got like a placeholder page on it maybe they wrote
+05:44 like coming soon and like that's all that's on it okay and that's it there's no SEO there's not
+05:50 really any content there's no backlinks okay none of the stuff okay this is how I would do it if a client
+05:57 came to me and said hey we have our domain but we don't really have the website set up yet how should we move forward this is how I
+06:04 would do it and by the way this is very close to how we do it with clients I'm just saying that it's not exactly the same because this is like a hypothetical
+06:11 example that I just made up so the first thing that we have to do is keyword research now remember this is
+06:18 going to be very high level okay with keyword research you only have to look
+06:23 for two main things the first thing you have to look for is keywords that have a
+06:28 high monthly search volume okay what does that mean that means a lot of people are searching for those keywords
+06:34 every month let me explain why this is important let's say you find a keyword and you think it's a great keyword and by the
+06:41 way the reason I mention this is because most clients have in their mind somewhere what they think are great
+06:46 keywords and like usually they're the worst keywords like just no I mean it's
+06:52 a good starting point but honestly like no okay so anyways let me and I'll like
+06:58 this will this will tell you the reasons okay the reason you want a high number of
+07:03 monthly searches is because let's say you have a great keyword or you think it's a great keyword but it
+07:08 only gets 10 searches per month I'm just I'm just picking a load number 10 searches per month okay now you spend
+07:14 all of this effort and all of this money to SEO your website for that keyword and you know what you are ranking in the
+07:21 first position you're number one in a search for that keyword okay but that keyword only gets 10 searches per month
+07:28 now this will differ based on Whose research you're reading
+07:35 but you can normally think of the first result in a search for anything getting
+07:40 about 30 of the clicks okay so that means
+07:45 the keyword we're using with 10 monthly searches if you're all the way in the top position and you're the best ranking
+07:52 website you're gonna get three visitors per month from that keyword okay
+07:58 do you want to rank for a keyword that gets you three visitors per month actually let me say that differently do
+08:04 you want to put forth effort to rank for a keyword that gets you three visitors per month
+08:10 no now if you're ranking for a keyword that gets you three visitors per month like who cares that's awesome but I'm
+08:16 saying you shouldn't concentrate on keywords like that because it's not going to be worth your time and it's not gonna be worth your money
+08:21 now let's say there's another keyword that gets maybe a thousand searches per month okay now you're at the top of the
+08:27 search engines for that keyword okay awesome now you're probably going to get about 300 visitors from that well that's a lot
+08:35 better isn't it now before we go any further I want to say that high monthly search volume will really depend on the
+08:43 industry okay in some Industries you might find a lot of keywords with like a hundred thousand monthly searches okay
+08:49 and in other Industries you might find some keywords that have like maybe ten thousand maybe 100 you know it depends
+08:56 so there's no like specific numbers that you look for but you always want the higher ones okay the second part of the
+09:02 theory that you need to understand is this you want keywords that have low
+09:08 competition now later on we might dive into exactly how to find monthly
+09:13 searches because there are tools that give you this information and we might explore how to determine what exactly
+09:20 makes competition okay because there are different tools that give you different competition uh coefficients let's say okay but for
+09:27 now you don't need to know how to do that you need to understand that it is an important thing to look for and you
+09:33 want to look for low competition okay so what you preferably want to do is find
+09:38 keywords that have high monthly search volume and low competition now these
+09:44 don't exist very often because as soon as there's a new high monthly search volume keyword people want to rank for it because the higher you rank for a
+09:51 high monthly search volume keyword the greater number of viewers your website is going to get
+09:57 so they don't exist for very long when you have one that is high monthly search volume and low competition in fact I
+10:04 would say that you might not even find one of those keywords in every project you do but when you find them use them
+10:12 they're awesome with that said correct keyword selection comes down to high
+10:17 monthly search volume and low-ish competition okay now that
+10:23 doesn't mean that you should avoid any keywords that aren't low competition it just means low competition is easier
+10:29 than high competition you might have some medium competition keywords you might have some high competition keywords just know it's
+10:35 going to take more time and more money to rank for those okay low competition keywords as I mentioned on a previous
+10:41 episode we ranked somebody we we ranked a client for one key like remember how I said clients always think they have the
+10:47 best keywords but like normally they don't we a client who is like obsessed with this one keyword that got zero monthly
+10:54 searches but he was it was such a big deal he like had to rank or he didn't have to rank for it but he had to outrank his competitor that he hated
+10:60 long story for this one particular keyword it had zero monthly searches it had like basically no competition with
+11:07 one backlink and I think two or three days we got him to the top of the search engines for that keyword now was there a
+11:13 reason to do that no because it got zero monthly search volume but I'm just using this to explain the fact that low
+11:21 competition is generally much simpler to rank for than high competition okay so
+11:27 your optimal keyword selection is going to be high ish monthly search volume and low-ish
+11:34 competition now when we're working with a client we usually come up with a list of keywords and we will have it's it's
+11:40 like a we use a spreadsheet and we have the keywords in one column and then the next column is monthly searches and then the next column is difficulty and then
+11:46 we kind of select the ones that look like they might be realistic to do for example maybe this one has like a ton of
+11:52 searches and it's awesome but it looks like it's going to be you know it's pretty high competition okay well that one might take a little bit longer here's another one that has almost as
+11:58 many monthly searches but it's medium competition okay let's focus on that one because you know medium competition isn't really that bad for a high monthly
+12:06 search volume keyword and so on here's one that's low competition but you know what it doesn't really get that many monthly searches but you know what it
+12:12 still gets a decent number of monthly searches so let's go ahead and do that one too and we'll come up with a whole bunch of keywords you know depending on
+12:17 what exactly the client has in mind and what their budget is and all that stuff so the concept that you need to understand
+12:24 is ideally you want High monthly search volume low competition but you're rarely
+12:29 going to find that so what you need to do is combine them and come up with a list of keywords that look feasible to
+12:36 rank for don't only pick the high competition ones because it's going to take forever and your client's probably
+12:42 going to get annoyed with you for taking so long no matter how many times you explain to them that SEO takes a long time and don't be a scammer and only
+12:49 pick super low competition keywords with no monthly search volume so you can say you're at the top of the search engines
+12:55 now we're such a good SEO company but um they're not getting any visitors so
+13:01 good job you didn't really help them at all anyways if you understand these two
+13:06 concepts for keywords you will understand how to actually do keyword research once you start jumping in and
+13:12 using some tools it's pretty straightforward and that's all you need to know okay one
+13:17 more thing I want to say about keyword research right now I know I said I wasn't really going to go into the tools but there's one tool that I want to
+13:23 mention and it's only because I realized I haven't mentioned it yet on an episode I've talked about you know ahrefs I've
+13:29 talked about Majestic I've talked about semrush those are great tools great tools there's a keyword tool that I use
+13:34 sometimes and I just want to clarify right now first of all this is not a
+13:40 sponsored mention I'm not getting paid to mention them okay they literally
+13:45 don't even have any idea that I'm mentioning them I'm only mentioning them because I've used them for like six or
+13:51 seven years at this point and I think it's a really good tool so anyway the tool is called
+13:58 keysearch.co or keysearch.co depending on how you believe that TLD should be
+14:06 pronounced anyway key search
+14:11 k-e-y-s-e-a-r-c-h dot c o um I've been using this for a long time
+14:17 give some great keyword suggestions competition values I'm not saying only use this tool as I've mentioned in other
+14:24 episodes I use a few of the big SEO tools and I combine them into a spreadsheet so that I can get a composite picture of what the case might
+14:30 be for a given domain or keyword or whatever but anyway the reason I'm mentioning keysearch.co or keysearch.co
+14:37 whatever you want to call it is because it's affordable all the other tools that
+14:42 I've talked about are pretty expensive keysearch.co it only does keyword research okay it doesn't do any of that
+14:48 other stuff but you know what it's a fraction of the price of the other SEO tools so I think they have a free trial
+14:54 too again I'm not being paid to promote it they don't know that I'm talking about it this isn't a sponsored mention
+14:59 I'm only mentioning it because I like it and because I've used it for like the last six years
+15:05 there's one other thing okay I guess I'll include it now the third thing you kind of got to look at
+15:10 is something called Searcher intent Okay so there's two reasons that people search
+15:16 for something on the Internet one is because they want to learn and two is because they want to do okay
+15:23 for example and I'm gonna keep this very high level but for example let's say your website is selling something it's
+15:29 selling blue widgets you have a you have a blue widget store and you're selling blue widgets okay your ideal visitor is
+15:36 probably somebody who is ready to buy blue widgets so you want to focus on ranking for keywords that people search
+15:42 for when they're ready to buy if somebody's trying to learn about blue widgets they want to know how blue widgets work they want to know how much
+15:49 blue widgets cost they want to know how are blue widgets made those are a different set of keywords and those
+15:55 people are not ready to buy those people want to learn now I'm not saying you shouldn't focus on both
+16:01 you should in fact a good website you can make the case should have a part that gives information about the thing
+16:08 and a part that lets them buy the thing but I'm just saying this is kind of connected to a different
+16:15 topic um of conversion optimization which is not
+16:20 part of SEO with the one exception being if you're ranking for keywords but
+16:27 they're not the right keywords okay like I said you're trying to sell things but you're only ranking for keywords that
+16:33 people who want to get information are searching for but that's you know what if that sense didn't make sense don't
+16:38 worry about it we're going to uh we're gonna focus on that in a future episode so
+16:44 that's all you need to know don't even you know don't even worry about search intent for now just just think High monthly search volume low competition
+16:50 okay pretty easy and trust me and look you might already know that you might be like yeah obviously of course it would
+16:56 be that okay good then you're ready for the next step which is actually using SEO tools
+17:02 to pick the keywords but we're not going to talk about that now okay the next thing is competitor analysis
+17:09 um so again there's various tools that do different things and generally speaking SEO
+17:16 is really a matter of doing what your competition does but
+17:22 doing it better okay like for example we all know that Authority is the reason
+17:27 that websites rank so you want to get more Authority than your competition now it doesn't exactly work that way there's
+17:33 not specific numbers and this kind of like annoys some people but like but there's no way to be like this website has an authority of 50 and I'm just I'm
+17:40 just randomly picking numbers here that doesn't mean anything so therefore if we get our website to 51 we will outrank
+17:46 them it doesn't work that way I mean you can you can think of it that way but it
+17:52 doesn't work that way okay um it doesn't work that way if you perceive it to work that way
+17:58 that's fine like but it's not like I'm we're beating them by one Authority point now we outrank them it doesn't
+18:05 work that way but what you need to know is this you need to kind of get a feel
+18:10 for how how is your how has your competition done things how many backlinks do they have what kind of
+18:16 websites do their backlinks come from what kind of authority do they have how often do they post new content how many
+18:21 pages do they have indexed on their website and that kind of thing now
+18:26 let me let me say this because I want to be completely clear about this when I say competition I'm not referring to
+18:35 businesses that sell similar products or services to what you sell okay that's not what competition means in SEO
+18:43 competition refers to the websites that are ranking for the keywords that you
+18:48 want to use okay now they may actually be other websites that are selling the same products or Services as you they
+18:54 might be but you know what they might not okay for example sometimes Wikipedia is one of your
+19:02 competitors Wikipedia is not selling anything maybe you're selling a thing and when somebody searches for it
+19:08 Wikipedia is the number one result well Wikipedia has a lot of authority so it makes perfect sense that they would rank
+19:13 for that keyword but they're not trying to sell anything but you know what they're still your competition because they're in the number one spot for the
+19:20 keyword that you wish to rank for okay that's what competition means
+19:26 so and remember we're keeping this high level for now you need to look and see how much
+19:33 Authority do your competitors have and your competitors are the people who rank for the keywords that you want to rank
+19:39 for how much Authority do they have and the different tools will all give you a different representation of authority
+19:45 it's not it's not a problem okay we're not we're not going to dig into the tools right now you just need to know that this is a thing you need to look
+19:51 for you should also look at your competitors you should look at their websites you should see what kind of backlinks do they have do they have 10
+19:58 backlinks do they have a hundred a thousand ten thousand how many referring domains do they have how authoritative
+20:06 are those referring domains these are the things that matter by the way the stuff that I just told you that's what
+20:12 you need to look at you already know this that content doesn't really matter when it comes to ranking and Authority
+20:18 is what matters but the things that I'm telling you right now that's one way to determine Authority that's what provides
+20:24 Authority those backlinks from authoritative domains that's the reason they have authority and I know you know
+20:30 this I'm just reminding you okay so you need to look at that and here's
+20:36 another thing and I'm going to give this example because I said specifically in this case we are talking about a website
+20:42 that is brand new okay what does a brand new website need it needs content obviously
+20:48 um I'm gonna come back to this in a minute but this is something that you might want to do look at your
+20:53 competition see how many web pages each of them has indexed in the search engines and if you
+20:60 remember how to do that on Google for example you type site s-i-t-e then a
+21:06 colon then you put the domain no space between the colon and the domain then you hit enter and then it will tell you
+21:13 about so many results like at the top that's how many pages are indexed why is
+21:18 this important all else being equal and this is this is my rule I don't know if this is an
+21:24 official search engine rule of course nobody knows how the search engines officially work anyway but this is this
+21:31 is my rule all else being equal bigger websites are better okay and there's a couple reasons
+21:39 that this might be the case it's not always the case look I'm not saying that you need a bigger website
+21:45 than your competition to outrank them I'm just saying generally speaking it helps okay now why is this important
+21:52 let's talk about it a little bit a long time ago around 2009
+21:57 there is a concept of something called a thin site or a thin content thin content
+22:02 site whatever you want to call it and I'm not sure if the meaning of that has changed since then so let me tell you
+22:08 how we used to use that term a thin sight or thin content was a domain that
+22:14 had like one or two pages total okay usually it was a sales page and then an
+22:21 order page so it was like you know you would search for something and you'd land on this website
+22:27 and you would scroll down you know because it helped you remember like the super long sales Pages like you'd scroll
+22:34 down the super long sales page and then if you decided you wanted to buy it you click buy or whatever at the bottom and
+22:39 then it takes you to a second page where you buy the thing okay and that was all that was on the website so the search
+22:45 engines obviously were like hey guys these websites are garbage they're only two pages they're just selling nonsense
+22:51 they're not really you know contributing anything to anybody let's not wait as heavily these small
+22:57 thin content sites so That's How The Story Goes okay I'm not
+23:04 saying that's exactly what happened I'm not even saying that actually happened I'm just saying smaller websites don't
+23:10 really compete as well with larger websites and there's another reason to
+23:15 now I'm going to explain this to you I can't this rule I don't like this rule
+23:23 at all and I'm not telling you this because I think it's good I'm telling you this because it's what you need to do
+23:31 so there's something called freshness some people also call it newness but
+23:36 like freshness you can call it freshness and it refers to the fact that search engines like newer content okay so all
+23:46 else being equal the website that posts more recent content will probably rank
+23:53 better now I'm saying all else being equal okay that doesn't mean that if one
+23:58 website has a lot of authority and one website doesn't have a lot of authority that it's going to make a difference okay I'm seeing all else being equal let
+24:06 me let me just let me just give you a short little explanation of why I don't like this it is possible that you could
+24:14 write everything there is to know about a topic post it on the internet and be done okay post it on your own website
+24:20 okay and then that website would just sit there and it would have all the information and it would be an amazing
+24:26 website and it would just sit there but there would never be anything new posted on it why because it already has
+24:31 everything that everyone needs to know it's perfect website okay the search engines don't like that even though the
+24:37 website is perfect and the content is perfect but remember content is not King the search engines don't like that now
+24:43 that website has a competitor and this competitor doesn't really have the best quality information but you know what
+24:50 this competitor is publishing new blog posts every couple of days maybe every
+24:56 week maybe once a week you know and the search engines like that that website
+25:01 all else being equal would probably outrank the first one even though the first one has Superior content why
+25:09 because freshness I don't like that I guess I understand
+25:14 why the search engines do it that way and I'm only telling you this because we're going to talk about this in a
+25:21 little bit when we talk about how to put content on your brand new site but look um just know that search engines like you
+25:28 know constantly publishing content let me give you another example have you ever like have you ever discovered a website and you may be
+25:34 reading a lot of articles on it like it's a cool website you're like this website is awesome I'm learning so much and they're posting new content but
+25:41 you're feeling like the new content is the same as the old content now I'm not
+25:47 saying it's duplicate content okay don't duplicate content on your own website now just a reminder there's no such
+25:53 thing as a duplicate content penalty okay if there were lyric websites would all be penalized and medical journals
+25:60 would all be penalized because they all have exactly the same content on them okay there's no such thing as a
+26:05 duplicate content penalty unless you start duplicating content on your own
+26:10 website the other cases you could be like our client and I talked about this in another episode we had a client once who
+26:17 made a copy of their own domain an exact copy of their domain and they put it on the same server and one of them
+26:24 disappeared from the search engine results because it was a duplicate content penalty um but like other than that there's no
+26:32 such thing as a duplicate content penalty so my point is they're posting the same things over and over again it's not an exact copy it's not like they're
+26:38 just pasting the same article it's like the same ideas and they're just telling you the same stuff but they're phrasing
+26:44 it like a little bit differently each time and you're like I know this already why are you guys doing a separate article on the same thing do you want to
+26:50 know why they're playing by the freshness rule okay search engines like websites that post new stuff even when
+26:57 it doesn't help the reader so anyway I'm done complaining about that for now
+27:04 so the reason I mentioned that is because in our hypothetical example
+27:11 we're looking at how many pages are indexed in the competition and we're talking about how more pages is
+27:18 generally better all else being equal so let me just give you some random numbers here just to go with this hypothetical
+27:23 situation okay let's say that on average
+27:29 your competition they have 20 indexed pages okay I'm just that's not a lot I'm
+27:35 just picking okay I'm just picking a number 20. 20 index pages that means that you probably want to have between
+27:42 25 and 30 pages on your site but remember the freshness rule we're not going to post them all at once but we're
+27:48 going to talk about that in a minute now why is this important well if everybody if every single one of your competitors
+27:53 has like a hundred or a thousand or ten thousand or a hundred thousand index Pages your
+27:59 website's probably going to need more than 20 pages to compete with them so not necessarily okay but just keep
+28:07 this in mind there's a reason that they're all doing a thing and it seems to be working so you might want to kind of follow
+28:13 those guidelines and then do it better like we said anyways so let's say in this example that your competition has
+28:19 20 index pages on average okay you want to have between 25 and 30 pages on your
+28:26 site so let's now talk about putting content on
+28:32 your site this brand new site with like one page and no SEO
+28:38 this is how I would do it you can do it however you want this is how I would do it
+28:43 I would tell them hey you need between 25 and 30 pieces of content on your site or Pages whatever
+28:50 you know like it doesn't it doesn't matter let's let's just call them blog posts because what else you want to call
+28:55 them let's call them blog post okay so this website needs you know somewhere
+29:01 from 25 to 30 pages my preferred way of doing it would be this
+29:07 I would definitely try to get the content done as quickly as possible so you I'm not saying publish it as quickly
+29:12 as possible I'm saying make it as quickly as possible so you have it when you need it I would start by publishing
+29:20 five or ten of them and just let the website sit I would let it sit of course I would make sure now
+29:26 that I put Google analytics on it and any other things like that that you want to do okay and I'd probably put Google
+29:32 webmaster tools on it which you know depending on when you got into making websites you may know it as Google
+29:38 webmaster tools you may also call it Google search console but you know what I mean but you know do that make sure
+29:43 you have a site map on it verify the ownership of your site I'm not going to explain how to do that right now but you probably already understand how to do
+29:49 that okay so this is what I would do you've got five or ten pages on it so
+29:54 far I would wait until they get indexed actually okay
+29:60 because somebody's gonna say oh what if they don't get indexed okay fair enough they should if it's a new website and
+30:06 your content is okay they should get indexed so basically I would put the five or ten pages on it and then I would
+30:12 wait I'd wait a month okay it should be indexed in less than a month but if it's not then we just move on to the next
+30:18 part anyway so remember five or ten pages and we still have all the other content we're just it's not published
+30:24 yet at that point here's what I would do and we're going to mix this now with the next part when we talk about how quickly
+30:31 to build backlinks so I've mentioned this before but one of the things that is very important when
+30:37 determining how quickly to build backlinks is this how quickly are backlinks being built let me explain
+30:43 what I mean by that for example if we get a client obviously we're going to check their backlinks
+30:49 we're going to see how many backlinks do they have and we're going to look at how often do they get a new backlink let's
+30:54 say for example they're getting approximately five backlinks per week just organically it's just happening
+30:59 okay from references you know whatever somebody's sharing the website they're naturally getting five backlinks per
+31:06 week in that case our strategy would be very different
+31:12 than if they were getting for example 20 backlinks per week or one backlink per
+31:17 week or 50 backlinks per week okay you want to make sure everything looks natural so let's say they're getting
+31:23 five backlinks per per week I'd probably if it were me based on literally nothing
+31:29 else other than what I just told you I'd probably start by building one or two backlinks every four or five days in
+31:36 addition to the ones they're already getting why because that's a modest increase that looks natural and will provide a decent
+31:44 amount of Link juice so in our case right now our website has no backlinks so
+31:51 how do we do it like I said I'd wait a month or until every page becomes indexed
+31:57 the next thing I would do is I would build one backlink now
+32:02 we're assuming that you either have your own private blog portfolio
+32:08 or you have access to an SEO agency that has a private blog portfolio
+32:14 okay if you don't know what I'm talking about go listen to episode one and if you want to learn how to do it go listen
+32:19 to episodes three four and five and if you want to learn why that's the best way to do it and you shouldn't rely on
+32:24 things like link Outreach and guest posting go listen to episode 14.
+32:31 so look at the end of the month or as soon as they're all indexed
+32:36 I would build one backlink to one of the pages and then I would begin to publish the
+32:42 additional content and I would probably let's say okay let's say the competition has approximately 20 pages indexed and
+32:49 they're just they're just static they're not releasing new content and you know
+32:54 many people won't like people make have you ever done this have you ever made a new website and you're like so excited for it and then you just kind of quit
+33:01 like working on it you know and you just stop putting new stuff on it that's what a lot of people do so 20 Pages index you
+33:07 know that's cool but they might not you know be posting anything recently either so that's fine
+33:13 too anyways I would start posting one new piece of content every five days
+33:20 to one week so every five or seven days basically and there's no problem you can have a regular content posting schedule
+33:26 okay you can literally go if you let's say you're using Wordpress for example you can literally go into WordPress
+33:31 upload all your content and tell it when it should appear on your site okay you can do this all at once and then it will
+33:38 just automatically post on those days nothing wrong with that but I would continue to build backlinks
+33:45 and in this case I would build one backlink okay to start I would build one
+33:50 backlink and then I would probably wait four or five days and then I would build the next backlink and then remember I've
+33:57 talked about this before but you don't want to build backlinks evenly like content publishing if you do that on a
+34:02 regular basis totally fine like every every two days or every seven days whatever that's totally fine but
+34:08 backlinks if you receive backlinks that like regularly scheduled days that looks weird and suspicious that would probably
+34:14 never happen in real life okay so I build a backlink and then I wait you know four or five days and then I'd
+34:20 build another backlink I'm gonna probably wait I'd probably wait another four or five days and then I'd probably
+34:25 build another backlink and then I I'd probably wait you know I probably wait four days and then I'd build two on the
+34:31 same day and then you know I would probably I'd
+34:36 probably wait three or four days and then I'd build another one and so on like that why are we going slow like
+34:42 that because this is a new website and it would seem a bit peculiar if it got a whole lot of backlinks out of nowhere
+34:47 and then nothing so I would go slowly like that anyway
+34:53 that's how I would handle this situation and I think in this case at the end of
+34:59 you know two or three or four months I think that website would be probably
+35:04 on the first page of the search engines okay this is assuming that the competition isn't super high we're again
+35:10 we're just using some like random values here and like like I said this is very high level but I would expect based on
+35:17 what I've told you that you would not necessarily at the top but you would probably be on the first page
+35:22 within two probably probably not two or three probably three or four months if you follow that guideline anyway I hope
+35:29 that made sense like I said this is all just very kind of high level because we're discussing Theory because you need to understand the theory so that when
+35:36 you actually start doing something it makes sense in this episode if I had been like okay so the first thing that
+35:42 you do is log into this tool and then you want to search for a keyword and you want to make sure that the competition is between this and this and that
+35:48 there's this many monthly searches and that's all I told you you'd be like uh okay then what like why that doesn't
+35:55 make any sense but now you understand why so that in the future when we talk about how to do it you'll be like oh
+36:01 yeah I totally get why we're doing this and now I know how to do it and you'll be a much more effective
+36:09 search engine optimization consultant or Specialist or whatever anyway
+36:15 that's it I hope this was helpful thanks for listening don't forget to subscribe I hope this episode is helpful
+36:21 and if you have any questions or if there's anything that you want me to talk about on a future episode you can email me at hello grumpy seoguy.com and
+36:30 I'll talk to you later if you're listening to grumpy SEO guy the SEO podcast that doesn't waste your
+36:35 time with nonsense that doesn't work join us next Wednesday when we talk about how to fix 100 of SEO problems
+36:44 thank you

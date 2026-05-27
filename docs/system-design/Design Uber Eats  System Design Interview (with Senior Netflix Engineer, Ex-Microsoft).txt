@@ -1,0 +1,1108 @@
+00:00 In this video, you're going to watch a senior 
+level engineer answer a system design question   of design Uber Eats. Let me start by introducing 
+myself and then we would love to know more  
+00:10 about you before we jump into the system design 
+interview. Sounds good. Absolutely. Yeah, perfect.  
+00:16 My name is Daniel. I'm currently an engineer at 
+Amazon. Um, you know, back engineer before Amazon.  
+00:21 I was at Microsoft. I've been in in the industry 
+for years. Um, yeah, that's me. Would love to know  
+00:27 more about you. Absolutely. Uh my name is Uma. 
+I am currently a software engineer at Netflix  
+00:32 backend engineer as well. Basically working in the 
+consumer identity space. Prior to that I was at  
+00:39 Microsoft like you and I was in substrate. So I've 
+been in the industry around 5 years professionally  
+00:45 but counting internships and projects and all that 
+stuff around eight to nine years. Perfect. Great.  
+00:52 So we'll do a system design interview today. 
+Is there a particular tool that you want to go  
+00:57 ahead with? Um do you have any recommendation for 
+that? Um yes we could use Excalad draw if that's  
+01:03 possible. Yes we can let me start a session. Um 
+sweet. So you know our job for today is to design  
+01:12 an application um or system something similar to 
+Uber Eats um you can say food delivery primarily.  
+01:22 Okay. Um yeah that's what I will say for now. uh 
+let's you know kind of discuss uh what what you  
+01:29 think about Uber's food delivery app and then 
+we'll jump from there. Take it on from there.   Okay. So, straight off the top of my mind um a 
+food delivery app, food delivery system like Uber  
+01:40 Eats, there's a lot that goes into Uber Eats. It's 
+a massive application. So, I want to kind of like   clarify what exactly we're going to be focusing 
+on today. Um there's the food ordering part.  
+01:51 Um before even that there's this part where you 
+search for the restaurants. Um before that there's   the part where the restaurants put in their food 
+and their hours and all that stuff. And then on  
+01:60 the other side of that is the drivers who you know 
+pick up the orders and then destination. So is  
+02:05 there any specific part that you want me to focus 
+on for this interview or specific parts? That's  
+02:11 that's that sounds great. Yeah. Um for today I 
+want us to start foc start focusing on the search  
+02:18 aspect. Okay. M you know when we are looking into 
+the you know deciding the order and restaurants  
+02:24 and everything. The second part is for the driver 
+matching. Okay. And you know uh the third part we  
+02:31 can get into the payments. Obviously these are 
+the three I want to be the core focus of today  
+02:38 uh today's exercise. Um if there's anything else 
+depending upon the time if something comes up that  
+02:44 you would like to get into I'd be more than happy 
+to do that. But I think this is the three things I  
+02:49 want to discuss today. Okay, sounds good. So the 
+design focus we're focusing on the search aspect  
+02:55 of Uber is that searching that's for searching for 
+restaurants, correct? Yes, restaurants and food  
+03:05 what they are looking for. Um so those two things. 
+Okay, searching for restaurants and food. And then  
+03:12 for the driver matching, this happens after an 
+order has been placed and the order is ready. Do  
+03:18 I have to worry about that link between, you know, 
+the restaurant saying order is ready and then we  
+03:25 pick up, we then send it to a driver or can we 
+just assume that um the driver gets a notification  
+03:33 saying the order is ready and then they go pick 
+up the order, right? But the the design is more   figuring out which driver to send a notification 
+to and less on how the notification gets to the  
+03:43 driver. Is that is that accurate? Yes. The we want 
+to assume the restaurant sides of the things and  
+03:48 focus primarily on the driver matching aspect with 
+the food uh with the order. Okay. Okay. And for  
+03:57 payments specifically, um, this is payments. This 
+is the payment for the food itself and less on  
+04:05 the payments for the drivers because there's a lot 
+of payments, right? Yep. Yep. Yep. Okay. Customer  
+04:11 payment. Okay. All right. So, um, this is going 
+to be the design focus, but first I want to just  
+04:19 briefly list out the functional requirements. That 
+way, I can design based on that. So um functional  
+04:27 requirements. So um we have the customers um 
+should be able to search for restaurants. Um
+04:46 um customers should be able to 
+order food as well. restaurants   and order um and place an order. Search for 
+restaurants and place an order. Okay. Um
+05:02 the next part of functional requirements is 
+on the other side which is drivers. So drivers  
+05:08 um should be able should receive
+05:15 notifications on orders
+05:24 and finally um for payments. So the system 
+should be able to process payments. Yes. Um,  
+05:39 is there anything else I'm missing or anything 
+that you would like us to add for the functional   requirements? No, I think this is good. Okay. 
+Um, I want to move to quickly talking about  
+05:50 non-functional requirements, which is how the 
+system will behave. Um, for food delivery apps in  
+05:57 specific, um, I'm thinking about the latency for 
+the search, right? Um, is there a specific number  
+06:05 that we want to go for? Um, what do you think? 
+Yeah, sorry. Um, what do you think would be a good  
+06:13 um Well, a Google search happens in approximately 
+less than 400 millconds. So, I'm assuming we would  
+06:19 want it to be low latency, right? We don't want 
+people waiting when they order the food. So,   we do low latency um for search. Um um in terms 
+of how available we want the system to be,  
+06:33 we want it to be highly available. Um we would 
+rather the system is upline all the time than  
+06:40 um so highly available and I'm trying to 
+think of other functional requirements. Um  
+06:50 let's see consistency. Um, so assuming 
+a a restaurant um updates their menu,  
+07:02 it's okay for that not to is it okay for that not 
+to reflect as soon as they happen? Right? Meaning  
+07:10 um the trade-off we'll have for highly available, 
+meaning we always return information to the user   is that some of that information may not be as 
+consistent. So eventual consistency is something  
+07:20 that we will have to swallow rather it's it's 
+basically on the other side but I would love   to get your thoughts on that. Fair enough. 
+Uh we still would want like some SLA on how  
+07:30 quickly we update those things like you know the 
+restaurants open or closed now or you know like we  
+07:39 can move towards eventual consistency but with 
+a particular SLA here. Okay with an SLA. Okay,  
+07:47 we can talk about the SLA um in a bit when we're 
+doing the design. Okay, the the next part that I  
+07:56 want to jump into if the requirement looks good is 
+I want to just briefly touch on the actors because  
+08:01 based on the actors, I'll design specific flows 
+for the service. So for before we move forward,  
+08:10 I do want you to focus a bit more on the driver 
+match matching aspects and the payment aspects.  
+08:16 the nonfunctional requirements. Okay. So, in 
+the non-functional requirements, you want me   to focus more on the driver matching aspect. 
+Yeah, we we have said highly available systems,  
+08:27 right? But what do we do with uh between for for 
+the driver matching and payments, right? There  
+08:32 needs to be some sort of um consistency that 
+we need to focus on. Okay. So, can you explain  
+08:42 that a bit more? I am I am slightly confused. So 
+you said consistency between driver matching and  
+08:48 payments as in so the system should be consistent 
+for the aspect of driver matching right think from  
+08:55 this perspective when the driver matches right 
+um with a particular order what happen yeah  
+09:02 so we should focus on higher consistency 
+there and similarly for payments too okay
+09:11 got it that that absolutely makes 
+sense Yes. Um okay. So for in terms  
+09:18 of personas for the system there will be 
+three justly mostly based on our design  
+09:26 um or you can call them actors. Um the first 
+is the customer. Um the next well for for the  
+09:40 specific design there will be two right. First 
+is the customers and then next is the drivers. Um
+09:48 drivers um these are actors. I'm thinking 
+through defining entities um for the system.  
+09:58 But let me give me a sec. Let me just think 
+through how I want to approach this. Okay.
+10:08 Okay. So we have our customers and we have our 
+drivers and right now we have our functional  
+10:15 requirements which are these and then our 
+non-functional requirements which are these mostly   focus on search aspect. Okay so I will start with 
+designing a highlevel overview of the system just  
+10:26 something to meet the basic requirements before 
+we then dive into the non-functional requirements   where we can make specific changes if that makes 
+sense. Okay, sounds good. So moving on to defining  
+10:43 how the system will operate. So we'll start with 
+the flow of the customer who wants to be able  
+10:50 to search for a restaurant, right? Um this will 
+be our customer here. Um customer and they will  
+10:57 send a request via whatever mobile device or web 
+device that you're on. And that request for the  
+11:05 sake of scale which we didn't talk about um if 
+we should really talk about um how do we want to  
+11:11 handle scale? Um I'm guessing scale is we want the 
+system to be very scalable and thinking about the  
+11:19 different regions as well. Um is that something 
+that we want to we want the design to account for?  
+11:26 So when you say different regions, could you 
+elaborate more? Um scale I'm I'm I mean if the  
+11:33 system is going to if the food delivery app is 
+only going to be available in one town, right?  
+11:38 Then the way I would design it would be different 
+from if it would be available in the whole of the   United States versus the whole world, right? And 
+that's the type of scale that I'm thinking about.  
+11:46 Yeah, fair enough. Um let's focus on US for the 
+project for today rather than the whole world. Um  
+11:53 okay. scale um just set it here. All right. Scale 
+focusing on us. So I'm going to design this system  
+12:05 as a series of microservices. Um, and for that, 
+the way I'm thinking about it is the customer will  
+12:13 make a request and since we'll have a series of 
+microservices that handle different things, each   one of those services will scale independently to 
+be able to handle traffic loads, traffic spikes  
+12:24 depending on when they happen. And that will 
+all that request will go through a load balancer  
+12:32 um stroke proxy layer at first to figure out where 
+to send specific um requests. So this would be  
+12:39 a load balancer here. I put a load balancer in 
+front and that request would go there. Right? So  
+12:44 um assuming we have we already have a database 
+um of the assuming we already have the database  
+12:53 of the restaurants and the menu and sorry the 
+restaurants and the menus here. Um we will have  
+13:05 that here. So we'll say we'll call it um DB for 
+restaurants for restaurants and menu. And this  
+13:19 database for the restaurant and the menu could be 
+it'll probably be a no SQL database mostly because
+13:31 of well we're only in the US. We want it to scale 
+properly, but we also want it to be hor to scale  
+13:41 horizontally and NoSQL databases um scale better 
+horizontally. We also don't need some of the acid  
+13:50 um principles that the SQL database gives us. 
+So, we assume that the restaurant menu would  
+13:55 be a no SQL database here. And so we'll 
+then have a search service here where
+14:05 we'll have a search service where this 
+request goes to and then from there  
+14:12 um the search service then goes directly to 
+our database and queries the database and it  
+14:19 returns the result back to the customers. this 
+will fit the very very simple basic search for  
+14:26 a restaurant and we return that but obviously 
+it it won't do it in the fastest time it would  
+14:32 do it in the best way possible and for that we 
+can start to think about some optimizations that  
+14:37 we can make so the first that I'm thinking about 
+is just solely based on searching right so if we  
+14:44 want very low latency when we search um we can use 
+There are two ways I'm thinking about it. First,  
+14:54 we can use elastic search um in addition 
+with the database. That way, there's already
+15:03 um elastic search.
+15:10 Elastic search. That way there's already um
+15:19 the data here. um in the elastic search and 
+we just use that. And so this is now this this  
+15:27 is the point where I was talking about um the 
+latency that we give up because we're now using  
+15:33 this to make sure that the search goes faster. 
+Meaning whatever data or whatever updates that   happen to the DB will have to be recomputed 
+in the next time the search thing then great.  
+15:42 So that then speeds up the search for our 
+database for that then speeds up the search  
+15:49 when reaching our search service to search for the 
+restaurant and the menu that then returns that. So  
+15:54 um the low latency non-functional requirements 
+sorry the non latency nonfunctional requirements  
+16:00 and the customers being able to search for 
+an order has been fulfilled. Do you have any  
+16:08 questions or thoughts about that? Yeah. Yeah. How 
+would you ensure the freshness of the data here  
+16:14 while using the elastic search? How would I ensure 
+that the data doesn't go still while using elastic  
+16:21 search? For example, we we we are talking about um 
+you know the restaurant closes or the menu changes  
+16:29 um pricing changes all that kind of stuff. How 
+would that So off the top of my mind I'm thinking  
+16:35 it'll it'll have to be we would have to either 
+recomputee Okay, basically have a figure out what  
+16:43 time figure out a time frame for us to recomputee 
+the this thing here in a way that doesn't cost  
+16:50 millions because each time we recomputee 
+it gets expensive but at the same time also   um make sure that the data in there is fresh and 
+it's not stale. I think probably figuring out,  
+17:01 you know, doing some sort of study or some sort 
+of analysis on how often certain database, sorry,  
+17:09 how often certain restaurant menus change and 
+then using that to then inform how often we  
+17:16 then recomputee and then, you know, update our 
+elastic search. That's how I'm thinking about it   off the top of my head. Okay. Uh, sounds 
+good. Okay. So, for the next part of the
+17:31 functional requirement is placing an 
+order from the customer. So in this  
+17:36 case I will have a separate service um to 
+place for order placement. Let's just say  
+17:43 um order service. So this service would be 
+responsible for basically taking orders. So the  
+17:53 customer has basically seen all the restaurant. 
+They've basically figured out what they want.  
+17:59 Now they're going to reach out to order service to 
+place an order. Once that order service is placed,  
+18:04 that message needs to go to a few places. First, 
+it needs to go to the restaurant. Um that then  
+18:11 makes the order. We also need to sorry even sorry 
+even before that we do not want to send a message  
+18:19 to the restaurant before we collect payments. 
+Otherwise we end up with broken processes. So  
+18:24 we need to send a message to a separate service. 
+Um let's call that the payment processing service.
+18:37 Um there are two ways we can go here in this 
+instance. Um, we can either choose to do it our  
+18:43 own way, meaning we create our own service that 
+handles all that stuff, or we can use an external  
+18:48 third party service like Stripe for example, and 
+they help us process the payments and then handle  
+18:55 um all of that. So again, depending on how 
+we want to do it, um the payment service will  
+19:02 handle payments um for the food ordering service. 
+Is there any I know you wanted us to focus on the  
+19:12 payment processing aspect. Is there anything 
+specific you want me to dive into here? Um  
+19:17 what are your thoughts on whe how would we process 
+the payment service? Right? Are we using a third   party? Do you have a preference? Um yeah, that's 
+a good question. So there's there's two ways you  
+19:29 can you can go about it, right? there's if you 
+want certain customizations as to how specific  
+19:35 things are done um how retries are happening 
+and how um the system handles failures and a  
+19:42 bunch of other things and you know certain if 
+you want as much customization as possible then  
+19:48 you typically want to do it yourself but that 
+also comes with the overhead of having your  
+19:55 systems designed a specific way to meet the 
+audit requirements of those payment services  
+20:00 um Visa or whatever bank card isn't just going 
+to allow you call your thing um with just your   simple service. You have to go through a lot of 
+work to figure that out. And on the other side,  
+20:09 if you do want to move fast, you can use an 
+external um payment service to help process the  
+20:15 payments. They already handle all of that, right? 
+So, like I mentioned, something like Stripe. So,   it all depends on which way you want to go. Um, 
+I personally would leave all of that to Stripe or  
+20:26 some external service because that's I am not in 
+the business of processing payments. My business   is mostly the food ordering part of it and so I 
+would leave that to the people who know who know  
+20:36 most of that. That's how I think about it. I think 
+that sounds a good idea. Yeah, let's let's use a   third party uh payment system such as Stripe. 
+Um, yeah. Okay. Um, one thing I do want to note  
+20:51 though is that the we want the we want everything 
+that happens in the payments processing flow to  
+20:60 be very consistent meaning um we want to be 
+sure of a response before we then go to the  
+21:07 next step. So the calls between these services 
+would be synchronous instead of asynchronous. So  
+21:16 when we send a message to the payment processing 
+service um first we create an order record um in  
+21:25 our record database which I will create right here 
+um order database um database this would be a SQL  
+21:35 database because we want the acid principles 
+um and so we'll create a record here And
+21:48 um the record in the order database will have 
+specific statuses, right? Like um the order is  
+21:56 pending, the order is paid, the order is 
+delivered and all that stuff. And so what   would happen is once the payment processing 
+goes through, we can then update the order  
+22:06 in the database with the status of the order. 
+But all of the everything that's happening in  
+22:13 this flow is asynchronous is synchronous and 
+not a synchronous if that makes sense. Yeah,  
+22:20 it does. It does. Okay. So the next part of the 
+design is the driver should receive notifications  
+22:29 and you wanted us to focus specifically on the 
+driver matching and the consistency there. Let's  
+22:34 let's skip the notification aspect. But I 
+don't know if by when you say notification   you mean the notification system. I just want 
+to focus a bit more on the driver matching  
+22:42 aspect of the entire system. Okay, got it. On 
+the driver matching um aspect. So this is let  
+22:49 me just move this here slightly a little. The 
+driver matching. So in this case we will have  
+22:55 our second personas which are the drivers and 
+then they will be on their app and they would
+23:05 um they would be connected to   um a session. So I'm thinking about 
+using a driver session similar to how
+23:18 so typically you would typically we've used a 
+request response model but in the sake of the  
+23:26 driver um thinking about having them connected 
+to sessions um let me think through that a little  
+23:32 bit. Um the the the general idea is that they 
+there could be a stream of notifications or a  
+23:41 stream of events that are happening to say hey 
+there's this order in this place there's this   order in that place there's this order in that 
+place and instead of I would like that I would  
+23:51 like the messaging between the driver and whatever 
+system that process that to be real time and not  
+23:58 based on a polling mechanism where send a request 
+or you send things back and So um I will just put  
+24:05 that layer right here underneath. Right. So for 
+now we'll just yeah for the simplicity of this um  
+24:12 let's say the driver does not have an option to 
+accept or reject it. Okay. So let's say if they  
+24:21 do get a request if they're online and if they do 
+get a request let's say for the today's session  
+24:26 they generally accept it. Okay. So there's 
+now an order um service and the driver gets  
+24:37 uh sorry not order service. Give me one second 
+let me think of a name for this. So the drivers
+24:46 received a notification for service and you want 
+us to focus on the matching aspect. So for us to  
+24:51 focus on the matching aspect I'm thinking about 
+two certain things off the top of my head. First   is we need to know the location of the driver, 
+right? Um we need to know where they are at all  
+25:01 times, which again that will help us um using the 
+open session as opposed to the request response  
+25:08 model using probably web sockets to connect to 
+that session is going to help us. And next we  
+25:13 need to know um we have our list we have our order 
+database here which is a SQL database that where  
+25:20 we have a list of specific orders, right? We'll 
+basically have an order processing um um orders  
+25:32 um delivery service to basically kind of when 
+an order goes from in progress to completed,  
+25:46 right? Say the restaurant says this order is 
+completed. We then want to send an event as  
+25:52 opposed to a message to our delivery service 
+which will then work on trying to figure out   what the best driver is rather maybe it could 
+be the closest driver. So now I'm I'm basically  
+26:03 trying to figure out how we'll then you know 
+say how we'll select a driver. It could be  
+26:08 based on location and I'm also thinking 
+about what other aspects we can use. Um
+26:19 the easiest would be location. Yeah, I think 
+that's something certain. Uh we should use  
+26:25 it by location. Yeah. Okay. So the the the the 
+delivery service will then match with the driver  
+26:34 based on location. Um there's optimizations that 
+we could make where um say multiple drivers are  
+26:44 going in the same direction, right? If you 
+know the location of the restaurant and you  
+26:50 know this order is ready at this time and then 
+the driver is going to pick up an order here,   they might as well you know pick up an order here. 
+We also have to factor the customer's location  
+26:59 too in mind and then we will basically use all of 
+that in the delivery service to try to figure out  
+27:05 how to match the drivers to specific um orders 
+from our database to then deliver those to the  
+27:13 customers. Um walk me through how this um entire 
+like how do you know where the drivers are? How  
+27:23 are we storing that? um how are we ensuring 
+the order is only matched with one driver,  
+27:31 right? One-on-one mapping, all of that stuff. 
+And keep in mind, this needs to be fast enough,   not as fast as the low latency, right? Like in in 
+switch, but it still needs to be fast enough that  
+27:43 um we can we can drivers. Okay. So, I'll break it 
+down into um I think you asked three questions in  
+27:51 one. So, I'll start with the first one. How do we 
+how do we know the driver's location at all times?  
+27:58 That's a good question. Um, I would probably 
+have a data store to keep track of that. Um,  
+28:04 and that data store, I'm thinking about 
+what to use for the data store. Um,
+28:16 I'm going to say driver information.
+28:23 driver location data store. Um, 
+so I'll have a driver location  
+28:30 data store. The this data store will most likely
+28:36 um it'll be updated with information from 
+the drivers as they move. and the delivery  
+28:43 service is going to read that to figure out 
+which drivers to pick and choose to then send  
+28:51 the order to. Um I'm thinking about how I'm 
+thinking about optimizations I can make on  
+28:56 the driver data store. It'll be read a lot. 
+It'll also be written to a lot. And so um
+29:09 what what are you storing uh in in this location? 
+Um in the data store um so it's it'll be changing.  
+29:18 So I'm thinking of it'll be changing frequently. 
+We can store their addresses because that will   change the latitude probably the latitude and 
+longitude which is their exact location. um
+29:33 longitude and we will use that in addition to 
+the latitude and lo longitude of the restaurant  
+29:42 um to figure out where to send them to. 
+Um does that answer your question? Yeah,  
+29:49 it does. Um one one more uh step of you know food 
+for thought here. So let's say you are storing a  
+29:55 lot of you know let's say there are few hundred 
+thousand um a few um 100,000 in US but few drivers  
+30:03 in in that particular area that you are looking 
+this this system has all those 100,000 um drivers  
+30:13 and their locations like how are you okay it 
+doesn't have all of them it has the ones that are  
+30:20 in session right okay So it it would be like like 
+if you're at home and you're not in the process of  
+30:27 actively delivering then we don't need to store 
+your information, right? But if you're actively   delivering and you're online, then it would store 
+your your location or your last loan your your  
+30:37 last known location. Yeah, fair enough. Let's 
+say even 50% of them are online, right? Um let's  
+30:45 say you are in Seattle or you know West Coast. 
+Let's let's even take Seattle. That's where I am.  
+30:50 um do we need the location of or do we need to 
+even filter for the location of people that are  
+30:57 in New York for that matter right like what what 
+I'm trying to say is in terms of efficiency how  
+31:02 how can we further improve the system of figuring 
+out what those subset of drivers are yeah that's a  
+31:08 good question so we can shard this you can shard 
+this based on geo locations where we have shards  
+31:19 um based on we could do it based on cities 
+but if we do it based on cities then  
+31:26 um there are some orders that could go from one 
+city to another. So um we could basically just   use a geo sharded database or we could geosard 
+their locations based on where they are. That way  
+31:39 request for from the delivery service only hits 
+the database or hits the shard that the drivers  
+31:47 and the restaurants are located in. Okay, sounds 
+good for now. Yeah, let's move forward. Okay,  
+31:56 what was your second question in your chain 
+of of questions? The second one was how do we  
+32:01 ensure that only one driver is matched with 
+one particular order? Okay. Um that's a good  
+32:09 question. Um for that we have to keep some we we 
+we basically have the state of the data or rather  
+32:17 we have the state of the order in the database. 
+We also have to keep track of the state of
+32:25 the drivers in which orders they are 
+currently assigned to or which orders   we have assigned to them. And before 
+we assign an order um to a driver,  
+32:36 we check if that order has already been 
+assigned before we then assign it to   a new order. Or we check we could 
+have a separate data store to then
+32:48 okay let me step back. If we store it with the 
+drivers then we then have to check a driver every   time as opposed to storing it by itself. Right? We 
+can create an association of orders with drivers  
+32:58 and so that if a driver cancels an order, we 
+just remove that driver from there and we know   that this driver there's no driver currently 
+linked to this order. And if we now want to  
+33:08 assign a new driver, we just assign it. So it'll 
+be like a onepoint query instead of going to find  
+33:14 um yeah it'll be a onepoint query where we 
+just pick an order from that order to driver  
+33:20 database and check and if they are matched good 
+um if they aren't then we know we can assign.  
+33:27 So we so we never assign multiple drivers 
+to one order since we already keep track   of that. Okay. while we so when the order 
+is placed right like places an order it is  
+33:40 uh there's a record created let's say the 
+restaurant somehow says that the order is   ready to be picked up at that point in time uh 
+you provide a notification for that particular  
+33:51 order to the delivery service right now do you 
+select one driver to provide that information  
+33:60 to do you select multiple drivers um like the 
+selection ction of the drivers are happening  
+34:06 um in in in what particular way. Yes. So um let 
+me just put this here. Um it'll kind of be our  
+34:15 um driver um order um store. So the way I'm 
+thinking about it is it'll come to basically  
+34:26 have we will write the order to this store, 
+right? Hey, this order is ready to get picked  
+34:33 up. Our delivery service will also work with 
+um this to figure out whether the driver or  
+34:39 not because it's whether the order currently has a 
+driver or not, right? So my thought process is the
+34:49 the delivery service will look in our database 
+here, right? Who has who is closest, right?  
+34:56 um run our algorithms to figure out who is 
+closest the most efficient way and it'll  
+35:01 send that to the driver to say hey there's this 
+order from this restaurant. Does the order does  
+35:07 the driver accept? If the driver accept great we 
+send that back to the service which then updates   this to say this driver currently says he's going 
+to deliver this order. Then we can now have a  
+35:16 notification service that then sends it back to 
+the customer saying, "Hey, this person is going  
+35:22 to pick up your order and they'll be, you know, at 
+your door in x amount of time." If for some point,  
+35:27 if at some point in time the driver can't pick up 
+that order anymore, um, or if some time goes by  
+35:33 or if the driver cancels or if something happens, 
+we we simply then update this data store to say  
+35:40 this order no longer has a driver attached to it. 
+Yeah. Okay. Let's let's say for that that doesn't  
+35:46 happen in our in our day-to-day. Um assuming 
+that right now if if the order if the driver  
+35:53 is attached with the order it comes order in 
+that particular restaurant or nearby where  
+35:59 that particular driver is you know still in that 
+nearest location. Do you write them another order?  
+36:06 Uh because they they already have an order. 
+I don't like how do you handle that situation   where if a driver already has an order, they are 
+not assigned another order. Well, I'm thinking  
+36:18 about so the constraint that we have here is that 
+a driver can only have one order. Sure. Okay. So
+36:29 here we have so I'm thinking about two ways. 
+So we can create a reverse index table which is  
+36:36 just opposite way where we now have a driver to an 
+order or we based on what we're storing um in the  
+36:44 driver's um as part of the driver's information we 
+can also store if they're currently in the process  
+36:51 of delivering an order right if we have something 
+assigned to them and then we can then use that as   a check right um there's multiple ways we we can 
+do it there's what I've mentioned or we can just  
+37:02 if if we're worried about speed. Um because here 
+for example um this is meant to be order driver I  
+37:10 apologies order driver and then we can create a 
+separate one for driver order where if you know  
+37:19 we could just say this driver do do they have an 
+an an order? Of course now we have two two this  
+37:25 things we have to we are writing twice whenever 
+we are updating so that will have some cost there.  
+37:32 um if we depending on how we design them and 
+the locations, we're basically duplicating   the like the data store and and and and all of 
+that. But that's basically how I would think  
+37:41 about designing that where a driver only has one 
+order. We basically have a state of what they're  
+37:47 currently assigned to and we check that before we 
+deliver them. Um if we want the constraint of one  
+37:54 order to one, sorry, one driver to one order at 
+a time. Yeah. Okay. Um one last question before  
+38:01 we move away from this particular driver 
+topic is we are updating the location of  
+38:06 uh drivers very frequently right you said this 
+is very read heavy as well as right heavy um are  
+38:13 there any um optimizations that come to your mind 
+that would you know help us in terms of the way  
+38:21 we are writing the the the locations of drivers 
+to this particular data store. So optimization  
+38:28 specifically to the right of the drivers to the 
+data store. Um let me think because we we're  
+38:34 writing their location, right? What possible cases 
+do we need to write the locations? How frequently  
+38:41 do we need to write these locations? I want you 
+to think along those lines. Um how often we need   to write the locations? Well, we need to write the 
+locations when typically when well, we don't have  
+38:56 to write it every minute or every second, right? 
+That's definitely overkill. Um, at the same time,  
+39:02 um, if a driver is in a general region, for 
+example, um, say they're in Capill for example,  
+39:08 right? Um, technically we don't want to Sorry, I 
+use capital because we're we're both in Seattle.  
+39:14 But say they're in like a specific area within a 
+town. We don't need to know that they're still in  
+39:20 just one part, maybe First Hill versus Capital, 
+right? But if they move from a certain location  
+39:25 um to a different location um then on our on the 
+client side we can then update that where since  
+39:34 rather on the client side we can watch for that 
+and if that happens then we update their location.  
+39:40 Um so instead of updating frequently maybe every 
+that's sorry so on how often it needs to happen  
+39:47 it doesn't need to happen often it will only 
+happen when there is a big shift in from their  
+39:53 previous location from their last known location. 
+So the client will compute that and only send it  
+39:58 if there's a big shift. Sure. Um okay. Okay. 
+Um sounds good. And one quick question I have  
+40:10 regarding payment processing service. We need 
+to ensure you know again the the consistency  
+40:15 aspect of it. Um what things come to your mind in 
+that regard for for payment processing? Um first  
+40:23 one that comes to mind for payment processing 
+specifically is I think I mentioned the first one  
+40:31 it needs to be synchronous. So, we need to be sure 
+that the payment goes through before we complete   um consistency. Um I'm thinking of item potency. 
+So, if there's if if you're trying to place the  
+40:47 same order um within a certain time span, um we 
+should have some sort of logic in there to make  
+40:53 sure we're not double charging you for the same 
+order um for the payments. Um those are the two  
+41:01 that come to mind. Where are you creating that 
+item potency key? Um item potency key will most  
+41:10 likely happen in the PO payment processing 
+service. Right. So where the service receives  
+41:18 the thing to make the payment. Um no no sorry I 
+didn't put importance will happen on the client  
+41:24 side. My bad. Um it'll happen on on the other 
+side. So customer creates that key and then on  
+41:30 the processing of that specific thing we store 
+that key when if it happens again using the same  
+41:37 key that we've seen then we know that it's the 
+same thing and then we either we can process  
+41:44 it in two ways. We can send back um a message 
+to the client saying hey it seems like you've   already paid for this or we if it's the exact same 
+order we can just make sure we don't duplicate  
+41:53 that order in the database and we don't charge 
+the client. Sounds good. Um, any anything that  
+41:59 you want to mention before we wrap this up about 
+this particular system that we have? Um, I just  
+42:04 want to go through the functional requirements 
+real quick to make sure the design fits. Um,  
+42:10 the design solves for the functional requirements. 
+So, drivers receive a notification. We did that.  
+42:15 Customer should be able to search. We use elastic 
+search. Um, system should be able to process   payment. It does that. Um, eventual low latency 
+for search. eventual consistency with an SLA.  
+42:27 We didn't talk about that SLA. Um, oh, we did, 
+sorry, we we'll basically figure out how often  
+42:34 the data changes and then figure out a good way to 
+compute. Obviously, we can't compute every hour,   but we also can't compute every minute. So, it's 
+basically finding that balance. High consistency  
+42:45 for driver matching. We discussed that. And 
+scale um using microservices. Each one of  
+42:51 these would be individual services that can scale 
+up or scale down based on demand. So, um yeah,  
+42:57 I think that's all I have for now. Perfect. Um I 
+really appreciate your time. Thank you so much.  
+43:06 Um and it was great doing this exercise with you. 
+Absolutely appreciate it. Thank you for your time.  
+43:11 Let's just start high level. Um Danny, uh I'll ask 
+you second. I'll ask you first. Um what did you  
+43:19 think of that candidate? just high level overall 
+what what comes to mind about how that candidate   did. Yeah, I think um the candidate did well. I 
+think one thing that stood out just from a general  
+43:29 perspective is making sure that they designed for 
+what was asked, right? So clarified requirements  
+43:36 and making sure at the end of the interview 
+everything that was asked was what was under   design. Maybe some may not have been optimal, but 
+at least we we the the candidate basically checked  
+43:47 off all all those boxes. I thought it was really 
+interesting that the candidate after completing   the design then came back and said now let's 
+look back at the non-functional and functional  
+43:55 requirements and see if I did everything. Um yeah 
+I think that was awesome. Awesome. Uh Danny high  
+44:01 level uh what what did you think about how the 
+candidate did whatever strikes you? Yeah. No,  
+44:06 I think um the the candidate overall I felt like 
+you know was was knowledgeable enough to kind of  
+44:13 understand the system, understand the different 
+aspects. something very interesting or I think  
+44:18 you know great in the beginning that occurred 
+to me was how they were very communicative and  
+44:24 trying to understand or trying to get into the 
+interviewer's mind right when at the very start  
+44:30 what do you think we should be focusing on today 
+so I think that's a good technique because at   the end you want to you know focus on things that 
+interviewer wants to listen in that 40 45 minutes  
+44:41 that's a very important aspect uh you know not 
+not just go off your what you're thinking but also  
+44:46 make sure that you are on the same page with the 
+interviewer. I think that was a great start where   I could kind of you know lead. So the candidate 
+was leading um without it seemed that they were  
+44:57 in control. I was it seemed the interviewer what 
+you know whatever the interviewer wanted was  
+45:02 happening but I felt the candidate was still in 
+the driving seat by just asking those questions.  
+45:08 100% I felt that you were being both a leader and 
+a collaborative partner which is a hard balance  
+45:14 to strike. Uh one of the interesting um language 
+choices you made throughout the interview which I  
+45:21 also liked was you would say I'm thinking of this 
+and then I'm thinking of this and then most times  
+45:28 a few maybe a few seconds later you would say 
+let's go with this for this reason. So just in  
+45:34 terms of like people that are watching this that 
+want to understand like you know senior level   skills like when we talk about tradeoffs there's 
+really only a few boxes somebody needs to check to  
+45:42 be seen as senior and one of them is trade-offs 
+and an easy way in a system interview to get   there is to look at two different choices and 
+then reason your way through it. You have to be  
+45:52 vulnerable enough to tell the interviewer because 
+Uma correct me if I'm wrong but a lot of the times   when you started saying how would you ensure the 
+data is fresh when using elastic search like we  
+46:01 could recomput it every time or we could do it 
+another way when you probably said it out loud  
+46:07 did you know which way you wanted to do it um not 
+not really so at that point in time I had I was  
+46:14 just going through all the options right like you 
+said there there really isn't a perfect there's  
+46:19 no right answer right But this is one way we could 
+do it. What are the trade-offs? Right? It could be  
+46:24 way more expensive. It could take way more time. 
+But are we delivering this, right? And that's   why the candidate was always going back to the 
+interview, right? What do you care about? Right?  
+46:33 What does what do we want to focus on on on this 
+design? So yeah, as as as experienced interviewers  
+46:39 yourself, what are some common red flags that 
+you see just when candidates make a decision   on a component in the design? Yeah. Um, I could go 
+first. The first thing is for everything I mention  
+46:51 or for everything that I typically say, I try to 
+say why I'm saying it, right? So there's you could  
+46:56 go you could say there's reddis, there's memcache, 
+there is all this, we can use this database,   we can use geodis, we can use that. But um a lot 
+of times if you don't justify it or if you don't  
+47:06 say why you're doing it, then it just sounds like 
+it's a buzz word that you heard somewhere. And so   that's that's a red one. I know it can be tricky 
+because not a lot of us have had opportunities  
+47:16 to work with those things. But again, studying 
+the um basically doing more research into where  
+47:24 this fits and why it would fit. That way when 
+you use it, you're using it in an informed way   as opposed to just say we'll just put a cash 
+here. Well, you can put a cash there, but if  
+47:32 your cash is going to result in more cash misses 
+than hits, then why do you have a cash there in  
+47:38 the first place? You're just costing way way more 
+money. Yeah. Nice. Danny, what do you think? Yeah,  
+47:44 I think I'm on the same page. I think um I 
+I I say this as you know um this particular  
+47:49 system design interview is like you know you your 
+lawyer defending your decisions, right? It's it's  
+47:55 basically you're providing you know justifications 
+of why you are trying to do and again sometimes  
+48:01 you might not get the optimal answer and that's 
+all right because as you start to work you know  
+48:07 five years of experience seven years of experience 
+there's only much you have worked in right like if   I haven't worked in payments I wouldn't have if 
+I hadn't gotten an opportunity I would not know  
+48:16 a lot of about payments and that's all right to 
+say in an interview that hey this is the extent   of knowledge I had I have about the system but 
+you did that as well. I like that a lot. Yeah,  
+48:26 if if given a given at a certain point I I have to 
+I can deep dive into this. Um but showcasing those  
+48:34 abilities is what makes you uh you know senior and 
+above level engineers and going back to a specific  
+48:40 example in an interview uh in this particular 
+interview I think when Umar was talking about   um data stores for driver matching. Uh initially��
+there was an idea where he wanted to use probably  
+48:51 a DB and you know update um the statuses of 
+them and then suddenly he said if we want to  
+48:56 go for speed we can use a data store. I think 
+that was a great example that okay there there  
+49:01 are two possible answers. However based on what 
+we are trying to optimize we can go for one end  
+49:07 or the other. So still two answers. I like the 
+second one better. But again, the fact that he  
+49:12 the the candidate provided two different answers 
+and could defend both um is a a lot of times what  
+49:18 would eventually happen in an actual situation to 
+while you are working at these companies. That's   so cool. I had a brand new thought that I've 
+never had before about system design. There's  
+49:26 basically like three choices that you can 
+make when you have to talk about a component.  
+49:32 number one say and this is for stuff that you 
+know well enough like Uma said hey we can choose   this here and we're going to do this because it's 
+faster I think it was about storing something in  
+49:41 the database to the driver or just storing it on 
+its own that was really smart okay so if you know  
+49:46 it well that's your choice make the choice and 
+give a brief rale if you don't know it at all the  
+49:54 second choice is to lower the stakes I'm really 
+not a payments processing person when somebody  
+49:59 says that the interviewer's bar for success now 
+lowers. It's counterintuitive because you don't  
+50:05 it's like vulnerability like vulnerability in 
+a system is insecure but vulnerability like  
+50:13 socially just means you're sharing something that 
+you're not great at and it's actually smart. It's   just like saying the word I don't know. Some 
+interviewers literally will wait for you to  
+50:20 say the word I don't know and if you don't say 
+it, it's a box you're not checking. So those are   two first tactics. make a choice and defend it 
+briefly or secondarily lower the stakes and say,  
+50:30 "I've never worked on something exactly like 
+this, but here's what I've been reading about or   I don't know if this is 100% true, but here's 
+what I'm pointing towards." Those are smart  
+50:38 things. But the third thing, and this is where 
+it's kind of nuanced, is handwaving. So, you did   a few handwaving things here, and senior engineers 
+handwave things all the time because, for example,  
+50:48 we're talking about how to match the drivers 
+with the restaurants. And what you just said,   you mentioned it once, it was very smart. You just 
+said something like, "We got to run our algorith."  
+50:59 You kept it a black box. You didn't dive into 
+it. It's 45 minutes. You cannot describe what  
+51:04 Uber Eats had dozens of engineers working on to 
+make the algorithm. So smartly, you avoided that,   but you got over it to save time. Can you guys 
+speak at all to this idea of handwaving things  
+51:16 and just how you think of handwaving things as a 
+candidate, as a strategy? Yeah. Um the way I think  
+51:22 about it is if if you know of it but you don't 
+know enough about it right you could just say say  
+51:28 it at a very high level because what I found in 
+the past is if and I want to start talking about  
+51:33 oh we'll use this algorithm I don't know enough 
+about machine learning to even figure out how to   train a model or how to do all that stuff right so 
+I know from experience that there's some sort of  
+51:43 thing that happens there and you know there's it's 
+just it's way more complicated as you said and it  
+51:48 may take more time and I don't know it enough to 
+give a good impression of my knowledge about it.   Right? So why would I dig myself in that hole? So 
+I just mentioned like a quick high level and if  
+51:59 they then want to dig in deeper maybe this could 
+be a machine learning systems interview instead of  
+52:05 that then that's where you can do it. Right? But 
+the other part of it is also knowing when to do   it and when not to do it. Right? I just mentioned 
+in a systems design sorry in a machine learning  
+52:13 interview that's probably what they're going for. 
+Right? So, but in this case, it was just more   designing these systems and how they communicate 
+with each other. So, in situations like this,  
+52:22 it's it's a little bit okay to just handwave 
+again, provided that your interviewer is okay with  
+52:28 that. Yeah, choose it selected basically. Love 
+that. Yeah, 100%. No, I think yeah, um it's it's  
+52:34 it's always good to know what your limitations are 
+in an interview and this also happens, you know,  
+52:41 if we kind of corresponds to your actual day 
+work. A lot of times when I am given a task uh  
+52:47 you know in in my interview in my actual coding 
+or you know working journey it's like you go  
+52:54 research about it you come back because there 
+are things that you wouldn't wouldn't know and   as an interviewer I do also understand that uh 
+when a candidate says I I will choose let's say  
+53:04 a particular I will choose posgress because I've 
+only used posgress in last three years um so I'm   just comfortable do that and that's a fair enough 
+answer and say if I had to make an actual decision  
+53:15 there will be a lot of research go into but this 
+is why I'll choose postgress and that's a fair if   you were the interviewer Uma what would you think 
+of a candidate saying that absolutely yeah like  
+53:25 it's again you mentioned it in the beginning it's 
+not a you and um the the interviewer mentioned in  
+53:31 the beginning it's not a right or wrong right 
+it's just can you build something that solves   the requirement right now and based on what you 
+know right um based on what we've given you right  
+53:41 does it solve and then from there we can start 
+designing Um, and then making optimizations. Yeah,  
+53:47 I I I have this theory. There's there's 
+red flags and there's green flags and  
+53:53 then there's kind of like a step up from 
+green flags, which is kind of like like the  
+53:58 word that kind of unlocks the candidate from the 
+perspective of the interviewer as being like, oh,  
+54:05 they get it. And I'm and I know I'm doing one of 
+those annoying things that interviewers do where  
+54:11 I'm gonna ask you guys if you guys noticed what I 
+noticed and try to just see if you noticed it. But   there was one moment where Dann Danny got really 
+excited when you said a word at the end and then  
+54:22 Danny asked a follow-up question about that word. 
+I can tell you guys exactly when this was for me,   but just we're talking about how to make sure the 
+payment processing is consistent. Ident potency.  
+54:34 Yeah. Danny, can you tell me what your reaction 
+was when you heard Uma say that? If you expected  
+54:40 it, if you had follow-up questions you wanted to 
+ask about that just as your interviewer mindset,   can you kind of peel back the curtain a little 
+bit and tell me what your reaction was upon  
+54:48 hearing that? That was exactly what I was going 
+for. Number one, like I wanted to understand  
+54:54 like this is a concept generally used at various 
+different levels, not just payment processing.   That's why I just want I could bring this 
+up in an interview. That's one. U second  
+55:05 um the idea of where this follow-up question was 
+where would this be generated? Whether it would  
+55:11 be generated on the client side or would it be 
+generated on the back end scenes that provides  
+55:17 me an understanding about the candidate that they 
+have this full picture understanding why exactly  
+55:23 would something happen? uh the candidate said 
+this will happen in a in in payment processing  
+55:28 service but I think upon further and I think they 
+were doing it by themselves like few seconds later  
+55:33 they were know they were like no this will happen 
+on the client side of things which was uh what I   was going for and again that's that just gave me 
+an understanding that this person can talk about  
+55:44 you know can see that entire flow suddenly uh 
+which is important when given a task in an actual  
+55:49 job as well that they can start thinking about 
+different pieces a lot of vague pieces initially  
+55:55 And again all my questions all whatever I try 
+to do in an interview when I'm asking I'm kind  
+56:00 of thinking about how would that correlate to an 
+actual setting. Um so that gives me an idea that  
+56:06 okay this person can go from point Z to point N 
+given such a vague understand a vague concept.  
+56:12 Was this a gate you wanted him to get to? Yeah 
+100%. Right. How many gates did you have in this?  
+56:19 I think a lot of all so there there were as at 
+the very beginning of it I said there are three   things that we want to focus on searching u the 
+gate was elastic search or something very similar  
+56:30 that was one u for for the driver matching there 
+were a lot of discussion that happened that was  
+56:35 the crux of the interview today there was I think 
+the candidate almost got to the geohashing aspect  
+56:41 of it I had to kind of probe the candidate to go 
+into that direction that was something I was want  
+56:46 I was wanting for them to you know ponder over and 
+understand and kind of think how they are thinking  
+56:52 or you know uh can see the actual picture and then 
+the payment was the idle potentially. So the these  
+56:57 were the three things again at every inance you 
+could go further deep dive depending upon what  
+57:03 they're looking for. So I've kept it open enough 
+that they can kind of go where they want to but uh  
+57:09 it's like what's the word it's like you know once 
+we start going deep dives then I want to check  
+57:15 their depth of their understanding. What about 
+this choice that the candidate make at the very   end? I'm done with my design and it's a confident 
+move to say, hey, let's go back, check the  
+57:25 requirements, and see if I hit them. Can you guys 
+speak a little to like maybe in what situation   this works and then maybe in what situation you 
+maybe might not want to do this as a candidate?  
+57:35 Um, yeah, I could go. So, as a candidate, the way 
+I think about it is when I'm interviewing, I want   like you're asking me to design something and we 
+figured out we both agree that this is what I'm  
+57:44 going to design, right? And if as I'm designing 
+to if um as the candidate was designing to if  
+57:49 he noticed he looked back to say okay the first 
+flow this was done right we've checked out number  
+57:54 one the second floor we've checked out number two 
+check and so um I typically like to do that just  
+57:60 to make sure everything is clear and for the parts 
+that I didn't have time to hit on I then have an  
+58:05 opportunity to give a highle description of how I 
+would do it right if um if if I didn't have time.  
+58:11 So it's it's it's something that I would suggest 
+you do just so if you never get to a place where  
+58:18 I get to talk about sorry if you never got to 
+a place where you got to talk about something   that the interviewer is going to use as a gate you 
+can quickly mention that to know that oh okay they  
+58:28 didn't have an understanding that they understand 
+this just because you didn't have enough time to   design it. So that's typically how I think about 
+it. I love that. I love that. It's a new tactic to  
+58:35 me. I've never seen anybody do that and I really 
+really liked it. Yeah. thoughts. Any thoughts on   that choice, Danny? I think I think Uma summed it 
+up well, but any any thoughts? I I I completely  
+58:45 agree. That being said, I build it on top of it. 
+My way of doing it like if I was the candidate, I  
+58:52 do it multiple multiple times because like as a in 
+a scenario where you have missed few things that  
+58:59 are important at that last minute, it might not it 
+might also highlight what you've missed. Suddenly  
+59:05 that is also left in the interviewer interviewer's 
+mind that okay uh the we didn't we couldn't go   through these. So that can also backfire. Um but 
+as a strategy if you continuously do that during  
+59:16 an interview where you're like okay you just hit 
+this mark let's move on to the next one. We hit   this mark let's let's move on to the next one. I I 
+I I always do it just at the last minute. Again in  
+59:27 this case Omar had covered majority of the things 
+that we were trying to it worked out well. But it   could if you're continuously doing it, I think 
+that's a that's a great strategy because now if  
+59:37 there's some like you're you're going off of the 
+interviewer's energy as well, right? You're like,  
+59:42 I'm I'm about to move into this particular topic 
+and I'm continuous continuously taking feedback   from my interviewer. Are they excited? I'm 
+looking at their facial expressions, what they're  
+59:51 trying to say, and just navigating as I'm moving 
+forward. Um, so though if you continue to do that  
+59:57 throughout the interview, it will definitely help. 
+I just wanted to notice if people go back and  
+60:02 watch how excited Danny got when said I demotzy. 
+It was like he was like nodding like so hard  
+60:08 like he hadn't nodded that whole time the whole 
+time. So if you see your interviewer who hasn't   nodded much the whole interview if they're nodding 
+vigorously you probably just got through a gate.  
+60:19 So stay there for a little while and explore that 
+area so you can actually flex those muscles. So,  
+60:24 um I know it's hard to not notice social cues and 
+f facial features for everybody, but nods are very  
+60:30 obvious when they come out of nowhere as composed 
+to most of the interviews like this and then you   have a big big big nod. So, great. One thing I 
+quickly want to mention which I think helped me  
+60:39 u when I was learning and then for a lot of people 
+is I think you you you come into these interviews   and the problem is huge, right? Then you break 
+down the problem which a lot of people do very  
+60:49 well but then even after you've bro even after 
+you've broken it down you still think oh I have   to design the most efficient searching right um 
+you notice what the candidate did was they like  
+61:01 what's the simplest search I can do right let's 
+start with that always start with the simplest and   from there obviously it's not the most efficient 
+how can we make it more efficient we put elastic  
+61:10 search we pull this we'll pull that right so if 
+you always start with the simplest flow then you   have a base right at least the interviewer knows 
+you know how to design something that simple and  
+61:18 then from there you can add a base so that's 
+something that I suggest everyone does even   for even the most complicated features right start 
+from the base and then start making optimizations  
+61:27 from there but if you start thinking oh where 
+can I pull in elastic search you won't know   where to pull it in because you don't know where 
+the data store is because you never figured that  
+61:34 out in the beginning right yeah heck yes Danny u 
+I think for for for end candidates like one of the  
+61:44 things that I do is or I would recommend anyone 
+your root force is your functional requirements  
+61:50 they are just going back to your lead code kind 
+of strategies or data structures as soon as you   say the simplest flows as as Omar mentioned that 
+if you're doing searching the basic flow suddenly  
+62:01 you did the function requirement the next function 
+requirement the basic ones your non-functional are   the optimizations if your functional requirements 
+you have covered the problem now we are talking  
+62:11 about optimizations which are you know where the 
+deep dives happen um So if you I think within five  
+62:18 seven minutes if you know how to draw the load 
+balance of the client and the all the flows you'll   be done with your functional requirements. So 
+that's a very interesting way and you know a very  
+62:27 speedy way of saying I've done the basic problem 
+let's talk about and get into the deep dives. So   I I I think that's a very some someone taught me 
+this and I'm just you know kind of elaborating on  
+62:36 that. Beautiful. Beautiful. Okay Danny uh what's 
+your what's your rating for the candidate? Uh and  
+62:42 if you have any thoughts about leveling would love 
+to hear that too. Yeah, I think uh obviously the   interview interview went well u in terms of you 
+know things that I wanted to cover. U so it will  
+62:52 definitely be higher. Uh that being said my only 
+concern came through the depth of few things where  
+63:00 I might have wanted to go a bit further deep 
+into things. um where you know for example the  
+63:06 geohashing part I in in that particular scenario 
+I was kind of kind of pushing the candidate into  
+63:13 a particular direction um even at the nosql aspect 
+where we were having a discussion I felt and again  
+63:19 it's it's not to say they don't know there was 
+a you know burst of thoughts that happened in in  
+63:26 different pauses which I felt could have been 
+more clearer to you know things like at this  
+63:32 point in time we might have chosen this particular 
+database or that particular database for X Y or Z  
+63:37 reasons. Um so the leveling is where um I would 
+be torn between primarily senior or mid-level.  
+63:44 Um that's where I would put at. Again, if this 
+was an actual interview, I would put it as as a  
+63:50 mid-level. Again, um because we're kind of trained 
+to say to be more safer than to be more, you know,  
+63:56 on the other aspect of the things. That's what I 
+would do. Cool. Thoughts? Thoughts? questions. Um,  
+64:05 yeah. Yeah, totally makes sense. I think there 
+were some, like you said, the geohash, like I knew   of geocaching, but in that moment, I don't know if 
+geo hashing would have been rather, it wasn't the  
+64:17 first thing on my mind. Does that make sense? So, 
+I had to be probed to it. And so, um, in terms of  
+64:22 successful interviews, it's okay if like my my 
+my whole goal was to make it a collaboration,  
+64:27 right? Where this is how I'm thinking about it, 
+right? I I was saying everything I was thinking   and then eventually if we're like oh let's make 
+optimizations for this and I'm like okay if we're  
+64:36 going to optimize for this we can use geo hashing 
+right um I'm also sometimes wary of overoptimizing  
+64:42 or overengineering right and I only certain or 
+mention specific things if we need it if it's  
+64:48 part of what we want to accomplish but yeah I 
+completely agree with his um with his analysis  
+64:53 I think um there were different places where 
+I chose SQL versus NoSQL um maybe I could have   done a better job of explaining Why? Um, but 
+yeah. Awesome. Well, guys, great stuff. I know  
+65:05 everybody learned something watching this. 
+So, until next time, see you later. [Music]

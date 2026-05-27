@@ -1,0 +1,306 @@
+00:00 If you're just learning SEO, you picked
+00:02 the perfect time because the game has
+00:04 changed more this year than it has in
+00:06 the past 10 years. And that's to your
+00:09 advantage. People are finding answers on
+00:10 chat GBT, Reddit, and YouTube rather
+00:13 than just Google. Google is rewriting
+00:14 search with AI overviews, and new tools
+00:17 now exist that can do 80% of the work
+00:19 without you. This is your no fluffs
+00:22 beginner's guide to what actually works.
+00:24 this
+00:25 year. SEO used to be about optimizing
+00:28 for Google. 15 years ago, the only
+00:31 organic game in town was very much
+00:33 Google. There was no YouTube. There was
+00:34 no Instagram. All of these platforms
+00:36 either didn't exist or they were very
+00:38 nent. Nowadays, you have to think about
+00:40 optimizing for YouTube. That's the
+00:41 second largest search engine in the
+00:42 world. You have to think about Amazon if
+00:44 you are optimizing for shoppers. If
+00:46 you're optimizing for different
+00:47 communities, you're optimizing for
+00:48 Reddit. The main thing to think about is
+00:50 that if you're only focusing on Google,
+00:53 you are missing out. Now, although SEO
+00:55 is changing rapidly, it still has three
+00:58 essential building blocks that still
+00:59 hold true today. These have been the
+01:01 building blocks for a long time, but
+01:02 it's how you use them across different
+01:04 platforms like Google, YouTube, and
+01:06 Amazon that makes the difference today.
+01:07 So, let's start with how you can use
+01:09 content to rank on any platform. Winning
+01:12 this year when it comes to SEO means
+01:14 targeting longtail niche queries with
+01:16 real intent. I'm going to give you a
+01:17 couple examples of that. Instead of
+01:18 optimizing for let's say Salesforce as a
+01:21 keyword, you might be thinking about
+01:22 optimizing for keywords such as how to
+01:24 integrate Netswuite with Salesforce or
+01:26 instead of red shoes, you might be
+01:28 optimizing for what are the best red
+01:30 shoes designs for this year. And so
+01:32 anything that has let's say four plus
+01:34 keywords in it. These are longer tail
+01:36 niche queries that have real intent. And
+01:38 when people are searching for these
+01:39 keywords, they are often lower
+01:41 competition and lower volume, but they
+01:42 have higher intent, which means that the
+01:45 conversion rates for these keywords, the
+01:47 ability to convert these into customers
+01:48 or convert them into email subscribers
+01:50 is a lot higher. What that means is
+01:52 because search is getting a lot more
+01:53 competitive nowadays, what's happening
+01:55 is because of AI overviews, the
+01:57 impressions for websites, that's
+01:59 actually going up, but the number of
+02:00 clicks is going down. And I actually
+02:02 just spoke to a CEO of an enterprise SEO
+02:05 company earlier this week and he said
+02:07 they have a lot of data where it shows
+02:08 that your graph now when you look at
+02:09 your analytics. It looks like a jaw.
+02:11 Your impressions are going up but your
+02:13 clicks are going down. So you have to
+02:15 optimize for wherever you can find high
+02:17 intent, you're going to have a much
+02:18 easier time of optimizing for those
+02:19 because the game of website traffic is
+02:21 continuing to change. So how do you go
+02:23 about doing that? What you can actually
+02:24 do is use products out there like chat
+02:27 GPT or Manis AI and these can help you
+02:29 find these longtail keywords and you can
+02:31 just give a couple examples of high
+02:33 intent longtail keywords that you want
+02:34 to optimize for and then talk a little
+02:35 bit about your business and then what
+02:37 will happen is it'll spit out 50 or 100
+02:39 of these and then you can pick the ones
+02:40 that you like and then you can focus on
+02:42 creating the content for these longtail
+02:44 highintent keywords. Okay, so we briefly
+02:46 touched upon large language models such
+02:48 as chat GPD, which help you generate
+02:50 keyword ideas, analyze transcripts, and
+02:51 refine your SEO strategy quickly. What
+02:54 you can do is yes, you can create those
+02:55 high intent longtail keywords, but it
+02:57 can actually even create blog posts
+02:59 based on whatever your writer guidelines
+03:01 are. And what I mean by that is your
+03:02 writer guidelines are your way, your
+03:05 style of creating content. You can
+03:07 actually have LLM now scan your blog
+03:09 content on your site and it will figure
+03:11 out what the writer guidelines are. So,
+03:12 for example, typically our blog posts
+03:14 are around 1,500 to 2,000 words. And
+03:16 they're backed with a lot of links, a
+03:17 lot of statistics, a lot of tables. And
+03:19 an LLM was able to figure that out. And
+03:21 after it figured it out, it was able to
+03:23 create high quality blog posts,
+03:24 extremely high quality blog post,
+03:26 basically 95 to 99% there. And was able
+03:28 to do 21 of these in a span of 30
+03:31 minutes. So, you have a lot more power
+03:33 in your hands now as an SEO because you
+03:36 have an AI assistant that is infinitely
+03:38 patient that will help you figure out
+03:40 what you should be doing next with your
+03:41 strategy and then help you execute on
+03:43 that strategy. All right, so we touched
+03:45 upon some of the more advanced things,
+03:46 but I do need to talk about some of the
+03:48 basics here. We talked about citations.
+03:49 The currency when it comes to SEO, it's
+03:52 still content and links even this year.
+03:54 And so content and links, what does that
+03:55 mean? That means you have to create very
+03:57 high quality content and you have to
+03:58 have other sites linking to you to prove
+04:00 that your site deserves to rank in the
+04:02 search engines. So citations can mean
+04:04 links. Citations can mean from a local
+04:07 SEO standpoint, it can be the people
+04:08 that are giving you reviews. There's a
+04:10 lot of different citations across the
+04:11 internet. So we talked about content
+04:12 citations and double eat. What that
+04:15 means is experience, expertise,
+04:17 authoritiveness, and trustworthiness.
+04:19 And because there's so many people
+04:20 creating content on the internet now,
+04:22 this is going to continue to be more
+04:24 important. And so me creating this
+04:25 YouTube right now, it does show me
+04:27 sharing experiences. So stories, for
+04:28 example, there's the expertise, there's
+04:30 authoritiveness, and there's a
+04:31 trustworthiness. Can you trust this
+04:33 person? Right? Even if we're talking
+04:34 about expanding beyond organic SEO,
+04:36 that's still going to carry over into
+04:38 other algorithms cuz it just makes sense
+04:40 at the end of the day. So again, double
+04:42 eat, you have citations, and you have
+04:44 content, and that's still very much
+04:46 going to play, but that's going to
+04:47 evolve over time. So those building
+04:49 blocks, keep those in mind because
+04:50 whatever game you decide to play when it
+04:52 comes to search everywhere optimization,
+04:54 these will always be should always be in
+04:56 the back of your mind. All right, so now
+04:57 that I gave you the building blocks, I
+04:59 want to go more into the new toolkit.
+05:01 These are tools that can do 80% of the
+05:03 work. And these are new tools that can
+05:04 automate SEO tasks such as internal
+05:06 linking, content pruding, making SEO
+05:08 more efficient than ever. And so some
+05:10 examples of this, you can definitely use
+05:12 an autonomous agent like Manis.ai or you
+05:15 can use something like Genspark.ai. When
+05:18 it comes to internal linking, you can
+05:19 have it scan your entire website or scan
+05:21 sections of your website and help it
+05:22 figure out where you should be adding
+05:24 internal links for keywords that you
+05:25 want to be ranking for. You can say, "My
+05:27 website stands for this. It's a digital
+05:28 marketing agency. I want to make sure
+05:30 that these keywords are prioritized and
+05:32 we're adding more internal links for
+05:33 them." Or you can go out there and you
+05:35 can build products yourself. You can
+05:36 vibe code internal linking tools using
+05:39 Replet or using cursor. Internally for
+05:41 us, we built a product called ClickFlow.
+05:42 These are products that we use for our
+05:44 clients and that helps us create
+05:45 internal links that helps us figure out
+05:46 what content we should be pruning, we
+05:48 should be consolidating or content that
+05:50 we should be deleting. But the main
+05:51 thing now is that you have a lot more
+05:52 power in your hands even as a
+05:54 non-technical person. You can actually
+05:55 deploy these little tools, these little
+05:57 apps that you can use and you're going
+05:58 to be able to do your work a lot more
+05:59 efficiently. And so when we talk to our
+06:01 team about using these different
+06:03 products, they're saying they can do 70
+06:04 to 80% of their work a lot faster.
+06:06 They're saving a lot more hours and
+06:08 they're spending their time on higher
+06:09 leverage work. A lot of what we covered
+06:11 so far used to take weeks or days even.
+06:14 This is where you're lucky if you're a
+06:15 beginner now because there are so many
+06:17 tools out there that automate the heavy
+06:19 lifting. Now, I want to talk quickly
+06:21 about surviving the future because AI
+06:23 overviews are completely disrupting
+06:25 organic search. In fact, Google's AI
+06:27 overviews are reducing organic traffic
+06:29 studies show by drops of more than 37%.
+06:32 So, just to give you a little more
+06:33 context on AI overviews, these are the
+06:35 answers that Google offers at the top of
+06:37 the page to reply to search queries. And
+06:39 so what that means for your strategy is
+06:40 that you've got to shift rapidly because
+06:42 the game now, as I mentioned, is the
+06:45 search everywhere optimization future.
+06:47 Most AI writing tools were built by
+06:48 engineers who have never written a blog
+06:50 post in their lives. Clickflow is
+06:52 entirely different. It's built by my
+06:54 team of SEO marketers and learns your
+06:56 business inside out, delivering
+06:57 automated, scalable content that is
+06:59 optimized for search engines and reads
+07:01 like it was crafted by your own team. No
+07:03 more managing freelancers, no more
+07:05 babysitting briefs. Just press go and
+07:07 grow. So head to clickflow.com and get
+07:10 your first 25,000 words free. That's not
+07:12 a typo. 25,000. Go get them.
+07:15 clickflow.com. So website traffic is
+07:18 going to continue to decline over the
+07:19 next 5 10 years or so. And like I
+07:21 mentioned earlier, you think about
+07:22 looking at your Google Search Console.
+07:24 You definitely should still have Google
+07:26 Search Console today, but when you log
+07:27 into it, you're going to see that in the
+07:29 purple, usually it's in the purple, that
+07:31 your website traffic impressions are in
+07:33 fact going up and your clicks are going
+07:35 down. So that's going to decline over
+07:37 time, but that doesn't mean you should
+07:38 completely give up on organic search
+07:41 because I look at it as a cigar butt
+07:43 type of business. And so Warren Buffett
+07:45 likes to say that there are businesses
+07:47 that are dying, but it's going to take
+07:48 time to decline over time. And so over
+07:50 the next 5 to 10 years, you can still
+07:51 take advantage while everyone runs for
+07:53 the exits, you can still be in there
+07:55 taking advantage while you're covering
+07:56 other areas around search everywhere
+07:58 optimization. So websites still matter
+07:59 and you need to optimize for where your
+08:01 audience actually hangs out online. So I
+08:02 just want to reemphasize this that
+08:03 traditional SEO is not dying. It's
+08:06 simply spreading out. What that means is
+08:08 going back to optimizing for multiple
+08:10 channels now because attention is so
+08:12 fragmented. It is the search everywhere
+08:14 optimization experience. And the problem
+08:15 that traditional SEOs have had in the
+08:17 past is they are one trick ponies. They
+08:19 only focus on one basket. You cannot
+08:20 play the game that way today because the
+08:22 marketing game has changed. And so the
+08:24 best way to do this is by learning by
+08:26 doing. That means for example getting
+08:28 better at YouTube. That means if you're
+08:30 going to start a podcast, start a
+08:31 podcast and then you can figure out how
+08:32 to publish it to short form. Within
+08:33 short form, let's say Tik Tok for
+08:34 example, people are searching for
+08:36 things. On Instagram reels, people are
+08:37 searching for things. On LinkedIn,
+08:39 people are searching for things. Humans
+08:40 are always going to search for things
+08:42 because humans are infinitely curious.
+08:44 And the mediums always change over time,
+08:46 but the messaging doesn't change. You
+08:47 just have to adapt to the meta, the most
+08:49 optimized way of playing for each
+08:51 channel. And you have to experiment, you
+08:53 got to make mistakes, and you have to
+08:54 keep building. So, with the right AI
+08:55 tools and the right strategies, SEO is
+08:57 actually easier than ever and you'll
+08:59 improve much faster than you think. If
+09:02 you enjoyed this video, I want you to
+09:03 watch this next one over here on how
+09:05 Manis AI just completely changed the SEO
+09:07 game to learn more about how to scale up
+09:09 your SEO efforts even more.

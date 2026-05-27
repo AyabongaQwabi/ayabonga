@@ -1,0 +1,3931 @@
+00:00 Is SEO dead? Should you even care about
+00:03 
+
+00:03 it in 2026? Or should you spend all of
+00:06 
+
+00:06 your time on answer engine optimization?
+00:10 
+
+00:10 How we appear in chat GBT and Google's
+00:13 
+
+00:13 AI mode? Well, if you want the answers
+00:15 
+
+00:15 to those questions, we have the best
+00:18 
+
+00:18 person in the world to answer them. We
+00:20 
+
+00:20 have Ethan Smith and he's going to give
+00:22 
+
+00:22 you some things that you have not heard
+00:24 
+
+00:24 anywhere else. He's going to tell you
+00:26 
+
+00:26 search, traditional search, blue links,
+00:29 
+
+00:29 is just as important today as it ever
+00:32 
+
+00:32 was in the past. He's going to tell you
+00:34 
+
+00:34 what is the difference between doing
+00:35 
+
+00:35 great SEO and doing great engine
+00:38 
+
+00:38 optimization and tell you the only
+00:40 
+
+00:40 couple of things that actually matter,
+00:42 
+
+00:42 the only couple of things that you have
+00:43 
+
+00:43 to do differently to make sure you
+00:45 
+
+00:45 appear number one in ChatBT in Google AI
+00:47 
+
+00:47 mode. He's going to give you the secrets
+00:49 
+
+00:49 to the onpage optimization you have to
+00:51 
+
+00:51 do and the off- page, the things you
+00:53 
+
+00:53 have to do off your site. That's not
+00:55 
+
+00:55 all. Stay tuned right until the end till
+00:57 
+
+00:57 Ethan gives his stepbystep playbook of
+01:00 
+
+01:00 how you can win in SEO and answer engine
+01:04 
+
+01:04 optimization over the next 3 years. All
+01:07 
+
+01:07 of that and more on this episode of
+01:09 
+
+01:09 Marketing Against the Great.
+01:13 
+
+01:13 >> Uh Ethan, welcome back to the show. We
+01:15 
+
+01:15 are excited for you to come [music] back
+01:17 
+
+01:17 and kind of teach us all about AI search
+01:20 
+
+01:20 and how to appear in the LLMs.
+01:23 
+
+01:23 >> Excited to be back. Uh, so Ethan, you uh
+01:25 
+
+01:25 we had you on the show before. I think
+01:26 
+
+01:26 we primarily probably talked about maybe
+01:29 
+
+01:29 we talked about this old thing called
+01:31 
+
+01:31 SEO all the way [laughter] back then and
+01:33 
+
+01:33 talked about search traffic and things
+01:35 
+
+01:35 like that. And you are like one of the
+01:37 
+
+01:37 best people in the world on that topic
+01:38 
+
+01:38 and now one of the best people in the
+01:40 
+
+01:40 world on AI search. I I stole one of
+01:42 
+
+01:42 your really incredible graphs that you
+01:44 
+
+01:44 released uh recently that went viral
+01:46 
+
+01:46 where it showed there was more content
+01:48 
+
+01:48 being created by AI than being created
+01:51 
+
+01:51 by humans. I know that graphite did a
+01:52 
+
+01:52 really good study on that. It got shared
+01:54 
+
+01:54 pretty pretty widely.
+01:55 
+
+01:55 >> So Ethan, the internet has changed
+01:58 
+
+01:58 dramatically in the last year. If you're
+02:00 
+
+02:00 a marketer, I guess where I'd love to
+02:02 
+
+02:02 start with you is where are we in the
+02:05 
+
+02:05 state of things? How should marketers
+02:07 
+
+02:07 think about balancing SEO versus this
+02:10 
+
+02:10 new answer engine optimization world
+02:13 
+
+02:13 that is getting a lot of hype, but I
+02:15 
+
+02:15 think a lot of people don't understand
+02:16 
+
+02:16 what's real or not about it.
+02:18 
+
+02:18 >> Yeah. And so how should people think
+02:20 
+
+02:20 about it? So many thoughts. Uh thought
+02:22 
+
+02:22 one is that SEO traffic is not down.
+02:25 
+
+02:25 There's a lot of stuff being published
+02:26 
+
+02:26 about SEO being down and SEO dying. And
+02:28 
+
+02:28 if you actually look at the data, it
+02:30 
+
+02:30 hasn't gone down much at all. Maybe half
+02:33 
+
+02:33 a percent or 1%, but there's no downward
+02:35 
+
+02:35 trend in SEO. Uh the second is that LLMs
+02:38 
+
+02:38 are growing a lot. They're growing 100%
+02:40 
+
+02:40 year-over-year. So 2025 versus 2024,
+02:43 
+
+02:43 visits to LMS are up 100%. But it's
+02:46 
+
+02:46 still 115th the size of Google search.
+02:49 
+
+02:49 So it is a fast growing channel that is
+02:52 
+
+02:52 a small fraction of search and it
+02:55 
+
+02:55 growing does not mean that SEO is going
+02:57 
+
+02:57 down. The pie is getting bigger. So SEO
+02:60 
+
+02:60 is not dying. LLMs are growing a lot but
+03:02 
+
+03:02 it's still a small fraction of search.
+03:05 
+
+03:05 The second thing is that to optimize for
+03:07 
+
+03:07 LLMs. A lot of the strategies are
+03:09 
+
+03:09 probably pretty similar to search. I
+03:11 
+
+03:11 think we're still pretty early and I
+03:12 
+
+03:12 even I don't have all the answers
+03:14 
+
+03:14 because I haven't been doing AEO for 20
+03:17 
+
+03:17 years because LM haven't existed for
+03:18 
+
+03:18 years.
+03:19 
+
+03:19 >> Nobody has. Yeah,
+03:20 
+
+03:20 >> nobody has. And it's it's harder to test
+03:23 
+
+03:23 in uh LMS than it is in search or it is
+03:25 
+
+03:25 in email or you know uh push
+03:28 
+
+03:28 notifications. It's harder to test. So
+03:30 
+
+03:30 it's harder to find out what actually
+03:31 
+
+03:31 works. So I have some data on what works
+03:33 
+
+03:33 and I have some analysis on what I think
+03:34 
+
+03:34 probably works, but we're still pretty
+03:36 
+
+03:36 early. But it seems like most of the
+03:37 
+
+03:37 strategies that work in answer
+03:39 
+
+03:39 optimization heavily overlap with search
+03:41 
+
+03:41 engine optimization. So I would think of
+03:43 
+
+03:43 it as a single hostic strategy as
+03:44 
+
+03:44 opposed to two completely different
+03:46 
+
+03:46 things. All right. So you're basically
+03:47 
+
+03:47 like look AEO is a thing. It's growing
+03:51 
+
+03:51 rapidly. So you need to pay attention to
+03:52 
+
+03:52 it. But search engine optimization even
+03:55 
+
+03:55 as Google rolls out AI mode and its
+03:58 
+
+03:58 advancements in search is just going to
+04:01 
+
+04:01 continue to be a core part of the
+04:04 
+
+04:04 experience. Maybe that 10 blue link
+04:06 
+
+04:06 experience will slowly decline over time
+04:09 
+
+04:09 as AI mode and other AI features that
+04:12 
+
+04:12 Google released come aboard. But if
+04:13 
+
+04:13 you're a company right now and you are
+04:16 
+
+04:16 working on search engine marketing, you
+04:17 
+
+04:17 got to keep going and kind of expand
+04:19 
+
+04:19 into this AEO landscape. Is that the way
+04:22 
+
+04:22 the average marketer should think about
+04:23 
+
+04:23 it?
+04:24 
+
+04:24 >> Yes, except I don't think that the 10
+04:26 
+
+04:26 blue links are going down. I think that
+04:28 
+
+04:28 >> this is a take. Let's go. The data that
+04:30 
+
+04:30 I have suggests that the amount of
+04:32 
+
+04:32 traffic coming from the 10 blue links is
+04:34 
+
+04:34 actually flat or maybe it's down
+04:36 
+
+04:36 slightly but it's but it's flat and it's
+04:38 
+
+04:38 been flat for years. When I say flat you
+04:40 
+
+04:40 know plus or minus 3% 4% 5% something
+04:44 
+
+04:44 like that but the data that I have
+04:46 
+
+04:46 suggested it's not going down. However
+04:48 
+
+04:48 the pi is increasing so there is more
+04:50 
+
+04:50 usage of AI mode. There's more usage of
+04:52 
+
+04:52 Gemini. Gemini is the fastest growing
+04:54 
+
+04:54 LLM. Actually it's growing faster than
+04:56 
+
+04:56 chat GBT. And if you combine AI
+04:59 
+
+04:59 overviews, AI mode and Gemini usage,
+05:01 
+
+05:01 it's not as large as Chad GPT, but it's
+05:03 
+
+05:03 it's, you know, not far off from that.
+05:06 
+
+05:06 But the PI is increasing in size. It's
+05:08 
+
+05:08 not that it's shifting from search to
+05:10 
+
+05:10 LLMs. It's that there's an increased
+05:12 
+
+05:12 usage of both. And the amount of traffic
+05:14 
+
+05:14 to the 10 blue links is roughly flat,
+05:17 
+
+05:17 and I don't expect it to continue to be
+05:19 
+
+05:19 roughly flat. Who knows what will happen
+05:20 
+
+05:20 in the future, but I can tell you what's
+05:22 
+
+05:22 happened in the past, which is that it's
+05:24 
+
+05:24 actually not uh decreased significantly.
+05:25 
+
+05:25 So, this isn't a very important
+05:26 
+
+05:26 statement because we have a lot of
+05:28 
+
+05:28 founders, we have a lot of folks who are
+05:30 
+
+05:30 deep in the weeds and are like, who uses
+05:32 
+
+05:32 the 10 blue links anymore? And you're
+05:34 
+
+05:34 here saying based on the historical data
+05:36 
+
+05:36 and based on everything you see that
+05:38 
+
+05:38 even as they roll out AI mode
+05:40 
+
+05:40 aggressively at Google, even as you have
+05:42 
+
+05:42 more Gemini adoption at Google, you're
+05:45 
+
+05:45 still going to see the adoption of Tin
+05:47 
+
+05:47 Blue links because it's so ingrained
+05:49 
+
+05:49 into the fabric of how people behave in
+05:52 
+
+05:52 search like it's not going away
+05:54 
+
+05:54 overnight. It's going to be either
+05:56 
+
+05:56 consistent and you think of it the
+05:57 
+
+05:57 decline is going to be steady. If
+05:59 
+
+05:59 anything, it's not going to like just
+06:00 
+
+06:00 fall off a cliff one day.
+06:02 
+
+06:02 >> I think it'll be steady. I think it'll
+06:03 
+
+06:03 be somewhere in between neutral and
+06:06 
+
+06:06 minus 5%. I don't think I don't see any
+06:08 
+
+06:08 data suggesting that it's going down
+06:10 
+
+06:10 significantly.
+06:11 
+
+06:11 >> Got it. Okay. So, if you believe
+06:13 
+
+06:13 everything you're saying, then it's
+06:14 
+
+06:14 like, wow. SEO remains a core mainstay
+06:18 
+
+06:18 of everybody's strategy. I talk with a
+06:19 
+
+06:19 ton of founders and they're all like,
+06:21 
+
+06:21 should I do SEO? How should I think
+06:23 
+
+06:23 about SEO? Should I even worry about it?
+06:26 
+
+06:26 And you're here saying that the death of
+06:28 
+
+06:28 SEO has been greatly exaggerated.
+06:31 
+
+06:31 >> Correct. And question for you. So the
+06:33 
+
+06:33 the founders that say that SEO is dying.
+06:35 
+
+06:35 Yeah.
+06:36 
+
+06:36 >> Are they early or late stage?
+06:37 
+
+06:37 >> They're early obviously. I talked to a
+06:40 
+
+06:40 lot of people who are building companies
+06:41 
+
+06:41 now and they're like, "Hey, I'm trying
+06:42 
+
+06:42 to figure out my distribution. How do I
+06:44 
+
+06:44 get my product out in the world?" And
+06:47 
+
+06:47 before they were like, I understood the
+06:48 
+
+06:48 old playbook of create some content on a
+06:50 
+
+06:50 blog and a website, get some search
+06:52 
+
+06:52 engine traffic and buy some ads and kind
+06:55 
+
+06:55 of grow my business from there. And now
+06:57 
+
+06:57 they're kind of like, does that still
+06:59 
+
+06:59 work? Should I do something different?
+07:01 
+
+07:01 And so maybe I would put it back to you.
+07:03 
+
+07:03 If if you were starting a company today,
+07:07 
+
+07:07 how would you think about investing in
+07:09 
+
+07:09 search as a channel to grow your
+07:11 
+
+07:11 business? My opinion is the same opinion
+07:13 
+
+07:13 that it's been for uh several years,
+07:15 
+
+07:15 which is if you're an early stage
+07:16 
+
+07:16 founder, you should not be spending
+07:18 
+
+07:18 significant time on search engine
+07:20 
+
+07:20 optimization because it's hard to do.
+07:22 
+
+07:22 It's not because the channel is not
+07:23 
+
+07:23 large or that it will not exist in the
+07:25 
+
+07:25 future. It's because it's hard to do and
+07:28 
+
+07:28 the later you are, the easier it is to
+07:29 
+
+07:29 do because you have more authority. So
+07:31 
+
+07:31 my suggestion is if you're a seedstage
+07:33 
+
+07:33 company, spend little to no time on
+07:35 
+
+07:35 search. spend time on other channels
+07:37 
+
+07:37 like paid, like viral,
+07:40 
+
+07:40 >> like community, Reddit, things like
+07:41 
+
+07:41 that. And then as your series A, spend a
+07:43 
+
+07:43 little bit more on search engine
+07:44 
+
+07:44 optimization. And then as your series B,
+07:46 
+
+07:46 spend a lot of time on search engine
+07:47 
+
+07:47 optimization. Also spend time on answer
+07:49 
+
+07:49 engine optimization. When you're doing
+07:51 
+
+07:51 that, have a single strategy for both.
+07:53 
+
+07:53 Don't do one or the other. One
+07:55 
+
+07:55 interesting thing on answer engine
+07:56 
+
+07:56 optimization that is different from SEO
+07:58 
+
+07:58 is that if you're an early stage
+07:59 
+
+07:59 company, you actually can get impact
+08:01 
+
+08:01 early because for many of the most
+08:04 
+
+08:04 popular questions like what's the best
+08:06 
+
+08:06 uh marketing software, it's other
+08:08 
+
+08:08 websites saying HubSpot, not HubSpot
+08:11 
+
+08:11 saying HubSpot. And you could get
+08:14 
+
+08:14 mentioned tomorrow and win a question
+08:15 
+
+08:15 like that. If I'm a brand new company
+08:17 
+
+08:17 trying to compete with HubSpot, if I get
+08:20 
+
+08:20 mentioned on the other citations, I
+08:21 
+
+08:21 suddenly become the answer that I'm the
+08:23 
+
+08:23 best. That's not true for search. So,
+08:25 
+
+08:25 the time to impact is is short if you're
+08:28 
+
+08:28 doing off-site. And off-site's the main
+08:30 
+
+08:30 thing that's different from uh from
+08:32 
+
+08:32 search engine optimization. But my
+08:33 
+
+08:33 general suggestion is for sure you
+08:36 
+
+08:36 should spend time on search engine
+08:37 
+
+08:37 optimization the larger your company is.
+08:39 
+
+08:39 Look, everyone's freaking out about SEO
+08:41 
+
+08:41 dying and scrambling to build separate
+08:43 
+
+08:43 AEO strategies. We've got you covered.
+08:46 
+
+08:46 We've built you 10 killer AI prompts
+08:48 
+
+08:48 that will let you rank in Google and
+08:50 
+
+08:50 ChatGpt with just one strategy. get it
+08:53 
+
+08:53 right now. Scan the QR code or click the
+08:55 
+
+08:55 link in the description. Now, uh let's
+08:58 
+
+08:58 get back to the show.
+08:59 
+
+08:59 >> I [snorts] wanted to go back to a point
+09:01 
+
+09:01 you made about founders asking you if
+09:03 
+
+09:03 the channel is going down. And there's
+09:05 
+
+09:05 two different kinds of founders and I
+09:07 
+
+09:07 hear the same thing. There's early stage
+09:08 
+
+09:08 and there's late stage. And they're both
+09:10 
+
+09:10 great. And I'm an, you know, arguably an
+09:12 
+
+09:12 early stage founder. So I I love early
+09:14 
+
+09:14 stage founders. They don't have the data
+09:17 
+
+09:17 like [clears throat] the latest stage
+09:18 
+
+09:18 companies do. So latestage founders have
+09:21 
+
+09:21 data showing that they're getting a lot
+09:23 
+
+09:23 of traffic from SEO. Like an specific
+09:25 
+
+09:25 example is I believe search is the
+09:27 
+
+09:27 largest visit channel at least for
+09:28 
+
+09:28 HubSpot right now. Is that a true
+09:30 
+
+09:30 statement?
+09:31 
+
+09:31 >> Yeah, it is.
+09:32 
+
+09:32 >> Yeah. And so we work with a lot of a lot
+09:35 
+
+09:35 of later stage companies like notion and
+09:37 
+
+09:37 web flow and they can see in their data
+09:40 
+
+09:40 searches our number one or our number
+09:42 
+
+09:42 two channel and so they know that it's
+09:44 
+
+09:44 not dying. Early stage don't have the
+09:46 
+
+09:46 data. So they're getting information
+09:48 
+
+09:48 from the internet and from blogs and
+09:50 
+
+09:50 things like that where the prevailing
+09:52 
+
+09:52 wisdom is that it's going down. And so
+09:54 
+
+09:54 since they don't have the data, they
+09:55 
+
+09:55 believe this. But that's why you hear
+09:58 
+
+09:58 very different things from people with
+09:59 
+
+09:59 data and without data. And with data,
+10:01 
+
+10:01 you know that the channel is not dying
+10:03 
+
+10:03 and that it's substantial.
+10:04 
+
+10:04 >> Yeah. Just on that, it is for HubSpot,
+10:06 
+
+10:06 but it's definitely way smaller. And so
+10:09 
+
+10:09 I'm kind of curious, your advice would
+10:12 
+
+10:12 be still to focus on answer engine
+10:15 
+
+10:15 optimization. do those three things in
+10:17 
+
+10:17 tandem, but do you change the
+10:19 
+
+10:19 expectation folks would have in terms of
+10:21 
+
+10:21 what they get back? Because what one of
+10:23 
+
+10:23 the kind of things that happens is
+10:24 
+
+10:24 people look at Google's earnings and
+10:26 
+
+10:26 they say, well, look at Google's
+10:27 
+
+10:27 earnings. Like they are doing really
+10:30 
+
+10:30 well. Search volume is going up. All of
+10:31 
+
+10:31 this stuff is being kind of
+10:33 
+
+10:33 misrepresented. But people are looking
+10:36 
+
+10:36 at search volume where what's dropping
+10:37 
+
+10:37 is clicks, right? Search volume is
+10:39 
+
+10:39 obviously going to go up with AI mode.
+10:41 
+
+10:41 It's going to drive way more queries.
+10:43 
+
+10:43 But Google is monetizing that through
+10:44 
+
+10:44 paid where is what's happening is the
+10:46 
+
+10:46 average business is losing clicks,
+10:48 
+
+10:48 right? They're not getting the same
+10:49 
+
+10:49 amount of click through from keywords.
+10:52 
+
+10:52 I've seen it from businesses who have
+10:53 
+
+10:53 showed me that they've actually improved
+10:55 
+
+10:55 the position of their keywords and
+10:58 
+
+10:58 drastically decreased the amount of
+10:59 
+
+10:59 traffic that they've got back over the
+11:02 
+
+11:02 past year. And I'm curious, do you see
+11:03 
+
+11:03 that happening and you change people's
+11:06 
+
+11:06 expectations in terms of what they
+11:07 
+
+11:07 expect to get back for their effort?
+11:09 
+
+11:09 >> I don't actually see that happening. So
+11:11 
+
+11:11 what I see happening is uh the amount of
+11:14 
+
+11:14 usage of Google is roughly flat and the
+11:17 
+
+11:17 click-through rate is roughly flat. I
+11:19 
+
+11:19 think most people probably believe that
+11:20 
+
+11:20 the usage of Google is not dropping but
+11:23 
+
+11:23 that the click-through rate within
+11:25 
+
+11:25 Google to organic is going down.
+11:27 
+
+11:27 >> Right?
+11:27 
+
+11:27 >> Anytime you're looking at at a large
+11:29 
+
+11:29 data set there there's going to be
+11:30 
+
+11:30 examples of websites going down. There's
+11:32 
+
+11:32 also going to be examples of websites
+11:33 
+
+11:33 going up. you're probably going to
+11:35 
+
+11:35 disproportionately hear about the ones
+11:36 
+
+11:36 going down than the ones going up
+11:38 
+
+11:38 because why would they tell you hey
+11:39 
+
+11:39 Kieran my you know guess what my traffic
+11:41 
+
+11:41 is up
+11:41 
+
+11:41 >> they would say guess what my traffic is
+11:43 
+
+11:43 way down then you need to find an answer
+11:45 
+
+11:45 for why it's down and the answer is
+11:49 
+
+11:49 frequently well Google changed their
+11:50 
+
+11:50 algorithm and I'm not exactly sure how
+11:52 
+
+11:52 they did it and I'm not sure if it'll
+11:53 
+
+11:53 ever come back like that's not a good
+11:55 
+
+11:55 answer a better answer is the
+11:56 
+
+11:56 clickthrough rate went down and I
+11:58 
+
+11:58 believe that the clickthrough rate did
+11:60 
+
+11:60 go down on a micro level for specific
+12:02 
+
+12:02 keywords or for specific specific
+12:04 
+
+12:04 websites, but I am not seeing the
+12:06 
+
+12:06 click-through rate of the 10 blue links
+12:08 
+
+12:08 uh decreasing. So, my general prediction
+12:10 
+
+12:10 is it's not going down. And by going
+12:12 
+
+12:12 down, I mean 1% 3% but not 20%. So, it's
+12:17 
+
+12:17 it hasn't gone down significantly and I
+12:19 
+
+12:19 don't think that it will go down
+12:20 
+
+12:20 significantly. Because of that, my
+12:22 
+
+12:22 general recommendation in terms of
+12:24 
+
+12:24 expectations is it's a great channel and
+12:26 
+
+12:26 you should invest in it. Now SEO and
+12:29 
+
+12:29 answer engine optimization are less
+12:31 
+
+12:31 controllable
+12:33 
+
+12:33 and predictable than paid search for
+12:35 
+
+12:35 example. So there's uncertainty but
+12:37 
+
+12:37 there's always been uncertainty. The
+12:39 
+
+12:39 channel is large. I not seeing it go
+12:41 
+
+12:41 down. There is uncertainty. So you can't
+12:43 
+
+12:43 make the same guarantees that you can do
+12:44 
+
+12:44 for paid but it's still worth investing
+12:45 
+
+12:45 in.
+12:46 
+
+12:46 >> Okay. So basically for the average
+12:48 
+
+12:48 company if they have maintained their
+12:51 
+
+12:51 keyword positions across the last 12
+12:53 
+
+12:53 months you would expect based upon what
+12:56 
+
+12:56 you've seen for the their traffic to be
+12:58 
+
+12:58 pretty constant organic traffic to be
+12:60 
+
+12:60 pretty constant on average. And if we
+13:02 
+
+13:02 break search into educational content,
+13:05 
+
+13:05 which is like teach me how to do
+13:06 
+
+13:06 something, and transactional, which is
+13:08 
+
+13:08 like I'm trying to buy a product, the
+13:11 
+
+13:11 same across both of those because
+13:12 
+
+13:12 educational content is the one that I
+13:14 
+
+13:14 think has been much more cannibalized by
+13:16 
+
+13:16 AI because you can have the AI teach you
+13:18 
+
+13:18 to do something without having to read.
+13:20 
+
+13:20 But you think the traffic is like pretty
+13:22 
+
+13:22 consistent within each of those buckets?
+13:24 
+
+13:24 >> I'm not sure on each of those buckets. I
+13:26 
+
+13:26 do think AI overviews appears more for
+13:28 
+
+13:28 informational queries and educational
+13:30 
+
+13:30 queries that have low intent and that
+13:33 
+
+13:33 are less valuable. Uh transactional
+13:35 
+
+13:35 queries have more ads than AI overviews
+13:37 
+
+13:37 and always have. Uh I'm not sure if one
+13:40 
+
+13:40 is going up or down more than the other.
+13:42 
+
+13:42 I'm most interested in the transactional
+13:44 
+
+13:44 stuff because those are the queries that
+13:46 
+
+13:46 we care the most about for our our
+13:48 
+
+13:48 customers. So I'm not seeing that go
+13:50 
+
+13:50 down. It's possible that something like
+13:52 
+
+13:52 what's the definition of glossery terms
+13:54 
+
+13:54 type stuff might be uh going down more,
+13:56 
+
+13:56 but those are things that I care less
+13:57 
+
+13:57 about.
+13:58 
+
+13:58 >> So that to me feels like maybe the most
+14:02 
+
+14:02 spicy take and biggest myth.
+14:04 
+
+14:04 >> Do you think that's the biggest one
+14:05 
+
+14:05 you've seen this year? I'll be honest,
+14:07 
+
+14:07 like even me, I would have actually been
+14:09 
+
+14:09 a little bit more on the opposite side
+14:10 
+
+14:10 where I was like, "Hey, search volume is
+14:12 
+
+14:12 increasing, but what I'm seeing, and I
+14:14 
+
+14:14 don't have anywhere near as many
+14:16 
+
+14:16 websites that I would see as you would,
+14:18 
+
+14:18 but what I'm seeing is organic clicks
+14:20 
+
+14:20 are like decreasing pretty rapidly."
+14:22 
+
+14:22 >> What I think is happening is usage of
+14:24 
+
+14:24 Google is going up slightly and
+14:25 
+
+14:25 clickthrough rate is going down
+14:26 
+
+14:26 slightly. And so, the net effect is
+14:27 
+
+14:27 generally neutral. And I have
+14:29 
+
+14:29 substantial data across thousands of
+14:31 
+
+14:31 sites where I can see that the uh
+14:33 
+
+14:33 organic traffic is not decreasing. Your
+14:36 
+
+14:36 question was what are the biggest myths?
+14:37 
+
+14:37 What are the hottest takes? I I don't do
+14:39 
+
+14:39 hot takes for the sake of hot takes, but
+14:41 
+
+14:41 um I try to look at data and then
+14:42 
+
+14:42 describe it. And so I think the biggest
+14:45 
+
+14:45 myths number one is that SEO traffic is
+14:47 
+
+14:47 not going down on average. Number two is
+14:49 
+
+14:49 that SEO and answer engine optimization
+14:51 
+
+14:51 are very similar. Everything's changing.
+14:54 
+
+14:54 Throw out the old strategies. You have
+14:56 
+
+14:56 to adapt to the new strategies. And the
+14:58 
+
+14:58 third one is that LLMs are growing 100%
+15:01 
+
+15:01 year-over-year. So the Google is not
+15:03 
+
+15:03 growing 100% year-over-year, but it's
+15:05 
+
+15:05 still relatively small. It's meaningful,
+15:08 
+
+15:08 >> but it's small relative to search.
+15:10 
+
+15:10 >> Ethan, do you include AI mode in that or
+15:13 
+
+15:13 in that usage of LLMs?
+15:16 
+
+15:16 >> Yes. So I looked at the amount of usage
+15:19 
+
+15:19 of AI mode, Gemini, Grock, Collad,
+15:22 
+
+15:22 Perplexity, CHPT.
+15:25 
+
+15:25 uh and um it's it's roughly going uh
+15:28 
+
+15:28 100% year-over-year and it's roughly
+15:31 
+
+15:31 115th the size of search but it's
+15:33 
+
+15:33 growing 100% year-over-year. So 115th
+15:36 
+
+15:36 you know if you do the math and you just
+15:37 
+
+15:37 say well this continues at the same rate
+15:40 
+
+15:40 then
+15:41 
+
+15:41 >> you know doubling to the fourth exponent
+15:43 
+
+15:43 would be it's the same size in four
+15:44 
+
+15:44 years that's a simplistic way to
+15:46 
+
+15:46 forecast who knows but right now it's
+15:48 
+
+15:48 115th roughly
+15:49 
+
+15:49 >> and Ethan I think one of the things for
+15:51 
+
+15:51 people watching that you've kind of
+15:52 
+
+15:52 framed up is that given given the data
+15:55 
+
+15:55 that you're seeing is search is still a
+15:58 
+
+15:58 big huge channel LLMs are an emerging
+16:01 
+
+16:01 channel growing quickly but still you
+16:03 
+
+16:03 know 115th the size of search. The
+16:05 
+
+16:05 distinction that you set forth that I
+16:07 
+
+16:07 think was really important is you're
+16:08 
+
+16:08 like search still matters deeply on your
+16:12 
+
+16:12 authority and presence where LLMs if you
+16:15 
+
+16:15 are a less established company you can
+16:19 
+
+16:19 get mentioned get cited faster. So while
+16:22 
+
+16:22 the search market might be bigger your
+16:24 
+
+16:24 time to get cited and maybe recommended
+16:27 
+
+16:27 by LMS if you are kind of doing a
+16:30 
+
+16:30 blended strategy could be faster. So,
+16:32 
+
+16:32 kind of depending on where your company
+16:34 
+
+16:34 is on the evolution, I think you're
+16:35 
+
+16:35 advocating for kind of a a blend of
+16:38 
+
+16:38 focus on LLM and answer engines versus
+16:42 
+
+16:42 traditional SEOs. Am I interpreting, am
+16:44 
+
+16:44 I taking this away for our audience
+16:45 
+
+16:45 correctly?
+16:46 
+
+16:46 >> Yes. The larger your company, the larger
+16:48 
+
+16:48 your website, the more favorable SEO is
+16:51 
+
+16:51 for you. The earlier you are, the harder
+16:52 
+
+16:52 it is for answer engine optimization.
+16:55 
+
+16:55 Anyone can win engine optimization
+16:57 
+
+16:57 because off-site is where you can win
+16:60 
+
+16:60 the money questions. Also the long tail
+17:03 
+
+17:03 of chat is larger and longer and you can
+17:05 
+
+17:05 also win in the tail. So if you had a
+17:08 
+
+17:08 very specific question like what's the
+17:09 
+
+17:09 best website builder with this feature
+17:11 
+
+17:11 with this integration with this language
+17:13 
+
+17:13 there might be no answers anywhere on
+17:15 
+
+17:15 the internet. So if you're the only
+17:16 
+
+17:16 answer you can win that. It's kind of
+17:18 
+
+17:18 like longtail SEO back in 2008 which is
+17:21 
+
+17:21 how I got started. You could be a brand
+17:23 
+
+17:23 new site and eat up the longtail with
+17:25 
+
+17:25 exact match. Now the tail is answers to
+17:28 
+
+17:28 questions that are extremely specific.
+17:30 
+
+17:30 similar web put outdat showing that the
+17:33 
+
+17:33 average number of words per prompt was
+17:34 
+
+17:34 around 60 words I believe which is a
+17:37 
+
+17:37 very specific query
+17:38 
+
+17:38 >> very specific
+17:39 
+
+17:39 >> and you could be the only answer so if
+17:41 
+
+17:41 you're the only answer to a question
+17:43 
+
+17:43 then you can win that so the head and
+17:45 
+
+17:45 the tail are different and the time to
+17:47 
+
+17:47 impact is faster so anyone can win in
+17:50 
+
+17:50 answer engine optimization for SEO it's
+17:52 
+
+17:52 the the the larger you are the the more
+17:55 
+
+17:55 you can win and the earlier you are the
+17:56 
+
+17:56 harder it is
+17:58 
+
+17:58 >> that makes a ton of sense what are some
+18:00 
+
+18:00 of the um most repeatable tactics that
+18:06 
+
+18:06 you've seen that have correlated pretty
+18:09 
+
+18:09 heavily to a brand being more visible
+18:12 
+
+18:12 within LLM's chat GBT AI mode and Grock.
+18:18 
+
+18:18 I know they're kind of different as they
+18:20 
+
+18:20 have like slightly different nuances as
+18:21 
+
+18:21 well.
+18:22 
+
+18:22 >> Yeah. So there's off-site and on-site.
+18:24 
+
+18:24 And to your question about different
+18:26 
+
+18:26 LLMs, my general recommendation is only
+18:29 
+
+18:29 spend time where there's heavy usage.
+18:31 
+
+18:31 Right now, ChachiBT and Gemini AI mode
+18:35 
+
+18:35 are I don't know like 10 times larger
+18:37 
+
+18:37 than than all the other LM. I wouldn't
+18:39 
+
+18:39 spend any time on the other LM unless
+18:40 
+
+18:40 you're in a category where people are
+18:42 
+
+18:42 specifically using that LLM. Like
+18:45 
+
+18:45 engineers tend to use Claude more. Uh so
+18:49 
+
+18:49 if if you're an engineering company,
+18:51 
+
+18:51 that's different. But if you're most
+18:53 
+
+18:53 companies, I would spend no time on any
+18:55 
+
+18:55 LM other than ChatgPT and Gemini for
+18:58 
+
+18:58 now. So then what are the strategies?
+19:00 
+
+19:00 There's on-site and off-site. So on-site
+19:04 
+
+19:04 is basically SEO, but it's SEO for LMS.
+19:06 
+
+19:06 So everything you do for SEO works for
+19:09 
+
+19:09 free in answer engine optimization. The
+19:10 
+
+19:10 majority of the conversions that people
+19:12 
+
+19:12 get from answer engine optimization are
+19:14 
+
+19:14 because they did SEO well, not really
+19:16 
+
+19:16 thinking about answer engine
+19:17 
+
+19:17 optimization. It just worked for free.
+19:18 
+
+19:18 So then what are the intentional things
+19:20 
+
+19:20 that you do for answer engine
+19:21 
+
+19:21 optimization that are repeatable and
+19:22 
+
+19:22 it's essentially answering questions
+19:25 
+
+19:25 that people are asking answering very
+19:26 
+
+19:26 specific questions. So the kinds of
+19:28 
+
+19:28 questions that people ask
+19:29 
+
+19:29 disproportionately in LMS are I want a
+19:32 
+
+19:32 product with this feature, this use
+19:34 
+
+19:34 case, this integration, this language,
+19:36 
+
+19:36 like does the product do all these
+19:37 
+
+19:37 things that I want? And you usually
+19:39 
+
+19:39 wouldn't search for that because if you
+19:40 
+
+19:40 search for that, you know, you won't get
+19:41 
+
+19:41 any results.
+19:42 
+
+19:42 >> But if you ask that, chat is uniquely
+19:44 
+
+19:44 good at taking a bunch of criteria and
+19:46 
+
+19:46 finding things that match that. And so a
+19:50 
+
+19:50 repeatable thing is to have answers to
+19:53 
+
+19:53 questions that people are asking. So for
+19:54 
+
+19:54 a company like Web Flow, I want a
+19:57 
+
+19:57 website builder that helps me build a
+19:59 
+
+19:59 design portfolio and has SEO and AEO
+20:02 
+
+20:02 functionality and has an integration
+20:04 
+
+20:04 with Stripe and has this thing. So have
+20:07 
+
+20:07 a page for that. Uh Ripling is another
+20:09 
+
+20:09 example. Ripling has different personas
+20:10 
+
+20:10 like HR, IT, finance, operations. And so
+20:14 
+
+20:14 they have pages where they list these
+20:15 
+
+20:15 are the all the features that we have
+20:17 
+
+20:17 for HR. These are all the features that
+20:19 
+
+20:19 we have for IT. So you don't necessarily
+20:21 
+
+20:21 need a page for every single feature or
+20:23 
+
+20:23 use case, but you can create these lists
+20:26 
+
+20:26 of features or lists of integrations,
+20:28 
+
+20:28 lists of languages. And so this works
+20:30 
+
+20:30 quite well. Help center is another
+20:31 
+
+20:31 thing. The help center is built to
+20:33 
+
+20:33 explain how your product works. And so
+20:35 
+
+20:35 if you're asking questions about does
+20:36 
+
+20:36 your product do this thing, then the
+20:37 
+
+20:37 help center is actually a a natural
+20:39 
+
+20:39 place where you would have answers to
+20:41 
+
+20:41 that. You see help centers showing up a
+20:43 
+
+20:43 disproportionate amount of time in
+20:45 
+
+20:45 >> LMS.
+20:46 
+
+20:46 >> So these are all on-site things. I can
+20:48 
+
+20:48 go to offsite, but please
+20:49 
+
+20:49 >> just on on site if you are a company and
+20:52 
+
+20:52 I think one of the things you're telling
+20:54 
+
+20:54 them is hey like there's lots of LLMs
+20:56 
+
+20:56 with Google there used to be a small
+20:59 
+
+20:59 finite number of ways that someone could
+21:01 
+
+21:01 search for you because it was done
+21:02 
+
+21:02 through keywords and so we kind of
+21:03 
+
+21:03 taught people to search using these key
+21:05 
+
+21:05 phrases and you could have you know
+21:07 
+
+21:07 three to five maybe that were relevant
+21:09 
+
+21:09 to your product but when someone is
+21:12 
+
+21:12 asking an AI about that product they
+21:14 
+
+21:14 could ask it in many more ways. So,
+21:16 
+
+21:16 there's many more ways that you um have
+21:19 
+
+21:19 to answer that query about your product.
+21:21 
+
+21:21 If you're a business thinking, well, I
+21:22 
+
+21:22 have a product and I should actually
+21:24 
+
+21:24 create some content to answer these
+21:26 
+
+21:26 questions on my website to make sure
+21:28 
+
+21:28 that I can appear in the LLM if that
+21:30 
+
+21:30 gets asked. What are the ways that they
+21:33 
+
+21:33 should think about what questions to
+21:35 
+
+21:35 answer? Like, is there any kind of like
+21:37 
+
+21:37 hacks or anything like that to figure
+21:38 
+
+21:38 out what are the ways that people are
+21:41 
+
+21:41 asking questions about my product or
+21:42 
+
+21:42 service? like what are the ways I should
+21:45 
+
+21:45 figure out what questions they'll have
+21:47 
+
+21:47 so I can answer them, make sure I have
+21:48 
+
+21:48 content for them.
+21:49 
+
+21:49 >> Yeah, there's two different data sources
+21:51 
+
+21:51 for this. So the easy data source would
+21:53 
+
+21:53 be well let's just get first party data
+21:56 
+
+21:56 because that's what we do with search.
+21:57 
+
+21:57 With search we just use a tool like
+21:59 
+
+21:59 hrefs and or Google ad planner and then
+22:02 
+
+22:02 we get first party data and that comes
+22:04 
+
+22:04 from Google ad planner. So Google has
+22:07 
+
+22:07 paid search ads and so they give you the
+22:08 
+
+22:08 answer.
+22:10 
+
+22:10 uh chachi does not give you first-party
+22:12 
+
+22:12 prompt data. So there are a few uh
+22:14 
+
+22:14 companies that are doing panels. Panel
+22:18 
+
+22:18 would mean I have some subset of
+22:20 
+
+22:20 information about real first party
+22:22 
+
+22:22 prompt data and then I'm going to
+22:23 
+
+22:23 extrapolate from that what I think uh
+22:25 
+
+22:25 that looks like. I haven't really dug
+22:27 
+
+22:27 into that. So I don't have a an informed
+22:28 
+
+22:28 opinion on on what that looks like. I
+22:31 
+
+22:31 have more of an opinion on what are
+22:32 
+
+22:32 other ways. And I'll also say that if
+22:34 
+
+22:34 you're using panel data to look at
+22:36 
+
+22:36 prompts, you don't know what the
+22:38 
+
+22:38 longtail looks like because panel data
+22:39 
+
+22:39 is a subset. And if you're looking at a
+22:42 
+
+22:42 subset, it's necessarily going to have
+22:44 
+
+22:44 more sparse data in the tail. There's
+22:46 
+
+22:46 probably going to be a bunch of stuff
+22:47 
+
+22:47 that's happening in the tail, which is
+22:48 
+
+22:48 what I think is more interesting. And
+22:50 
+
+22:50 it's impossible to get that from panel
+22:51 
+
+22:51 data unless the panel is is huge. I
+22:54 
+
+22:54 don't think it's large enough to tell
+22:55 
+
+22:55 you what the tail looks like. So what
+22:57 
+
+22:57 does the tail look like? Uh good way to
+22:59 
+
+22:59 look at that is uh you know if if I'm
+23:01 
+
+23:01 web flow or if I'm rippling or if I'm
+23:03 
+
+23:03 HubSpot and I want to know what
+23:04 
+
+23:04 questions are people asking about
+23:05 
+
+23:05 HubSpot, Reddit is a great place to look
+23:08 
+
+23:08 for that because people are actually
+23:09 
+
+23:09 asking questions on Reddit about does
+23:10 
+
+23:10 HubSpot do this or I have this problem.
+23:13 
+
+23:13 So going through Reddit and and trying
+23:15 
+
+23:15 to understand what people are asking
+23:16 
+
+23:16 about is is a great way to see what the
+23:19 
+
+23:19 tail looks like and what questions
+23:20 
+
+23:20 people are asking about HubSpot. looking
+23:22 
+
+23:22 at your customer support and sales
+23:24 
+
+23:24 conversations also cuz you're getting a
+23:26 
+
+23:26 ton of people asking does HubSpot do
+23:28 
+
+23:28 this or I'm I'm struggling with this
+23:30 
+
+23:30 thing. That's a great place for
+23:33 
+
+23:33 also like real questions that people are
+23:35 
+
+23:35 asking.
+23:36 
+
+23:36 >> I mentioned sales calls like take all
+23:38 
+
+23:38 your sales calls and run the transcripts
+23:40 
+
+23:40 through an NLM and say, you know,
+23:42 
+
+23:42 summarize the the most popular
+23:43 
+
+23:43 questions. I actually did the Lenny
+23:45 
+
+23:45 episode on answer engine optimization
+23:48 
+
+23:48 and
+23:50 
+
+23:50 uh people messaged me on LinkedIn and
+23:53 
+
+23:53 [clears throat]
+23:54 
+
+23:54 said it was great and I said thank you.
+23:56 
+
+23:56 Do you have any feedback? Is there
+23:57 
+
+23:57 anything that you would like me to
+23:59 
+
+23:59 discuss more? And I got dozens of
+24:01 
+
+24:01 responses. So I took those responses and
+24:03 
+
+24:03 then I summarized them with an LLM
+24:05 
+
+24:05 saying what are the questions and things
+24:06 
+
+24:06 people most asked about and it was help
+24:08 
+
+24:08 center optimization like please discuss
+24:10 
+
+24:10 help center optimization more. I also I
+24:13 
+
+24:13 don't know if you know superme but uh my
+24:15 
+
+24:15 my friend Casey has super me. So I have
+24:17 
+
+24:17 a super ethan
+24:18 
+
+24:18 >> and I looked at 300 different questions
+24:20 
+
+24:20 that people were asking super ethan and
+24:23 
+
+24:23 then I had an LM summarize the questions
+24:25 
+
+24:25 that people are asking and now I know
+24:27 
+
+24:27 what questions I need to answer about uh
+24:29 
+
+24:29 answer optimization because I summarize
+24:31 
+
+24:31 those actual questions that people had.
+24:33 
+
+24:33 So, you know, there's the first party
+24:35 
+
+24:35 panel data which will tell you about the
+24:37 
+
+24:37 head, but if you want to know about the
+24:39 
+
+24:39 tail, look for where people are actually
+24:40 
+
+24:40 asking questions about your product and
+24:43 
+
+24:43 that's how you can get the answer.
+24:44 
+
+24:44 >> So, I think there's a couple really
+24:45 
+
+24:45 interesting things that I I want to
+24:46 
+
+24:46 unpack here for a second. one if if
+24:49 
+
+24:49 you're watching this show and you
+24:52 
+
+24:52 especially are an earlier stage company,
+24:54 
+
+24:54 Ethan, you've kind of set the road map
+24:56 
+
+24:56 that the tail that the long tail in LLM
+24:59 
+
+24:59 search is much longer and much bigger
+25:01 
+
+25:01 and it's a pretty interesting
+25:02 
+
+25:02 opportunity. Um, but how you tackle that
+25:05 
+
+25:05 is very different because you need to do
+25:07 
+
+25:07 exactly what you just said and figure
+25:08 
+
+25:08 out what are kind of the ultra longtail
+25:11 
+
+25:11 complex questions people ask. Right? You
+25:13 
+
+25:13 said the average prompt on chat GPD
+25:15 
+
+25:15 search is like 60 words. that is not
+25:18 
+
+25:18 going to show up in anywhere other than
+25:21 
+
+25:21 your support data, your sales data,
+25:24 
+
+25:24 Reddit, the places people are actually
+25:26 
+
+25:26 having like more meaningful
+25:27 
+
+25:27 conversations about your brand. I think
+25:29 
+
+25:29 what's interesting to me about this as a
+25:31 
+
+25:31 marketer who was doing SEO is previously
+25:34 
+
+25:34 like SEO has been had been very
+25:38 
+
+25:38 removed from a lot of the other
+25:39 
+
+25:39 marketing efforts. It's like, oh, I'm
+25:41 
+
+25:41 going to do this technical SEO stuff and
+25:43 
+
+25:43 I've got this content team that's going
+25:44 
+
+25:44 to create the content I need for this
+25:47 
+
+25:47 SEO playbook. Where now it's like your
+25:49 
+
+25:49 product marketing, your customer
+25:51 
+
+25:51 support, all of the information around
+25:53 
+
+25:53 your product, your case studies, all of
+25:55 
+
+25:55 that. You now need to have a clean and
+25:58 
+
+25:58 simple way to publish and organize all
+26:00 
+
+26:00 of those at a pretty mass scale for
+26:02 
+
+26:02 robots, right? And you need to do so in
+26:04 
+
+26:04 a way that doesn't clog your site for
+26:06 
+
+26:06 humans. But you need kind of a new ultra
+26:09 
+
+26:09 longtail approach is what I'm hearing.
+26:10 
+
+26:10 Am I interpreting what you're saying the
+26:12 
+
+26:12 right way?
+26:13 
+
+26:13 >> I think so except I don't think that
+26:15 
+
+26:15 this needs to be different teams
+26:17 
+
+26:17 necessarily. I mean SEO done well is
+26:19 
+
+26:19 always a team effort and one of the
+26:21 
+
+26:21 biggest problems is that the SEO person
+26:23 
+
+26:23 is separate and it's not a team and so
+26:25 
+
+26:25 you can't get things launched like the
+26:26 
+
+26:26 SEO person says let's work on the help
+26:27 
+
+26:27 center. The help center team says well
+26:29 
+
+26:29 we have our own roadmap and we're not
+26:30 
+
+26:30 interested in working on SEO. But that's
+26:32 
+
+26:32 true for SEO as well. What I would say
+26:33 
+
+26:33 is you have your SEO team and then you
+26:35 
+
+26:35 have offsite and then you have longtail.
+26:37 
+
+26:37 Off-site's going to be community
+26:39 
+
+26:39 outreach, Reddit, LinkedIn, affiliates,
+26:42 
+
+26:42 viral PR. That was also true for SEO.
+26:45 
+
+26:45 The same people who are building links
+26:46 
+
+26:46 are the people who are building
+26:47 
+
+26:47 mentions. Same strategies pretty much.
+26:50 
+
+26:50 Uh and then there's the tail. So for the
+26:52 
+
+26:52 tail, I don't think you need millions of
+26:53 
+
+26:53 pages for this. I think that you need
+26:55 
+
+26:55 dozens maybe. And the SEO team can be
+26:58 
+
+26:58 the ones driving that. Yes, you would
+26:59 
+
+26:59 need help from the help center team, but
+27:01 
+
+27:01 I don't think that that dynamic changes
+27:03 
+
+27:03 anymore than it did with SEO. It's it's
+27:05 
+
+27:05 the same kind of thing like SEO done
+27:07 
+
+27:07 well is productled as Eli would say and
+27:09 
+
+27:09 that means that you know help center
+27:12 
+
+27:12 team please please collaborate with the
+27:14 
+
+27:14 uh the SEO team. on the on page part of
+27:16 
+
+27:16 that where you have a user and they're
+27:18 
+
+27:18 creating these kind of uh you know niche
+27:20 
+
+27:20 kind of pages to answer all of these
+27:22 
+
+27:22 questions in SEO there was obviously a
+27:24 
+
+27:24 lot of focus put on technical SEO and
+27:26 
+
+27:26 search in terms of how you structured
+27:28 
+
+27:28 your pages um how you can make sure that
+27:30 
+
+27:30 the crawlers could crawl them in the
+27:32 
+
+27:32 right way is there anything different
+27:35 
+
+27:35 that you have to do from a onpage
+27:38 
+
+27:38 structural perspective for LLMs that you
+27:41 
+
+27:41 didn't have to do for traditional
+27:45 
+
+27:45 Not really. As we were discussing,
+27:46 
+
+27:46 there's a lot of myths. I think one of
+27:48 
+
+27:48 the other myths with SEO is that
+27:49 
+
+27:49 technical SEO is really important and I
+27:52 
+
+27:52 specialize in technical SEO and I've
+27:54 
+
+27:54 been doing it since 2008.
+27:56 
+
+27:56 Uh it's just not that important
+27:58 
+
+27:58 generally speaking. So, I'll describe
+27:60 
+
+27:60 technical SEO and technical SEO.
+28:01 
+
+28:01 Technical SEO, the stuff that is
+28:04 
+
+28:04 impactful is make sure you have good
+28:06 
+
+28:06 internal links. Make sure that the bot
+28:08 
+
+28:08 can read the page. So, it's rendered in
+28:11 
+
+28:11 an indexable schema. And here's a list
+28:15 
+
+28:15 of 100 things to not do. So, just make
+28:17 
+
+28:17 sure you're not doing them like scraping
+28:20 
+
+28:20 content or redirect loops or things like
+28:22 
+
+28:22 that. But that's it. Similar with engine
+28:24 
+
+28:24 optimization. So, what matters internal
+28:27 
+
+28:27 links, schema,
+28:29 
+
+28:29 markup, and make sure the LM can read
+28:31 
+
+28:31 your page. That's really all that there
+28:33 
+
+28:33 is. I think that there's also a fourth
+28:35 
+
+28:35 thing coming which is uh chatbt launched
+28:38 
+
+28:38 atlas where it can that they want to be
+28:40 
+
+28:40 able to perform actions on your site
+28:42 
+
+28:42 like I want to book a hotel and keep the
+28:44 
+
+28:44 user on chatbt so that they don't need
+28:46 
+
+28:46 to leave chatbt
+28:48 
+
+28:48 >> and uh that's coming so then you would
+28:50 
+
+28:50 mark up your forms and your buttons and
+28:51 
+
+28:51 things like that'll be a fourth thing
+28:54 
+
+28:54 but that's basically it there's no other
+28:55 
+
+28:55 data that I have seen about other you
+28:58 
+
+28:58 know technical things that you need to
+28:59 
+
+28:59 do so lms.txt txt is an interesting case
+29:02 
+
+29:02 since we don't know what works but we
+29:05 
+
+29:05 want to find an answer for what works
+29:07 
+
+29:07 and so just with SEO uh something that
+29:10 
+
+29:10 sounds like it should be true people
+29:12 
+
+29:12 will start to believe that it's true and
+29:14 
+
+29:14 so well it should be like lms.txt
+29:17 
+
+29:17 was an idea that somebody said well this
+29:19 
+
+29:19 could be a good idea
+29:21 
+
+29:21 which is I want to help LLM ingest my
+29:23 
+
+29:23 data in a structured way makes a lot of
+29:25 
+
+29:25 sense what if you had lm.txt txt to do
+29:29 
+
+29:29 that. That sounds like it should be a
+29:30 
+
+29:30 thing. Sounds like a good idea. And then
+29:33 
+
+29:33 that gets repeated like, "Hey, did you
+29:34 
+
+29:34 hear about LMS.txt?" Like, "Yeah, I
+29:36 
+
+29:36 heard about that. Kip told me about that
+29:38 
+
+29:38 thing." And like, "Oh, it must be true
+29:39 
+
+29:39 because I've heard about it so many
+29:41 
+
+29:41 times that this idea becomes a fact."
+29:44 
+
+29:44 The more times you hear something, the
+29:46 
+
+29:46 >> the more it becomes a fact. And then it
+29:49 
+
+29:49 sounds correct. And then you add your
+29:53 
+
+29:53 elms.txt txt and you're like, "Well,
+29:55 
+
+29:55 they crawled it." Like, they looked at
+29:57 
+
+29:57 it, so it must be working. Publish a
+29:60 
+
+29:60 study must be working. I I jokingly uh
+30:04 
+
+30:04 said, "Well, I could create an Ethan.txt
+30:06 
+
+30:06 and the bot will crawl that, too. That
+30:08 
+
+30:08 doesn't mean that it's doing anything."
+30:11 
+
+30:11 >> Um, but lms.txt, as John Mueller from
+30:13 
+
+30:13 Google said, as far as I know, no one
+30:15 
+
+30:15 uses it. We don't use it,
+30:16 
+
+30:16 >> right?
+30:17 
+
+30:17 >> So, doesn't seem like that's a thing.
+30:19 
+
+30:19 Maybe it will be a thing in the future
+30:21 
+
+30:21 cuz it's not a bad idea but it's not
+30:23 
+
+30:23 used. So elements.txt as far as I know
+30:25 
+
+30:25 is not a thing. Second thing is that the
+30:28 
+
+30:28 elems use markdown and [clears throat]
+30:30 
+
+30:30 so okay well I need to make my page into
+30:32 
+
+30:32 markdown. And the premise of this is
+30:35 
+
+30:35 that uh chat GPT and Gemini and
+30:38 
+
+30:38 Perplexity these multi-billion dollar
+30:40 
+
+30:40 companies uh have not figured out how to
+30:43 
+
+30:43 parse web pages. So, I need to take my
+30:46 
+
+30:46 simple web page and I need to transform
+30:47 
+
+30:47 it into this other format because the
+30:50 
+
+30:50 people at OpenAI have not figured out
+30:51 
+
+30:51 how to parse web pages. That can't be
+30:54 
+
+30:54 true. There's no evidence that that's
+30:56 
+
+30:56 true. Uh, you know, there are there are
+30:57 
+
+30:57 cases where you can make it hard for
+30:60 
+
+30:60 search and for LMS to read your page.
+31:02 
+
+31:02 specifically if you're rendering things
+31:03 
+
+31:03 client side like if you progressively
+31:05 
+
+31:05 load different sections and you load
+31:07 
+
+31:07 this section at the bottom to make the
+31:08 
+
+31:08 page faster but you know you don't get
+31:10 
+
+31:10 it in the first fetch that could cause
+31:13 
+
+31:13 problems both with LMS and with search
+31:15 
+
+31:15 but generally speaking people don't do
+31:17 
+
+31:17 that uh so generally speaking I don't
+31:18 
+
+31:18 see any evidence that you have to do
+31:20 
+
+31:20 special technical things and again it's
+31:22 
+
+31:22 internal links pages renderable uh
+31:24 
+
+31:24 schema and then coming with Atlas is
+31:27 
+
+31:27 mark up your forms and your buttons and
+31:29 
+
+31:29 that's it. Can we just touch on then
+31:30 
+
+31:30 citations or off- page and maybe what is
+31:34 
+
+31:34 different with answer engine
+31:36 
+
+31:36 optimization versus traditional search?
+31:38 
+
+31:38 And so two things that you hear a lot
+31:41 
+
+31:41 about is first of all answer engine
+31:43 
+
+31:43 optimization is citation not links. And
+31:45 
+
+31:45 so you really just need to have the
+31:48 
+
+31:48 words on the page that you want to
+31:50 
+
+31:50 appear in LLMs many many times. And then
+31:53 
+
+31:53 the other thing is that each of the core
+31:56 
+
+31:56 LLMs have different partnership
+31:58 
+
+31:58 agreements. And so, you know, Claude
+32:01 
+
+32:01 does not have a partnership agreement
+32:02 
+
+32:02 with Reddit. And so, Reddit are, you
+32:05 
+
+32:05 know, I think taking legal action
+32:06 
+
+32:06 because they script their results.
+32:08 
+
+32:08 Whereas, CHPT has a very close
+32:09 
+
+32:09 relationship with Reddit, which is like
+32:11 
+
+32:11 theoretically why Reddit was such a
+32:13 
+
+32:13 popular third party source for a lot of
+32:15 
+
+32:15 their results, which may or may not be
+32:17 
+
+32:17 true. But they are kind of the two
+32:19 
+
+32:19 things we hear a lot about in terms of
+32:21 
+
+32:21 what may be different like citations
+32:23 
+
+32:23 versus links and the fact that each
+32:27 
+
+32:27 provider the sources that you have to
+32:30 
+
+32:30 appear in like it depends who who they
+32:33 
+
+32:33 have like partnership agreements with
+32:34 
+
+32:34 right because they're trying to stay
+32:35 
+
+32:35 within copyright laws.
+32:37 
+
+32:37 >> Yeah. So there's the technical details
+32:38 
+
+32:38 of a mention and then there's you know
+32:41 
+
+32:41 where are they that I should care about.
+32:43 
+
+32:43 So the technical details are it's a
+32:45 
+
+32:45 mention without a link. So, let's say
+32:47 
+
+32:47 that I want to win the best website
+32:48 
+
+32:48 builder and I want Web Flow to win. Uh,
+32:51 
+
+32:51 what I want is I want a citation that
+32:53 
+
+32:53 appears and says web flow. That could be
+32:55 
+
+32:55 a mention with no link or it could be a
+32:57 
+
+32:57 link. It's actually frequently a link.
+32:58 
+
+32:58 In SEO, it needs to be a link. SEO
+33:00 
+
+33:00 actually supposedly mentions also count
+33:02 
+
+33:02 in SEO, but but not as much. Now, in
+33:05 
+
+33:05 LMS, it just needs to be a mention. The
+33:07 
+
+33:07 LM needs to be able to find the mention
+33:09 
+
+33:09 on the page. It's not clear exactly how
+33:11 
+
+33:11 it finds that, but it seems like
+33:12 
+
+33:12 bulleted lists, uh, numbered lists,
+33:15 
+
+33:15 things like that make make it easy to
+33:17 
+
+33:17 find. The bigger difference is that in
+33:21 
+
+33:21 SEO, any link from anywhere counts. So,
+33:24 
+
+33:24 a link from the New York Times homepage
+33:26 
+
+33:26 to my page saying, "I'm the best website
+33:28 
+
+33:28 builder is a huge win for web flow." In
+33:31 
+
+33:31 LM, that's not true.
+33:33 
+
+33:33 >> In LMS, it's the specific citations that
+33:35 
+
+33:35 are appearing for the prompt that you
+33:36 
+
+33:36 care about. And it's not only the
+33:38 
+
+33:38 domains that matter. the exact URLs. So
+33:41 
+
+33:41 if a URL on HubSpot says that Web Flow
+33:44 
+
+33:44 is the best website builder, but that
+33:46 
+
+33:46 URL is not in the citations doesn't
+33:48 
+
+33:48 matter. So the only thing that matters
+33:49 
+
+33:49 are the specific URLs that are appearing
+33:52 
+
+33:52 in the citations.
+33:54 
+
+33:54 There's probably also some stuff around
+33:55 
+
+33:55 the core model as well, but most what we
+33:58 
+
+33:58 know is the URLs in the citations. So
+34:00 
+
+34:00 that's where you want to get the
+34:01 
+
+34:01 mentions. So, if you want to do
+34:03 
+
+34:03 off-site, you take the prompts that you
+34:05 
+
+34:05 want to win, you put them in a answer
+34:07 
+
+34:07 tracking tool, you see the URLs that are
+34:09 
+
+34:09 the most cited, and then you try to get
+34:11 
+
+34:11 mentioned on those. The mechanics of
+34:13 
+
+34:13 getting the mention is very similar to
+34:15 
+
+34:15 the mechanics of getting a backlink, but
+34:16 
+
+34:16 it's those specific URLs rather than any
+34:19 
+
+34:19 good link from anywhere.
+34:20 
+
+34:20 >> Yeah. And what about in traditional
+34:23 
+
+34:23 search it was um links from high
+34:27 
+
+34:27 authority sites like authority was a
+34:29 
+
+34:29 thing that you wanted to gravitate
+34:30 
+
+34:30 towards to figure out like where should
+34:31 
+
+34:31 I get a link versus where shouldn't I
+34:33 
+
+34:33 get a link whereas when you look at a
+34:35 
+
+34:35 lot of the data that has been released
+34:37 
+
+34:37 on chat GPT for example it does seem
+34:41 
+
+34:41 much more random what sites are cited as
+34:46 
+
+34:46 sources like there was two examples in
+34:48 
+
+34:48 in our vertical I looked at that were
+34:50 
+
+34:50 really like pretty random websites that
+34:52 
+
+34:52 were some of the most cited websites in
+34:54 
+
+34:54 our kind of vertical in SAS and they
+34:57 
+
+34:57 were not like high authority websites
+34:59 
+
+34:59 and they were quite newish websites. So
+35:01 
+
+35:01 have you seen a discon like where should
+35:03 
+
+35:03 I go to get my citations like how do I
+35:05 
+
+35:05 build a target list of I think you
+35:07 
+
+35:07 mentioned like one thing which is like
+35:08 
+
+35:08 what are appearing in the results
+35:10 
+
+35:10 already but are chat do they use like
+35:14 
+
+35:14 page authority I know they're using
+35:15 
+
+35:15 Google's results but is there a
+35:16 
+
+35:16 difference in how they think about
+35:17 
+
+35:17 authorative sites I think that all these
+35:20 
+
+35:20 companies either have an internal search
+35:22 
+
+35:22 engine or they're using some other third
+35:24 
+
+35:24 party search engine all search engines
+35:26 
+
+35:26 work pretty similarly but the
+35:27 
+
+35:27 configuration is different and the
+35:29 
+
+35:29 authority piece of the algorithm is
+35:30 
+
+35:30 different the relevant as a part of
+35:32 
+
+35:32 search is is uh pretty consistent and
+35:34 
+
+35:34 it's more simple. The authority piece is
+35:36 
+
+35:36 very hard to build. I have anecdotally
+35:39 
+
+35:39 seen uh sites that seem somewhat random
+35:42 
+
+35:42 in citations for LMS that you would not
+35:44 
+
+35:44 see in in Google search. And I think the
+35:46 
+
+35:46 reason why is because they're early in
+35:48 
+
+35:48 building their authority component of
+35:50 
+
+35:50 their search algorithm. It's probably
+35:51 
+
+35:51 functionally similar, but it's hard to
+35:53 
+
+35:53 build. And so that's why I think you see
+35:55 
+
+35:55 these relevant but somewhat random uh
+35:57 
+
+35:57 domains and URLs appearing in uh LM
+35:60 
+
+35:60 citations. Yeah, that makes sense. And
+36:02 
+
+36:02 so just based on that, if I'm a company
+36:05 
+
+36:05 out there and I'm thinking about my off-
+36:07 
+
+36:07 page efforts that are really going to
+36:08 
+
+36:08 benefit both my AEO and my SEO, where do
+36:12 
+
+36:12 I want to focus? Is it is it like
+36:14 
+
+36:14 Reddit? Is it affiliate? Is it none of
+36:18 
+
+36:18 the above? Like how should people think
+36:20 
+
+36:20 about where they spend their limited
+36:22 
+
+36:22 time off page?
+36:23 
+
+36:23 >> It depends on the company. What you want
+36:25 
+
+36:25 to do is you want to start with the
+36:26 
+
+36:26 prompts that you care about. So how do
+36:28 
+
+36:28 you start with the prompts that you care
+36:29 
+
+36:29 about? I would suggest looking at, you
+36:32 
+
+36:32 know, what are you buying paid search uh
+36:34 
+
+36:34 keywords for in Google are going to be
+36:36 
+
+36:36 your money terms or if you don't know,
+36:38 
+
+36:38 use a tool and see what they're
+36:40 
+
+36:40 targeting for paid search and get their
+36:41 
+
+36:41 paid search. So if I'm web flow and I
+36:43 
+
+36:43 have no data, I would go look at another
+36:46 
+
+36:46 uh website builder, look at their paid
+36:48 
+
+36:48 search keywords because those are going
+36:49 
+
+36:49 to be their money keywords.
+36:52 
+
+36:52 Start there. Then just ask Chat GPT,
+36:54 
+
+36:54 hey, please transform these into
+36:55 
+
+36:55 questions. And actually, you'll see when
+36:57 
+
+36:57 you ask a question in LMS frequently,
+36:59 
+
+36:59 they transform question into keyword.
+37:01 
+
+37:01 So, this is essentially the opposite.
+37:03 
+
+37:03 This is transforming keyword into
+37:04 
+
+37:04 question. And you can just ask an LLM,
+37:07 
+
+37:07 make these paid search keywords into
+37:08 
+
+37:08 questions. They're pretty good. Doesn't
+37:10 
+
+37:10 have to be perfect, but they're it's
+37:11 
+
+37:11 pretty good.
+37:12 
+
+37:12 >> Then, I would put that in an answer
+37:14 
+
+37:14 tracking tool and make sure that it's uh
+37:17 
+
+37:17 scraped and it's not API data because
+37:19 
+
+37:19 the API data is very different than
+37:21 
+
+37:21 scraped. or you could just manually do
+37:23 
+
+37:23 this yourself and and gather citations.
+37:25 
+
+37:25 But make sure that when you're looking
+37:26 
+
+37:26 at citations that it's scraped uh and
+37:30 
+
+37:30 it's not API data. Then you get your top
+37:32 
+
+37:32 citations and your top domains and then
+37:35 
+
+37:35 you can have the answer to your
+37:36 
+
+37:36 question. It will depend on the
+37:37 
+
+37:37 category. So an example of that is we do
+37:40 
+
+37:40 a lot of B2B SAS and tech radar shows up
+37:42 
+
+37:42 a ton
+37:43 
+
+37:43 >> whereas for e-commerce techar might not
+37:46 
+
+37:46 show up as much and it might be you know
+37:48 
+
+37:48 more affiliate sites. So it really
+37:49 
+
+37:49 depends. I'm seeing Reddit frequently
+37:51 
+
+37:51 appear, YouTube uh frequently appear, uh
+37:54 
+
+37:54 and then affiliates of some form, and
+37:57 
+
+37:57 then blogs. That's usually the listed
+37:60 
+
+37:60 domains. But you would build your
+38:01 
+
+38:01 strategy around the prompts that you
+38:02 
+
+38:02 want to win.
+38:03 
+
+38:03 >> That makes perfect sense. Kieran, we're
+38:05 
+
+38:05 about out of time. Should we close out
+38:06 
+
+38:06 with Ethan with like a little prediction
+38:08 
+
+38:08 for the future? What do you think?
+38:10 
+
+38:10 >> Yeah, I would love to hear how you think
+38:11 
+
+38:11 this plays out. And so, you know, you
+38:14 
+
+38:14 kind of fast forward 18 months. Do you
+38:17 
+
+38:17 think that we are still predominantly
+38:18 
+
+38:18 doing search and there's some spill over
+38:21 
+
+38:21 to answer engine optimization or vice
+38:23 
+
+38:23 versa? We're primarily doing answer
+38:25 
+
+38:25 engine optimization and there's a little
+38:26 
+
+38:26 bit of traffic coming from search like
+38:28 
+
+38:28 what is your prediction on how this
+38:30 
+
+38:30 market evolves and how that becomes a
+38:32 
+
+38:32 core part of how we grow our business in
+38:34 
+
+38:34 the future.
+38:34 
+
+38:34 >> Yeah. So let's say what does it look
+38:36 
+
+38:36 like in three years,
+38:38 
+
+38:38 >> right? So in 3 years SEO traffic flat,
+38:41 
+
+38:41 no change, still important. Answer
+38:44 
+
+38:44 engine optimization or LLM traffic
+38:47 
+
+38:47 probably triple. So we went from you
+38:49 
+
+38:49 know 116th to you know it'll eventually
+38:51 
+
+38:51 become like half let's say which is a
+38:53 
+
+38:53 lot
+38:54 
+
+38:54 >> a lot.
+38:55 
+
+38:55 >> Uh
+38:56 
+
+38:56 it's additive. It's not taking from
+38:59 
+
+38:59 search and moving to LLMs. It's adding
+39:02 
+
+39:02 on top of it. Both become larger. The PI
+39:04 
+
+39:04 becomes larger. The strategies are
+39:07 
+
+39:07 largely similar. Still, I think that
+39:10 
+
+39:10 what will be new over the next three
+39:12 
+
+39:12 years will be uh autonomous agents,
+39:15 
+
+39:15 which means plan my vacation and
+39:18 
+
+39:18 conversions will happen without your
+39:20 
+
+39:20 intervention. It's kind of like if
+39:22 
+
+39:22 everyone could be Jeff Bezos, what would
+39:24 
+
+39:24 that look like? because Jeff Bezos has
+39:26 
+
+39:26 uh an executive assistant, a travel
+39:28 
+
+39:28 planner, somebody doing his taxes,
+39:29 
+
+39:29 somebody doing his finances, and then
+39:32 
+
+39:32 you know he's Bill Gates has his team
+39:35 
+
+39:35 and you know both of the teams are going
+39:37 
+
+39:37 to be talking to each other to figure
+39:39 
+
+39:39 out how Jeff and Bill Gates are going to
+39:42 
+
+39:42 end up on a yacht uh off the coast of
+39:44 
+
+39:44 Turkey. I went to uh Fatier, Turkey, and
+39:46 
+
+39:46 there were news reports about Jeff Bezos
+39:48 
+
+39:48 and
+39:49 
+
+39:49 >> Yeah, I saw it.
+39:50 
+
+39:50 >> And uh Bill Gates are on this big yacht.
+39:53 
+
+39:53 Now, how do they get there? Because, you
+39:54 
+
+39:54 know, it's hard to schedule us, let
+39:56 
+
+39:56 alone hard to schedule something with
+39:57 
+
+39:57 Bill Gates, but they have these teams of
+39:58 
+
+39:58 people uh who are coordinating with each
+40:01 
+
+40:01 other to pick the dates, pick the
+40:04 
+
+40:04 restaurant, do all this stuff. And so,
+40:06 
+
+40:06 you can think of those people uh in AI
+40:08 
+
+40:08 as agents. So, everyone now has their
+40:11 
+
+40:11 own Bill Gates uh Jeff Bezos team of
+40:15 
+
+40:15 agents. And those agents are all sort of
+40:16 
+
+40:16 coordinating with each other. and things
+40:19 
+
+40:19 that you may have searched for and done
+40:20 
+
+40:20 yourself. Maybe these agents are doing
+40:22 
+
+40:22 it on your behalf, which is planning
+40:24 
+
+40:24 your vacation, planning your wedding,
+40:26 
+
+40:26 figuring out uh what to do this weekend.
+40:28 
+
+40:28 I think that that will happen. I think
+40:30 
+
+40:30 that it'll probably take longer than
+40:32 
+
+40:32 people think. It pro might take like 5
+40:34 
+
+40:34 years. I don't think it'll take 12
+40:36 
+
+40:36 months, but it's clear that Chachi PT
+40:38 
+
+40:38 and others are going in that direction.
+40:39 
+
+40:39 So, I think that that's the main new
+40:41 
+
+40:41 thing that'll happen. But search
+40:43 
+
+40:43 continues, but then there's this
+40:45 
+
+40:45 additional on top of that uh autonomous
+40:47 
+
+40:47 agent
+40:49 
+
+40:49 ecosystem of people converting and then
+40:51 
+
+40:51 what do ads look like? How does Hilton
+40:54 
+
+40:54 organically appear? How does Hilton pay
+40:56 
+
+40:56 to appear? So then that'll be a whole
+40:57 
+
+40:57 ecosystem of organic and paid. So that's
+41:00 
+
+41:00 the first thing autonomous agents. The
+41:02 
+
+41:02 next thing is hyperpersonalization.
+41:04 
+
+41:04 So uh search is not that personalized
+41:07 
+
+41:07 and LM are actually not that
+41:09 
+
+41:09 personalized. Uh feeds are very
+41:12 
+
+41:12 personalized. My Instagram feed is very
+41:14 
+
+41:14 personalized. Netflix feed, but search
+41:16 
+
+41:16 is not personalized and neither are LM,
+41:18 
+
+41:18 but they could be personalized. So, if I
+41:20 
+
+41:20 said, LM, help me find a hotel in Miami.
+41:25 
+
+41:25 Uh, today it will just give me generic
+41:26 
+
+41:26 hotels. In the future, there's all this
+41:28 
+
+41:28 personal information about me where the
+41:30 
+
+41:30 LM can know, well, I want a nice view of
+41:32 
+
+41:32 the ocean and I want it to be downtown
+41:34 
+
+41:34 and I don't have a family, so it doesn't
+41:36 
+
+41:36 need to be family friendly where
+41:37 
+
+41:37 somebody else would want it to be family
+41:38 
+
+41:38 friendly. So, there's all this personal
+41:40 
+
+41:40 information that can make a much better
+41:42 
+
+41:42 experience. Eventually I think that
+41:43 
+
+41:43 that'll uh come to LMS and search. So
+41:47 
+
+41:47 the next one is training data and uh
+41:51 
+
+41:51 unique content is currency. And why I
+41:53 
+
+41:53 say that is because I think the LLM
+41:56 
+
+41:56 companies are going to have roughly
+41:57 
+
+41:57 similar quality of algorithms just like
+41:59 
+
+41:59 search engines are pretty similar in
+42:02 
+
+42:02 terms of the actual algorithm itself.
+42:05 
+
+42:05 It's the inputs to the LMS that matter
+42:07 
+
+42:07 because if I have a better input then I
+42:09 
+
+42:09 have a [clears throat] better output
+42:10 
+
+42:10 across any algorithm. uh the best input
+42:12 
+
+42:12 is going to out produce the best output.
+42:13 
+
+42:13 So unique content uh like Reddit or like
+42:18 
+
+42:18 uh you know if you're an expert and
+42:19 
+
+42:19 you're you know or Ethan. So if I have
+42:21 
+
+42:21 all Ethan's opinions on search engine
+42:24 
+
+42:24 optimization and that is fed into my
+42:25 
+
+42:25 superme a better GPT algorithm without
+42:28 
+
+42:28 Ethan's input is probably going to have
+42:29 
+
+42:29 a worse answer than less good algorithm
+42:31 
+
+42:31 with better input. So that'll become
+42:34 
+
+42:34 more and more important. Related to that
+42:36 
+
+42:36 is video. this video that we have right
+42:38 
+
+42:38 now. If this video is fed into an LM,
+42:40 
+
+42:40 it's going to see the title and the
+42:42 
+
+42:42 description and that's it. So, yeah.
+42:44 
+
+42:44 >> Well, Gemini 3 is watching video now.
+42:45 
+
+42:45 And that's a big big game changer in
+42:48 
+
+42:48 that model. I'm agreeing with you that
+42:49 
+
+42:49 video is going to be a big consuming
+42:51 
+
+42:51 YouTube data source of these LLMs.
+42:54 
+
+42:54 >> Okay, got it. I I did not know that.
+42:56 
+
+42:56 >> You go try it. It's wild.
+42:58 
+
+42:58 >> It's wild. Okay. So, that's perfect cuz
+43:00 
+
+43:00 video is already a largely cited source
+43:04 
+
+43:04 with most of the information not
+43:06 
+
+43:06 accessible until until now it sounds
+43:08 
+
+43:08 like. So, I think that eventually all
+43:10 
+
+43:10 that context will be fed into that.
+43:12 
+
+43:12 Probably Gemini 3 like there's the
+43:14 
+
+43:14 transcript but then there's the
+43:15 
+
+43:15 transcript and then there's a layer of
+43:17 
+
+43:17 uh enriched data that could exist on top
+43:19 
+
+43:19 of that. Like you could extract the
+43:20 
+
+43:20 concepts that we're discussing here as
+43:22 
+
+43:22 opposed to just the words. So the more
+43:24 
+
+43:24 that you understand video, like it's
+43:27 
+
+43:27 already huge in LMS and it'll become
+43:30 
+
+43:30 five times more important, 10 times more
+43:32 
+
+43:32 important when you have access to all
+43:33 
+
+43:33 this really rich data. It might be the
+43:34 
+
+43:34 most important input into the LM.
+43:36 
+
+43:36 >> I agree.
+43:37 
+
+43:37 >> Y
+43:37 
+
+43:37 >> I would just say when this show comes
+43:39 
+
+43:39 out, just put the YouTube link in Gemini
+43:41 
+
+43:41 3 and tell it to pick the best short
+43:43 
+
+43:43 from the video and it will give you the
+43:46 
+
+43:46 exact short. It's really good. It's
+43:47 
+
+43:47 pretty wild. I think though Ethan what
+43:50 
+
+43:50 all these predictions have in common is
+43:52 
+
+43:52 that search plus AEO are going to be an
+43:54 
+
+43:54 important part of any company's strategy
+43:56 
+
+43:56 to grow. The vin diagram of the two
+43:59 
+
+43:59 there's high overlap. A lot of what you
+44:00 
+
+44:00 do for one benefits you in the other but
+44:03 
+
+44:03 there is a few things on the outside
+44:05 
+
+44:05 that are just SEO specific just AEO
+44:07 
+
+44:07 specific. And really with AEO that's
+44:10 
+
+44:10 much more of the longtail and with SEO
+44:12 
+
+44:12 it's a little bit more of the high
+44:14 
+
+44:14 authority link building offsite uh that
+44:17 
+
+44:17 is more specific to SEO. Is that you
+44:20 
+
+44:20 know as we're closing out today's show
+44:21 
+
+44:21 is that what the average person out
+44:22 
+
+44:22 there trying to think about their
+44:24 
+
+44:24 strategy should kind of take away that.
+44:26 
+
+44:26 And the last thing is do experiments.
+44:29 
+
+44:29 The way to know what works is to set up
+44:31 
+
+44:31 an experiment and to see an effect and
+44:34 
+
+44:34 to reproduce that. So, we don't have the
+44:37 
+
+44:37 answers to many things. Everyone should
+44:39 
+
+44:39 be doing experiments and sharing their
+44:40 
+
+44:40 experiment data so that we can all learn
+44:42 
+
+44:42 and figure out the answers faster.
+44:44 
+
+44:44 >> I love that. Well, Ethan, thank you so
+44:46 
+
+44:46 much for joining us today and we will
+44:48 
+
+44:48 see everybody real soon on another
+44:49 
+
+44:49 episode of Marketing Against the Grain.
+44:51 
+
+44:51 >> Thank you so much.
+44:54 
+
+44:54 >> This data is wrong every freaking time.
+44:57 
+
+44:57 >> Have you heard of HubSpot?
+44:59 
+
+44:59 >> HubSpot is a CRM [music] platform where
+45:01 
+
+45:01 everything is fully integrated. Well, I
+45:03 
+
+45:03 can see the client's whole history.
+45:04 
+
+45:04 Calls, support tickets, emails, and
+45:06 
+
+45:06 [music] here's a task from three days
+45:08 
+
+45:08 ago. I totally missed. HubSpot. Grow
+45:12 
+
+45:12 better.

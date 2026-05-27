@@ -1,6 +1,6 @@
 # SEO strategy — qwabi.co.za
 
-Last updated: 2026-05-26
+Last updated: 2026-05-27
 
 ## Data sources
 
@@ -46,6 +46,8 @@ See `keyword-intent-map.json` for the full mapping. Pattern:
 | Comparison | agency vs technical cofounder | `/vs/technical-cofounder-vs-agency` | Decision support |
 | Informational roundup | software development companies south africa | `/blog/software-development-companies-south-africa-2026` | List + methodology + when custom wins |
 | Informational SEO | types of backlinks | `/blog/types-of-seo-backlinks` | Authority/education (links to Grumpy SEO Guy) |
+| Informational SEO | seo for new website | `/blog/seo-brand-new-website-playbook` | Greenfield launch playbook (Grumpy SEO Guy Ep. 16) |
+| Informational engineering | system design interview, LLM chat system design | `/blog/system-design-conversational-ai-assistant` | Three-post cluster: chat LLM, dating geo feeds, food delivery search and dispatch |
 
 ## Competitor positioning
 

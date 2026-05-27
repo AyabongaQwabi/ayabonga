@@ -1,0 +1,2215 @@
+00:00 how would you design chat
+00:03 
+
+00:03 [Music]
+00:04 
+
+00:04 GPT definitely that's a very good
+00:07 
+
+00:07 question and uh kind of a trending topic
+00:11 
+
+00:11 uh let me just uh kind of start with
+00:15 
+
+00:15 some kind of functional requirements
+00:17 
+
+00:17 let's say let me just brainstorm a
+00:20 
+
+00:20 little bit so designing chat G right so
+00:23 
+
+00:23 chat G mainly you there is a user who is
+00:26 
+
+00:26 interacting with the kind of B that is
+00:28 
+
+00:28 going to be giving answers to different
+00:30 
+
+00:30 questions so a user can probably uh
+00:34 
+
+00:34 start with creating a conversation
+00:37 
+
+00:37 updating by maybe sending a message and
+00:40 
+
+00:40 expecting an answer from the chat GPD
+00:43 
+
+00:43 that system then uh it can be like
+00:46 
+
+00:46 viewing the
+00:47 
+
+00:47 conversation or uh mainly yeah deleting
+00:52 
+
+00:52 the conversation so that's about the
+00:54 
+
+00:54 conversation and there is one more
+00:57 
+
+00:57 operation like if you get if you don't
+00:58 
+
+00:58 like the answer if if you do like the
+01:01 
+
+01:01 answer I mean you can give thumbs up and
+01:03 
+
+01:03 thumbs down you can tell whether it is
+01:05 
+
+01:05 good or not so here I mean that
+01:08 
+
+01:08 functionality we can provide and even
+01:11 
+
+01:11 that can train the botle of the backside
+01:13 
+
+01:13 uh what do you think about this
+01:14 
+
+01:14 functional requirements um what do you
+01:17 
+
+01:17 think is that good enough or should I
+01:18 
+
+01:18 think about more I think this is good
+01:21 
+
+01:21 enough um this is good enough for like a
+01:23 
+
+01:23 MVP version of chat GPT so let's let's
+01:26 
+
+01:26 see how these come out yeah yeah before
+01:28 
+
+01:28 I go to non-functional requirements let
+01:30 
+
+01:30 me see so I can send a message uh does
+01:35 
+
+01:35 that message is only text based or can
+01:38 
+
+01:38 it contain images and all as well yeah I
+01:41 
+
+01:41 like what you're thinking here let's
+01:43 
+
+01:43 just assume for this um system design
+01:45 
+
+01:45 video um we're just going to constrain
+01:47 
+
+01:47 this to text inputs to chat GPT and any
+01:50 
+
+01:50 language preference like just English
+01:52 
+
+01:52 enough or just English and if I do
+01:56 
+
+01:56 thumbs down I think maybe I'll consider
+01:59 
+
+01:59 it might train the model so that's fine
+02:02 
+
+02:02 uh on the back side um but yeah let's
+02:06 
+
+02:06 let's jump to non-functional
+02:07 
+
+02:07 requirements so there I mean one opt one
+02:10 
+
+02:10 thing is latency I mean when I send a
+02:12 
+
+02:12 message the time it takes for that chat
+02:15 
+
+02:15 GPT to respond back with an answer I
+02:18 
+
+02:18 mean I've seen it taking even 5 seconds
+02:21 
+
+02:21 because does a lot of processing are we
+02:23 
+
+02:23 okay with that slowness or shall we work
+02:26 
+
+02:26 on
+02:28 
+
+02:28 optimization uh yeah that's fine that's
+02:30 
+
+02:30 fine for this one if we have time later
+02:32 
+
+02:32 we can talk more about how we might
+02:34 
+
+02:34 optimize a latency sure I think the
+02:36 
+
+02:36 other things is security like login flow
+02:39 
+
+02:39 we can have then rate limiting like
+02:42 
+
+02:42 mainly the standard one to prevent dos
+02:45 
+
+02:45 the other important one for chat GPT is
+02:47 
+
+02:47 a user can send a lot of messages to
+02:50 
+
+02:50 chat GPT at the same time and uh that
+02:53 
+
+02:53 can bring down those server so the rate
+02:56 
+
+02:56 limiter should consider those part then
+02:59 
+
+02:59 definitely scale level the way that chat
+03:02 
+
+03:02 gbt has trended um even if we assume
+03:05 
+
+03:05 let's say 10 million users a day then 10
+03:08 
+
+03:08 million users sending average of five
+03:11 
+
+03:11 conversations uh here let's say five
+03:15 
+
+03:15 conversations uh they creating maybe
+03:18 
+
+03:18 even asking four questions I'm just
+03:21 
+
+03:21 doing some kind of estimation to figure
+03:23 
+
+03:23 out how much scalable that architecture
+03:25 
+
+03:25 should be looking like so it's like four
+03:28 
+
+03:28 questions four messages I'm sending and
+03:31 
+
+03:31 I'm getting for responses so it's like
+03:34 
+
+03:34 200 million okay that's a lot messages
+03:37 
+
+03:37 per
+03:39 
+
+03:39 day so obviously this is a lot of
+03:43 
+
+03:43 requests like if I'm sending a request
+03:45 
+
+03:45 to the server for 200 messages it's a
+03:47 
+
+03:47 lot I need to consider like load
+03:49 
+
+03:49 balancer here in my design and all uh
+03:52 
+
+03:52 later on and uh that's about the
+03:56 
+
+03:56 server uh like number of requests then
+03:59 
+
+03:59 even if we talk about the storage
+04:01 
+
+04:01 storing those 200 million messages even
+04:04 
+
+04:04 if I assume 100 bytes as message
+04:06 
+
+04:06 although I'll estimate later on but even
+04:09 
+
+04:09 that will give probably 20 gigs per day
+04:12 
+
+04:12 and for entire year 365 multiplied by
+04:16 
+
+04:16 this is like 7.3 tab per year and 73
+04:20 
+
+04:20 terab for 10 years so yeah obviously um
+04:23 
+
+04:23 we have to think about a a pretty good
+04:26 
+
+04:26 scalable database over here um I mean we
+04:30 
+
+04:30 can go with no SQL uh with that supports
+04:34 
+
+04:34 proper sharding and all but let me go
+04:36 
+
+04:36 over that in the high level design do
+04:40 
+
+04:40 you think these calculations sound
+04:42 
+
+04:42 reasonable yeah this is reasonable um I
+04:44 
+
+04:44 like where your head is here right so
+04:46 
+
+04:46 you're starting off thinking about the
+04:47 
+
+04:47 latency security scalability
+04:49 
+
+04:49 requirements this all sounds fine to me
+04:52 
+
+04:52 let's move on to the high level design
+04:53 
+
+04:53 and see what that might look like okay
+04:55 
+
+04:55 so let's see let's see if user um I'll
+05:00 
+
+05:00 open okay there is yeah user let's say
+05:05 
+
+05:05 user so there is a user then the way I
+05:09 
+
+05:09 mean I'm just thinking about the flow of
+05:11 
+
+05:11 sending a message or some kind of
+05:13 
+
+05:13 conversation handling so this user If he
+05:17 
+
+05:17 if they send a message uh let's say let
+05:20 
+
+05:20 me sh so the way I would consider it uh
+05:24 
+
+05:24 is mainly some kind of experience layer
+05:26 
+
+05:26 I would say U that's usually useful for
+05:30 
+
+05:30 orchestration and making sure that if
+05:32 
+
+05:32 there are multiple devices native iOS
+05:35 
+
+05:35 Android desktop web M web so we can
+05:39 
+
+05:39 provide some consistent user experience
+05:41 
+
+05:41 to the users than writing everything
+05:44 
+
+05:44 from scratch plus orchestration so let's
+05:48 
+
+05:48 see if I am sending a message here so
+05:52 
+
+05:52 maybe is this good enough for uh um Zoom
+05:57 
+
+05:57 see maybe you can zoom in a little bit
+05:59 
+
+05:59 okay that's fine
+06:00 
+
+06:00 so I'll keep it here so here let's say
+06:04 
+
+06:04 if I send a
+06:05 
+
+06:05 message here then I would I would create
+06:10 
+
+06:10 some kind of conversation service so
+06:13 
+
+06:13 conversation Service is like the those
+06:15 
+
+06:15 requirements that we discussed uh
+06:18 
+
+06:18 creating updating viewing deleting so
+06:20 
+
+06:20 here I'm talking about sending a message
+06:23 
+
+06:23 so it will send this delay this message
+06:25 
+
+06:25 to that
+06:26 
+
+06:26 service uh then this conversation
+06:30 
+
+06:30 service now one important thing is like
+06:34 
+
+06:34 you can send anything you want to jat
+06:36 
+
+06:36 gbd and so we want to make sure that we
+06:39 
+
+06:39 first sanitize the input and uh so for
+06:43 
+
+06:43 that I would create some kind of machine
+06:45 
+
+06:45 learning model and expose it through
+06:48 
+
+06:48 some kind of API so maybe some kind of
+06:51 
+
+06:51 profanity API I'll will create which uh
+06:54 
+
+06:54 can detect like obscene text or maybe
+06:56 
+
+06:56 insults or threats like people even give
+07:00 
+
+07:00 threads to chat GPT and all so we should
+07:03 
+
+07:03 be ready with the standard answers for
+07:05 
+
+07:05 those and able to detect them so it's
+07:08 
+
+07:08 mainly kind of we are sanitizing so this
+07:12 
+
+07:12 API will call the profinity model I
+07:15 
+
+07:15 would say uh some kind of machine
+07:17 
+
+07:17 learning model there are pre-trained
+07:20 
+
+07:20 models or there are I think we can train
+07:22 
+
+07:22 with our data set as well U there are
+07:25 
+
+07:25 models like Fast text provided by
+07:27 
+
+07:27 Facebook and multiple other models that
+07:29 
+
+07:29 help in Prof detection so what you're
+07:32 
+
+07:32 saying here is that for a subset of the
+07:35 
+
+07:35 inputs from the user we just won't even
+07:38 
+
+07:38 send to any of the other Downstream
+07:41 
+
+07:41 services like if if we deem that it's
+07:44 
+
+07:44 just obscene or an insult to chat GPC or
+07:47 
+
+07:47 something like that where there's no
+07:48 
+
+07:48 value in sending it to our Downstream
+07:50 
+
+07:50 systems then we're just going to give
+07:52 
+
+07:52 some generic response yes yes yes so we
+07:55 
+
+07:55 don't need to get answer in that case
+07:57 
+
+07:57 yeah so that's why we want to sanitize
+07:59 
+
+07:59 it by calling this model and uh so I
+08:03 
+
+08:03 would sanitize it first and give a
+08:06 
+
+08:06 response if needed uh then if it's if it
+08:10 
+
+08:10 is sanitized properly like if we think
+08:12 
+
+08:12 that it is really good uh equ question
+08:16 
+
+08:16 so I'll call
+08:18 
+
+08:18 a service which is the chat GPD it is
+08:22 
+
+08:22 also powered by Machine learning so this
+08:24 
+
+08:24 is another API that uh I'm just using
+08:27 
+
+08:27 the word API or service I'll say here
+08:30 
+
+08:30 so Service uh I will call that is also
+08:34 
+
+08:34 calling a chat GPT model which is the
+08:38 
+
+08:38 core which is the kind of meat of this
+08:41 
+
+08:41 um this functionality this chat GPT um
+08:45 
+
+08:45 yeah yeah chat GPT system so that model
+08:50 
+
+08:50 uh so I'll call I'll say that this is
+08:53 
+
+08:53 the question so I'll send this question
+08:56 
+
+08:56 then this question is related to model
+08:59 
+
+08:59 that responds with an answer and that
+09:02 
+
+09:02 answer after that conversation
+09:05 
+
+09:05 service gets that answer it will store
+09:08 
+
+09:08 to I would say a database I'll create a
+09:12 
+
+09:12 database
+09:13 
+
+09:13 here
+09:15 
+
+09:15 so datab
+09:20 
+
+09:20 base so I'll store the
+09:24 
+
+09:24 results um
+09:27 
+
+09:27 for what that model responds with and
+09:31 
+
+09:31 I'll save it in the form of that
+09:32 
+
+09:32 conversation so the conversation the way
+09:34 
+
+09:34 I'm imagining a conversation so there is
+09:37 
+
+09:37 a like you can create multiple
+09:38 
+
+09:38 conversation and each conversation
+09:40 
+
+09:40 contains a bunch of
+09:42 
+
+09:42 messages some of the some of the
+09:44 
+
+09:44 messages are your questions some of the
+09:46 
+
+09:46 messages are responded by the chat gbt
+09:49 
+
+09:49 so those are the answers so that's why
+09:52 
+
+09:52 those whenever they respond we will
+09:54 
+
+09:54 store both of those uh conversations in
+09:57 
+
+09:57 that database so it will be add
+10:00 
+
+10:00 uh that to DB that message and Link it
+10:03 
+
+10:03 to the
+10:05 
+
+10:05 conversation so that conversation is
+10:07 
+
+10:07 provided and after that that result will
+10:10 
+
+10:10 be sent back to the user that you will
+10:13 
+
+10:13 see on the screen so this is rough idea
+10:16 
+
+10:16 about rough design about how it will
+10:19 
+
+10:19 work when you are sending a
+10:21 
+
+10:21 message and viewing it should be
+10:23 
+
+10:23 relatively simple like you just go to
+10:25 
+
+10:25 the conversation service get that data
+10:28 
+
+10:28 out of the database and view the
+10:31 
+
+10:31 conversations um then deleting and all
+10:34 
+
+10:34 should be relatively uh
+10:37 
+
+10:37 simpler I think what the complexity we
+10:40 
+
+10:40 can think about we can discuss the
+10:42 
+
+10:42 thumbs up thumbs down use case let's say
+10:44 
+
+10:44 so if somebody gives a thumbs up here so
+10:49 
+
+10:49 let's say thumbs up thumbs down is much
+10:54 
+
+10:54 better so because thumbs down is more
+10:57 
+
+10:57 complex I would say so if you say if
+10:60 
+
+10:60 somebody gives thumbs down then it will
+11:01 
+
+11:01 go to the conversation service again and
+11:05 
+
+11:05 uh yeah let's see here so it will go to
+11:09 
+
+11:09 the conversation service saying that it
+11:11 
+
+11:11 is yeah somebody has given thumbs
+11:14 
+
+11:14 down now that thumbs down there are
+11:17 
+
+11:17 multiple ways there you can ask
+11:21 
+
+11:21 user if you're giving thumbs down what
+11:24 
+
+11:24 answer you would provide like uh you are
+11:27 
+
+11:27 not satisfied with the answer but what
+11:29 
+
+11:29 kind of answer do you think you will be
+11:31 
+
+11:31 satisfied but what is wrong with that
+11:32 
+
+11:32 answer so we can provide that kind of
+11:35 
+
+11:35 functionality uh to the user and that
+11:37 
+
+11:37 can be sent over with that thumbs down
+11:39 
+
+11:39 request as well to the service so that
+11:42 
+
+11:42 that can be stored and that can be used
+11:44 
+
+11:44 to mod train this model as well uh the
+11:47 
+
+11:47 chat GPT model because chat GPT model
+11:50 
+
+11:50 will be continuously learning so with
+11:53 
+
+11:53 that thumbs down uh one way is we can
+11:56 
+
+11:56 send a service to through the chat gbt
+11:59 
+
+11:59 service and trains the model but many
+12:03 
+
+12:03 times it will take some time a lot of
+12:04 
+
+12:04 processing will need so one option is
+12:06 
+
+12:06 you can create uh some kind of Kafka Q
+12:10 
+
+12:10 or uh some kind of job where that data
+12:14 
+
+12:14 is offline processed and ultimately this
+12:17 
+
+12:17 model is going to be trained based on
+12:20 
+
+12:20 that thumbs down or maybe the new answer
+12:23 
+
+12:23 so the other other thing I think I
+12:26 
+
+12:26 missed is okay so there is an option
+12:29 
+
+12:29 there is a possibility that a user I
+12:32 
+
+12:32 mean I'm kind of a malicious user I
+12:34 
+
+12:34 don't want chat GPT to perform well or
+12:36 
+
+12:36 if maybe I'm just playing with it so I
+12:39 
+
+12:39 can thumbs down thumbs down it again and
+12:41 
+
+12:41 again that kind of approach that kind of
+12:44 
+
+12:44 malicious uh activity should not impact
+12:47 
+
+12:47 the model so for that I'll create some
+12:49 
+
+12:49 kind of uh another machine learning
+12:52 
+
+12:52 model uh called uh risk model so we that
+12:56 
+
+12:56 will tell you how good of user how risky
+13:01 
+
+13:01 that user is
+13:03 
+
+13:03 so I can go into more details or I can
+13:06 
+
+13:06 switch to um maybe more details about
+13:10 
+
+13:10 conversation service and
+13:12 
+
+13:12 database yeah I I think I I think this
+13:14 
+
+13:14 is um good for a high level um
+13:17 
+
+13:17 introduction thanks for that um I would
+13:19 
+
+13:19 love to dive a little deeper into the
+13:20 
+
+13:20 conversation service actually okay so
+13:24 
+
+13:24 for from conversation service let's see
+13:26 
+
+13:26 if I
+13:27 
+
+13:27 can create a uh some kind of table here
+13:32 
+
+13:32 let's see
+13:35 
+
+13:35 so
+13:38 
+
+13:38 oops Yeah Okay so let's see so I'll have
+13:43 
+
+13:43 um let's say maybe operation let's say
+13:46 
+
+13:46 the conversation service I'll create
+13:48 
+
+13:48 bunch of rest apis in that conversation
+13:51 
+
+13:51 service where we have
+13:53 
+
+13:53 operation um and uh I would say URL
+13:58 
+
+13:58 request and I'll have response as well
+14:01 
+
+14:01 so like operation if you are talking
+14:03 
+
+14:03 about let's say delete or let's say
+14:08 
+
+14:08 create a
+14:09 
+
+14:09 conversation so create a conversation I
+14:11 
+
+14:11 would add this probably
+14:15 
+
+14:15 delete viewer conversation and uh then
+14:20 
+
+14:20 what else did we have the thumbs up
+14:22 
+
+14:22 thumbs
+14:23 
+
+14:23 down so maybe I think uh there was
+14:27 
+
+14:27 another one that we had right create
+14:30 
+
+14:30 view delete and uh send message yeah
+14:33 
+
+14:33 send message
+14:36 
+
+14:36 so so here I will have something like
+14:39 
+
+14:39 probably so creating creating a new
+14:41 
+
+14:41 conversation I'll just create a new
+14:43 
+
+14:43 conversation by post so chat GPT V1 SL
+14:48 
+
+14:48 conversation so here I need to provide
+14:52 
+
+14:52 okay what is the title of the
+14:53 
+
+14:53 conversation so I'll have some kind of
+14:55 
+
+14:55 Json request where I'll provide the
+14:57 
+
+14:57 title I'll provide
+14:60 
+
+14:60 um I mean it will take automatically
+15:01 
+
+15:01 from the user token it will take uh the
+15:04 
+
+15:04 authentication token and identify who is
+15:06 
+
+15:06 the user so then the yeah so that that's
+15:12 
+
+15:12 the one and it will response with 200
+15:15 
+
+15:15 and those kind of status codes it can
+15:17 
+
+15:17 respond with then deleting I can I'll
+15:19 
+
+15:19 just use the delete keyword I'll have a
+15:22 
+
+15:22 conversation ID for each of the
+15:24 
+
+15:24 conversation so in this response that
+15:26 
+
+15:26 conversation ID would be returned so
+15:29 
+
+15:29 that can be a GD also GD is I mean kind
+15:32 
+
+15:32 of random number so uh that that is
+15:35 
+
+15:35 unique uh probab
+15:39 
+
+15:39 probabilistically and uh then we have uh
+15:43 
+
+15:43 like for deletion I'll have I'll select
+15:45 
+
+15:45 that particular conversation to delete
+15:48 
+
+15:48 I'll have that and respond with I mean I
+15:52 
+
+15:52 can say 204 uh also it's no content so I
+15:57 
+
+15:57 don't need to return any content for
+15:60 
+
+15:60 viewing I'll use the get keyword and
+16:02 
+
+16:02 I'll have that conversation with What
+16:04 
+
+16:04 that particular so this will return a
+16:07 
+
+16:07 the list of messages in that particular
+16:09 
+
+16:09 conversation uh in the ordered Manner
+16:12 
+
+16:12 and uh then if I'm sending a message so
+16:15 
+
+16:15 sending a message will be part of the
+16:17 
+
+16:17 conversation so in that
+16:19 
+
+16:19 conversation
+16:21 
+
+16:21 I'll post I'll I'll send a message here
+16:24 
+
+16:24 so maybe message I'll post a message in
+16:27 
+
+16:27 that particular conversation with the
+16:30 
+
+16:30 message I would say content it can be
+16:33 
+
+16:33 type also in future if we are expanding
+16:35 
+
+16:35 to images and all and then Parts also if
+16:39 
+
+16:39 it is Media data Parts but right now it
+16:41 
+
+16:41 is just text so right now it's going to
+16:44 
+
+16:44 be text only so text I'll
+16:47 
+
+16:47 provide uh
+16:50 
+
+16:50 then yeah so thumbs up thumbs down it
+16:54 
+
+16:54 that's also happens at the message level
+16:57 
+
+16:57 so I'll have for that
+16:59 
+
+16:59 for that
+17:01 
+
+17:01 message so this when I am creating a m
+17:05 
+
+17:05 message or sending a message it will
+17:07 
+
+17:07 return the message ID
+17:09 
+
+17:09 also um so that can be in the form of
+17:12 
+
+17:12 good uh or I mean we can think about a
+17:15 
+
+17:15 different ID number generator there can
+17:17 
+
+17:17 be various ways to generate IDs but here
+17:22 
+
+17:22 um if we have a grade then for that
+17:26 
+
+17:26 particular message I'll have some kind
+17:29 
+
+17:29 of
+17:30 
+
+17:30 probably rating
+17:32 
+
+17:32 or um yeah something like that so that
+17:36 
+
+17:36 will indicate in the request I can
+17:38 
+
+17:38 mention whether it is uh like okay
+17:41 
+
+17:41 operation is or rating is up or
+17:46 
+
+17:46 down so or down maybe something like
+17:50 
+
+17:50 that and I'll respond with the
+17:53 
+
+17:53 appropriate HTTP status codes so there
+17:57 
+
+17:57 the messages will be having I mean user
+18:00 
+
+18:00 as user ID or maybe system the system
+18:04 
+
+18:04 generated messages will have user as a
+18:06 
+
+18:06 system but u i mean I can go into more
+18:09 
+
+18:09 details if you think okay so let me
+18:13 
+
+18:13 share how the data would look like uh in
+18:17 
+
+18:17 the database so as I
+18:20 
+
+18:20 mentioned as we discussed up here that
+18:23 
+
+18:23 it's going to be 73 tab it's going to be
+18:25 
+
+18:25 huge and uh then yeah I think here
+18:29 
+
+18:29 Services would be there would be load
+18:32 
+
+18:32 balancer that we discussed here but
+18:34 
+
+18:34 anyway for from data perspective yeah 73
+18:38 
+
+18:38 terabytes uh I would go with some kind
+18:40 
+
+18:40 of my no SQL database where uh let's see
+18:46 
+
+18:46 uh that one I mean either I can go with
+18:48 
+
+18:48 Dynamo DB that provides that scalability
+18:51 
+
+18:51 cassendra so anyway I mean I can go with
+18:54 
+
+18:54 some no SQL databases but the way I
+18:57 
+
+18:57 would structure that
+18:60 
+
+18:60 is mainly like uh here let's see if I'm
+19:05 
+
+19:05 creating some kind of
+19:08 
+
+19:08 table small table so a conversation
+19:12 
+
+19:12 contains a multiple messages so I'll
+19:15 
+
+19:15 create some kind of probably
+19:17 
+
+19:17 conversation table or
+19:20 
+
+19:20 so so where we'll have conversation
+19:23 
+
+19:23 ID and uh kind of a list of messages ID
+19:28 
+
+19:28 so if you're
+19:30 
+
+19:30 going with like any kind of uh no SQL so
+19:35 
+
+19:35 we have conversation but I think I I
+19:37 
+
+19:37 identify it by the user also so it will
+19:39 
+
+19:39 be mostly kind of user conversation
+19:42 
+
+19:42 because a conversation is totally tied
+19:44 
+
+19:44 with the user um if I'm creating
+19:48 
+
+19:48 conversations so I'll have a list of
+19:51 
+
+19:51 conversations for myself so I can have
+19:54 
+
+19:54 like for my particular user ID I can
+19:56 
+
+19:56 have a list of uh I would say a uh list
+20:01 
+
+20:01 or yeah that can be formulated in the
+20:04 
+
+20:04 form of Json in no SQL databases so with
+20:08 
+
+20:08 the
+20:10 
+
+20:10 conversation ID so some kind of integer
+20:13 
+
+20:13 uh I can have or long it's going to be
+20:17 
+
+20:17 good right so some kind of list uh with
+20:20 
+
+20:20 conversation
+20:23 
+
+20:23 IDs yeah as I mentioned that can be uh
+20:27 
+
+20:27 that can be serialized into J
+20:29 
+
+20:29 on so then these conversation for each
+20:33 
+
+20:33 conversation it each conversation will
+20:35 
+
+20:35 have multiple
+20:37 
+
+20:37 messages um so it will be something
+20:39 
+
+20:39 similar format and if I look into the
+20:42 
+
+20:42 message like how a single message would
+20:44 
+
+20:44 look like so message I would say in
+20:49 
+
+20:49 terms of message it will
+20:52 
+
+20:52 be some kind of message ID I would have
+20:56 
+
+20:56 field uh some kind of text um so message
+20:59 
+
+20:59 text we have we will want to know
+21:02 
+
+21:02 whether it is who is the author whether
+21:05 
+
+21:05 it is system generated message which is
+21:07 
+
+21:07 the answer or whether it is user
+21:10 
+
+21:10 ID uh user generated
+21:14 
+
+21:14 so then then there is a concept I mean
+21:18 
+
+21:18 we we don't need it immediately right
+21:21 
+
+21:21 now but we can have like that
+21:23 
+
+21:23 conversation we can uh think about in
+21:26 
+
+21:26 the form of a tree uh where I mean there
+21:29 
+
+21:29 is a parent for each message like you
+21:31 
+
+21:31 asked a question you got that answer you
+21:33 
+
+21:33 asked a follow-up question you got
+21:34 
+
+21:34 another answer then you suddenly changed
+21:38 
+
+21:38 the topic in that same
+21:39 
+
+21:39 conversation so we can configure that
+21:43 
+
+21:43 parent um I think it will get
+21:45 
+
+21:45 complicated right now unless you want me
+21:47 
+
+21:47 to get into more details but uh mainly
+21:50 
+
+21:50 we can create a parent as well for which
+21:53 
+
+21:53 will tell you what was the previous
+21:55 
+
+21:55 conversation for which we are responding
+21:59 
+
+21:59 so that's kind of rough idea um I can go
+22:04 
+
+22:04 into the model right now and maybe we
+22:08 
+
+22:08 can discuss this in more detail later
+22:10 
+
+22:10 how about that sure yeah um thanks for
+22:13 
+
+22:13 walking me through that yeah let's talk
+22:14 
+
+22:14 about what this actual chat GPT model
+22:16 
+
+22:16 will look like okay so yeah so for for
+22:21 
+
+22:21 chat GPT model let's see here so uh when
+22:26 
+
+22:26 we send a message when we send a
+22:28 
+
+22:28 question and get answers so there is one
+22:31 
+
+22:31 St shway thing that comes to mind is
+22:33 
+
+22:33 shway way that comes to mind is
+22:35 
+
+22:35 supervised learning where we can have a
+22:38 
+
+22:38 lot of label data set we can have a list
+22:41 
+
+22:41 of questions list of answers and train a
+22:44 
+
+22:44 model based on that but really there can
+22:46 
+
+22:46 be so many combinations of questions and
+22:48 
+
+22:48 answers even if you want to figure out
+22:51 
+
+22:51 about system design there can be
+22:54 
+
+22:54 question like what is system design how
+22:56 
+
+22:56 is system design useful explain system
+22:58 
+
+22:58 design design and uh why do you want
+23:01 
+
+23:01 system design so even asking similar
+23:05 
+
+23:05 question there can be so many variations
+23:07 
+
+23:07 of questions the answers okay when you
+23:10 
+
+23:10 say what is system design it needs to
+23:13 
+
+23:13 explain what it means exactly how is it
+23:16 
+
+23:16 useful it needs to focus on the uses of
+23:19 
+
+23:19 it so even the combinations of answers
+23:23 
+
+23:23 and all it can be pretty like a lot of
+23:26 
+
+23:26 combinations H and getting that data set
+23:29 
+
+23:29 to train is really very very difficult
+23:33 
+
+23:33 so for because of that I wouldn't use
+23:35 
+
+23:35 supervised learning as such immediately
+23:38 
+
+23:38 but what I would do is I would con have
+23:41 
+
+23:41 some kind of Transformer model GPD
+23:43 
+
+23:43 Transformer model where I I'll have
+23:48 
+
+23:48 access to the common crawler data so
+23:51 
+
+23:51 which is mainly the let's say we are
+23:53 
+
+23:53 crawling the list of websites over the
+23:56 
+
+23:56 Internet so
+23:59 
+
+23:59 that will give you so much data to train
+24:02 
+
+24:02 and we can even add books here we can
+24:05 
+
+24:05 add Wikipedia links which is which comes
+24:07 
+
+24:07 in kind of crawler data we can even add
+24:10 
+
+24:10 codes like chity handles codes right um
+24:13 
+
+24:13 so you can say find a bug in Python code
+24:17 
+
+24:17 so those kind of things we can train uh
+24:19 
+
+24:19 like we can just add there uh and that
+24:24 
+
+24:24 Transformer model what I would do is it
+24:25 
+
+24:25 will not respond to question and answers
+24:28 
+
+24:28 but what it will do is it will predict
+24:30 
+
+24:30 the natural sequences of words so like
+24:34 
+
+24:34 uh if I say what is system design okay
+24:37 
+
+24:37 or maybe if I say system design
+24:40 
+
+24:40 is okay so then what can come next so
+24:45 
+
+24:45 there can be multiple things that can
+24:46 
+
+24:46 come so let's say system design is about
+24:49 
+
+24:49 planning and creating
+24:51 
+
+24:51 architecture so it can be meeting
+24:54 
+
+24:54 requirements so then it can be designing
+24:57 
+
+24:57 Services it can be about designing
+24:59 
+
+24:59 databases so there can be many uh
+25:02 
+
+25:02 solutions that can many phrases that can
+25:06 
+
+25:06 fill that sentence so my first step
+25:08 
+
+25:08 would be uh creating such such kind of
+25:12 
+
+25:12 model which finishes the sentences
+25:15 
+
+25:15 completes those sentences in a natural
+25:17 
+
+25:17 language which are grammatically correct
+25:19 
+
+25:19 and semantically meaningful as well so
+25:23 
+
+25:23 but the one thing to notice is I think
+25:27 
+
+25:27 uh how do I get uh like how do I select
+25:30 
+
+25:30 out of these four which one should be
+25:33 
+
+25:33 the next like system design is out of
+25:35 
+
+25:35 these four these are the possibilities
+25:37 
+
+25:37 based on the training how would I select
+25:40 
+
+25:40 these uh which one is uh the one uh that
+25:44 
+
+25:44 should be returned so there are multiple
+25:47 
+
+25:47 approaches there there are multiple
+25:49 
+
+25:49 approaches like there is topk there is
+25:51 
+
+25:51 greedy greedy let's say I'll have
+25:53 
+
+25:53 probability we I'll create a probability
+25:56 
+
+25:56 of these let's say there is 32
+25:58 
+
+25:58 probability chance of this one returning
+26:01 
+
+26:01 or maybe 0.25 for this one so maybe 010
+26:05 
+
+26:05 or 09 and rest of them some lower
+26:08 
+
+26:08 priority probabilities so one option is
+26:12 
+
+26:12 always return the most greedy one so
+26:14 
+
+26:14 planning and creating
+26:16 
+
+26:16 architecture but the challenge is uh if
+26:19 
+
+26:19 we have awesome which has
+26:22 
+
+26:22 probably 34 as a
+26:26 
+
+26:26 probability then this is not the what I
+26:28 
+
+26:28 want I don't want to hear the system
+26:30 
+
+26:30 design is awesome I want to understand
+26:32 
+
+26:32 what system design is so that's why
+26:35 
+
+26:35 there are ways like instead of greedy we
+26:37 
+
+26:37 can use some kind of top k um method as
+26:41 
+
+26:41 well topk strategy or nucleus
+26:44 
+
+26:44 temperature there are multiple
+26:45 
+
+26:45 strategies in topk you can select um
+26:49 
+
+26:49 like some top three let's say top three
+26:52 
+
+26:52 if you say so I'll select top three and
+26:55 
+
+26:55 randomly pick from one of those uh as
+26:58 
+
+26:58 the answer that's the reason why you see
+27:00 
+
+27:00 that if you uh send the same message to
+27:03 
+
+27:03 chab GPT it can return some other um
+27:07 
+
+27:07 reply back so anyway there are different
+27:11 
+
+27:11 strategies uh but mainly in short we are
+27:14 
+
+27:14 finishing sentences with this
+27:16 
+
+27:16 model then after getting that then I
+27:21 
+
+27:21 have a lot of data already trained my
+27:24 
+
+27:24 next step is to make sure that that
+27:26 
+
+27:26 model is stained uh to answer the
+27:30 
+
+27:30 questions so for which I'll do some kind
+27:33 
+
+27:33 of supervised fineing here I'll get some
+27:36 
+
+27:36 kind of data set uh and train this
+27:40 
+
+27:40 particular model with questions and
+27:42 
+
+27:42 answers it doesn't need to be uh fully
+27:46 
+
+27:46 like uh um I mean it needs to be a
+27:50 
+
+27:50 decent size but yes there are still
+27:52 
+
+27:52 limitations because we cannot have we
+27:55 
+
+27:55 cannot have all kinds of questions and
+27:57 
+
+27:57 answers that we can train so here I what
+28:01 
+
+28:01 I would do is here I would uh
+28:04 
+
+28:04 mainly kind of collect uh training data
+28:08 
+
+28:08 train the
+28:09 
+
+28:09 model U with in the form of question and
+28:13 
+
+28:13 answers so that I will do I can go into
+28:17 
+
+28:17 more details but let me go to the next
+28:18 
+
+28:18 step here so even after training the
+28:21 
+
+28:21 data right it is possible and it is
+28:24 
+
+28:24 highly likely because training is uh
+28:28 
+
+28:28 because of the number of combinations so
+28:31 
+
+28:31 what I would do is I would create some
+28:33 
+
+28:33 kind some kind of reward model also so
+28:35 
+
+28:35 when we think of reward model so after
+28:38 
+
+28:38 training this even here uh if you think
+28:42 
+
+28:42 of take this model into account so what
+28:46 
+
+28:46 I would do is I would pick some answers
+28:48 
+
+28:48 from the model so I'll pick answers and
+28:54 
+
+28:54 I'll
+28:55 
+
+28:55 have like uh AI trainers or people like
+28:59 
+
+28:59 us
+28:60 
+
+28:60 annotators we will decide which which
+29:04 
+
+29:04 answer is good so here let's say if we
+29:08 
+
+29:08 ask a question what is system design and
+29:12 
+
+29:12 we get multiple combinations let's say
+29:15 
+
+29:15 here so this is not training data so if
+29:19 
+
+29:19 if I ask a question what is system
+29:22 
+
+29:22 design and I get uh multiple answers
+29:27 
+
+29:27 like system design is uh I'll not write
+29:30 
+
+29:30 it everything but system design is uh
+29:33 
+
+29:33 planning and creating and all these
+29:35 
+
+29:35 answers I get so now as a user I know
+29:40 
+
+29:40 what I'm looking for so I would give
+29:43 
+
+29:43 some some kind of rewards to each of
+29:45 
+
+29:45 them so I would I can have some kind of
+29:49 
+
+29:49 there is something called liquor scale
+29:51 
+
+29:51 it can be in the form of 1 127 or 125 so
+29:56 
+
+29:56 I I can give a rating in the form of 1
+29:58 
+
+29:58 125 or to7 that will tell you like that
+30:01 
+
+30:01 scalar value will tell you uh how good
+30:05 
+
+30:05 that answer is so based on that answer
+30:08 
+
+30:08 right so we So based on that answer so
+30:11 
+
+30:11 I'll put it in that reward model uh and
+30:14 
+
+30:14 train that reward model with these two
+30:18 
+
+30:18 okay training data using training data
+30:20 
+
+30:20 and training that supervised fine tuning
+30:23 
+
+30:23 model and reward
+30:26 
+
+30:26 model I'll create the final one final
+30:29 
+
+30:29 version using reinforcement
+30:32 
+
+30:32 learning so reinforcement learning is
+30:34 
+
+30:34 very interesting
+30:36 
+
+30:36 where we train kids to walk I mean it
+30:39 
+
+30:39 takes into account these uh fine tuning
+30:41 
+
+30:41 and reward model so we know about kids
+30:44 
+
+30:44 right they start walking they fall down
+30:47 
+
+30:47 they learn that okay if they move this
+30:49 
+
+30:49 way they will fall down they learn it
+30:52 
+
+30:52 because they are getting a reward from
+30:54 
+
+30:54 the environment around whether it is
+30:56 
+
+30:56 negative reward or positive reward if
+30:58 
+
+30:58 they fall that's a negative reward if
+31:00 
+
+31:00 they if they're walking we are clapping
+31:03 
+
+31:03 for them that's a positive reward
+31:05 
+
+31:05 similar way is how we train Robo Roberts
+31:08 
+
+31:08 as well robots as well so these like
+31:12 
+
+31:12 they are walking they hit some system
+31:14 
+
+31:14 hit wall uh they can avoid staircase all
+31:18 
+
+31:18 of them is based on what reward they
+31:21 
+
+31:21 receiving from the environment and
+31:24 
+
+31:24 continuously training them so that's the
+31:27 
+
+31:27 way that that the approach that I'll use
+31:30 
+
+31:30 here I'll use the train data and reward
+31:33 
+
+31:33 model here so using that train data I'll
+31:37 
+
+31:37 initialize something called popo policy
+31:39 
+
+31:39 is what we
+31:40 
+
+31:40 say
+31:42 
+
+31:42 so that
+31:44 
+
+31:44 pop uh popo optimization it's then I'll
+31:49 
+
+31:49 take one question go through reward
+31:52 
+
+31:52 model uh so using PP optimization I'll
+31:56 
+
+31:56 okay I'll use this fine tuning model
+31:57 
+
+31:57 into PP optimization and take one
+32:00 
+
+32:00 question at a time go through the reward
+32:03 
+
+32:03 model get the
+32:06 
+
+32:06 reward update PPU that again update
+32:10 
+
+32:10 again PPU go through the same process
+32:13 
+
+32:13 again take another question and
+32:15 
+
+32:15 continuously learn and learn and learn
+32:17 
+
+32:17 so with this all this approach even if
+32:20 
+
+32:20 in the beginning we didn't have that
+32:23 
+
+32:23 good of a data set that good of a label
+32:25 
+
+32:25 data set to train that model we will
+32:28 
+
+32:28 still get veryy accurate uh results said
+32:32 
+
+32:32 in the form of like natural language
+32:34 
+
+32:34 response from the natural language from
+32:37 
+
+32:37 a human language or natural language
+32:41 
+
+32:41 question
+32:43 
+
+32:43 so does that answer your question I
+32:45 
+
+32:45 think another important one is yes uh I
+32:49 
+
+32:49 mean this these emotions and all right
+32:52 
+
+32:52 this reward model we as a humans know
+32:55 
+
+32:55 the emotion the tone of how what people
+32:58 
+
+32:58 people are asking so that is taken care
+33:01 
+
+33:01 of in the reward model also in the
+33:03 
+
+33:03 liquor scale we will ask questions like
+33:06 
+
+33:06 okay does it why are you rating as one
+33:09 
+
+33:09 does it contain profanity does it
+33:10 
+
+33:10 contain is the emotion or the tone not
+33:13 
+
+33:13 correct or is it not natural So based on
+33:16 
+
+33:16 that also that reward model will
+33:18 
+
+33:18 continuously train it itself absolutely
+33:22 
+
+33:22 and as you were explaining the whole
+33:24 
+
+33:24 thing I I was smiling because I feel
+33:27 
+
+33:27 like this is a
+33:28 
+
+33:28 this is like honestly we can probably do
+33:30 
+
+33:30 a very deep dive on many different parts
+33:33 
+
+33:33 of this design but um I I just loved how
+33:35 
+
+33:35 you broke it down into um you know these
+33:38 
+
+33:38 different uh aspects and I felt like
+33:41 
+
+33:41 this was a really nice way of for us to
+33:43 
+
+33:43 see how chat gbt is built or it could be
+33:46 
+
+33:46 built and yeah I mean honestly this was
+33:49 
+
+33:49 a this was a great system design video
+33:52 
+
+33:52 um and I I know that we're short on time
+33:54 
+
+33:54 so I didn't want to cut you off here um
+33:57 
+
+33:57 again thank you for your time n um was
+33:59 
+
+33:59 there any like final thoughts that you
+34:01 
+
+34:01 wanted to share um before we wrap up the
+34:03 
+
+34:03 video no I think uh definitely uh this
+34:07 
+
+34:07 chat G is doing great and excited to see
+34:11 
+
+34:11 and excited to learn more about what's
+34:13 
+
+34:13 going to be next I think they have
+34:15 
+
+34:15 started supporting images videos and uh
+34:20 
+
+34:20 yeah it's going to be fun yeah and you
+34:22 
+
+34:22 know inputs images
+34:25 
+
+34:25 audio probably in the future um output
+34:28 
+
+34:28 that include like audio or images videos
+34:32 
+
+34:32 um lots of amazing stuff very Green
+34:34 
+
+34:34 Space NJ thanks for this awesome
+34:36 
+
+34:36 overview and for the audience who are
+34:38 
+
+34:38 watching at home if you get an
+34:40 
+
+34:40 interesting question like this hopefully
+34:41 
+
+34:41 this is helpful for your system design
+34:43 
+
+34:43 interviews and good luck with your
+34:45 
+
+34:45 upcoming engineering
+34:47 
+
+34:47 interviews thanks so much for watching
+34:49 
+
+34:49 don't forget to hit the like And
+34:50 
+
+34:50 subscribe buttons below to let us know
+34:52 
+
+34:52 that this video is valuable for you and
+34:55 
+
+34:55 of course check out hundreds more videos
+34:57 
+
+34:57 just like this at Tri exponent.com
+34:60 
+
+34:60 thanks for watching and good luck on
+35:02 
+
+35:02 your upcoming interview
+35:08 
+
+35:08 [Music]

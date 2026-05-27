@@ -1,0 +1,193 @@
+{
+  "updated": "2026-05-27",
+  "site": "https://www.qwabi.co.za",
+  "clusters": [
+    {
+      "id": "software-development-company-sa",
+      "primaryKeywords": [
+        "software development company south africa",
+        "software development companies south africa",
+        "software development companies in south africa",
+        "custom software development company"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Find a vendor to build custom software; compare agencies vs boutique vs senior partner.",
+      "primaryUrl": "/solutions/custom-software-development-company-south-africa",
+      "secondaryUrls": [
+        "/blog/software-development-companies-south-africa-2026",
+        "/developers/south-africa",
+        "/services"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "web-development-company-sa",
+      "primaryKeywords": [
+        "web development company in south africa",
+        "web development companies in south africa",
+        "web developers south africa",
+        "web development south africa"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Hire a team to build a website or web application.",
+      "primaryUrl": "/solutions/web-development-company-south-africa",
+      "secondaryUrls": ["/developers/south-africa/web-developer", "/services"],
+      "priority": 1
+    },
+    {
+      "id": "mobile-app-development-sa",
+      "primaryKeywords": [
+        "mobile app development south africa",
+        "mobile app developers in south africa",
+        "app developers in south africa",
+        "app development south africa"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Build a mobile app (often MVP); compare cost and timeline.",
+      "primaryUrl": "/solutions/mobile-app-development-south-africa",
+      "secondaryUrls": ["/technical-cofounder", "/get-a-quote"],
+      "priority": 1
+    },
+    {
+      "id": "technical-cofounder-taas",
+      "primaryKeywords": [
+        "technical co-founder south africa",
+        "technical cofounder",
+        "technical co founder as a service",
+        "hire technical partner"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Non-technical founder needs a senior technical partner without giving equity.",
+      "primaryUrl": "/technical-cofounder",
+      "secondaryUrls": [
+        "/solutions/technical-cofounder-as-a-service-south-africa",
+        "/vs/technical-cofounder-vs-agency",
+        "/vs/taas-vs-fractional-cto"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "hire-developer-sa",
+      "primaryKeywords": [
+        "software developers south africa",
+        "software developer south africa",
+        "software engineers south africa"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Hire an individual senior developer or small team.",
+      "primaryUrl": "/developers/south-africa",
+      "secondaryUrls": ["/developers/eastern-cape"],
+      "priority": 2
+    },
+    {
+      "id": "ai-cloud-sa",
+      "primaryKeywords": [
+        "AI developer south africa",
+        "cloud architect south africa",
+        "LLM integration"
+      ],
+      "intent": "commercial",
+      "searcherGoal": "Add AI or cloud capability to an existing product.",
+      "primaryUrl": "/solutions/ai-integration-specialist-south-africa",
+      "secondaryUrls": ["/services"],
+      "priority": 2
+    },
+    {
+      "id": "seo-backlinks-education",
+      "primaryKeywords": [
+        "types of seo backlinks",
+        "good backlinks vs bad backlinks",
+        "contextual backlinks"
+      ],
+      "intent": "informational",
+      "searcherGoal": "Learn which link types help rankings vs hurt.",
+      "primaryUrl": "/blog/types-of-seo-backlinks",
+      "secondaryUrls": ["/blog/seo-brand-new-website-playbook"],
+      "priority": 3
+    },
+    {
+      "id": "seo-new-website-education",
+      "primaryKeywords": [
+        "seo for new website",
+        "how to do seo on a new website",
+        "new website seo",
+        "seo brand new website"
+      ],
+      "intent": "informational",
+      "searcherGoal": "Learn launch order for keywords, content, and links on a greenfield domain.",
+      "primaryUrl": "/blog/seo-brand-new-website-playbook",
+      "secondaryUrls": [
+        "/blog/types-of-seo-backlinks",
+        "/blog/seo-2025-ai-era-search-everywhere"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "seo-ai-era-education",
+      "primaryKeywords": [
+        "seo in 2025",
+        "ai seo",
+        "google ai overviews seo",
+        "search everywhere optimization"
+      ],
+      "intent": "informational",
+      "searcherGoal": "Understand how AI search and multi-platform discovery change SEO strategy.",
+      "primaryUrl": "/blog/seo-2025-ai-era-search-everywhere",
+      "secondaryUrls": [
+        "/blog/seo-brand-new-website-playbook",
+        "/blog/types-of-seo-backlinks",
+        "/blog/seo-vs-aeo-what-actually-differs"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "seo-vs-aeo-education",
+      "primaryKeywords": [
+        "seo vs aeo",
+        "answer engine optimization",
+        "aeo seo difference",
+        "optimize for chatgpt search"
+      ],
+      "intent": "informational",
+      "searcherGoal": "Learn what SEO and AEO mean and which actions to take for each.",
+      "primaryUrl": "/blog/seo-vs-aeo-what-actually-differs",
+      "secondaryUrls": [
+        "/blog/seo-2025-ai-era-search-everywhere",
+        "/blog/types-of-seo-backlinks"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "system-design-engineering-education",
+      "primaryKeywords": [
+        "system design interview",
+        "LLM chat system design",
+        "food delivery system design",
+        "dating app system design"
+      ],
+      "intent": "informational",
+      "searcherGoal": "Learn how to structure system design for chat assistants, swipe feeds, or food delivery with tradeoffs and diagrams.",
+      "primaryUrl": "/blog/system-design-conversational-ai-assistant",
+      "secondaryUrls": [
+        "/blog/system-design-swipe-dating-platform",
+        "/blog/system-design-food-delivery-core-flows",
+        "/solutions/ai-integration-specialist-south-africa"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "deprioritized",
+      "primaryKeywords": [
+        "software developer salary south africa",
+        "software engineering courses south africa",
+        "software developer jobs south africa",
+        "web hosting south africa"
+      ],
+      "intent": "informational-non-fit",
+      "searcherGoal": "Jobs, salaries, courses, or hosting — not core offer.",
+      "primaryUrl": null,
+      "secondaryUrls": [],
+      "priority": 0
+    }
+  ]
+}
