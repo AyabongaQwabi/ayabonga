@@ -62,10 +62,32 @@ import { cn } from '../lib/utils';
 import { TransitionLink } from '../components/ui/TransitionLink';
 import { TechLogo } from '../components/ui/TechLogo';
 import { resolveTechLogo } from '../lib/tech-logos';
+import { BlogMermaid } from '../components/BlogMermaid';
 import './design-styles.css';
 
 const CITE_HREF = /^#cite-(\d+)$/;
 const DESIGN_STYLES_SLUG = 'modern-web-design-styles';
+
+/** Plain text inside react-markdown `code` nodes (used for Mermaid source). */
+function markdownCodeChildrenToString(children: ReactNode): string {
+  const parts: string[] = [];
+  const walk = (node: ReactNode) => {
+    if (node == null || node === false) return;
+    if (typeof node === 'string' || typeof node === 'number') {
+      parts.push(String(node));
+      return;
+    }
+    if (Array.isArray(node)) {
+      node.forEach(walk);
+      return;
+    }
+    if (isValidElement(node) && node.props && 'children' in node.props) {
+      walk((node.props as { children?: ReactNode }).children);
+    }
+  };
+  walk(children);
+  return parts.join('');
+}
 
 function CitationRef({ href }: { href: string }) {
   const m = href.match(CITE_HREF);
@@ -633,6 +655,11 @@ function BlogPostView({ post }: { post: BlogPost }) {
       }) => {
         const isBlock = className?.includes('language-');
         if (isBlock) {
+          if (className?.includes('language-mermaid')) {
+            return (
+              <BlogMermaid chart={markdownCodeChildrenToString(children)} />
+            );
+          }
           return (
             <pre className="mb-6 overflow-x-auto rounded-lg border-l-[3px] border-[var(--emerald)] bg-[var(--navy-dark)] p-4">
               <code className="font-mono text-sm text-[var(--warm-white)]">
