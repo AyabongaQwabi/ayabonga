@@ -1,12 +1,15 @@
 ---
-headerImage: /images/blog/payment%20gateway%20online.webp
-title: "SA payment gateway TCO for React and Next.js (2026)"
-excerpt: "Paystack, Yoco, and Ozow fees plus payout and ops cost. Real total cost of ownership for SA startups, not sticker percentages."
+title: "SA payment gateways compared for React and Next.js (2026)"
+excerpt: "Paystack, Yoco, Ozow, Peach, and PayFast fees, payout speed, and real TCO for SA ecommerce. Updated June 2026."
 date: April 4, 2026
+dateModified: June 4, 2026
 readTime: 12 min read
-tags: Payments, Fintech, South Africa, TCO, Next.js, Ozow, Yoco
+tags: Payments, Fintech, South Africa, TCO, Next.js, Ozow, Yoco, Paystack
 categories: Engineering, Product
-ogImage: /images/blog/payment%20gateway%20online.webp
+seoTitle: "SA Payment Gateways 2026 (Paystack, Yoco, Ozow Fees)"
+seoDescription: "Compare SA payment gateways for 2026: Paystack, Yoco, Ozow, Peach, PayFast. Card %, payout fees, and TCO for React and Next.js shops."
+headerImage: /images/blog/gsc-sa-payment-gateways-tco-2026-hero.webp
+ogImage: /images/blog/gsc-sa-payment-gateways-tco-2026-hero.webp
 ---
 
 ## The Cheapest Payment Gateways for South African React/Next.js E-commerce in 2026 – Real TCO Breakdown (Not Just the % Fee)
@@ -22,6 +25,22 @@ It’s **Total Cost of Ownership (TCO)** – everything that hits your pocket an
 - Extra work for webhooks, retries, and observability when EskomSePush says Stage 6
 
 I pulled the latest 2026 numbers from the gateways themselves + SARB ecosystem data. Here’s the honest ranking for a typical Joburg or Cape Town indie store doing R50k–R200k/month.
+
+### SA payment gateway comparison (June 2026)
+
+| Gateway | Typical online card % | Fixed fee | Monthly fee | Notes |
+| -------- | --------------------- | --------- | ----------- | ----- |
+| Ozow | 0% promo tier | varies | R0 | Strong for instant EFT; check current promo cap |
+| Yoco | ~2.95% (drops with volume) | none | R0 | Best for low-ticket card |
+| Paystack | ~2.9% + R1 | R1 per txn | R0 | Wins above ~R2k baskets |
+| iKhokha | ~2.85% | varies | R0 | Good terminal + online mix |
+| Stitch | PayShap / open banking | low flat | R0 | Future-proof for bank rails |
+| Peach Payments | ~2.95% | none | R0 | Subscriptions and recurring |
+| PayFast | ~2.9% + fees | varies | R0 | Watch payout fees |
+
+Verify rates on each vendor site before you sign. Promos change.
+
+Need integration help? See [custom software and payment builds on Qwabi Engineering](https://business.qwabi.co.za/custom-software-development-south-africa).
 
 ### 2026 Cheapest-First Ranking by Real TCO
 

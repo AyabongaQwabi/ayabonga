@@ -1,6 +1,5 @@
 /**
- * Runs after `vite build`. Writes dist/sitemap.xml from static routes + every blog slug.
- * New markdown files under src/content/blog/ are picked up automatically on the next build.
+ * Runs after `vite build`. Writes dist/sitemap.xml from collect-indexable-routes.mjs.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,50 +8,22 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { createWriteStream } from 'node:fs';
 import { SitemapStream } from 'sitemap';
+import { collectSitemapLinks, getSiteUrl } from './collect-indexable-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const distDir = path.join(root, 'dist');
-const blogDir = path.join(root, 'src/content/blog');
-const pseoDataPath = path.join(root, 'src/data/pseo-pages.json');
-const comparisonsDataPath = path.join(root, 'src/data/comparisons.json');
-const localDevelopersPath = path.join(root, 'src/data/local-developers.json');
 
-
-const SITE_URL = (
-  process.env.SITE_URL ||
-  process.env.VITE_SITE_URL ||
-  'https://www.qwabi.co.za'
-).replace(/\/$/, '');
-
-function parseFrontmatterDate(raw) {
-  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!m) return undefined;
-  const dateLine = m[1].split(/\r?\n/).find((line) => /^date:\s*/i.test(line));
-  if (!dateLine) return undefined;
-  let v = dateLine.replace(/^date:\s*/i, '').trim();
-  if (
-    (v.startsWith('"') && v.endsWith('"')) ||
-    (v.startsWith("'") && v.endsWith("'"))
-  ) {
-    v = v.slice(1, -1);
-  }
-  const t = Date.parse(v);
-  if (Number.isNaN(t)) return undefined;
-  return new Date(t).toISOString().split('T')[0];
-}
-
-function collectBlogEntries() {
-  if (!fs.existsSync(blogDir)) return [];
-  const entries = [];
-  for (const name of fs.readdirSync(blogDir)) {
-    if (!name.endsWith('.md')) continue;
-    const slug = name.replace(/\.md$/i, '');
-    const raw = fs.readFileSync(path.join(blogDir, name), 'utf8');
-    const lastmod = parseFrontmatterDate(raw);
-    entries.push({ slug, lastmod });
-  }
-  return entries.sort((a, b) => a.slug.localeCompare(b.slug));
+function writeRobotsTxt(siteUrl) {
+  const lines = [
+    'User-agent: *',
+    'Allow: /',
+    'Disallow: /api/',
+    '',
+    `Sitemap: ${siteUrl}/sitemap.xml`,
+    '',
+  ];
+  fs.writeFileSync(path.join(distDir, 'robots.txt'), lines.join('\n'), 'utf8');
 }
 
 async function main() {
@@ -61,80 +32,17 @@ async function main() {
     process.exit(1);
   }
 
-  const blogEntries = collectBlogEntries();
-  
-  let pseoEntries = [];
-  try {
-    pseoEntries = JSON.parse(fs.readFileSync(pseoDataPath, 'utf8'));
-  } catch (e) {
-    console.warn('generate-sitemap: could not read pseo-pages.json');
-  }
-
-  let comparisonEntries = [];
-  try {
-    comparisonEntries = JSON.parse(fs.readFileSync(comparisonsDataPath, 'utf8'));
-  } catch (e) {
-    console.warn('generate-sitemap: could not read comparisons.json');
-  }
-
-  let localDev = { cities: [], roles: {} };
-  try {
-    localDev = JSON.parse(fs.readFileSync(localDevelopersPath, 'utf8'));
-  } catch (e) {
-    console.warn('generate-sitemap: could not read local-developers.json');
-  }
-
-  const ecCities = (localDev.cities || []).filter((c) => c.region === 'eastern-cape');
-  const roleSlugs = Object.keys(localDev.roles || {});
-  const localPageLinks = ecCities.flatMap((city) =>
-    roleSlugs.map((role) => ({
-      url: `/developers/eastern-cape/${city.slug}/${role}`,
-      changefreq: 'monthly',
-      priority: 0.8,
-    })),
-  );
-
-  const links = [
-    { url: '/', changefreq: 'weekly', priority: 1 },
-    { url: '/services', changefreq: 'monthly', priority: 0.9 },
-    { url: '/technical-cofounder', changefreq: 'monthly', priority: 0.95 },
-    { url: '/developers/eastern-cape', changefreq: 'weekly', priority: 0.92 },
-    { url: '/developers/south-africa', changefreq: 'weekly', priority: 0.9 },
-    ...localPageLinks,
-    { url: '/about', changefreq: 'monthly', priority: 0.9 },
-    { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
-    { url: '/editorial', changefreq: 'yearly', priority: 0.35 },
-    { url: '/corrections', changefreq: 'yearly', priority: 0.3 },
-    { url: '/sitemap', changefreq: 'monthly', priority: 0.35 },
-    { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
-    { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
-    { url: '/blog', changefreq: 'weekly', priority: 0.9 },
-    ...blogEntries.map(({ slug, lastmod }) => ({
-      url: `/blog/${slug}`,
-      changefreq: 'monthly',
-      priority: 0.8,
-      lastmod,
-    })),
-    ...pseoEntries.map((p) => ({
-      url: `/solutions/${p.slug}`,
-      changefreq: 'monthly',
-      priority: 0.85,
-    })),
-    ...comparisonEntries.map((c) => ({
-      url: `/vs/${c.slug}`,
-      changefreq: 'monthly',
-      priority: 0.7,
-    })),
-  ];
-
+  const siteUrl = getSiteUrl();
+  const links = collectSitemapLinks();
   const outPath = path.join(distDir, 'sitemap.xml');
-  const sm = new SitemapStream({ hostname: SITE_URL });
+  const sm = new SitemapStream({ hostname: siteUrl });
   const write = createWriteStream(outPath);
 
   await pipeline(Readable.from(links), sm, write);
+  writeRobotsTxt(siteUrl);
 
   console.log(
-    `generate-sitemap: wrote ${links.length} URLs to ${outPath} (${SITE_URL})`,
+    `generate-sitemap: wrote ${links.length} URLs to ${outPath} (${siteUrl})`,
   );
 }
 

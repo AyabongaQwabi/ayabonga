@@ -1,12 +1,15 @@
 ---
-headerImage: /images/blog/south%20africa%20flag%20with%20people.jpg
-title: "Why Most SA Bootcamp Grads Still Struggle in 2026 (and 3 Skills That Get You Hired)"
-excerpt: "AI-augmented development, system thinking beyond CRUD, and proof you can ship. Tailored to the Mzansi market."
+title: "SA bootcamp grads in 2026 and the 3 skills that get you hired"
+excerpt: "Why todo-app portfolios stall in Mzansi hiring, and what actually moves CVs: AI-augmented builds, system thinking, and shipped proof."
 date: March 28, 2026
+dateModified: June 4, 2026
 readTime: 10 min read
 tags: South Africa, Bootcamp, Hiring, AI coding, Next.js
 categories: Career, AI
-ogImage: /images/blog/south%20africa%20flag%20with%20people.jpg
+seoTitle: "SA Bootcamp Grads Hiring Skills 2026"
+seoDescription: "Why many SA bootcamp graduates struggle in 2026 and three skills that get interviews: AI-assisted shipping, system design, and real portfolio proof."
+headerImage: /images/blog/gsc-sa-bootcamp-grads-hiring-skills-2026-hero.webp
+ogImage: /images/blog/gsc-sa-bootcamp-grads-hiring-skills-2026-hero.webp
 ---
 
 **Thread: Why Most South African Bootcamp Grads Still Struggle in 2026 – And the 3 Skills That Actually Get You Hired**
@@ -17,7 +20,7 @@ But walk into any WhatsApp bootcamp alumni group and it’s full of “Still app
 
 Why? Most grads leave bootcamp with React basics + a todo app… and think that’s enough.
 
-It’s not. 2026 hiring is skills-first, not certificate-first. Here’s the brutal truth + the 3 things that actually move your CV to the top of the pile in Mzansi.
+It’s not. 2026 hiring is skills-first, not certificate-first. Here are the three things that actually move your CV to the top of the pile in Mzansi.
 
 2/ The Problem (No Sugarcoating)
 

@@ -506,7 +506,9 @@ function BlogPostView({ post }: { post: BlogPost }) {
   const metaRef = useRef<HTMLDivElement>(null);
 
   const canonical = absoluteUrl(`/blog/${post.slug}`);
-  const pageTitle = `${post.title} | Writing | ${SITE_NAME}`;
+  const metaTitle = post.seoTitle?.trim() || post.title;
+  const metaDescription = post.seoDescription?.trim() || post.excerpt;
+  const pageTitle = `${metaTitle} | ${SITE_NAME}`;
   const datePublished = parsePostDateForSchema(post.date);
   const keywords = [...post.categories, ...post.tags]
     .filter(Boolean)
@@ -773,13 +775,13 @@ function BlogPostView({ post }: { post: BlogPost }) {
     <PageShell className="bg-[var(--navy)] text-[var(--warm-white)]">
       <Helmet>
         <title>{pageTitle}</title>
-        <meta name="description" content={post.excerpt} />
+        <meta name="description" content={metaDescription} />
         {keywords ? <meta name="keywords" content={keywords} /> : null}
         <link rel="canonical" href={canonical} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonical} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={shareImageUrl} />
         <meta property="og:image:alt" content={post.title} />
         <meta property="og:locale" content="en_ZA" />
@@ -791,8 +793,8 @@ function BlogPostView({ post }: { post: BlogPost }) {
           />
         ) : null}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={shareImageUrl} />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />

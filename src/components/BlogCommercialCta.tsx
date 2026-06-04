@@ -22,7 +22,16 @@ export default function BlogCommercialCta({ variant = 'default' }: BlogCommercia
           : 'From idea to production without agency overhead'}
       </h2>
       <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-        I scope MVPs, ship on React and Node, and own cloud and payments for SA startups.
+        I scope MVPs, ship on React and Node, and own cloud and payments for SA startups. For
+        agency-scale delivery see{' '}
+        <a
+          href="https://business.qwabi.co.za"
+          className="text-primary underline-offset-2 hover:underline"
+          rel="noopener noreferrer"
+        >
+          Qwabi Engineering
+        </a>
+        .
       </p>
       <div className="flex flex-col sm:flex-row flex-wrap gap-3">
         <TransitionLink

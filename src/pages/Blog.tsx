@@ -31,9 +31,9 @@ import {
 } from '../lib/animations';
 import { cn } from '../lib/utils';
 
-const BLOG_INDEX_TITLE = 'AI, cloud and product engineering for SA startups';
+const BLOG_INDEX_TITLE = 'Writing on AI, web development, and SA engineering';
 const BLOG_INDEX_DESCRIPTION =
-  'Writing on product engineering, AI, cloud architecture, and shipping software in South Africa. Plus Eastern Cape culture and heritage.';
+  'Guides on web development, AI agents, payments, mobile apps, and shipping software in South Africa. Plus isiXhosa names and Eastern Cape heritage.';
 
 const FEATURED_FALLBACK_SLUG = 'ai-tools-building-apps-2026';
 const HERO_CATEGORIES = ['Engineering', 'Systems', 'Africa'] as const;

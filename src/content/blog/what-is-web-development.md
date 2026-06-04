@@ -1,23 +1,23 @@
 ---
-title: What Is Web Development?
-excerpt: Web development turns designs and requirements into working sites and apps. How it differs from design, what modern stacks look like, and what to expect in SA.
+title: What is web development, and do you need a custom build?
+excerpt: Web development turns designs into working sites and apps. When templates are enough, when you need custom software, and what SA teams should expect in 2026.
 date: May 16, 2026
+dateModified: June 4, 2026
 readTime: 10 min read
 slug: what-is-web-development
 tags: Web Development, React, Node, TypeScript, South Africa
 categories: Engineering, Product
-headerImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
-ogImage: /images/blog/developer%20laptop%20workspace%20ai%20coding%20tools.jpg
+seoTitle: "What Is Web Development? SA Guide for 2026"
+seoDescription: "What web development is, how it differs from design, and when a custom build beats templates. Practical guide for SA founders and product teams."
+headerImage: /images/blog/gsc-what-is-web-development-hero.webp
+ogImage: /images/blog/gsc-what-is-web-development-hero.webp
 ---
-
-<!--
-SEO meta title (≤60): What Is Web Development? Guide for 2026
-Meta description (≤155): Web development builds fast, secure sites and apps with code, APIs, and hosting. Learn how it differs from design and what modern practice looks like in SA.
--->
 
 **Web development** is the work of building and running software that lives in the browser (and often on a server behind it). If **[web design](/blog/what-is-web-design)** decides what the experience should feel like, web development makes that experience real: pages load, forms submit, payments clear, and data stays consistent when two users act at once.
 
 In 2026, "web development" usually means far more than editing HTML in Notepad. It is APIs, auth, databases, deployment pipelines, and monitoring.
+
+If you are past the brochure stage and need production engineering, [Qwabi Engineering](https://business.qwabi.co.za/web-development-south-africa) covers custom web builds for SA startups.
 
 ## Front-end vs back-end vs full-stack
 

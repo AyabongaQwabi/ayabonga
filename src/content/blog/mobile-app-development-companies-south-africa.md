@@ -1,16 +1,17 @@
 ---
-title: "Mobile App Development Companies in South Africa"
-excerpt: "South Africa mobile app development companies compared: native, React Native, Flutter, and enterprise app shops, with buyer checklists and cost context."
-seoTitle: "Mobile App Development Companies in South Africa (2026)"
-seoDescription: "Find a mobile app development company or app making company in South Africa. Compare Specno, SovTech, Bluegrass, Netgen, and 35+ firms with buyer tips."
+title: "The actual SA mobile app development landscape in 2026"
+excerpt: "Who builds mobile apps in South Africa, what stacks they use, and how to pick a partner without the generic agency pitch. Buyer checklist included."
+seoTitle: "Mobile App Development Companies South Africa 2026"
+seoDescription: "SA mobile app development companies compared: React Native, Flutter, native iOS/Android. How to choose a partner and when custom build beats templates."
 slug: mobile-app-development-companies-south-africa
 date: May 16, 2026
+dateModified: June 4, 2026
 readTime: 18 min read
 tags: South Africa, Mobile apps, React Native, Flutter, iOS, Android
 categories: Engineering, Business
 logoNote: Featured firm logos omitted; no stable Wikimedia URLs verified 2026-05-16
-headerImage: /images/blog/mobile-apps-1-scaled.jpg
-ogImage: /images/blog/mobile-apps-1-scaled.jpg
+headerImage: /images/blog/gsc-mobile-app-development-companies-south-africa-hero.webp
+ogImage: /images/blog/gsc-mobile-app-development-companies-south-africa-hero.webp
 ---
 
 **Disclaimer:** Company names, ownership, and service focus change. This guide was researched in **May 2026** using public directories, vendor sites, and industry listings. Treat every name as a starting point for your own due diligence, not a ranking or endorsement. I am not paid to feature any firm on this list.

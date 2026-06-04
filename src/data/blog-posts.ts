@@ -15,6 +15,10 @@ export interface BlogPost {
   headerImage?: string;
   /** Optional ISO or display date for `dateModified` in JSON-LD when a post is revised. */
   dateModified?: string;
+  /** Optional SERP title (≤60 chars). Falls back to `title` in Helmet. */
+  seoTitle?: string;
+  /** Optional meta description (≤155 chars). Falls back to `excerpt`. */
+  seoDescription?: string;
 }
 
 const rawModules = import.meta.glob<string>('../content/blog/*.md', {
@@ -84,6 +88,10 @@ interface PostFrontmatter {
   /** Alias for `headerImage` in some posts. */
   image?: string;
   dateModified?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  /** Legacy alias for `seoDescription` in some posts. */
+  metaDescription?: string;
 }
 
 function resolveHeaderImage(fm: PostFrontmatter): string | undefined {
@@ -115,6 +123,18 @@ function loadBlogPosts(): BlogPost[] {
         ? fm.dateModified.trim()
         : undefined;
 
+    const seoTitle =
+      typeof fm.seoTitle === 'string' && fm.seoTitle.trim().length > 0
+        ? fm.seoTitle.trim()
+        : undefined;
+
+    const seoDescriptionRaw =
+      typeof fm.seoDescription === 'string' && fm.seoDescription.trim().length > 0
+        ? fm.seoDescription.trim()
+        : typeof fm.metaDescription === 'string' && fm.metaDescription.trim().length > 0
+          ? fm.metaDescription.trim()
+          : undefined;
+
     posts.push({
       slug,
       title: typeof fm.title === 'string' ? fm.title : fileSlug,
@@ -128,6 +148,8 @@ function loadBlogPosts(): BlogPost[] {
       ...(ogImage ? { ogImage } : {}),
       ...(headerImage ? { headerImage } : {}),
       ...(dateModified ? { dateModified } : {}),
+      ...(seoTitle ? { seoTitle } : {}),
+      ...(seoDescriptionRaw ? { seoDescription: seoDescriptionRaw } : {}),
     });
   }
 

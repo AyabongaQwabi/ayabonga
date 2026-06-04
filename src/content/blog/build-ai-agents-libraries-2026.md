@@ -1,12 +1,15 @@
 ---
-headerImage: /images/blog/large%20language%20model%20apps.jpeg
-title: "Best libraries and platforms to build AI agents (2026)"
-excerpt: "LangGraph, CrewAI, Mastra, n8n, and more. Pick by stack, control, and budget for production agents in South Africa."
+title: "Best libraries to build AI agents (updated June 2026)"
+excerpt: "LangGraph, CrewAI, Mastra, n8n, and Google ADK compared for SA teams. Stack picks, costs, and what ships to production."
 date: April 11, 2026
+dateModified: June 4, 2026
 readTime: 9 min read
 tags: Agents, LangGraph, Mastra, CrewAI, n8n, South Africa, ADK
 categories: AI, Engineering
-ogImage: /images/blog/large%20language%20model%20apps.jpeg
+seoTitle: "Build AI Agents in 2026 (Libraries, June Update)"
+seoDescription: "Best libraries and platforms to build AI agents in 2026: LangGraph, Mastra, CrewAI, n8n. Updated June 2026 for Next.js and Supabase teams in SA."
+headerImage: /images/blog/gsc-build-ai-agents-libraries-2026-hero.webp
+ogImage: /images/blog/gsc-build-ai-agents-libraries-2026-hero.webp
 ---
 
 My battle-tested 2026 guide to the best **libraries and platforms for building AI agents** (not just using them). I’ve grouped them by vibe so you can pick what fits your stack and budget.
@@ -91,6 +94,13 @@ Marketplace and builder for **professional agents and teams** — discover, fork
 
 The market is wide open. Build one solid agent that understands South African realities — language, payments, infrastructure — and you can sell it to startups from Sandton to Durban North.
 
-Which tool are you using or planning to try in 2026? Drop your stack — Mastra crew, LangGraph warriors, n8n self-hosters, Google ADK believers — and tag a bootcamp grad or fellow dev in JHB, CPT, or DBN who’s building agents right now.
+Which tool are you using or planning to try in 2026? Drop your stack (Mastra crew, LangGraph warriors, n8n self-hosters, Google ADK believers) and tag a bootcamp grad or fellow dev in JHB, CPT, or DBN who’s building agents right now.
+
+## Deeper dives (June 2026)
+
+- [Best Go libraries for AI agents](/blog/best-go-libraries-ai-agents-2026)
+- [Best Python libraries for AI agents](/blog/best-python-libraries-ai-agents-2026)
+- [Best platforms for building AI agents](/blog/best-platforms-building-ai-agents-2026)
+- [Mastra + Supabase setup](/blog/mastra-supabase-2026)
 
 ZATech · SADevs · AIAgents · BuildInSA · VibeCoding · NextJS · TypeScript · LangGraph · CrewAI · MastraAI · DevOpsSA

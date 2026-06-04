@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Brain } from 'lucide-react';
-import { SITE_NAME } from '../lib/site-config';
+import { BUSINESS_SITE_ORIGIN, SITE_NAME } from '../lib/site-config';
 import { AUTHOR_JOB_TITLE } from '../lib/author-profile';
 import { parallaxElement } from '../lib/animations';
 import { TransitionLink } from './ui/TransitionLink';
@@ -73,6 +73,13 @@ export function SiteFooter() {
               Quote
             </TransitionLink>
             <a
+              href="https://business.qwabi.co.za"
+              className="interactive-link hover:text-[var(--warm-white)]"
+              rel="noopener noreferrer"
+            >
+              Qwabi Engineering
+            </a>
+            <a
               href="/llms.txt"
               className="interactive-link inline-flex items-center gap-1 text-[var(--text-muted)] hover:text-[var(--warm-white)]"
             >
@@ -101,14 +108,22 @@ export function SiteFooter() {
           >
             Corrections
           </TransitionLink>
-          <TransitionLink
-            to="/sitemap"
-            className="interactive-link hover:text-[var(--warm-white)]"
-          >
-            Sitemap
-          </TransitionLink>
-          <a
-            href="https://github.com/ayabongaqwabi"
+            <TransitionLink
+              to="/sitemap"
+              className="interactive-link hover:text-[var(--warm-white)]"
+            >
+              Sitemap
+            </TransitionLink>
+            <a
+              href={BUSINESS_SITE_ORIGIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="interactive-link hover:text-[var(--warm-white)]"
+            >
+              Qwabi Engineering
+            </a>
+            <a
+              href="https://github.com/ayabongaqwabi"
             target="_blank"
             rel="noopener noreferrer"
             className="interactive-link hover:text-[var(--warm-white)]"

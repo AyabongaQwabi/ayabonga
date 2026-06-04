@@ -6,10 +6,11 @@ readTime: 12 min read
 slug: what-is-a-landing-page
 tags: Landing Page, Marketing, Conversion, South Africa, Web Development, SEO
 categories: Product, Engineering
-headerImage: /images/blog/landing-page-e1721988239907.webp
-ogImage: /images/blog/landing-page-e1721988239907.webp
-seoTitle: What Is a Landing Page? Definition & Importance
-metaDescription: What a landing page is, how it differs from your homepage, and why landing page development matters for leads and app launches in South Africa.
+seoTitle: What Is a Landing Page? Definition for SA Teams
+seoDescription: What a landing page is, how it differs from your homepage, and when landing page development pays off for SA leads and app launches.
+dateModified: June 4, 2026
+headerImage: /images/blog/gsc-what-is-a-landing-page-hero.webp
+ogImage: /images/blog/gsc-what-is-a-landing-page-hero.webp
 ---
 
 You ran a Facebook ad. Someone clicked. They landed on your homepage with twelve menu items, a blog roll, and a mission statement from 2019.
@@ -250,7 +251,7 @@ Often yes. It validates message and collects leads while you scope engineering.
 
 A landing page is where marketing promises meet a concrete next step. Build it on purpose, measure it, then fund software that delivers what the page claims.
 
-**Need landing page development tied to a real product roadmap?** [Get a project quote](/get-a-quote) or [chat on WhatsApp](https://wa.me/27603116777).
+**Need landing page development tied to a real product roadmap?** [Get a project quote](/get-a-quote), [Qwabi Engineering](https://business.qwabi.co.za/web-development-south-africa), or [chat on WhatsApp](https://wa.me/27603116777).
 
 ---
 

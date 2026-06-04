@@ -11,10 +11,18 @@ export function BlogImageDisclaimer() {
         <strong className='font-medium text-muted-foreground'>
           Image Disclaimer
         </strong>
-        : The images used in this blog post were sourced from public Google
-        searches. I do not own the rights to these images. They are used for
-        illustrative and educational purposes only under fair use principles. If
-        you are the copyright owner and would like an image removed, please{' '}
+        : Hero images are royalty-free stock from{' '}
+        <a
+          href='https://www.pexels.com/license/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-muted-foreground underline decoration-border underline-offset-2 transition-colors hover:text-foreground hover:decoration-primary/50'
+        >
+          Pexels
+        </a>{' '}
+        unless noted otherwise. Some older posts may use editorial images from
+        public web search. They are illustrative only. If you are the copyright
+        owner and want an image removed, please{' '}
         <a
           href={WHATSAPP_URL}
           target='_blank'

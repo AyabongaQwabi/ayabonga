@@ -1,15 +1,20 @@
 ---
-title: "Xhosa Names — A Very Serious Taxonomy (Not Really)"
-excerpt: "The apologies, the Eskom gang, the worship team, and other completely unscientific group chats your cousin started on WhatsApp."
+title: "Xhosa names, meanings, and the unofficial taxonomy"
+excerpt: "Popular isiXhosa names grouped with humor and respect. Boy names, girl names, and rare picks, plus links to deeper name guides."
 date: April 11, 2026
+dateModified: June 4, 2026
 readTime: 4 min read
-tags: isiXhosa, Humor, Names, South Africa, Culture
+tags: isiXhosa, Humor, Names, South Africa, Culture, Xhosa boy names, Xhosa girl names
 categories: Culture, Personal
 headerImage: /images/blog/2.%20The%20recorded%20names%20South%20Africa%20African%20heritage%20.jpg
 ogImage: /images/blog/2.%20The%20recorded%20names%20South%20Africa%20African%20heritage%20.jpg
+seoTitle: "Xhosa Names, Meanings and Origins (South Africa)"
+seoDescription: "Xhosa names for boys and girls with meanings, rare picks, and cultural context. Unofficial taxonomy from a South African writer, not a baby-name factory."
 ---
 
-This is **a joke**. No linguists were consulted. If your name is missing, it’s not shade — **tell me if *elakho alikho apha*** and we’ll start a Part 2. 😉
+This is **a joke**. No linguists were consulted. If your name is missing, it’s not shade. **Tell me if *elakho alikho apha*** and we’ll start a Part 2. 😉
+
+For straight name lists with meanings, see [Xhosa boy names](/blog/xhosa-boy-names) and [Xhosa girl names](/blog/xhosa-girl-names).
 
 ---
 
@@ -105,7 +110,7 @@ Khanya · Khanyisa · Kwakhanya · Lisakhanya · Nonkanyiso · Lukhanyo
 
 ## 🎤 The worship team
 
-*Harmony on three — one, two, dumisa.*
+*Harmony on three: one, two, dumisa.*
 
 Dumisa · Dumisani · Zukisa · Zukiswa · Zukisani · Dunyiswa
 
@@ -185,6 +190,6 @@ Akhona · Zikhona · Sikho · Zikho · Sikhona
 
 ## 📣 Closing remarks
 
-If **elakho alikho apha**, drop it in the comments — we’ll add a new section. *Ukuba uyintoni?* The taxonomy must grow. 🌱
+If **elakho alikho apha**, drop it in the comments and we’ll add a new section. *Ukuba uyintoni?* The taxonomy must grow. 🌱
 
 *Camagu. Don’t @ me in isiXhosa class.* 🙃

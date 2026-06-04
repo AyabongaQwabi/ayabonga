@@ -5,6 +5,26 @@
       "has": [{ "type": "host", "value": "qwabi.co.za" }],
       "destination": "https://www.qwabi.co.za/:path*",
       "permanent": true
+    },
+    {
+      "source": "/blog/xhosa-boy-names-meanings-origins",
+      "destination": "/blog/xhosa-boy-names",
+      "permanent": true
+    },
+    {
+      "source": "/blog/xhosa-girl-names-meanings-origins",
+      "destination": "/blog/xhosa-girl-names",
+      "permanent": true
+    },
+    {
+      "source": "/blog/claude-ai-building-apps-2026",
+      "destination": "/blog/claude-ai-for-building-apps-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mastra-supabase-agents",
+      "destination": "/blog/mastra-supabase-2026",
+      "permanent": true
     }
   ],
   "rewrites": [

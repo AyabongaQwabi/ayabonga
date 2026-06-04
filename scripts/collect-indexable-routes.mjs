@@ -1,0 +1,158 @@
+/**
+ * Shared route list for sitemap.xml and post-build prerendering (qwabi.co.za).
+ * Keep sitemap and prerender in sync so discovered URLs are crawlable with real HTML.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(__dirname, '..');
+
+const blogDir = path.join(root, 'src/content/blog');
+const pseoDataPath = path.join(root, 'src/data/pseo-pages.json');
+const comparisonsDataPath = path.join(root, 'src/data/comparisons.json');
+const localDevelopersPath = path.join(root, 'src/data/local-developers.json');
+
+export function getSiteUrl() {
+  return (
+    process.env.SITE_URL ||
+    process.env.VITE_SITE_URL ||
+    'https://www.qwabi.co.za'
+  ).replace(/\/$/, '');
+}
+
+function parseFrontmatterDate(raw) {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!m) return undefined;
+  const dateLine = m[1].split(/\r?\n/).find((line) => /^date:\s*/i.test(line));
+  if (!dateLine) return undefined;
+  let v = dateLine.replace(/^date:\s*/i, '').trim();
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1);
+  }
+  const t = Date.parse(v);
+  if (Number.isNaN(t)) return undefined;
+  return new Date(t).toISOString().split('T')[0];
+}
+
+function parseFrontmatterSlug(raw) {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!m) return undefined;
+  const line = m[1].split(/\r?\n/).find((l) => /^slug:\s*/i.test(l));
+  if (!line) return undefined;
+  let v = line.replace(/^slug:\s*/i, '').trim();
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1);
+  }
+  return v.trim() || undefined;
+}
+
+function collectBlogEntries() {
+  if (!fs.existsSync(blogDir)) return [];
+  const entries = [];
+  for (const name of fs.readdirSync(blogDir)) {
+    if (!name.endsWith('.md')) continue;
+    const fileSlug = name.replace(/\.md$/i, '');
+    const raw = fs.readFileSync(path.join(blogDir, name), 'utf8');
+    const slug = parseFrontmatterSlug(raw) ?? fileSlug;
+    const lastmod = parseFrontmatterDate(raw);
+    entries.push({ slug, lastmod });
+  }
+  return entries.sort((a, b) => a.slug.localeCompare(b.slug));
+}
+
+/** All public URLs for sitemap.xml. */
+export function collectSitemapLinks() {
+  const blogEntries = collectBlogEntries();
+
+  let pseoEntries = [];
+  try {
+    pseoEntries = JSON.parse(fs.readFileSync(pseoDataPath, 'utf8'));
+  } catch {
+    console.warn('collect-indexable-routes: could not read pseo-pages.json');
+  }
+
+  let comparisonEntries = [];
+  try {
+    comparisonEntries = JSON.parse(fs.readFileSync(comparisonsDataPath, 'utf8'));
+  } catch {
+    console.warn('collect-indexable-routes: could not read comparisons.json');
+  }
+
+  let localDev = { cities: [], roles: {} };
+  try {
+    localDev = JSON.parse(fs.readFileSync(localDevelopersPath, 'utf8'));
+  } catch {
+    console.warn('collect-indexable-routes: could not read local-developers.json');
+  }
+
+  const ecCities = (localDev.cities || []).filter((c) => c.region === 'eastern-cape');
+  const roleSlugs = Object.keys(localDev.roles || {});
+  const localPageLinks = ecCities.flatMap((city) =>
+    roleSlugs.map((role) => ({
+      url: `/developers/eastern-cape/${city.slug}/${role}`,
+      changefreq: 'monthly',
+      priority: 0.8,
+    })),
+  );
+
+  return [
+    { url: '/', changefreq: 'weekly', priority: 1 },
+    { url: '/services', changefreq: 'monthly', priority: 0.9 },
+    { url: '/technical-cofounder', changefreq: 'monthly', priority: 0.95 },
+    { url: '/developers/eastern-cape', changefreq: 'weekly', priority: 0.92 },
+    { url: '/developers/south-africa', changefreq: 'weekly', priority: 0.9 },
+    ...localPageLinks,
+    { url: '/about', changefreq: 'monthly', priority: 0.9 },
+    { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
+    { url: '/editorial', changefreq: 'yearly', priority: 0.35 },
+    { url: '/corrections', changefreq: 'yearly', priority: 0.3 },
+    { url: '/sitemap', changefreq: 'monthly', priority: 0.35 },
+    { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
+    { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
+    { url: '/blog', changefreq: 'weekly', priority: 0.9 },
+    ...blogEntries.map(({ slug, lastmod }) => ({
+      url: `/blog/${slug}`,
+      changefreq: 'monthly',
+      priority: 0.8,
+      ...(lastmod ? { lastmod } : {}),
+    })),
+    ...pseoEntries.map((p) => ({
+      url: `/solutions/${p.slug}`,
+      changefreq: 'monthly',
+      priority: 0.85,
+    })),
+    ...comparisonEntries.map((c) => ({
+      url: `/vs/${c.slug}`,
+      changefreq: 'monthly',
+      priority: 0.7,
+    })),
+  ];
+}
+
+/**
+ * Route paths for post-build prerender.
+ * Blog posts are included (primary traffic engine on qwabi.co.za).
+ */
+export function collectPrerenderRoutes(options = {}) {
+  const { excludeBlog = false } = options;
+  const seen = new Set();
+  const routes = [];
+
+  for (const link of collectSitemapLinks()) {
+    const path = link.url;
+    if (excludeBlog && (path === '/blog' || path.startsWith('/blog/'))) continue;
+    if (seen.has(path)) continue;
+    seen.add(path);
+    routes.push(path);
+  }
+
+  return routes;
+}

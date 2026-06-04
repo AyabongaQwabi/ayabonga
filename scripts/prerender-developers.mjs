@@ -1,55 +1,25 @@
 /**
- * Post-build: static HTML for /developers/* routes so crawlers get full titles, meta, and body copy.
- * Requires dist/ from `vite build`. Skips when SKIP_PRERENDER=1.
+ * Post-build: static HTML for indexable routes so crawlers get titles, meta, and body copy.
+ * Route list is shared with generate-sitemap.mjs. Skips when SKIP_PRERENDER=1.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import http from 'node:http';
+import { collectPrerenderRoutes } from './collect-indexable-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const distDir = path.join(root, 'dist');
-const localDataPath = path.join(root, 'src/data/local-developers.json');
 const PREVIEW_PORT = Number(process.env.PRERENDER_PORT || 4173);
 const PREVIEW_HOST = '127.0.0.1';
-
-const STATIC_PRERENDER_ROUTES = [
-  '/',
-  '/about',
-  '/privacy',
-  '/editorial',
-  '/corrections',
-  '/services',
-  '/technical-cofounder',
-  '/get-a-quote',
-  '/blog',
-  '/projects/espazza',
-  '/blog/sa-payment-gateways-tco-2026',
-  '/blog/build-ai-agents-libraries-2026',
-  '/blog/xhosa-meaningful-baby-name-ideas',
-];
-
-function collectDeveloperRoutes() {
-  const data = JSON.parse(fs.readFileSync(localDataPath, 'utf8'));
-  const routes = [...STATIC_PRERENDER_ROUTES, '/developers/eastern-cape', '/developers/south-africa'];
-  const ecCities = (data.cities || []).filter((c) => c.region === 'eastern-cape');
-  const roleSlugs = Object.keys(data.roles || {});
-  for (const city of ecCities) {
-    for (const role of roleSlugs) {
-      routes.push(`/developers/eastern-cape/${city.slug}/${role}`);
-    }
-  }
-  return routes;
-}
 
 function routeToHtmlPath(route) {
   const segments = route.replace(/^\//, '').split('/').filter(Boolean);
   return path.join(distDir, ...segments, 'index.html');
 }
 
-/** Vercel/CI Linux images lack system libs for Puppeteer's downloaded Chrome. */
 function useBundledChromium() {
   return (
     process.env.VERCEL === '1' ||
@@ -127,21 +97,22 @@ function startPreview() {
   });
 }
 
-const PRERENDER_SELECTOR = '#main-content h1';
-const GOTO_TIMEOUT_MS = 60_000;
-const CONTENT_TIMEOUT_MS = 45_000;
+const PRERENDER_SELECTOR = '#main-content h1, main h1, h1';
+const GOTO_TIMEOUT_MS = 90_000;
+const CONTENT_TIMEOUT_MS = 90_000;
 
-/** Scroll-reveal hides content until IntersectionObserver runs; headless often never fires. */
 async function waitForPrerenderContent(page) {
   await page.waitForFunction(
     (selector) => {
+      const main = document.querySelector('#main-content');
+      if (main?.getAttribute('aria-busy') === 'true') return false;
+
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+
       const heading = document.querySelector(selector);
-      if (!heading?.textContent?.trim()) return false;
-      const reveal = heading.closest('.reveal, .reveal-stagger');
-      if (reveal && !reveal.classList.contains('is-visible')) {
-        reveal.classList.add('is-visible');
-      }
-      return true;
+      return Boolean(heading?.textContent?.trim());
     },
     { timeout: CONTENT_TIMEOUT_MS },
     PRERENDER_SELECTOR,
@@ -170,7 +141,11 @@ async function main() {
     process.exit(1);
   }
 
-  const routes = collectDeveloperRoutes();
+  const routes = collectPrerenderRoutes().sort((a, b) => {
+    if (a === '/') return 1;
+    if (b === '/') return -1;
+    return a.localeCompare(b);
+  });
   let preview;
 
   try {
@@ -178,30 +153,21 @@ async function main() {
     const browser = await launchBrowser();
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
-    
-    // Wire up console and error listeners to capture page logs
-    page.on('console', msg => {
-      const text = msg.text();
-      if (!text.includes('Download the React DevTools') && !text.includes('Lit is in dev mode')) {
-        console.log(`PAGE LOG [${msg.type()}]:`, text);
-      }
-    });
-    page.on('pageerror', err => {
-      console.error('PAGE ERROR (unhandled exception):', err.stack || err.toString());
-    });
-    page.on('requestfailed', request => {
-      console.error(`PAGE REQUEST FAILED: ${request.url()} - ${request.failure()?.errorText || 'unknown error'}`);
-    });
-
     await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
     await page.evaluateOnNewDocument(() => {
       window.__PRERENDER__ = true;
+      const revealAll = () => {
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
+          el.classList.add('is-visible');
+        });
+      };
+      document.addEventListener('DOMContentLoaded', revealAll);
+      window.addEventListener('load', revealAll);
     });
 
     for (const route of routes) {
-      console.log(`prerender-developers: Starting prerender for ${route}...`);
       const outFile = await prerenderRoute(page, preview.baseUrl, route);
-      console.log(`prerender-developers: Finished ${route} → ${path.relative(root, outFile)}`);
+      console.log(`prerender-developers: ${route} → ${path.relative(root, outFile)}`);
     }
 
     await browser.close();

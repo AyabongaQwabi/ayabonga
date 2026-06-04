@@ -1,19 +1,17 @@
 ---
-title: What Is Application Development?
-excerpt: Application development covers mobile, web, and desktop software built for a specific job. Types, stacks, and how to scope custom apps in South Africa.
+title: What is application development for SA startups?
+excerpt: Custom mobile, web, and desktop software for a real job. Types, stacks, scoping, and when to hire a product engineer instead of an agency roster.
 date: May 16, 2026
+dateModified: June 4, 2026
 readTime: 11 min read
 slug: what-is-application-development
 tags: Application Development, Mobile Apps, Custom Software, South Africa
 categories: Engineering, Product
-headerImage: /images/blog/mobile%20apps.jpeg
-ogImage: /images/blog/mobile%20apps.jpeg
+seoTitle: "What Is Application Development? Types and SA Guide"
+seoDescription: "Application development explained: mobile, web, and desktop apps, modern stacks, and how South African teams scope MVPs without agency overhead."
+headerImage: /images/blog/gsc-what-is-application-development-hero.webp
+ogImage: /images/blog/gsc-what-is-application-development-hero.webp
 ---
-
-<!--
-SEO meta title (≤60): What Is Application Development? Types and Guide
-Meta description (≤155): Application development means custom mobile, web, and desktop software for a real job. Learn types, stacks, and how SA teams scope and ship apps.
--->
 
 **Application development** is the process of designing, building, and maintaining software that helps people complete a specific job. Unlike a generic website that mostly informs, an **application** usually involves accounts, data that changes over time, notifications, permissions, and often money moving between parties.
 
