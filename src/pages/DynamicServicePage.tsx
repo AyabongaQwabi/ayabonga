@@ -22,7 +22,13 @@ import {
   Activity,
   MessageCircle
 } from 'lucide-react';
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, TWITTER_HANDLE, WHATSAPP_URL } from '../lib/site-config';
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_ORIGIN, TWITTER_HANDLE, WHATSAPP_URL } from '../lib/site-config';
+import {
+  authorGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from '../lib/entity-schema';
 import pseoData from '../data/pseo-pages.json';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { PageShell } from '../components/layout/PageShell';
@@ -166,23 +172,27 @@ const DynamicServicePage = () => {
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
 
-        {/* Schema.org for Service */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": page.title,
-            "description": page.pain_point,
-            "provider": {
-              "@type": "Person",
-              "name": "Ayabonga Qwabi"
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": page.location
-            },
-            "category": page.industry
-          })}
+          {JSON.stringify(
+            buildJsonLdGraph([
+              buildOrganizationSchema(),
+              buildWebSiteSchema(),
+              authorGraphNode(),
+              {
+                '@type': 'Service',
+                '@id': `${canonical}#service`,
+                name: page.title,
+                description: metaDescription,
+                url: canonical,
+                provider: { '@id': `${SITE_ORIGIN}/#organization` },
+                areaServed: {
+                  '@type': 'Country',
+                  name: 'South Africa',
+                },
+                serviceType: page.industry,
+              },
+            ]),
+          )}
         </script>
       </Helmet>
 

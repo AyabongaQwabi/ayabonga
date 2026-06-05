@@ -22,6 +22,13 @@ import {
 } from '../lib/site-config';
 import comparisonData from '../data/comparisons.json';
 import NotFound from './NotFound';
+import {
+  authorGraphNode,
+  buildArticleGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from '../lib/entity-schema';
 
 const DynamicComparisonPage = () => {
   const { slug } = useParams();
@@ -51,20 +58,28 @@ const DynamicComparisonPage = () => {
         <meta name="robots" content="index, follow" />
 
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: page.title,
-            description: page.verdict,
-            mainEntity: {
-              '@type': 'Article',
-              headline: page.title,
-              author: {
-                '@type': 'Person',
-                name: 'Ayabonga Qwabi',
+          {JSON.stringify(
+            buildJsonLdGraph([
+              buildOrganizationSchema(),
+              buildWebSiteSchema(),
+              authorGraphNode(),
+              {
+                '@type': 'WebPage',
+                '@id': `${canonical}#webpage`,
+                name: page.title,
+                description: metaDescription,
+                url: canonical,
+                inLanguage: 'en-ZA',
+                mainEntity: { '@id': `${canonical}#article` },
               },
-            },
-          })}
+              buildArticleGraphNode({
+                headline: page.title,
+                description: metaDescription,
+                canonical,
+                datePublished: '2025-01-15',
+              }),
+            ]),
+          )}
         </script>
       </Helmet>
 

@@ -3,6 +3,7 @@ import { PageShell } from '../components/layout/PageShell';
 import { TransitionLink } from '../components/ui/TransitionLink';
 import { buildSitemapSections, type SitemapEntry } from '../lib/sitemap-sections';
 import { absoluteUrl, SITE_NAME, TWITTER_HANDLE } from '../lib/site-config';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 const linkClass =
   'interactive-link text-[var(--warm-white)] underline decoration-[var(--gold)]/40 underline-offset-4 hover:text-[var(--gold)] hover:decoration-[var(--gold)] focus-visible:text-[var(--gold)]';
@@ -56,6 +57,15 @@ export default function SitemapPage() {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify(
+            buildSimplePageGraph({
+              name: title,
+              description,
+              canonical: absoluteUrl(canonicalPath),
+            }),
+          )}
+        </script>
       </Helmet>
 
       <main id="main-content" className="mx-auto max-w-3xl px-6 py-12 md:py-16">

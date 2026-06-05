@@ -13,6 +13,7 @@ import {
   CLIENT_QUOTE_HOURS_PER_DAY,
   CLIENT_QUOTE_YEARS_EXPERIENCE,
 } from '../config/quoteToolConfig';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 const PAGE_TITLE = 'Project quote estimator';
 const PAGE_DESCRIPTION = `Interactive estimator for app and website builds: feature selection and timeline-adjusted pricing. Assumptions are fixed at R${CLIENT_QUOTE_HOURLY_RATE_ZAR}/hr, ${CLIENT_QUOTE_YEARS_EXPERIENCE} years experience, ${CLIENT_QUOTE_HOURS_PER_DAY} billable hours per day, ${CLIENT_QUOTE_BUFFER_PERCENT}% buffer, ZAR display.`;
@@ -36,6 +37,15 @@ export default function GetAQuotePage() {
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify(
+            buildSimplePageGraph({
+              name: `${PAGE_TITLE} | ${SITE_NAME}`,
+              description: PAGE_DESCRIPTION,
+              canonical: absoluteUrl('/get-a-quote'),
+            }),
+          )}
+        </script>
       </Helmet>
 
       <main id="main-content" className="mx-auto max-w-5xl px-4 py-12 sm:px-6 md:py-16">

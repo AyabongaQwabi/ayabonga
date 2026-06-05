@@ -28,6 +28,13 @@ import {
   TWITTER_HANDLE,
   WHATSAPP_URL,
 } from '../lib/site-config';
+import {
+  authorGraphNode,
+  buildFaqPageSchema,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from '../lib/entity-schema';
 
 const PAGE_TITLE = 'Technical Co-founder as a Service';
 const PAGE_DESCRIPTION =
@@ -180,18 +187,27 @@ export default function TechnicalCofounderPage() {
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: TAAS_FAQ.map((item) => ({
-              '@type': 'Question',
-              name: item.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.answer,
+          {JSON.stringify(
+            buildJsonLdGraph([
+              buildOrganizationSchema(),
+              buildWebSiteSchema(),
+              authorGraphNode(),
+              {
+                '@type': 'WebPage',
+                '@id': `${absoluteUrl('/technical-cofounder')}#webpage`,
+                name: PAGE_OG_TITLE,
+                description: PAGE_DESCRIPTION,
+                url: absoluteUrl('/technical-cofounder'),
+                inLanguage: 'en-ZA',
               },
-            })),
-          })}
+              buildFaqPageSchema(
+                TAAS_FAQ.map((item) => ({
+                  question: item.question,
+                  answer: item.answer,
+                })),
+              ),
+            ]),
+          )}
         </script>
       </Helmet>
 

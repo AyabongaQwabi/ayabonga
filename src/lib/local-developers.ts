@@ -1,7 +1,9 @@
 import data from '../data/local-developers.json';
-import { SITE_NAME } from './site-config';
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_ORIGIN } from './site-config';
+import { organizationRef, personRef } from './entity-schema';
 
 export type RegionSlug = 'eastern-cape' | 'south-africa';
+
 export type RoleSlug =
   | 'software-developer'
   | 'software-engineer'
@@ -50,20 +52,22 @@ export function getCity(slug: string): LocalCity | undefined {
   return cities.find((c) => c.slug === slug);
 }
 
+export function getCitiesByRegion(region: string): LocalCity[] {
+  return cities.filter((c) => c.region === region);
+}
+
 export function getEasternCapeCities(): LocalCity[] {
-  return cities.filter((c) => c.region === 'eastern-cape');
+  return getCitiesByRegion('eastern-cape');
 }
 
 export function getAllRoles(): LocalRole[] {
   return Object.values(roles);
 }
 
-export function getAllLocalPages(): { region: RegionSlug; city: string; role: RoleSlug }[] {
-  const ecCities = getEasternCapeCities();
+export function getAllLocalPages(): { city: string; role: RoleSlug }[] {
   const roleSlugs = Object.keys(roles) as RoleSlug[];
-  return ecCities.flatMap((city) =>
+  return getEasternCapeCities().flatMap((city) =>
     roleSlugs.map((role) => ({
-      region: 'eastern-cape' as const,
       city: city.slug,
       role,
     })),
@@ -153,27 +157,18 @@ export function southAfricaHubPath(): string {
 
 export function buildLocalSchema(role: LocalRole, city: LocalCity, pageUrl: string) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
+    '@id': `${pageUrl}#service`,
     name: `${role.label}, ${city.name}, Eastern Cape`,
     description: buildLocalPageDescription(role, city),
     url: pageUrl,
-    provider: {
-      '@type': 'Person',
-      name: SITE_NAME,
-      jobTitle: role.label,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Queenstown',
-        addressRegion: 'Eastern Cape',
-        addressCountry: 'ZA',
-      },
-    },
+    image: DEFAULT_OG_IMAGE,
+    provider: personRef(),
     areaServed: {
       '@type': 'City',
       name: city.name,
       containedInPlace: {
-        '@type': 'State',
+        '@type': 'AdministrativeArea',
         name: 'Eastern Cape',
       },
     },
@@ -181,17 +176,42 @@ export function buildLocalSchema(role: LocalRole, city: LocalCity, pageUrl: stri
   };
 }
 
-export function buildHubSchema(region: LocalRegion, pageUrl: string) {
+export function buildLocalFaqSchema(role: LocalRole, city: LocalCity) {
+  const faqs = buildLocalFaqs(role, city);
+  const pageUrl = absoluteUrl(localPagePath(city.slug, role.slug));
   return {
-    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${pageUrl}#faq`,
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+}
+
+export function buildHubSchema(region: LocalRegion, pageUrl: string) {
+  const areaServed =
+    region.slug === 'south-africa'
+      ? { '@type': 'Country' as const, name: 'South Africa' }
+      : {
+          '@type': 'AdministrativeArea' as const,
+          name: region.name,
+          containedInPlace: { '@type': 'Country' as const, name: 'South Africa' },
+        };
+  return {
     '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
     name: region.title,
     description: region.description,
     url: pageUrl,
+    isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
     about: {
       '@type': 'ProfessionalService',
       name: `${SITE_NAME}, ${region.name}`,
-      areaServed: region.slug === 'eastern-cape' ? 'Eastern Cape, South Africa' : 'South Africa',
+      provider: organizationRef(),
+      areaServed,
     },
+    inLanguage: 'en-ZA',
   };
 }

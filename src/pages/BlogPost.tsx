@@ -45,8 +45,12 @@ import { AuthorBio, AuthorByline } from '../components/AuthorBio';
 import { PageBreadcrumbs } from '../components/PageBreadcrumbs';
 import { ReadingProgress } from '../components/ui/ReadingProgress';
 import {
-  buildBlogPostingSchema,
+  authorGraphNode,
+  buildBlogPostingGraphNode,
   buildBreadcrumbSchema,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
 } from '../lib/entity-schema';
 import {
   lineReveal,
@@ -746,29 +750,27 @@ function BlogPostView({ post }: { post: BlogPost }) {
 
   const dateModifiedIso = parsePostDateForSchema(post.dateModified ?? '');
 
-  const articleJsonLd = useMemo(
+  const pageJsonLd = useMemo(
     () =>
       JSON.stringify(
-        buildBlogPostingSchema({
-          post,
-          canonical,
-          shareImageUrl,
-          dateModified: dateModifiedIso,
-        }),
-      ),
-    [post, canonical, shareImageUrl, dateModifiedIso],
-  );
-
-  const breadcrumbJsonLd = useMemo(
-    () =>
-      JSON.stringify(
-        buildBreadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Writing', path: '/blog' },
-          { name: post.title, path: `/blog/${post.slug}` },
+        buildJsonLdGraph([
+          buildOrganizationSchema(),
+          buildWebSiteSchema(),
+          authorGraphNode(),
+          buildBlogPostingGraphNode({
+            post,
+            canonical,
+            shareImageUrl,
+            dateModified: dateModifiedIso,
+          }),
+          buildBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Writing', path: '/blog' },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]),
         ]),
       ),
-    [post.slug, post.title],
+    [post, canonical, shareImageUrl, dateModifiedIso],
   );
 
   return (
@@ -799,8 +801,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <script type="application/ld+json">{articleJsonLd}</script>
-        <script type="application/ld+json">{breadcrumbJsonLd}</script>
+        <script type="application/ld+json">{pageJsonLd}</script>
       </Helmet>
 
       <ReadingProgress />

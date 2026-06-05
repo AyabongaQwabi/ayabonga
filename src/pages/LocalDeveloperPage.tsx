@@ -27,6 +27,7 @@ import {
 import { ScrollReveal } from '../components/ScrollReveal';
 import {
   buildLocalFaqs,
+  buildLocalFaqSchema,
   buildLocalPageDescription,
   buildLocalPageKeywords,
   buildLocalPageTitle,
@@ -39,6 +40,12 @@ import {
   localPagePath,
   type RoleSlug,
 } from '../lib/local-developers';
+import {
+  authorGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from '../lib/entity-schema';
 
 const localServices: Record<RoleSlug, string[]> = {
   'software-developer': [
@@ -95,15 +102,15 @@ export default function LocalDeveloperPage() {
   const ogTitle = `${pageTitle} | ${SITE_NAME}`;
   const otherRoles = getAllRoles().filter((r) => r.slug !== role.slug);
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
-    })),
-  };
+  const pageJsonLd = JSON.stringify(
+    buildJsonLdGraph([
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
+      authorGraphNode(),
+      buildLocalSchema(role, city, canonical),
+      buildLocalFaqSchema(role, city),
+    ]),
+  );
 
   return (
     <PageShell className="bg-background text-foreground font-sans">
@@ -124,8 +131,7 @@ export default function LocalDeveloperPage() {
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(buildLocalSchema(role, city, canonical))}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{pageJsonLd}</script>
       </Helmet>
 
       <main id="main-content" className="max-w-5xl mx-auto px-6 py-12 md:py-20">

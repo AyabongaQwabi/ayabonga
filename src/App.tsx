@@ -15,18 +15,21 @@ import { HomeProofStrip } from './components/home/HomeProofStrip';
 import { SiteFooter } from './components/SiteFooter';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { blogPosts } from './data/blog-posts';
-import { authorPersonSchema } from './lib/author-profile';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
   DEFAULT_PAGE_DESCRIPTION,
   DEFAULT_PAGE_TITLE,
+  SITE_ORIGIN,
   TWITTER_HANDLE,
 } from './lib/site-config';
 import { HOME_PORTRAIT } from './lib/home-images';
 import {
+  authorGraphNode,
+  buildJsonLdGraph,
   buildOrganizationSchema,
   buildWebSiteSchema,
+  personRef,
 } from './lib/entity-schema';
 const collaborations = [
   { name: 'Project Codex', url: 'https://www.projectcodex.co' },
@@ -81,30 +84,29 @@ function App() {
         <meta name="robots" content="index, follow" />
 
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
+          {JSON.stringify(
+            buildJsonLdGraph([
               buildOrganizationSchema(),
-              {
-                ...authorPersonSchema({ url: absoluteUrl('/about') }),
-                '@id': `${absoluteUrl('/')}#person`,
-                image: personImage,
-              },
+              { ...authorGraphNode(), image: personImage },
               buildWebSiteSchema(),
               {
                 '@type': 'Service',
+                '@id': `${SITE_ORIGIN}/#taas-service`,
                 serviceType: 'Technical Co-founder as a Service',
-                provider: { '@id': `${absoluteUrl('/')}#person` },
+                provider: personRef(),
                 description:
                   'End-to-end product engineering, AI integration, and cloud architecture for non-technical founders.',
-                areaServed: 'South Africa',
+                areaServed: {
+                  '@type': 'Country',
+                  name: 'South Africa',
+                },
                 offers: {
                   '@type': 'Offer',
                   description: 'Fixed-price Phase 1 builds starting from R50,000',
                 },
               },
-            ],
-          })}
+            ]),
+          )}
         </script>
       </Helmet>
 

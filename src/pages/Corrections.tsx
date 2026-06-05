@@ -1,13 +1,22 @@
 import { TrustPageLayout } from '../components/TrustPageLayout';
 import { AUTHOR_EMAIL } from '../lib/author-profile';
-import { SITE_NAME } from '../lib/site-config';
+import { absoluteUrl, SITE_NAME } from '../lib/site-config';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 export default function Corrections() {
+  const title = `Corrections | ${SITE_NAME}`;
+  const description = `How to report factual errors on ${SITE_NAME}'s site and how corrections are handled.`;
+
   return (
     <TrustPageLayout
-      title={`Corrections | ${SITE_NAME}`}
-      description={`How to report factual errors on ${SITE_NAME}'s site and how corrections are handled.`}
+      title={title}
+      description={description}
       canonicalPath="/corrections"
+      jsonLd={buildSimplePageGraph({
+        name: title,
+        description,
+        canonical: absoluteUrl('/corrections'),
+      })}
     >
       <h1>Corrections</h1>
       <p>

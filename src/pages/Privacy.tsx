@@ -1,13 +1,22 @@
 import { TrustPageLayout } from '../components/TrustPageLayout';
 import { AUTHOR_EMAIL, ORGANIZATION_NAME } from '../lib/author-profile';
-import { SITE_NAME } from '../lib/site-config';
+import { absoluteUrl, SITE_NAME } from '../lib/site-config';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 export default function Privacy() {
+  const title = `Privacy | ${SITE_NAME}`;
+  const description = `How ${SITE_NAME} handles personal information on qwabi.co.za, in line with POPIA (Protection of Personal Information Act).`;
+
   return (
     <TrustPageLayout
-      title={`Privacy | ${SITE_NAME}`}
-      description={`How ${SITE_NAME} handles personal information on qwabi.co.za, in line with POPIA (Protection of Personal Information Act).`}
+      title={title}
+      description={description}
       canonicalPath="/privacy"
+      jsonLd={buildSimplePageGraph({
+        name: title,
+        description,
+        canonical: absoluteUrl('/privacy'),
+      })}
     >
       <h1>Privacy</h1>
       <p>

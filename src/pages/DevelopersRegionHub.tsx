@@ -24,6 +24,12 @@ import {
   type LocalRole,
   type RegionSlug,
 } from '../lib/local-developers';
+import {
+  authorGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from '../lib/entity-schema';
 
 const linkClass =
   'interactive-link text-primary transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]';
@@ -83,7 +89,16 @@ export default function DevelopersRegionHub({ regionSlug }: DevelopersRegionHubP
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(buildHubSchema(region, canonical))}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(
+            buildJsonLdGraph([
+              buildOrganizationSchema(),
+              buildWebSiteSchema(),
+              authorGraphNode(),
+              buildHubSchema(region, canonical),
+            ]),
+          )}
+        </script>
       </Helmet>
 
       <main id="main-content" className="max-w-6xl mx-auto px-6 py-12 md:py-20">

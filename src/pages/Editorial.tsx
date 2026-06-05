@@ -1,14 +1,23 @@
 import { TrustPageLayout } from '../components/TrustPageLayout';
 import { TransitionLink } from '../components/ui/TransitionLink';
 import { AUTHOR_EMAIL } from '../lib/author-profile';
-import { SITE_NAME } from '../lib/site-config';
+import { absoluteUrl, SITE_NAME } from '../lib/site-config';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 export default function Editorial() {
+  const title = `Editorial standards | ${SITE_NAME}`;
+  const description = `How ${SITE_NAME} researches, writes, and updates articles on qwabi.co.za.`;
+
   return (
     <TrustPageLayout
-      title={`Editorial standards | ${SITE_NAME}`}
-      description={`How ${SITE_NAME} researches, writes, and updates articles on qwabi.co.za.`}
+      title={title}
+      description={description}
       canonicalPath="/editorial"
+      jsonLd={buildSimplePageGraph({
+        name: title,
+        description,
+        canonical: absoluteUrl('/editorial'),
+      })}
     >
       <h1>Editorial standards</h1>
 

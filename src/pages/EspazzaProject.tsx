@@ -9,6 +9,12 @@ import {
   TWITTER_HANDLE,
   WHATSAPP_URL,
 } from '../lib/site-config';
+import {
+  authorGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  personRef,
+} from '../lib/entity-schema';
 
 const ESPAZZA_DOMAIN = 'https://xhosahiphop.co.za';
 const PAGE_TITLE = 'eSpazza | Xhosa hip hop streaming (by Ayabonga Qwabi)';
@@ -18,25 +24,27 @@ const PAGE_DESCRIPTION =
 export default function EspazzaProject() {
   const canonical = absoluteUrl('/projects/espazza');
 
-  const projectJsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'eSpazza',
-    applicationCategory: 'MusicApplication',
-    operatingSystem: 'Web',
-    url: ESPAZZA_DOMAIN,
-    description: PAGE_DESCRIPTION,
-    author: {
-      '@type': 'Person',
-      name: SITE_NAME,
-      url: absoluteUrl('/'),
-    },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'ZAR',
-    },
-  });
+  const projectJsonLd = JSON.stringify(
+    buildJsonLdGraph([
+      buildOrganizationSchema(),
+      authorGraphNode(),
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${canonical}#app`,
+        name: 'eSpazza',
+        applicationCategory: 'MusicApplication',
+        operatingSystem: 'Web',
+        url: ESPAZZA_DOMAIN,
+        description: PAGE_DESCRIPTION,
+        author: personRef(),
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'ZAR',
+        },
+      },
+    ]),
+  );
 
   return (
     <PageShell className="bg-background text-foreground font-sans">

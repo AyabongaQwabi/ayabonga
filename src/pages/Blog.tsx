@@ -21,7 +21,13 @@ import {
 } from '../lib/site-config';
 import { PageShell } from '../components/layout/PageShell';
 import { TransitionLink } from '../components/ui/TransitionLink';
-import { authorPersonSchema } from '../lib/author-profile';
+import {
+  authorGraphNode,
+  buildJsonLdGraph,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+  organizationRef,
+} from '../lib/entity-schema';
 import {
   lineReveal,
   registerEasings,
@@ -301,20 +307,28 @@ export default function Blog() {
 
   const blogListingJsonLd = useMemo(() => {
     if (hasFilters) return null;
-    return JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Blog',
-      name: `Writing: ${SITE_NAME}`,
-      description: BLOG_INDEX_DESCRIPTION,
-      url: absoluteUrl('/blog'),
-      author: authorPersonSchema(),
-      blogPost: blogPosts.map((p) => ({
-        '@type': 'BlogPosting',
-        headline: p.title,
-        url: absoluteUrl(`/blog/${p.slug}`),
-        description: p.excerpt,
-      })),
-    });
+    const blogUrl = absoluteUrl('/blog');
+    return JSON.stringify(
+      buildJsonLdGraph([
+        buildOrganizationSchema(),
+        buildWebSiteSchema(),
+        authorGraphNode(),
+        {
+          '@type': 'Blog',
+          '@id': `${blogUrl}#blog`,
+          name: `Writing: ${SITE_NAME}`,
+          description: BLOG_INDEX_DESCRIPTION,
+          url: blogUrl,
+          publisher: organizationRef(),
+          blogPost: blogPosts.map((p) => ({
+            '@type': 'BlogPosting',
+            headline: p.title,
+            url: absoluteUrl(`/blog/${p.slug}`),
+            description: p.excerpt,
+          })),
+        },
+      ]),
+    );
   }, [hasFilters]);
 
   return (

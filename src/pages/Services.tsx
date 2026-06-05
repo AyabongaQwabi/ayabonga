@@ -17,6 +17,7 @@ import {
   SITE_NAME,
   TWITTER_HANDLE,
 } from '../lib/site-config';
+import { buildSimplePageGraph } from '../lib/entity-schema';
 
 const PAGE_TITLE = 'Engineering Services';
 const PAGE_DESCRIPTION =
@@ -172,6 +173,15 @@ export default function ServicesPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={TWITTER_HANDLE} />
         <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify(
+            buildSimplePageGraph({
+              name: `${PAGE_TITLE} | ${SITE_NAME}`,
+              description: PAGE_DESCRIPTION,
+              canonical: absoluteUrl('/services'),
+            }),
+          )}
+        </script>
       </Helmet>
 
       <main id="main-content">
