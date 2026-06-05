@@ -10,9 +10,16 @@ import {
   resolveTaxonomyParam,
   type BlogPost,
 } from '../data/blog-posts';
+import {
+  BlogViewToggle,
+  getStoredBlogView,
+  storeBlogView,
+  type BlogViewMode,
+} from '../components/blog/BlogViewToggle';
 import { FeaturedPost } from '../components/blog/FeaturedPost';
 import { BlogNewsletterStrip } from '../components/blog/BlogNewsletterStrip';
 import { PostGrid } from '../components/blog/PostGrid';
+import { PostList } from '../components/blog/PostList';
 import {
   absoluteUrl,
   DEFAULT_OG_IMAGE,
@@ -260,6 +267,12 @@ export default function Blog() {
   const searchInputId = useId();
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<BlogViewMode>(() => getStoredBlogView());
+
+  const handleViewChange = (next: BlogViewMode) => {
+    setViewMode(next);
+    storeBlogView(next);
+  };
 
   const categoryParam = searchParams.get('category');
   const tagParam = searchParams.get('tag');
@@ -426,10 +439,17 @@ export default function Blog() {
         {gridPosts.length > 0 ? (
           <section className="bg-[var(--navy)] py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="mb-8 font-display text-heading-lg text-[var(--warm-white)]">
-                All posts
-              </h2>
-              <PostGrid posts={gridPosts} />
+              <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+                <h2 className="font-display text-heading-lg text-[var(--warm-white)]">
+                  All posts
+                </h2>
+                <BlogViewToggle view={viewMode} onChange={handleViewChange} />
+              </div>
+              {viewMode === 'grid' ? (
+                <PostGrid posts={gridPosts} />
+              ) : (
+                <PostList posts={gridPosts} />
+              )}
             </div>
           </section>
         ) : null}
