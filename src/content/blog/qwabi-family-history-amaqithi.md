@@ -1,47 +1,47 @@
 ---
-title: 'Qwabi Family History — Tracing the Roots of the AmaQithi Clan from the Eastern Cape'
-excerpt: 'Documented oral history and GEDCOM-verified lineage from Sonyethe to Hala 2 — AmaQithi, Bhangile, Dumile, Molose, and preserving the full Qwabi story for descendants.'
+title: ‘Qwabi Family History: Tracing the Roots of the AmaQithi Clan from the Eastern Cape’
+excerpt: ‘Documented oral history and GEDCOM-verified lineage from the Joka family of the White Kei River to Hala 2. AmaQithi, Bhangile, Dumile, Molosi, and preserving the full Qwabi story for descendants.’
 date: April 16, 2026
 readTime: 15 min read
-tags: Qwabi, AmaQithi, Eastern Cape, Family history, Lady Frere, Oral history, Chris Hani, Ndlovukazi, Hala 2, Bulhoek Massacre, AbaThembu
+tags: Qwabi, AmaQithi, Eastern Cape, Family history, Lady Frere, Oral history, Chris Hani, Ndlovukazi, Hala 2, Bulhoek Massacre, San people, AbaThwa, White Kei River, Joka family, Chief Madolo
 categories: Culture, History
 headerImage: /images/blog/African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa.jpg
 ogImage: /images/blog/African%20tribal%20heritage%20Eastern%20Cape%20South%20Africa.jpg
 ---
 
-The Qwabi family traces its origins deep into the heart of the Eastern Cape, South Africa. Descended from the **AmaQithi** clan, the family has strong historical ties to villages such as Lesseyton (Ndlovukazi), Eskwanqeni (near emaqithini — the village of the AmaQithi), and later Hala 2 in the Lady Frere area. Archival research confirms the family originated in the Lady Frere / Glen Grey district, a historic stronghold of the **AbaThembu** people in the 1800s. Today, the Qwabi surname is most commonly found in the **Chris Hani District**, with branches in Queenstown, Ndlovukazi, and Hala 2.
+The Qwabi family are **San (AbaThwa) people** of the **AmaQithi clan**, tracing their origins to the banks of the **White Kei River** in the **Lady Frere, Glen Grey, and Cacadu** district of the Eastern Cape. They belong to the **Joka family**, a San lineage whose territory in the 1840s was centred on the village of **Agnes** on the White Kei River, an area associated with San chief **Madolo** and his people. The Qwabi family are not Thembu by origin, though they have assimilated into the AbaThembu nation over generations. Today the Qwabi surname is most commonly found in the **Chris Hani District**, with branches in Hala 2, Queenstown, and Ndlovukazi (Lesseyton).
 
 ## Earliest known ancestors
-The earliest recorded ancestor is **Sonyethe** (Mr Sonyethe), who fathered **Nqumama** (Mr Nqumama).
+The earliest confirmed ancestor in the Qwabi family line is **Joka**, a San man from the White Kei River area in Lady Frere. The Joka family is believed to have been among the San clans who lived under or near the authority of **Chief Madolo** (also known as Madura or Madoor), who led San people in the Glen Grey / Lady Frere area from around 1835 until 1856.
 
-Nqumama had two known sons (per oral history):
+Joka had at least two known sons in oral history:
 
-- **Qwabi** (Mr Qwabi)
-- **Gudu** (Mr Gudu)
+- **Qwabi (Qwabi Joka)** (born c. 1842 near Agnes, White Kei River)
+- **Gudu** (whose descendants still live in Skhwanqeni and some in Steynsburg)
 
-From these two brothers descend the main branches of the family that still exist today. The Gudu family remains closely connected — they are our cousins, and some still live at the old Boesman homestead in Skhwanqeni (Eskwanqeni). Some Gudu family members can also be found in the Steynsburg area.
+From these two brothers descend the main branches of the family that still exist today. The Gudu family remains closely connected. They are our cousins, and some still live at the old Bushman homestead in Skhwanqeni (Eskwanqeni).
 
-> **Note:** Oral tradition mentions Gudu, though he does not appear in the current GEDCOM records. We do not have confirmed records of Sonyethe’s other children beyond Nqumama.
+> **Note:** Oral tradition mentions Gudu, though he does not appear in the current GEDCOM records. Research into the full Joka family lineage is ongoing.
 
 ## The children of Qwabi (full GEDCOM-verified list)
 
 Qwabi fathered four known children (three sons and one daughter):
 
-- **Nosenti Qwabi** (female, born 1861 in Glen Grey, Eastern Cape; died 1898 in Glen Grey / Lady Frere area, age 37). She was married at the time of her death. Her death was reported by a family member with the initial “B Qwabi” (almost certainly her brother Boesman). In the late 1800s, when surnames were not yet universally used, the single name “Qwabi” in the area almost certainly refers to our direct ancestor.
-- **Boesman Qwabi** (male)
+- **Nosenti Qwabi** (female, born 1861 in Glen Grey, Eastern Cape; died 1898 in Glen Grey / Lady Frere area, age 37). She was married at the time of her death. Her death was reported by a family member with the initial “B Qwabi” (almost certainly her brother Bushman). In the late 1800s, when surnames were not yet universally used, the single name “Qwabi” in the area almost certainly refers to our direct ancestor.
+- **Bushman (Boesman) Qwabi** (male) — named deliberately to preserve the family’s San (AbaThwa) identity
 - **Halile Jonas Qwabi** (male)
-- **Oliphant / Molose Qwabi** (male, also known as Morrison in some contexts)
+- **Molosi (Oliphant) Qwabi** (male) — named after Chief Moorosi of the Phuti people, a great San ally. Because Xhosa speakers found “Moorosi” difficult to pronounce, the name became Molosi. He was also nicknamed Oliphant (elephant) for his strength and bow legs.
 
-**Boesman** had no sons, only daughters. To gain manpower for his homestead, he asked his brother Halile to lend him one of his sons — **Bhangile**. This arrangement was common in traditional Xhosa family structures when additional male labour was needed.
+**Bushman** had no sons, only daughters. To gain manpower for his homestead, he asked his brother Halile to lend him one of his sons — **Bhangile**. This arrangement was common in traditional Xhosa family structures when additional male labour was needed.
 
-**Boesman’s known children (GEDCOM):**
+**Bushman’s known children (GEDCOM):**
 
 - Grace Qwabi (married Robinson Bacela on 31 August 1946 in George)
 - Makula Qwabi
 - Mashiya Qwabi (died circa 1919; family records place him and his siblings in Steynsburg at the time)
 - Sarah Qwabi (married in 1935, confirming the family had returned to Lady Frere by then)
 
-In 1919, when Mashiya passed away, the family (including Molose and Boesman with their children) was working in the Steynsburg area. They had returned to Lady Frere by 1935.
+In 1919, when Mashiya passed away, the family (including Molosi and Bushman with their children) was working in the Steynsburg area. They had returned to Lady Frere by 1935.
 
 ## The story of Bhangile and the move to Hala 2
 
@@ -59,14 +59,14 @@ It was while researching the roots of that very name that the full weight of our
 
 **RIP Halile Jonas Qwabi.** Your name and your story will not be forgotten.
 
-## The legacy of Molose (Oliphant)
+## The legacy of Molosi (Oliphant)
 
-Molose earned the nickname **“Oliphant”** (elephant) from the Boer family his mother worked for — reportedly because he was short, very strong, and had bow legs.
+Molosi earned the nickname **”Oliphant”** (elephant) from the Boer family his mother worked for — reportedly because he was short, very strong, and had bow legs.
 
-During one of Qwabi’s periods away at war (likely the Anglo-Boer War era), he sent word that his son should be named **Morrison** after his English army commander. Xhosa speakers found “Morrison” difficult to pronounce, and the name evolved into **Molose**. Family researchers believe this refers to Sir Edward Whipple Bancroft Morrison (1867–1925), a senior military figure whose name would have been known in South African campaigns.
+Qwabi Joka named his son **Molosi** after **Chief Moorosi of the Phuti people**. Moorosi was one of the greatest allies the San (AbaThwa) ever had. He had San ancestry on his mother’s side, had San wives, witnessed San artists painting in caves, and during **Moorosi’s War of 1879**, San bowmen fought alongside his forces. The password used to access his mountain stronghold during the eight-month siege was “Moroa” — the Xhosa word for Bushman. When Moorosi fell in November 1879, the San lost their most powerful protector. Because Xhosa speakers found “Moorosi” or “Morosi” difficult to pronounce, the name became **Molosi** in family use.
 
-**Molose’s known children (full GEDCOM + family elder corrections):**  
-According to family elder Monwabisi Qwabi, Molose’s children in approximate birth order were: **Dumile**, **Kholiwe**, **Nobhayisekile**, **Roro (William)**, and **Nomabali**, together with **Varhile**, **Amoria**, **Bennet**, **Caroline**, **George**, and **Yanki**.
+**Molosi’s known children (full GEDCOM + family elder corrections):**  
+According to family elder Monwabisi Qwabi, Molosi’s children in approximate birth order were: **Dumile**, **Kholiwe**, **Nobhayisekile**, **Roro (William)**, and **Nomabali**, together with **Varhile**, **Amoria**, **Bennet**, **Caroline**, **George**, and **Yanki**.
 
 - **Varhile Qwabi** (eldest son — believed to have been left behind in Rustenburg / Steynsburg when the family returned to Lady Frere; he later changed his name in some records. He is historically significant as the eldest descendant in the direct male line from Qwabi. According to family tradition, **the head of the Qwabi family is the eldest living descendant of Varhile**.)
 - **Amoria Qwabi** (married Mpitimpiti Bles, 12 May 1942, Queenstown)
@@ -97,7 +97,7 @@ Dumile helped relatives by allocating land in the Lady Frere area. It was throug
 
 The Qwabi family has a long and proud history of military service:
 
-- **Qwabi**, **Molose**, **Dumile**, and **Yanki** all served as soldiers, with Dumile and Yanki fighting in World War 2
+- **Qwabi Joka**, **Molosi**, **Dumile**, and **Yanki** all served as soldiers, with Dumile and Yanki fighting in World War 2
 - In more recent times, family members such as **Monwabisi**, the late **Rosin**, and **Xolile** continued this tradition
 
 ## Other branches and name changes
@@ -111,15 +111,14 @@ There is a village named **Qwabi** in the Bulhoek area (near Queenstown in the C
 
 You can view the location here: [Qwabi Village, Bulhoek on Google Maps](https://maps.app.goo.gl/JKn9TpVhJvgNUGcM6).
 
-## Full descendants of Sonyethe (GEDCOM-verified lineage)
+## Full descendants of Joka (GEDCOM-verified lineage)
 
-Below is the complete documented descendant tree from Sonyethe, drawn directly from the family GEDCOM. (current generation not shown)
+Below is the complete documented descendant tree from Joka, drawn directly from the family GEDCOM. (current generation not shown)
 
-**Sonyethe**  
-└── **Nqumama**  
- └── **Qwabi**  
+**Joka** (San patriarch, Agnes / White Kei River, Lady Frere)  
+└── **Qwabi Joka** (born c. 1842, died 1915)  
  ├── **Nosenti Qwabi** (1861–1898)  
- ├── **Boesman Qwabi**  
+ ├── **Bushman (Boesman) Qwabi** (named to preserve San identity)  
  │ ├── Grace Qwabi (m. Robinson Bacela)  
  │ ├── Makula Qwabi  
  │ ├── Mashiya Qwabi (d. ~1919, Steynsburg period)  
@@ -134,11 +133,11 @@ Below is the complete documented descendant tree from Sonyethe, drawn directly f
  │ ├── Thembisa Qwabi  
  │ ├── Zingisa Rose Qwabi  
  │ └── Zolile Qwabi  
- └── **Oliphant / Molose Qwabi**  
+ └── **Molosi (Oliphant) Qwabi** (named after Chief Moorosi, Phuti-San ally)  
  ├── Varhile Qwabi  
  ├── Amoria Qwabi (m. Mpitimpiti Bles)  
- ├── Bennet Qwabi (Gcinikhaya's father)
-├── Caroline Qwabi (Lesseyton)  
+ ├── Bennet Qwabi (Gcinikhaya's father)  
+ ├── Caroline Qwabi (Lesseyton)  
  ├── Dumile Qwabi  
  │ ├── Malungelo Qwabi  
  │ ├── Poto Qwabi  
@@ -175,8 +174,8 @@ Below is the complete documented descendant tree from Sonyethe, drawn directly f
 
 ## Preserving the story
 
-This oral history, combined with the latest GEDCOM records and direct input from family elder Monwabisi Qwabi, represents what has been passed down and verified. Like many African family lineages, some details remain incomplete or vary slightly depending on the storyteller. Gaps exist — for example, Halile’s other possible sons beyond Bhangile, or Sonyethe’s full list of children. Family tragedies such as the early deaths of Boesman’s two young sons and Bhangile’s four young children to pneumonia and bronchitis highlight the harsh realities our ancestors faced.
+This oral history, combined with the latest GEDCOM records and direct input from family elder Monwabisi Qwabi, represents what has been passed down and verified. Like many African family lineages, some details remain incomplete or vary slightly depending on the storyteller. Gaps exist — for example, Halile’s other possible sons beyond Bhangile, or the full extent of the Joka family beyond Qwabi Joka and Gudu. Family tragedies such as the early deaths of Bushman’s young children and Bhangile’s four young children to pneumonia and bronchitis highlight the harsh realities our ancestors faced.
 
 If you are a member of the Qwabi family or have additional information, stories, photos, or corrections, please feel free to reach out. The goal is to document and strengthen the record for our children and grandchildren.
 
-**Key search terms for future generations:** Qwabi family history Eastern Cape · AmaQithi clan · Hala 2 Lady Frere · Bulhoek Qwabi · Dumile Qwabi · Ndlovukazi Lesseyton Qwabi · Sirayeli Bhangile · Halile Jonas Qwabi Bulhoek Massacre · AbaThembu Qwabi · Glen Grey Qwabi · Yanki Qwabi children · Roro William Qwabi
+**Key search terms for future generations:** Qwabi family history Eastern Cape · Joka family Lady Frere · AmaQithi clan San people · AmaQithi AbaThwa · White Kei River San · Agnes Lady Frere Chief Madolo · Hala 2 Lady Frere · Bulhoek Qwabi · Dumile Qwabi · Ndlovukazi Lesseyton Qwabi · Sirayeli Bhangile · Halile Jonas Qwabi Bulhoek Massacre · Glen Grey Cacadu Qwabi · Yanki Qwabi children · Roro William Qwabi · Molosi Qwabi Oliphant Moorosi · Bushman Boesman Qwabi San · Qithi Village Rhodana Thembu San · AmaQithi izibongo clan praises

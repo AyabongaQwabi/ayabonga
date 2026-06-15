@@ -25,6 +25,7 @@ const DynamicComparisonPage = lazy(() => import('./pages/DynamicComparisonPage.t
 const DevelopersRegionHub = lazy(() => import('./pages/DevelopersRegionHub.tsx'));
 const LocalDeveloperPage = lazy(() => import('./pages/LocalDeveloperPage.tsx'));
 const SitemapPage = lazy(() => import('./pages/Sitemap.tsx'));
+const QwabiFamilyPage = lazy(() => import('./pages/QwabiFamily.tsx'));
 
 /** Remount blog post page when :slug changes (same route, new params). */
 function BlogPostRoute() {
@@ -67,6 +68,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/blog/:slug" element={<BlogPostRoute />} />
               <Route path="/get-a-quote" element={<GetAQuotePage />} />
               <Route path="/projects/espazza" element={<EspazzaProject />} />
+              <Route path="/qwabi-family" element={<QwabiFamilyPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

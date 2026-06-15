@@ -62,6 +62,7 @@ export function buildSitemapSections(): SitemapSection[] {
         { path: '/privacy', label: 'Privacy' },
         { path: '/editorial', label: 'Editorial standards' },
         { path: '/corrections', label: 'Corrections' },
+        { path: '/qwabi-family', label: 'Qwabi Family History' },
       ],
     },
     {

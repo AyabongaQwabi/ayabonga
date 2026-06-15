@@ -117,6 +117,7 @@ export function collectSitemapLinks() {
     { url: '/sitemap', changefreq: 'monthly', priority: 0.35 },
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
+    { url: '/qwabi-family', changefreq: 'monthly', priority: 0.9, lastmod: '2026-06-15' },
     { url: '/blog', changefreq: 'weekly', priority: 0.9 },
     ...blogEntries.map(({ slug, lastmod }) => ({
       url: `/blog/${slug}`,
