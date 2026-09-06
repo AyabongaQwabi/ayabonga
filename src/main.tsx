@@ -2,7 +2,7 @@ import { StrictMode, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { injectContentsquareScript } from '@contentsquare/tag-sdk';
+import Hotjar from '@hotjar/browser';
 import './index.css';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ViewTransitionHandler } from './components/ViewTransitionHandler';
@@ -34,7 +34,10 @@ function BlogPostRoute() {
   return <BlogPost key={slug} />;
 }
 
-injectContentsquareScript({ clientId: '4bfc93529c43e' });
+const siteId = 6774284;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
