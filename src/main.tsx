@@ -2,6 +2,7 @@ import { StrictMode, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { injectContentsquareScript } from '@contentsquare/tag-sdk';
 import './index.css';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ViewTransitionHandler } from './components/ViewTransitionHandler';
@@ -32,6 +33,8 @@ function BlogPostRoute() {
   const { slug } = useParams();
   return <BlogPost key={slug} />;
 }
+
+injectContentsquareScript({ clientId: '4bfc93529c43e' });
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
