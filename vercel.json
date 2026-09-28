@@ -28,6 +28,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/phonestatus", "destination": "/api/phonestatus" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "crons": [
