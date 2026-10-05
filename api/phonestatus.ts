@@ -99,7 +99,7 @@ async function savePhoneStatusRecord(
 
   try {
     await put(pathname, JSON.stringify(record, null, 2), {
-      access: 'private',
+      access: 'public',
       contentType: 'application/json',
       token,
     });

@@ -44,45 +44,96 @@ export function localApiPlugin() {
 
       server.middlewares.use(async (req, res, next) => {
         const pathname = req.url?.split('?')[0];
-        if (pathname !== '/api/send') {
-          return next();
-        }
 
-        if (req.method === 'OPTIONS') {
-          res.statusCode = 204;
-          res.end();
-          return;
-        }
-
-        if (req.method !== 'POST') {
-          res.statusCode = 405;
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify({ error: 'Method not allowed' }));
-          return;
-        }
-
-        try {
-          hydrateProcessEnv(server.config.mode, server.config.root);
-          const raw = await readRequestBody(req);
-          const parsed = raw ? JSON.parse(raw) : null;
-          const mod = await server.ssrLoadModule('/api/lib/handleQuoteSend.ts');
-          const result = await mod.handleQuoteSend(mod.parseQuoteSendBody(parsed));
-          res.statusCode = result.status;
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify(result.body));
-        } catch (err) {
-          if (process.env.NODE_ENV === 'development') {
-            console.error('[local-api] /api/send failed:', err);
+        if (pathname === '/api/send') {
+          if (req.method === 'OPTIONS') {
+            res.statusCode = 204;
+            res.end();
+            return;
           }
-          res.statusCode = 500;
-          res.setHeader('Content-Type', 'application/json');
-          res.end(
-            JSON.stringify({
-              error:
-                'Quote API failed in dev. Check the terminal and that RESEND_API_KEY is in .env.local.',
-            }),
-          );
+
+          if (req.method !== 'POST') {
+            res.statusCode = 405;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ error: 'Method not allowed' }));
+            return;
+          }
+
+          try {
+            hydrateProcessEnv(server.config.mode, server.config.root);
+            const raw = await readRequestBody(req);
+            const parsed = raw ? JSON.parse(raw) : null;
+            const mod = await server.ssrLoadModule('/api/lib/handleQuoteSend.ts');
+            const result = await mod.handleQuoteSend(mod.parseQuoteSendBody(parsed));
+            res.statusCode = result.status;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify(result.body));
+          } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+              console.error('[local-api] /api/send failed:', err);
+            }
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(
+              JSON.stringify({
+                error:
+                  'Quote API failed in dev. Check the terminal and that RESEND_API_KEY is in .env.local.',
+              }),
+            );
+          }
+          return;
         }
+
+        if (pathname === '/api/phoneadmin') {
+          if (req.method === 'OPTIONS') {
+            res.statusCode = 204;
+            res.end();
+            return;
+          }
+
+          if (req.method !== 'GET') {
+            res.statusCode = 405;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ error: 'Method not allowed' }));
+            return;
+          }
+
+          try {
+            hydrateProcessEnv(server.config.mode, server.config.root);
+            const mod = await server.ssrLoadModule('/api/phoneadmin.ts');
+            await mod.default(
+              {
+                method: req.method,
+                query: Object.fromEntries(new URL(req.url, 'http://local').searchParams),
+                headers: req.headers,
+              },
+              {
+                status(code) {
+                  res.statusCode = code;
+                  return {
+                    json(payload) {
+                      res.setHeader('Content-Type', 'application/json');
+                      res.end(JSON.stringify(payload));
+                    },
+                    end() {
+                      res.end();
+                    },
+                  };
+                },
+              },
+            );
+          } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+              console.error('[local-api] /api/phoneadmin failed:', err);
+            }
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ error: 'Phone admin API failed in dev.' }));
+          }
+          return;
+        }
+
+        return next();
       });
     },
   };
