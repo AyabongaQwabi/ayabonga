@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowUpRight,
@@ -22,6 +22,16 @@ import {
   validPackage,
   type ActivityShortcut,
 } from "../lib/samsung-intents";
+import { getLenis } from "../lib/lenis";
+import {
+  failedLaunchKey,
+  launchFallback,
+  launchKey,
+  launcherScopes as scopes,
+  readLaunchSession,
+  writeLaunchSession,
+  type LauncherScope as Scope,
+} from "../lib/samsung-launch-session";
 import "./samsung-intents.css";
 
 const STORAGE_KEY = "qwabi-samsung-launcher-v1";
@@ -64,23 +74,39 @@ function readSaved(): SavedState {
     return emptyState;
   }
 }
-const scopes = ["All shortcuts", "Favourites", "Recently tried"] as const;
-type Scope = (typeof scopes)[number];
 
 export default function SamsungIntents() {
   const [saved, setSaved] = useState(readSaved);
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All categories");
-  const [scope, setScope] = useState<Scope>("All shortcuts");
-  const [targetPackage, setTargetPackage] = useState("com.android.settings");
+  const [initialSession] = useState(() => {
+    // Accessing sessionStorage itself can throw in restricted browser modes.
+    try {
+      return readLaunchSession(window.sessionStorage);
+    } catch {
+      return readLaunchSession({ getItem: () => null });
+    }
+  });
+  const [query, setQuery] = useState(initialSession.view.query);
+  const [category, setCategory] = useState(initialSession.view.category);
+  const [scope, setScope] = useState<Scope>(initialSession.view.scope);
+  const [targetPackage, setTargetPackage] = useState(
+    initialSession.view.targetPackage,
+  );
+  const [failed, setFailed] = useState(initialSession.failed);
+  const failedRef = useRef(failed);
+  const viewRef = useRef(initialSession.view);
+  viewRef.current = {
+    query,
+    category,
+    scope,
+    targetPackage,
+    scrollY: initialSession.view.scrollY,
+  };
+  const [sessionUnavailable, setSessionUnavailable] = useState(false);
   const [importText, setImportText] = useState("");
   const [message, setMessage] = useState("");
   const [manualCopy, setManualCopy] = useState("");
   const [storageUnavailable, setStorageUnavailable] = useState(false);
   const [android, setAndroid] = useState(false);
-  const [unavailable] = useState(() =>
-    new URLSearchParams(window.location.search).get("unavailable"),
-  );
   const catalog = useMemo(
     () => [...SAMSUNG_SHORTCUTS, ...saved.custom],
     [saved.custom],
@@ -102,6 +128,98 @@ export default function SamsungIntents() {
       setStorageUnavailable(true);
     }
   }, [saved]);
+
+  const saveSession = useCallback(() => {
+    let stored = false;
+    try {
+      stored = writeLaunchSession(window.sessionStorage, {
+        failed: failedRef.current,
+        view: { ...viewRef.current, scrollY: window.scrollY },
+      });
+    } catch {
+      /* Storage may be disabled. In-memory session still works. */
+    }
+    return stored;
+  }, []);
+
+  const markFailed = useCallback(
+    (key: string, value: boolean) => {
+      const next = failedRef.current.filter((id) => id !== key);
+      if (value) next.push(key);
+      failedRef.current = next.slice(-1500);
+      setFailed(failedRef.current);
+      setSessionUnavailable(!saveSession());
+    },
+    [saveSession],
+  );
+
+  useEffect(() => {
+    setSessionUnavailable(!saveSession());
+  }, [query, category, scope, targetPackage, saveSession]);
+
+  useEffect(() => {
+    const handleFailure = () => {
+      const key = failedLaunchKey(window.location.href);
+      if (!key) return;
+      markFailed(key, true);
+      const url = new URL(window.location.href);
+      if (url.hash.startsWith("#intent-failed=")) url.hash = "";
+      url.searchParams.delete("unavailable");
+      window.history.replaceState(window.history.state, "", url.href);
+      // The red card is the feedback; a floating toast would cover the next button.
+      setMessage("");
+    };
+    handleFailure();
+    window.addEventListener("hashchange", handleFailure);
+    window.addEventListener("popstate", handleFailure);
+    // Save synchronously before a document is unloaded or put into the back cache.
+    const save = () => {
+      saveSession();
+    };
+    let scrollTimer: ReturnType<typeof setTimeout>;
+    const saveScroll = () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(save, 120);
+    };
+    window.addEventListener("pagehide", save);
+    window.addEventListener("scroll", saveScroll, { passive: true });
+    return () => {
+      window.removeEventListener("hashchange", handleFailure);
+      window.removeEventListener("popstate", handleFailure);
+      window.removeEventListener("pagehide", save);
+      window.removeEventListener("scroll", saveScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, [markFailed, saveSession]);
+
+  useEffect(() => {
+    // Restore after the shared route's scroll-to-top effect. This also covers
+    // browsers that reload a fallback despite its same-document fragment.
+    let secondFrame = 0;
+    const frame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => {
+        if (initialSession.view.scrollY > 0) {
+          const lenis = getLenis();
+          if (lenis) {
+            // Its cached limit may still describe the short route-loading placeholder.
+            lenis.resize();
+            lenis.scrollTo(initialSession.view.scrollY, {
+              immediate: true,
+              force: true,
+            });
+          } else
+            window.scrollTo({
+              top: initialSession.view.scrollY,
+              behavior: "instant",
+            });
+        }
+      });
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      cancelAnimationFrame(secondFrame);
+    };
+  }, [initialSession]);
 
   const filtered = useMemo(() => {
     const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -188,9 +306,7 @@ export default function SamsungIntents() {
   return (
     <PageShell>
       <Helmet>
-        <title>
-          Samsung activity launcher · Android 16 / One UI 8.5 | Qwabi
-        </title>
+        <title>Samsung activity launcher | Qwabi</title>
         <meta
           name="description"
           content="Quick access to Samsung apps and Android settings. Search intent shortcuts, save favourites, copy ADB commands and add activities from your Galaxy phone."
@@ -213,8 +329,8 @@ export default function SamsungIntents() {
               a shortcut, make it a favourite, get on with your day.
             </p>
             <div className="sl-tags">
-              <span>Android 16</span>
-              <span>One UI 8.5</span>
+              <span>Samsung Galaxy</span>
+              <span>Android shortcuts</span>
               <span>{catalog.length} shortcuts</span>
             </div>
           </div>
@@ -240,20 +356,11 @@ export default function SamsungIntents() {
             {android
               ? "Tap Open to try a shortcut on this device."
               : "Open this page on your Galaxy phone to launch shortcuts. You can browse and copy commands here."}{" "}
-            Browser access varies; some activities need an activity launcher or
-            ADB. This is a reference catalog, not a scan of your phone or a
-            complete firmware inventory.
+            Many internal screens cannot open from a browser, even if installed.
+            Failed attempts turn red for this session; if nothing happens, tap
+            “Didn’t open”. Your position and filters stay in place.
           </p>
         </div>
-        {unavailable && (
-          <div className="sl-feedback" role="status">
-            Your browser did not open{" "}
-            {catalog.find((item) => item.id === unavailable)?.name ??
-              "this shortcut"}
-            . The activity may be missing or blocked. Expand its details to copy
-            an ADB command, or open the app from your phone.
-          </div>
-        )}
         {storageUnavailable && (
           <p className="sl-feedback" role="status">
             Browser storage is unavailable. Favourites and imported activities
@@ -261,6 +368,29 @@ export default function SamsungIntents() {
           </p>
         )}
 
+        {sessionUnavailable && (
+          <p className="sl-feedback" role="status">
+            Session storage is unavailable. Failure marks work on this page, but
+            may be lost after a reload.
+          </p>
+        )}
+        <div className="sl-session-bar">
+          <span role="status">
+            {failed.length} failed{" "}
+            {failed.length === 1 ? "attempt" : "attempts"} this session
+          </span>
+          <button
+            type="button"
+            disabled={!failed.length}
+            onClick={() => {
+              failedRef.current = [];
+              setFailed([]);
+              setSessionUnavailable(!saveSession());
+            }}
+          >
+            Reset failure marks
+          </button>
+        </div>
         <section className="sl-directory" aria-label="Activity directory">
           <div className="sl-toolbar">
             <label className="sl-search">
@@ -391,13 +521,19 @@ export default function SamsungIntents() {
               {filtered.map((item) => {
                 const disabled = Boolean(item.packageInput && !packageValid);
                 const intent = disabled ? "" : buildIntent(item, targetPackage);
-                const fallback = `${window.location.origin}/samsung-intents?unavailable=${encodeURIComponent(item.id)}`;
+                const key = launchKey(item, targetPackage);
+                const didFail = failed.includes(key);
+                const fallback = launchFallback(window.location.href, key);
                 const launch = disabled
                   ? undefined
                   : buildIntent(item, targetPackage, fallback);
                 const favourite = saved.favourites.includes(item.id);
                 return (
-                  <article className="sl-card" key={item.id}>
+                  <article
+                    className={`sl-card ${didFail ? "sl-card-failed" : ""}`}
+                    key={item.id}
+                    data-shortcut-id={item.id}
+                  >
                     <div className="sl-card-top">
                       <span className="sl-card-category">{item.category}</span>
                       <button
@@ -419,15 +555,19 @@ export default function SamsungIntents() {
                     </p>
                     <div className="sl-card-meta">
                       <span>
-                        {item.availability === "documented"
-                          ? "Android action"
-                          : "Device dependent"}
+                        {didFail
+                          ? "Didn’t open this session"
+                          : item.availability === "documented"
+                            ? "Android action · untested"
+                            : "Device dependent · untested"}
                       </span>
                       {item.packageInput && <span>Target app</span>}
                     </div>
                     <div className="sl-card-actions">
                       <a
                         href={launch}
+                        className={didFail ? "sl-launch-failed" : undefined}
+                        aria-label={`${didFail ? "Retry" : "Open"} ${item.name}`}
                         aria-disabled={disabled}
                         onClick={(event) => {
                           if (disabled) {
@@ -444,6 +584,7 @@ export default function SamsungIntents() {
                             );
                             return;
                           }
+                          setSessionUnavailable(!saveSession());
                           setSaved((old) => ({
                             ...old,
                             recent: [
@@ -451,12 +592,11 @@ export default function SamsungIntents() {
                               ...old.recent.filter((id) => id !== item.id),
                             ].slice(0, 12),
                           }));
-                          setMessage(
-                            `Requested ${item.name}. If nothing opens, check Details; launch success cannot be detected by this page.`,
-                          );
+                          setMessage("");
                         }}
                       >
-                        Open <ArrowUpRight size={17} aria-hidden="true" />
+                        {didFail ? "Retry" : "Open"}{" "}
+                        <ArrowUpRight size={17} aria-hidden="true" />
                       </a>
                       <button
                         type="button"
@@ -467,6 +607,15 @@ export default function SamsungIntents() {
                         <Copy size={15} aria-hidden="true" /> Copy intent
                       </button>
                     </div>
+                    <button
+                      type="button"
+                      className="sl-result-toggle"
+                      disabled={disabled}
+                      aria-label={`${didFail ? "Clear failure for" : "Mark as failed:"} ${item.name}`}
+                      onClick={() => markFailed(key, !didFail)}
+                    >
+                      {didFail ? "Clear failure mark" : "Didn’t open"}
+                    </button>
                     <details className="sl-details">
                       <summary>Details &amp; ADB</summary>
                       <p>{item.description}</p>
@@ -605,8 +754,11 @@ export default function SamsungIntents() {
             Chrome only launches activities that allow browser access, and a tap
             is required. ADB can open some additional exported activities, but
             cannot bypass permissions or private activities. This page cannot
-            detect installed apps or confirm launch success. Recently tried
-            records requests only.
+            detect installed apps or confirm launch success. A browser fallback
+            marks a shortcut red automatically; silent failures need “Didn’t
+            open”. Marks last for this tab’s session and are scoped to the
+            target app for per-app settings. Recently tried records requests
+            only.
           </p>
           <p>
             Per-app notification shortcuts use an app-package extra; app-info

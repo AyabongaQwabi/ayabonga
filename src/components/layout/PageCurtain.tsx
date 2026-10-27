@@ -31,7 +31,8 @@ export function PageCurtain() {
       transformOrigin: 'top',
       delay: 0.05,
     });
-  }, [location.pathname, location.search, location.key]);
+    // In-page fragments (including intent failure callbacks) are not page changes.
+  }, [location.pathname, location.search]);
 
   return (
     <div

@@ -24,3 +24,11 @@ Run `node --import tsx --test scripts/samsung-intents.test.ts` and targeted ESLi
 Browser checks performed at desktop and 390px mobile widths: search/empty results, saved favourites after reload, per-app links and invalid packages, import deduplication/persistence/removal, layout overflow, Android launch-request history and fallback messaging. Actual Samsung activity launches still require a physical device.
 
 The launcher also built successfully as an isolated Vite production entry. Full-site validation is currently limited by pre-existing TypeScript errors in unrelated components and a broken Mermaid installation (`mermaid.core.mjs` is missing from the existing node_modules package). No dependency changes are part of this feature.
+
+## Failed launches and session continuity
+
+Intent fallbacks now use a same-document `#intent-failed=…` fragment instead of a query URL that reloads the page. The handler marks that particular launch red and cleans up the fragment without navigating. Hash-only callbacks do not trigger the shared page curtain. Browsers that fail silently have a “Didn’t open” control on each card; “Retry” still attempts the link. There is no timer-based success/failure inference.
+
+The separate `qwabi-samsung-launch-session-v1` session-storage record saves failed launch keys, filters, the target package and scroll position. Per-app failures are keyed by both shortcut ID and target package. Launch state is flushed before attempting an intent. Scroll restoration updates Lenis’s dimensions first, since its cached limit may describe the short loading placeholder. The shared scroll-to-top handler defers to this page when it has a saved position. Session-storage denial leaves in-memory marking available. “Reset failure marks” clears only the failure list.
+
+Run `node --import tsx --test scripts/samsung-intents.test.ts scripts/samsung-launch-session.test.ts` for the ten unit checks. With the development server running, run `SAMSUNG_TEST_BASE_URL=http://127.0.0.1:5173 node scripts/samsung-launcher.browser-test.mjs` for the Chrome browser regressions (requires Chrome and the existing Playwright dependency). They simulate the fallback callback on a Galaxy-sized Android browser; they do not establish which activities open on real Samsung firmware.

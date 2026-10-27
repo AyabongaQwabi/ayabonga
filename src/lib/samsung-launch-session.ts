@@ -1,0 +1,105 @@
+import type { ActivityShortcut } from "./samsung-intents";
+
+export const LAUNCH_SESSION_KEY = "qwabi-samsung-launch-session-v1";
+export const launcherScopes = [
+  "All shortcuts",
+  "Favourites",
+  "Recently tried",
+] as const;
+export type LauncherScope = (typeof launcherScopes)[number];
+export type LauncherView = {
+  query: string;
+  category: string;
+  scope: LauncherScope;
+  targetPackage: string;
+  scrollY: number;
+};
+export type LauncherSession = { failed: string[]; view: LauncherView };
+const defaultView: LauncherView = {
+  query: "",
+  category: "All categories",
+  scope: "All shortcuts",
+  targetPackage: "com.android.settings",
+  scrollY: 0,
+};
+
+export function readLaunchSession(
+  storage: Pick<Storage, "getItem">,
+): LauncherSession {
+  try {
+    const parsed = JSON.parse(storage.getItem(LAUNCH_SESSION_KEY) ?? "null");
+    const value = parsed?.view;
+    const string = (input: unknown, fallback: string) =>
+      typeof input === "string" ? input.slice(0, 2000) : fallback;
+    return {
+      failed: Array.isArray(parsed?.failed)
+        ? [
+            ...new Set<string>(
+              parsed.failed.filter(
+                (key: unknown) => typeof key === "string" && key.length <= 2000,
+              ),
+            ),
+          ].slice(-1500)
+        : [],
+      view: {
+        query: string(value?.query, defaultView.query),
+        category: string(value?.category, defaultView.category),
+        scope: launcherScopes.includes(value?.scope)
+          ? value.scope
+          : defaultView.scope,
+        targetPackage: string(value?.targetPackage, defaultView.targetPackage),
+        scrollY:
+          Number.isFinite(value?.scrollY) && value.scrollY >= 0
+            ? value.scrollY
+            : 0,
+      },
+    };
+  } catch {
+    return { failed: [], view: { ...defaultView } };
+  }
+}
+
+export function writeLaunchSession(
+  storage: Pick<Storage, "setItem">,
+  session: LauncherSession,
+): boolean {
+  try {
+    storage.setItem(LAUNCH_SESSION_KEY, JSON.stringify(session));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function launchKey(
+  shortcut: ActivityShortcut,
+  targetPackage: string,
+): string {
+  // A failure for one app's notification screen must not mark another app's screen.
+  return shortcut.packageInput
+    ? `${shortcut.id}:${targetPackage}`
+    : shortcut.id;
+}
+
+export function launchFallback(currentUrl: string, key: string): string {
+  const url = new URL(currentUrl);
+  url.searchParams.delete("unavailable");
+  // A fragment navigation stays in the current document. No matching element ID
+  // exists, so the browser has no anchor to scroll to.
+  url.hash = `intent-failed=${encodeURIComponent(key)}`;
+  return url.href;
+}
+
+export function failedLaunchKey(currentUrl: string): string | null {
+  const url = new URL(currentUrl);
+  try {
+    if (url.hash.startsWith("#intent-failed=")) {
+      const key = decodeURIComponent(url.hash.slice("#intent-failed=".length));
+      return key && key.length <= 2000 ? key : null;
+    }
+    // Support old intent links while a previous deployment is cached.
+    return url.searchParams.get("unavailable");
+  } catch {
+    return null;
+  }
+}

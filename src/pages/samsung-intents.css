@@ -729,3 +729,44 @@
     transition: none;
   }
 }
+
+.sl-session-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -12px 0 20px;
+  color: var(--sl-dim);
+  font-size: 12px;
+}
+.sl-session-bar button {
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sl-card-actions a.sl-launch-failed {
+  background: #b7353f;
+  color: #fff;
+}
+.sl-card-failed {
+  border-color: #d1576066;
+}
+.sl-card-failed .sl-card-meta span:first-child {
+  color: #ffc1c5;
+  border-color: #d1576077;
+}
+.sl-result-toggle {
+  display: block;
+  min-height: 44px;
+  font-size: 12px !important;
+  color: var(--sl-dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sl-card-failed .sl-result-toggle {
+  color: #ffc1c5;
+}
+.sl-result-toggle + .sl-details {
+  margin-top: 0;
+}
