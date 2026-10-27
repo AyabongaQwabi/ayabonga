@@ -63,6 +63,7 @@ export function buildSitemapSections(): SitemapSection[] {
         { path: '/editorial', label: 'Editorial standards' },
         { path: '/corrections', label: 'Corrections' },
         { path: '/qwabi-family', label: 'Qwabi Family History' },
+        { path: '/samsung-intents', label: 'Samsung activity launcher' },
       ],
     },
     {

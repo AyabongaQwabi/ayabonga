@@ -115,6 +115,7 @@ export function collectSitemapLinks() {
     { url: '/editorial', changefreq: 'yearly', priority: 0.35 },
     { url: '/corrections', changefreq: 'yearly', priority: 0.3 },
     { url: '/sitemap', changefreq: 'monthly', priority: 0.35 },
+    { url: '/samsung-intents', changefreq: 'monthly', priority: 0.5 },
     { url: '/get-a-quote', changefreq: 'monthly', priority: 0.85 },
     { url: '/projects/espazza', changefreq: 'monthly', priority: 0.75 },
     { url: '/qwabi-family', changefreq: 'monthly', priority: 0.9, lastmod: '2026-06-15' },

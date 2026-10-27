@@ -27,6 +27,7 @@ const DevelopersRegionHub = lazy(() => import('./pages/DevelopersRegionHub.tsx')
 const LocalDeveloperPage = lazy(() => import('./pages/LocalDeveloperPage.tsx'));
 const SitemapPage = lazy(() => import('./pages/Sitemap.tsx'));
 const QwabiFamilyPage = lazy(() => import('./pages/QwabiFamily.tsx'));
+const SamsungIntents = lazy(() => import('./pages/SamsungIntents.tsx'));
 const PhoneAdmin = lazy(() => import('./pages/PhoneAdmin.tsx'));
 
 /** Remount blog post page when :slug changes (same route, new params). */
@@ -76,6 +77,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/get-a-quote" element={<GetAQuotePage />} />
               <Route path="/projects/espazza" element={<EspazzaProject />} />
               <Route path="/qwabi-family" element={<QwabiFamilyPage />} />
+              <Route path="/samsung-intents" element={<SamsungIntents />} />
               <Route path="/phoneadmin" element={<PhoneAdmin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

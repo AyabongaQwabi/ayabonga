@@ -1,0 +1,1095 @@
+[
+  {
+    "id": "action_settings",
+    "name": "All settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_satellite_setting",
+    "name": "Satellite setting",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.SATELLITE_SETTING",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_apn_settings",
+    "name": "Access point names (APN)",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.APN_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_location_source_settings",
+    "name": "Location",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.LOCATION_SOURCE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_location_scanning_settings",
+    "name": "Location scanning settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.LOCATION_SCANNING_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_user_settings",
+    "name": "User settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.USER_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_wireless_settings",
+    "name": "Wireless settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.WIRELESS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_airplane_mode_settings",
+    "name": "Airplane mode settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.AIRPLANE_MODE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_accessibility_settings",
+    "name": "Accessibility settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.ACCESSIBILITY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_accessibility_color_motion_settings",
+    "name": "Accessibility color motion settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.ACCESSIBILITY_COLOR_MOTION_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_accessibility_color_contrast_settings",
+    "name": "Accessibility color contrast settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.ACCESSIBILITY_COLOR_CONTRAST_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_reduce_bright_colors_settings",
+    "name": "Reduce bright colors settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.REDUCE_BRIGHT_COLORS_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_color_correction_settings",
+    "name": "Color correction settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "com.android.settings.ACCESSIBILITY_COLOR_SPACE_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_color_inversion_settings",
+    "name": "Color inversion settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.COLOR_INVERSION_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_text_reading_settings",
+    "name": "Text reading settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.TEXT_READING_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_usage_access_settings",
+    "name": "Usage access settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.USAGE_ACCESS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_security_settings",
+    "name": "Security settings",
+    "category": "Security & privacy",
+    "kind": "settings",
+    "action": "android.settings.SECURITY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_unknown_app_sources",
+    "name": "Manage unknown app sources",
+    "category": "Security & privacy",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_UNKNOWN_APP_SOURCES",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_request_schedule_exact_alarm",
+    "name": "Request schedule exact alarm",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.REQUEST_SCHEDULE_EXACT_ALARM",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_open_by_default_settings",
+    "name": "App open by default settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APP_OPEN_BY_DEFAULT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_privacy_settings",
+    "name": "Privacy settings",
+    "category": "Security & privacy",
+    "kind": "settings",
+    "action": "android.settings.PRIVACY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_vpn_settings",
+    "name": "Vpn settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.VPN_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_wifi_settings",
+    "name": "Wi-Fi",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.WIFI_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_advanced_memory_protection_settings",
+    "name": "Advanced memory protection settings",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.ADVANCED_MEMORY_PROTECTION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_wifi_ip_settings",
+    "name": "Wi-Fi advanced settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.WIFI_IP_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_data_usage_settings",
+    "name": "Data usage settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.DATA_USAGE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_bluetooth_settings",
+    "name": "Bluetooth settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.BLUETOOTH_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_hearing_devices_settings",
+    "name": "Hearing devices settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.HEARING_DEVICES_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_app_search_settings",
+    "name": "App search settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APP_SEARCH_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_fingerprint_enroll",
+    "name": "Add fingerprints",
+    "category": "Security & privacy",
+    "kind": "settings",
+    "action": "android.settings.FINGERPRINT_ENROLL",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_biometric_enroll",
+    "name": "Add biometrics",
+    "category": "Security & privacy",
+    "kind": "settings",
+    "action": "android.settings.BIOMETRIC_ENROLL",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_cast_settings",
+    "name": "Cast / Smart View",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.CAST_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_date_settings",
+    "name": "Date settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.DATE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_sound_settings",
+    "name": "Sounds and vibration",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.SOUND_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_display_settings",
+    "name": "Display settings",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.DISPLAY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_auto_rotate_settings",
+    "name": "Auto rotate settings",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.AUTO_ROTATE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_night_display_settings",
+    "name": "Night display settings",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.NIGHT_DISPLAY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_dark_theme_settings",
+    "name": "Dark theme settings",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.DARK_THEME_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_locale_settings",
+    "name": "Locale settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.LOCALE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_locale_settings",
+    "name": "App locale settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APP_LOCALE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_regional_preferences_settings",
+    "name": "Regional preferences settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.REGIONAL_PREFERENCES_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_region_settings",
+    "name": "Region settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.REGION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_first_day_of_week_settings",
+    "name": "First day of week settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.FIRST_DAY_OF_WEEK_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_temperature_unit_settings",
+    "name": "Temperature unit settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.TEMPERATURE_UNIT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_measurement_system_settings",
+    "name": "Measurement system settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.MEASUREMENT_SYSTEM_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_lockscreen_settings",
+    "name": "Lockscreen settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.LOCK_SCREEN_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_lockscreen_notifications_settings",
+    "name": "Lockscreen notifications settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.LOCK_SCREEN_NOTIFICATIONS_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_hearing_device_pairing_settings",
+    "name": "Hearing device pairing settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.HEARING_DEVICES_PAIRING_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_voice_input_settings",
+    "name": "Voice input settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.VOICE_INPUT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_input_method_settings",
+    "name": "Keyboard and input",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.INPUT_METHOD_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_user_dictionary_settings",
+    "name": "User dictionary settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.USER_DICTIONARY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_hard_keyboard_settings",
+    "name": "Hard keyboard settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.HARD_KEYBOARD_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_application_settings",
+    "name": "Application settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APPLICATION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_application_development_settings",
+    "name": "Developer options",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APPLICATION_DEVELOPMENT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_quick_launch_settings",
+    "name": "Quick launch settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.QUICK_LAUNCH_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_applications_settings",
+    "name": "Manage applications settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_APPLICATIONS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_all_applications_settings",
+    "name": "Manage all applications settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_all_sim_profiles_settings",
+    "name": "Manage all sim profiles settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_ALL_SIM_PROFILES_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_overlay_permission",
+    "name": "Appear on top",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.action.MANAGE_OVERLAY_PERMISSION",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Opens the list of apps allowed to appear on top. Android 16 ignores per-app package data for this action."
+  },
+  {
+    "id": "action_manage_write_settings",
+    "name": "Change system settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.action.MANAGE_WRITE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_usage_settings",
+    "name": "App usage settings",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.action.APP_USAGE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "intent-extra",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_application_details_settings",
+    "name": "App info",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.APPLICATION_DETAILS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_ignore_battery_optimization_settings",
+    "name": "Battery optimisation",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_ignore_background_data_restrictions_settings",
+    "name": "Unrestricted data",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_system_update_settings",
+    "name": "System update settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.SYSTEM_UPDATE_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_sync_settings",
+    "name": "Sync settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.SYNC_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_add_account",
+    "name": "Add account",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.ADD_ACCOUNT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_network_operator_settings",
+    "name": "Network operator settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.NETWORK_OPERATOR_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_data_roaming_settings",
+    "name": "Data roaming settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.DATA_ROAMING_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_internal_storage_settings",
+    "name": "Internal storage",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.INTERNAL_STORAGE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_memory_card_settings",
+    "name": "SD card storage",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.MEMORY_CARD_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_search_settings",
+    "name": "Search settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.search.action.SEARCH_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_device_info_settings",
+    "name": "About phone",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.DEVICE_INFO_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_nfc_settings",
+    "name": "NFC",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.NFC_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_nfcsharing_settings",
+    "name": "NFC sharing",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.NFCSHARING_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_nfc_payment_settings",
+    "name": "Contactless payments",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.NFC_PAYMENT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_dream_settings",
+    "name": "Screen saver",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.DREAM_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_notification_assistant_settings",
+    "name": "Notification assistant settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.NOTIFICATION_ASSISTANT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_notification_listener_settings",
+    "name": "Notification listener settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_notification_policy_access_settings",
+    "name": "Notification policy access settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.NOTIFICATION_POLICY_ACCESS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_condition_provider_settings",
+    "name": "Condition provider settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.ACTION_CONDITION_PROVIDER_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_captioning_settings",
+    "name": "Captioning settings",
+    "category": "Accessibility",
+    "kind": "settings",
+    "action": "android.settings.CAPTIONING_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_print_settings",
+    "name": "Print settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.ACTION_PRINT_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_zen_mode_settings",
+    "name": "Zen mode settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.ZEN_MODE_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_zen_mode_priority_settings",
+    "name": "Zen mode priority settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.ZEN_MODE_PRIORITY_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_show_regulatory_info",
+    "name": "Show regulatory info",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.SHOW_REGULATORY_INFO",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_battery_saver_settings",
+    "name": "Battery saver settings",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.BATTERY_SAVER_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_home_settings",
+    "name": "Default home app",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.HOME_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_default_apps_settings",
+    "name": "Default apps",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_DEFAULT_APPS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_notification_settings",
+    "name": "Notification settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.NOTIFICATION_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_notification_history",
+    "name": "Notification history",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.NOTIFICATION_HISTORY",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_all_apps_notification_settings",
+    "name": "App notifications (all apps)",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.ALL_APPS_NOTIFICATION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_notification_promotion_settings",
+    "name": "App notification promotion settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.APP_NOTIFICATION_PROMOTION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "extra",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_notification_settings",
+    "name": "App notifications",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.APP_NOTIFICATION_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "extra",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_app_notification_bubble_settings",
+    "name": "App notification bubble settings",
+    "category": "Notifications",
+    "kind": "settings",
+    "action": "android.settings.APP_NOTIFICATION_BUBBLE_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "extra",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_vr_listener_settings",
+    "name": "Vr listener settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.VR_LISTENER_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_webview_settings",
+    "name": "Webview settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.WEBVIEW_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_show_work_policy_info",
+    "name": "Show work policy info",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.SHOW_WORK_POLICY_INFO",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_quick_access_wallet_settings",
+    "name": "Quick access wallet settings",
+    "category": "System",
+    "kind": "settings",
+    "action": "android.settings.QUICK_ACCESS_WALLET_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_storage_volume_access_settings",
+    "name": "Storage volume access settings",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.STORAGE_VOLUME_ACCESS_SETTINGS",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Legacy directory-access screen; deprecated in Android. Use App info to manage current storage permissions."
+  },
+  {
+    "id": "action_tether_settings",
+    "name": "Tether settings",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.TETHER_SETTINGS",
+    "source": "android16",
+    "availability": "device",
+    "description": "Internal Android shortcut; Samsung may replace or hide this screen."
+  },
+  {
+    "id": "action_manage_all_files_access_permission",
+    "name": "Manage all files access permission",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_ALL_FILES_ACCESS_PERMISSION",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_app_all_files_access_permission",
+    "name": "Manage app all files access permission",
+    "category": "Battery & storage",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "action_manage_app_use_full_screen_intent",
+    "name": "Manage app use full screen intent",
+    "category": "Apps & permissions",
+    "kind": "settings",
+    "action": "android.settings.MANAGE_APP_USE_FULL_SCREEN_INTENT",
+    "source": "android16",
+    "availability": "documented",
+    "packageInput": "data",
+    "description": "Android settings action; the matching screen depends on your device and browser."
+  },
+  {
+    "id": "panel-internet_connectivity",
+    "name": "Internet panel",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.panel.action.INTERNET_CONNECTIVITY",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Opens a compact settings panel if supported."
+  },
+  {
+    "id": "panel-wifi",
+    "name": "Wi-Fi panel",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.panel.action.WIFI",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Opens a compact settings panel if supported."
+  },
+  {
+    "id": "panel-nfc",
+    "name": "NFC panel",
+    "category": "Connections",
+    "kind": "settings",
+    "action": "android.settings.panel.action.NFC",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Opens a compact settings panel if supported."
+  },
+  {
+    "id": "panel-volume",
+    "name": "Volume panel",
+    "category": "Display & sound",
+    "kind": "settings",
+    "action": "android.settings.panel.action.VOLUME",
+    "source": "android16",
+    "availability": "documented",
+    "description": "Opens a compact settings panel if supported."
+  }
+]

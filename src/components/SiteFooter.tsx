@@ -108,6 +108,9 @@ export function SiteFooter() {
           >
             Corrections
           </TransitionLink>
+            <TransitionLink to="/samsung-intents" className="interactive-link hover:text-[var(--warm-white)]">
+              Samsung shortcuts
+            </TransitionLink>
             <TransitionLink
               to="/sitemap"
               className="interactive-link hover:text-[var(--warm-white)]"
