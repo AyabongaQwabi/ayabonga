@@ -24,6 +24,12 @@ import {
 } from "../lib/samsung-intents";
 import { getLenis } from "../lib/lenis";
 import {
+  ACTIVITY_GROUPS,
+  activityGroupInfo,
+  shortcutGroup,
+  type GroupSelection,
+} from "../lib/samsung-activity-groups";
+import {
   failedLaunchKey,
   launchFallback,
   launchKey,
@@ -85,6 +91,7 @@ export default function SamsungIntents() {
       return readLaunchSession({ getItem: () => null });
     }
   });
+  const [group, setGroup] = useState<GroupSelection>(initialSession.view.group);
   const [query, setQuery] = useState(initialSession.view.query);
   const [category, setCategory] = useState(initialSession.view.category);
   const [scope, setScope] = useState<Scope>(initialSession.view.scope);
@@ -95,6 +102,7 @@ export default function SamsungIntents() {
   const failedRef = useRef(failed);
   const viewRef = useRef(initialSession.view);
   viewRef.current = {
+    group,
     query,
     category,
     scope,
@@ -112,8 +120,14 @@ export default function SamsungIntents() {
     [saved.custom],
   );
   const categories = useMemo(
-    () => [...new Set(catalog.map((item) => item.category))],
-    [catalog],
+    () => [
+      ...new Set(
+        catalog
+          .filter((item) => group === "all" || shortcutGroup(item) === group)
+          .map((item) => item.category),
+      ),
+    ],
+    [catalog, group],
   );
   const packageValid = validPackage(targetPackage);
 
@@ -155,7 +169,7 @@ export default function SamsungIntents() {
 
   useEffect(() => {
     setSessionUnavailable(!saveSession());
-  }, [query, category, scope, targetPackage, saveSession]);
+  }, [group, query, category, scope, targetPackage, saveSession]);
 
   useEffect(() => {
     const handleFailure = () => {
@@ -225,6 +239,7 @@ export default function SamsungIntents() {
     const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
     let list = catalog.filter(
       (item) =>
+        (group === "all" || shortcutGroup(item) === group) &&
         (category === "All categories" || item.category === category) &&
         (scope !== "Favourites" || saved.favourites.includes(item.id)) &&
         (scope !== "Recently tried" || saved.recent.includes(item.id)) &&
@@ -239,7 +254,34 @@ export default function SamsungIntents() {
         (a, b) => saved.recent.indexOf(a.id) - saved.recent.indexOf(b.id),
       );
     return list;
-  }, [catalog, category, query, saved.favourites, saved.recent, scope]);
+  }, [catalog, group, category, query, saved.favourites, saved.recent, scope]);
+
+  const groups = useMemo(
+    () =>
+      ACTIVITY_GROUPS.map((definition) => ({
+        ...definition,
+        count: catalog.filter((item) => shortcutGroup(item) === definition.id)
+          .length,
+      })),
+    [catalog],
+  );
+  const selectedGroup = groups.find((entry) => entry.id === group);
+  const groupedResults = useMemo(
+    () =>
+      groups
+        .map((definition) => ({
+          ...definition,
+          items: filtered.filter(
+            (item) => shortcutGroup(item) === definition.id,
+          ),
+        }))
+        .filter((entry) => entry.items.length),
+    [groups, filtered],
+  );
+  function selectGroup(value: GroupSelection) {
+    setGroup(value);
+    setCategory("All categories");
+  }
 
   function toggleFavourite(id: string) {
     setSaved((old) => ({
@@ -276,7 +318,8 @@ export default function SamsungIntents() {
     const added = merged.size - saved.custom.length;
     setSaved((old) => ({ ...old, custom: [...merged.values()] }));
     setImportText("");
-    setCategory("My activities");
+    setGroup("my-activities");
+    setCategory("All categories");
     setScope("All shortcuts");
     setQuery("");
     setMessage(
@@ -391,6 +434,57 @@ export default function SamsungIntents() {
             Reset failure marks
           </button>
         </div>
+        <section className="sl-group-picker" aria-labelledby="sl-group-title">
+          <div className="sl-group-picker-heading">
+            <div>
+              <p className="sl-eyebrow">CHOOSE WHAT TO RENDER</p>
+              <h2 id="sl-group-title">Explore by activity type</h2>
+            </div>
+            <label className="sl-group-select-label">
+              <span>Activity group</span>
+              <select
+                aria-label="Activity group"
+                value={group}
+                onChange={(event) =>
+                  selectGroup(event.target.value as GroupSelection)
+                }
+              >
+                <option value="all">All groups ({catalog.length})</option>
+                {groups.map((entry) => (
+                  <option value={entry.id} key={entry.id}>
+                    {entry.label} ({entry.count})
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div
+            className="sl-group-options"
+            role="group"
+            aria-label="Activity types"
+          >
+            {groups.map((entry) => (
+              <button
+                key={entry.id}
+                type="button"
+                aria-pressed={group === entry.id}
+                onClick={() => selectGroup(entry.id)}
+              >
+                <span>{entry.label}</span>
+                <strong>{entry.count}</strong>
+                <small>{entry.description}</small>
+              </button>
+            ))}
+          </div>
+          <p className="sl-group-summary">
+            {selectedGroup
+              ? `${selectedGroup.label}: ${selectedGroup.count} candidates. Only this group is rendered.`
+              : `All ${catalog.length} candidates, separated by activity type.`}{" "}
+            Search and category filters apply within your selection. These are
+            unverified candidates, not a complete list of activities on your
+            phone.
+          </p>
+        </section>
         <section className="sl-directory" aria-label="Activity directory">
           <div className="sl-toolbar">
             <label className="sl-search">
@@ -484,7 +578,7 @@ export default function SamsungIntents() {
             <h2>
               {scope === "All shortcuts"
                 ? category === "All categories"
-                  ? "The shortcut directory"
+                  ? (selectedGroup?.label ?? "All activity groups")
                   : category
                 : scope}
             </h2>
@@ -503,7 +597,7 @@ export default function SamsungIntents() {
               <p>
                 {scope === "Favourites"
                   ? "Tap the star on any shortcut to save it here."
-                  : "Try a different search or category, or add your own activity components below."}
+                  : "Try another group, search or category, or add exact components from your phone."}
               </p>
               <button
                 type="button"
@@ -511,150 +605,191 @@ export default function SamsungIntents() {
                   setQuery("");
                   setCategory("All categories");
                   setScope("All shortcuts");
+                  setGroup("all");
                 }}
               >
                 Show all shortcuts
               </button>
             </div>
           ) : (
-            <div className="sl-grid">
-              {filtered.map((item) => {
-                const disabled = Boolean(item.packageInput && !packageValid);
-                const intent = disabled ? "" : buildIntent(item, targetPackage);
-                const key = launchKey(item, targetPackage);
-                const didFail = failed.includes(key);
-                const fallback = launchFallback(window.location.href, key);
-                const launch = disabled
-                  ? undefined
-                  : buildIntent(item, targetPackage, fallback);
-                const favourite = saved.favourites.includes(item.id);
-                return (
-                  <article
-                    className={`sl-card ${didFail ? "sl-card-failed" : ""}`}
-                    key={item.id}
-                    data-shortcut-id={item.id}
+            <div className="sl-group-results">
+              {groupedResults.map((resultGroup) => (
+                <section
+                  key={resultGroup.id}
+                  aria-labelledby={`sl-results-${resultGroup.id}`}
+                >
+                  <h3
+                    className="sl-group-results-title"
+                    id={`sl-results-${resultGroup.id}`}
                   >
-                    <div className="sl-card-top">
-                      <span className="sl-card-category">{item.category}</span>
-                      <button
-                        type="button"
-                        className={`sl-star ${favourite ? "is-saved" : ""}`}
-                        aria-label={`${favourite ? "Remove" : "Save"} ${item.name} ${favourite ? "from" : "to"} favourites`}
-                        aria-pressed={favourite}
-                        onClick={() => toggleFavourite(item.id)}
-                      >
-                        <Star
-                          size={19}
-                          fill={favourite ? "currentColor" : "none"}
-                        />
-                      </button>
-                    </div>
-                    <h3>{item.name}</h3>
-                    <p className="sl-identifier">
-                      {item.component ?? item.package ?? item.action}
-                    </p>
-                    <div className="sl-card-meta">
-                      <span>
-                        {didFail
-                          ? "Didn’t open this session"
-                          : item.availability === "documented"
-                            ? "Android action · untested"
-                            : "Device dependent · untested"}
-                      </span>
-                      {item.packageInput && <span>Target app</span>}
-                    </div>
-                    <div className="sl-card-actions">
-                      <a
-                        href={launch}
-                        className={didFail ? "sl-launch-failed" : undefined}
-                        aria-label={`${didFail ? "Retry" : "Open"} ${item.name}`}
-                        aria-disabled={disabled}
-                        onClick={(event) => {
-                          if (disabled) {
-                            event.preventDefault();
-                            setMessage(
-                              "Enter a valid target app package first.",
-                            );
-                            return;
-                          }
-                          if (!android) {
-                            event.preventDefault();
-                            setMessage(
-                              "Launch this shortcut from your Samsung phone, or copy its ADB command in Details.",
-                            );
-                            return;
-                          }
-                          setSessionUnavailable(!saveSession());
-                          setSaved((old) => ({
-                            ...old,
-                            recent: [
-                              item.id,
-                              ...old.recent.filter((id) => id !== item.id),
-                            ].slice(0, 12),
-                          }));
-                          setMessage("");
-                        }}
-                      >
-                        {didFail ? "Retry" : "Open"}{" "}
-                        <ArrowUpRight size={17} aria-hidden="true" />
-                      </a>
-                      <button
-                        type="button"
-                        disabled={disabled}
-                        onClick={() => void copy(intent)}
-                        aria-label={`Copy intent for ${item.name}`}
-                      >
-                        <Copy size={15} aria-hidden="true" /> Copy intent
-                      </button>
-                    </div>
-                    <button
-                      type="button"
-                      className="sl-result-toggle"
-                      disabled={disabled}
-                      aria-label={`${didFail ? "Clear failure for" : "Mark as failed:"} ${item.name}`}
-                      onClick={() => markFailed(key, !didFail)}
-                    >
-                      {didFail ? "Clear failure mark" : "Didn’t open"}
-                    </button>
-                    <details className="sl-details">
-                      <summary>Details &amp; ADB</summary>
-                      <p>{item.description}</p>
-                      {item.packageInput && (
-                        <p>
-                          Target:{" "}
-                          <code>
-                            {targetPackage || "(enter a package above)"}
-                          </code>
-                        </p>
-                      )}
-                      <code className="sl-command">
-                        {disabled
-                          ? "Enter a valid target package above."
-                          : buildAdbCommand(item, targetPackage)}
-                      </code>
-                      <button
-                        type="button"
-                        disabled={disabled}
-                        onClick={() =>
-                          void copy(buildAdbCommand(item, targetPackage))
-                        }
-                      >
-                        <Terminal size={15} aria-hidden="true" /> Copy ADB
-                        command
-                      </button>
-                      {item.kind === "custom" && (
-                        <button
-                          type="button"
-                          className="sl-remove"
-                          onClick={() => removeCustom(item.id)}
+                    {resultGroup.label}
+                    <span>{resultGroup.items.length} candidates</span>
+                  </h3>
+                  <div className="sl-grid">
+                    {resultGroup.items.map((item) => {
+                      const disabled = Boolean(
+                        item.packageInput && !packageValid,
+                      );
+                      const intent = disabled
+                        ? ""
+                        : buildIntent(item, targetPackage);
+                      const key = launchKey(item, targetPackage);
+                      const didFail = failed.includes(key);
+                      const fallback = launchFallback(
+                        window.location.href,
+                        key,
+                      );
+                      const launch = disabled
+                        ? undefined
+                        : buildIntent(item, targetPackage, fallback);
+                      const favourite = saved.favourites.includes(item.id);
+                      return (
+                        <article
+                          className={`sl-card ${didFail ? "sl-card-failed" : ""}`}
+                          key={item.id}
+                          data-shortcut-id={item.id}
                         >
-                          Remove imported activity
-                        </button>
-                      )}
-                    </details>
-                  </article>
-                );
-              })}
+                          <div className="sl-card-top">
+                            <span className="sl-card-category">
+                              {item.category}
+                            </span>
+                            <button
+                              type="button"
+                              className={`sl-star ${favourite ? "is-saved" : ""}`}
+                              aria-label={`${favourite ? "Remove" : "Save"} ${item.name} ${favourite ? "from" : "to"} favourites`}
+                              aria-pressed={favourite}
+                              onClick={() => toggleFavourite(item.id)}
+                            >
+                              <Star
+                                size={19}
+                                fill={favourite ? "currentColor" : "none"}
+                              />
+                            </button>
+                          </div>
+                          <h3>{item.name}</h3>
+                          <p className="sl-identifier">
+                            {item.component ?? item.package ?? item.action}
+                          </p>
+                          <div className="sl-card-meta">
+                            <span>
+                              {didFail
+                                ? "Didn’t open this session"
+                                : item.availability === "documented"
+                                  ? "Android action · untested"
+                                  : "Device dependent · untested"}
+                            </span>
+                            {item.packageInput && <span>Target app</span>}
+                          </div>
+                          <div className="sl-card-actions">
+                            <a
+                              href={launch}
+                              className={
+                                didFail ? "sl-launch-failed" : undefined
+                              }
+                              aria-label={`${didFail ? "Retry" : "Open"} ${item.name}`}
+                              aria-disabled={disabled}
+                              onClick={(event) => {
+                                if (disabled) {
+                                  event.preventDefault();
+                                  setMessage(
+                                    "Enter a valid target app package first.",
+                                  );
+                                  return;
+                                }
+                                if (!android) {
+                                  event.preventDefault();
+                                  setMessage(
+                                    "Launch this shortcut from your Samsung phone, or copy its ADB command in Details.",
+                                  );
+                                  return;
+                                }
+                                setSessionUnavailable(!saveSession());
+                                setSaved((old) => ({
+                                  ...old,
+                                  recent: [
+                                    item.id,
+                                    ...old.recent.filter(
+                                      (id) => id !== item.id,
+                                    ),
+                                  ].slice(0, 12),
+                                }));
+                                setMessage("");
+                              }}
+                            >
+                              {didFail ? "Retry" : "Open"}{" "}
+                              <ArrowUpRight size={17} aria-hidden="true" />
+                            </a>
+                            <button
+                              type="button"
+                              disabled={disabled}
+                              onClick={() => void copy(intent)}
+                              aria-label={`Copy intent for ${item.name}`}
+                            >
+                              <Copy size={15} aria-hidden="true" /> Copy intent
+                            </button>
+                          </div>
+                          <button
+                            type="button"
+                            className="sl-result-toggle"
+                            disabled={disabled}
+                            aria-label={`${didFail ? "Clear failure for" : "Mark as failed:"} ${item.name}`}
+                            onClick={() => markFailed(key, !didFail)}
+                          >
+                            {didFail ? "Clear failure mark" : "Didn’t open"}
+                          </button>
+                          <details className="sl-details">
+                            <summary>Details &amp; ADB</summary>
+                            <p>{item.description}</p>
+                            {activityGroupInfo(item).sourceUrl && (
+                              <p>
+                                <a
+                                  href={activityGroupInfo(item).sourceUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  View this group’s source
+                                </a>
+                              </p>
+                            )}
+                            {item.packageInput && (
+                              <p>
+                                Target:{" "}
+                                <code>
+                                  {targetPackage || "(enter a package above)"}
+                                </code>
+                              </p>
+                            )}
+                            <code className="sl-command">
+                              {disabled
+                                ? "Enter a valid target package above."
+                                : buildAdbCommand(item, targetPackage)}
+                            </code>
+                            <button
+                              type="button"
+                              disabled={disabled}
+                              onClick={() =>
+                                void copy(buildAdbCommand(item, targetPackage))
+                              }
+                            >
+                              <Terminal size={15} aria-hidden="true" /> Copy ADB
+                              command
+                            </button>
+                            {item.kind === "custom" && (
+                              <button
+                                type="button"
+                                className="sl-remove"
+                                onClick={() => removeCustom(item.id)}
+                              >
+                                Remove imported activity
+                              </button>
+                            )}
+                          </details>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </section>
+              ))}
             </div>
           )}
         </section>
@@ -743,12 +878,14 @@ export default function SamsungIntents() {
             Compatibility, sources &amp; why a shortcut may not open
           </summary>
           <p>
-            This catalog targets Android 16 / One UI 8.5, but has not been
-            validated on your specific Galaxy firmware. “Android action” means
-            the action is defined in Android, not that its screen is installed,
-            exported or browser-accessible. “Device dependent” covers internal
-            Android actions, app package targets and imported components. Apps
-            and Good Lock modules must be installed separately.
+            The catalog includes Android 16 definitions and historical Samsung
+            component variants. The legacy Samsung group is not a One UI 8.5
+            inventory. None of these candidates have been validated on your
+            specific Galaxy firmware. “Android action” means the action is
+            defined in Android, not that its screen is installed, exported or
+            browser-accessible. “Device dependent” covers internal Android
+            actions, app package targets and imported components. Apps and Good
+            Lock modules must be installed separately.
           </p>
           <p>
             Chrome only launches activities that allow browser access, and a tap

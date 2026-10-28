@@ -2,7 +2,21 @@
 
 Route: `/samsung-intents`. Linked in the shared footer, HTML sitemap and XML sitemap/prerender route collector.
 
-The initial catalog has 178 shortcuts: 108 Android settings/panel actions, 35 Samsung app targets, 18 Good Lock/module targets, 10 Google app targets, three Samsung background-usage screens and four common activities. This is a reference list targeting Android 16 / One UI 8.5, **not** an exhaustive inventory or a claim of on-device validation. Firmware, region, installed apps, export flags and permissions determine what can launch.
+The catalog now has 538 candidates in nine selectable groups. The default renders only Android settings actions; choosing another group mounts only that group's cards. “All groups” renders separate type sections. Category, search, favourites and recent filters apply inside the selected group. Group selection is saved with the session view.
+
+| Group | Initial candidates |
+| --- | ---: |
+| Android settings actions | 128 |
+| Android settings activities (explicit AOSP components) | 164 |
+| Everyday Android activities | 30 |
+| Samsung apps | 35 |
+| Samsung Device care activities | 3 |
+| Samsung settings · legacy | 150 |
+| Good Lock modules | 18 |
+| Google apps | 10 |
+| Imported phone activities | 0; populated by the user |
+
+This is a reference list, **not** an exhaustive inventory or a claim of on-device validation. Firmware, region, installed apps, export flags and permissions determine what can launch. Historical Samsung components are explicitly labelled legacy; they are not presented as a current One UI 8.5 manifest.
 
 ## Sources and maintenance
 
@@ -31,4 +45,14 @@ Intent fallbacks now use a same-document `#intent-failed=…` fragment instead o
 
 The separate `qwabi-samsung-launch-session-v1` session-storage record saves failed launch keys, filters, the target package and scroll position. Per-app failures are keyed by both shortcut ID and target package. Launch state is flushed before attempting an intent. Scroll restoration updates Lenis’s dimensions first, since its cached limit may describe the short loading placeholder. The shared scroll-to-top handler defers to this page when it has a saved position. Session-storage denial leaves in-memory marking available. “Reset failure marks” clears only the failure list.
 
-Run `node --import tsx --test scripts/samsung-intents.test.ts scripts/samsung-launch-session.test.ts` for the ten unit checks. With the development server running, run `SAMSUNG_TEST_BASE_URL=http://127.0.0.1:5173 node scripts/samsung-launcher.browser-test.mjs` for the Chrome browser regressions (requires Chrome and the existing Playwright dependency). They simulate the fallback callback on a Galaxy-sized Android browser; they do not establish which activities open on real Samsung firmware.
+Run `node --import tsx --test scripts/samsung-intents.test.ts scripts/samsung-launch-session.test.ts scripts/samsung-activity-groups.test.ts` for the fifteen unit checks. With the development server running, run `SAMSUNG_TEST_BASE_URL=http://127.0.0.1:5173 node scripts/samsung-launcher.browser-test.mjs` for the Chrome browser regressions (requires Chrome and the existing Playwright dependency). They simulate the fallback callback on a Galaxy-sized Android browser; they do not establish which activities open on real Samsung firmware.
+
+## Expanded activity candidates
+
+`src/lib/samsung-activity-groups.ts` defines the nine groups and their source links. `shortcutGroup()` keeps existing shortcut IDs stable while classifying the older entries. Imported activity categories now use the package name so a user can render one installed package at a time. Old saved sessions without a group migrate to Android settings actions.
+
+`src/data/android-activity-candidates.json` adds 20 input-free internal settings actions from Android 16 Settings.java, 164 exported settings components from [Android 16's AOSP Settings manifest](https://github.com/aosp-mirror/platform_packages_apps_settings/blob/android16-release/AndroidManifest.xml), and 150 distinct historical Samsung components from the published [BatMan modified SecSettings manifest](https://github.com/GrifoDev/BatMan-ModdedFiles/blob/master/SecSettings/AndroidManifest.xml). Identifiers shared by the AOSP and historical manifests are deduplicated. Entries explicitly marked non-exported or requiring a manifest permission were omitted; legacy implicit export rules were evaluated only as historical metadata. Current firmware may use different export rules. Activity names associated with reset, deletion, installation, confirmation, provisioning, registration, reboot or shutdown were excluded from these generated test candidates.
+
+`src/data/android-common-activities.ts` adds 26 ordinary navigation, compose, file-picker and media activities based on [Android common intents](https://developer.android.com/guide/components/intents-common). Combined with the existing four common activities, that group contains 30 candidates. No message, call, calendar event or contact is submitted automatically. Some pickers require a native caller to receive their result and cannot work in a browser. The serializers now preserve additional intent categories such as OPENABLE.
+
+The browser regression script additionally checks all nine group counts against their mounted cards, separated All groups sections, and import-package filtering across reloads. These are application tests, not physical Samsung compatibility certification.

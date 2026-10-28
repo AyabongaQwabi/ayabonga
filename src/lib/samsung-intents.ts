@@ -1,4 +1,7 @@
 import settings from "../data/samsung-settings.json";
+import candidates from "../data/android-activity-candidates.json";
+import { ANDROID_COMMON_ACTIVITIES } from "../data/android-common-activities";
+import type { ActivityGroupId } from "./samsung-activity-groups";
 
 export type ActivityShortcut = {
   id: string;
@@ -8,6 +11,8 @@ export type ActivityShortcut = {
   description: string;
   availability: "documented" | "device";
   source: "android16" | "samsung" | "custom";
+  group?: ActivityGroupId;
+  categories?: string[];
   action?: string;
   package?: string;
   component?: string;
@@ -106,6 +111,8 @@ function appShortcuts(
 
 export const SAMSUNG_SHORTCUTS: ActivityShortcut[] = [
   ...(settings as ActivityShortcut[]),
+  ...(candidates as ActivityShortcut[]),
+  ...ANDROID_COMMON_ACTIVITIES,
   ...["Sleeping apps", "Deep sleeping apps", "Never sleeping apps"].map(
     (name, activityType): ActivityShortcut => ({
       id: `samsung-sleeping-${activityType}`,
@@ -186,6 +193,8 @@ export function buildIntent(
   parts.push(`action=${shortcut.action ?? "android.intent.action.MAIN"}`);
   if (shortcut.kind === "app")
     parts.push("category=android.intent.category.LAUNCHER");
+  for (const category of shortcut.categories ?? [])
+    parts.push(`category=${category}`);
   if (shortcut.package) parts.push(`package=${shortcut.package}`);
   if (shortcut.component) parts.push(`component=${shortcut.component}`);
   if (shortcut.mimeType)
@@ -218,6 +227,8 @@ export function buildAdbCommand(
   ];
   if (shortcut.kind === "app")
     args.push("-c", "android.intent.category.LAUNCHER");
+  for (const category of shortcut.categories ?? [])
+    args.push("-c", quoteShell(category));
   if (shortcut.component) args.push("-n", quoteShell(shortcut.component));
   else if (shortcut.package) args.push("-p", quoteShell(shortcut.package));
   const data =
@@ -255,7 +266,7 @@ export function importComponents(input: string): ActivityShortcut[] {
     unique.set(id, {
       id,
       name: match[2].split(".").pop()!.replace(/\$/g, " › "),
-      category: "My activities",
+      category: match[1],
       kind: "custom",
       source: "custom",
       availability: "device",

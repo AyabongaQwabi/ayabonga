@@ -67,6 +67,7 @@ test("session round trip preserves failures, filters and scroll position", () =>
   const session = {
     failed: ["action_settings"],
     view: {
+      group: "android-settings" as const,
       query: "wifi",
       category: "Connections",
       scope: "All shortcuts" as const,

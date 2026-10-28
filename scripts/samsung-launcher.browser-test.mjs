@@ -19,6 +19,9 @@ const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
         .getByRole("heading", { name: "Your Galaxy.", exact: false })
         .waitFor();
       await page.waitForTimeout(900);
+      await page
+        .getByLabel("Activity group", { exact: true })
+        .selectOption("samsung-apps");
       await page.getByRole("searchbox").fill("Samsung");
       await page
         .getByLabel("Category", { exact: true })
@@ -94,6 +97,9 @@ const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
       );
       await page.getByRole("button", { name: "Reset failure marks" }).click();
       assert.equal(await page.locator(".sl-launch-failed").count(), 0);
+      await page
+        .getByLabel("Activity group", { exact: true })
+        .selectOption("android-settings");
       await page.getByRole("searchbox").fill("App info");
       await page
         .getByLabel("Category", { exact: true })
@@ -118,6 +124,62 @@ const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
       .waitFor();
     assert.equal(await p.locator(".sl-launch-failed").count(), 0);
     assert.equal(await p.getByRole("searchbox").inputValue(), "");
+    const picker = p.getByLabel("Activity group", { exact: true });
+    assert.equal(await picker.inputValue(), "android-settings");
+    for (const id of [
+      "android-settings",
+      "android-components",
+      "android-common",
+      "samsung-apps",
+      "samsung-activities",
+      "samsung-legacy",
+      "good-lock",
+      "google-apps",
+      "my-activities",
+    ]) {
+      await picker.selectOption(id);
+      const label = await picker.locator(`option[value="${id}"]`).textContent();
+      const expected = Number(label.match(/\((\d+)\)$/)[1]);
+      assert.equal(
+        await p.locator(".sl-card").count(),
+        expected,
+        `${id} renders its own cards only`,
+      );
+      const sections = await p
+        .locator(".sl-group-results>section")
+        .evaluateAll((nodes) =>
+          nodes.map((node) => node.querySelector("h3").id),
+        );
+      assert.deepEqual(sections, expected ? [`sl-results-${id}`] : []);
+    }
+    await picker.selectOption("all");
+    assert.equal(await p.locator(".sl-card").count(), 538);
+    assert.equal(await p.locator(".sl-group-results>section").count(), 8);
+    await p
+      .getByLabel("One package/activity component per line")
+      .fill("com.example.first/.Main\ncom.example.second/.Main");
+    await p
+      .getByRole("button", { name: "Import activities", exact: true })
+      .click();
+    assert.equal(await picker.inputValue(), "my-activities");
+    assert.equal(await p.locator(".sl-card").count(), 2);
+    await p
+      .getByLabel("Category", { exact: true })
+      .selectOption("com.example.first");
+    assert.equal(await p.locator(".sl-card").count(), 1);
+    await p.reload();
+    await p
+      .getByRole("heading", { name: "Your Galaxy.", exact: false })
+      .waitFor();
+    assert.equal(await picker.inputValue(), "my-activities");
+    assert.equal(
+      await p.getByLabel("Category", { exact: true }).inputValue(),
+      "com.example.first",
+    );
+    assert.equal(await p.locator(".sl-card").count(), 1);
+    console.log(
+      "PASS: nine selectable groups, exact per-group DOM counts, All groups sections and imported-package filtering persist on reload.",
+    );
     await fresh.close();
     const denied = await browser.newContext();
     await denied.addInitScript(() =>

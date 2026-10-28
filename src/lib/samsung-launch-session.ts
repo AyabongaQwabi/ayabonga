@@ -1,4 +1,8 @@
 import type { ActivityShortcut } from "./samsung-intents";
+import {
+  validActivityGroup,
+  type GroupSelection,
+} from "./samsung-activity-groups";
 
 export const LAUNCH_SESSION_KEY = "qwabi-samsung-launch-session-v1";
 export const launcherScopes = [
@@ -8,6 +12,7 @@ export const launcherScopes = [
 ] as const;
 export type LauncherScope = (typeof launcherScopes)[number];
 export type LauncherView = {
+  group: GroupSelection;
   query: string;
   category: string;
   scope: LauncherScope;
@@ -16,6 +21,7 @@ export type LauncherView = {
 };
 export type LauncherSession = { failed: string[]; view: LauncherView };
 const defaultView: LauncherView = {
+  group: "android-settings",
   query: "",
   category: "All categories",
   scope: "All shortcuts",
@@ -42,6 +48,9 @@ export function readLaunchSession(
           ].slice(-1500)
         : [],
       view: {
+        group: validActivityGroup(value?.group)
+          ? value.group
+          : defaultView.group,
         query: string(value?.query, defaultView.query),
         category: string(value?.category, defaultView.category),
         scope: launcherScopes.includes(value?.scope)
