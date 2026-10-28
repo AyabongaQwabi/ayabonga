@@ -56,3 +56,13 @@ Run `node --import tsx --test scripts/samsung-intents.test.ts scripts/samsung-la
 `src/data/android-common-activities.ts` adds 26 ordinary navigation, compose, file-picker and media activities based on [Android common intents](https://developer.android.com/guide/components/intents-common). Combined with the existing four common activities, that group contains 30 candidates. No message, call, calendar event or contact is submitted automatically. Some pickers require a native caller to receive their result and cannot work in a browser. The serializers now preserve additional intent categories such as OPENABLE.
 
 The browser regression script additionally checks all nine group counts against their mounted cards, separated All groups sections, and import-package filtering across reloads. These are application tests, not physical Samsung compatibility certification.
+
+## Samsung settings section groups
+
+Every Settings candidate also belongs to one of 23 separately selectable Samsung-style sections: Connections, Connected devices, Modes and Routines, Sounds and vibration, Notifications, Display, Wallpaper and style, Themes, Home screen, Lock screen and AOD, Security and privacy, Location, Safety and emergency, Accounts and backup, Google, Advanced features, Digital Wellbeing and parental controls, Device care, Apps, General management, Accessibility, Software update, and About phone.
+
+The section picker is expanded by default and the same choices appear in a dedicated optgroup in the Activity group dropdown. A selected section renders one combined list of its Android action, explicit AOSP component, Samsung legacy and relevant companion-app alternatives. It does not duplicate the underlying catalog. The existing activity-type groups remain available. Sections without known candidates show zero and an empty result rather than invented intents.
+
+`src/lib/samsung-settings-sections.ts` owns classification. Specific screens precede broad terms: SIM status goes to About phone, lock-screen notification appearance to Lock screen, accessibility screens to Accessibility, and battery/sleeping-app screens to Device care. Imported Settings components are classified too. Section IDs use `samsung-section-*` and are accepted by session-state validation, preserving selection, filters, failure marks and scrolling across refreshes.
+
+Run the prior tests plus `scripts/samsung-settings-sections.test.ts` (18 total unit checks). Browser regressions select all 23 section groups, compare mounted card counts, and verify section selection and failed-link marks after refresh. The section taxonomy is navigation organisation; it is not a claim that every section exists on every Galaxy model.

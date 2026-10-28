@@ -22,11 +22,15 @@ import {
   validPackage,
   type ActivityShortcut,
 } from "../lib/samsung-intents";
+import {
+  SAMSUNG_SETTINGS_SECTIONS,
+  isSettingsSectionGroup,
+} from "../lib/samsung-settings-sections";
 import { getLenis } from "../lib/lenis";
 import {
   ACTIVITY_GROUPS,
   activityGroupInfo,
-  shortcutGroup,
+  matchesActivityGroup,
   type GroupSelection,
 } from "../lib/samsung-activity-groups";
 import {
@@ -123,7 +127,7 @@ export default function SamsungIntents() {
     () => [
       ...new Set(
         catalog
-          .filter((item) => group === "all" || shortcutGroup(item) === group)
+          .filter((item) => matchesActivityGroup(item, group))
           .map((item) => item.category),
       ),
     ],
@@ -239,7 +243,7 @@ export default function SamsungIntents() {
     const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
     let list = catalog.filter(
       (item) =>
-        (group === "all" || shortcutGroup(item) === group) &&
+        matchesActivityGroup(item, group) &&
         (category === "All categories" || item.category === category) &&
         (scope !== "Favourites" || saved.favourites.includes(item.id)) &&
         (scope !== "Recently tried" || saved.recent.includes(item.id)) &&
@@ -258,26 +262,38 @@ export default function SamsungIntents() {
 
   const groups = useMemo(
     () =>
-      ACTIVITY_GROUPS.map((definition) => ({
+      [
+        ...ACTIVITY_GROUPS,
+        ...SAMSUNG_SETTINGS_SECTIONS.map(([id, label, description]) => ({
+          id: `samsung-section-${id}` as GroupSelection,
+          label: `Samsung · ${label}`,
+          description,
+          sourceUrl: undefined,
+        })),
+      ].map((definition) => ({
         ...definition,
-        count: catalog.filter((item) => shortcutGroup(item) === definition.id)
-          .length,
+        count: catalog.filter((item) =>
+          matchesActivityGroup(item, definition.id),
+        ).length,
       })),
     [catalog],
   );
   const selectedGroup = groups.find((entry) => entry.id === group);
-  const groupedResults = useMemo(
-    () =>
-      groups
-        .map((definition) => ({
-          ...definition,
-          items: filtered.filter(
-            (item) => shortcutGroup(item) === definition.id,
-          ),
-        }))
-        .filter((entry) => entry.items.length),
-    [groups, filtered],
-  );
+  const groupedResults = useMemo(() => {
+    if (isSettingsSectionGroup(group) && selectedGroup)
+      return [{ ...selectedGroup, items: filtered }].filter(
+        (entry) => entry.items.length,
+      );
+    return groups
+      .filter((entry) => !isSettingsSectionGroup(entry.id))
+      .map((definition) => ({
+        ...definition,
+        items: filtered.filter((item) =>
+          matchesActivityGroup(item, definition.id),
+        ),
+      }))
+      .filter((entry) => entry.items.length);
+  }, [group, selectedGroup, groups, filtered]);
   function selectGroup(value: GroupSelection) {
     setGroup(value);
     setCategory("All categories");
@@ -438,7 +454,7 @@ export default function SamsungIntents() {
           <div className="sl-group-picker-heading">
             <div>
               <p className="sl-eyebrow">CHOOSE WHAT TO RENDER</p>
-              <h2 id="sl-group-title">Explore by activity type</h2>
+              <h2 id="sl-group-title">Choose a Samsung settings section</h2>
             </div>
             <label className="sl-group-select-label">
               <span>Activity group</span>
@@ -450,31 +466,72 @@ export default function SamsungIntents() {
                 }
               >
                 <option value="all">All groups ({catalog.length})</option>
-                {groups.map((entry) => (
-                  <option value={entry.id} key={entry.id}>
-                    {entry.label} ({entry.count})
-                  </option>
-                ))}
+                {groups
+                  .filter((entry) => !isSettingsSectionGroup(entry.id))
+                  .map((entry) => (
+                    <option value={entry.id} key={entry.id}>
+                      {entry.label} ({entry.count})
+                    </option>
+                  ))}
+                <optgroup label="Samsung settings sections">
+                  {groups
+                    .filter((entry) => isSettingsSectionGroup(entry.id))
+                    .map((entry) => (
+                      <option key={entry.id} value={entry.id}>
+                        {entry.label} ({entry.count})
+                      </option>
+                    ))}
+                </optgroup>
               </select>
             </label>
           </div>
+          <details className="sl-settings-section-picker" open>
+            <summary>Samsung settings sections · choose one to render</summary>
+            <div
+              className="sl-settings-section-options"
+              role="group"
+              aria-label="Samsung settings sections"
+            >
+              {groups
+                .filter((entry) => isSettingsSectionGroup(entry.id))
+                .map((entry) => (
+                  <button
+                    key={entry.id}
+                    type="button"
+                    aria-pressed={group === entry.id}
+                    onClick={() => selectGroup(entry.id)}
+                  >
+                    <span>{entry.label.replace("Samsung · ", "")}</span>
+                    <strong>{entry.count}</strong>
+                  </button>
+                ))}
+            </div>
+            <p className="sl-group-summary">
+              Each section combines its Android actions, explicit activities and
+              Samsung variants. A zero means this catalog has no entry for that
+              section yet; imported activities can add exact components from
+              your phone.
+            </p>
+          </details>
           <div
             className="sl-group-options"
             role="group"
             aria-label="Activity types"
           >
-            {groups.map((entry) => (
-              <button
-                key={entry.id}
-                type="button"
-                aria-pressed={group === entry.id}
-                onClick={() => selectGroup(entry.id)}
-              >
-                <span>{entry.label}</span>
-                <strong>{entry.count}</strong>
-                <small>{entry.description}</small>
-              </button>
-            ))}
+            {groups
+              .filter((entry) => !isSettingsSectionGroup(entry.id))
+              .map((entry) => (
+                <button
+                  key={entry.id}
+                  type="button"
+                  aria-pressed={group === entry.id}
+                  onClick={() => selectGroup(entry.id)}
+                >
+                  <span>{entry.label}</span>
+                  <strong>{entry.count}</strong>
+                  <small>{entry.description}</small>
+                </button>
+              ))}
           </div>
           <p className="sl-group-summary">
             {selectedGroup

@@ -1,3 +1,8 @@
+import {
+  isSettingsSectionGroup,
+  samsungSettingsSection,
+  type SettingsSectionGroup,
+} from "./samsung-settings-sections";
 import type { ActivityShortcut } from "./samsung-intents";
 
 export const ACTIVITY_GROUPS = [
@@ -61,9 +66,13 @@ export const ACTIVITY_GROUPS = [
   },
 ] as const;
 export type ActivityGroupId = (typeof ACTIVITY_GROUPS)[number]["id"];
-export type GroupSelection = ActivityGroupId | "all";
+export type GroupSelection = ActivityGroupId | SettingsSectionGroup | "all";
 export function validActivityGroup(value: unknown): value is GroupSelection {
-  return value === "all" || ACTIVITY_GROUPS.some((group) => group.id === value);
+  return (
+    value === "all" ||
+    isSettingsSectionGroup(value) ||
+    ACTIVITY_GROUPS.some((group) => group.id === value)
+  );
 }
 export function shortcutGroup(item: ActivityShortcut): ActivityGroupId {
   if (item.group) return item.group;
@@ -79,4 +88,14 @@ export function shortcutGroup(item: ActivityShortcut): ActivityGroupId {
 }
 export function activityGroupInfo(item: ActivityShortcut) {
   return ACTIVITY_GROUPS.find((group) => group.id === shortcutGroup(item))!;
+}
+
+export function matchesActivityGroup(
+  item: ActivityShortcut,
+  group: GroupSelection,
+): boolean {
+  if (group === "all") return true;
+  if (isSettingsSectionGroup(group))
+    return group === `samsung-section-${samsungSettingsSection(item)}`;
+  return shortcutGroup(item) === group;
 }

@@ -155,6 +155,43 @@ const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
     await picker.selectOption("all");
     assert.equal(await p.locator(".sl-card").count(), 538);
     assert.equal(await p.locator(".sl-group-results>section").count(), 8);
+    const sectionOptions = await picker
+      .locator('option[value^="samsung-section-"]')
+      .evaluateAll((nodes) =>
+        nodes.map((node) => ({
+          id: node.value,
+          count: Number(node.textContent.match(/\((\d+)\)$/)[1]),
+        })),
+      );
+    assert.equal(sectionOptions.length, 23);
+    for (const section of sectionOptions) {
+      await picker.selectOption(section.id);
+      assert.equal(
+        await p.locator(".sl-card").count(),
+        section.count,
+        section.id,
+      );
+      assert.equal(
+        await p.locator(".sl-group-results>section").count(),
+        section.count ? 1 : 0,
+      );
+    }
+    await picker.selectOption("samsung-section-connections");
+    const connectionCard = p.locator(".sl-card").first();
+    await connectionCard
+      .getByRole("button", { name: /Mark as failed:/ })
+      .click();
+    await p.reload();
+    await p
+      .getByRole("heading", { name: "Your Galaxy.", exact: false })
+      .waitFor();
+    assert.equal(await picker.inputValue(), "samsung-section-connections");
+    assert.equal(await p.locator(".sl-launch-failed").count(), 1);
+    await p.getByRole("button", { name: "Reset failure marks" }).click();
+    assert.equal(await p.locator(".sl-launch-failed").count(), 0);
+    console.log(
+      "PASS: all 23 Samsung settings sections render only their candidates; section selection and red failures survive refresh.",
+    );
     await p
       .getByLabel("One package/activity component per line")
       .fill("com.example.first/.Main\ncom.example.second/.Main");
