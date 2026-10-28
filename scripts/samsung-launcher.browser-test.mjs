@@ -153,8 +153,70 @@ const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
       assert.deepEqual(sections, expected ? [`sl-results-${id}`] : []);
     }
     await picker.selectOption("all");
-    assert.equal(await p.locator(".sl-card").count(), 538);
+    const catalogCount = Number(
+      (await picker.locator('option[value="all"]').textContent()).match(
+        /\((\d+)\)$/,
+      )[1],
+    );
+    assert.equal(await p.locator(".sl-card").count(), catalogCount);
     assert.equal(await p.locator(".sl-group-results>section").count(), 8);
+    for (const id of [
+      "app-controls-management",
+      "app-controls-settings",
+      "app-controls-permissions",
+      "app-controls-notifications",
+    ]) {
+      await picker.selectOption(id);
+      const expected = Number(
+        (await picker.locator(`option[value="${id}"]`).textContent()).match(
+          /\((\d+)\)$/,
+        )[1],
+      );
+      assert.ok(expected > 0);
+      assert.equal(await p.locator(".sl-card").count(), expected);
+      assert.equal(await p.locator(".sl-group-results>section").count(), 1);
+    }
+    await picker.selectOption("app-controls-notifications");
+    await p.locator("#sl-package").fill("com.example.app");
+    const channelCard = p.locator(
+      '[data-shortcut-id="app-controls-notification-channel"]',
+    );
+    assert.equal(
+      await channelCard
+        .locator(".sl-card-actions a")
+        .getAttribute("aria-disabled"),
+      "true",
+    );
+    await p.locator("#sl-channel").fill("news;special");
+    const channelIntent = await channelCard
+      .locator(".sl-card-actions a")
+      .getAttribute("href");
+    assert.ok(
+      channelIntent.includes(
+        "S.android.provider.extra.APP_PACKAGE=com.example.app;",
+      ),
+    );
+    assert.ok(
+      channelIntent.includes(
+        "S.android.provider.extra.CHANNEL_ID=news%3Bspecial;",
+      ),
+    );
+    await channelCard.getByRole("button", { name: /Mark as failed:/ }).click();
+    assert.equal(await channelCard.locator(".sl-launch-failed").count(), 1);
+    await p.locator("#sl-channel").fill("a-different-channel");
+    assert.equal(await channelCard.locator(".sl-launch-failed").count(), 0);
+    await p.reload();
+    await p
+      .getByRole("heading", { name: "Your Galaxy.", exact: false })
+      .waitFor();
+    assert.equal(await picker.inputValue(), "app-controls-notifications");
+    assert.equal(
+      await p.locator("#sl-channel").inputValue(),
+      "a-different-channel",
+    );
+    console.log(
+      "PASS: all four app control collections, notification channel validation/encoding, channel-specific failure marks and refreshed channel selection.",
+    );
     const sectionOptions = await picker
       .locator('option[value^="samsung-section-"]')
       .evaluateAll((nodes) =>

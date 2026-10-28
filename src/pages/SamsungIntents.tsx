@@ -26,6 +26,10 @@ import {
   SAMSUNG_SETTINGS_SECTIONS,
   isSettingsSectionGroup,
 } from "../lib/samsung-settings-sections";
+import {
+  APP_CONTROL_GROUPS,
+  isAppControlGroup,
+} from "../lib/app-control-groups";
 import { getLenis } from "../lib/lenis";
 import {
   ACTIVITY_GROUPS,
@@ -102,6 +106,7 @@ export default function SamsungIntents() {
   const [targetPackage, setTargetPackage] = useState(
     initialSession.view.targetPackage,
   );
+  const [channelId, setChannelId] = useState(initialSession.view.channelId);
   const [failed, setFailed] = useState(initialSession.failed);
   const failedRef = useRef(failed);
   const viewRef = useRef(initialSession.view);
@@ -111,6 +116,7 @@ export default function SamsungIntents() {
     category,
     scope,
     targetPackage,
+    channelId,
     scrollY: initialSession.view.scrollY,
   };
   const [sessionUnavailable, setSessionUnavailable] = useState(false);
@@ -173,7 +179,7 @@ export default function SamsungIntents() {
 
   useEffect(() => {
     setSessionUnavailable(!saveSession());
-  }, [group, query, category, scope, targetPackage, saveSession]);
+  }, [group, query, category, scope, targetPackage, channelId, saveSession]);
 
   useEffect(() => {
     const handleFailure = () => {
@@ -264,6 +270,10 @@ export default function SamsungIntents() {
     () =>
       [
         ...ACTIVITY_GROUPS,
+        ...APP_CONTROL_GROUPS.map((definition) => ({
+          ...definition,
+          sourceUrl: undefined,
+        })),
         ...SAMSUNG_SETTINGS_SECTIONS.map(([id, label, description]) => ({
           id: `samsung-section-${id}` as GroupSelection,
           label: `Samsung · ${label}`,
@@ -280,12 +290,18 @@ export default function SamsungIntents() {
   );
   const selectedGroup = groups.find((entry) => entry.id === group);
   const groupedResults = useMemo(() => {
-    if (isSettingsSectionGroup(group) && selectedGroup)
+    if (
+      (isSettingsSectionGroup(group) || isAppControlGroup(group)) &&
+      selectedGroup
+    )
       return [{ ...selectedGroup, items: filtered }].filter(
         (entry) => entry.items.length,
       );
     return groups
-      .filter((entry) => !isSettingsSectionGroup(entry.id))
+      .filter(
+        (entry) =>
+          !isSettingsSectionGroup(entry.id) && !isAppControlGroup(entry.id),
+      )
       .map((definition) => ({
         ...definition,
         items: filtered.filter((item) =>
@@ -467,12 +483,25 @@ export default function SamsungIntents() {
               >
                 <option value="all">All groups ({catalog.length})</option>
                 {groups
-                  .filter((entry) => !isSettingsSectionGroup(entry.id))
+                  .filter(
+                    (entry) =>
+                      !isSettingsSectionGroup(entry.id) &&
+                      !isAppControlGroup(entry.id),
+                  )
                   .map((entry) => (
                     <option value={entry.id} key={entry.id}>
                       {entry.label} ({entry.count})
                     </option>
                   ))}
+                <optgroup label="App controls">
+                  {groups
+                    .filter((entry) => isAppControlGroup(entry.id))
+                    .map((entry) => (
+                      <option key={entry.id} value={entry.id}>
+                        {entry.label} ({entry.count})
+                      </option>
+                    ))}
+                </optgroup>
                 <optgroup label="Samsung settings sections">
                   {groups
                     .filter((entry) => isSettingsSectionGroup(entry.id))
@@ -484,6 +513,34 @@ export default function SamsungIntents() {
                 </optgroup>
               </select>
             </label>
+          </div>
+          <div className="sl-app-control-groups">
+            <h3>App controls</h3>
+            <p className="sl-group-summary">
+              Set the target app below. If a direct permission or notification
+              screen is blocked, open App info and choose Permissions or
+              Notifications.
+            </p>
+            <div
+              className="sl-group-options"
+              role="group"
+              aria-label="App controls"
+            >
+              {groups
+                .filter((entry) => isAppControlGroup(entry.id))
+                .map((entry) => (
+                  <button
+                    key={entry.id}
+                    type="button"
+                    aria-pressed={group === entry.id}
+                    onClick={() => selectGroup(entry.id)}
+                  >
+                    <span>{entry.label}</span>
+                    <strong>{entry.count}</strong>
+                    <small>{entry.description}</small>
+                  </button>
+                ))}
+            </div>
           </div>
           <details className="sl-settings-section-picker" open>
             <summary>Samsung settings sections · choose one to render</summary>
@@ -519,7 +576,11 @@ export default function SamsungIntents() {
             aria-label="Activity types"
           >
             {groups
-              .filter((entry) => !isSettingsSectionGroup(entry.id))
+              .filter(
+                (entry) =>
+                  !isSettingsSectionGroup(entry.id) &&
+                  !isAppControlGroup(entry.id),
+              )
               .map((entry) => (
                 <button
                   key={entry.id}
@@ -631,6 +692,24 @@ export default function SamsungIntents() {
                 : "Enter a package such as com.samsung.android.app.notes."}
             </span>
           </div>
+          <div className="sl-app-target sl-channel-target">
+            <label htmlFor="sl-channel">
+              Notification channel ID (optional)
+            </label>
+            <input
+              id="sl-channel"
+              value={channelId}
+              onChange={(event) => setChannelId(event.target.value)}
+              maxLength={2000}
+              spellCheck={false}
+              placeholder="Actual channel ID from the app"
+              aria-describedby="sl-channel-help"
+            />
+            <span id="sl-channel-help">
+              Only needed for channel-specific notification settings. Leave
+              blank for all app notifications.
+            </span>
+          </div>
           <div className="sl-results-heading">
             <h2>
               {scope === "All shortcuts"
@@ -684,13 +763,24 @@ export default function SamsungIntents() {
                   </h3>
                   <div className="sl-grid">
                     {resultGroup.items.map((item) => {
-                      const disabled = Boolean(
-                        item.packageInput && !packageValid,
-                      );
+                      const disabledReason =
+                        item.packageInput && !packageValid
+                          ? "Enter a valid target app package first."
+                          : item.channelInput && !channelId.trim()
+                            ? "Enter the actual notification channel ID above."
+                            : "";
+                      const disabled = Boolean(disabledReason);
+                      const sourceUrl =
+                        item.sourceUrl ?? activityGroupInfo(item).sourceUrl;
                       const intent = disabled
                         ? ""
-                        : buildIntent(item, targetPackage);
-                      const key = launchKey(item, targetPackage);
+                        : buildIntent(
+                            item,
+                            targetPackage,
+                            undefined,
+                            channelId,
+                          );
+                      const key = launchKey(item, targetPackage, channelId);
                       const didFail = failed.includes(key);
                       const fallback = launchFallback(
                         window.location.href,
@@ -698,7 +788,7 @@ export default function SamsungIntents() {
                       );
                       const launch = disabled
                         ? undefined
-                        : buildIntent(item, targetPackage, fallback);
+                        : buildIntent(item, targetPackage, fallback, channelId);
                       const favourite = saved.favourites.includes(item.id);
                       return (
                         <article
@@ -748,9 +838,7 @@ export default function SamsungIntents() {
                               onClick={(event) => {
                                 if (disabled) {
                                   event.preventDefault();
-                                  setMessage(
-                                    "Enter a valid target app package first.",
-                                  );
+                                  setMessage(disabledReason);
                                   return;
                                 }
                                 if (!android) {
@@ -797,10 +885,10 @@ export default function SamsungIntents() {
                           <details className="sl-details">
                             <summary>Details &amp; ADB</summary>
                             <p>{item.description}</p>
-                            {activityGroupInfo(item).sourceUrl && (
+                            {sourceUrl && (
                               <p>
                                 <a
-                                  href={activityGroupInfo(item).sourceUrl}
+                                  href={sourceUrl}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
@@ -816,16 +904,35 @@ export default function SamsungIntents() {
                                 </code>
                               </p>
                             )}
+                            {item.channelInput && (
+                              <p>
+                                Channel:{" "}
+                                <code>
+                                  {channelId ||
+                                    "(enter the actual channel ID above)"}
+                                </code>
+                              </p>
+                            )}
                             <code className="sl-command">
                               {disabled
-                                ? "Enter a valid target package above."
-                                : buildAdbCommand(item, targetPackage)}
+                                ? disabledReason
+                                : buildAdbCommand(
+                                    item,
+                                    targetPackage,
+                                    channelId,
+                                  )}
                             </code>
                             <button
                               type="button"
                               disabled={disabled}
                               onClick={() =>
-                                void copy(buildAdbCommand(item, targetPackage))
+                                void copy(
+                                  buildAdbCommand(
+                                    item,
+                                    targetPackage,
+                                    channelId,
+                                  ),
+                                )
                               }
                             >
                               <Terminal size={15} aria-hidden="true" /> Copy ADB

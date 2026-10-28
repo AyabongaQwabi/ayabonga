@@ -15,10 +15,13 @@ test("catalog IDs are unique and every shortcut serializes", () => {
   );
   for (const item of SAMSUNG_SHORTCUTS) {
     assert.match(
-      buildIntent(item, "com.android.settings"),
+      buildIntent(item, "com.android.settings", undefined, "test-channel"),
       /^intent:.*#Intent;.+;end$/,
     );
-    assert.match(buildAdbCommand(item, "com.android.settings"), /^adb shell /);
+    assert.match(
+      buildAdbCommand(item, "com.android.settings", "test-channel"),
+      /^adb shell /,
+    );
   }
 });
 test("package data and extras use Android intent syntax", () => {

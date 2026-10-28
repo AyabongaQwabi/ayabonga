@@ -139,6 +139,12 @@ export function samsungSettingsSection(
     item.package === "com.android.settings" ||
     item.id.startsWith("samsung-sleeping-");
   if (!isSettings) return null;
+  if (
+    item.id.startsWith("app-controls-permission") ||
+    item.id === "app-controls-app-permissions" ||
+    item.id === "app-controls-settings-permissions"
+  )
+    return "apps";
   const text = `${item.name} ${item.action ?? ""} ${item.component ?? ""}`
     .replace(/[^a-z0-9]/gi, "")
     .toLowerCase();

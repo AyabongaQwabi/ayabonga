@@ -624,7 +624,7 @@
     "source": "android16",
     "availability": "documented",
     "packageInput": "data",
-    "description": "Android settings action; the matching screen depends on your device and browser."
+    "description": "Opens the selected app’s information page. Choose Permissions or Notifications inside it if a direct shortcut is restricted."
   },
   {
     "id": "action_ignore_battery_optimization_settings",

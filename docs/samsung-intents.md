@@ -2,11 +2,11 @@
 
 Route: `/samsung-intents`. Linked in the shared footer, HTML sitemap and XML sitemap/prerender route collector.
 
-The catalog now has 538 candidates in nine selectable groups. The default renders only Android settings actions; choosing another group mounts only that group's cards. “All groups” renders separate type sections. Category, search, favourites and recent filters apply inside the selected group. Group selection is saved with the session view.
+The catalog now has 566 candidates in nine selectable groups. The default renders only Android settings actions; choosing another group mounts only that group's cards. “All groups” renders separate type sections. Category, search, favourites and recent filters apply inside the selected group. Group selection is saved with the session view.
 
 | Group | Initial candidates |
 | --- | ---: |
-| Android settings actions | 128 |
+| Android settings actions | 156 |
 | Android settings activities (explicit AOSP components) | 164 |
 | Everyday Android activities | 30 |
 | Samsung apps | 35 |
@@ -66,3 +66,13 @@ The section picker is expanded by default and the same choices appear in a dedic
 `src/lib/samsung-settings-sections.ts` owns classification. Specific screens precede broad terms: SIM status goes to About phone, lock-screen notification appearance to Lock screen, accessibility screens to Accessibility, and battery/sleeping-app screens to Device care. Imported Settings components are classified too. Section IDs use `samsung-section-*` and are accepted by session-state validation, preserving selection, filters, failure marks and scrolling across refreshes.
 
 Run the prior tests plus `scripts/samsung-settings-sections.test.ts` (18 total unit checks). Browser regressions select all 23 section groups, compare mounted card counts, and verify section selection and failed-link marks after refresh. The section taxonomy is navigation organisation; it is not a claim that every section exists on every Galaxy model.
+
+## App controls
+
+Four overlapping, selectable app-control collections supplement the nine activity types and 23 Samsung sections: App management, App settings, App permissions, and App notification settings. They reuse existing entries rather than duplicate catalog IDs. App info appears in each collection as the fallback route to Permissions or Notifications.
+
+`src/data/app-control-intents.ts` adds 28 candidates: three permission-manager/app-permissions entry points, twelve permission-specific app lists, twelve permission-specific selected-app screens, and one channel-notification settings action. Names and extras are checked against [Android 16 Intent.java](https://github.com/aosp-mirror/platform_frameworks_base/blob/android16-release/core/java/android/content/Intent.java), [Settings.java](https://github.com/aosp-mirror/platform_frameworks_base/blob/android16-release/core/java/android/provider/Settings.java) and the [Settings API reference](https://developer.android.com/reference/android/provider/Settings). Internal permission screens are explicitly marked device-dependent; MANAGE_APP_PERMISSION and APP_PERMISSIONS_SETTINGS require privileged permissions and are expected to be blocked for an ordinary browser. These entries open management UIs; they do not grant, revoke or request runtime permissions on behalf of the website.
+
+The optional notification-channel input supplies `android.provider.extra.CHANNEL_ID`; the selected package uses `android.provider.extra.APP_PACKAGE`. Channel-specific links and copy controls remain disabled until a nonblank channel ID is entered. The ID is encoded as an intent string extra and quoted for both ADB shell layers. Channel-specific failure keys include the channel ID so a failed channel does not mark another channel red. Session validation preserves the optional channel and new collection selections, with an empty channel for older sessions.
+
+There are now 22 unit checks (add `scripts/app-control-intents.test.ts` to the previous command). Browser regressions cover each app-control collection, missing-channel validation, channel encoding, channel-specific failures and selection persistence. The full-site validation limitations described above still apply; the launcher builds as an isolated production entry.

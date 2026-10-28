@@ -1,4 +1,9 @@
 import {
+  isAppControlGroup,
+  matchesAppControlGroup,
+  type AppControlGroup,
+} from "./app-control-groups";
+import {
   isSettingsSectionGroup,
   samsungSettingsSection,
   type SettingsSectionGroup,
@@ -66,10 +71,12 @@ export const ACTIVITY_GROUPS = [
   },
 ] as const;
 export type ActivityGroupId = (typeof ACTIVITY_GROUPS)[number]["id"];
-export type GroupSelection = ActivityGroupId | SettingsSectionGroup | "all";
+export type GroupSelection =
+  ActivityGroupId | SettingsSectionGroup | AppControlGroup | "all";
 export function validActivityGroup(value: unknown): value is GroupSelection {
   return (
     value === "all" ||
+    isAppControlGroup(value) ||
     isSettingsSectionGroup(value) ||
     ACTIVITY_GROUPS.some((group) => group.id === value)
   );
@@ -95,6 +102,7 @@ export function matchesActivityGroup(
   group: GroupSelection,
 ): boolean {
   if (group === "all") return true;
+  if (isAppControlGroup(group)) return matchesAppControlGroup(item, group);
   if (isSettingsSectionGroup(group))
     return group === `samsung-section-${samsungSettingsSection(item)}`;
   return shortcutGroup(item) === group;

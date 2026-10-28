@@ -1,3 +1,4 @@
+import { APP_CONTROL_INTENTS } from "../data/app-control-intents";
 import settings from "../data/samsung-settings.json";
 import candidates from "../data/android-activity-candidates.json";
 import { ANDROID_COMMON_ACTIVITIES } from "../data/android-common-activities";
@@ -18,6 +19,9 @@ export type ActivityShortcut = {
   component?: string;
   data?: string;
   mimeType?: string;
+  sourceUrl?: string;
+  stringExtras?: Record<string, string>;
+  channelInput?: boolean;
   integerExtras?: Record<string, number>;
   packageInput?: "data" | "extra" | "intent-extra";
 };
@@ -111,6 +115,7 @@ function appShortcuts(
 
 export const SAMSUNG_SHORTCUTS: ActivityShortcut[] = [
   ...(settings as ActivityShortcut[]),
+  ...APP_CONTROL_INTENTS,
   ...(candidates as ActivityShortcut[]),
   ...ANDROID_COMMON_ACTIVITIES,
   ...["Sleeping apps", "Deep sleeping apps", "Never sleeping apps"].map(
@@ -176,9 +181,12 @@ export function buildIntent(
   shortcut: ActivityShortcut,
   targetPackage: string,
   fallbackUrl?: string,
+  channelId = "",
 ): string {
   if (shortcut.packageInput && !validPackage(targetPackage))
     throw new Error("Enter a valid Android package name.");
+  if (shortcut.channelInput && !channelId.trim())
+    throw new Error("Enter the actual notification channel ID.");
   const parts: string[] = [];
   let prefix = "intent:";
   const data =
@@ -209,6 +217,12 @@ export function buildIntent(
     parts.push(
       `S.android.intent.extra.PACKAGE_NAME=${encodeURIComponent(targetPackage)}`,
     );
+  for (const [key, value] of Object.entries(shortcut.stringExtras ?? {}))
+    parts.push(`S.${key}=${encodeURIComponent(value)}`);
+  if (shortcut.channelInput)
+    parts.push(
+      `S.android.provider.extra.CHANNEL_ID=${encodeURIComponent(channelId)}`,
+    );
   if (fallbackUrl)
     parts.push(`S.browser_fallback_url=${encodeURIComponent(fallbackUrl)}`);
   return `${prefix}#Intent;${parts.join(";")};end`;
@@ -217,9 +231,12 @@ const quoteShell = (value: string) => `'${value.replace(/'/g, `'"'"'`)}'`;
 export function buildAdbCommand(
   shortcut: ActivityShortcut,
   targetPackage: string,
+  channelId = "",
 ): string {
   if (shortcut.packageInput && !validPackage(targetPackage))
     throw new Error("Enter a valid Android package name.");
+  if (shortcut.channelInput && !channelId.trim())
+    throw new Error("Enter the actual notification channel ID.");
   const args = [
     "am start",
     "-a",
@@ -250,6 +267,14 @@ export function buildAdbCommand(
       "--es",
       "android.intent.extra.PACKAGE_NAME",
       quoteShell(targetPackage),
+    );
+  for (const [key, value] of Object.entries(shortcut.stringExtras ?? {}))
+    args.push("--es", quoteShell(key), quoteShell(value));
+  if (shortcut.channelInput)
+    args.push(
+      "--es",
+      "android.provider.extra.CHANNEL_ID",
+      quoteShell(channelId),
     );
   // Quote the remote command too: nested activity classes contain $.
   return `adb shell ${quoteShell(args.join(" "))}`;

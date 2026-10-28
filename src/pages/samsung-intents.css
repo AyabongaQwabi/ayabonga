@@ -948,3 +948,23 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.sl-app-control-groups {
+  margin-top: 20px;
+}
+.sl-app-control-groups h3 {
+  font-size: 15px;
+  color: var(--sl-gold);
+}
+.sl-app-control-groups .sl-group-options {
+  margin-top: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.sl-channel-target {
+  border-top: 0;
+}
+@media (max-width: 700px) {
+  .sl-app-control-groups .sl-group-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

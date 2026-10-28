@@ -17,6 +17,7 @@ export type LauncherView = {
   category: string;
   scope: LauncherScope;
   targetPackage: string;
+  channelId: string;
   scrollY: number;
 };
 export type LauncherSession = { failed: string[]; view: LauncherView };
@@ -26,6 +27,7 @@ const defaultView: LauncherView = {
   category: "All categories",
   scope: "All shortcuts",
   targetPackage: "com.android.settings",
+  channelId: "",
   scrollY: 0,
 };
 
@@ -57,6 +59,7 @@ export function readLaunchSession(
           ? value.scope
           : defaultView.scope,
         targetPackage: string(value?.targetPackage, defaultView.targetPackage),
+        channelId: string(value?.channelId, ""),
         scrollY:
           Number.isFinite(value?.scrollY) && value.scrollY >= 0
             ? value.scrollY
@@ -83,8 +86,11 @@ export function writeLaunchSession(
 export function launchKey(
   shortcut: ActivityShortcut,
   targetPackage: string,
+  channelId = "",
 ): string {
   // A failure for one app's notification screen must not mark another app's screen.
+  if (shortcut.channelInput)
+    return `${shortcut.id}:${targetPackage}:channel:${channelId}`;
   return shortcut.packageInput
     ? `${shortcut.id}:${targetPackage}`
     : shortcut.id;

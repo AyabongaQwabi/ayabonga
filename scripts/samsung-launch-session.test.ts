@@ -72,6 +72,7 @@ test("session round trip preserves failures, filters and scroll position", () =>
       category: "Connections",
       scope: "All shortcuts" as const,
       targetPackage: "com.example.app",
+      channelId: "",
       scrollY: 2400,
     },
   };
