@@ -53,6 +53,8 @@ import {
   writeLaunchSession,
   type LauncherScope as Scope,
 } from "../lib/samsung-launch-session";
+import { useSamsungTestResults } from "../hooks/useSamsungTestResults";
+import { SamsungTestResultsPanel } from "../components/SamsungTestResultsPanel";
 import "./samsung-intents.css";
 
 const STORAGE_KEY = "qwabi-samsung-launcher-v1";
@@ -142,6 +144,8 @@ export default function SamsungIntents() {
     () => [...SAMSUNG_SHORTCUTS, ...saved.custom],
     [saved.custom],
   );
+  const testResults = useSamsungTestResults(allShortcuts, { mode, group });
+  const recordResult = testResults.record;
   const catalog = useMemo(
     () =>
       allShortcuts
@@ -188,7 +192,12 @@ export default function SamsungIntents() {
   }, []);
 
   const markFailed = useCallback(
-    (key: string, value: boolean) => {
+    (
+      key: string,
+      value: boolean,
+      reason:
+        "did-not-open" | "wrong-screen" | "browser-fallback" = "did-not-open",
+    ) => {
       const next = failedRef.current.filter((id) => id !== key);
       if (value) {
         next.push(key);
@@ -198,8 +207,9 @@ export default function SamsungIntents() {
       failedRef.current = next.slice(-1500);
       setFailed(failedRef.current);
       setSessionUnavailable(!saveSession());
+      recordResult(key, value ? reason : "cleared");
     },
-    [saveSession],
+    [saveSession, recordResult],
   );
 
   useEffect(() => {
@@ -219,7 +229,7 @@ export default function SamsungIntents() {
     const handleFailure = () => {
       const key = failedLaunchKey(window.location.href);
       if (!key) return;
-      markFailed(key, true);
+      markFailed(key, true, "browser-fallback");
       const url = new URL(window.location.href);
       if (url.hash.startsWith("#intent-failed=")) url.hash = "";
       url.searchParams.delete("unavailable");
@@ -370,6 +380,7 @@ export default function SamsungIntents() {
     setManualCopy("");
   }
   function markWorked(key: string) {
+    const wasWorked = workedRef.current.includes(key);
     workedRef.current = workedRef.current.includes(key)
       ? workedRef.current.filter((id) => id !== key)
       : [...workedRef.current, key].slice(-1500);
@@ -377,6 +388,7 @@ export default function SamsungIntents() {
     setWorked(workedRef.current);
     setFailed(failedRef.current);
     setSessionUnavailable(!saveSession());
+    recordResult(key, wasWorked ? "cleared" : "worked");
   }
 
   function toggleFavourite(id: string) {
@@ -506,6 +518,7 @@ export default function SamsungIntents() {
             Reset failure marks
           </button>
         </div>
+        <SamsungTestResultsPanel results={testResults} />
         {(mode === "app" || mode === "advanced") && (
           <>
             <div className="sl-app-target">
@@ -869,6 +882,7 @@ export default function SamsungIntents() {
                                     return;
                                   }
                                   setSessionUnavailable(!saveSession());
+                                  recordResult(key, "opened");
                                   setSaved((old) => ({
                                     ...old,
                                     recent: [
@@ -898,7 +912,9 @@ export default function SamsungIntents() {
                               </button>
                               <button
                                 type="button"
-                                onClick={() => markFailed(key, true)}
+                                onClick={() =>
+                                  markFailed(key, true, "wrong-screen")
+                                }
                                 disabled={disabled}
                               >
                                 Wrong screen

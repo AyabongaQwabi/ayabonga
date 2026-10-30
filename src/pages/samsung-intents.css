@@ -1157,3 +1157,15 @@
 .sl-app-target {
   margin-bottom: 12px;
 }
+.sl-sharing { margin: 12px 0 22px; border: 1px solid var(--sl-line); border-radius: 7px; padding: 14px; background: #ffffff03; }
+.sl-sharing-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.sl-sharing h2 { font-size: 15px; font-weight: 500; }
+.sl-sharing p { font-size: 11px; line-height: 1.7; color: var(--sl-dim); margin: 5px 0; }
+.sl-sharing button { min-height: 40px; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.sl-sharing-heading>button { border-radius: 5px; background: var(--sl-gold); color: #0a192f; padding: 10px; text-decoration: none; flex: none; }
+.sl-sharing summary { padding: 10px 0; font-size: 12px; cursor: pointer; color: var(--sl-gold); }
+.sl-sharing label { font-size: 12px; color: var(--sl-dim); }
+.sl-sharing-device { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+.sl-sharing-device label { flex: 1; min-width: 180px; }
+.sl-sharing-device input { display: block; width: 100%; border: 1px solid var(--sl-line); border-radius: 4px; background: #060f20; color: var(--sl-ink); padding: 9px; margin-top: 5px; }
+.sl-sharing code { color: var(--sl-ink); word-break: break-all; }

@@ -45,6 +45,39 @@ export function localApiPlugin() {
       server.middlewares.use(async (req, res, next) => {
         const pathname = req.url?.split('?')[0];
 
+        if (pathname === "/api/samsung-intent-results") {
+          try {
+            hydrateProcessEnv(server.config.mode, server.config.root);
+            if (Number(req.headers["content-length"] || 0) > 200000) {
+              res.statusCode = 413;
+              res.end(JSON.stringify({ error: "Results batch too large" }));
+              return;
+            }
+            const raw = await readRequestBody(req);
+            const mod = await server.ssrLoadModule(
+              "/api/samsung-intent-results.ts",
+            );
+            const result = await mod.handleSamsungResults({
+              method: req.method,
+              headers: req.headers,
+              body: raw,
+            });
+            res.statusCode = result.status;
+            res.setHeader("Content-Type", "application/json");
+            res.setHeader("Cache-Control", "no-store");
+            res.end(JSON.stringify(result.body));
+          } catch {
+            res.statusCode = 500;
+            res.setHeader("Content-Type", "application/json");
+            res.end(
+              JSON.stringify({
+                error: "Results upload unavailable in local preview.",
+              }),
+            );
+          }
+          return;
+        }
+
         if (pathname === '/api/send') {
           if (req.method === 'OPTIONS') {
             res.statusCode = 204;
