@@ -7,7 +7,7 @@ import {
   decryptResults,
   RESULTS_PREFIX,
   type ResultsEnvelope,
-} from "../api/lib/samsung-results-store";
+} from "../api/lib/_samsung-results-store";
 import {
   validateResultsBatch,
   type SamsungResultsBatch,

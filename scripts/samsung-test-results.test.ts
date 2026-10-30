@@ -16,7 +16,7 @@ import { validateResultsBatch } from "../src/lib/samsung-test-results-schema";
 import {
   encryptResults,
   decryptResults,
-} from "../api/lib/samsung-results-store";
+} from "../api/lib/_samsung-results-store";
 import { handleSamsungResults } from "../api/samsung-intent-results";
 function batch() {
   return validateResultsBatch(
