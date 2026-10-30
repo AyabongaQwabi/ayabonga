@@ -6,7 +6,6 @@ import {
   Download,
   Search,
   Settings2,
-  Smartphone,
   Star,
   Terminal,
   Upload,
@@ -30,6 +29,14 @@ import {
   APP_CONTROL_GROUPS,
   isAppControlGroup,
 } from "../lib/app-control-groups";
+import {
+  LAUNCHER_MODES,
+  groupForMode,
+  isMisroutingAlias,
+  visibleInMode,
+  shortcutPriority,
+  type LauncherMode,
+} from "../lib/samsung-launcher-navigation";
 import { getLenis } from "../lib/lenis";
 import {
   ACTIVITY_GROUPS,
@@ -99,7 +106,10 @@ export default function SamsungIntents() {
       return readLaunchSession({ getItem: () => null });
     }
   });
-  const [group, setGroup] = useState<GroupSelection>(initialSession.view.group);
+  const [mode, setMode] = useState<LauncherMode>(initialSession.view.mode);
+  const [group, setGroup] = useState<GroupSelection>(() =>
+    groupForMode(initialSession.view.mode, initialSession.view.group),
+  );
   const [query, setQuery] = useState(initialSession.view.query);
   const [category, setCategory] = useState(initialSession.view.category);
   const [scope, setScope] = useState<Scope>(initialSession.view.scope);
@@ -109,8 +119,11 @@ export default function SamsungIntents() {
   const [channelId, setChannelId] = useState(initialSession.view.channelId);
   const [failed, setFailed] = useState(initialSession.failed);
   const failedRef = useRef(failed);
+  const [worked, setWorked] = useState(initialSession.worked);
+  const workedRef = useRef(worked);
   const viewRef = useRef(initialSession.view);
   viewRef.current = {
+    mode,
     group,
     query,
     category,
@@ -125,9 +138,16 @@ export default function SamsungIntents() {
   const [manualCopy, setManualCopy] = useState("");
   const [storageUnavailable, setStorageUnavailable] = useState(false);
   const [android, setAndroid] = useState(false);
-  const catalog = useMemo(
+  const allShortcuts = useMemo(
     () => [...SAMSUNG_SHORTCUTS, ...saved.custom],
     [saved.custom],
+  );
+  const catalog = useMemo(
+    () =>
+      allShortcuts
+        .filter((item) => visibleInMode(item, mode))
+        .sort((a, b) => shortcutPriority(a, mode) - shortcutPriority(b, mode)),
+    [allShortcuts, mode],
   );
   const categories = useMemo(
     () => [
@@ -158,6 +178,7 @@ export default function SamsungIntents() {
     try {
       stored = writeLaunchSession(window.sessionStorage, {
         failed: failedRef.current,
+        worked: workedRef.current,
         view: { ...viewRef.current, scrollY: window.scrollY },
       });
     } catch {
@@ -169,7 +190,11 @@ export default function SamsungIntents() {
   const markFailed = useCallback(
     (key: string, value: boolean) => {
       const next = failedRef.current.filter((id) => id !== key);
-      if (value) next.push(key);
+      if (value) {
+        next.push(key);
+        workedRef.current = workedRef.current.filter((id) => id !== key);
+        setWorked(workedRef.current);
+      }
       failedRef.current = next.slice(-1500);
       setFailed(failedRef.current);
       setSessionUnavailable(!saveSession());
@@ -179,7 +204,16 @@ export default function SamsungIntents() {
 
   useEffect(() => {
     setSessionUnavailable(!saveSession());
-  }, [group, query, category, scope, targetPackage, channelId, saveSession]);
+  }, [
+    mode,
+    group,
+    query,
+    category,
+    scope,
+    targetPackage,
+    channelId,
+    saveSession,
+  ]);
 
   useEffect(() => {
     const handleFailure = () => {
@@ -253,6 +287,8 @@ export default function SamsungIntents() {
         (category === "All categories" || item.category === category) &&
         (scope !== "Favourites" || saved.favourites.includes(item.id)) &&
         (scope !== "Recently tried" || saved.recent.includes(item.id)) &&
+        (scope !== "Worked" ||
+          worked.includes(launchKey(item, targetPackage, channelId))) &&
         words.every((word) =>
           `${item.name} ${item.category} ${item.action ?? ""} ${item.package ?? ""} ${item.component ?? ""} ${item.description}`
             .toLowerCase()
@@ -264,30 +300,43 @@ export default function SamsungIntents() {
         (a, b) => saved.recent.indexOf(a.id) - saved.recent.indexOf(b.id),
       );
     return list;
-  }, [catalog, group, category, query, saved.favourites, saved.recent, scope]);
+  }, [
+    catalog,
+    group,
+    category,
+    query,
+    saved.favourites,
+    saved.recent,
+    scope,
+    worked,
+    targetPackage,
+    channelId,
+  ]);
 
-  const groups = useMemo(
-    () =>
-      [
-        ...ACTIVITY_GROUPS,
-        ...APP_CONTROL_GROUPS.map((definition) => ({
-          ...definition,
-          sourceUrl: undefined,
-        })),
-        ...SAMSUNG_SETTINGS_SECTIONS.map(([id, label, description]) => ({
-          id: `samsung-section-${id}` as GroupSelection,
-          label: `Samsung · ${label}`,
-          description,
-          sourceUrl: undefined,
-        })),
-      ].map((definition) => ({
+  const groups = useMemo(() => {
+    const definitions =
+      mode === "phone"
+        ? SAMSUNG_SETTINGS_SECTIONS.map(([id, label, description]) => ({
+            id: `samsung-section-${id}` as GroupSelection,
+            label,
+            description,
+          }))
+        : mode === "app"
+          ? [...APP_CONTROL_GROUPS]
+          : mode === "apps"
+            ? ACTIVITY_GROUPS.filter((entry) =>
+                ["samsung-apps", "google-apps", "good-lock"].includes(entry.id),
+              )
+            : [...ACTIVITY_GROUPS];
+    return definitions
+      .map((definition) => ({
         ...definition,
         count: catalog.filter((item) =>
           matchesActivityGroup(item, definition.id),
         ).length,
-      })),
-    [catalog],
-  );
+      }))
+      .filter((entry) => entry.count > 0);
+  }, [catalog, mode]);
   const selectedGroup = groups.find((entry) => entry.id === group);
   const groupedResults = useMemo(() => {
     if (
@@ -298,10 +347,6 @@ export default function SamsungIntents() {
         (entry) => entry.items.length,
       );
     return groups
-      .filter(
-        (entry) =>
-          !isSettingsSectionGroup(entry.id) && !isAppControlGroup(entry.id),
-      )
       .map((definition) => ({
         ...definition,
         items: filtered.filter((item) =>
@@ -313,6 +358,25 @@ export default function SamsungIntents() {
   function selectGroup(value: GroupSelection) {
     setGroup(value);
     setCategory("All categories");
+  }
+
+  function selectMode(value: LauncherMode) {
+    setMode(value);
+    setGroup(groupForMode(value));
+    setCategory("All categories");
+    setQuery("");
+    setScope("All shortcuts");
+    setMessage("");
+    setManualCopy("");
+  }
+  function markWorked(key: string) {
+    workedRef.current = workedRef.current.includes(key)
+      ? workedRef.current.filter((id) => id !== key)
+      : [...workedRef.current, key].slice(-1500);
+    failedRef.current = failedRef.current.filter((id) => id !== key);
+    setWorked(workedRef.current);
+    setFailed(failedRef.current);
+    setSessionUnavailable(!saveSession());
   }
 
   function toggleFavourite(id: string) {
@@ -350,6 +414,7 @@ export default function SamsungIntents() {
     const added = merged.size - saved.custom.length;
     setSaved((old) => ({ ...old, custom: [...merged.values()] }));
     setImportText("");
+    setMode("advanced");
     setGroup("my-activities");
     setCategory("All categories");
     setScope("All shortcuts");
@@ -389,53 +454,28 @@ export default function SamsungIntents() {
         <link rel="canonical" href={absoluteUrl("/samsung-intents")} />
       </Helmet>
       <main id="main-content" className="samsung-launcher">
-        <header className="sl-hero">
-          <div>
-            <p className="sl-eyebrow">
-              <span className="sl-live-dot" /> QWABI / DEVICE TOOLS
-            </p>
-            <h1>
-              Your Galaxy.
-              <br />
-              <span>Fewer taps.</span>
-            </h1>
-            <p className="sl-intro">
-              A quick door into your Samsung apps, settings and activities. Find
-              a shortcut, make it a favourite, get on with your day.
-            </p>
-            <div className="sl-tags">
-              <span>Samsung Galaxy</span>
-              <span>Android shortcuts</span>
-              <span>{catalog.length} shortcuts</span>
-            </div>
-          </div>
-          <div className="sl-device" aria-hidden="true">
-            <Smartphone size={54} strokeWidth={1} />
-            <span>QUICK ACCESS</span>
-            <strong>
-              One place.
-              <br />
-              More control.
-            </strong>
-            <div className="sl-device-lines">
-              <i />
-              <i />
-              <i />
-            </div>
-          </div>
+        <header className="sl-heading">
+          <p className="sl-eyebrow">QWABI / PHONE TOOLS</p>
+          <h1>Samsung shortcuts</h1>
+          <p>Phone and app settings, in one place.</p>
         </header>
-
-        <div className="sl-notice">
-          <Smartphone size={20} aria-hidden="true" />
-          <p>
-            {android
-              ? "Tap Open to try a shortcut on this device."
-              : "Open this page on your Galaxy phone to launch shortcuts. You can browse and copy commands here."}{" "}
-            Many internal screens cannot open from a browser, even if installed.
-            Failed attempts turn red for this session; if nothing happens, tap
-            “Didn’t open”. Your position and filters stay in place.
-          </p>
-        </div>
+        <nav className="sl-task-nav" aria-label="What do you want to do?">
+          {LAUNCHER_MODES.map((entry) => (
+            <button
+              type="button"
+              key={entry.id}
+              aria-pressed={mode === entry.id}
+              onClick={() => selectMode(entry.id)}
+            >
+              {entry.label}
+            </button>
+          ))}
+        </nav>
+        <p className="sl-simple-notice">
+          {mode === "advanced"
+            ? "Reference archive: internal and historical intents may be missing, blocked or misrouted. Browser launch is disabled for reported Settings$ aliases."
+            : "Opening a screen does not confirm the destination. Mark Worked only if it is correct."}
+        </p>
         {storageUnavailable && (
           <p className="sl-feedback" role="status">
             Browser storage is unavailable. Favourites and imported activities
@@ -466,142 +506,122 @@ export default function SamsungIntents() {
             Reset failure marks
           </button>
         </div>
-        <section className="sl-group-picker" aria-labelledby="sl-group-title">
-          <div className="sl-group-picker-heading">
-            <div>
-              <p className="sl-eyebrow">CHOOSE WHAT TO RENDER</p>
-              <h2 id="sl-group-title">Choose a Samsung settings section</h2>
-            </div>
-            <label className="sl-group-select-label">
-              <span>Activity group</span>
+        {(mode === "app" || mode === "advanced") && (
+          <>
+            <div className="sl-app-target">
+              <Settings2 size={18} aria-hidden="true" />
+              <label htmlFor="sl-app-choice">App</label>
               <select
-                aria-label="Activity group"
-                value={group}
+                id="sl-app-choice"
+                value={
+                  [
+                    "com.android.settings",
+                    ...SAMSUNG_SHORTCUTS.filter(
+                      (item) => item.kind === "app",
+                    ).map((item) => item.package),
+                  ].includes(targetPackage)
+                    ? targetPackage
+                    : "__custom"
+                }
                 onChange={(event) =>
-                  selectGroup(event.target.value as GroupSelection)
+                  setTargetPackage(
+                    event.target.value === "__custom" ? "" : event.target.value,
+                  )
                 }
               >
-                <option value="all">All groups ({catalog.length})</option>
-                {groups
-                  .filter(
-                    (entry) =>
-                      !isSettingsSectionGroup(entry.id) &&
-                      !isAppControlGroup(entry.id),
-                  )
-                  .map((entry) => (
-                    <option value={entry.id} key={entry.id}>
-                      {entry.label} ({entry.count})
+                <option value="com.android.settings">Settings</option>
+                {SAMSUNG_SHORTCUTS.filter((item) => item.kind === "app").map(
+                  (item) => (
+                    <option key={item.id} value={item.package}>
+                      {item.name}
                     </option>
-                  ))}
-                <optgroup label="App controls">
-                  {groups
-                    .filter((entry) => isAppControlGroup(entry.id))
-                    .map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.label} ({entry.count})
-                      </option>
-                    ))}
-                </optgroup>
-                <optgroup label="Samsung settings sections">
-                  {groups
-                    .filter((entry) => isSettingsSectionGroup(entry.id))
-                    .map((entry) => (
-                      <option key={entry.id} value={entry.id}>
-                        {entry.label} ({entry.count})
-                      </option>
-                    ))}
-                </optgroup>
+                  ),
+                )}
+                <option value="__custom">Another app…</option>
               </select>
-            </label>
-          </div>
-          <div className="sl-app-control-groups">
-            <h3>App controls</h3>
-            <p className="sl-group-summary">
-              Set the target app below. If a direct permission or notification
-              screen is blocked, open App info and choose Permissions or
-              Notifications.
-            </p>
-            <div
-              className="sl-group-options"
-              role="group"
-              aria-label="App controls"
-            >
-              {groups
-                .filter((entry) => isAppControlGroup(entry.id))
-                .map((entry) => (
-                  <button
-                    key={entry.id}
-                    type="button"
-                    aria-pressed={group === entry.id}
-                    onClick={() => selectGroup(entry.id)}
-                  >
-                    <span>{entry.label}</span>
-                    <strong>{entry.count}</strong>
-                    <small>{entry.description}</small>
-                  </button>
-                ))}
+              <details
+                className="sl-package-details"
+                open={!validPackage(targetPackage) || undefined}
+              >
+                <summary>Package name</summary>
+                <input
+                  id="sl-package"
+                  aria-label="App package name"
+                  value={targetPackage}
+                  onChange={(event) =>
+                    setTargetPackage(event.target.value.trim())
+                  }
+                  spellCheck={false}
+                  aria-invalid={!packageValid}
+                />
+              </details>
             </div>
-          </div>
-          <details className="sl-settings-section-picker" open>
-            <summary>Samsung settings sections · choose one to render</summary>
-            <div
-              className="sl-settings-section-options"
-              role="group"
-              aria-label="Samsung settings sections"
+            {(mode === "advanced" ||
+              group === "app-controls-notifications") && (
+              <div className="sl-app-target sl-channel-target">
+                <label htmlFor="sl-channel">
+                  Notification channel ID (optional)
+                </label>
+                <input
+                  id="sl-channel"
+                  value={channelId}
+                  onChange={(event) => setChannelId(event.target.value)}
+                  maxLength={2000}
+                  spellCheck={false}
+                  placeholder="Actual channel ID from the app"
+                  aria-describedby="sl-channel-help"
+                />
+                <span id="sl-channel-help">
+                  Only needed for channel-specific notification settings. Leave
+                  blank for all app notifications.
+                </span>
+              </div>
+            )}
+          </>
+        )}
+
+        <section className="sl-task-controls" aria-label="Choose a destination">
+          <label className="sl-group-select-label">
+            <span>
+              {mode === "phone"
+                ? "Settings section"
+                : mode === "app"
+                  ? "What do you want to manage?"
+                  : mode === "apps"
+                    ? "App collection"
+                    : "Reference group"}
+            </span>
+            <select
+              aria-label="Activity group"
+              value={group}
+              onChange={(event) =>
+                selectGroup(event.target.value as GroupSelection)
+              }
             >
-              {groups
-                .filter((entry) => isSettingsSectionGroup(entry.id))
-                .map((entry) => (
-                  <button
-                    key={entry.id}
-                    type="button"
-                    aria-pressed={group === entry.id}
-                    onClick={() => selectGroup(entry.id)}
-                  >
-                    <span>{entry.label.replace("Samsung · ", "")}</span>
-                    <strong>{entry.count}</strong>
-                  </button>
-                ))}
-            </div>
-            <p className="sl-group-summary">
-              Each section combines its Android actions, explicit activities and
-              Samsung variants. A zero means this catalog has no entry for that
-              section yet; imported activities can add exact components from
-              your phone.
-            </p>
-          </details>
-          <div
-            className="sl-group-options"
-            role="group"
-            aria-label="Activity types"
-          >
-            {groups
-              .filter(
-                (entry) =>
-                  !isSettingsSectionGroup(entry.id) &&
-                  !isAppControlGroup(entry.id),
-              )
-              .map((entry) => (
-                <button
-                  key={entry.id}
-                  type="button"
-                  aria-pressed={group === entry.id}
-                  onClick={() => selectGroup(entry.id)}
-                >
-                  <span>{entry.label}</span>
-                  <strong>{entry.count}</strong>
-                  <small>{entry.description}</small>
-                </button>
+              {mode !== "app" && (
+                <option value="all">
+                  {mode === "phone" ? "All phone settings" : "All entries"}
+                </option>
+              )}
+              {groups.map((entry) => (
+                <option key={entry.id} value={entry.id}>
+                  {entry.label}
+                </option>
               ))}
-          </div>
-          <p className="sl-group-summary">
-            {selectedGroup
-              ? `${selectedGroup.label}: ${selectedGroup.count} candidates. Only this group is rendered.`
-              : `All ${catalog.length} candidates, separated by activity type.`}{" "}
-            Search and category filters apply within your selection. These are
-            unverified candidates, not a complete list of activities on your
-            phone.
-          </p>
+            </select>
+          </label>
+          {mode === "app" && (
+            <p>
+              Choose your app below. For permissions, open App info and then tap
+              Permissions if the direct screen is unavailable.
+            </p>
+          )}
+          {mode === "apps" && (
+            <p>
+              These apps must be installed. Android may block opening an app
+              from the browser.
+            </p>
+          )}
         </section>
         <section className="sl-directory" aria-label="Activity directory">
           <div className="sl-toolbar">
@@ -624,9 +644,11 @@ export default function SamsungIntents() {
                 </button>
               )}
             </label>
-            <a className="sl-import-link" href="#my-activities">
-              <Upload size={17} aria-hidden="true" /> Add activities
-            </a>
+            {mode === "advanced" && (
+              <a className="sl-import-link" href="#my-activities">
+                <Upload size={17} aria-hidden="true" /> Add activities
+              </a>
+            )}
           </div>
           <div className="sl-filter-row">
             <div
@@ -634,87 +656,59 @@ export default function SamsungIntents() {
               role="group"
               aria-label="Shortcut collection"
             >
-              {scopes.map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  aria-pressed={scope === value}
-                  onClick={() => setScope(value)}
-                >
-                  {value === "Favourites" && (
-                    <Star size={14} aria-hidden="true" />
-                  )}
-                  {value}
-                  {value === "Favourites" && (
-                    <span>{saved.favourites.length}</span>
-                  )}
-                </button>
-              ))}
-            </div>
-            <label className="sl-category">
-              <span className="sr-only">Category</span>
-              <select
-                aria-label="Category"
-                value={category}
-                onChange={(event) => setCategory(event.target.value)}
-              >
-                <option>All categories</option>
-                {categories.map((value) => (
-                  <option key={value}>{value}</option>
+              {scopes
+                .filter(
+                  (value) => mode === "advanced" || value !== "Recently tried",
+                )
+                .map((value) => (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={scope === value}
+                    onClick={() => setScope(value)}
+                  >
+                    {value === "Favourites" && (
+                      <Star size={14} aria-hidden="true" />
+                    )}
+                    {value === "All shortcuts"
+                      ? "All"
+                      : value === "Favourites"
+                        ? "Saved"
+                        : value}
+                    {value === "Favourites" && (
+                      <span>{saved.favourites.length}</span>
+                    )}
+                  </button>
                 ))}
-              </select>
-            </label>
-          </div>
-          <div className="sl-app-target">
-            <Settings2 size={18} aria-hidden="true" />
-            <label htmlFor="sl-package">Target app for per-app settings</label>
-            <input
-              id="sl-package"
-              spellCheck={false}
-              list="sl-packages"
-              value={targetPackage}
-              onChange={(event) => setTargetPackage(event.target.value.trim())}
-              aria-invalid={!packageValid}
-              aria-describedby="sl-package-help"
-            />
-            <datalist id="sl-packages">
-              {SAMSUNG_SHORTCUTS.filter((item) => item.kind === "app").map(
-                (item) => (
-                  <option key={item.id} value={item.package}>
-                    {item.name}
-                  </option>
-                ),
-              )}
-            </datalist>
-            <span id="sl-package-help">
-              {packageValid
-                ? "Used by shortcuts marked “Target app”."
-                : "Enter a package such as com.samsung.android.app.notes."}
-            </span>
-          </div>
-          <div className="sl-app-target sl-channel-target">
-            <label htmlFor="sl-channel">
-              Notification channel ID (optional)
-            </label>
-            <input
-              id="sl-channel"
-              value={channelId}
-              onChange={(event) => setChannelId(event.target.value)}
-              maxLength={2000}
-              spellCheck={false}
-              placeholder="Actual channel ID from the app"
-              aria-describedby="sl-channel-help"
-            />
-            <span id="sl-channel-help">
-              Only needed for channel-specific notification settings. Leave
-              blank for all app notifications.
-            </span>
+            </div>
+            {mode === "advanced" && (
+              <label className="sl-category">
+                <span className="sr-only">Category</span>
+                <select
+                  aria-label="Category"
+                  value={category}
+                  onChange={(event) => setCategory(event.target.value)}
+                >
+                  <option>All categories</option>
+                  {categories.map((value) => (
+                    <option key={value}>{value}</option>
+                  ))}
+                </select>
+              </label>
+            )}
           </div>
           <div className="sl-results-heading">
             <h2>
               {scope === "All shortcuts"
                 ? category === "All categories"
-                  ? (selectedGroup?.label ?? "All activity groups")
+                  ? (selectedGroup?.label ??
+                    (mode === "phone"
+                      ? "Phone settings"
+                      : mode === "apps"
+                        ? "Apps"
+                        : mode === "advanced"
+                          ? "Reference archive"
+                          : "App settings"))
                   : category
                 : scope}
             </h2>
@@ -741,7 +735,7 @@ export default function SamsungIntents() {
                   setQuery("");
                   setCategory("All categories");
                   setScope("All shortcuts");
-                  setGroup("all");
+                  setGroup(groupForMode(mode));
                 }}
               >
                 Show all shortcuts
@@ -759,7 +753,10 @@ export default function SamsungIntents() {
                     id={`sl-results-${resultGroup.id}`}
                   >
                     {resultGroup.label}
-                    <span>{resultGroup.items.length} candidates</span>
+                    <span>
+                      {resultGroup.items.length}{" "}
+                      {mode === "advanced" ? "references" : "shortcuts"}
+                    </span>
                   </h3>
                   <div className="sl-grid">
                     {resultGroup.items.map((item) => {
@@ -769,7 +766,20 @@ export default function SamsungIntents() {
                           : item.channelInput && !channelId.trim()
                             ? "Enter the actual notification channel ID above."
                             : "";
+                      const browserBlocked = Boolean(item.component);
+                      const misroutes = isMisroutingAlias(item);
                       const disabled = Boolean(disabledReason);
+                      const itemName =
+                        mode === "app" &&
+                        item.id === "action_application_details_settings" &&
+                        group === "app-controls-permissions"
+                          ? "App info → Permissions"
+                          : mode === "app" &&
+                              item.id ===
+                                "action_application_details_settings" &&
+                              group === "app-controls-notifications"
+                            ? "App info → Notifications"
+                            : item.name;
                       const sourceUrl =
                         item.sourceUrl ?? activityGroupInfo(item).sourceUrl;
                       const intent = disabled
@@ -782,6 +792,7 @@ export default function SamsungIntents() {
                           );
                       const key = launchKey(item, targetPackage, channelId);
                       const didFail = failed.includes(key);
+                      const didWork = worked.includes(key);
                       const fallback = launchFallback(
                         window.location.href,
                         key,
@@ -792,7 +803,7 @@ export default function SamsungIntents() {
                       const favourite = saved.favourites.includes(item.id);
                       return (
                         <article
-                          className={`sl-card ${didFail ? "sl-card-failed" : ""}`}
+                          className={`sl-card ${didFail ? "sl-card-failed" : ""} ${didWork ? "sl-card-worked" : ""}`}
                           key={item.id}
                           data-shortcut-id={item.id}
                         >
@@ -813,57 +824,111 @@ export default function SamsungIntents() {
                               />
                             </button>
                           </div>
-                          <h3>{item.name}</h3>
-                          <p className="sl-identifier">
-                            {item.component ?? item.package ?? item.action}
-                          </p>
+                          <h3>{itemName}</h3>
                           <div className="sl-card-meta">
                             <span>
                               {didFail
-                                ? "Didn’t open this session"
-                                : item.availability === "documented"
-                                  ? "Android action · untested"
-                                  : "Device dependent · untested"}
+                                ? "Not working on this phone"
+                                : didWork
+                                  ? "Worked · confirmed by you"
+                                  : browserBlocked
+                                    ? misroutes
+                                      ? "Reported wrong destination"
+                                      : "Native activity reference"
+                                    : "Not verified on this phone"}
                             </span>
                             {item.packageInput && <span>Target app</span>}
                           </div>
+                          {browserBlocked && (
+                            <p className="sl-alias-warning">
+                              {misroutes
+                                ? "Browser opening disabled: reported to show Connections."
+                                : "Native activity reference. Browser opening is disabled."}
+                            </p>
+                          )}
                           <div className="sl-card-actions">
-                            <a
-                              href={launch}
-                              className={
-                                didFail ? "sl-launch-failed" : undefined
-                              }
-                              aria-label={`${didFail ? "Retry" : "Open"} ${item.name}`}
-                              aria-disabled={disabled}
-                              onClick={(event) => {
-                                if (disabled) {
-                                  event.preventDefault();
-                                  setMessage(disabledReason);
-                                  return;
+                            {!browserBlocked && (
+                              <a
+                                href={launch}
+                                className={
+                                  didFail ? "sl-launch-failed" : undefined
                                 }
-                                if (!android) {
-                                  event.preventDefault();
-                                  setMessage(
-                                    "Launch this shortcut from your Samsung phone, or copy its ADB command in Details.",
-                                  );
-                                  return;
-                                }
-                                setSessionUnavailable(!saveSession());
-                                setSaved((old) => ({
-                                  ...old,
-                                  recent: [
-                                    item.id,
-                                    ...old.recent.filter(
-                                      (id) => id !== item.id,
-                                    ),
-                                  ].slice(0, 12),
-                                }));
-                                setMessage("");
-                              }}
-                            >
-                              {didFail ? "Retry" : "Open"}{" "}
-                              <ArrowUpRight size={17} aria-hidden="true" />
-                            </a>
+                                aria-label={`${didFail ? "Try again" : "Try opening"} ${item.name}`}
+                                aria-disabled={disabled}
+                                onClick={(event) => {
+                                  if (disabled) {
+                                    event.preventDefault();
+                                    setMessage(disabledReason);
+                                    return;
+                                  }
+                                  if (!android) {
+                                    event.preventDefault();
+                                    setMessage(
+                                      "Launch this shortcut from your Samsung phone, or copy its ADB command in Details.",
+                                    );
+                                    return;
+                                  }
+                                  setSessionUnavailable(!saveSession());
+                                  setSaved((old) => ({
+                                    ...old,
+                                    recent: [
+                                      item.id,
+                                      ...old.recent.filter(
+                                        (id) => id !== item.id,
+                                      ),
+                                    ].slice(0, 12),
+                                  }));
+                                  setMessage("");
+                                }}
+                              >
+                                {didFail ? "Try again" : "Try opening"}{" "}
+                                <ArrowUpRight size={17} aria-hidden="true" />
+                              </a>
+                            )}
+                          </div>
+                          {!browserBlocked && (
+                            <div className="sl-outcome-actions">
+                              <button
+                                type="button"
+                                onClick={() => markWorked(key)}
+                                disabled={disabled}
+                                aria-pressed={didWork}
+                              >
+                                Worked
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => markFailed(key, true)}
+                                disabled={disabled}
+                              >
+                                Wrong screen
+                              </button>
+                              <button
+                                type="button"
+                                className="sl-result-toggle"
+                                disabled={disabled}
+                                aria-label={`${didFail ? "Clear failure for" : "Mark as failed:"} ${item.name}`}
+                                onClick={() => markFailed(key, !didFail)}
+                              >
+                                {didFail ? "Clear failure mark" : "Didn’t open"}
+                              </button>
+                            </div>
+                          )}
+                          <details className="sl-details">
+                            <summary>Details &amp; ADB</summary>
+                            <p className="sl-identifier">
+                              {item.component ?? item.package ?? item.action}
+                            </p>
+                            {browserBlocked && (
+                              <p className="sl-feedback">
+                                {misroutes
+                                  ? "Reported to open Connections instead of the named screen on SM-A155F."
+                                  : "This component has not been verified as a browser-accessible destination."}{" "}
+                                Browser launch is disabled. The ADB command is a
+                                reference, not a verified destination.
+                              </p>
+                            )}
+                            <p>{item.description}</p>
                             <button
                               type="button"
                               disabled={disabled}
@@ -872,19 +937,6 @@ export default function SamsungIntents() {
                             >
                               <Copy size={15} aria-hidden="true" /> Copy intent
                             </button>
-                          </div>
-                          <button
-                            type="button"
-                            className="sl-result-toggle"
-                            disabled={disabled}
-                            aria-label={`${didFail ? "Clear failure for" : "Mark as failed:"} ${item.name}`}
-                            onClick={() => markFailed(key, !didFail)}
-                          >
-                            {didFail ? "Clear failure mark" : "Didn’t open"}
-                          </button>
-                          <details className="sl-details">
-                            <summary>Details &amp; ADB</summary>
-                            <p>{item.description}</p>
                             {sourceUrl && (
                               <p>
                                 <a
@@ -958,84 +1010,86 @@ export default function SamsungIntents() {
           )}
         </section>
 
-        <section
-          id="my-activities"
-          className="sl-import"
-          aria-labelledby="sl-import-title"
-        >
-          <div>
-            <p className="sl-eyebrow">MAKE IT YOURS</p>
-            <h2 id="sl-import-title">Add what’s on your phone.</h2>
-            <p>
-              Samsung’s full activity list changes with your model, carrier,
-              installed apps and firmware. Add exact components from your device
-              to extend this directory.
-            </p>
-            <details>
-              <summary>How to find activity components</summary>
+        {mode === "advanced" && (
+          <section
+            id="my-activities"
+            className="sl-import"
+            aria-labelledby="sl-import-title"
+          >
+            <div>
+              <p className="sl-eyebrow">MAKE IT YOURS</p>
+              <h2 id="sl-import-title">Add what’s on your phone.</h2>
               <p>
-                With an authorised ADB connection, this command lists launcher
-                activities, not every internal activity:
+                Samsung’s full activity list changes with your model, carrier,
+                installed apps and firmware. Add exact components from your
+                device to extend this directory.
               </p>
-              <code className="sl-command">
-                adb shell cmd package query-activities --brief -a
-                android.intent.action.MAIN -c android.intent.category.LAUNCHER
-              </code>
-              <button
-                type="button"
-                onClick={() =>
-                  void copy(
-                    "adb shell cmd package query-activities --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER",
-                  )
-                }
-              >
-                Copy discovery command
-              </button>
-              <p>
-                For deeper screens, inspect a package with{" "}
-                <code>adb shell dumpsys package com.android.settings</code> or
-                use an activity launcher on your phone. Paste exact
-                package/activity pairs below. Private or permission-protected
-                activities may still refuse to open.
-              </p>
-            </details>
-          </div>
-          <div>
-            <label htmlFor="sl-import-input">
-              One package/activity component per line
-            </label>
-            <textarea
-              id="sl-import-input"
-              spellCheck={false}
-              maxLength={200000}
-              value={importText}
-              onChange={(event) => setImportText(event.target.value)}
-              placeholder={
-                "com.android.settings/.Settings\ncom.example.app/.MainActivity"
-              }
-            />
-            <div className="sl-import-actions">
-              <button
-                type="button"
-                disabled={!importText.trim()}
-                onClick={addComponents}
-              >
-                <Upload size={16} aria-hidden="true" /> Import activities
-              </button>
-              <button
-                type="button"
-                disabled={!saved.custom.length}
-                onClick={exportComponents}
-              >
-                <Download size={16} aria-hidden="true" /> Export mine
-              </button>
+              <details>
+                <summary>How to find activity components</summary>
+                <p>
+                  With an authorised ADB connection, this command lists launcher
+                  activities, not every internal activity:
+                </p>
+                <code className="sl-command">
+                  adb shell cmd package query-activities --brief -a
+                  android.intent.action.MAIN -c android.intent.category.LAUNCHER
+                </code>
+                <button
+                  type="button"
+                  onClick={() =>
+                    void copy(
+                      "adb shell cmd package query-activities --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER",
+                    )
+                  }
+                >
+                  Copy discovery command
+                </button>
+                <p>
+                  For deeper screens, inspect a package with{" "}
+                  <code>adb shell dumpsys package com.android.settings</code> or
+                  use an activity launcher on your phone. Paste exact
+                  package/activity pairs below. Private or permission-protected
+                  activities may still refuse to open.
+                </p>
+              </details>
             </div>
-            <p className="sl-small">
-              Favourites and imports are saved in this browser. Imports replace
-              no system settings.
-            </p>
-          </div>
-        </section>
+            <div>
+              <label htmlFor="sl-import-input">
+                One package/activity component per line
+              </label>
+              <textarea
+                id="sl-import-input"
+                spellCheck={false}
+                maxLength={200000}
+                value={importText}
+                onChange={(event) => setImportText(event.target.value)}
+                placeholder={
+                  "com.android.settings/.Settings\ncom.example.app/.MainActivity"
+                }
+              />
+              <div className="sl-import-actions">
+                <button
+                  type="button"
+                  disabled={!importText.trim()}
+                  onClick={addComponents}
+                >
+                  <Upload size={16} aria-hidden="true" /> Import activities
+                </button>
+                <button
+                  type="button"
+                  disabled={!saved.custom.length}
+                  onClick={exportComponents}
+                >
+                  <Download size={16} aria-hidden="true" /> Export mine
+                </button>
+              </div>
+              <p className="sl-small">
+                Favourites and imports are saved in this browser. Imports
+                replace no system settings.
+              </p>
+            </div>
+          </section>
+        )}
 
         <details className="sl-help">
           <summary>

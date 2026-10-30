@@ -53,10 +53,7 @@ export function matchesAppControlGroup(
     return /permission|appops|overlay|writesettings|external(source|storage)|appusageaccess|usageaccess|unknownappsources|ignorebatteryoptimization|scheduleexactalarm|alarmsandremindersapp|appinteractacrossprofiles/.test(
       text,
     );
-  return (
-    Boolean(item.packageInput) ||
-    /applicationdetails|appinfo|appstorage|appbattery|appmemory|applocale|appopenbydefault|appusagesettings|appdashboard|useraspectratioapp/.test(
-      text,
-    )
+  return /applicationdetails|appinfo|appstorage|appbattery|appmemory|applocale|appopenbydefault|appusagesettings|ignorebackgrounddatarestrictions|appdashboard|useraspectratioapp/.test(
+    text,
   );
 }

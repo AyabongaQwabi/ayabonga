@@ -1,313 +1,208 @@
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
-const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5173";
-(async () => {
-  const browser = await chromium.launch({ headless: true, channel: "chrome" });
-  try {
-    for (const reducedMotion of ["reduce", "no-preference"]) {
-      const context = await browser.newContext({
-        viewport: { width: 390, height: 844 },
-        reducedMotion,
-        userAgent:
-          "Mozilla/5.0 (Linux; Android 16; SM-A155F) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36",
-      });
-      const page = await context.newPage();
-      const errors = [];
-      page.on("pageerror", (e) => errors.push(e.message));
-      await page.goto(`${baseUrl}/samsung-intents`);
-      await page
-        .getByRole("heading", { name: "Your Galaxy.", exact: false })
-        .waitFor();
-      await page.waitForTimeout(900);
-      await page
-        .getByLabel("Activity group", { exact: true })
-        .selectOption("samsung-apps");
-      await page.getByRole("searchbox").fill("Samsung");
-      await page
-        .getByLabel("Category", { exact: true })
-        .selectOption("Samsung apps");
-      const card = page.locator(".sl-card").nth(7);
-      await card.scrollIntoViewIfNeeded();
-      await page.waitForTimeout(250);
-      const id = await card.getAttribute("data-shortcut-id");
-      const before = await page.evaluate(() => {
-        window.__sameDocumentToken = Math.random();
-        return { y: window.scrollY, token: window.__sameDocumentToken };
-      });
-      const link = card.locator(".sl-card-actions a");
-      const uri = await link.getAttribute("href");
-      const fallback = decodeURIComponent(
-        uri.match(/S.browser_fallback_url=([^;]+)/)[1],
-      );
-      assert.ok(fallback.includes("#intent-failed="));
-      assert.ok(!fallback.includes("?unavailable="));
-      await link.evaluate((element) =>
-        element.addEventListener(
-          "click",
-          (event) => {
-            event.preventDefault();
-            const fallback = decodeURIComponent(
-              element.href.match(/S.browser_fallback_url=([^;]+)/)[1],
-            );
-            queueMicrotask(() => window.location.assign(fallback));
-          },
-          { capture: true, once: true },
-        ),
-      );
-      await link.click();
-      const failed = page.locator(`[data-shortcut-id="${id}"]`);
-      await failed.locator(".sl-launch-failed").waitFor();
-      await page.waitForTimeout(400);
-      const after = await page.evaluate(() => ({
-        y: window.scrollY,
-        token: window.__sameDocumentToken,
-      }));
-      assert.equal(before.token, after.token, "fallback must not reload");
-      assert.ok(
-        Math.abs(before.y - after.y) < 30,
-        `fallback scrolled: ${before.y} -> ${after.y}`,
-      );
-      assert.equal(await page.getByRole("searchbox").inputValue(), "Samsung");
-      assert.equal(
-        await page.getByLabel("Category", { exact: true }).inputValue(),
-        "Samsung apps",
-      );
-      const persistedY = after.y;
-      await page.reload();
-      await page
-        .getByRole("heading", { name: "Your Galaxy.", exact: false })
-        .waitFor();
-      await page.waitForTimeout(1100);
-      assert.equal(await page.getByRole("searchbox").inputValue(), "Samsung");
-      assert.equal(await page.locator(".sl-launch-failed").count(), 1);
-      const reloadedY = await page.evaluate(() => window.scrollY);
-      assert.ok(
-        Math.abs(reloadedY - persistedY) < 30,
-        `reload scrolled: ${persistedY} -> ${reloadedY}`,
-      );
-      await failed.getByRole("button", { name: /Clear failure for/ }).click();
-      assert.equal(await page.locator(".sl-launch-failed").count(), 0);
-      await failed.getByRole("button", { name: /Mark as failed:/ }).click();
-      assert.equal(await page.locator(".sl-launch-failed").count(), 1);
-      assert.equal(
-        await page.evaluate(
-          () => document.documentElement.scrollWidth <= innerWidth,
-        ),
-        true,
-      );
-      await page.getByRole("button", { name: "Reset failure marks" }).click();
-      assert.equal(await page.locator(".sl-launch-failed").count(), 0);
-      await page
-        .getByLabel("Activity group", { exact: true })
-        .selectOption("android-settings");
-      await page.getByRole("searchbox").fill("App info");
-      await page
-        .getByLabel("Category", { exact: true })
-        .selectOption("All categories");
-      await page
-        .getByRole("button", { name: /Mark as failed: App info/ })
-        .click();
-      assert.equal(await page.locator(".sl-launch-failed").count(), 1);
-      await page.locator("#sl-package").fill("com.samsung.android.app.notes");
-      assert.equal(await page.locator(".sl-launch-failed").count(), 0);
-      assert.deepEqual(errors, []);
-      console.log(
-        `PASS (${reducedMotion}): same document fallback, stable scroll ${Math.round(before.y)}px, filters, red status, reload restore, manual marking, reset and package-specific failures.`,
-      );
-      await context.close();
-    }
-    const fresh = await browser.newContext();
-    const p = await fresh.newPage();
-    await p.goto(`${baseUrl}/samsung-intents`);
-    await p
-      .getByRole("heading", { name: "Your Galaxy.", exact: false })
+const baseUrl = process.env.SAMSUNG_TEST_BASE_URL || "http://127.0.0.1:5190";
+const browser = await chromium.launch({ headless: true, channel: "chrome" });
+try {
+  for (const reducedMotion of ["reduce", "no-preference"]) {
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      reducedMotion,
+      userAgent:
+        "Mozilla/5.0 (Linux; Android 16; SM-A155F) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36",
+    });
+    const page = await context.newPage();
+    const errors = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    await page.goto(`${baseUrl}/samsung-intents`);
+    await page
+      .getByRole("heading", { name: "Samsung shortcuts", exact: true })
       .waitFor();
-    assert.equal(await p.locator(".sl-launch-failed").count(), 0);
-    assert.equal(await p.getByRole("searchbox").inputValue(), "");
-    const picker = p.getByLabel("Activity group", { exact: true });
-    assert.equal(await picker.inputValue(), "android-settings");
-    for (const id of [
-      "android-settings",
-      "android-components",
-      "android-common",
-      "samsung-apps",
-      "samsung-activities",
-      "samsung-legacy",
-      "good-lock",
-      "google-apps",
-      "my-activities",
-    ]) {
-      await picker.selectOption(id);
-      const label = await picker.locator(`option[value="${id}"]`).textContent();
-      const expected = Number(label.match(/\((\d+)\)$/)[1]);
-      assert.equal(
-        await p.locator(".sl-card").count(),
-        expected,
-        `${id} renders its own cards only`,
-      );
-      const sections = await p
-        .locator(".sl-group-results>section")
-        .evaluateAll((nodes) =>
-          nodes.map((node) => node.querySelector("h3").id),
-        );
-      assert.deepEqual(sections, expected ? [`sl-results-${id}`] : []);
-    }
-    await picker.selectOption("all");
-    const catalogCount = Number(
-      (await picker.locator('option[value="all"]').textContent()).match(
-        /\((\d+)\)$/,
-      )[1],
+    await page.waitForTimeout(850);
+    assert.equal(await page.locator(".sl-task-nav button").count(), 4);
+    assert.equal(await page.locator(".sl-group-picker").count(), 0);
+    assert.equal(await page.locator("#sl-app-choice").count(), 0);
+    assert.equal(
+      await page.locator('.sl-card-actions a[href*="component="]').count(),
+      0,
     );
-    assert.equal(await p.locator(".sl-card").count(), catalogCount);
-    assert.equal(await p.locator(".sl-group-results>section").count(), 8);
-    for (const id of [
-      "app-controls-management",
-      "app-controls-settings",
-      "app-controls-permissions",
-      "app-controls-notifications",
-    ]) {
-      await picker.selectOption(id);
-      const expected = Number(
-        (await picker.locator(`option[value="${id}"]`).textContent()).match(
-          /\((\d+)\)$/,
-        )[1],
-      );
-      assert.ok(expected > 0);
-      assert.equal(await p.locator(".sl-card").count(), expected);
-      assert.equal(await p.locator(".sl-group-results>section").count(), 1);
-    }
-    await picker.selectOption("app-controls-notifications");
-    await p.locator("#sl-package").fill("com.example.app");
-    const channelCard = p.locator(
+    assert.equal(await page.locator(".sl-card-worked").count(), 0);
+    await page
+      .getByLabel("Activity group", { exact: true })
+      .selectOption("samsung-section-connections");
+    const wifi = page.locator('[data-shortcut-id="action_wifi_settings"]');
+    await wifi.getByRole("button", { name: "Worked", exact: true }).click();
+    assert.equal(
+      await wifi.locator("..").locator(".sl-card-worked").count(),
+      1,
+    );
+    await wifi
+      .getByRole("button", { name: "Wrong screen", exact: true })
+      .click();
+    assert.ok((await wifi.getAttribute("class")).includes("sl-card-failed"));
+    assert.ok(!(await wifi.getAttribute("class")).includes("sl-card-worked"));
+    await wifi.getByRole("button", { name: "Worked", exact: true }).click();
+    assert.ok((await wifi.getAttribute("class")).includes("sl-card-worked"));
+    const card = page.locator(".sl-card").nth(3);
+    await card.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(200);
+    const id = await card.getAttribute("data-shortcut-id");
+    const before = await page.evaluate(() => {
+      window.__documentToken = Math.random();
+      return { y: scrollY, token: window.__documentToken };
+    });
+    await card.locator(".sl-card-actions a").evaluate((element) =>
+      element.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          const fallback = decodeURIComponent(
+            element.href.match(/S.browser_fallback_url=([^;]+)/)[1],
+          );
+          queueMicrotask(() => location.assign(fallback));
+        },
+        { capture: true, once: true },
+      ),
+    );
+    await card.locator(".sl-card-actions a").click();
+    await page
+      .locator(`[data-shortcut-id="${id}"] .sl-launch-failed`)
+      .waitFor();
+    await page.waitForTimeout(300);
+    const after = await page.evaluate(() => ({
+      y: scrollY,
+      token: window.__documentToken,
+    }));
+    assert.equal(before.token, after.token);
+    assert.ok(Math.abs(before.y - after.y) < 35);
+    await page.reload();
+    await page
+      .getByRole("heading", { name: "Samsung shortcuts", exact: true })
+      .waitFor();
+    await page.waitForTimeout(1000);
+    assert.equal(
+      await page.getByLabel("Activity group", { exact: true }).inputValue(),
+      "samsung-section-connections",
+    );
+    assert.ok(Math.abs((await page.evaluate(() => scrollY)) - after.y) < 35);
+    assert.ok((await wifi.getAttribute("class")).includes("sl-card-worked"));
+    await page
+      .getByRole("button", { name: "Worked", exact: true })
+      .first()
+      .click();
+    assert.equal(await page.locator(".sl-card").count(), 1);
+    await page
+      .getByRole("button", { name: "Manage an app", exact: true })
+      .click();
+    await page
+      .locator("#sl-app-choice")
+      .selectOption("com.samsung.android.app.notes");
+    const appInfo = page.locator(
+      '[data-shortcut-id="action_application_details_settings"]',
+    );
+    assert.match(
+      await appInfo.locator(".sl-card-actions a").getAttribute("href"),
+      /^intent:com.samsung.android.app.notes#Intent;scheme=package/,
+    );
+    await page
+      .getByLabel("Activity group", { exact: true })
+      .selectOption("app-controls-permissions");
+    await page
+      .getByRole("heading", { name: "App info → Permissions", exact: true })
+      .waitFor();
+    assert.equal(
+      await page
+        .locator('[data-shortcut-id="app-controls-permission-app-camera"]')
+        .count(),
+      0,
+    );
+    await page
+      .getByLabel("Activity group", { exact: true })
+      .selectOption("app-controls-notifications");
+    const channel = page.locator(
       '[data-shortcut-id="app-controls-notification-channel"]',
     );
     assert.equal(
-      await channelCard
-        .locator(".sl-card-actions a")
-        .getAttribute("aria-disabled"),
+      await channel.locator(".sl-card-actions a").getAttribute("aria-disabled"),
       "true",
     );
-    await p.locator("#sl-channel").fill("news;special");
-    const channelIntent = await channelCard
-      .locator(".sl-card-actions a")
-      .getAttribute("href");
-    assert.ok(
-      channelIntent.includes(
-        "S.android.provider.extra.APP_PACKAGE=com.example.app;",
-      ),
+    await page.locator("#sl-channel").fill("news;special");
+    assert.match(
+      await channel.locator(".sl-card-actions a").getAttribute("href"),
+      /CHANNEL_ID=news%3Bspecial;/,
     );
-    assert.ok(
-      channelIntent.includes(
-        "S.android.provider.extra.CHANNEL_ID=news%3Bspecial;",
-      ),
-    );
-    await channelCard.getByRole("button", { name: /Mark as failed:/ }).click();
-    assert.equal(await channelCard.locator(".sl-launch-failed").count(), 1);
-    await p.locator("#sl-channel").fill("a-different-channel");
-    assert.equal(await channelCard.locator(".sl-launch-failed").count(), 0);
-    await p.reload();
-    await p
-      .getByRole("heading", { name: "Your Galaxy.", exact: false })
-      .waitFor();
-    assert.equal(await picker.inputValue(), "app-controls-notifications");
-    assert.equal(
-      await p.locator("#sl-channel").inputValue(),
-      "a-different-channel",
-    );
-    console.log(
-      "PASS: all four app control collections, notification channel validation/encoding, channel-specific failure marks and refreshed channel selection.",
-    );
-    const sectionOptions = await picker
-      .locator('option[value^="samsung-section-"]')
-      .evaluateAll((nodes) =>
-        nodes.map((node) => ({
-          id: node.value,
-          count: Number(node.textContent.match(/\((\d+)\)$/)[1]),
-        })),
-      );
-    assert.equal(sectionOptions.length, 23);
-    for (const section of sectionOptions) {
-      await picker.selectOption(section.id);
-      assert.equal(
-        await p.locator(".sl-card").count(),
-        section.count,
-        section.id,
-      );
-      assert.equal(
-        await p.locator(".sl-group-results>section").count(),
-        section.count ? 1 : 0,
-      );
-    }
-    await picker.selectOption("samsung-section-connections");
-    const connectionCard = p.locator(".sl-card").first();
-    await connectionCard
-      .getByRole("button", { name: /Mark as failed:/ })
+    await channel
+      .getByRole("button", { name: "Wrong screen", exact: true })
       .click();
-    await p.reload();
-    await p
-      .getByRole("heading", { name: "Your Galaxy.", exact: false })
-      .waitFor();
-    assert.equal(await picker.inputValue(), "samsung-section-connections");
-    assert.equal(await p.locator(".sl-launch-failed").count(), 1);
-    await p.getByRole("button", { name: "Reset failure marks" }).click();
-    assert.equal(await p.locator(".sl-launch-failed").count(), 0);
-    console.log(
-      "PASS: all 23 Samsung settings sections render only their candidates; section selection and red failures survive refresh.",
+    assert.ok((await channel.getAttribute("class")).includes("sl-card-failed"));
+    await page.locator("#sl-channel").fill("another");
+    assert.ok(
+      !(await channel.getAttribute("class")).includes("sl-card-failed"),
     );
-    await p
+    await page.getByRole("button", { name: "Advanced", exact: true }).click();
+    await page
+      .getByLabel("Activity group", { exact: true })
+      .selectOption("android-components");
+    assert.ok((await page.locator(".sl-card").count()) > 100);
+    assert.equal(await page.locator(".sl-card-actions a").count(), 0);
+    assert.ok((await page.locator(".sl-alias-warning").count()) > 100);
+    await page
       .getByLabel("One package/activity component per line")
-      .fill("com.example.first/.Main\ncom.example.second/.Main");
-    await p
+      .fill(
+        "com.android.settings/.Settings$WifiSettingsActivity\ncom.example.app/.MainActivity",
+      );
+    await page
       .getByRole("button", { name: "Import activities", exact: true })
       .click();
-    assert.equal(await picker.inputValue(), "my-activities");
-    assert.equal(await p.locator(".sl-card").count(), 2);
-    await p
-      .getByLabel("Category", { exact: true })
-      .selectOption("com.example.first");
-    assert.equal(await p.locator(".sl-card").count(), 1);
-    await p.reload();
-    await p
-      .getByRole("heading", { name: "Your Galaxy.", exact: false })
-      .waitFor();
-    assert.equal(await picker.inputValue(), "my-activities");
-    assert.equal(
-      await p.getByLabel("Category", { exact: true }).inputValue(),
-      "com.example.first",
-    );
-    assert.equal(await p.locator(".sl-card").count(), 1);
-    console.log(
-      "PASS: nine selectable groups, exact per-group DOM counts, All groups sections and imported-package filtering persist on reload.",
-    );
-    await fresh.close();
-    const denied = await browser.newContext();
-    await denied.addInitScript(() =>
-      Object.defineProperty(window, "sessionStorage", {
-        get() {
-          throw new Error("blocked");
-        },
-      }),
-    );
-    const d = await denied.newPage();
-    await d.goto(`${baseUrl}/samsung-intents`);
-    await d
-      .getByText("Session storage is unavailable.", { exact: false })
-      .waitFor();
-    await d
-      .getByRole("button", {
-        name: "Mark as failed: All settings",
-        exact: true,
-      })
+    assert.equal(await page.locator(".sl-card").count(), 2);
+    assert.equal(await page.locator(".sl-card-actions a").count(), 0);
+    await page
+      .getByRole("button", { name: "Open an app", exact: true })
       .click();
-    assert.equal(await d.locator(".sl-launch-failed").count(), 1);
-    console.log(
-      "PASS: fresh browser sessions clear marks; denied session storage still permits manual failure marking.",
+    assert.ok((await page.locator(".sl-card").count()) > 20);
+    assert.equal(
+      await page.locator('.sl-card-actions a[href*="component="]').count(),
+      0,
     );
-    await denied.close();
-  } finally {
-    await browser.close();
+    assert.equal(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+      true,
+    );
+    await page
+      .getByRole("button", { name: "Phone settings", exact: true })
+      .click();
+    await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+    await page.waitForTimeout(150);
+    await page.screenshot({ path: `../task-first-${reducedMotion}.png` });
+    assert.deepEqual(errors, []);
+    console.log(
+      `PASS ${reducedMotion}: task navigation, no normal aliases, explicit success/wrong-screen marks, stable fallback/reload scroll, app picker, permission fallback, channels and non-launchable alias imports.`,
+    );
+    await context.close();
   }
-})().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+  const denied = await browser.newContext();
+  await denied.addInitScript(() =>
+    Object.defineProperty(window, "sessionStorage", {
+      get() {
+        throw new Error("blocked");
+      },
+    }),
+  );
+  const p = await denied.newPage();
+  await p.goto(`${baseUrl}/samsung-intents`);
+  await p
+    .getByText("Session storage is unavailable.", { exact: false })
+    .waitFor();
+  await p
+    .locator('[data-shortcut-id="action_wifi_settings"]')
+    .getByRole("button", { name: "Worked", exact: true })
+    .click();
+  assert.equal(await p.locator(".sl-card-worked").count(), 1);
+  await denied.close();
+  console.log(
+    "PASS: denied session storage leaves manual result tracking usable.",
+  );
+} finally {
+  await browser.close();
+}

@@ -1,3 +1,7 @@
+import {
+  validLauncherMode,
+  type LauncherMode,
+} from "./samsung-launcher-navigation";
 import type { ActivityShortcut } from "./samsung-intents";
 import {
   validActivityGroup,
@@ -9,9 +13,11 @@ export const launcherScopes = [
   "All shortcuts",
   "Favourites",
   "Recently tried",
+  "Worked",
 ] as const;
 export type LauncherScope = (typeof launcherScopes)[number];
 export type LauncherView = {
+  mode: LauncherMode;
   group: GroupSelection;
   query: string;
   category: string;
@@ -20,8 +26,13 @@ export type LauncherView = {
   channelId: string;
   scrollY: number;
 };
-export type LauncherSession = { failed: string[]; view: LauncherView };
+export type LauncherSession = {
+  failed: string[];
+  worked: string[];
+  view: LauncherView;
+};
 const defaultView: LauncherView = {
+  mode: "phone",
   group: "android-settings",
   query: "",
   category: "All categories",
@@ -37,6 +48,7 @@ export function readLaunchSession(
   try {
     const parsed = JSON.parse(storage.getItem(LAUNCH_SESSION_KEY) ?? "null");
     const value = parsed?.view;
+    const currentNavigation = validLauncherMode(value?.mode);
     const string = (input: unknown, fallback: string) =>
       typeof input === "string" ? input.slice(0, 2000) : fallback;
     return {
@@ -49,25 +61,40 @@ export function readLaunchSession(
             ),
           ].slice(-1500)
         : [],
+      worked: Array.isArray(parsed?.worked)
+        ? [
+            ...new Set<string>(
+              parsed.worked.filter(
+                (key: unknown) => typeof key === "string" && key.length <= 2000,
+              ),
+            ),
+          ].slice(-1500)
+        : [],
       view: {
+        mode: validLauncherMode(value?.mode) ? value.mode : "phone",
         group: validActivityGroup(value?.group)
           ? value.group
           : defaultView.group,
-        query: string(value?.query, defaultView.query),
-        category: string(value?.category, defaultView.category),
-        scope: launcherScopes.includes(value?.scope)
-          ? value.scope
-          : defaultView.scope,
+        query: currentNavigation ? string(value?.query, defaultView.query) : "",
+        category: currentNavigation
+          ? string(value?.category, defaultView.category)
+          : "All categories",
+        scope:
+          currentNavigation && launcherScopes.includes(value?.scope)
+            ? value.scope
+            : defaultView.scope,
         targetPackage: string(value?.targetPackage, defaultView.targetPackage),
         channelId: string(value?.channelId, ""),
         scrollY:
-          Number.isFinite(value?.scrollY) && value.scrollY >= 0
+          currentNavigation &&
+          Number.isFinite(value?.scrollY) &&
+          value.scrollY >= 0
             ? value.scrollY
             : 0,
       },
     };
   } catch {
-    return { failed: [], view: { ...defaultView } };
+    return { failed: [], worked: [], view: { ...defaultView } };
   }
 }
 

@@ -1,5 +1,7 @@
 # Samsung activity launcher
 
+> Current interface: Phone settings / Manage an app / Open an app / Advanced. The 566-entry source catalog is retained as an Advanced reference archive; it is no longer presented as a list of working phone shortcuts.
+
 Route: `/samsung-intents`. Linked in the shared footer, HTML sitemap and XML sitemap/prerender route collector.
 
 The catalog now has 566 candidates in nine selectable groups. The default renders only Android settings actions; choosing another group mounts only that group's cards. “All groups” renders separate type sections. Category, search, favourites and recent filters apply inside the selected group. Group selection is saved with the session view.
@@ -76,3 +78,13 @@ Four overlapping, selectable app-control collections supplement the nine activit
 The optional notification-channel input supplies `android.provider.extra.CHANNEL_ID`; the selected package uses `android.provider.extra.APP_PACKAGE`. Channel-specific links and copy controls remain disabled until a nonblank channel ID is entered. The ID is encoded as an intent string extra and quoted for both ADB shell layers. Channel-specific failure keys include the channel ID so a failed channel does not mark another channel red. Session validation preserves the optional channel and new collection selections, with an empty channel for older sessions.
 
 There are now 22 unit checks (add `scripts/app-control-intents.test.ts` to the previous command). Browser regressions cover each app-control collection, missing-channel validation, channel encoding, channel-specific failures and selection persistence. The full-site validation limitations described above still apply; the launcher builds as an isolated production entry.
+
+## Task navigation and reported incorrect destinations
+
+After an SM-A155F user reported that nearly all `*.Settings$…` component entries opened Connections rather than the named screen, these aliases were removed from all normal modes and their browser launch controls disabled in Advanced. All other unverified explicit components are also reference-only in the browser. Imported components matching the same pattern are also blocked. Copyable references and ADB commands remain available, explicitly unverified. The report is recorded as a device observation, not asserted as universal Android behavior.
+
+`src/lib/samsung-launcher-navigation.ts` owns the four modes, the small allowlist of standard action shortcuts and the alias detection. Phone settings groups the standard actions by settings section. Manage an app uses a named app picker followed by one task selector; app information is the fallback for Permissions and Notifications. Open an app lists package targets with no installed-app or compatibility claim. Advanced retains internal actions, historical components, import/export and technical references. Empty sections are omitted. Technical intent identifiers and Copy actions are inside Details.
+
+The session now records explicit user-confirmed `worked` keys alongside failed keys. Opening or leaving the browser never marks success. Worked toggles a green confirmation, Wrong screen and Didn’t open mark red and clear green, and the Worked filter lists only confirmed shortcuts in the current task. Existing session data without the new mode resets old query/scroll navigation while preserving failure history, favourites and imports. Channel and package scoping remain in effect.
+
+There are 26 unit checks including `scripts/samsung-launcher-navigation.test.ts`. The browser regression script now follows the four task journeys, guards against normal-mode component aliases and browser-launchable Settings$ imports, checks explicit outcome changes, per-app fallbacks, channel scoping, and scroll/session restoration with smooth motion both enabled and disabled. Actual device launches remain outside browser simulation coverage.
