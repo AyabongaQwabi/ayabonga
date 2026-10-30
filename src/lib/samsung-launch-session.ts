@@ -14,6 +14,8 @@ export const launcherScopes = [
   "Favourites",
   "Recently tried",
   "Worked",
+  "Failed",
+  "Untested",
 ] as const;
 export type LauncherScope = (typeof launcherScopes)[number];
 export type LauncherView = {

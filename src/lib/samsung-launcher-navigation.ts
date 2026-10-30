@@ -91,6 +91,7 @@ export function groupForMode(
   mode: LauncherMode,
   saved?: GroupSelection,
 ): GroupSelection {
+  if (saved === "all") return "all";
   if (mode === "phone")
     return saved && isSettingsSectionGroup(saved) ? saved : "all";
   if (mode === "app")

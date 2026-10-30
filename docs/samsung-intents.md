@@ -110,3 +110,11 @@ A report code resolves the submitting browser, including all its uploaded batche
 For the actual phone: keep the tested tab open, refresh that same tab on the same origin/browser after deployment, then tap Share and provide the report code. A website cannot read another phone remotely or recover already-cleared session storage. If old marks are gone, only remaining local logs/backups or new tests can supply them.
 
 There are 32 unit checks including `scripts/samsung-test-results.test.ts`. `scripts/samsung-test-results.browser-test.mjs` covers seeded legacy recovery, no unrelated-storage collection, consent, failed uploads, downloads, acknowledgements, automatic future sync, durable history after session clearing, and pausing. The live encrypted-storage round trip was verified with a synthetic record that was then deleted; no physical-phone data is claimed to have been uploaded by that check.
+
+## Activity manager controls
+
+The overview counts the current collection (Phone settings, Manage an app, Open an app or Advanced), using the selected package and channel for targeted results. Clicking a count clears the group/search filters and shows that status. Worked, Failed and Untested collections are available alongside favourites and recent launches. An attempt is never treated as a confirmed success.
+
+Sort within destination groups by recommendation, name, recent attempts or working status. Compact view and sorting persist in local storage under `qwabi-activity-manager-options-v1`. Export CSV downloads the currently filtered directory with status and identifiers; the separate JSON download preserves the complete test log. Details & ADB includes the last five recorded events for that exact target, with recovered marks identified separately.
+
+Worked/failed marks restore from the durable local result ledger when a browser session ends. Clearing a failure also records a cleared event so it stays cleared after restoration. These are browser-local compatibility results, not a claim that a particular activity is installed, exported, or available on every phone.

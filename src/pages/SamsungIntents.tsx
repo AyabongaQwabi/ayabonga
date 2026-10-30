@@ -55,6 +55,8 @@ import {
 } from "../lib/samsung-launch-session";
 import { useSamsungTestResults } from "../hooks/useSamsungTestResults";
 import { SamsungTestResultsPanel } from "../components/SamsungTestResultsPanel";
+import { readResults } from "../lib/samsung-test-results";
+import { activityCsv, activityStatus, restoreActivityResults, type ActivitySort } from "../lib/samsung-activity-manager";
 import "./samsung-intents.css";
 
 const STORAGE_KEY = "qwabi-samsung-launcher-v1";
@@ -103,11 +105,22 @@ export default function SamsungIntents() {
   const [initialSession] = useState(() => {
     // Accessing sessionStorage itself can throw in restricted browser modes.
     try {
-      return readLaunchSession(window.sessionStorage);
+      const session = readLaunchSession(window.sessionStorage);
+      try { return restoreActivityResults(session, readResults(window.localStorage).events); }
+      catch { return session; }
     } catch {
       return readLaunchSession({ getItem: () => null });
     }
   });
+  const [managerOptions, setManagerOptions] = useState<{ compact: boolean; sort: ActivitySort }>(() => {
+    try {
+      const value = JSON.parse(localStorage.getItem("qwabi-activity-manager-options-v1") ?? "null");
+      return { compact: value?.compact === true, sort: ["recommended", "name", "recent", "status"].includes(value?.sort) ? value.sort : "recommended" };
+    } catch { return { compact: false, sort: "recommended" }; }
+  });
+  useEffect(() => {
+    try { localStorage.setItem("qwabi-activity-manager-options-v1", JSON.stringify(managerOptions)); } catch { /* Optional view preferences. */ }
+  }, [managerOptions]);
   const [mode, setMode] = useState<LauncherMode>(initialSession.view.mode);
   const [group, setGroup] = useState<GroupSelection>(() =>
     groupForMode(initialSession.view.mode, initialSession.view.group),
@@ -146,6 +159,14 @@ export default function SamsungIntents() {
   );
   const testResults = useSamsungTestResults(allShortcuts, { mode, group });
   const recordResult = testResults.record;
+  const resultEvents = testResults.ledger.events;
+  const activityHistory = useMemo(() => {
+    const index = new Map<string, typeof resultEvents>();
+    for (const event of resultEvents) {
+      index.set(event.launchKey, [...(index.get(event.launchKey) ?? []).slice(-4), event]);
+    }
+    return index;
+  }, [resultEvents]);
   const catalog = useMemo(
     () =>
       allShortcuts
@@ -289,6 +310,11 @@ export default function SamsungIntents() {
     };
   }, [initialSession]);
 
+  const managerCounts = useMemo(() => catalog.reduce((counts, item) => {
+    counts[activityStatus(launchKey(item, targetPackage, channelId), worked, failed)]++;
+    return counts;
+  }, { worked: 0, failed: 0, untested: 0 }), [catalog, worked, failed, targetPackage, channelId]);
+
   const filtered = useMemo(() => {
     const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
     let list = catalog.filter(
@@ -299,19 +325,28 @@ export default function SamsungIntents() {
         (scope !== "Recently tried" || saved.recent.includes(item.id)) &&
         (scope !== "Worked" ||
           worked.includes(launchKey(item, targetPackage, channelId))) &&
+        (scope !== "Failed" || failed.includes(launchKey(item, targetPackage, channelId))) &&
+        (scope !== "Untested" || activityStatus(launchKey(item, targetPackage, channelId), worked, failed) === "untested") &&
         words.every((word) =>
           `${item.name} ${item.category} ${item.action ?? ""} ${item.package ?? ""} ${item.component ?? ""} ${item.description}`
             .toLowerCase()
             .includes(word),
         ),
     );
-    if (scope === "Recently tried")
+    if (scope === "Recently tried" || managerOptions.sort === "recent")
       list = list.sort(
-        (a, b) => saved.recent.indexOf(a.id) - saved.recent.indexOf(b.id),
+        (a, b) => (saved.recent.indexOf(a.id) < 0 ? Infinity : saved.recent.indexOf(a.id)) - (saved.recent.indexOf(b.id) < 0 ? Infinity : saved.recent.indexOf(b.id)),
       );
+    else if (managerOptions.sort === "name") list = list.sort((a, b) => a.name.localeCompare(b.name));
+    else if (managerOptions.sort === "status") {
+      const rank = { worked: 0, untested: 1, failed: 2 };
+      list = list.sort((a, b) => rank[activityStatus(launchKey(a, targetPackage, channelId), worked, failed)] - rank[activityStatus(launchKey(b, targetPackage, channelId), worked, failed)]);
+    }
     return list;
   }, [
     catalog,
+    failed,
+    managerOptions.sort,
     group,
     category,
     query,
@@ -447,6 +482,19 @@ export default function SamsungIntents() {
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
+  function exportDirectory() {
+    const rows = [["Name", "Category", "Status", "Package", "Action", "Component", "Target app", "Browser launch"]];
+    for (const item of filtered) rows.push([
+      item.name, item.category, activityStatus(launchKey(item, targetPackage, channelId), worked, failed),
+      item.package ?? "", item.action ?? "", item.component ?? "", item.packageInput ? targetPackage : "",
+      item.component ? "Reference only" : "Depends on Android activity access",
+    ]);
+    const url = URL.createObjectURL(new Blob([activityCsv(rows)], { type: "text/csv;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url; link.download = "samsung-activity-directory.csv"; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setMessage(`Exported ${filtered.length} matching activities.`);
+  }
   function removeCustom(id: string) {
     setSaved((old) => ({
       custom: old.custom.filter((item) => item.id !== id),
@@ -458,19 +506,32 @@ export default function SamsungIntents() {
   return (
     <PageShell>
       <Helmet>
-        <title>Samsung activity launcher | Qwabi</title>
+        <title>Samsung activity manager | Qwabi</title>
         <meta
           name="description"
           content="Quick access to Samsung apps and Android settings. Search intent shortcuts, save favourites, copy ADB commands and add activities from your Galaxy phone."
         />
         <link rel="canonical" href={absoluteUrl("/samsung-intents")} />
       </Helmet>
-      <main id="main-content" className="samsung-launcher">
+      <main id="main-content" className={`samsung-launcher ${managerOptions.compact ? "sl-compact" : ""}`} >
         <header className="sl-heading">
           <p className="sl-eyebrow">QWABI / PHONE TOOLS</p>
-          <h1>Samsung shortcuts</h1>
-          <p>Phone and app settings, in one place.</p>
+          <h1>Activity manager</h1>
+          <p>Your Samsung activity catalogue, saved shortcuts and test history.</p>
         </header>
+        <section className="sl-manager-overview" aria-label="Activity overview">
+          {([
+            ["All shortcuts", catalog.length, "In this collection"],
+            ["Worked", managerCounts.worked, "Confirmed working"],
+            ["Failed", managerCounts.failed, "Needs review"],
+            ["Untested", managerCounts.untested, "No confirmed result"],
+          ] as const).map(([value, count, label]) => (
+            <button type="button" key={value} aria-pressed={scope === value} onClick={() => { setScope(value); setGroup("all"); setCategory("All categories"); setQuery(""); }}>
+              <strong>{count}</strong><span>{label}</span>
+            </button>
+          ))}
+        </section>
+        <p className="sl-manager-caption">Counts cover the selected collection and app target. A launch attempt alone is not a confirmed result.</p>
         <nav className="sl-task-nav" aria-label="What do you want to do?">
           {LAUNCHER_MODES.map((entry) => (
             <button
@@ -504,12 +565,13 @@ export default function SamsungIntents() {
         <div className="sl-session-bar">
           <span role="status">
             {failed.length} failed{" "}
-            {failed.length === 1 ? "attempt" : "attempts"} this session
+            {failed.length === 1 ? "result" : "results"} saved in this browser
           </span>
           <button
             type="button"
             disabled={!failed.length}
             onClick={() => {
+              for (const key of failedRef.current) recordResult(key, "cleared");
               failedRef.current = [];
               setFailed([]);
               setSessionUnavailable(!saveSession());
@@ -611,11 +673,7 @@ export default function SamsungIntents() {
                 selectGroup(event.target.value as GroupSelection)
               }
             >
-              {mode !== "app" && (
-                <option value="all">
-                  {mode === "phone" ? "All phone settings" : "All entries"}
-                </option>
-              )}
+              <option value="all">{mode === "phone" ? "All phone settings" : mode === "app" ? "All app controls" : "All entries"}</option>
               {groups.map((entry) => (
                 <option key={entry.id} value={entry.id}>
                   {entry.label}
@@ -663,17 +721,22 @@ export default function SamsungIntents() {
               </a>
             )}
           </div>
+          <div className="sl-manager-tools">
+            <label>Sort activities
+              <select aria-label="Sort activities" value={managerOptions.sort} onChange={event => setManagerOptions(old => ({ ...old, sort: event.target.value as ActivitySort }))}>
+                <option value="recommended">Recommended</option><option value="name">Name A–Z</option><option value="recent">Recently tried first</option><option value="status">Working first</option>
+              </select>
+            </label>
+            <button type="button" aria-pressed={managerOptions.compact} onClick={() => setManagerOptions(old => ({ ...old, compact: !old.compact }))}>{managerOptions.compact ? "Comfortable view" : "Compact view"}</button>
+            <button type="button" onClick={exportDirectory} disabled={!filtered.length}><Download size={15} aria-hidden="true" /> Export {filtered.length} as CSV</button>
+          </div>
           <div className="sl-filter-row">
             <div
               className="sl-scopes"
               role="group"
               aria-label="Shortcut collection"
             >
-              {scopes
-                .filter(
-                  (value) => mode === "advanced" || value !== "Recently tried",
-                )
-                .map((value) => (
+              {scopes.map((value) => (
                   <button
                     key={value}
                     type="button"
@@ -945,6 +1008,20 @@ export default function SamsungIntents() {
                               </p>
                             )}
                             <p>{item.description}</p>
+                            {activityHistory.has(key) && (
+                              <div className="sl-activity-history">
+                                <h4>Recent tests for this target</h4>
+                                <ol>
+                                  {[...(activityHistory.get(key) ?? [])].reverse().map(event => (
+                                    <li key={event.id}>
+                                      <span>{{ opened: "Launch attempted", worked: "Confirmed working", "did-not-open": "Didn’t open", "wrong-screen": "Wrong screen", "browser-fallback": "Browser fallback", cleared: "Mark cleared", "legacy-worked": "Recovered working mark", "legacy-failed": "Recovered failure mark" }[event.outcome]}</span>
+                                      <time dateTime={event.recordedAt}>{new Date(event.recordedAt).toLocaleString()}</time>
+                                      {event.testedAt === null && <small>Recovery time; original test time unknown</small>}
+                                    </li>
+                                  ))}
+                                </ol>
+                              </div>
+                            )}
                             <button
                               type="button"
                               disabled={disabled}

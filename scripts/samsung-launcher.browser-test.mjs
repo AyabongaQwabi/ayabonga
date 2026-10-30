@@ -15,7 +15,7 @@ try {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(`${baseUrl}/samsung-intents`);
     await page
-      .getByRole("heading", { name: "Samsung shortcuts", exact: true })
+      .getByRole("heading", { name: "Activity manager", exact: true })
       .waitFor();
     await page.waitForTimeout(850);
     assert.equal(await page.locator(".sl-task-nav button").count(), 4);
@@ -76,7 +76,7 @@ try {
     assert.ok(Math.abs(before.y - after.y) < 35);
     await page.reload();
     await page
-      .getByRole("heading", { name: "Samsung shortcuts", exact: true })
+      .getByRole("heading", { name: "Activity manager", exact: true })
       .waitFor();
     await page.waitForTimeout(1000);
     assert.equal(

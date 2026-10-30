@@ -49,7 +49,7 @@ try {
   });
   await page.goto(`${base}/samsung-intents`);
   await page
-    .getByRole("heading", { name: "Samsung shortcuts", exact: true })
+    .getByRole("heading", { name: "Activity manager", exact: true })
     .waitFor();
   const key = "qwabi-samsung-test-results-v1";
   let ledger = await page.evaluate(
@@ -110,7 +110,7 @@ try {
   await page.evaluate(() => sessionStorage.clear());
   await page.reload();
   await page
-    .getByRole("heading", { name: "Samsung shortcuts", exact: true })
+    .getByRole("heading", { name: "Activity manager", exact: true })
     .waitFor();
   await page.getByText(receipt, { exact: true }).waitFor();
   ledger = await page.evaluate(
